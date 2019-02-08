@@ -1,0 +1,27 @@
+# top level keys are the environment
+development:
+  enable:
+    - block-unit-test/plugin.php
+  disable:
+    - updraftplus/plugin.php
+    - cdn-enabler/plugin.php
+
+staging:
+  enable:
+    - block-unit-test/plugin.php
+  disable:
+    - updraftplus/plugin.php
+    - cdn-enabler/plugin.php
+
+production:
+  enable:
+    - updraftplus/plugin.php
+    - cdn-enabler/plugin.php
+  disable:
+    - block-unit-test/plugin.php
+
+# 'global' is a special key that you can use to apply to all environments
+global:
+  enable:
+    - woocommerce/woocommerce.php
+    - wpmandrill/wpmandrill.php

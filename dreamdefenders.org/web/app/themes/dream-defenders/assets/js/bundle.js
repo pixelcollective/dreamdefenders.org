@@ -2809,7 +2809,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
                     return promise.then(null, fn);
                 },
                 // Keep pipe for back-compat
-                pipe: function ( /* fnDone, fnFail, fnProgress */) {
+                pipe: function () {
                     var fns = arguments;
                     return jQuery.Deferred(function (newDefer) {
                         jQuery.each(tuples, function (i, tuple) {
@@ -3059,9 +3059,6 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
     jQuery.fn.ready = function (fn) {
         readyList
             .then(fn)
-            // Wrap jQuery.readyException in a function so that the lookup
-            // happens at the time of error handling instead of callback
-            // registration.
             .catch(function (error) {
             jQuery.readyException(error);
         });
@@ -5734,7 +5731,6 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
         fadeTo: function (speed, to, easing, callback) {
             // Show any hidden elements after setting opacity to 0
             return this.filter(isHiddenWithinTree).css("opacity", 0).show()
-                // Animate to the value specified
                 .end().animate({ opacity: to }, speed, easing, callback);
         },
         animate: function (prop, speed, easing, callback) {
@@ -8085,9 +8081,9 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
     // AMD loader is present. jQuery is a special case. For more information, see
     // https://github.com/jrburke/requirejs/wiki/Updating-existing-libraries#wiki-anon
     if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
             return jQuery;
-        }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+        }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
     }
     var 

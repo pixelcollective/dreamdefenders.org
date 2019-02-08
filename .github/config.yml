@@ -1,0 +1,3 @@
+todo:
+  keyword: ['@todo']
+  exclude: ['/dreamdefenders.org/web/wp/','/dreamdefenders.org/web/app/plugins/','/trellis/','**/node_modules/']

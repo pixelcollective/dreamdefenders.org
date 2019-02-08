@@ -1225,7 +1225,7 @@ table {
   width: 100%; }
 
 .salesforce_w2l_lead form.w2llead {
-  --sf-button-color: $cyan;
+  --sf-button-color: #0093d3;
   text-align: left;
   clear: both; }
 
@@ -1490,7 +1490,7 @@ body .gform_wrapper .gform_body {
   .gform_wrapper.donation_form_wrapper .gform_next_button:hover,
   .gform_wrapper.membership_form_wrapper .gform_button[type=submit]:hover,
   .gform_wrapper.membership_form_wrapper .gform_next_button:hover {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
     color: #fff; }
   .gform_wrapper.donation_form_wrapper.gf_browser_chrome .ginput_complex .ginput_right select,
   .gform_wrapper.donation_form_wrapper.gf_browser_chrome .ginput_complex select,
@@ -1735,8 +1735,8 @@ body .gform_wrapper .gform_body {
 4.0 Layout
 --------------------------------------------------------------*/
 .hero-containter {
-  --hero-button-color: $white;
-  --hero-overlay-color: rgba(0,0,0,0.5);
+  --hero-button-color: #fff;
+  --hero-overlay-color: rgba(0, 0, 0, 0.5);
   background-attachment: fixed;
   background-position: 52% 65%;
   background-size: cover;
@@ -1838,7 +1838,7 @@ body .gform_wrapper .gform_body {
     font-family: "LeagueSpartan-Bold", sans-serif;
     font-size: 1.75em;
     letter-spacing: .2rem;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
     border: 3px solid var(--hero-button-color, #fff);
     margin: 2rem 1rem;
     padding: 1rem 3rem;
@@ -1852,8 +1852,8 @@ body .gform_wrapper .gform_body {
     background-color: var(--hero-button-color, #fff); }
 
 .cta-containter {
-  --cta-button-color: $white;
-  --cta-overlay-color: rgba(0,0,0,0.5);
+  --cta-button-color: #fff;
+  --cta-overlay-color: rgba(0, 0, 0, 0.5);
   background-attachment: fixed;
   position: relative;
   background-position: center center;
@@ -1955,7 +1955,7 @@ body .gform_wrapper .gform_body {
   font-size: 1.75em;
   font-family: "LeagueSpartan-Bold", sans-serif;
   letter-spacing: .2rem;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
   border: 3px solid var(--cta-button-color, #fff);
   margin: 2rem 1rem;
   padding: 1rem 3rem;
@@ -1970,9 +1970,9 @@ body .gform_wrapper .gform_body {
   background-color: var(--cta-button-color, #fff); }
 
 .donate-cta-containter {
-  --donate-cta-button-color: $white;
-  --donate-cta-text-color: $white;
-  --donate-cta-overlay-color: rgba(0,0,0,0.5);
+  --donate-cta-button-color: #fff;
+  --donate-cta-text-color: #fff;
+  --donate-cta-overlay-color: rgba(0, 0, 0, 0.5);
   background-attachment: fixed;
   position: relative;
   background-position: center center;
@@ -2082,9 +2082,9 @@ body .gform_wrapper .gform_body {
   opacity: .3; }
 
 .post-body-container {
-  --post-body-text-color: $white;
-  --post-body-background-color: $black;
-  --post-body-overlay-color: rgba(0,0,0,0.5);
+  --post-body-text-color: #fff;
+  --post-body-background-color: #000;
+  --post-body-overlay-color: rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2164,8 +2164,8 @@ body .gform_wrapper .gform_body {
       margin: 0 0 1rem; } }
 
 .post-hero-containter {
-  --post-hero-button-color: $white;
-  --post-hero-overlay-color: rgba(0,0,0,0.5);
+  --post-hero-button-color: #fff;
+  --post-hero-overlay-color: rgba(0, 0, 0, 0.5);
   position: relative;
   background-attachment: fixed;
   background-position: center center;
@@ -2248,8 +2248,8 @@ body .gform_wrapper .gform_body {
       margin: 0 0 1rem; } }
 
 .petition-containter {
-  --petition-button-color: $white;
-  --petition-overlay-color: rgba(0,0,0,0.5);
+  --petition-button-color: #fff;
+  --petition-overlay-color: rgba(0, 0, 0, 0.5);
   background-attachment: fixed;
   position: relative;
   background-position: center center;
@@ -2334,8 +2334,8 @@ body .gform_wrapper .gform_body {
   font-size: 1.25em; }
 
 .newsletter-containter {
-  --newsletter-button-color: $white;
-  --newsletter-overlay-color: rgba(0,0,0,0.5);
+  --newsletter-button-color: #fff;
+  --newsletter-overlay-color: rgba(0, 0, 0, 0.5);
   position: relative;
   background-position: center center;
   background-size: cover;
@@ -2441,8 +2441,8 @@ body .gform_wrapper .gform_body {
     width: 100%; }
 
 .donation-containter {
-  --donation-button-color: $white;
-  --donation-overlay-color: rgba(0,0,0,0.5);
+  --donation-button-color: #fff;
+  --donation-overlay-color: rgba(0, 0, 0, 0.5);
   background-attachment: fixed;
   position: relative;
   background-position: center center;

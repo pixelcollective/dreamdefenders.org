@@ -1,0 +1,11 @@
+Quick Launch:
+  ☐ Cleanup database @critical
+  ☐ Transition theme to Sage @critical
+  ☐ Fix theme pathing issues @critical
+  ☐ Salesforce integration @high
+
+Blocks:
+  ☐ Gallery block @high
+  ☐ Call-to-action block @low
+  ☐ Salesforce form block @low
+
