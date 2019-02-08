@@ -1,0 +1,24 @@
+# Docker
+COMPOSE_PROJECT_NAME=carlos
+
+# Database
+DB_NAME=database_name
+DB_USER=database_user
+DB_PASSWORD=database_password
+DB_PREFIX=wp_
+
+# WordPress
+WP_ENV=development
+DOMAIN_CURRENT_SITE=carlosforla.test
+WP_HOME=http://carlosforla.test
+WP_SITEURL=http://carlosforla.test/wp
+
+# Salts
+AUTH_KEY='generateme'
+SECURE_AUTH_KEY='generateme'
+LOGGED_IN_KEY='generateme'
+NONCE_KEY='generateme'
+AUTH_SALT='generateme'
+SECURE_AUTH_SALT='generateme'
+LOGGED_IN_SALT='generateme'
+NONCE_SALT='generateme'

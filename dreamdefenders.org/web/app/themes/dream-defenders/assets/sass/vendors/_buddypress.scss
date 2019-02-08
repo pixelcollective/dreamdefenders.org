@@ -1,0 +1,43 @@
+.buddypress-wrap, .bp-docs {
+        display: flex;
+        flex-direction: column;
+        // margin-left: 2.5%;
+        // align-items: center;
+        font-family: $league;
+        text-transform: uppercase;
+        // color: $white;
+        // background-color: $black;
+}
+
+#buddypress {
+    // Cover Image    
+    width: 90vw;
+    margin-top: 5em;
+    margin-left: 2.5em;
+    #item-header-cover-image {
+        // margin-left: 5%;
+        padding-right: 5%;
+        @include media('<tablet') {
+            margin-left: 0;
+            padding-right: 0%;
+        }
+    };
+    #item-header {
+        width: 100%;
+        #item-header-content {
+            margin-left: 16%;
+        }
+    }
+
+    .bp-wrap {
+        width: 90%;
+        @include media('<tablet') {
+            width: 100%;  
+        }
+    }
+
+}
+// name on header
+.entry-header {
+    display: none;
+}

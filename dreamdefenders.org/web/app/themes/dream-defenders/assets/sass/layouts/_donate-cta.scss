@@ -1,0 +1,132 @@
+.donate-cta-containter {
+  // these css vars get redefined in the template <style> tags
+  // color values are being set dynamically
+  // determined by the ACF 'cta_text_color" field
+  --donate-cta-button-color: $white;
+  --donate-cta-text-color: $white;
+  --donate-cta-overlay-color: rgba(0,0,0,0.5);
+  
+  background-attachment: fixed;
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  max-height:40vh;
+  height: 40vh;
+
+  @include media('<tablet') {
+    max-height: 60vh;
+    height: 60vh;
+    min-height: 0;
+  }
+
+  @media only screen and (orientation: landscape) {
+    min-height: 300px !important;
+  }
+}
+
+.donate-cta-overlay {
+  background-color: var(--donate-cta-overlay-color, rgba(0,0,0,0.5));
+  width: 100%;
+  height: 100%;
+}
+
+.donate-cta-content {
+  box-sizing: border-box;
+  color:  var(--donate-cta-text-color, $white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  height: 100%;
+
+  @include media('>phone') {
+    padding: 0 2.625rem;
+  }
+  @include media('>=75rem') {
+    width: 75rem;
+    padding: 0;
+  }
+  
+  @include media('>=tablet') {
+    &.left {
+      align-items: flex-start;
+      text-align: left;
+    }
+    &.center {
+      align-items: center;
+      text-align: center;
+    }
+    &.right {
+      align-items: flex-end;
+      text-align: left;
+    }
+    &.right .donate-cta-button {
+      margin-right: 0;
+    }
+  }
+  @include media('<tablet') {
+    padding: 3rem 1rem 3rem;
+    justify-content: center;
+
+    .subheading { order: 1; }
+    .headline   { order: 2; }
+    .donate-cta-button { order: 3; }
+  }
+}
+
+.headline {
+  font-family: $league;
+  font-size: 3.6em;
+  margin-bottom: 0;
+  letter-spacing: .2rem;
+  text-transform: uppercase;
+  @include media('<tablet') {
+    margin: 0rem 1rem 1rem;
+    font-size: 2.25em;
+  }
+}
+
+.subheading {
+  font-family: $league;
+  font-size: 1.25em;  
+  margin-bottom: 0;
+  max-width: 50rem;
+  font-weight: normal;
+
+  .left &,
+  .right & {
+    min-width: 33%;
+    max-width: 40rem;
+  }
+  @include media('<tablet') {
+    margin: 0 0 1rem;
+  }
+}
+
+.donate-cta-button {
+  @extend %transition;
+  color: $black;
+  padding: 1rem 3rem;
+  font-size: 1.75em;
+  font-family: $league;
+  letter-spacing: .2rem;
+  background-color: var(--donate-cta-button-color);
+  border: 3px solid var(--donate-cta-button-color, $white);
+  margin: 2rem 1rem;
+  padding: 1rem 3rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  @include media('<tablet') {
+    margin: 1rem;
+  }
+}
+
+.donate-cta-button:hover {
+  opacity: .3;
+}

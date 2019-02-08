@@ -1,0 +1,17 @@
+wordpress_sites:
+  dreamdefenders.org:
+    site_hosts:
+      - canonical: dreamdefenders.org
+        redirects:
+          - www.dreamdefenders.org
+    local_path: ../dreamdefenders.org
+    repo: git@github.com:pixelcollective/dreamdefenders.org.git
+    repo_subtree_path: dreamdefenders.org
+    branch: master
+    multisite:
+      enabled: false
+    ssl:
+      enabled: true
+      provider: letsencrypt
+    cache:
+      enabled: true

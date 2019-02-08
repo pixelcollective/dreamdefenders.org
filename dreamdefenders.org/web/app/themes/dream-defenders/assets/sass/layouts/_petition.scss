@@ -1,0 +1,106 @@
+
+.petition-containter {
+  // these css vars get redefined in the template <style> tags
+  // color values are being set dynamically
+  // determined by the ACF 'cta_text_color" field
+  --petition-button-color: $white;
+  --petition-overlay-color: rgba(0,0,0,0.5);
+  
+  background-attachment: fixed;
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  max-height:40vh;
+  min-height:500px;
+  height: 40vh;
+
+  @include media('<tablet') {
+    max-height: 100vh;
+    height: 100vh;
+  }
+}
+
+.petition-overlay {
+  background-color: var(--petition-overlay-color, rgba(0,0,0,0.5));
+  width: 100%;
+  height: 100%;
+}
+
+.petition-content {
+  padding: 3em 0;
+  box-sizing: border-box;
+  color:  $white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin: auto;
+  text-align: justify;
+  height: 100%;
+  
+  @include media('<tablet') {
+    width: 95% !important;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 0;
+  }
+
+  @media only screen and (orientation: landscape) {
+    min-height: 500px !important;
+  }
+  
+  @include media('>phone') {
+    padding: 0 2.625rem;
+  }
+  @include media('>=75rem') {
+    width: 75rem;
+    padding: 0;
+  }
+
+  .petition-text {
+    width: 40%;
+    margin-right: 5%;
+    padding: 3em 0;
+    @include media('<tablet') {
+      margin-right: 0;
+      width: 95%;
+      padding: 1em 0;
+    }
+  }
+  
+  .petition-form {
+    position: relative;
+    padding: 3em 0;
+    width: 40%;
+  
+    .salesforce_w2l_lead.sf_one_column  {
+      width: 100%;
+    }
+
+    @include media('<tablet') {
+      margin-right: 0;
+      width: 95%;
+      padding: 1em 0;
+    }
+  }
+}
+
+.petition-headline {
+  font-family: $league;
+  letter-spacing: .2rem;
+  text-transform: uppercase;
+  text-align: -webkit-center;
+  margin: 0rem;
+  font-size: 3.6em;
+}
+
+.petition-subheading {
+  max-width: 50rem;
+  text-align: -webkit-center;
+  font-weight: normal;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  font-family: $league;
+  font-size: 1.25em;
+}
