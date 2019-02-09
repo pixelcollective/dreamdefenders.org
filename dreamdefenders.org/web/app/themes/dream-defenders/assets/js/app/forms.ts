@@ -23,7 +23,7 @@ export class FormHandler {
 
     private emailCheck(email): boolean {
       const regEx: RegExp = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
-      return regEx.test(email); 
+      return regEx.test(email);
     }
 
     private valueCheck(inputValue: string | number | string[]): boolean {
@@ -60,7 +60,7 @@ export class FormHandler {
     private showSucessAndReset(): void {
         // clear error messages
         this.showErrorMessage();
-        // show success message 
+        // show success message
         jQuery(`#${this.form}-success`).removeClass('hidden');
         // reset form
         let form = <HTMLFormElement>jQuery(`#${this.form}`)[0]
@@ -72,7 +72,7 @@ export class FormHandler {
     // create data object to be passed to server
     private makePayload(): void {
         this.inputs.forEach( item => {
-            this.payload[item.inputId] = jQuery(`#${item.inputId}`).val(); 
+            this.payload[item.inputId] = jQuery(`#${item.inputId}`).val();
         })
     }
 
@@ -85,7 +85,7 @@ export class FormHandler {
 
         jQuery('#spinner').removeClass('hidden');
 
-        jQuery.post('/wp-admin/admin-ajax.php', data, (response) => {
+        jQuery.post('/wp/wp-admin/admin-ajax.php', data, (response) => {
           if(response.message) {
             this.showSucessAndReset();
           } else if(response.success === false) {
@@ -99,6 +99,6 @@ export class FormHandler {
       } else {
         this.showErrorMessage();
       }
-                
+
     }
 }

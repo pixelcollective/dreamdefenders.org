@@ -40,13 +40,13 @@ Modified to fit Trim Agency SCSS style guide.
 --------------------------------------------------------------*/
 @font-face {
   font-family: 'LeagueSpartan-Bold';
-  src: url("/wp-content/themes/dream-defenders/assets/fonts/leaguespartan-bold.otf") format("opentype"), url("/wp-content/themes/dream-defenders/assets/fonts/leaguespartan-bold.woff") format("woff"), url("/wp-content/themes/dream-defenders/assets/fonts/leaguespartan-bold.ttf") format("truetype");
+  src: url("/app/themes/dream-defenders/assets/fonts/leaguespartan-bold.otf") format("opentype"), url("/app/themes/dream-defenders/assets/fonts/leaguespartan-bold.woff") format("woff"), url("/app/themes/dream-defenders/assets/fonts/leaguespartan-bold.ttf") format("truetype");
   font-weight: 300;
   font-style: normal; }
 
 @font-face {
   font-family: 'Agipo-Regular';
-  src: url("/wp-content/themes/dream-defenders/assets/fonts/Agiporegular.otf") format("opentype"), url("/wp-content/themes/dream-defenders/assets/fonts/Agiporegular.woff") format("woff"), url("/wp-content/themes/dream-defenders/assets/fonts/Agiporegular.ttf") format("truetype");
+  src: url("/app/themes/dream-defenders/assets/fonts/Agiporegular.otf") format("opentype"), url("/app/themes/dream-defenders/assets/fonts/Agiporegular.woff") format("woff"), url("/app/themes/dream-defenders/assets/fonts/Agiporegular.ttf") format("truetype");
   font-weight: 300;
   font-style: normal; }
 
