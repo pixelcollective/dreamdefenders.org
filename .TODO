@@ -1,7 +1,7 @@
 Quick Launch:
   ☐ Cleanup database @critical
   ☐ Transition theme to Sage @critical
-  ☐ Fix theme pathing issues @critical
+  ✔ Fix theme pathing issues @critical @done(19-02-08 16:31)
   ☐ Salesforce integration @high
 
 Blocks:
