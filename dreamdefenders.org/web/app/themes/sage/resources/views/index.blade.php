@@ -1,4 +1,9 @@
-{!!-- @todo transition theme here --!!}
+{!!--
+
+@todo transition theme here
+
+--!!}
+
 @extends('layouts.app')
 
 @section('content')
