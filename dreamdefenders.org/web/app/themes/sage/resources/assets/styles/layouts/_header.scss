@@ -1,7 +1,220 @@
-.banner .nav li {
-  @extend .nav-item;
+$header-height: 5rem;
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 5.5rem;
+  z-index: 10;
+  transition:
+    top 00.3s ease-in-out,
+    height 00.3s ease-in-out,
+    background-color 00.3s ease-in-out,
+    background-image 0.9s ease-in-out;
+
+  @include media(">phone") {
+    height: 5rem;
+  }
 }
 
-.banner .nav a {
-  @extend .nav-link;
+.top-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 75rem;
+  height: 100%;
+
+  @include media(">phone") {
+    padding: 0 2.625rem;
+  }
+
+  @include media(">=widescreen") {
+    padding: 0;
+  }
+}
+
+.logo,
+.logo-dark {
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 2rem 1rem 1rem 0;
+  width: 7em;
+  height: 7rem;
+  transition: transform 00.3s ease-in-out;
+
+  @include media("<=phone") {
+    // transform: scale(0.8);
+    position: absolute;
+    top: -2.2rem;
+    left: 1rem;
+
+    .nav-up & {
+      top: -3.2rem;
+    }
+  }
+}
+
+nav {
+  display: inline-block;
+}
+
+nav .menu-primary-menu-container ul {
+  @extend %listreset;
+
+  position: relative;
+  font-family: $league;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transition:
+    right 00.3s ease-in-out,
+    opacity 00.3s ease-in-out;
+
+  @include media("<tablet") {
+    background-color: $black;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    right: -100%;
+    top: 0;
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+
+    &.is-active {
+      opacity: 1;
+      right: 0%;
+    }
+  }
+
+  li a {
+    color: $white;
+    line-height: 3;
+    margin-left: 0;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: color 00.3s ease-in-out;
+    padding: 0.5em 0.5em 0 0.5em;
+
+    @include media("<tablet") {
+      font-family: "LeagueSpartan-Bold", sans-serif;
+      font-size: 1.5rem;
+    }
+
+    &::before {
+      background-color: $yellow;
+      content: "";
+      height: 2px;
+      position: absolute;
+      left: calc(50% - 1.25rem);
+      bottom: -0.5rem;
+      text-decoration: none;
+      width: 2.5rem;
+      transform: scaleX(0);
+      transition: all 0.3s ease-in-out 0s;
+      visibility: hidden;
+    }
+
+    &:hover::before {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+
+    @include media(">tablet") {
+      line-height: initial;
+      margin-left: 2rem;
+    }
+  }
+
+  li {
+    ul.sub-menu {
+      display: none;
+      position: absolute;
+      flex-direction: column;
+      align-items: flex-start;
+      background-color: black;
+      margin-left: 2rem;
+      min-width: 160px;
+
+      &.is-active {
+        @include media("<tablet") {
+          // display: flex;
+          position: relative;
+          align-items: flex-end;
+          justify-content: flex-end;
+          flex-direction: column;
+          height: auto;
+          width: auto;
+          z-index: 1;
+        }
+      }
+
+      li {
+        margin: 0.5em 0;
+      }
+
+      li a {
+        margin-left: 0;
+        padding-left: 0.5em;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.hamburger {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0.5rem;
+  transform: scale(0.8);
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+
+  @include media(">=tablet") {
+    display: none;
+  }
+
+  &:hover {
+    opacity: 1 !important;
+
+    .hamburger-inner {
+      &,
+      &::before,
+      &::after {
+        background-color: $yellow;
+      }
+    }
+  }
+}
+
+.show {
+  display: flex !important;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.mobile-sub {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-up {
+  height: 3.5rem;
+  background-color: rgba(0, 0, 0, 0.9);
+
+  .logo {
+    width: 3.5em;
+    height: 3.5rem;
+    margin: 0;
+  }
 }

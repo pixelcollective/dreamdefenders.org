@@ -7,30 +7,30 @@
   $desktop_alignment  = get_field('hero_desktop_alignment');
   $mobile_alignment   = get_field('hero_mobile_alignment');
   $content_alignment  = $desktop_alignment. ' '.  $mobile_alignment;
-  
+
   // content vars
   $headline   = get_field('hero_headline');
   $subheading = get_field('hero_subheading');
   $cta_text   = get_field('hero_cta_text');
-  $cta_link   = get_field('hero_cta_link'); 
+  $cta_link   = get_field('hero_cta_link');
 
   $white_btn_text = ".cta-button:hover { color: #ffffff; }";
 ?>
 
 
-<style type="text/css">  
-  /*  redefine CSS vars set in _hero.scss 
-      according to ACF selected values 
+<style type="text/css">
+  /*  redefine CSS vars set in _hero.scss
+      according to ACF selected values
   */
   .hero-containter {
     --hero-button-color: <?php echo $button_color; ?>;
     --hero-overlay-color: rgba(0,0,0,<?php echo $overlay_opacity; ?>);
   }
 
-  <?php if($button_color == "#000000") { 
+  <?php if($button_color == "#000000") {
     echo $white_btn_text;
   } ?>
-  
+
 </style>
 
 
@@ -44,7 +44,7 @@
 }?>
 
   <div class="hero-overlay"></div>
-  
+
   <div class="hero-content <?php echo $content_alignment; ?>">
       <h1 class="hero-headline"><?php echo $headline; ?></h1>
       <h3 class="hero-subheading"><?php echo $subheading; ?></h3>

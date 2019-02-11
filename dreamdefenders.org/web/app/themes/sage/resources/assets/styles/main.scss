@@ -1,25 +1,29 @@
-@import "common/variables";
-
-/** Import everything from autoload */
-@import "./autoload/**/*";
-
-/**
- * Import npm dependencies
- *
- * Prefix your imports with `~` to grab from node_modules/
- * @see https://github.com/webpack-contrib/sass-loader#imports
- */
-// @import "~some-node-module";
-
-/** Import theme styles */
-@import "common/global";
+@import "base/typography";
+@import "base/variables"; /* keep this first */
+@import "base/functions";
+@import "base/helpers";
+@import "base/mixins";
+@import "vendors/flexbox-grid";
+@import "vendors/include-media";
+@import "vendors/normalize";
+@import "vendors/hamburgers";
+@import "vendors/salesforce-forms";
+@import "vendors/gravity-forms";
+@import "vendors/kiwi-social-share";
+@import "vendors/buddypress";
+@import "vendors/include-media-overrides";
 @import "components/buttons";
-@import "components/comments";
 @import "components/forms";
-@import "components/wp-classes";
+@import "components/spinner";
+@import "layouts/hero";
+@import "layouts/cta";
+@import "layouts/donate-cta";
+@import "layouts/post-body";
+@import "layouts/post-hero";
+@import "layouts/petition";
+@import "layouts/newsletter";
+@import "layouts/donation";
+@import "layouts/blog-index";
+@import "layouts/home";
 @import "layouts/header";
-@import "layouts/sidebar";
 @import "layouts/footer";
-@import "layouts/pages";
-@import "layouts/posts";
-@import "layouts/tinymce";

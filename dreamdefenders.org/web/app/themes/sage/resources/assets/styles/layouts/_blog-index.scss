@@ -1,0 +1,77 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.masonry {
+  justify-content: center;
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
+}
+
+.padding {
+  padding: 7.5px;
+}
+
+.post-item-container {
+  cursor: pointer;
+  position: relative;
+}
+
+.post-item-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: $cyan;
+}
+
+.post-item-container:hover {
+  .post-item-overlay {
+    opacity: 1;
+  }
+}
+
+.post-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px;
+  min-width: 600px;
+}
+
+.post-item-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 33%;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.post-item-title {
+  font-family: $league;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none !important;
+
+  @include media("<tablet") {
+    margin: 0 1rem 1rem;
+  }
+}
+
+.post-item-subtitle {
+  color: white;
+}

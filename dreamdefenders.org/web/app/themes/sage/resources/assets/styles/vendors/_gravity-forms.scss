@@ -1,0 +1,260 @@
+.gform_wrapper .gform_body {
+  font-size: 1.5em;
+}
+
+.contribution-input input {
+  border: 1px ridge rgb(238, 238, 238) !important;
+}
+
+.gform_wrapper.donation_form_wrapper {
+  /**
+    #field_1_15 {
+      clear: none;
+
+      .gfield_label {
+        display: none;
+      }
+    }
+  **/
+
+  .gfield_price_1_20,
+  .gfield_total {
+    width: 100%;
+
+    .gfield_label {
+      font-size: 1em;
+      font-family: $league;
+      text-transform: uppercase;
+    }
+  }
+
+  label.gfield_label {
+    font-weight: 400;
+  }
+
+  label.gfield_label + div.ginput_container {
+    margin-top: 0;
+  }
+
+  .gfield_price {
+    width: 30%;
+    float: left;
+
+    .ginput_amount {
+      width: 100%;
+    }
+
+    @media (max-width: 1050px) {
+      width: 35%;
+    }
+
+    @media (max-width: 980px) {
+      width: 50%;
+    }
+  }
+
+  ul.gfield_radio {
+    position: relative;
+    top: 61px;
+    display: inline;
+
+    li {
+      display: inline;
+      margin-right: 12px;
+
+      input {
+        display: none;
+      }
+
+      label {
+        padding: 7px 24px;
+        margin: 0;
+        background-color: $gray;
+        font-size: 18px;
+        color: #fff;
+      }
+
+      input[type=radio]:checked + label {
+        background-color: $cyan;
+        font-weight: 500;
+      }
+
+      @media (max-width: 480px) {
+        display: block;
+        margin: 10px 0 0;
+        text-align: center;
+
+        label {
+          width: 100%;
+        }
+      }
+    }
+
+    @media (max-width: 980px) {
+      clear: both;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .ginput_container_address,
+  .gfield_total,
+  .ginput_container_creditcard {
+    margin-bottom: 0.875em;
+  }
+
+  @media (max-width: 480px) {
+    .gf_name_has_2 span,
+    .ginput_complex .ginput_right,
+    .ginput_complex .ginput_left,
+    .ginput_complex .ginput_cardinfo_left {
+      width: 100% !important;
+    }
+
+    ul.gfield_radio li {
+      display: block;
+      clear: both;
+      float: none;
+      text-align: center;
+    }
+
+    .gfield_price,
+    .top_label input.medium {
+      width: 97.5%;
+      margin-bottom: 10px;
+    }
+
+    div.ginput_container_name span {
+      margin-right: 0;
+      padding-right: 0;
+    }
+
+    .ginput_complex .ginput_right {
+      margin-left: 0;
+    }
+
+    .ginput_complex .ginput_cardinfo_left {
+      margin-right: 0;
+    }
+  }
+}
+
+.gform_wrapper.donation_form_wrapper,
+.gform_wrapper.membership_form_wrapper {
+  margin-top: 0;
+
+  .gfield_required,
+  .ginput_product_price_label {
+    display: none;
+  }
+
+  .gsection {
+    border-bottom: 1px solid $gray;
+  }
+
+  .field_sublabel_above {
+    height: auto;
+    margin-bottom: 0;
+  }
+
+  .top_label .gfield_label {
+    font-size: 0.875em;
+    margin: 0.75em 0 0.188em;
+    font-family: $base-font-sans-serif;
+  }
+
+  // lables
+  #input_1_2_3_container,
+  #input_1_2_6_container,
+  #input_1_7_1_container,
+  #input_1_7_2_cardinfo_right,
+  #input_1_7_5_container,
+  #field_1_8,
+  #field_1_3 {
+    label {
+      display: none;
+    }
+
+    input,
+    #input_1_10 {
+      width: 100%;
+      height: 3rem;
+      margin: 0.25em 0;
+      font-size: 1.5em;
+      line-height: 2em;
+      vertical-align: middle;
+      text-transform: uppercase;
+      font-weight: bold;
+      border: 1px ridge rgb(238, 238, 238) !important;
+    }
+  }
+
+  select {
+    background-color: #f7f7f7;
+    color: #6a6a6a;
+    width: 100%;
+    height: 3rem;
+    margin: 0.25em 0;
+    font-size: 1.5em;
+    line-height: 2em;
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  #choice_1_19_1 {
+    vertical-align: top;
+  }
+
+  // email width
+  // needs fixin
+  .gform_wrapper.donation_form_wrapper .top_label input.medium {
+    @media (max-width: 480px) {
+      width: 100%;
+    }
+  }
+
+  // buttons
+  .gform_button,
+  .gform_next_button,
+  .gform_previous_button {
+    padding: 12px 36px;
+    background-color: $yellow;
+    color: #fff;
+    border: none;
+    font-size: 21px;
+    font-weight: bold;
+  }
+
+  .gform_button[type=submit],
+  .gform_next_button {
+    @extend %transition;
+
+    font-family: sans-serif;
+    font-size: 1.5em;
+    position: relative;
+    top: -4px;
+    color: $black;
+    background-color: $yellow;
+    border: 3px solid $yellow;
+    padding: 1rem 3rem;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .gform_button[type=submit]:hover,
+  .gform_next_button:hover {
+    background-color: $transparent;
+    color: $white;
+  }
+
+  &.gf_browser_chrome .ginput_complex select,
+  &.gf_browser_chrome .ginput_complex .ginput_right select {
+    height: 41px;
+    margin-bottom: 0 !important;
+  }
+
+  &.gf_browser_chrome .gfield_checkbox li input[type=checkbox] {
+    margin-top: 0.25em;
+  }
+}

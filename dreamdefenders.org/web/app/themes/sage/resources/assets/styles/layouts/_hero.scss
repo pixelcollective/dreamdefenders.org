@@ -1,0 +1,154 @@
+.hero-containter {
+  --hero-button-color: $white;
+  --hero-overlay-color: rgba(0, 0, 0, 0.5);
+
+  background-attachment: fixed;
+  background-position: 52% 65%;
+  background-size: cover;
+  max-height: 100vh;
+  min-height: 500px;
+  height: 100vh;
+}
+
+.hero-overlay {
+  background-color: var(--hero-overlay-color, rgba(0, 0, 0, 0.5));
+  width: 100%;
+  height: 100%;
+}
+
+.hero-content {
+  box-sizing: border-box;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  height: 100%;
+
+  @media only screen and (orientation: landscape) {
+    min-height: 500px !important;
+  }
+
+  @include media(">phone") {
+    padding: 0 2.625rem;
+  }
+
+  @include media(">=75rem") {
+    width: 75rem;
+    padding: 0;
+  }
+
+  @include media(">=tablet") {
+    &.left {
+      align-items: flex-start;
+      justify-content: flex-end;
+      text-align: left;
+    }
+
+    &.center {
+      align-items: center;
+      text-align: center;
+    }
+
+    &.right {
+      align-items: flex-end;
+      text-align: left;
+    }
+
+    &.right .cta-button {
+      margin-right: 0;
+    }
+  }
+
+  @include media("<tablet") {
+    padding: 5rem 2rem 3rem;
+
+    &.top {
+      justify-content: flex-start;
+    }
+
+    &.bottom {
+      justify-content: flex-end;
+
+      .headline { order: 1; }
+      .subheading { order: 2; }
+      .cta-button { order: 3; }
+    }
+  }
+
+  .hero-headline {
+    font-family: $league;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    font-size: 4.5em;
+    margin-bottom: 0;
+
+    & h1 {
+      font-size: 4em;
+      margin-bottom: 0;
+    }
+
+    & h3 {
+      margin-top: 0;
+      text-transform: uppercase;
+      font-family: $league;
+      font-size: 1.75em;
+    }
+
+    @include media("<tablet") {
+      margin: 0 1rem 1rem;
+      max-width: 95%;
+      font-size: 3em;
+    }
+  }
+
+  .hero-subheading {
+    max-width: 80%;
+    font-weight: normal;
+    margin-top: 0;
+    text-transform: uppercase;
+    font-family: $league;
+    font-size: 1.75em;
+
+    .left &,
+    .right & {
+      min-width: 33%;
+    }
+
+    @include media("<tablet") {
+      margin: 0 0 1rem;
+      max-width: 100%;
+      font-size: 1.25em;
+    }
+  }
+
+  .cta-button {
+    @extend %transition;
+
+    color: $white;
+    font-family: $league;
+    font-size: 1.75em;
+    letter-spacing: 0.2rem;
+    background-color: $transparent;
+    border: 3px solid var(--hero-button-color, $white);
+    margin: 2rem 1rem;
+    padding: 1rem 3rem;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @include media("<tablet") {
+      margin: 1rem;
+    }
+  }
+
+  .cta-button:hover {
+    color: $black;
+    background-color: var(--hero-button-color, $white);
+  }
+}
