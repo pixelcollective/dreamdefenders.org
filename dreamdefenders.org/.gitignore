@@ -6,6 +6,10 @@ web/app/upgrade
 web/app/uploads/*
 !web/app/uploads/.gitkeep
 
+# Plugin Overrides
+!web/app/plugins/clover/
+!web/app/plugins/instagram-feed/
+
 # WordPress
 web/wp
 web/.htaccess

@@ -70,7 +70,8 @@
     "wpackagist-plugin/salesforce-wordpress-to-lead": ">2.7.3",
     "wpackagist-plugin/cdn-enabler": ">=1",
     "wpackagist-plugin/stream": "^3.2",
-    "wpackagist-plugin/block-unit-test": ">=1"
+    "wpackagist-plugin/block-unit-test": ">=1",
+    "tiny-pixel/admin-to-console": "*"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",
