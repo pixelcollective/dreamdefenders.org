@@ -46,7 +46,7 @@ class App extends Controller
                 'mobile_alignment'  => get_field('hero_mobile_alignment'),
             ),
 
-            'newsletter' => (object) array(
+            'call_to_action' => (object) array(
                 'heading'               => get_field('newsletter_heading'),
                 'subheading'            => get_field('newsletter_subheading'),
                 'image'                 => get_field('newsletter_image'),
@@ -54,6 +54,7 @@ class App extends Controller
                 'subheading_text_color' => get_field('newsletter_subheading_text_color'),
                 'bg_img'                => get_field('newsletter_background_color'),
                 'bg_color'              => get_field('newsletter_background_color'),
+                'form'                  => 'activist-form',
             ),
 
             'donation_cta' => (object) array(

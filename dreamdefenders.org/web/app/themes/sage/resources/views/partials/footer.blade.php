@@ -1,5 +1,9 @@
-<footer class="footer pitch footer__overlay layout layout__block-spaced">
-  <div class="inner__content-contained">
-    @php dynamic_sidebar('sidebar-footer') @endphp
+<footer class="footer bg-accent striped">
+  <div class="footer__inner">
+    <div class="layout__block-spaced">
+      <div class="inner__content-contained">
+        @php dynamic_sidebar('sidebar-footer') @endphp
+      </div>
+    </div>
   </div>
 </footer>

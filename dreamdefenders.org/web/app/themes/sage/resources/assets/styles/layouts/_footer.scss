@@ -1,6 +1,14 @@
 .footer {
+  @include color-base;
   @include color-mods;
   @include overlay-element;
+  @include caution;
+
+  &__inner {
+    @include color-base;
+    @include color-mods;
+    @include overlay-element;
+  }
 }
 
 .site__footer-link {

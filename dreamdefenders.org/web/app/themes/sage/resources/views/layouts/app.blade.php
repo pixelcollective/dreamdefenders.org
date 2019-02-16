@@ -2,6 +2,7 @@
 <html {!! get_language_attributes() !!}>
   @include('partials.head')
   <body @php body_class() @endphp>
+    @php acf_form_head() @endphp
     @php do_action('get_header') @endphp
       @include('partials.header')
       @yield('hero')

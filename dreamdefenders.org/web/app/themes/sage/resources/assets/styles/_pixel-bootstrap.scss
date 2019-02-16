@@ -1,3 +1,12 @@
+html,
+body {
+  background: black;
+}
+
+main {
+  background: rgb(241, 241, 241);
+}
+
 @mixin font-league() {
   font-family:
     "LeagueSpartan-Bold",
@@ -14,6 +23,20 @@
   font-family:
     "system",
     sans-serif;
+}
+
+@mixin color-base {
+  &.primary {
+    --content-color: rgba(255, 255, 255, 1);
+  }
+
+  &.accent {
+    --content-color: $yellow;
+  }
+
+  &.bg-accent {
+    background-color: $yellow;
+  }
 }
 
 @mixin color-mods {
@@ -68,17 +91,17 @@
 }
 
 .layout {
-  position: relative;
-
   &__block {
     &-tight {
-      height: 20vh;
+      padding: $spacer;
     }
 
     &-spaced {
-      max-height: 50vh;
-      min-height: 700px;
-      height: 50vh;
+      padding: ($spacer * 4) $spacer;
+    }
+
+    &-heroic {
+      padding: ($spacer * 8) $spacer;
     }
 
     &-full {
@@ -88,9 +111,80 @@
   }
 }
 
+.heroic > div {
+  padding: ($spacer * 8) $spacer;
+}
+
 .inner__content-contained {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
   padding: 1.5rem;
+}
+
+.button {
+  @extend %transition;
+
+  @include font-league;
+
+  padding: 0.5rem 1rem 0.25rem 1rem;
+  border: 2px solid var(--content-color);
+
+  &-primary {
+    color: var(--content-color);
+    background-color: var(--bg-color);
+
+    &:hover {
+      color: var(--bg-color);
+      background-color: var(--content-color);
+    }
+  }
+
+  &-ghost {
+    color: var(--content-color);
+    background-color: var(--bg-color);
+
+    &:hover {
+      color: var(--bg-color);
+      background-color: var(--content-color);
+    }
+  }
+
+  &-inverted {
+    background-color: var(--color);
+    color: var(--bg-color);
+
+    &:hover {
+      color: var(--content-color);
+      background-color: var(--background-color);
+    }
+  }
+}
+
+.post__content {
+  overflow: hidden;
+}
+
+@mixin caution() {
+  &::after {
+    position: relative;
+    background:
+      repeating-linear-gradient(
+        -55deg,
+        #222,
+        #222 10px,
+        $yellow 10px,
+        $yellow 20px
+      );
+    opacity: 0.6;
+    z-index: 1;
+  }
+
+  > * {
+    z-index: 2;
+  }
+}
+
+.semi-transparent {
+  opacity: 0.4;
 }

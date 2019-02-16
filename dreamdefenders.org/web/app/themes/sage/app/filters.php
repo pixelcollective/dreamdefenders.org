@@ -27,6 +27,48 @@ add_filter('body_class', function (array $classes) {
 });
 
 /**
+ * Add "gutenberg" to post classes
+ */
+add_filter(
+    'post_class',
+    function ($classes) {
+        global $post;
+        $classes[] = 'wp-blocks';
+        return $classes;
+    }
+);
+
+/**
+ * Wrap alignwide & alignfull
+ * blocks with ".block-wrap".
+ */
+add_filter(
+    'the_content',
+    function ($content) {
+        // If the post does not contain alignwide or alignfull, return early
+        if (strpos($content, 'alignwide') === false &&
+            strpos($content, 'alignfull') === false) :
+                return $content;
+        endif;
+
+        // Load the content
+        $qp = html5qp("<!DOCTYPE html><html><body>{$content}</body></html>", 'body');
+
+        // Find all the aligned blocks
+        $blocks = $qp->find('.alignwide, .alignfull');
+
+        // Add wrap
+        foreach ($blocks as $block) :
+            $block->wrap('<div class="feature-block"></div>');
+        endforeach;
+
+        // Return the modified post content
+        return $qp->find('body')->html5();
+    },
+    9
+);
+
+/**
  * Add "… Continued" to the excerpt
  */
 add_filter('excerpt_more', function () {
@@ -59,10 +101,12 @@ add_filter('template_include', function ($template) {
     $data = collect(get_body_class())->reduce(function ($data, $class) use ($template) {
         return apply_filters("sage/template/{$class}/data", $data, $template);
     }, []);
-    if ($template) {
+
+    if ($template) :
         echo template($template, $data);
         return get_stylesheet_directory().'/index.php';
-    }
+    endif;
+
     return $template;
 }, PHP_INT_MAX);
 

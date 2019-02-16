@@ -1,0 +1,22 @@
+.wp-block-columns {
+  @for $columns from 1 to 12 {
+    &.has-#{$columns}-columns {
+      display: grid;
+      grid-column-gap: $spacer;
+
+      @media #{$breakpoint-not-small} {
+        @if $columns <= 3 {
+          grid-template-columns: repeat($columns, 1fr);
+        }
+
+        @else if $columns > 3 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
+  }
+
+  .wp-block-column {
+    grid-column: auto 1fr;
+  }
+}

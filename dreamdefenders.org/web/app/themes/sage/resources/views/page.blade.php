@@ -2,8 +2,9 @@
 
 @section('hero')
   @isnotnull($data->hero->heading)
-    @include('components.call-to-action',
-      array('data' => (object) $data->hero))
+    @include('components.hero', [
+      'data' => (object) $data->hero
+    ])
   @endisnotnull
 @endsection
 
@@ -12,16 +13,18 @@
 @endsection
 
 @section('call-to-action-primary')
-  @isnotnull($data->newsletter->heading)
-    @include('components.newsletter',
-      array('data' => (object) $data->newsletter))
+  @isnotnull($data->call_to_action->heading)
+    @include('components.call-to-action', [
+      'data' => (object) $data->call_to_action
+    ])
   @endisnotnull
 @endsection
 
-@section('call-to-action-secondary'))
+@section('call-to-action-secondary')
   @isnotnull($data->donation_cta->heading)
-    @include('components.donation',
-      array('data' => (object) $data->donation_cta))
+    @include('components.donation', [
+      'data' => (object) $data->donation_cta
+    ])
   @endisnotnull
 @endsection
 

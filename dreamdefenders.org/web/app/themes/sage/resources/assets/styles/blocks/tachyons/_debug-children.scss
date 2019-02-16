@@ -1,0 +1,21 @@
+
+// Converted Variables
+
+
+// Custom Media Query Variables
+
+
+/*
+
+  DEBUG CHILDREN
+  Docs: http://tachyons.io/docs/debug/
+
+  Just add the debug class to any element to see outlines on its
+  children.
+
+*/
+
+@mixin debug { * { outline: 1px solid gold; } }
+@mixin debug-white { * { outline: 1px solid white; } }
+@mixin debug-black { * { outline: 1px solid black; } }
+

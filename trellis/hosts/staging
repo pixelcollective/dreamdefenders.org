@@ -1,8 +1,8 @@
-# Add each host to the [staging] group and to a "type" group such as [web] or [db].
-# List each machine only once per [group], even if it will host multiple sites.
+staging.dreamdefenders.org ansible_host=142.93.21.156
+dreamdefenders.tinypixel.io ansible_host=142.93.21.156
 
 [staging]
-your_server_hostname
+dreamdefenders.tinypixel.io
 
 [web]
-your_server_hostname
+dreamdefenders.tinypixel.io

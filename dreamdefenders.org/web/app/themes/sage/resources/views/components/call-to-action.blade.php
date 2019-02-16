@@ -1,7 +1,20 @@
-<section class="hero hero__bg-center darken hero__overlay layout__block-spaced" @if($data->bg_img) style="background-image: url({!! $data->bg_img !!});" @elseif($data->bg_color) style="background-color: {!! $data->bg_color !!};" @endif>
-  <div class="hero__content inner__content-contained {!! $data->desktop_alignment !!} {!! $data->mobile_alignment !!}">
-    @if($data->heading) <h1 class="hero__heading hero__heading-paired">{!! $data->heading !!}</h1> @endif
-    @if($data->subheading) <h2 class="hero__subheading subheading">{!! $data->subheading !!}</h2> @endif
-    @if($data->link_text && $data->link_url) <a class="hero__button" href="{!! $data->link_url !!}">{!! $data->link_text !!}</a> @endif
-  </div>
+<section class="cta cta__layout layout__block-spaced"
+         @if(isset($data->bg_color))
+            style="background-color: {!! $data->bg_color !!}"
+         @endif>
+
+    <div class="cta__content inner__content-contained">
+
+        <div class="cta__heading">
+            <h2 @if(isset($data->heading_text_color)) style="color: {!! $data->heading_text_color !!}" @endif >@if(isset($data->heading)) {!! $data->heading !!} @endif</h2></div>
+        <div class="cta__image" @if(isset($data->image)) style="background-image: url({!! $data->image !!})" @endif></div>
+        <div class="cta__subheading">
+            @if(isset($data->subheading))
+                <h4 @if(isset($data->subheading_text_color)) style="color: {!! $data->subheading_text_color !!}" @endif>@if(isset($data->subheading)) {!! $data->subheading !!} @endif</h4>
+            @endif
+        </div>
+        <div class="cta__form cta__form primary">
+            @php acf_form($data->form) @endphp
+        </div>
+    </div>
 </section>
