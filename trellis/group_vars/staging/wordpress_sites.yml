@@ -1,8 +1,7 @@
 wordpress_sites:
   dreamdefenders.org:
     site_hosts:
-      - canonical: staging.dreamdefenders.org
-      - canonical: dreamdefenders.tinypixel.io
+      - canonical: dreamdefenders.kellymears.me
     local_path: ../dreamdefenders.org
     repo: git@github.com:pixelcollective/dreamdefenders.org.git
     repo_subtree_path: dreamdefenders.org
@@ -10,7 +9,7 @@ wordpress_sites:
     multisite:
       enabled: false
     ssl:
-      enabled: false
+      enabled: true
       provider: letsencrypt
     cache:
       enabled: true

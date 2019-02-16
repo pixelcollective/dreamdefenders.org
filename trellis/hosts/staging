@@ -1,8 +1,7 @@
-staging.dreamdefenders.org ansible_host=142.93.21.156
-dreamdefenders.tinypixel.io ansible_host=142.93.21.156
+dreamdefenders.kellymears.me ansible_host=104.248.56.187
 
 [staging]
-dreamdefenders.tinypixel.io
+dreamdefenders.kellymears.me
 
 [web]
-dreamdefenders.tinypixel.io
+dreamdefenders.kellymears.me
