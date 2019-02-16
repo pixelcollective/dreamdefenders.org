@@ -25,12 +25,6 @@
      rsync_opts: --chmod=Du=rwx,--chmod=Dg=rx,--chmod=Do=rx,--chmod=Fu=rw,--chmod=Fg=r,--chmod=Fo=r
 
 # Clover
- - name: Install npm dependencies
-   command: yarn
-   connection: local
-   args:
-     chdir: "{{ project_local_path }}/web/app/plugins/clover"
-
  - name: Install Composer dependencies
    command: composer install --no-ansi --no-dev --no-interaction --no-progress --optimize-autoloader --no-scripts
    args:
