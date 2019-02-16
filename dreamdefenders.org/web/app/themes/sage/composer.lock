@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "14976d36e5b451824b6c69857c0f2870",
+    "content-hash": "d7499a6cf42e8bfe56ecd6d572d0fa94",
     "packages": [
         {
             "name": "brain/hierarchy",
@@ -585,6 +585,97 @@
             "time": "2018-10-02T13:27:20+00:00"
         },
         {
+            "name": "log1x/blade-svg-sage",
+            "version": "v2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Log1x/blade-svg-sage.git",
+                "reference": "fb6f7e72d6a89a06960820f45397be319476ed42"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Log1x/blade-svg-sage/zipball/fb6f7e72d6a89a06960820f45397be319476ed42",
+                "reference": "fb6f7e72d6a89a06960820f45397be319476ed42",
+                "shasum": ""
+            },
+            "require": {
+                "nothingworks/blade-svg": "^0.3.0",
+                "php": ">=7.0"
+            },
+            "type": "package",
+            "autoload": {
+                "files": [
+                    "src/BladeSvgSage.php",
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brandon Nifong",
+                    "email": "brandon@tendency.me"
+                }
+            ],
+            "description": "Composer package to add support for Blade SVG by Adam Wathan to Roots Sage.",
+            "homepage": "https://github.com/log1x/blade-svg-sage",
+            "keywords": [
+                "blade",
+                "roots",
+                "sage",
+                "svg",
+                "wordpress"
+            ],
+            "time": "2019-02-07T22:45:02+00:00"
+        },
+        {
+            "name": "log1x/sage-directives",
+            "version": "v1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Log1x/sage-directives.git",
+                "reference": "9ca3f666b127a860ce5ef4d6963b2bdeef72792d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Log1x/sage-directives/zipball/9ca3f666b127a860ce5ef4d6963b2bdeef72792d",
+                "reference": "9ca3f666b127a860ce5ef4d6963b2bdeef72792d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "type": "package",
+            "autoload": {
+                "files": [
+                    "src/Directives.php",
+                    "src/Utilities.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brandon Nifong",
+                    "email": "brandon@tendency.me"
+                }
+            ],
+            "description": "A set of Blade directives for use with Roots Sage.",
+            "homepage": "https://github.com/log1x/sage-directives",
+            "keywords": [
+                "blade",
+                "directives",
+                "roots",
+                "sage",
+                "wordpress"
+            ],
+            "time": "2019-02-13T06:49:28+00:00"
+        },
+        {
             "name": "nesbot/carbon",
             "version": "1.25.0",
             "source": {
@@ -636,6 +727,56 @@
                 "time"
             ],
             "time": "2018-03-19T15:50:49+00:00"
+        },
+        {
+            "name": "nothingworks/blade-svg",
+            "version": "v0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adamwathan/blade-svg.git",
+                "reference": "8747c4ff2c52f1a78a4b2aaae765cc961d9c9430"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/adamwathan/blade-svg/zipball/8747c4ff2c52f1a78a4b2aaae765cc961d9c9430",
+                "reference": "8747c4ff2c52f1a78a4b2aaae765cc961d9c9430",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/filesystem": "^5.3",
+                "illuminate/support": "^5.3"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.5",
+                "phpunit/phpunit": "^5.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BladeSvg\\BladeSvgServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BladeSvg\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Wathan",
+                    "email": "adam.wathan@gmail.com"
+                }
+            ],
+            "time": "2018-07-09T14:08:00+00:00"
         },
         {
             "name": "psr/container",

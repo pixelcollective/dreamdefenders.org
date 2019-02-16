@@ -1,23 +1,30 @@
 @extends('layouts.app')
 
-@section('content')
-  @while(have_posts()) @php the_post() @endphp
-    @include('partials.page-header')
-    @include('partials.content-page')
-  @endwhile
+@section('hero')
+  @isnotnull($data->hero->heading)
+    @include('components.call-to-action',
+      array('data' => (object) $data->hero))
+  @endisnotnull
 @endsection
 
-@section('hero')
-  @include(
-    'partials.components.call-to-action',
-    array(
-        'bg_img'     => get_field('hero_background_image'),
-        'bg_color'   => get_field('hero_background_color'),
-        'text'       => get_field('hero_cta_text'),
-        'link'       => get_field('hero_cta_link'),
-        'heading'    => get_field('hero_headline'),
-        'subheading' => get_field('hero_subheading'),
-        'alignment'  => get_field('hero_desktop_alignment') .' '. get_field('hero_mobile_alignment'),
-    )
-  )
+@section('content')
+  @posts @include('partials.content-page') @endposts
+@endsection
+
+@section('call-to-action-primary')
+  @isnotnull($data->newsletter->heading)
+    @include('components.newsletter',
+      array('data' => (object) $data->newsletter))
+  @endisnotnull
+@endsection
+
+@section('call-to-action-secondary'))
+  @isnotnull($data->donation_cta->heading)
+    @include('components.donation',
+      array('data' => (object) $data->donation_cta))
+  @endisnotnull
+@endsection
+
+@section('social')
+  @shortcode('[instagram-feed]')
 @endsection

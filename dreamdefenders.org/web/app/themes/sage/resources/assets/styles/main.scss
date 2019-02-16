@@ -1,5 +1,5 @@
 @import "base/typography";
-@import "base/variables"; /* keep this first */
+@import "base/variables";
 @import "base/functions";
 @import "base/helpers";
 @import "base/mixins";
@@ -10,20 +10,20 @@
 @import "vendors/salesforce-forms";
 @import "vendors/gravity-forms";
 @import "vendors/kiwi-social-share";
-@import "vendors/buddypress";
 @import "vendors/include-media-overrides";
 @import "components/buttons";
 @import "components/forms";
 @import "components/spinner";
-@import "layouts/hero";
-@import "layouts/cta";
 @import "layouts/donate-cta";
 @import "layouts/post-body";
 @import "layouts/post-hero";
 @import "layouts/petition";
-@import "layouts/newsletter";
 @import "layouts/donation";
 @import "layouts/blog-index";
-@import "layouts/home";
 @import "layouts/header";
+
+/** refactor */
+@import "pixel-bootstrap";
+@import "layouts/hero";
 @import "layouts/footer";
+@import "layouts/newsletter";

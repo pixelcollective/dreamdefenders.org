@@ -1,9 +1,9 @@
 <div id="spinner" class="hidden overlay-wrap">
   <div class="spinner-wrap">
    <div class="spinner">
-     @for($spinner = 0; $spinner < 12; $spinner++)
+     @repeat(12)
        <i></i>
-     @endfor
+     @endrepeat
    </div>
  </div>
 </div>

@@ -1,10 +1,9 @@
-footer {
-  background-color: $footer-color;
-  padding: 3rem 3rem 4rem;
-  height: 10rem;
+.footer {
+  @include color-mods;
+  @include overlay-element;
 }
 
-.footer-link {
+.site__footer-link {
   @extend %transition;
 
   color: $yellow;

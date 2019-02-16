@@ -11,6 +11,27 @@ $yellow: #fff10c;
 
 $footer-color: #191919;
 
+/**
+ * Typography
+ */
+@mixin font-league() {
+  font-family:
+    "LeagueSpartan-Bold",
+    sans-serif;
+}
+
+@mixin font-agipo() {
+  font-family:
+    "Agipo-Regular",
+    sans-serif;
+}
+
+@mixin font-system() {
+  font-family:
+    "system",
+    sans-serif;
+}
+
 $base-font-sans-serif: "Roboto", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
 $base-font-serif: "Agipo-Regular", "Times New Roman", "Times", "Baskerville", "Georgia", serif;
 $league: "LeagueSpartan-Bold", sans-serif;
@@ -47,12 +68,12 @@ $form-element-focus-border-color: $black !default;
 $placeholder-color: $gray !default;
 
 // Headers
-$h1-font-size: 3.157rem !default;
-$h2-font-size: 2.369rem !default;
-$h3-font-size: 1.777rem !default;
-$h4-font-size: 1.333rem !default;
-$h5-font-size: 17px !default;
-$h6-font-size: 15px !default;
+$h1-font-size: 3.157rem;
+$h2-font-size: 2.369rem;
+$h3-font-size: 1.777rem;
+$h4-font-size: 1.333rem;
+$h5-font-size: 17px;
+$h6-font-size: 15px;
 
 $headings-font-family: inherit !default;
 $headings-color: inherit !default;

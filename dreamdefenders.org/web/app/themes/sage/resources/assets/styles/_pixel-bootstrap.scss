@@ -1,0 +1,96 @@
+@mixin font-league() {
+  font-family:
+    "LeagueSpartan-Bold",
+    sans-serif;
+}
+
+@mixin font-agipo() {
+  font-family:
+    "Agipo-Regular",
+    sans-serif;
+}
+
+@mixin font-system() {
+  font-family:
+    "system",
+    sans-serif;
+}
+
+@mixin color-mods {
+  &.pitch {
+    --content-color: rgba(255, 255, 255, 1);
+    --bg-color: rgba(0, 0, 0, 1);
+  }
+
+  &.dark {
+    --content-color: rgba(255, 255, 255, 1);
+    --bg-color: rgba(0, 0, 0, 0.9);
+  }
+
+  &.darken {
+    --content-color: rgba(255, 255, 255, 1);
+    --bg-color: rgba(0, 0, 0, 0.5);
+  }
+
+  &.lighten {
+    --content-color: rgba(0, 0, 0, 1);
+    --bg-color: rgba(255, 255, 255, 0.5);
+  }
+
+  &.light {
+    --content-color: rgba(0, 0, 0, 1);
+    --bg-color: rgba(255, 255, 255, 0.9);
+  }
+
+  &.bloom {
+    --content-color: rgba(0, 0, 0, 1);
+    --bg-color: rgba(255, 255, 255, 1);
+  }
+}
+
+@mixin overlay-element {
+  &__overlay {
+    position: relative;
+
+    &::before {
+      z-index: 1;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background-color: var(--bg-color);
+    }
+
+    * {
+      z-index: 1;
+    }
+  }
+}
+
+.layout {
+  position: relative;
+
+  &__block {
+    &-tight {
+      height: 20vh;
+    }
+
+    &-spaced {
+      max-height: 50vh;
+      min-height: 700px;
+      height: 50vh;
+    }
+
+    &-full {
+      min-height: 100vh;
+      height: 100vh;
+    }
+  }
+}
+
+.inner__content-contained {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.5rem;
+}

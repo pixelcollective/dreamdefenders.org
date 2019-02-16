@@ -2,17 +2,12 @@
 
 @section('content')
   @include('partials.page-header')
-
-  @if (!have_posts())
-    <div class="alert alert-warning">
-      {{ __('Sorry, no results were found.', 'sage') }}
-    </div>
+  @if(!have_posts())
+    <div class="alert alert-warning">{{ __('Sorry, no results were found.', 'sage') }}</div>
     {!! get_search_form(false) !!}
   @endif
-
-  @while(have_posts()) @php the_post() @endphp
+  @posts
     @include('partials.content-search')
-  @endwhile
-
+  @endposts
   {!! get_the_posts_navigation() !!}
 @endsection
