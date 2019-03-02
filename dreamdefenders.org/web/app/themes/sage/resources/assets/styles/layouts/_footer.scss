@@ -11,56 +11,69 @@
   }
 }
 
-.site__footer-link {
-  @extend %transition;
-
-  color: $yellow;
-  font-family: $base-font-sans-serif;
-  font-family: $league;
-  text-decoration: none;
-  text-transform: uppercase;
-  opacity: 0.75;
-
-  &:not(:last-child) {
-    margin-right: 2rem;
-  }
-
-  &:hover {
-    opacity: 1;
-  }
-}
-
 .footer-links-container,
 .social-icons-container {
   display: flex;
   justify-content: center;
-  padding: 1rem;
-}
 
-.social-icons-container {
-  text-align: center;
+  .footer-link {
+    @extend %transition;
+
+    @include justify-around;
+    @include pv1;
+    @include ph2;
+    @include sans-serif;
+    @include black;
+    @include ttu;
+    @include no-underline;
+    @include fw9;
+
+    &:hover {
+      @extend %transition;
+
+      @include white;
+      @include bg-black;
+    }
+  }
 }
 
 .social-icon-link {
   @extend %transition;
 
-  background-color: $white;
-  color: $footer-color;
-  font-size: 1.3rem;
   display: block;
+  padding: 1rem;
+  margin: 1rem;
+  width: 4rem;
+  height: 4rem;
+  background-color: $black;
+  color: $black;
   border-radius: 50%;
-  line-height: 2rem;
-  opacity: 0.8;
-  min-width: 2rem;
-  max-width: 2rem;
-  min-height: 2rem;
-  max-height: 2rem;
+  opacity: 0.9;
 
-  &:not(:last-child) {
-    margin-right: 0.6rem;
+  svg {
+    fill: $white;
+    transform: scale(1);
+
+    g {
+      @extend %transition;
+
+      fill: $white;
+    }
   }
 
   &:hover {
-    background-color: $yellow;
+    background-color: $white;
+    opacity: 1;
+
+    svg {
+      @extend %transition;
+
+      fill: $black;
+      transform: scale(1.2);
+
+      g {
+        fill: $black;
+      }
+    }
   }
 }

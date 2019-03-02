@@ -63,4 +63,99 @@
       background-color: var(--content-color);
     }
   }
+
+  label {
+    background: transparent;
+    color: $white;
+  }
+
+  .inner__content-contained {
+    .hero__form.primary {
+      width: 28rem;
+      max-width: 100%;
+    }
+
+    .acf-form > .acf-form {
+      @include justify-end;
+
+      width: 100%;
+      max-width: 36rem;
+    }
+
+    .acf-fields > .acf-field {
+      display: block;
+      flex-direction: column;
+      border: none;
+      padding: 0.5rem 0;
+      width: 100%;
+      max-width: 36rem;
+    }
+
+    .acf-notice.-error {
+      background: $dark-red;
+      border-color: $white;
+      color: $white;
+      opacity: 1;
+
+      &:hover {
+        background: darken($dark-red, 1);
+      }
+    }
+
+    .acf-field.acf-notice.-error {
+      background: $dark-red;
+      border-color: $white;
+      color: $white;
+      opacity: 1;
+
+      &:hover {
+        background: darken($dark-red, 1);
+      }
+    }
+
+    .acf-field input[type="text"],
+    .acf-field input[type="password"],
+    .acf-field input[type="number"],
+    .acf-field input[type="search"],
+    .acf-field input[type="email"],
+    .acf-field input[type="url"],
+    .acf-field textarea,
+    .acf-field select {
+      background: transparent;
+      border: 3px solid white;
+      padding: 1rem 1rem;
+      color: $white;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+
+    .acf-input-wrap input {
+      height: 2.4rem;
+    }
+
+    .af-submit {
+      padding-left: 0;
+    }
+
+    .acf-button.af-submit-button {
+      @extend %transition;
+
+      @include font-league;
+
+      margin-left: 0;
+      padding: 0.5rem 1rem 0.25rem 1rem;
+      border: 2px solid $white;
+      color: $white;
+      background: transparent;
+
+      &:hover {
+        color: $black;
+        background: $white;
+      }
+    }
+  }
+
+  transition: all 0.3s ease-in-out;
 }

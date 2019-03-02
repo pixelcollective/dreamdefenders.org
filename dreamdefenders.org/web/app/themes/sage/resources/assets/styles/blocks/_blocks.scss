@@ -1,6 +1,10 @@
 @import "atomic";
 
 .wp-blocks {
+  @import "blocks/media";
+  @import "blocks/lists";
+  @import "blocks/dropcap";
+  @import "blocks/preformatted";
   @import "blocks/wrapper";
   @import "blocks/wp-block-columns";
   @import "blocks/wp-block-separator";
@@ -9,8 +13,6 @@
   @import "blocks/wp-block-quote";
   @import "blocks/wp-block-cover";
   @import "blocks/wp-block-images";
-  @import "blocks/media";
-  @import "blocks/lists";
-  @import "blocks/dropcap";
-  @import "blocks/preformatted";
+
+  @include pv4;
 }

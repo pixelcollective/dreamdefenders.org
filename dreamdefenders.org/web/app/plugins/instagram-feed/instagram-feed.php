@@ -3,13 +3,13 @@
 Plugin Name: Instagram Feed
 Plugin URI: https://smashballoon.com/instagram-feed
 Description: Display beautifully clean, customizable, and responsive Instagram feeds
-Version: 1.9.1
+Version: 1.11.2
 Author: Smash Balloon
 Author URI: https://smashballoon.com/
 License: GPLv2 or later
 Text Domain: instagram-feed
 
-Copyright 2018  Smash Balloon LLC (email : hey@smashballoon.com)
+Copyright 2019  Smash Balloon LLC (email : hey@smashballoon.com)
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation; either version 2 of the License, or
@@ -23,7 +23,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-define( 'SBIVER', '1.9.1' );
+define( 'SBIVER', '1.11.2' );
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -64,6 +64,7 @@ function display_instagram($atts, $content = null) {
         'followtextcolor' => isset($options[ 'sb_instagram_follow_btn_text_color' ]) ? $options[ 'sb_instagram_follow_btn_text_color' ] : '',
         'followtext' => isset($options[ 'sb_instagram_follow_btn_text' ]) ? $options[ 'sb_instagram_follow_btn_text' ] : '',
         'showheader' => isset($options[ 'sb_instagram_show_header' ]) ? $options[ 'sb_instagram_show_header' ] : '',
+        'headersize' => isset($options[ 'sb_instagram_header_size' ]) ? $options[ 'sb_instagram_header_size' ] : '',
         'showbio' => isset($options[ 'sb_instagram_show_bio' ]) ? $options[ 'sb_instagram_show_bio' ] : '',
         'headercolor' => isset($options[ 'sb_instagram_header_color' ]) ? $options[ 'sb_instagram_header_color' ] : '',
         'class' => '',
@@ -207,7 +208,8 @@ function display_instagram($atts, $content = null) {
     $sb_instagram_show_header = $atts['showheader'];
     ( $sb_instagram_show_header == 'on' || $sb_instagram_show_header == 'true' || $sb_instagram_show_header == true ) ? $sb_instagram_show_header = true : $sb_instagram_show_header = false;
     if( $atts[ 'showheader' ] === 'false' ) $sb_instagram_show_header = false;
-    $sb_instagram_header_color = str_replace('#', '', $atts['headercolor']);
+	$sb_instagram_header_size_class = in_array( strtolower( $atts['headersize'] ), array( 'medium', 'large' ) ) ? ' sbi_'.strtolower( $atts['headersize'] ) : '';
+	$sb_instagram_header_color = str_replace('#', '', $atts['headercolor']);
 
 	//As this is a new option in the update then set it to be true if it doesn't exist yet
 	if ( !array_key_exists( 'sb_instagram_show_bio', $options ) ) $sb_instagram_show_bio = 'true';
@@ -227,7 +229,7 @@ function display_instagram($atts, $content = null) {
     $sb_instagram_btn_background = str_replace('#', '', $atts['buttoncolor']);
     $sb_instagram_btn_text_color = str_replace('#', '', $atts['buttontextcolor']);
     //Load more button styles
-    $sb_instagram_button_styles = 'style="';
+    $sb_instagram_button_styles = 'style="display: none; ';
     if ( !empty($sb_instagram_btn_background) ) $sb_instagram_button_styles .= 'background: #'.$sb_instagram_btn_background.'; ';
     if ( !empty($sb_instagram_btn_text_color) ) $sb_instagram_button_styles .= 'color: #'.$sb_instagram_btn_text_color.';';
     $sb_instagram_button_styles .= '"';
@@ -244,7 +246,9 @@ function display_instagram($atts, $content = null) {
     if ( !empty($sb_instagram_follow_btn_text_color) ) $sb_instagram_follow_btn_styles .= 'color: #'.$sb_instagram_follow_btn_text_color.';';
     $sb_instagram_follow_btn_styles .= '"';
     //Follow button HTML
-    $sb_instagram_follow_btn_html = '<div class="sbi_follow_btn"><a href="https://www.instagram.com/" '.$sb_instagram_follow_btn_styles.' target="_blank"><i class="fa fab fa-instagram"></i>'.esc_html( stripslashes( $sb_instagram_follow_btn_text ) ).'</a></div>';
+	$sb_instagram_follow_btn_classes = '';
+	if( strpos($sb_instagram_follow_btn_styles, 'background') !== false ) $sb_instagram_follow_btn_classes = ' sbi_custom';
+    $sb_instagram_follow_btn_html = '<span class="sbi_follow_btn'.$sb_instagram_follow_btn_classes.'"><a href="https://www.instagram.com/" '.$sb_instagram_follow_btn_styles.' target="_blank" rel="noopener"><i class="fa fab fa-instagram"></i>'.esc_html( stripslashes( $sb_instagram_follow_btn_text ) ).'</a></span>';
 
     //Mobile
     $sb_instagram_disable_mobile = $atts['disablemobile'];
@@ -362,7 +366,7 @@ function display_instagram($atts, $content = null) {
     $sb_instagram_content .= '" '.$sb_instagram_styles .' data-id="' . $sb_instagram_user_id . '" data-num="' . trim($atts['num']) . '" data-res="' . trim($atts['imageres']) . '" data-cols="' . trim($sb_instagram_cols) . '" data-options=\'{&quot;sortby&quot;: &quot;'.$atts['sortby'].'&quot;, &quot;showbio&quot;: &quot;'.$sb_instagram_show_bio.'&quot;,'.$at_front_string.' &quot;headercolor&quot;: &quot;'.$sb_instagram_header_color.'&quot;, &quot;imagepadding&quot;: &quot;'.$sb_instagram_image_padding.'&quot;,'.$at_middle_string.' &quot;disablecache&quot;: &quot;'.$sb_instagram_disable_cache.'&quot;, &quot;sbiCacheExists&quot;: &quot;'.$sbi_cache_exists.'&quot;,'.$at_back_string.' &quot;sbiHeaderCache&quot;: &quot;'.$sbiHeaderCache.'&quot;'.$use_backup_json.'}\'>';
 
     //Header
-    if( $sb_instagram_show_header ) $sb_instagram_content .= '<div class="sb_instagram_header" style="padding: '.(2*intval($sb_instagram_image_padding)) . $sb_instagram_image_padding_unit .'; padding-bottom: 0;"></div>';
+    if( $sb_instagram_show_header ) $sb_instagram_content .= '<div class="sb_instagram_header'.$sb_instagram_header_size_class.'" style="padding: '.(2*intval($sb_instagram_image_padding)) . $sb_instagram_image_padding_unit .'; padding-bottom: 0;"></div>';
 
     //Images container
 	$padding_style = (int)$sb_instagram_image_padding > 0 ? ' style="padding: '.$sb_instagram_image_padding . $sb_instagram_image_padding_unit . ';"' : '';
@@ -377,16 +381,16 @@ function display_instagram($atts, $content = null) {
     }
 
     //Loader
-    if( !$sb_instagram_error ) $sb_instagram_content .= '<div class="sbi_loader fa-spin"></div>';
+    if( !$sb_instagram_error ) $sb_instagram_content .= '<div class="sbi_loader"></div>';
 
     //Load section
-    $sb_instagram_content .= '</div><div id="sbi_load"';
+    $sb_instagram_content .= '</div><div id="sbi_load" class="sbi_hidden"';
 
     if(($sb_instagram_image_padding == 0 || !isset($sb_instagram_image_padding)) && ($sb_instagram_show_btn || $sb_instagram_show_follow_btn)) $sb_instagram_content .= ' style="padding-top: 5px"';
     $sb_instagram_content .= '>';
 
     //Load More button
-    if( $sb_instagram_show_btn && !$sb_instagram_error ) $sb_instagram_content .= '<a class="sbi_load_btn" href="javascript:void(0);" '.$sb_instagram_button_styles.'><span class="sbi_btn_text">' . esc_html( stripslashes( $sb_instagram_load_btn_text ) ).'</span><i class="fa fa-spinner fa-pulse" aria-hidden="true" style="display:none;"></i></a>';
+    if( $sb_instagram_show_btn && !$sb_instagram_error ) $sb_instagram_content .= '<a class="sbi_load_btn" href="javascript:void(0);" '.$sb_instagram_button_styles.'><span class="sbi_btn_text">' . esc_html( stripslashes( $sb_instagram_load_btn_text ) ).'</span><span class="sbi_loader sbi_hidden"></span></a>';
 
     //Follow button
     if( $sb_instagram_show_follow_btn && !$sb_instagram_error ) $sb_instagram_content .= $sb_instagram_follow_btn_html;
@@ -402,7 +406,7 @@ function display_instagram($atts, $content = null) {
 		$access_token = isset( $options['sb_instagram_at'] ) ? $options['sb_instagram_at'] : '';
 
 		$sb_instagram_content .= '<script type="text/javascript">var sb_instagram_js_options = {"sb_instagram_at":"'.sbi_get_parts( $access_token ).'", "font_method":"'.$font_method.'"};</script>';
-		$sb_instagram_content .= "<script type='text/javascript' src='".plugins_url( '/js/sb-instagram.js?ver='.SBIVER , __FILE__ )."'></script>";
+		$sb_instagram_content .= "<script type='text/javascript' src='".plugins_url( '/js/sb-instagram.min.js?ver='.SBIVER , __FILE__ )."'></script>";
 	}
  
     //Return our feed HTML to display
@@ -440,7 +444,7 @@ function sbi_should_use_backup_cache( $token, $cache_name, $is_filtered, $always
 		if ( !strpos( $cache_name, '_header' ) ) {
 			echo '<div id="sbi_mod_error">';
 			echo '<p><b>' . __( 'Error: Access Token is not valid or has expired.', 'instagram-feed' ) . ' ' . __( 'Feed will not update.', 'instagram-feed' ) . '</b><br /><span>' . __(' This error message is only visible to WordPress admins</span>', 'instagram-feed' );
-			echo '<p>' . __( 'There\'s an issue with the Instagram Access Token that you are using. Please obtain a new Access Token on the plugin\'s Settings page.<br />If you continue to have an issue with your Access Token then please see <a href="https://smashballoon.com/my-instagram-access-token-keep-expiring/" target="_blank">this FAQ</a> for more information.', 'instagram-feed' );
+			echo '<p>' . __( 'There\'s an issue with the Instagram Access Token that you are using. Please obtain a new Access Token on the plugin\'s Settings page.<br />If you continue to have an issue with your Access Token then please see <a href="https://smashballoon.com/my-instagram-access-token-keep-expiring/" target="_blank" rel="noopener">this FAQ</a> for more information.', 'instagram-feed' );
 			echo '</div>';
 		}
 
@@ -470,31 +474,124 @@ function sbi_cache_photos() {
 		$transient_name = isset( $transient_name['feed'] ) ? sanitize_text_field( $transient_name['feed'] ) : 'sbi_other';
 	}
 
-	if ( strpos( $_POST['photos'], "%7B%22" ) === 0
-	     && ( strpos( "%22standard_resolution%22", $_POST['photos'] ) && strpos( "%22https://scontent.cdninstagram.com", $_POST['photos'] ) || ! strpos( "%22standard_resolution%22", $_POST['photos'] ) ) ) {
+	$cache_type = strpos( $transient_name, 'sbi_header_' ) !== 0 ? 'feed' : 'header';
+	$num_images = isset( $_POST['num_images'] ) ? (int)$_POST['num_images'] : 33;
 
-		$stripped_json_string = wp_strip_all_tags( $_POST['photos'] );
-		set_transient( $transient_name, $stripped_json_string, $cache_seconds );
+	if ( $num_images > 0 ) {
+	    $feed_tokens = isset( $_POST['feed_tokens'] ) ? $_POST['feed_tokens'] : array();
+	    $new_cache = ! empty( $feed_tokens ) ? sbi_get_post_data_from_tokens( $feed_tokens, $cache_type, $num_images ) : '';
+        echo $new_cache;
+		set_transient( $transient_name, $new_cache, $cache_seconds );
 
 		$backups_enabled = isset( $sb_instagram_settings['sb_instagram_backup'] ) ? $sb_instagram_settings['sb_instagram_backup'] !== '' : true;
 
 		if ( $backups_enabled ) {
-			if ( strlen( $stripped_json_string ) > 1999 && strpos( $transient_name, 'sbi_header_' ) !== 0 ) {
-				update_option( '!'.$transient_name, $stripped_json_string, false );
+			if ( strlen( $new_cache ) > 1999 && strpos( $transient_name, 'sbi_header_' ) !== 0 ) {
+				update_option( '!'.$transient_name, $new_cache, false );
 			} elseif ( strpos( $transient_name, 'sbi_header_' ) === 0 ) {
-				update_option( '!'.$transient_name, $stripped_json_string, false );
+				update_option( '!'.$transient_name, $new_cache, false );
 			}
 		}
 
 	}
 
-	if ( strlen( $stripped_json_string ) < 2000 && strpos( $transient_name, 'sbi_header_' ) !== 0 && get_option( '!'.$transient_name ) ) {
+	if ( strlen( $new_cache ) < 2000 && strpos( $transient_name, 'sbi_header_' ) !== 0 && get_option( '!'.$transient_name ) ) {
 		echo 'too much filtering';
 	}
 
 }
 add_action('wp_ajax_cache_photos', 'sbi_cache_photos');
 add_action('wp_ajax_nopriv_cache_photos', 'sbi_cache_photos');
+
+function sbi_get_post_data_from_tokens( $access_tokens = array(), $cache_type = 'feed', $num_needed = 33 ) {
+    $images = array();
+    $num_images_overall = 0;
+    $pagination = array(
+        'next_url' => array()
+    );
+    foreach ( $access_tokens as $token ) {
+        $clean_token = preg_replace("/[^a-zA-Z0-9\.]+/", "", sbi_maybe_clean( $token ) );
+        $split_token = explode( '.', $clean_token );
+        $id = $split_token[0];
+        if ( $cache_type === 'header' ) {
+            $api_call = 'https://api.instagram.com/v1/users/' . $id . '?access_token=' . $clean_token;
+        } else {
+            $api_call = 'https://api.instagram.com/v1/users/' . $id . '/media/recent?access_token=' . $clean_token . '&count=33';
+        }
+        $args = array(
+            'timeout' => 60,
+            'sslverify' => false
+        );
+        $result = wp_remote_get( $api_call, $args );
+        if ( ! is_wp_error( $result ) ) {
+            $decoded_results = json_decode( $result['body'], true );
+            $num_images_returned = 0;
+            if ( is_array( $decoded_results['data'] ) ) {
+                $num_images_returned = count( $decoded_results['data'] );
+            }
+            $num_images_overall += $num_images_returned;
+            $images = array_merge( $images, $decoded_results['data'] );
+            if ( !empty( $decoded_results['pagination']['next_url'] ) ) {
+                $pagination['next_url'][] = $decoded_results['pagination']['next_url'];
+            }
+        } else {
+            // error
+            return json_encode( $result );
+        }
+    }
+
+    if ( $cache_type === 'feed' ) {
+        $secondary_requests = 0;
+
+        while ( $num_images_overall < $num_needed && ! empty( $pagination['next_url'] ) && $secondary_requests < 10 ) {
+            $secondary_requests++;
+            $api_call = array_shift( $pagination['next_url'] );
+            $args = array(
+                'timeout' => 60,
+                'sslverify' => false
+            );
+            $result = wp_remote_get( $api_call, $args );
+            if ( ! is_wp_error( $result ) ) {
+                $decoded_results = json_decode( $result['body'], true );
+                $num_images_returned = 0;
+                if ( is_array( $decoded_results['data'] ) ) {
+                    $num_images_returned = count( $decoded_results['data'] );
+                }
+                $num_images_overall += $num_images_returned;
+                $images = array_merge( $images, $decoded_results['data'] );
+                if ( !empty( $decoded_results['pagination']['next_url'] ) ) {
+                    $pagination['next_url'][] = $decoded_results['pagination']['next_url'];
+                }
+            } else {
+                // error
+                return json_encode( $result );
+            }
+
+        }
+    }
+
+    if ( isset( $images[0]['created_time'] ) ) {
+        usort($images, 'sbi_date_sort' );
+    }
+
+    $return = array(
+        'pagination' => $pagination,
+        'data' => $images,
+        'meta' => array()
+    );
+
+    return json_encode( $return );
+}
+
+function sbi_date_sort( $a, $b ) {
+
+    if ( isset( $a['created_time'] ) ) {
+        return (int)$b['created_time'] - (int)$a['created_time'];
+    } else {
+        return rand ( -1, 1 );
+    }
+
+}
 
 function sbi_set_expired_token() {
 	$access_token = isset( $_POST['access_token'] ) ? sanitize_text_field( $_POST['access_token'] ) : false;
@@ -569,20 +666,20 @@ function sbi_get_cache() {
 	if ( ! empty( $feed_cache_transient_data ) ) {
 		$feed_cache_data = $feed_cache_transient_data;
 	} elseif ( ! isset( $options['check_api'] ) || $options['check_api'] === 'on' || $options['check_api'] === true ) {
-		$feed_cache_data = '{%22error%22:%22tryfetch%22}';
+		$feed_cache_data = '{"error":"tryfetch"}';
 	} elseif ( !get_transient( 'sbi_doing_tryfetch_once' ) && $backups_enabled ) {
 		set_transient( 'sbi_doing_tryfetch_once', 'true', 60*60 );
-		$feed_cache_data = '{%22error%22:%22tryfetch%22}';
-		$warning_message_data = ',%22tryfetchonce%22:{%22tryfetchonce%22:%22tryfetchonce%22}';
+		$feed_cache_data = '{"error":"tryfetch"}';
+		$warning_message_data = ',"tryfetchonce":{"tryfetchonce":"tryfetchonce"}';
 	} else {
-		$feed_cache_data = '{%22error%22:%22nocache%22}';
+		$feed_cache_data = '{"error":"nocache"}';
 	}
 
 	if ( $transient_names['comments'] === 'need' ) {
 		$comment_cache_data = get_transient( 'sbinst_comment_cache' );
-		$comment_cache_data = ! empty( $comment_cache_data ) ? sbi_encode_uri( $comment_cache_data ) : '{%22error%22:%22nocache%22}';
+		$comment_cache_data = ! empty( $comment_cache_data ) ? sbi_encode_uri( $comment_cache_data ) : '{"error":"nocache"}';
 	} else {
-		$comment_cache_data = '{%22error%22:%22nocache%22}';
+		$comment_cache_data = '{"error":"nocache"}';
 	}
 
 	// maybe use backup cache
@@ -591,19 +688,19 @@ function sbi_get_cache() {
 	if ( ! empty( $header_cache_data_transient_data ) ) {
 		$header_cache_data = $header_cache_data_transient_data;
 	} elseif ( $doing_tryfetch ) {
-		$header_cache_data = '{%22error%22:%22tryfetch%22}';
+		$header_cache_data = '{"error":"tryfetch"}';
 	} elseif ( !get_transient( 'sbi_doing_tryfetch_once' ) && $backups_enabled ) {
 		set_transient( 'sbi_doing_tryfetch_once', 'true', 60*60 );
-		$feed_cache_data = '{%22error%22:%22tryfetch%22}';
-		$warning_message_data = ',%22tryfetchonce%22:{%22tryfetchonce%22:%22tryfetchonce%22}';
+		$feed_cache_data = '{"error":"tryfetch"}';
+		$warning_message_data = ',"tryfetchonce":{"tryfetchonce":"tryfetchonce"}';
 	} elseif ( empty( $header_cache_data_transient_data ) || $still_using_backup ) {
 		$backup_header_cache = get_option( '!' . $transient_names['header'] );
-		$header_cache_data = ! empty( $backup_header_cache ) ? $backup_header_cache : '{%22error%22:%22nocache%22}';
+		$header_cache_data = ! empty( $backup_header_cache ) ? $backup_header_cache : '{"error":"nocache"}';
 		if ( $still_using_backup === 'falsecache' ) {
-			$warning_message_data = ',%22warning%22:{%22warning%22:%22falsecache%22}';
+			$warning_message_data = ',"warning":{"warning":"falsecache"}';
 		}
 	} else {
-		$header_cache_data = ! empty( $header_cache_data ) ? $header_cache_data : '{%22error%22:%22nocache%22}';
+		$header_cache_data = ! empty( $header_cache_data ) ? $header_cache_data : '{"error":"nocache"}';
 	}
 
 	// maybe use backup cache
@@ -611,11 +708,11 @@ function sbi_get_cache() {
 		$backup_feed_cache = get_option( '!' . $transient_names['feed'] );
 		$feed_cache_data = ! empty( $backup_feed_cache ) ? $backup_feed_cache : $feed_cache_data;
 		if ( $still_using_backup === 'falsecache' ) {
-			$warning_message_data = ',%22warning%22:{%22warning%22:%22falsecache%22}';
+			$warning_message_data = ',"warning":{"warning":"falsecache"}';
 		}
 	}
 
-	$data = '{%22header%22:' . $header_cache_data .',%22feed%22:' . $feed_cache_data . ',%22comments%22:' . $comment_cache_data . $warning_message_data . '}';
+	$data = '{"header":' . $header_cache_data .',"feed":' . $feed_cache_data . ',"comments":' . $comment_cache_data . $warning_message_data . '}';
 
 	echo $data;
 
@@ -805,6 +902,9 @@ function sb_instagram_activate() {
 	$options[ 'sb_instagram_show_follow_btn' ] = true;
     update_option( 'sb_instagram_settings', $options );
 	delete_option( 'sb_expired_tokens' );
+
+	global $wp_roles;
+	$wp_roles->add_cap( 'administrator', 'manage_instagram_feed_options' );
 }
 register_activation_hook( __FILE__, 'sb_instagram_activate' );
 
@@ -839,5 +939,8 @@ function sb_instagram_uninstall()
         FROM $table_name
         WHERE `option_name` LIKE ('%\_transient\_timeout\_&sbi\_%')
         " );
+
+	global $wp_roles;
+	$wp_roles->remove_cap( 'administrator', 'manage_instagram_feed_options' );
 }
 register_uninstall_hook( __FILE__, 'sb_instagram_uninstall' );

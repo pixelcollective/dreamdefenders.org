@@ -1,13 +1,17 @@
 .wp-block-button {
+  @include hover-bg-white;
+  @include hover-black;
+
   > .wp-block-button__link {
     @include pv3;
     @include ph4;
     @include dib;
     @include mb0;
-    @include bg-light-gray;
-    @include dark-gray;
     @include lh-solid;
     @include f6;
+    @include bg-black;
+    @include white;
+    @include no-underline;
   }
 
   &.alignleft {

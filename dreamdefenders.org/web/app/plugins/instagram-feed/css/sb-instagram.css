@@ -30,6 +30,7 @@
 #sb_instagram #sbi_images{
   width: 100%;
   float: left;
+  line-height: 0;
 
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -44,13 +45,27 @@
   zoom: 1;
   *display: inline;
 
+  max-height: 1000px;
   padding: inherit !important;
   margin: 0 !important;
   text-decoration: none;
+  opacity: 1;
+  overflow: hidden;
 
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+/* Transition items in */
+#sb_instagram #sbi_images .sbi_item.sbi_transition{
+  opacity: 0;
+  max-height: 0;
 }
 
 /* Cols */
@@ -185,12 +200,79 @@
 
 /* Loader */
 #sb_instagram .sbi_loader{
+  width: 20px;
+  height: 20px;
+
   position: relative;
+  top: 50%;
   left: 50%;
-  width: 16px;
-  height: 16px;
-  margin: 10px 0 10px -8px;
-  background: url('../img/loader.png') no-repeat;
+  margin: -10px 0 0 -10px;
+  background-color: #000;
+  background-color: rgba(0,0,0,0.5);
+
+  border-radius: 100%;
+  -webkit-animation: sbi-sk-scaleout 1.0s infinite ease-in-out;
+  animation: sbi-sk-scaleout 1.0s infinite ease-in-out;
+}
+/* Loader in button */
+#sb_instagram #sbi_load .sbi_loader{
+  position: absolute;
+  margin-top: -11px;
+  background-color: #fff;
+  opacity: 1;
+}
+@-webkit-keyframes sbi-sk-scaleout {
+  0% { -webkit-transform: scale(0) }
+  100% {
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+}
+@keyframes sbi-sk-scaleout {
+  0% {
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+  } 100% {
+      -webkit-transform: scale(1.0);
+      -ms-transform: scale(1.0);
+      transform: scale(1.0);
+      opacity: 0;
+    }
+}
+
+#sb_instagram .fa-spin,
+#sbi_lightbox .fa-spin{
+  -webkit-animation: fa-spin 2s infinite linear;
+  animation: fa-spin 2s infinite linear
+}
+
+#sb_instagram .fa-pulse,
+#sbi_lightbox .fa-pulse{
+  -webkit-animation: fa-spin 1s infinite steps(8);
+  animation: fa-spin 1s infinite steps(8)
+}
+
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg)
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg)
+  }
+}
+
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg)
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg)
+  }
 }
 
 /* HEADER */
@@ -207,7 +289,79 @@
   display: block;
   /*width: 100%;*/
   min-width: 100%\9;
+  text-decoration: none;
+  transition: color 0.5s ease;
 }
+/** Medium Header */
+/* Only use medium & large headers on devices above 480px */
+@media all and (min-width: 480px){
+  #sb_instagram .sb_instagram_header.sbi_medium .sbi_header_img {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+  }
+  #sb_instagram .sb_instagram_header.sbi_medium .sbi_header_img img {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+  }
+  #sb_instagram .sb_instagram_header.sbi_medium .sbi_header_text h3 {
+    font-size: 20px;
+  }
+  #sb_instagram .sb_instagram_header.sbi_medium .sbi_header_text .sbi_bio_info,
+  #sb_instagram .sb_instagram_header.sbi_medium .sbi_header_text .sbi_bio{
+    font-size: 14px;
+  }
+  #sb_instagram .sb_instagram_header.sbi_medium .sbi_header_text h3,
+  #sb_instagram .sb_instagram_header.sbi_medium .sbi_header_text .sbi_bio_info,
+  #sb_instagram .sb_instagram_header.sbi_medium .sbi_header_text .sbi_bio{
+    margin-left: 95px !important;
+    line-height: 1.4
+  }
+  #sb_instagram .sbi_medium .sbi_header_text h3{
+    margin-right: -85px !important;
+  }
+  #sb_instagram .sb_instagram_header.sbi_medium .sbi_header_text .sbi_bio_info{
+    margin-top: 4px !important;
+  }
+  #sb_instagram .sbi_medium .sbi_header_text.sbi_no_info h3{
+    padding-top: 20px !important;
+  }
+  /** Large Header */
+  #sb_instagram .sb_instagram_header.sbi_large .sbi_header_img {
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+  }
+  #sb_instagram .sb_instagram_header.sbi_large .sbi_header_img img {
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+  }
+  #sb_instagram .sb_instagram_header.sbi_large .sbi_header_text h3 {
+    font-size: 28px;
+  }
+  #sb_instagram .sb_instagram_header.sbi_large .sbi_header_text .sbi_bio_info,
+  #sb_instagram .sb_instagram_header.sbi_large .sbi_header_text .sbi_bio{
+    font-size: 16px;
+  }
+  #sb_instagram .sb_instagram_header.sbi_large .sbi_header_text h3,
+  #sb_instagram .sb_instagram_header.sbi_large .sbi_header_text .sbi_bio_info,
+  #sb_instagram .sb_instagram_header.sbi_large .sbi_header_text .sbi_bio{
+    margin-left: 140px !important;
+    line-height: 1.5;
+  }
+  #sb_instagram .sbi_large .sbi_header_text h3{
+    margin-right: -120px !important;
+  }
+  #sb_instagram .sb_instagram_header.sbi_large .sbi_header_text .sbi_bio_info{
+    margin-top: 12px !important;
+  }
+  #sb_instagram .sbi_large .sbi_header_text.sbi_no_info h3{
+    padding-top: 32px !important;
+  }
+}
+
 /* Header profile pic */
 #sb_instagram .sbi_header_img{
   float: left;
@@ -231,6 +385,36 @@
   border-radius: 40px;
 }
 /* Profile pic hover */
+/* Profile pic hover */
+#sb_instagram .sbi_header_img_hover{
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  color: #fff;
+  background: rgba(0,0,0,0.75);
+}
+#sb_instagram .sbi_header_img_hover i{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -12px;
+  margin-left: -12px;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  background: url('../img/small-logo.png') no-repeat 0 0;
+}
+#sb_instagram .sbi_header_img_hover{
+  transition: opacity 0.4s ease-in-out;
+}
+#sb_instagram .sb_instagram_header .sbi_fade_in{
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
 #sb_instagram .sbi_header_img_hover{
   position: absolute;
   width: 100%;
@@ -253,17 +437,6 @@
 #sb_instagram .sb_instagram_header a:hover .sbi_header_img_hover,
 #sb_instagram .sb_instagram_header a:focus .sbi_header_img_hover{
   opacity: 1;
-}
-#sb_instagram .sbi_header_img_hover i{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -12px;
-  margin-left: -12px;
-  width: 24px;
-  height: 24px;
-  overflow: hidden;
-  background: url('../img/small-logo.png') no-repeat 0 0;
 }
 /* Header text */
 #sb_instagram .sbi_header_text{
@@ -313,6 +486,17 @@
   margin: -8px 0 0 -7px;
   font-size: 15px;
 }
+#sb_instagram #sbi_load{
+  opacity: 1;
+  transition: all 0.5s ease-in;
+}
+#sb_instagram .sbi_load_btn .sbi_btn_text, #sb_instagram .sbi_load_btn .sbi_loader{
+  opacity: 1;
+  transition: all 0.1s ease-in;
+}
+#sb_instagram .sbi_hidden{
+  opacity: 0 !important;
+}
 #sb_instagram #sbi_load .sbi_load_btn,
 #sb_instagram .sbi_follow_btn a{
   display: -moz-inline-stack;
@@ -351,30 +535,49 @@
   *display: inline;
   text-align: center;
 }
-#sb_instagram #sbi_load .sbi_follow_btn svg.fa-instagram{
-  margin-right: 7px;
-}
 #sb_instagram .sbi_follow_btn.sbi_top{
   display: block;
   margin-bottom: 5px;
 }
 #sb_instagram .sbi_follow_btn a{
-  background: #517fa4;
+  background: #408bd1;
   color: #fff;
 }
-#sb_instagram .sbi_follow_btn a:hover,
-#sb_instagram .sbi_follow_btn a:focus,
-#sb_instagram #sbi_load .sbi_load_btn:hover,
-#sb_instagram #sbi_load .sbi_load_btn:focus{
-  filter: alpha(opacity=85);
-  opacity: 0.85;
+#sb_instagram .sbi_follow_btn a,
+#sb_instagram .sbi_follow_btn a,
+#sb_instagram #sbi_load .sbi_load_btn{
+  transition: all 0.1s ease-in;
 }
-#sb_instagram #sbi_load .fa-spinner,
+/* Hover state for default colors */
+#sb_instagram #sbi_load .sbi_load_btn:hover{
+  outline: none;
+  box-shadow: inset 0 0 20px 20px rgba(255,255,255,0.25);
+}
+#sb_instagram .sbi_follow_btn a:hover,
+#sb_instagram .sbi_follow_btn a:focus{
+  outline: none;
+  box-shadow: inset 0 0 10px 20px #359dff;
+}
+/* If a custom color is applied then just use opacity for the hover effect */
+#sb_instagram .sbi_follow_btn.sbi_custom a:hover,
+#sb_instagram .sbi_follow_btn.sbi_custom a:focus,
+#sb_instagram #sbi_load .sbi_load_btn.sbi_custom:hover{
+  box-shadow: inset 0 0 20px 20px rgba(255,255,255,0.15);
+}
+/* Active state */
+#sb_instagram .sbi_follow_btn a:active,
+#sb_instagram #sbi_load .sbi_load_btn:active{
+  box-shadow: inset 0 0 10px 20px rgba(0,0,0,0.3);
+}
+
 #sb_instagram .sbi_follow_btn .fa,
 #sb_instagram .sbi_follow_btn svg{
   margin-bottom: -1px;
   margin-right: 7px;
   font-size: 15px;
+}
+#sb_instagram .sbi_follow_btn svg{
+  vertical-align: -.125em;
 }
 #sb_instagram #sbi_load .sbi_follow_btn{
   margin-left: 5px;
@@ -384,6 +587,7 @@
 #sb_instagram .sb_instagram_error{
   width: 100%;
   text-align: center;
+  line-height: 1.4;
 }
 
 /* Mod only error msgs */

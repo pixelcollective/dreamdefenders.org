@@ -1,12 +1,4 @@
-
-// Converted Variables
-
-
-// Custom Media Query Variables
-
-
-/*
-
+/**
    FLOATS
    http://tachyons.io/docs/layout/floats/
 
@@ -28,23 +20,76 @@
      -gts = not-small
      -m  = medium
      -l  = large
+**/
 
-*/
+@mixin fl {
+  float: left;
+}
 
+@mixin fr {
+  float: right;
+}
 
+@mixin fn {
+  float: none;
+}
 
-@mixin fl { float: left;  display: inline; }
-@mixin fr { float: right; display: inline; }
-@mixin fn { float: none; }
+@mixin fl-gts {
+  @media #{$breakpoint-not-small} {
+    float: left;
+    display: inline;
+  }
+}
 
-@mixin fl-gts { @media #{$breakpoint-not-small} { float: left; display: inline; } }
-@mixin fr-gts { @media #{$breakpoint-not-small} { float: right; display: inline; } }
-@mixin fn-gts { @media #{$breakpoint-not-small} { float: none; } }
+@mixin fr-gts {
+  @media #{$breakpoint-not-small} {
+    float: right;
+    display: inline;
+  }
+}
 
-@mixin fl-m { @media #{$breakpoint-medium} { float: left; display: inline; } }
-@mixin fr-m { @media #{$breakpoint-medium} { float: right; display: inline; } }
-@mixin fn-m { @media #{$breakpoint-medium} { float: none; } }
+@mixin fn-gts {
+  @media #{$breakpoint-not-small} {
+    float: none;
+  }
+}
 
-@mixin fl-l { @media #{$breakpoint-large} { float: left; display: inline; } }
-@mixin fr-l { @media #{$breakpoint-large} { float: right; display: inline; } }
-@mixin fn-l { @media #{$breakpoint-large} { float: none; } }
+@mixin fl-m {
+  @media #{$breakpoint-medium} {
+    float: left;
+    display: inline;
+  }
+}
+
+@mixin fr-m {
+  @media #{$breakpoint-medium} {
+    float: right;
+    display: inline;
+  }
+}
+
+@mixin fn-m {
+  @media #{$breakpoint-medium} {
+    float: none;
+  }
+}
+
+@mixin fl-l {
+  @media #{$breakpoint-large} {
+    float: left;
+    display: inline;
+  }
+}
+
+@mixin fr-l {
+  @media #{$breakpoint-large} {
+    float: right;
+    display: inline;
+  }
+}
+
+@mixin fn-l {
+  @media #{$breakpoint-large} {
+    float: none;
+  }
+}

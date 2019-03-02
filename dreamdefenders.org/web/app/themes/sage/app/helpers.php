@@ -136,3 +136,15 @@ function display_sidebar()
     isset($display) || $display = apply_filters('sage/display_sidebar', false);
     return $display;
 }
+
+/**
+ * Simple function to pretty up our field partial includes.
+ *
+ * @param  mixed $partial
+ * @return mixed
+ */
+function get_field_partial($partial)
+{
+    $partial = str_replace('.', '/', $partial);
+    return include(config('theme.dir')."/app/fields/{$partial}.php");
+}

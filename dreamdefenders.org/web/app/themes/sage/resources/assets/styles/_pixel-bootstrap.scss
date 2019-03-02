@@ -115,6 +115,14 @@ main {
   padding: ($spacer * 8) $spacer;
 }
 
+.brave > div {
+  padding: ($spacer * 6) $spacer;
+
+  &.right {
+    justify-content: flex-end;
+  }
+}
+
 .inner__content-contained {
   max-width: 1000px;
   margin-left: auto;

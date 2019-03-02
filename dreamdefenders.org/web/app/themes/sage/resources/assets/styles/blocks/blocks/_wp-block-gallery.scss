@@ -75,8 +75,6 @@
       &.columns-#{ $i } .blocks-gallery-image,
       &.columns-#{ $i } .blocks-gallery-item {
         width: calc((100% / #{ $i }) - 1rem);
-
-        @include mh1;
       }
     }
   }

@@ -31,7 +31,7 @@ class App extends Controller
         return get_the_title();
     }
 
-    public function data()
+     /* public function data()
     {
         return $data = (object) array(
 
@@ -69,5 +69,5 @@ class App extends Controller
                 'button_text'       => get_field('donate_cta_button_text'),
             ),
         );
-    }
+    } */
 }

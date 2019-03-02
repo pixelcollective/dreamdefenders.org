@@ -54,14 +54,10 @@
         @include fw6;
       }
 
-      @media #{$breakpoint-large} {
-        @include ph7;
-      }
+      @include ph7-l;
     }
 
-    @media #{$breakpoint-large} {
-      @include pv4;
-    }
+    @include pv4-l;
   }
 
   &.alignleft blockquote,

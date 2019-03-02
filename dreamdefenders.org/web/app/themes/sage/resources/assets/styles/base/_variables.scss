@@ -43,9 +43,7 @@ $base-background-color: $white !default;
 $font-size-base: 1rem !default;
 $line-height-base: 1.5 !default;
 $base-font-family: $base-font-serif !default;
-
 $vertical-rhythm: ($line-height-base * 1em);
-
 $base-min-width: 320px;
 
 // Links
@@ -77,5 +75,4 @@ $headings-font-family: inherit !default;
 $headings-color: inherit !default;
 
 $animation-speed: 0.3s;
-
 $spacer: 1.5rem;

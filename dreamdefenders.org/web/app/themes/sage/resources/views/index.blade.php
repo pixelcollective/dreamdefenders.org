@@ -1,8 +1,8 @@
-{!!--
+{{--
 
 @todo transition theme here
 
---!!}
+--}}
 
 @extends('layouts.app')
 

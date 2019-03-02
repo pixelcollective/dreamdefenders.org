@@ -6,6 +6,7 @@ use Roots\Sage\Container;
 use Roots\Sage\Assets\JsonManifest;
 use Roots\Sage\Template\Blade;
 use Roots\Sage\Template\BladeProvider;
+use StoutLogic\AcfBuilder\FieldsBuilder;
 
 /**
  * Theme assets
@@ -285,5 +286,43 @@ add_action(
                 return "<?= " . __NAMESPACE__ . "\\asset_path({$asset}); ?>";
             }
         );
+
+        /**
+         * Implement log1x blade-svg-sage
+         */
+        add_filter(
+            'bladesvg',
+            function () {
+                return [
+                'svg_path' => 'resources/assets/svg',
+                'inline' => true,
+                'class' => 'svg'
+                ];
+            }
+        );
+
+        /**
+         * Hamburger menu blade directive
+         */
+        sage('blade')->compiler()->directive('burger', function () {
+            return '<div class="burger" data-target="primary-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>';
+        });
     }
 );
+
+/**
+ * Initialize ACF Builder
+ */
+add_action('init', function () {
+    collect(glob(config('theme.dir').'/app/fields/*.php'))->map(function ($field) {
+        return require_once($field);
+    })->map(function ($field) {
+        if ($field instanceof FieldsBuilder) {
+            acf_add_local_field_group($field->build());
+        }
+    });
+});

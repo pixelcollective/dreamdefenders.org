@@ -5,60 +5,87 @@ jQuery(document).ready(function($) {
         id = token.split('.')[0];
 
     if (token.length > 40) {
+
         //https://api.instagram.com/v1/users/self/?access_token=' . sbi_maybe_clean( $access_token )
         $('.sbi_admin_btn').css('opacity','.5').after('<div class="spinner" style="visibility: visible; position: relative;float: left;margin-top: 15px;"></div>');
         var url = 'https://api.instagram.com/v1/users/self/?access_token=' + token;
         jQuery.ajax({
-            method: "GET",
-            url: url,
-            success: function(data) {
-                $('.sbi_admin_btn').css('opacity','1');
-                $('#sbi_config').find('.spinner').remove();
-                if (!$('.sbi_connected_account ').length) {
-                    $('.sbi_no_accounts').remove();
-                    sbSaveToken(token,true);
-                } else {
-                    var buttonText = 'Connect This Account';
-                    // if the account is connected, offer to update in case information has changed.
-                    if ($('#sbi_connected_account_'+id).length) {
-                        buttonText = 'Update This Account';
+            url: sbiA.ajax_url,
+            type: 'post',
+            data: {
+                action: 'sbi_after_connection',
+                access_token: token,
+            },
+            success: function (data) {
+                if (data.indexOf('{') === 0) {
+                    var accountInfo = JSON.parse(data);
+                    if (typeof accountInfo.error_message === 'undefined') {
+                        accountInfo.token = token;
+
+                        $('.sbi_admin_btn').css('opacity','1');
+                        $('#sbi_config').find('.spinner').remove();
+                        if (!$('.sbi_connected_account ').length) {
+                            $('.sbi_no_accounts').remove();
+                            sbSaveToken(token,true);
+                        } else {
+                            var buttonText = 'Connect This Account';
+                            // if the account is connected, offer to update in case information has changed.
+                            if ($('#sbi_connected_account_'+id).length) {
+                                buttonText = 'Update This Account';
+                            }
+                            $('#sbi_config').append('<div id="sbi_config_info" class="sb_get_token">' +
+                                '<div class="sbi_config_modal">' +
+                                '<img class="sbi_ca_avatar" src="'+accountInfo.profile_picture+'" />' +
+                                '<div class="sbi_ca_username"><strong>'+accountInfo.username+'</strong></div>' +
+                                '<p class="sbi_submit"><input type="submit" name="sbi_submit" id="sbi_connect_account" class="button button-primary" value="'+buttonText+'">' +
+                                '<a href="JavaScript:void(0);" class="button button-secondary" id="sbi_switch_accounts">Switch Accounts</a></p>' +
+                                '<a href="JavaScript:void(0);"><i class="sbi_modal_close fa fa-times"></i></a>' +
+                                '</div>' +
+                                '</div>');
+
+                            $('#sbi_connect_account').click(function(event) {
+                                event.preventDefault();
+                                $('#sbi_config_info').fadeOut(200);
+                                sbSaveToken(token,false);
+                            });
+
+                            sbiSwitchAccounts();
+                        }
+                    } else {
+                        $('.sbi_admin_btn').css('opacity','1');
+                        $('#sbi_config').find('.spinner').remove();
+                        var message = accountInfo.error_message;
+
+                        $('#sbi_config').append('<div id="sbi_config_info" class="sb_get_token">' +
+                            '<div class="sbi_config_modal">' +
+                            '<p>'+message+'</p>' +
+                            '<p class="sbi_submit"><a href="JavaScript:void(0);" class="button button-secondary" id="sbi_switch_accounts">Switch Accounts</a></p>' +
+                            '<a href="JavaScript:void(0);"><i class="sbi_modal_close fa fa-times"></i></a>' +
+                            '</div>' +
+                            '</div>');
+
+                        sbiSwitchAccounts();
                     }
+
+                } else {
+                    $('.sbi_admin_btn').css('opacity','1');
+                    $('#sbi_config').find('.spinner').remove();
+                    var message = 'There was an error connecting your account';
+
                     $('#sbi_config').append('<div id="sbi_config_info" class="sb_get_token">' +
                         '<div class="sbi_config_modal">' +
-                        '<img class="sbi_ca_avatar" src="'+data.data.profile_picture+'" />' +
-                        '<div class="sbi_ca_username"><strong>'+data.data.username+'</strong></div>' +
-                        '<p class="sbi_submit"><input type="submit" name="sbi_submit" id="sbi_connect_account" class="button button-primary" value="'+buttonText+'">' +
-                        '<a href="JavaScript:void(0);" class="button button-secondary" id="sbi_switch_accounts">Switch Accounts</a></p>' +
+                        '<p>'+message+'</p>' +
+                        '<p class="sbi_submit"><a href="JavaScript:void(0);" class="button button-secondary" id="sbi_switch_accounts">Switch Accounts</a></p>' +
                         '<a href="JavaScript:void(0);"><i class="sbi_modal_close fa fa-times"></i></a>' +
                         '</div>' +
                         '</div>');
 
-                    $('#sbi_connect_account').click(function(event) {
-                        event.preventDefault();
-                        $('#sbi_config_info').fadeOut(200);
-                        sbSaveToken(token,false);
-                    });
-
                     sbiSwitchAccounts();
                 }
 
-            },
-            error: function(data) {
-                $('.sbi_admin_btn').css('opacity','1');
-                $('#sbi_config').find('.spinner').remove();
-                var message = typeof data.responseJSON !== 'undefined' && data.responseJSON.error_type === 'OAuthRateLimitException' ? 'This account\'s access token is currently over the rate limit. Try removing this access token from all feeds and wait an hour before reconnecting.' : 'There was an error connecting your account';
-
-                $('#sbi_config').append('<div id="sbi_config_info" class="sb_get_token">' +
-                    '<div class="sbi_config_modal">' +
-                    '<p>'+message+'</p>' +
-                    '<p class="sbi_submit"><a href="JavaScript:void(0);" class="button button-secondary" id="sbi_switch_accounts">Switch Accounts</a></p>' +
-                    '<a href="JavaScript:void(0);"><i class="sbi_modal_close fa fa-times"></i></a>' +
-                    '</div>' +
-                    '</div>');
-
-                sbiSwitchAccounts();
             }
         });
+
 
         function sbiSwitchAccounts(){
             $('#sbi_switch_accounts').on('click', function(){
@@ -343,6 +370,15 @@ jQuery(document).ready(function($) {
   });
 
 
+  jQuery('#sbi_admin .sbi_lock').hover(function(){
+    jQuery(this).siblings('.sbi_pro_tooltip').show();
+  }, function(){
+    jQuery('.sbi_pro_tooltip').hide();
+  });
+
+  
+
+
   //Add the color picker
 	if( jQuery('.sbi_colorpick').length > 0 ) jQuery('.sbi_colorpick').wpColorPicker();
 
@@ -421,5 +457,55 @@ jQuery(document).ready(function($) {
 	jQuery('#sbi_admin .sbi-show-pro').on('click', function(){
 		jQuery(this).parent().next('.sbi-pro-options').toggle();
 	});
+
+	/* Pro 3.0 JS */
+    function sbiUpdateLayoutTypeOptionsDisplay() {
+        setTimeout(function(){
+            jQuery('.sb_instagram_layout_settings').hide();
+            jQuery('.sb_instagram_layout_settings.sbi_layout_type_'+jQuery('.sb_layout_type:checked').val()).show();
+        }, 1);
+    }
+    jQuery('.sb_layout_type').change(sbiUpdateLayoutTypeOptionsDisplay);
+
+    jQuery('.sbi_close_options').on('click', function(){
+        jQuery('.sb_instagram_layout_settings').hide();
+    });
+
+    function sbiUpdateHighlightOptionsDisplay() {
+        jQuery('.sb_instagram_highlight_sub_options').hide();
+        var selected = jQuery('#sb_instagram_highlight_type').val();
+
+        if (selected === 'pattern') {
+            jQuery('.sb_instagram_highlight_pattern').show();
+        } else if (selected === 'id') {
+            jQuery('.sb_instagram_highlight_ids').show();
+        } else {
+            jQuery('.sb_instagram_highlight_hashtag').show();
+        }
+
+    }
+    sbiUpdateHighlightOptionsDisplay();
+    jQuery('#sb_instagram_highlight_type').change(sbiUpdateHighlightOptionsDisplay);
+
+    //Open/close the expandable option sections
+    jQuery('.sbi-expandable-options').hide();
+    jQuery('.sbi-expand-button a').on('click', function(e){
+        e.preventDefault();
+        var $self = jQuery(this);
+        $self.parent().next('.sbi-expandable-options').toggle();
+        if( $self.text().indexOf('Show') !== -1 ){
+            $self.text( $self.text().replace('Show', 'Hide') );
+        } else {
+            $self.text( $self.text().replace('Hide', 'Show') );
+        }
+    });
+
+    //Selecting a post layout
+    jQuery('.sbi_layout_cell').click(function(){
+        var $self = jQuery(this);
+        $('.sb_layout_type').trigger('change');
+        $self.addClass('sbi_layout_selected').find('.sb_layout_type').attr('checked', 'checked');
+        $self.siblings().removeClass('sbi_layout_selected');
+    });
 
 });

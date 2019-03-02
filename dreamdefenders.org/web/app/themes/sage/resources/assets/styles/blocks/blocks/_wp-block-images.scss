@@ -1,4 +1,8 @@
 .wp-block-image {
+  img {
+    width: 100%;
+  }
+
   figure {
     @include ma0;
     @include pa0;

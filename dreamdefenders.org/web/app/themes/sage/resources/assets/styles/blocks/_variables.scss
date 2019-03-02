@@ -1,6 +1,26 @@
-$sans-serif: -apple-system, BlinkMacSystemFont, "avenir next", avenir, helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
-$serif: georgia, serif;
-$code: consolas, monaco, monospace;
+$sans-serif:
+  -apple-system,
+  BlinkMacSystemFont,
+  "avenir next",
+  avenir,
+  helvetica,
+  "helvetica neue",
+  ubuntu,
+  roboto,
+  noto,
+  "segoe ui",
+  arial,
+  sans-serif;
+
+$serif:
+  georgia,
+  serif;
+
+$code:
+  consolas,
+  monaco,
+  monospace;
+
 $font-size-headline: 6rem;
 $font-size-subheadline: 5rem;
 $font-size-1: 3rem;
@@ -143,9 +163,6 @@ $color-nested-links-hover: $light-blue;
 $color-initial: $white;
 $color-primary: $red;
 $color-secondary: $light-red;
-$color-tertiary: #f4f5f6;
-$color-quaternary: #d1d1d1;
-$color-quinary: #e1e1e1;
 
 $color-nested-links: $blue;
 $color-nested-links-hover: $light-blue;

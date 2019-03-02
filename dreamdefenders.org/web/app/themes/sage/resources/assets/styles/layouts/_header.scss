@@ -1,170 +1,219 @@
-$header-height: 5rem;
-
-.site-header {
+header {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 5.5rem;
+  height: 4.8rem;
   z-index: 10;
   transition:
-    top 00.3s ease-in-out,
-    height 00.3s ease-in-out,
-    background-color 00.3s ease-in-out,
-    background-image 0.9s ease-in-out;
-
-  @include media(">phone") {
-    height: 5rem;
-  }
+    top 0.3s ease-in-out,
+    height 0.3s ease-in-out,
+    background-color 0.3s ease-in-out,
+    background-image 0.5s ease-in-out;
 }
 
 .top-panel {
+  background: transparent;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  transition: all 0.3s ease-in-out;
   position: relative;
-  margin: 0 auto;
-  padding: 0 1rem;
-  max-width: 75rem;
+  margin: 0;
   height: 100%;
+  padding-left: 1rem;
 
-  @include media(">phone") {
-    padding: 0 2.625rem;
-  }
-
-  @include media(">=widescreen") {
-    padding: 0;
-  }
-}
-
-.logo,
-.logo-dark {
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin: 2rem 1rem 1rem 0;
-  width: 7em;
-  height: 7rem;
-  transition: transform 00.3s ease-in-out;
-
-  @include media("<=phone") {
-    // transform: scale(0.8);
-    position: absolute;
-    top: -2.2rem;
-    left: 1rem;
-
-    .nav-up & {
-      top: -3.2rem;
-    }
-  }
-}
-
-nav {
-  display: inline-block;
-}
-
-nav .menu-primary-menu-container ul {
-  @extend %listreset;
-
-  position: relative;
-  font-family: $league;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  transition:
-    right 00.3s ease-in-out,
-    opacity 00.3s ease-in-out;
-
-  @include media("<tablet") {
-    background-color: $black;
-    flex-direction: column;
-    justify-content: center;
-    position: absolute;
-    right: -100%;
-    top: 0;
-    opacity: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-
-    &.is-active {
-      opacity: 1;
-      right: 0%;
-    }
-  }
-
-  li a {
-    color: $white;
-    line-height: 3;
-    margin-left: 0;
+  .logo {
     position: relative;
-    text-decoration: none;
-    text-transform: uppercase;
-    white-space: nowrap;
-    transition: color 00.3s ease-in-out;
-    padding: 0.5em 0.5em 0 0.5em;
-
-    @include media("<tablet") {
-      font-family: "LeagueSpartan-Bold", sans-serif;
-      font-size: 1.5rem;
-    }
-
-    &::before {
-      background-color: $yellow;
-      content: "";
-      height: 2px;
-      position: absolute;
-      left: calc(50% - 1.25rem);
-      bottom: -0.5rem;
-      text-decoration: none;
-      width: 2.5rem;
-      transform: scaleX(0);
-      transition: all 0.3s ease-in-out 0s;
-      visibility: hidden;
-    }
-
-    &:hover::before {
-      visibility: visible;
-      transform: scaleX(1);
-    }
-
-    @include media(">tablet") {
-      line-height: initial;
-      margin-left: 2rem;
-    }
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: scale(0.9);
+    z-index: 10000;
+    top: 0.7rem;
+    transition: all 0.3s ease-in-out;
   }
 
-  li {
-    ul.sub-menu {
-      display: none;
-      position: absolute;
+  ul {
+    top: 0.7rem;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.nav-up {
+  height: 2.6rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: all 0.3s ease-in-out;
+
+  .logo {
+    top: 0.85rem;
+    transition: all 0.3s ease-in-out;
+    transform: scale(0.7);
+  }
+
+  ul {
+    top: 0.2rem;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.nav-primary {
+  height: 50%;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-items: flex-end;
+  justify-content: space-evenly;
+
+  ul {
+    @extend %listreset;
+
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    font-family: $league;
+
+    @media screen and (max-width: $medium-screen) {
+      position: relative;
+      left: 0;
+      top: -100%;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      overflow: hidden;
       flex-direction: column;
-      align-items: flex-start;
-      background-color: black;
-      margin-left: 2rem;
-      min-width: 160px;
+      justify-content: center;
+      background-color: $black;
+      transition: top 0.2s ease-in-out;
 
       &.is-active {
-        @include media("<tablet") {
-          // display: flex;
-          position: relative;
-          align-items: flex-end;
-          justify-content: flex-end;
-          flex-direction: column;
-          height: auto;
-          width: auto;
-          z-index: 1;
+        display: flex;
+        flex-direction: column;
+        background-color: $black;
+        opacity: 0.95;
+        z-index: 100;
+        left: 0;
+        top: 0;
+        transition: top 0.4s ease-in-out;
+        position: fixed;
+        overflow: hidden;
+        touch-action: none;
+
+        li {
+          text-align: center !important;
+          display: block;
+          height: 4rem;
+          margin-bottom: 0;
+          border-bottom: 3px solid black;
+          transition: all 0.4s ease-in-out;
+
+          > a {
+            display: inline;
+            text-align: center !important;
+          }
+
+          &:hover {
+            padding-top: 0;
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+
+    li {
+      height: 100%;
+      overflow: hidden;
+
+      a {
+        height: 100%;
+        justify-items: flex-end;
+        display: flex;
+        align-items: center;
+        color: $white;
+        position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+        white-space: nowrap;
+        transition: color 0.3s ease-in-out;
+
+        @media screen and (max-width: $medium-screen) {
+          font-family: "LeagueSpartan-Bold", sans-serif;
+          font-size: 1.5rem;
+        }
+
+        &::before {
+          margin-top: 0.4rem;
+          background-color: $yellow;
+          content: "";
+          height: 2px;
+          position: absolute;
+          text-decoration: none;
+          width: 100%;
+          transform: scaleX(0);
+          transition: all 0.3s ease-in-out 0s;
+          visibility: hidden;
+        }
+
+        &:hover::before {
+          visibility: visible;
+          transform: scaleX(1);
         }
       }
 
-      li {
-        margin: 0.5em 0;
-      }
-
-      li a {
+      ul.sub-menu {
+        position: absolute;
+        flex-direction: column;
+        align-content: center;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s;
+        margin-top: 2.8rem;
         margin-left: 0;
-        padding-left: 0.5em;
+        max-width: 150px;
+        justify-content: center;
+        text-align: center;
 
         &::before {
-          display: none;
+          background: transparent;
+        }
+
+        li {
+          background: black;
+          position: relative;
+          padding: 1rem 0 1rem 0;
+          top: 0;
+          left: -45px;
+          text-align: justify;
+          justify-content: center;
+        }
+
+        li a {
+          position: relative;
+          text-align: center;
+          align-content: center;
+          justify-content: center;
+        }
+
+        &.is-active {
+          @include relative-m;
+          @include relative-l;
+        }
+      }
+
+      @media only screen and (min-width: 1000px) {
+        &.menu-item-has-children:hover {
+          ul.sub-menu {
+            opacity: 1;
+            visibility: visible;
+          }
+
+          &::before {
+            display: block;
+            background: black;
+            padding: 15rem;
+            position: relative;
+            left: -2rem;
+            visibility: visible;
+          }
         }
       }
     }
@@ -173,14 +222,14 @@ nav .menu-primary-menu-container ul {
 
 .hamburger {
   display: block;
-  position: absolute;
   top: 0;
   right: 0.5rem;
   transform: scale(0.8);
   outline: none;
   -webkit-tap-highlight-color: transparent;
+  z-index: 1000;
 
-  @include media(">=tablet") {
+  @media screen and (min-width: $medium-screen) {
     display: none;
   }
 
@@ -206,15 +255,4 @@ nav .menu-primary-menu-container ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-.nav-up {
-  height: 3.5rem;
-  background-color: rgba(0, 0, 0, 0.9);
-
-  .logo {
-    width: 3.5em;
-    height: 3.5rem;
-    margin: 0;
-  }
 }

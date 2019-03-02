@@ -1,12 +1,4 @@
-
-// Converted Variables
-
-
-// Custom Media Query Variables
-
-
-/*
-
+/**
    TYPOGRAPHY
    http://tachyons.io/docs/typography/measure/
 
@@ -14,10 +6,7 @@
      -gts = not-small
      -m  = medium
      -l  = large
-
-*/
-
-
+**/
 
 /* Measure is limited to ~66 characters */
 @mixin measure {
@@ -46,14 +35,13 @@
 }
 
 /* Combine this class with a width to truncate text (or just leave as is to truncate at width of containing element. */
-
 @mixin truncate {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-@mixin measure-gts  {
+@mixin measure-gts {
   @media #{$breakpoint-not-small} {
     max-width: $measure;
   }

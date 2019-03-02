@@ -1,23 +1,13 @@
-
-// Converted Variables
-
-
-// Custom Media Query Variables
-
-
-/*
-
+/**
   TABLES
   Docs: http://tachyons.io/docs/elements/tables/
-
-*/
-
+**/
 @mixin collapse {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-@mixin striped--light-silver{
+@mixin striped--light-silver {
   :nth-child(odd) {
     background-color: $light-silver;
   }

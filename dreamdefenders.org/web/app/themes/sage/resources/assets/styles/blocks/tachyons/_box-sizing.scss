@@ -1,16 +1,6 @@
-
-// Converted Variables
-
-
-// Custom Media Query Variables
-
-
-/*
-
-  BOX SIZING
-
-*/
-
+/**
+ * BOX SIZING
+ **/
 @mixin border-box {
   box-sizing: border-box;
 }
@@ -29,7 +19,12 @@ legend,
 pre,
 code,
 a,
-h1,h2,h3,h4,h5,h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 p,
 ul,
 ol,
@@ -48,5 +43,5 @@ input[type="password"],
 input[type="tel"],
 input[type="text"],
 input[type="url"] {
-  @include border-box;
+  box-sizing: border-box;
 }

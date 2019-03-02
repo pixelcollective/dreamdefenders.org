@@ -47,38 +47,36 @@
     }
   }
 
-  @media #{$breakpoint-large} {
-    &.alignleft {
-      @include fl;
-      @include cl;
-      @include w-40;
-      @include mr4;
-      @include mt0;
+  &.alignleft {
+    @include fl-l;
+    @include cl-l;
+    @include w-40-l;
+    @include mr4-l;
+    @include mt0-l;
 
-      > p {
-        @include tc;
-      }
+    > p {
+      @include tc-l;
     }
+  }
 
-    &.alignright {
-      @include fr;
-      @include cr;
-      @include w-40;
-      @include ml4;
-      @include mt0;
+  &.alignright {
+    @include fr-l;
+    @include cr-l;
+    @include w-40-l;
+    @include ml4-l;
+    @include mt0-l;
 
-      > p {
-        @include tc;
-      }
+    > p {
+      @include tc-l;
     }
+  }
 
-    &.aligncenter {
-      @include cb;
-      @include w-100;
+  &.aligncenter {
+    @include cb-l;
+    @include w-100-l;
 
-      &::before {
-        @include cf;
-      }
+    &::before {
+      @include cf;
     }
   }
 }
