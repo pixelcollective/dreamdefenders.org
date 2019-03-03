@@ -2,10 +2,14 @@
   display: flex;
   flex-wrap: wrap;
   flex-grow: 1;
+  background-size: cover;
+  background-attachment: fixed;
 
   > div {
     width: 100%;
     display: block;
+    background-size: cover;
+    background-attachment: fixed;
 
     @media screen and (min-width: $breakpoint-not-small) {
       width: 200px;
@@ -19,9 +23,6 @@
       flex-wrap: wrap;
       flex-grow: 1;
     }
-
-    background-size: cover;
-    background-attachment: fixed;
 
     article {
       @include pa4;
