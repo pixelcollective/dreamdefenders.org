@@ -68,7 +68,7 @@ add_action(
          *
          * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#editor-styles
          */
-        add_theme_support('editor-styles');
+        // add_theme_support('editor-styles');
 
         // add_theme_support( 'dark-editor-styles');
         // add_editor_style( 'style-editor.css' );
