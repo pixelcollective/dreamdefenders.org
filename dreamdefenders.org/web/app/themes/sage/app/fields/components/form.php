@@ -27,8 +27,8 @@ $form
             'layout' => 'vertical',
             'return_format' => 'value',
         ])
-            ->addChoices(['form_5c79e324329ac' => 'Email Signup'])
-            ->setDefaultValue('form_5c79e324329ac')
+            ->addChoices(['form_5c7a417d81cab' => 'Email Signup'])
+            ->setDefaultValue('form_5c7a417d81cab')
             ->setInstructions("Select which form you would like to include")
 
         ->addText('form__heading', [
