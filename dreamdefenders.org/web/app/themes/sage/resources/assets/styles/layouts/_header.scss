@@ -61,7 +61,15 @@ header {
   max-width: 900px;
   display: flex;
   justify-items: flex-end;
-  justify-content: space-evenly;
+  justify-content: flex-end;
+
+  > div {
+    width: 100%;
+  }
+
+  .menu-primary-menu {
+    justify-content: space-around;
+  }
 
   ul {
     @extend %listreset;
