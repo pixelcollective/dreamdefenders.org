@@ -50,11 +50,11 @@
       @endif
 
       <div class="post-index">
-
-      @while (have_posts()) @php the_post() @endphp
-        @include('partials.content-single')
-
-      @endwhile
+        @while (have_posts()) @php the_post() @endphp
+        <div class="page bg-white">
+          @include('partials.content-single')
+        </div>
+        @endwhile
     </div>
 
       {!! get_the_posts_navigation() !!}
