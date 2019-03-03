@@ -4,12 +4,12 @@ export default {
       const nav = document.querySelector('.site-header')
       window.scrollY <= 10 ? nav.className = 'site-header' : nav.className = 'site-header nav-up'
     }
-    $('.hamburger').click(() => {
+    jQuery('.hamburger').click(() => {
       event.preventDefault();
-      $('.nav-primary ul').toggleClass('is-active');
-      ($('html').css('overflow') == 'hidden')
-        ? $('html').css('overflow', 'scroll')
-        : $('html').css('overflow', 'hidden')
+      jQuery('.nav-primary ul').toggleClass('is-active');
+      (jQuery('html').css('overflow') == 'hidden')
+        ? jQuery('html').css('overflow', 'scroll')
+        : jQuery('html').css('overflow', 'hidden')
     })
   },
   finalize() {},

@@ -1,0 +1,39 @@
+.post-index {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+
+  > div {
+    width: 100%;
+    display: block;
+
+    @media screen and (min-width: $breakpoint-not-small) {
+      width: 200px;
+      max-width: 50%;
+      flex-wrap: wrap;
+      flex-grow: 1;
+    }
+
+    @media screen and (max-width: $breakpoint-not-small) {
+      width: 100vw;
+      flex-wrap: wrap;
+      flex-grow: 1;
+    }
+
+    background-size: cover;
+    background-attachment: fixed;
+
+    article {
+      @include pa4;
+    }
+
+    * {
+      color: white;
+
+      a:hover {
+        @include bg-black;
+        @include white;
+      }
+    }
+  }
+}

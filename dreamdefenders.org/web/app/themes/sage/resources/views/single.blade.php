@@ -17,11 +17,12 @@
 
           @posts
             <div class="post-index">
-              @include('partials.content-'.get_post_type())
+              @include('partials.content-single')
             </div>
           @endposts
 
           {!! get_the_posts_navigation() !!}
+
         @endlayout
 
         @layout('instagram')
@@ -51,7 +52,7 @@
       <div class="post-index">
 
       @while (have_posts()) @php the_post() @endphp
-        @include('partials.content-'.get_post_type())
+        @include('partials.content-single')
 
       @endwhile
     </div>
