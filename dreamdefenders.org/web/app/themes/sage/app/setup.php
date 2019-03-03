@@ -29,9 +29,10 @@ add_action(
             true
         );
 
-        if (is_single() &&
-            comments_open() &&
-            get_option('thread_comments')) :
+        if (is_single()
+            && comments_open()
+            && get_option('thread_comments')
+        ) :
             wp_enqueue_script('comment-reply');
         endif;
     },
@@ -304,46 +305,166 @@ add_action(
         /**
          * Hamburger menu blade directive
          */
-        sage('blade')->compiler()->directive('burger', function () {
-            return '<div class="burger" data-target="primary-menu">
+        sage('blade')->compiler()->directive(
+            'burger', function () {
+                return '<div class="burger" data-target="primary-menu">
                         <span></span>
                         <span></span>
                         <span></span>
                     </div>';
-        });
+            }
+        );
     }
 );
 
 /**
  * Initialize ACF Builder
  */
-add_action('init', function () {
-    collect(glob(config('theme.dir').'/app/fields/*.php'))->map(function ($field) {
-        return require_once($field);
-    })->map(function ($field) {
-        if ($field instanceof FieldsBuilder) {
-            acf_add_local_field_group($field->build());
-        }
-    });
-});
+add_action(
+    'init', function () {
+        collect(glob(config('theme.dir').'/app/fields/*.php'))->map(
+            function ($field) {
+                return include_once $field;
+            }
+        )->map(
+            function ($field) {
+                if ($field instanceof FieldsBuilder) {
+                    acf_add_local_field_group($field->build());
+                }
+            }
+        );
+    }
+);
 
 /**
  * Initialize ACF Forms
  */
-add_action('af/register_forms', function () {
-    af_register_form(array(
-        'key' => 'form_5c7a417d81cab',
-        'title' => 'Newsletter Signup',
-        'display' => array(
+add_action(
+    'af/register_forms', function () {
+        af_register_form(
+            array(
+            'key' => 'form_5c7a417d81cab',
+            'title' => 'Newsletter Signup',
+            'display' => array(
             'description' => '',
             'success_message' => '',
-        ),
-        'create_entries' => false,
-        'restrictions' => array(
+            ),
+            'create_entries' => false,
+            'restrictions' => array(
             'entries' => false,
             'user' => false,
             'schedule' => false,
-        ),
-        'emails' => false,
-    ));
-});
+            ),
+            'emails' => false,
+            )
+        );
+    }
+);
+
+/**
+ * Initialize Custom Post Types
+ */
+
+add_action(
+    'init',
+    function () {
+        /**
+         * Freedom Papers
+         */
+        register_extended_post_type(
+            'freedom-paper',
+            [
+                // Add the post type to the site's main RSS feed:
+                'show_in_feed' => false,
+
+                // Show all posts on the post type archive:
+                'archive' => [
+                    'nopaging' => true
+                ],
+                'excerpt' => false,
+                'content_editor' => false,
+                'enter-title-here' => 'Title of Freedom Paper',
+                'show_in_quick_edit' => false,
+
+                // Add some custom columns to the admin screen:
+                'admin_cols' => [
+                    'featured_image' => false,
+                    'published' => [
+                        'title'       => 'Published',
+                        'meta_key'    => 'published_date',
+                        'date_format' => 'd/m/Y'
+                    ],
+                    'genre' => [
+                        'taxonomy' => 'subject',
+                        'show_in_menu' => true,
+                    ],
+                    'editor' => false,
+                ],
+
+                // Add a dropdown filter to the admin screen:
+                'admin_filters' => [
+                    'Subject of Paper' => [
+                        'taxonomy' => 'Subject'
+                    ]
+                ],
+            ],
+            [
+                // Override the base names used for labels:
+                'singular' => 'Freedom Paper',
+                'plural'   => 'Freedom Papers',
+                'slug'     => 'freedom-papers',
+            ]
+        );
+
+        // Remove Editor from Freedom Paper posttype
+        remove_post_type_support('freedom-paper', 'editor');
+        remove_post_type_support('freedom-paper', 'thumbnail');
+
+        /**
+         * Campaigns
+         */
+        register_extended_post_type(
+            'fight',
+            [
+                // Add the post type to the site's main RSS feed:
+                'show_in_feed' => true,
+                'show_in_rest' => true,
+
+                // Show all posts on the post type archive:
+                'archive' => [
+                    'nopaging' => false
+                ],
+
+                // Add some custom columns to the admin screen:
+                'admin_cols' => [
+                    'featured_image' => [
+                        'title'          => 'Featured image',
+                        'featured_image' => 'thumbnail'
+                    ],
+                    'published' => [
+                        'title'       => 'Published',
+                        'meta_key'    => 'published_date',
+                        'date_format' => 'd/m/Y'
+                    ],
+                ],
+            ],
+            [
+                // Override the base names used for labels:
+                'singular' => 'Fight',
+                'plural'   => 'Fights',
+                'slug'     => 'fights',
+                'enter-title-here' => 'Name of Brawl ✊🏽',
+            ]
+        );
+
+        /**
+         * Taxonomies
+         */
+        register_extended_taxonomy('subject', 'freedom-paper', [
+            'meta_box' => 'radio',
+        ]);
+        register_extended_taxonomy('campaign', 'fight', [
+            'meta_box' => 'radio',
+        ]);
+    }
+);

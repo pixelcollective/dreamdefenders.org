@@ -1,7 +1,4 @@
 .wp-block-button {
-  @include hover-bg-white;
-  @include hover-black;
-
   > .wp-block-button__link {
     @include pv3;
     @include ph4;
@@ -13,6 +10,7 @@
     @include black;
     @include no-underline;
     @include ttu;
+    @include bg-transparent;
 
     border: 2px solid black;
     transition:

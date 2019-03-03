@@ -69,6 +69,9 @@
     color: $white;
   }
 
+  /**
+   * Forms Hero
+   **/
   .inner__content-contained {
     .hero__form.primary {
       width: 28rem;
@@ -155,6 +158,13 @@
         background: $white;
       }
     }
+  }
+
+  /**
+   * Freedom Paper
+   **/
+  &__excerpt {
+    @include white;
   }
 
   transition: transform 0.3s ease-in-out;
