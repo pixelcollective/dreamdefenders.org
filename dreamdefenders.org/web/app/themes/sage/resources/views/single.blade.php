@@ -16,9 +16,11 @@
         @endlayout
 
         @layout('content')
-        <div class="page bg-white">
-          @include('partials.content-page')
-        </div>
+        <main>
+          <div class="page bg-white">
+            @include('partials.content-page')
+          </div>
+        </main>
         @endlayout
 
         @layout('instagram')
@@ -38,9 +40,11 @@
     {{-- Fallback Layout --}}
     @else
       @include('components.hero-default')
-      <div class="page bg-white">
-        @include('partials.content-page')
-      </div>
+      <main>
+        <div class="page bg-white">
+          @include('partials.content-page')
+        </div>
+      </main>
       @shortcode('[instagram-feed]')
     @endif
 
