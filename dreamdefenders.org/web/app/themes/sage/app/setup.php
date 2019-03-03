@@ -330,22 +330,20 @@ add_action('init', function () {
 /**
  * Initialize ACF Forms
  */
-
-function register_forms() {
-	af_register_form( array(
-		'key' => 'form_5c7a417d81cab',
-		'title' => 'Newsletter Signup',
-		'display' => array(
-			'description' => '',
-			'success_message' => '',
-		),
-		'create_entries' => false,
-		'restrictions' => array(
-			'entries' => false,
-			'user' => false,
-			'schedule' => false,
-		),
-		'emails' => false,
-	) );
-}
-add_action( 'af/register_forms', 'register_forms' );
+add_action('af/register_forms', function () {
+    af_register_form(array(
+        'key' => 'form_5c7a417d81cab',
+        'title' => 'Newsletter Signup',
+        'display' => array(
+            'description' => '',
+            'success_message' => '',
+        ),
+        'create_entries' => false,
+        'restrictions' => array(
+            'entries' => false,
+            'user' => false,
+            'schedule' => false,
+        ),
+        'emails' => false,
+    ));
+});
