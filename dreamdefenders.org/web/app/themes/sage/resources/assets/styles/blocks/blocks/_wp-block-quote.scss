@@ -1,8 +1,8 @@
 .wp-block-quote {
   @include b--secondary;
+  @include pv3;
 
   > * {
-    @include f6;
     @include ph4;
   }
 
@@ -14,6 +14,12 @@
       @include ph4;
     }
   }
+}
+
+cite {
+  @include ttu;
+  @include fs-normal;
+  @include fw6;
 }
 
 .wp-block-pullquote {
@@ -30,7 +36,7 @@
     @include db;
 
     > blockquote {
-      @include pv5;
+      @include pv4;
       @include bt;
       @include bb;
       @include bw1;
@@ -77,7 +83,8 @@
 
     > blockquote {
       @include fl;
-      @include mt2;
+      @include mv3;
+      @include pv2;
       @include mr4;
     }
   }
@@ -87,7 +94,8 @@
 
     > blockquote {
       @include fr;
-      @include mt2;
+      @include mv3;
+      @include pv2;
       @include ml4;
     }
   }

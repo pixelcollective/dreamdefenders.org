@@ -9,9 +9,24 @@
     @include mb0;
     @include lh-solid;
     @include f6;
-    @include bg-black;
-    @include white;
+    @include b--black-10;
+    @include black;
     @include no-underline;
+    @include ttu;
+
+    border: 2px solid black;
+    transition:
+      background-color 0.3s ease-in-out,
+      color 0.3s ease-in-out;
+
+    &:hover {
+      @include bg-black;
+      @include white;
+
+      transition:
+        background-color 0.3s ease-in-out,
+        color 0.3s ease-in-out;
+    }
   }
 
   &.alignleft {

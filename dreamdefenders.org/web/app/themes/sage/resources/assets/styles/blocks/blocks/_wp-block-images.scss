@@ -3,6 +3,10 @@
     width: 100%;
   }
 
+  figcaption {
+    @include tc;
+  }
+
   figure {
     @include ma0;
     @include pa0;
@@ -16,8 +20,10 @@
     }
 
     &.alignleft {
+      @include w-50;
+      @include fl;
+
       > img {
-        @include fl;
         @include mt2;
         @include mr4;
       }
@@ -25,24 +31,40 @@
       > figure {
         @include cl;
       }
+
+      &::after {
+        content: "";
+        height: 0;
+        clear: both;
+      }
     }
 
     &.alignright {
-      > img,
-      > figcaption {
-        @include fr;
+      @include w-50;
+      @include fr;
+
+      > img {
         @include mt2;
-        @include ml4;
+        @include mr4;
       }
 
       > figcaption {
-        @include dib;
-        @include cr;
+        @include w-50;
+        @include fr;
+      }
+
+      &::after {
+        content: "";
+        height: 0;
+        clear: both;
       }
     }
 
     &.aligncenter {
       @include tc;
+      @include w-50;
+      @include ml-auto;
+      @include mr-auto;
     }
   }
 }

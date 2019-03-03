@@ -75,7 +75,7 @@
 .wp-block-audio {
   audio {
     @include db;
-    @include w-70-l;
+    @include w-100;
     @include ml-auto;
     @include mr-auto;
 

@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('header')
+  @include('partials.header')
+@endsection
+
 @section('content')
   @posts
 
@@ -34,9 +38,9 @@
     {{-- Fallback Layout --}}
     @else
       @include('components.hero-default')
-      <div class="page bg-white">
+      <article class="page bg-white">
         @include('partials.content-page')
-      </div>
+      </article>
       @shortcode('[instagram-feed]')
     @endif
 

@@ -3,7 +3,7 @@
   @include('partials.head')
   <body @php body_class() @endphp>
     @php do_action('get_header') @endphp
-      @include('partials.header')
+      @yield('header')
       @yield('content')
     @php do_action('get_footer') @endphp
     @include('partials.footer')

@@ -4,9 +4,12 @@
   @include bb-0;
   @include bl-0;
   @include br-0;
-  @include b--near-white;
+  @include b--gray;
   @include o-30;
   @include bg-transparent;
+  @include w-100;
+
+  height: 1px;
 
   & .is-style-wide {
     @include w-80-l;
