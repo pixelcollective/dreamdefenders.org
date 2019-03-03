@@ -49,12 +49,10 @@
       @endif
 
       <div class="post-index">
-
-      @while (have_posts()) @php the_post() @endphp
-        @include('partials.content-'.get_post_type())
-
-      @endwhile
-    </div>
+        @while (have_posts()) @php the_post() @endphp
+          @include('partials.content')
+        @endwhile
+      </div>
 
       {!! get_the_posts_navigation() !!}
       @shortcode('[instagram-feed]')
