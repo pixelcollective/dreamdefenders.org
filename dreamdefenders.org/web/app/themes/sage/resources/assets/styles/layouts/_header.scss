@@ -16,20 +16,14 @@ header.site-header {
   align-items: center;
   justify-content: space-evenly;
   transition: all 0.3s ease-in-out;
-  position: relative;
-  margin: 0;
   height: 100%;
   padding-left: 1rem;
 
   .logo {
     z-index: 10000;
+    position: relative;
+    top: 0.2rem;
     width: 100px;
-    transition: all 0.3s ease-in-out;
-    padding-top: 20px;
-  }
-
-  ul {
-    top: 0.7rem;
     transition: all 0.3s ease-in-out;
   }
 }
@@ -40,17 +34,13 @@ header.site-header {
   transition: all 0.3s ease-in-out;
 
   .logo {
-    transition: all 0.3s ease-in-out;
-  }
-
-  ul {
-    top: 0.2rem;
+    position: relative;
     transition: all 0.3s ease-in-out;
   }
 }
 
 .nav-primary {
-  height: 50%;
+  height: 100%;
   width: 100%;
   max-width: 900px;
   display: flex;
@@ -74,11 +64,12 @@ header.site-header {
     justify-content: space-evenly;
     position: relative;
     font-family: $league;
+    transition: opacity 0.4s ease-in-out;
 
     @media screen and (max-width: $medium-screen) {
-      position: relative;
-      left: 0;
-      top: -100%;
+      position: absolute;
+      right: 100%;
+      top: 0%;
       width: 100%;
       height: 100%;
       opacity: 0;
@@ -86,7 +77,7 @@ header.site-header {
       flex-direction: column;
       justify-content: center;
       background-color: $black;
-      transition: top 0.2s ease-in-out;
+      transition: opacity 0.4s ease-in-out;
 
       &.is-active {
         display: flex;
@@ -96,10 +87,10 @@ header.site-header {
         z-index: 100;
         left: 0;
         top: 0;
-        transition: top 0.4s ease-in-out;
         position: fixed;
         overflow: hidden;
         touch-action: none;
+        transition: opacity 0.4s ease-in-out;
 
         li {
           text-align: center !important;
@@ -107,16 +98,33 @@ header.site-header {
           height: 4rem;
           margin-bottom: 0;
           border-bottom: 3px solid black;
-          transition: all 0.4s ease-in-out;
+          transition: opacity 0.4s ease-in-out;
 
           > a {
             display: inline;
             text-align: center !important;
-          }
+            padding: 1rem;
 
-          &:hover {
-            padding-top: 0;
-            padding-bottom: 0;
+            &::before {
+              height: 100%;
+              content: "";
+              top: 0;
+              position: absolute;
+              width: 100%;
+              transform: scaleX(0);
+              transition: all 0.3s ease-in-out 0s;
+              visibility: hidden;
+            }
+
+            &:hover {
+              background: $white;
+              color: $black;
+            }
+
+            &:hover::before {
+              visibility: visible;
+              transform: scaleX(0);
+            }
           }
         }
       }
@@ -124,7 +132,6 @@ header.site-header {
 
     li {
       height: 100%;
-      overflow: hidden;
 
       a {
         height: 100%;
@@ -168,31 +175,48 @@ header.site-header {
         align-content: center;
         visibility: hidden;
         transition: opacity 0.3s, visibility 0.3s;
-        margin-top: 2.8rem;
+        margin-top: 1.8rem;
         margin-left: 0;
         max-width: 150px;
         justify-content: center;
         text-align: center;
 
-        &::before {
-          background: transparent;
-        }
-
         li {
           background: black;
           position: relative;
           padding: 1rem 0 1rem 0;
-          top: 0;
-          left: -45px;
+          left: -30%;
           text-align: justify;
           justify-content: center;
+          padding-bottom: 1rem;
+          height: 100%;
+
+          &::before {
+            background-color: $yellow;
+            height: 100%;
+            content: "";
+            top: 0;
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            transition: all 0.3s ease-in-out 0s;
+            visibility: hidden;
+          }
+
+          &:hover::before {
+            visibility: visible;
+            transform: scaleX(1);
+          }
         }
 
         li a {
-          position: relative;
           text-align: center;
           align-content: center;
           justify-content: center;
+
+          &:hover {
+            color: $black;
+          }
         }
 
         &.is-active {
@@ -224,7 +248,7 @@ header.site-header {
 
 .hamburger {
   display: block;
-  top: 0;
+  top: -0.2rem;
   right: 0.5rem;
   transform: scale(0.8);
   outline: none;
@@ -251,10 +275,4 @@ header.site-header {
 .show {
   display: flex !important;
   transition: all 0.3s ease-in-out 0s;
-}
-
-.mobile-sub {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }

@@ -1,6 +1,7 @@
 @import "atomic";
 
 .wp-blocks {
+  @import "blocks/typography";
   @import "blocks/media";
   @import "blocks/lists";
   @import "blocks/dropcap";
