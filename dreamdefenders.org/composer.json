@@ -72,7 +72,8 @@
     "wpackagist-plugin/cdn-enabler": ">=1",
     "wpackagist-plugin/stream": "^3.2",
     "wpackagist-plugin/block-unit-test": ">=1",
-    "wpackagist-plugin/simple-custom-post-order": ">=2.4"
+    "wpackagist-plugin/simple-custom-post-order": ">=2.4",
+    "wpackagist-plugin/just-image-optimizer": ">=1.1"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",
