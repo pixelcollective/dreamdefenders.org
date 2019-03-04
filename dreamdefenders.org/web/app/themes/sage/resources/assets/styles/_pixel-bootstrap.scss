@@ -111,6 +111,18 @@ main {
   }
 }
 
+.post-index .half-it {
+  @media screen and (min-width: $medium-screen) {
+    @include db;
+    @include w-50;
+  }
+
+  @media screen and (max-width: $medium-screen) {
+    @include db;
+    @include w-100;
+  }
+}
+
 .heroic > div {
   padding: ($spacer * 8) $spacer;
 }

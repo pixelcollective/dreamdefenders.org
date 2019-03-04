@@ -167,5 +167,10 @@
     @include white;
   }
 
+  .term__description p {
+    @include white;
+    @include f5;
+  }
+
   transition: transform 0.3s ease-in-out;
 }

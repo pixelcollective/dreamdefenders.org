@@ -94,7 +94,7 @@
     }
 
     * {
-      color: white;
+      @include white;
     }
   }
 }

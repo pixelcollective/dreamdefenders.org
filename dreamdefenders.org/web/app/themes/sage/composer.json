@@ -41,7 +41,8 @@
     "log1x/blade-svg-sage": "^2.0",
     "querypath/querypath": "^3.0",
     "stoutlogic/acf-builder": "^1.8",
-    "johnbillion/extended-cpts": "^4.2"
+    "johnbillion/extended-cpts": "^4.2",
+    "tareq1988/wp-eloquent": "^1.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.8.0",

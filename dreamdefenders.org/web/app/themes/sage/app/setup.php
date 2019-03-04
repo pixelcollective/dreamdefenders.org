@@ -381,6 +381,8 @@ add_action(
                 'archive' => [
                     'nopaging' => true
                 ],
+
+                'has_archive' => false,
                 'excerpt' => false,
                 'content_editor' => false,
                 'enter-title-here' => 'Title of Freedom Paper',
@@ -424,7 +426,7 @@ add_action(
          * Campaigns
          */
         register_extended_post_type(
-            'fight',
+            'project',
             [
                 // Add the post type to the site's main RSS feed:
                 'show_in_feed' => true,
@@ -450,10 +452,10 @@ add_action(
             ],
             [
                 // Override the base names used for labels:
-                'singular' => 'Fight',
-                'plural'   => 'Fights',
-                'slug'     => 'fights',
-                'enter-title-here' => 'Name of Brawl ✊🏽',
+                'singular' => 'Project',
+                'plural'   => 'Projects',
+                'slug'     => 'projects',
+                'enter-title-here' => 'Name of Project',
             ]
         );
 
@@ -463,7 +465,7 @@ add_action(
         register_extended_taxonomy('subject', 'freedom-paper', [
             'meta_box' => 'radio',
         ]);
-        register_extended_taxonomy('campaign', 'fight', [
+        register_extended_taxonomy('campaign', 'project', [
             'meta_box' => 'radio',
         ]);
     }
