@@ -92,6 +92,9 @@ main {
 
 .layout {
   &__block {
+    @include ml-auto;
+    @include mr-auto;
+
     &-tight {
       padding: $spacer;
     }
