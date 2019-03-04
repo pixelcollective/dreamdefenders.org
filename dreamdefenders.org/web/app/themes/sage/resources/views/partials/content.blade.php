@@ -13,7 +13,7 @@
         <h2 class="entry-title"><a href="{{ get_permalink() }}">{!! get_the_title() !!}</a></h2>
         <p class="byline author vcard">{{ __('By', 'sage') }}
           <a href="{{ get_author_posts_url(get_the_author_meta('ID')) }}" rel="author" class="fn">
-            @author
+            {!! get_the_author_meta('nickname') !!}
           </a>
         </p>
       </header>
