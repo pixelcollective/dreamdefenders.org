@@ -98,10 +98,14 @@ main {
 
     &-spaced {
       padding: ($spacer * 4) $spacer;
+
+      @media screen and (max-width: $medium-screen) {
+        padding: ($spacer * 2) ($spacer / 2);
+      }
     }
 
     &-heroic {
-      padding: ($spacer * 8) $spacer;
+      padding: ($spacer * 2) ($spacer / 2);
     }
 
     &-full {

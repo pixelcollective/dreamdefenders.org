@@ -18,14 +18,20 @@
       flex-grow: 1;
     }
 
-    @media screen and (max-width: $breakpoint-not-small) {
+    @media screen and (max-width: $medium-screen) {
       width: 100vw;
       flex-wrap: wrap;
       flex-grow: 1;
     }
 
     article {
-      @include pa6;
+      @media screen and (min-width: $medium-screen) {
+        @include pa6;
+      }
+
+      @media screen and (max-width: $medium-screen) {
+        @include pa2;
+      }
 
       .posted {
         @include white;
