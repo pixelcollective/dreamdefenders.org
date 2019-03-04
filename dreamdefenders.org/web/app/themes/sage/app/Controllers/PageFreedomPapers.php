@@ -11,6 +11,7 @@ class PageFreedomPapers extends Controller
     {
         $papers = Post::type('freedom-paper')
                     ->status('publish')
+                    ->orderBy('menu_order')
                     ->get()
                     ->toArray();
 
