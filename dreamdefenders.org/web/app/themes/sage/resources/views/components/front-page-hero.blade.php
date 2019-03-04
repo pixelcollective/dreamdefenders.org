@@ -1,11 +1,9 @@
 <section class="hero hero__bg-center darken
                 hero__overlay heroic
                 heroic"
-  @if($data->bg_img)
-    style="background-image: url({!! $data->bg_img !!});"
-  @elseif($data->bg_color)
-    style="background-color: {!! $data->bg_color !!};"
-  @endif>
+                @if($data->bg_img) style="background-image: url({!! $data->bg_img !!});"
+                @elseif($data->bg_color) style="background-color: {!! $data->bg_color !!};"
+                @endif>
 
     <div class="hero__content inner__content-contained
              {!! $data->desktop_alignment !!}
