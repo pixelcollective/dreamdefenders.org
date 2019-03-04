@@ -7,7 +7,7 @@ use StoutLogic\AcfBuilder\FieldsBuilder;
 $post = new FieldsBuilder('post');
 
 $post->setLocation('post_type', '==', 'post')
-      ->or('post_type', '==', 'fight');
+      ->or('post_type', '==', 'project');
 $post->addFields(get_field_partial('partials.builder'));
 
 return $post;

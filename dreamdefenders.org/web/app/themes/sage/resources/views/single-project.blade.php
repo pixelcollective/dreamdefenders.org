@@ -7,8 +7,6 @@
 @section('content')
   @posts
 
-  @include('components.hero-default')
-
     {{-- Builder Layout --}}
     @if(get_field('components'))
       @layouts('components')
