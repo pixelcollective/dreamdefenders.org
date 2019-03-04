@@ -1,1 +1,4 @@
 mysql_root_password: "{{ vault_mysql_root_password }}" # Define this variable in group_vars/staging/vault.yml
+max_upload_filesize: 200M
+post_max_size: 200M
+upload_max_filesize: 200M

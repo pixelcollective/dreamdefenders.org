@@ -4,5 +4,5 @@ ferm_enabled: false
 mysql_root_password: "{{ vault_mysql_root_password }}" # Define this variable in group_vars/development/vault.yml
 web_user: vagrant
 max_upload_filesize: 2000M
-post_max_size: 2000M
-upload_max_filesize: 2000M
+post_max_size: 20000M
+upload_max_filesize: 20000M

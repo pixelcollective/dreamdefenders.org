@@ -39,6 +39,7 @@
 
     {{-- Fallback Layout --}}
     @else
+      @include('components.hero-default')
       <main>
         <article class="page bg-white">
           @include('partials.content-page')
