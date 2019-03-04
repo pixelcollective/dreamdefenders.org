@@ -92,9 +92,6 @@ main {
 
 .layout {
   &__block {
-    @include ml-auto;
-    @include mr-auto;
-
     &-tight {
       padding: $spacer;
     }
@@ -114,6 +111,11 @@ main {
     &-full {
       min-height: 100vh;
       height: 100vh;
+    }
+
+    &__box {
+      @include ml-auto;
+      @include mr-auto;
     }
   }
 }
