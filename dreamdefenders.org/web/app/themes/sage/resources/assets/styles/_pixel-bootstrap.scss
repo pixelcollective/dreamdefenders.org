@@ -208,3 +208,40 @@ main {
 .semi-transparent {
   opacity: 0.4;
 }
+
+.fixed.post_nav {
+  color: black;
+
+  @include no-underline;
+
+  .prev_post,
+  .next_post {
+    a {
+      color: black;
+      border: 1px solid white;
+
+      @include bg-black;
+      @include white;
+      @include b--white;
+      @include no-underline;
+      @include pa1;
+
+      &:hover {
+        @include bg-yellow;
+        @include black;
+      }
+    }
+  }
+
+  .next_post {
+    position: absolute;
+    top: 50vh;
+    left: 10px;
+  }
+
+  .prev_post {
+    position: absolute;
+    top: 50vh;
+    right: 10px;
+  }
+}
