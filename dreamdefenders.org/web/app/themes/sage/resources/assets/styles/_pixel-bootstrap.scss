@@ -120,6 +120,10 @@ main {
   }
 }
 
+.contained {
+  max-width: 1000px;
+}
+
 .post-index .half-it {
   @media screen and (min-width: $medium-screen) {
     @include db;
