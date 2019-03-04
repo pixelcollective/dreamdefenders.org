@@ -71,7 +71,8 @@
     "wpackagist-plugin/advanced-forms": ">=1.6.2",
     "wpackagist-plugin/cdn-enabler": ">=1",
     "wpackagist-plugin/stream": "^3.2",
-    "wpackagist-plugin/block-unit-test": ">=1"
+    "wpackagist-plugin/block-unit-test": ">=1",
+    "wpackagist-plugin/simple-custom-post-order": ">=2.4"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",
