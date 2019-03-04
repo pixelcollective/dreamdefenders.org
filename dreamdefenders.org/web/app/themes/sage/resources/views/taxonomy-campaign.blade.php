@@ -15,7 +15,7 @@
 
   <div class="post-index">
     @while (have_posts()) @php the_post() @endphp
-      @include('partials.content-freedom-paper')
+      @include('partials.content-page')
     @endwhile
   </div>
 
