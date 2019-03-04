@@ -112,11 +112,11 @@ main {
       min-height: 100vh;
       height: 100vh;
     }
+  }
 
-    &__box {
-      @include ml-auto;
-      @include mr-auto;
-    }
+  &__box {
+    @include ml-auto;
+    @include mr-auto;
   }
 }
 
