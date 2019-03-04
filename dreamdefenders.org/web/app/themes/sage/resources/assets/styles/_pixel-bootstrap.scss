@@ -234,14 +234,29 @@ main {
   }
 
   .next_post {
-    position: absolute;
+    position: fixed;
     top: 50vh;
     left: 10px;
   }
 
   .prev_post {
-    position: absolute;
+    position: fixed;
     top: 50vh;
     right: 10px;
+  }
+}
+
+section.freedom-paper-single-view {
+  @media screen and (min-width: $medium-screen) {
+    width: 70vw;
+
+    @include ml-auto;
+    @include mr-auto;
+  }
+
+  @media screen and (max-width: $medium-screen) {
+    @include w-100;
+    @include ml-auto;
+    @include mr-auto;
   }
 }
