@@ -9,6 +9,7 @@ web/app/uploads/*
 # Plugin Overrides
 !web/app/plugins/clover/
 !web/app/plugins/instagram-feed/
+!web/app/plugins/taptap-by-bonfire/
 
 # WordPress
 web/wp
