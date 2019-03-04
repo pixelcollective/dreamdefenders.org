@@ -90,6 +90,11 @@ main {
   }
 }
 
+%contained {
+  max-width: 100vw;
+  width: 1000px;
+}
+
 .layout {
   &__block {
     &-tight {
@@ -117,22 +122,8 @@ main {
   &__box {
     @include ml-auto;
     @include mr-auto;
-  }
-}
 
-.contained {
-  max-width: 1000px;
-}
-
-.post-index .half-it {
-  @media screen and (min-width: $medium-screen) {
-    @include db;
-    @include w-50;
-  }
-
-  @media screen and (max-width: $medium-screen) {
-    @include db;
-    @include w-100;
+    @extend %contained;
   }
 }
 
@@ -153,6 +144,18 @@ main {
   margin-left: auto;
   margin-right: auto;
   padding: 1.5rem;
+}
+
+.post-index .half-it {
+  @media screen and (min-width: $medium-screen) {
+    @include db;
+    @include w-50;
+  }
+
+  @media screen and (max-width: $medium-screen) {
+    @include db;
+    @include w-100;
+  }
 }
 
 .button {
@@ -290,5 +293,16 @@ section.freedom-paper-single-view {
     @include w-90;
     @include ml-auto;
     @include mr-auto;
+  }
+}
+
+.nav-up {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: all 0.3s ease-in-out;
+
+  .logo {
+    position: relative;
+    transition: all 0.3s ease-in-out;
   }
 }
