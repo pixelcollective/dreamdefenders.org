@@ -224,7 +224,7 @@ main {
       @include white;
       @include b--white;
       @include no-underline;
-      @include pa1;
+      @include pa2;
 
       &:hover {
         @include bg-yellow;
@@ -236,17 +236,36 @@ main {
   .next_post {
     position: fixed;
     top: 50vh;
-    left: 10px;
+    right: 10px;
+
+    @media screen and (max-width: $medium-screen) {
+      position: fixed;
+      top: 95vh;
+      bottom: 0;
+      right: 0;
+    }
   }
 
   .prev_post {
     position: fixed;
     top: 50vh;
-    right: 10px;
+    left: 10px;
+
+    @media screen and (max-width: $medium-screen) {
+      top: 95vh;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+    }
   }
 }
 
 section.freedom-paper-single-view {
+  img {
+    @include mt6;
+    @include mb4;
+  }
+
   @media screen and (min-width: $medium-screen) {
     width: 70vw;
 
@@ -255,7 +274,7 @@ section.freedom-paper-single-view {
   }
 
   @media screen and (max-width: $medium-screen) {
-    @include w-100;
+    @include w-90;
     @include ml-auto;
     @include mr-auto;
   }
