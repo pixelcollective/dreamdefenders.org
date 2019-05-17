@@ -1,0 +1,54 @@
+/**
+ * Config
+ *
+ * Font imports
+ **/
+@import 'config/fonts';
+
+/**
+ * Tailwind components
+ **/
+@import 'config/components';
+
+/**
+ * Editor wrapper
+ **/
+.editor-styles-wrapper {
+  /**
+   * core/* blocks and post title
+   **/
+  .editor-block-list__block[data-type*="core"],
+  .editor-post-title {
+    /**
+     * Typography
+     **/
+    h1,
+    h2,
+    h3,
+    .editor-post-title__input {
+      @apply font-display;
+    }
+
+    h4,
+    h5,
+    h6,
+    .editor-post-title__input,
+    p,
+    ul,
+    ol,
+    span,
+    div,
+    table {
+      @apply font-sans;
+    }
+
+    p,
+    ul,
+    ol,
+    span,
+    div,
+    table {
+      @apply text-gray;
+    }
+  }
+}

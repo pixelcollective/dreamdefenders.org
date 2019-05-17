@@ -1,0 +1,95 @@
+.cards {
+  @apply my-1 px-1 w-full flex justify-around flex-row;
+}
+
+.card {
+  @apply overflow-hidden rounded-lg shadow-lg bg-white;
+  @apply
+    transition-property-shadow
+    transition-speed-normal;
+
+  &:hover {
+    @apply elevation-2;
+    @apply
+      transition-property-shadow
+      transition-speed-normal;
+  }
+
+  &__image {
+    @apply block h-auto w-full;
+  }
+
+  &__header {
+    @apply flex items-center justify-around leading-tight p-2 pt-6;
+
+    &__heading {
+      @apply text-lg font-display text-center;
+    }
+
+    &__heading a {
+      @apply no-underline text-black text-center;
+
+      &:hover {
+        @apply underline;
+      }
+    }
+
+    &__date {
+      @apply text-gray-darker text-sm;
+    }
+  }
+
+  &__content {
+    @apply mb-8 px-8 text-center;
+
+    &__copy {
+      @apply text-gray-dark font-sans text-center;
+    }
+  }
+
+  &__footer {
+    @apply flex items-center justify-between leading-none p-2;
+
+    &__profile {
+      @apply flex items-center no-underline text-black;
+      &:hover {
+        @apply underline;
+      }
+    }
+
+    &__profile-image {
+      @apply block rounded-full;
+    }
+
+    &__profile-name {
+      @apply ml-2 text-sm;
+    }
+
+    &__link {
+      @apply no-underline text-gray;
+      &:hover {
+        @apply text-gray-darker;
+      }
+    }
+  }
+
+  button {
+    @apply mb-2;
+  }
+
+  &-content {
+    @apply text-center;
+  }
+
+  &-image {
+    @apply relative;
+  }
+
+  &__heading {
+    @apply font-sans font-semibold text-xl;
+  }
+
+  &__copy {
+    @apply font-sans text-base;
+  }
+}

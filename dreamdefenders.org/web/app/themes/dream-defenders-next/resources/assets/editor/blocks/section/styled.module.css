@@ -1,0 +1,50 @@
+.section {
+  @apply relative bg-no-repeat bg-center bg-cover pt-6 pb-12;
+
+  &__container {
+    @apply relative z-20;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  table,
+  span,
+  div {
+    @apply text-black;
+  }
+
+  h1 {
+    @apply text-5xl leading-loose;
+  }
+
+  h2 {
+    @apply text-4xl leading-loose;
+  }
+
+  h3 {
+    @apply text-3xl leading-relaxed;
+  }
+
+  h4 {
+    @apply text-2xl leading-relaxed;
+  }
+
+  h5 {
+    @apply text-2xl leading-normal;
+  }
+
+  h6 {
+    @apply text-base leading-normal;
+  }
+
+  p {
+    @apply text-base leading-normal;
+  }
+}

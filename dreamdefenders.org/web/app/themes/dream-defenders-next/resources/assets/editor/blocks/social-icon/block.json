@@ -1,0 +1,11 @@
+{
+  "name": "social-icon",
+  "attributes": {
+    "network": {
+      "type": "string"
+    },
+    "url": {
+      "type": "url"
+    }
+  }
+}

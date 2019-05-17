@@ -1,1 +1,8 @@
 path: web/wp
+
+@development:
+  ssh: vagrant@dreamdefenders.valet/srv/www/dreamdefenders.org/current
+@staging:
+  ssh: web@dreamdefenders.kellymears.me/srv/www/dreamdefenders.org/current
+@production:
+  ssh: web@dreamdefenders.org/srv/www/dreamdefenders.org/current

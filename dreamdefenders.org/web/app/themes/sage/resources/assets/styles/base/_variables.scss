@@ -4,7 +4,6 @@ $dark-gray: #33342f;
 $white: #fff;
 $blue: #2759b7;
 $transparent: rgba(0, 0, 0, 0);
-
 $cyan: #0093d3;
 $magenta: #ff0093;
 $yellow: #fff10c;
@@ -19,11 +18,11 @@ $league: "LeagueSpartan-Bold", sans-serif;
 $rem-base: 16px;
 
 // Body
-$base-text-color: $black !default;
-$base-background-color: $white !default;
-$font-size-base: 1rem !default;
-$line-height-base: 1.5 !default;
-$base-font-family: $base-font-serif !default;
+$base-text-color: $black;
+$base-background-color: $white;
+$font-size-base: 1rem;
+$line-height-base: 1.5;
+$base-font-family: $base-font-serif;
 
 $vertical-rhythm: ($line-height-base * 1em);
 
@@ -34,27 +33,27 @@ $accent-color: $blue;
 $base-link-color: $blue;
 
 // Buttons
-$btn-color: $white !default;
-$btn-background: $black !default;
-$btn-padding: 0.4em 0.7em !default;
-$btn-font-size: inherit !default;
+$btn-color: $white;
+$btn-background: $black;
+$btn-padding: 0.4em 0.7em;
+$btn-font-size: inherit;
 $btn-font-family: $league;
 
 // Forms
-$form-element-padding: $btn-padding !default;
-$form-element-border-color: $gray !default;
-$form-element-focus-border-color: $black !default;
-$placeholder-color: $gray !default;
+$form-element-padding: $btn-padding;
+$form-element-border-color: $gray;
+$form-element-focus-border-color: $black;
+$placeholder-color: $gray;
 
-// Headers
-$h1-font-size: 3.157rem !default;
-$h2-font-size: 2.369rem !default;
-$h3-font-size: 1.777rem !default;
-$h4-font-size: 1.333rem !default;
-$h5-font-size: 17px !default;
-$h6-font-size: 15px !default;
+// Headings
+$h1-font-size: 3.157rem;
+$h2-font-size: 2.369rem;
+$h3-font-size: 1.777rem;
+$h4-font-size: 1.333rem;
+$h5-font-size: 17px;
+$h6-font-size: 15px;
 
-$headings-font-family: inherit !default;
-$headings-color: inherit !default;
+$headings-font-family: inherit;
+$headings-color: inherit;
 
 $animation-speed: 0.3s;

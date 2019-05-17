@@ -32,44 +32,27 @@
       "url": "https://wpackagist.org"
     },
     {
-      "type": "composer",
-      "url": "https://packages.tinypixel.io/satispress/"
+      "type": "vcs",
+      "url": "https://github.com/wp-graphql/wp-graphiql"
     },
     {
-      "type": "package",
-      "package": {
-        "name": "advanced-custom-fields/advanced-custom-fields-pro",
-        "version": "5.7.7",
-        "type": "wordpress-plugin",
-        "dist": {
-          "type": "zip",
-          "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download"
-        },
-        "require": {
-          "philippbaschke/acf-pro-installer": "^1.0",
-          "composer/installers": "^1.0"
-        }
-      }
+      "type": "composer",
+      "url": "https://packages.tinypixel.io/satispress/"
     }
   ],
   "require": {
     "php": ">=7.1",
     "composer/installers": "^1.4",
-    "vlucas/phpdotenv": "^2.0.1",
+    "vlucas/phpdotenv": "^3.0.0",
     "oscarotero/env": "^1.1.0",
-    "roots/wordpress": "5.0.3",
+    "roots/wordpress": "5.2",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.0.0",
-    "primetime/wp-plugin-activation-manifest": "^1.0",
-    "wpackagist-plugin/updraftplus": ">=1",
-    "tiny-packagist/wp-migrate-db-pro": ">=1",
-    "tiny-packagist/wp-migrate-db-pro-cli": ">=1",
-    "tiny-packagist/wp-migrate-db-pro-media-files": ">=1",
-    "tiny-packagist/wp-migrate-db-pro-multisite-tools": ">=1",
-    "advanced-custom-fields/advanced-custom-fields-pro": ">=5",
     "wpackagist-plugin/cdn-enabler": ">=1",
-    "wpackagist-plugin/stream": "^3.2",
-    "wpackagist-plugin/block-unit-test": ">=1"
+    "wpackagist-plugin/updraftplus": ">=1",
+    "tiny-packagist/advanced-custom-fields-pro": "*",
+    "wp-graphql/wp-graphql": "^0.3.3",
+    "wp-graphql/wp-graphiql": "^0.3.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.0.2",
@@ -77,7 +60,7 @@
   },
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "wp-graphql/wp-graphql"],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
     },

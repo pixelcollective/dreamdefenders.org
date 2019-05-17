@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "LeagueSpartan-Bold";
+  src:
+    url("../../fonts/leaguespartan-bold.otf")  format("opentype"),
+    url("../../fonts/leaguespartan-bold.woff") format("woff"),
+    url("../../fonts/leaguespartan-bold.ttf")  format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Agipo-Regular";
+  src:
+    url("../../fonts/Agiporegular.otf")  format("opentype"),
+    url("../../fonts/Agiporegular.woff") format("woff"),
+    url("../../fonts/Agiporegular.ttf")  format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}

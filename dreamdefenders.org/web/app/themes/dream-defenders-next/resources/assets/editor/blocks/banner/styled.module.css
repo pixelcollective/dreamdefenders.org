@@ -1,0 +1,34 @@
+.banner {
+  @apply relative bg-black bg-no-repeat bg-center bg-cover;
+
+  &__overlay {
+    @apply z-10 relative;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  &__container {
+    @apply flex z-20 max-h-screen min-h-v-1/2 items-center;
+  }
+
+  &__content {
+    @apply block;
+  }
+
+  &__heading,
+  &__subheading,
+  &__heading__input,
+  &__subheading__input {
+    @apply align-middle;
+    @apply text-white;
+  }
+
+  &__heading,
+  &__heading__input {
+    @apply font-display text-4xl uppercase;
+  }
+
+  &__subheading,
+  &__subheading__input {
+    @apply font-sans text-3xl;
+  }
+}

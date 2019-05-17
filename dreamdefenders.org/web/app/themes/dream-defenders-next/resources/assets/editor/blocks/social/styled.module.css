@@ -1,0 +1,24 @@
+.icons__banner {
+  @apply flex content-center justify-around;
+  @apply px-0 py-32;
+  @apply bg-black text-white;
+  @apply
+    transition-property-all
+    transition-speed-normal;
+
+  &:hover {
+    @apply bg-primary text-black;
+      @apply
+        transition-property-all
+        transition-speed-normal;
+  }
+
+  &__icons {
+    @apply flex justify-between;
+    @apply w-3/4;
+  }
+
+  &__dark {
+    @apply bg-black text-white;
+  }
+}

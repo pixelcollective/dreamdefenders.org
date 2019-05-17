@@ -1,0 +1,72 @@
+.button__container {
+  @apply relative p-4 text-center;
+  @apply h-16;
+  @apply z-10;
+  @apply opacity-100;
+  @apply transition-property-all;
+  @apply transition-speed-normal;
+
+  &__hidden {
+    @apply text-center;
+    @apply hidden;
+    @apply opacity-0;
+    @apply transition-property-all;
+    @apply transition-speed-normal;
+  }
+}
+
+.button {
+  @apply py-2 px-4 rounded inline-flex items-center;
+  @apply text-black;
+  @apply text-lg;
+  @apply elevation-2;
+  @apply transition-property-color;
+  @apply transition-property-shadow;
+  @apply transition-speed-normal;
+
+  &:hover {
+    @apply elevation-3;
+    @apply transition-property-color;
+    @apply transition-property-shadow;
+    @apply transition-speed-normal;
+  }
+
+  &__top {
+    @apply absolute top-0 inset-x-0;
+  }
+
+  &__modify {
+    @apply py-2 px-4 rounded inline-flex items-center;
+    @apply text-white bg-black;
+    @apply text-lg;
+    @apply elevation-2;
+    @apply transition-property-color;
+    @apply transition-property-shadow;
+    @apply transition-speed-normal;
+
+    &:hover {
+      @apply bg-black;
+      @apply elevation-3;
+      @apply transition-property-color;
+      @apply transition-property-shadow;
+      @apply transition-speed-normal;
+    }
+  }
+
+  &__remove {
+    @apply py-2 px-4 ml-2 rounded inline-flex items-center;
+    @apply text-black;
+    @apply text-lg;
+    @apply transition-property-color;
+    @apply transition-property-shadow;
+    @apply transition-speed-normal;
+
+    &:hover {
+      @apply bg-black text-white;
+      @apply elevation-3;
+      @apply transition-property-color;
+      @apply transition-property-shadow;
+      @apply transition-speed-normal;
+    }
+  }
+}

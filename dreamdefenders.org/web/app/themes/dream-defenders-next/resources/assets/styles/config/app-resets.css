@@ -1,0 +1,9 @@
+html,
+body {
+  @apply mx-0;
+  @apply font-sans;
+}
+
+html {
+  line-height: 1.15;
+}
