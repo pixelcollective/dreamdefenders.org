@@ -76,7 +76,7 @@
     "yargs": "~11.0.0"
   },
   "dependencies": {
-    "bootstrap": "v4.2.1",
+    "bootstrap": "v4.3.1",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.6"
   }
