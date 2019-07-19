@@ -1,4 +1,18 @@
+## 
+# Project
+##
+**/*.db
+**/.env
+**/.env.*
+**/*.log
+**/vendor
+**/node_modules
+support/tests/cypress/videos/*
+support/tests/cypress/screenshots/*
+
+## 
 # Trellis
+##
 trellis/.vault_pass
 trellis/.vagrant
 trellis/vagrant.local.yml
@@ -6,7 +20,9 @@ trellis/vendor/roles
 trellis/*.py[co]
 trellis/*.retry
 
-# Application
+##
+# Bedrock
+##
 bedrock/web/app/plugins/*
 !bedrock/web/app/plugins/.gitkeep
 bedrock/web/app/mu-plugins/*/
@@ -18,23 +34,22 @@ bedrock/web/app/uploads/*
 bedrock/web/wp
 bedrock/web/.htaccess
 
-# Packages
-**/vendor
-**/node_modules
-
 # WP-CLI
 bedrock/wp-cli.local.yml
-
-# Secrets
-**/*.db
-**/.env
-**/.env.*
-
-# Logs
-*.log
 
 # IP & Data
 bedrock/scripts
 bedrock/web/app/updraft
-support/tests/cypress/videos/*
-support/tests/cypress/screenshots/*
+
+##
+# Sage
+##
+bedrock/web/app/themes/sage/dist
+bedrock/web/app/themes/sage/storage/framework/views/*
+bedrock/web/app/themes/sage/npm-debug.log
+bedrock/web/app/themes/sage/yarn-error.log
+
+##
+# Clover
+##
+bedrock/web/app/plugins/support/dist
