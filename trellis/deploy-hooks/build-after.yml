@@ -1,0 +1,56 @@
+##
+# Validate composer.json
+##
+- name: Check for composer.json in project root or project_subtree_path
+  stat:
+    path: "{{ deploy_helper.new_release_path }}/composer.json"
+  register: composer_json
+
+- name: Fail if composer.json not found
+  fail:
+    msg: "Unable to find a `composer.json` file in the root of '{{ deploy_helper.new_release_path }}'. Make sure your repo has a `composer.json` file in its root or edit `repo_subtree_path` for '{{ site }}' in `wordpress_sites.yml` so it points to the directory with a `composer.json` file."
+  when: not composer_json.stat.exists
+
+##
+# Packagist authentication
+##
+- name: Setup packagist.com authentication
+  composer:
+    command: config
+    arguments: --auth http-basic.repo.packagist.com token {{ project.packagist_token }}
+    working_dir: "{{ deploy_helper.new_release_path }}"
+  no_log: true
+  when: project.packagist_token is defined
+
+##
+# SatisPress authentication
+##
+- name: Setup tiny-packagist authentication
+  composer:
+    global_command: yes
+    command: config
+    arguments: http-basic.packages.tinypixel.io {{ vault_tiny_packagist_api }} satispress
+    working_dir: "{{ deploy_helper.new_release_path }}"
+  when: vault_tiny_packagist_api is defined
+
+##
+# Install composer dependencies
+##
+- name: Install Composer dependencies
+  composer:
+    no_scripts: yes
+    working_dir: "{{ deploy_helper.new_release_path }}"
+
+##
+# Clear Acorn cached data and views
+##
+- name: Clear acorn cache
+  command: wp acorn optimize:clear
+  args:
+    chdir: "{{ deploy_helper.new_release_path }}/web/app/themes/sage"
+
+##
+# Fix Acorn filesystem cache permissions
+##
+- name: Fix theme storage permissions
+  file: path="{{ deploy_helper.new_release_path }}/web/app/themes/sage/storage/framework" mode=0775 state=directory recurse=yes
