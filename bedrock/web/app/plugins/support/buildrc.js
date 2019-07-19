@@ -15,7 +15,7 @@ module.exports = {
       'public',
     ],
   },
-  tailwind: `./tailwind.config.js`,
+  tailwind: `./../../../../tailwind.config.js`,
   paths: {
     dist: `./dist`,
     styles: `${__dirname}/resources/assets/styles`,
