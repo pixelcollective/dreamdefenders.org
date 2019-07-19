@@ -56,4 +56,3 @@ bedrock/web/app/plugins/support/dist
 # Sage
 ##
 bedrock/web/app/themes/sage/dist
-bedrock/web/app/themes/sage/storage/framework/views/*

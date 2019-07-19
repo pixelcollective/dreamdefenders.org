@@ -1,4 +1,5 @@
-<h1 align="center">Welcome to Tiny Pixel Project Site</h1>
+# Tiny Pixel WordPress Template
+
 <p>
   <img src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
   <a href="https://github.com/pixelcollective/a-project-url">
@@ -20,7 +21,7 @@
 
 - This template uses lerna to manage JS dependencies and share a single tailwind configuration file between all plugins and themes that tap into it. To build stuff you run `yarn` and `yarn build` from `/bedrock`, not the theme/plugin dirs. If you need to add a dependency to either the theme or a plugin you add the dependency where it is being utilized, as normal. Afterward, run `yarn` in `bedrock` again to sync the dependency with the `yarn workspace`.
 
-- This starter uses `tiny-packagist`, which is my satispress. In order to use this project you will need to remove those dependencies from `bedrock/composer.json` (in both `"repositories"` and `"require"`.) You will also need to modify the `build-after.yml` to not pull from `tiny-packagist`, as you will not have authentication and this will cause deploys to fail.
+- This starter uses Tiny Pixel Co's `tiny-packagist` satispress. In order to use this project outside of Tiny Pixel you will need to remove those dependencies from `bedrock/composer.json` (in both `"repositories"` and `"require"`.) You will also need to modify the `build-after.yml` to not pull from `tiny-packagist`, as you will not have authentication and this will cause deploys to fail.
 
 - Currently, `Acorn` packages are installed to the theme directory. The `acorn-roles`, `acorn-admin-menu` and `acorn-models` packages are intended to be consumed by the theme. I will update this template when those changes are made.
 
