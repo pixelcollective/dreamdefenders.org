@@ -1,7 +1,7 @@
 const mix = require('laravel-mix')
 require(`laravel-mix-wp-blocks`)
 
-module.exports = build = project => {
+module.exports = project => {
   const script = file => `${project.paths.scripts}/${file}`
   const stylesheet = file => `${project.paths.styles}/${file}`
 

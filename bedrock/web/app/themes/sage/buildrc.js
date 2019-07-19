@@ -19,5 +19,5 @@ module.exports = {
     scripts: `${__dirname}/resources/assets/scripts`,
   },
   browserSync: {},
-  build: `${__dirname}/resources/build/build.config.js`,
+  build: `${__dirname}/resources/build`,
 }

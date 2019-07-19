@@ -1,2 +1,2 @@
-const config = require(`./build.rc.js`)
+const config = require(`./buildrc.js`)
 require(config.build)(config)
