@@ -1,0 +1,15 @@
+/**
+ * @tailwind base
+ */
+@import "tailwind/base";
+@import "tailwind/components";
+
+/**
+ * Application
+ */
+@import "global";
+
+/**
+ * @tailwind utilities
+ */
+@import "tailwind/utilities";

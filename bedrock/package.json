@@ -1,0 +1,24 @@
+{
+  "name": "bedrock",
+  "private": true,
+  "workspaces": [
+    "web/app/themes/sage",
+    "web/app/plugins/support"
+  ],
+  "scripts": {
+    "bootstrap": "lerna exec --parallel yarn",
+    "refresh": "lerna exec --parallel -- rm -rf node_modules dist",
+    "start": "lerna exec --parallel yarn start --clear-console --no-progress --hide-modules --progress",
+    "watch": "lerna exec --parallel yarn watch --clear-console --no-progress --hide-modules --progress",
+    "build": "run-s clean build:production --",
+    "build:production": "lerna exec --parallel yarn build --clear-console --no-progress --hide-modules --progress",
+    "clean": "run-p clean:*",
+    "clean:dist": "rimraf themes/sage/dist",
+    "clean:views": "rimraf themes/sage/storage/framework/views/*.php"
+  },
+  "devDependencies": {
+    "lerna": "^3.14.1",
+    "rimraf": "^2.6",
+    "npm-run-all": "^4.1"
+  }
+}

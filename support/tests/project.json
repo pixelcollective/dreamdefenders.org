@@ -1,0 +1,8 @@
+{
+    "baseUrl": "{{projectDomain}}",
+    "breakpoints": [
+        768,
+        992,
+        1200
+    ]
+}

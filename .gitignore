@@ -1,0 +1,40 @@
+# Trellis
+trellis/.vault_pass
+trellis/.vagrant
+trellis/vagrant.local.yml
+trellis/vendor/roles
+trellis/*.py[co]
+trellis/*.retry
+
+# Application
+bedrock/web/app/plugins/*
+!bedrock/web/app/plugins/.gitkeep
+bedrock/web/app/mu-plugins/*/
+bedrock/web/app/upgrade
+bedrock/web/app/uploads/*
+!bedrock/web/app/uploads/.gitkeep
+
+# WordPress
+bedrock/web/wp
+bedrock/web/.htaccess
+
+# Packages
+**/vendor
+**/node_modules
+
+# WP-CLI
+bedrock/wp-cli.local.yml
+
+# Secrets
+**/*.db
+**/.env
+**/.env.*
+
+# Logs
+*.log
+
+# IP & Data
+bedrock/scripts
+bedrock/web/app/updraft
+support/tests/cypress/videos/*
+support/tests/cypress/screenshots/*
