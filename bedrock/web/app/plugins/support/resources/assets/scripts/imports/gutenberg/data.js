@@ -1,0 +1,16 @@
+export {
+  combineReducers,
+  createRegistry,
+  dispatch,
+  registerStore,
+  RegistryProvider,
+  RegistryConsumer,
+  subscribe,
+  use,
+  useDispatch,
+  useRegistry,
+  useSelect,
+  withSelect,
+  withRegistry,
+  withDispatch,
+} from '@wordpress/data'

@@ -24,10 +24,10 @@ trellis/*.retry
 # Bedrock
 ##
 bedrock/web/app/plugins/*
-!bedrock/web/app/plugins/.gitkeep
 bedrock/web/app/mu-plugins/*/
 bedrock/web/app/upgrade
 bedrock/web/app/uploads/*
+!bedrock/web/app/plugins/.gitkeep
 !bedrock/web/app/uploads/.gitkeep
 
 # WordPress
@@ -42,14 +42,18 @@ bedrock/scripts
 bedrock/web/app/updraft
 
 ##
+# Acorn
+##
+**/storage/framework/views/*
+
+## 
+# Clover
+##
+!bedrock/web/app/plugins/support
+bedrock/web/app/plugins/support/dist
+
+##
 # Sage
 ##
 bedrock/web/app/themes/sage/dist
 bedrock/web/app/themes/sage/storage/framework/views/*
-bedrock/web/app/themes/sage/npm-debug.log
-bedrock/web/app/themes/sage/yarn-error.log
-
-##
-# Clover
-##
-bedrock/web/app/plugins/support/dist

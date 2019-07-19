@@ -1,0 +1,30 @@
+{
+    "translation-revision-date": "2019-07-11 00:31-0700",
+    "generator": "WP-CLI\/2.2.0",
+    "source": "resources\/assets\/scripts\/blocks\/button\/edit.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "es_MX",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Background Color": [
+                ""
+            ],
+            "Text Color": [
+                ""
+            ],
+            "Add text\u2026": [
+                ""
+            ],
+            "Color Settings": [
+                ""
+            ],
+            "Apply": [
+                ""
+            ]
+        }
+    }
+}

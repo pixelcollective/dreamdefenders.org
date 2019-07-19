@@ -1,0 +1,232 @@
+# Copyright (C) 2019 Kelly Mears
+# This file is distributed under the same license as the Tiny Pixel Support plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Tiny Pixel Support 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/support\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2019-07-19T19:24:05+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.2.0\n"
+
+#. Plugin Name of the plugin
+msgid "Tiny Pixel Support"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://tinypixel.dev"
+msgstr ""
+
+#. Description of the plugin
+msgid "Site Support framework"
+msgstr ""
+
+#. Author of the plugin
+msgid "Kelly Mears"
+msgstr ""
+
+#: app/WordPress/Admin/Comments.php:83
+#: app/WordPress/Admin/Comments.php:87
+#: app/WordPress/Admin/Comments.php:177
+msgid "Comments are closed."
+msgstr ""
+
+#: boot/BootError.php:69
+msgid "Tiny Pixel Site Support Plugin Runtime Error"
+msgstr ""
+
+#: boot/BootError.php:81
+msgid "There is a problem with the Roots Share Plugin"
+msgstr ""
+
+#: boot/BootError.php:92
+msgid "The Tiny Pixel Site Support plugin could not boot."
+msgstr ""
+
+#: boot/BootError.php:104
+msgid "The Tiny Pixel Site Support plugin has been deactivated."
+msgstr ""
+
+#: boot/BootError.php:117
+msgid "Plugin Administration ⌫"
+msgstr ""
+
+#. translators: PHP language version requirement
+#: boot/Bootloader.php:101
+msgid "You must be using PHP %s or greater."
+msgstr ""
+
+#. translators: Currently installed PHP language version
+#: boot/Bootloader.php:107
+msgid "Invalid PHP version (%s)"
+msgstr ""
+
+#. translators: WordPress version requirement
+#: boot/Bootloader.php:124
+msgid "You must be using WordPress %s or greater"
+msgstr ""
+
+#. translators: Currently installed WordPress version
+#: boot/Bootloader.php:130
+msgid "Invalid WordPress version (%s)"
+msgstr ""
+
+#: config/admin.php:89
+msgid "Rouge"
+msgstr ""
+
+#: config/admin.php:120
+msgid "Small"
+msgstr ""
+
+#: config/admin.php:219
+msgctxt "post type general name"
+msgid "Blocks"
+msgstr ""
+
+#: config/admin.php:220
+msgctxt "post type singular name"
+msgid "Block"
+msgstr ""
+
+#: config/admin.php:221
+msgctxt "admin menu"
+msgid "Blocks"
+msgstr ""
+
+#: config/admin.php:222
+msgctxt "add new on admin bar"
+msgid "Block"
+msgstr ""
+
+#: config/admin.php:223
+msgctxt "Block"
+msgid "Add New"
+msgstr ""
+
+#: config/admin.php:224
+msgid "Add New Block"
+msgstr ""
+
+#: config/admin.php:225
+msgid "New Block"
+msgstr ""
+
+#: config/admin.php:226
+msgid "Edit Block"
+msgstr ""
+
+#: config/admin.php:227
+msgid "View Block"
+msgstr ""
+
+#: config/admin.php:228
+msgid "All Blocks"
+msgstr ""
+
+#: config/admin.php:229
+msgid "Search Blocks"
+msgstr ""
+
+#: config/admin.php:230
+msgid "No blocks found."
+msgstr ""
+
+#: config/admin.php:231
+msgid "No blocks found in Trash."
+msgstr ""
+
+#: config/admin.php:232
+msgid "Filter blocks list"
+msgstr ""
+
+#: config/admin.php:233
+msgid "Blocks list navigation"
+msgstr ""
+
+#: config/admin.php:234
+msgid "Blocks list"
+msgstr ""
+
+#: config/admin.php:235
+msgid "Block published."
+msgstr ""
+
+#: config/admin.php:236
+msgid "Block published privately."
+msgstr ""
+
+#: config/admin.php:237
+msgid "Block reverted to draft."
+msgstr ""
+
+#: config/admin.php:238
+msgid "Block scheduled."
+msgstr ""
+
+#: config/admin.php:239
+msgid "Block updated."
+msgstr ""
+
+#: resources/resources/views/templates/share-button.blade.php:19
+#: resources/views/templates/share-button.blade.php:19
+msgid "Share on Twitter"
+msgstr ""
+
+#: resources/resources/views/templates/share-button.blade.php:26
+#: resources/views/templates/share-button.blade.php:26
+msgid "Twitter"
+msgstr ""
+
+#: resources/resources/views/templates/share-button.blade.php:35
+#: resources/views/templates/share-button.blade.php:35
+msgid "Share on Facebook"
+msgstr ""
+
+#: resources/resources/views/templates/share-button.blade.php:41
+#: resources/views/templates/share-button.blade.php:41
+msgid "Facebook"
+msgstr ""
+
+#: resources/resources/views/templates/share-button.blade.php:49
+#: resources/views/templates/share-button.blade.php:49
+msgid "Share on Google+"
+msgstr ""
+
+#: resources/resources/views/templates/share-button.blade.php:53
+#: resources/views/templates/share-button.blade.php:53
+msgid "Google+"
+msgstr ""
+
+#: resources/resources/views/templates/share-button.blade.php:61
+#: resources/views/templates/share-button.blade.php:61
+msgid "Share on LinkedIn"
+msgstr ""
+
+#: resources/resources/views/templates/share-button.blade.php:67
+#: resources/views/templates/share-button.blade.php:67
+msgid "LinkedIn"
+msgstr ""
+
+#: resources/resources/views/templates/share-button.blade.php:89
+#: resources/views/templates/share-button.blade.php:89
+msgid "Share on Pinterest"
+msgstr ""
+
+#: resources/resources/views/templates/share-button.blade.php:95
+#: resources/views/templates/share-button.blade.php:95
+msgid "Pinterest"
+msgstr ""
+
+#: site-support.php:22
+msgid "The Tiny Pixel Site Support plugin needs to be installed in order to be run.<br />Run <code>composer install</code> from the plugin directory."
+msgstr ""
+
+#: site-support.php:28
+msgid "Autoloader not found."
+msgstr ""

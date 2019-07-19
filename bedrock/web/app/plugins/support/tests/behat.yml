@@ -1,0 +1,44 @@
+default:
+  suites:
+    default:
+      contexts:
+        - PaulGibbs\WordpressBehatExtension\Context\WordpressContext
+        - FeatureContext
+        - Behat\MinkExtension\Context\MinkContext
+        - PaulGibbs\WordpressBehatExtension\Context\ContentContext
+        - PaulGibbs\WordpressBehatExtension\Context\DashboardContext
+        - PaulGibbs\WordpressBehatExtension\Context\SiteContext
+        - PaulGibbs\WordpressBehatExtension\Context\UserContext
+        - PaulGibbs\WordpressBehatExtension\Context\EditPostContext
+        - PaulGibbs\WordpressBehatExtension\Context\WidgetContext
+        - PaulGibbs\WordpressBehatExtension\Context\ToolbarContext
+
+  extensions:
+    DMore\ChromeExtension\Behat\ServiceContainer\ChromeExtension: ~
+
+    Behat\MinkExtension:
+      base_url: http://your-wordpress-site.example.com
+      browser_name: chrome
+      default_session: headless
+      javascript_session: javascript
+      sessions:
+        headless:
+          goutte:
+            guzzle_parameters:
+              verify: false
+        javascript:
+          chrome:
+            api_url: http://localhost:9222
+            validate_certificate: false
+
+    PaulGibbs\WordpressBehatExtension:
+      default_driver: wpcli
+      path: /path/to/wordpress
+      users:
+        -
+          roles:
+            - administrator
+          username: admin
+          password: password
+      database:
+        restore_after_test: true

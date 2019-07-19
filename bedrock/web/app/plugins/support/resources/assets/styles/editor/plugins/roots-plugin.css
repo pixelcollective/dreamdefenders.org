@@ -1,0 +1,23 @@
+.edit-post-header button[aria-label='Roots Settings'].components-button.is-toggled:hover,
+.edit-post-header button[aria-label='Roots Settings'].components-button.components-icon-button {
+  fill: #525ddc !important;
+
+  &:hover {
+    fill: #ebecf9 !important;
+    background: #c3c7ef !important;
+  }
+
+  &.is-toggled {
+    background: #525ddc !important;
+    fill: #fff !important;
+
+    &:hover {
+      background: #525ddc !important;
+      @apply shadow-lg;
+
+      svg * {
+        fill: #fff !important;
+      }
+    }
+  }
+}
