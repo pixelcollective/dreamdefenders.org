@@ -1,4 +1,4 @@
-import { breakpoints, baseUrl } from './../../project.json'
+import { breakpoints, baseUrl } from '../../project.json.js'
 
 beforeEach(() => cy.visit(baseUrl));
 
