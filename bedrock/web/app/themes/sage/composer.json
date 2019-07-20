@@ -40,7 +40,8 @@
     "roots/acorn": "dev-master",
     "tiny-pixel/acorn-models": "dev-master",
     "tiny-pixel/acorn-roles": "dev-master",
-    "tiny-pixel/acorn-admin-menus": "dev-master"
+    "tiny-pixel/acorn-admin-menus": "dev-master",
+    "tiny-pixel/acorn-settings-gutenberg": "dev-master"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.4"

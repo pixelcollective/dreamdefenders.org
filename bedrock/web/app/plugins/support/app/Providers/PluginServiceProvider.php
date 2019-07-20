@@ -27,7 +27,6 @@ class PluginServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->app->make('support.lifecycle');
-        $this->app->make('support.admin');
     }
 
     /**
@@ -80,10 +79,6 @@ class PluginServiceProvider extends ServiceProvider
 
         $this->app->singleton('support.lifecycle', function () {
             return new Lifecycle($this->app);
-        });
-
-        $this->app->singleton('support.admin', function () {
-            return new Options($this->app);
         });
     }
 }

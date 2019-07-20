@@ -69,7 +69,6 @@ return [
 
     'providers' => [
         App\Providers\ThemeServiceProvider::class,
-        // App\SomeService\SomeServiceServiceProvider::class,
     ],
 
     /*

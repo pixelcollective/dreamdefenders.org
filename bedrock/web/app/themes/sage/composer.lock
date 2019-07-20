@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "89d0dcd7c127d36f4f90dd38752d0bc8",
+    "content-hash": "977027f7a3c08e74bfc78ac39e6d800a",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -827,16 +827,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.21.2",
+            "version": "2.21.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "a8bfb6631e3bc982427406d13ad817fc45d47b61"
+                "reference": "58bdbbfab17ccd2ec7347b99e997f18232def4dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/a8bfb6631e3bc982427406d13ad817fc45d47b61",
-                "reference": "a8bfb6631e3bc982427406d13ad817fc45d47b61",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/58bdbbfab17ccd2ec7347b99e997f18232def4dc",
+                "reference": "58bdbbfab17ccd2ec7347b99e997f18232def4dc",
                 "shasum": ""
             },
             "require": {
@@ -890,7 +890,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2019-07-17T07:49:05+00:00"
+            "time": "2019-07-18T18:47:28+00:00"
         },
         {
             "name": "psr/container",
@@ -1814,12 +1814,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pixelcollective/acorn-admin-menus.git",
-                "reference": "2d214ab3867f567dc4119bde03b689b129924007"
+                "reference": "896c4a1e92c68d5edc423592a364917c0ca0308c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pixelcollective/acorn-admin-menus/zipball/2d214ab3867f567dc4119bde03b689b129924007",
-                "reference": "2d214ab3867f567dc4119bde03b689b129924007",
+                "url": "https://api.github.com/repos/pixelcollective/acorn-admin-menus/zipball/896c4a1e92c68d5edc423592a364917c0ca0308c",
+                "reference": "896c4a1e92c68d5edc423592a364917c0ca0308c",
                 "shasum": ""
             },
             "require": {
@@ -1854,7 +1854,7 @@
                 "sage",
                 "wordpress"
             ],
-            "time": "2019-07-18T07:40:15+00:00"
+            "time": "2019-07-20T06:29:34+00:00"
         },
         {
             "name": "tiny-pixel/acorn-models",
@@ -1911,12 +1911,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pixelcollective/acorn-roles.git",
-                "reference": "f3ffb70fa2b23fc4130f857a44e5ec44ada26fd1"
+                "reference": "65543216329ccc6ee046c8c3fc8d191763214abe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pixelcollective/acorn-roles/zipball/f3ffb70fa2b23fc4130f857a44e5ec44ada26fd1",
-                "reference": "f3ffb70fa2b23fc4130f857a44e5ec44ada26fd1",
+                "url": "https://api.github.com/repos/pixelcollective/acorn-roles/zipball/65543216329ccc6ee046c8c3fc8d191763214abe",
+                "reference": "65543216329ccc6ee046c8c3fc8d191763214abe",
                 "shasum": ""
             },
             "require": {
@@ -1952,7 +1952,56 @@
                 "sage",
                 "wordpress"
             ],
-            "time": "2019-07-18T07:10:59+00:00"
+            "time": "2019-07-18T08:19:12+00:00"
+        },
+        {
+            "name": "tiny-pixel/acorn-settings-gutenberg",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pixelcollective/acorn-settings-gutenberg.git",
+                "reference": "f6b094f8de2d61338ccf0ef63217d39d5c47dfce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pixelcollective/acorn-settings-gutenberg/zipball/f6b094f8de2d61338ccf0ef63217d39d5c47dfce",
+                "reference": "f6b094f8de2d61338ccf0ef63217d39d5c47dfce",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.3"
+            },
+            "type": "package",
+            "extra": {
+                "acorn": {
+                    "providers": [
+                        "TinyPixel\\Settings\\Providers\\GutenbergServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TinyPixel\\Settings\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kelly Mears",
+                    "email": "kelly@tinypixel.dev"
+                }
+            ],
+            "description": "WordPress 5 block editor configuration for Acorn projects",
+            "keywords": [
+                "acorn",
+                "gutenberg",
+                "sage",
+                "wordpress"
+            ],
+            "time": "2019-07-20T09:08:32+00:00"
         }
     ],
     "packages-dev": [
@@ -2014,7 +2063,8 @@
         "roots/acorn": 20,
         "tiny-pixel/acorn-models": 20,
         "tiny-pixel/acorn-roles": 20,
-        "tiny-pixel/acorn-admin-menus": 20
+        "tiny-pixel/acorn-admin-menus": 20,
+        "tiny-pixel/acorn-settings-gutenberg": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

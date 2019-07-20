@@ -1,4 +1,4 @@
-## 
+##
 # Project
 ##
 **/*.db
@@ -10,7 +10,7 @@
 support/tests/cypress/videos/*
 support/tests/cypress/screenshots/*
 
-## 
+##
 # Trellis
 ##
 trellis/.vault_pass
@@ -46,13 +46,15 @@ bedrock/web/app/updraft
 ##
 **/storage/framework/views/*
 
-## 
+##
 # Clover
 ##
 !bedrock/web/app/plugins/support
 bedrock/web/app/plugins/support/dist
+bedrock/web/app/plugins/support/src
 
 ##
 # Sage
 ##
 bedrock/web/app/themes/sage/dist
+bedrock/web/app/themes/sage/src

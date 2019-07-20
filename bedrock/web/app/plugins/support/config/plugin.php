@@ -72,7 +72,6 @@ return [
         TinyPixel\Support\Providers\ViewServiceProvider::class,
         TinyPixel\Support\Providers\AssetsServiceProvider::class,
         TinyPixel\Support\Providers\WordPressServiceProvider::class,
-        TinyPixel\AdminMenu\Providers\AdminMenuServiceProvider::class,
     ],
 
     /*

@@ -1,5 +1,3 @@
 <div class="tiny-pixel-support">
-    @foreach($posts as $post)
-        {!! $post->post_content !!}
-    @endforeach
+    <h2>Hello, world.</h2>
 </div>

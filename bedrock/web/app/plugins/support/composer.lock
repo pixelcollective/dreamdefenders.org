@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7c319b28f7e9a0c722bc79f5951b4cce",
+    "content-hash": "0353a33280f7bdc720514f2adfe69519",
     "packages": [
         {
             "name": "composer/installers",
@@ -853,16 +853,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.21.2",
+            "version": "2.21.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "a8bfb6631e3bc982427406d13ad817fc45d47b61"
+                "reference": "58bdbbfab17ccd2ec7347b99e997f18232def4dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/a8bfb6631e3bc982427406d13ad817fc45d47b61",
-                "reference": "a8bfb6631e3bc982427406d13ad817fc45d47b61",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/58bdbbfab17ccd2ec7347b99e997f18232def4dc",
+                "reference": "58bdbbfab17ccd2ec7347b99e997f18232def4dc",
                 "shasum": ""
             },
             "require": {
@@ -916,7 +916,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2019-07-17T07:49:05+00:00"
+            "time": "2019-07-18T18:47:28+00:00"
         },
         {
             "name": "psr/container",
@@ -1833,104 +1833,6 @@
                 "dump"
             ],
             "time": "2019-06-17T17:37:00+00:00"
-        },
-        {
-            "name": "tiny-pixel/acorn-models",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pixelcollective/acorn-models.git",
-                "reference": "e0763f681a7685456200e093c20d84a0b41b7ece"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pixelcollective/acorn-models/zipball/e0763f681a7685456200e093c20d84a0b41b7ece",
-                "reference": "e0763f681a7685456200e093c20d84a0b41b7ece",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.3"
-            },
-            "type": "package",
-            "extra": {
-                "acorn": {
-                    "providers": [
-                        "TinyPixel\\Models\\Providers\\DatabaseServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "TinyPixel\\Models\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kelly Mears",
-                    "email": "kelly@tinypixel.dev"
-                }
-            ],
-            "description": "Eloquent database support for Acorn projects",
-            "keywords": [
-                "acorn",
-                "eloquent",
-                "sage",
-                "wordpress"
-            ],
-            "time": "2019-07-17T20:44:03+00:00"
-        },
-        {
-            "name": "tiny-pixel/acorn-roles",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pixelcollective/acorn-roles.git",
-                "reference": "f3ffb70fa2b23fc4130f857a44e5ec44ada26fd1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pixelcollective/acorn-roles/zipball/f3ffb70fa2b23fc4130f857a44e5ec44ada26fd1",
-                "reference": "f3ffb70fa2b23fc4130f857a44e5ec44ada26fd1",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.3"
-            },
-            "type": "package",
-            "extra": {
-                "acorn": {
-                    "providers": [
-                        "TinyPixel\\Roles\\Providers\\RolesServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "TinyPixel\\Roles\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kelly Mears",
-                    "email": "kelly@tinypixel.dev"
-                }
-            ],
-            "description": "Roles and capabilities management for Acorn",
-            "keywords": [
-                "acorn",
-                "roles",
-                "sage",
-                "wordpress"
-            ],
-            "time": "2019-07-18T07:10:59+00:00"
         }
     ],
     "packages-dev": [
@@ -5334,9 +5236,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "roots/acorn": 20,
-        "roots/support": 20,
-        "tiny-pixel/acorn-models": 20,
-        "tiny-pixel/acorn-roles": 20
+        "roots/support": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

@@ -236,4 +236,27 @@ return [
             'comments'    => true,
         ],
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Options Pages
+    |--------------------------------------------------------------------------
+    |
+    | Define additional options pages for the WordPress admin menu.
+    |
+    | The final parameter (view callback) should be a reference to a Blade view in your application.
+    |
+    | @link https://codex.wordpress.org/Function_Reference/add_options_page
+    |
+    */
+
+    'options_pages' => [
+        [
+            'Settings',               // page title
+            'Settings',               // menu title
+            'manage_options',         // capability
+            'plugin-settings.php',    // menu slug
+            'Support::admin.options', // view callback
+        ],
+    ],
 ];
