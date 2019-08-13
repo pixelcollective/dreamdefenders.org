@@ -2,7 +2,7 @@
 
 namespace App\Composers;
 
-use App\Models\Post;
+use App\Model\Post;
 use Roots\Acorn\View\Composer;
 
 class Title extends Composer
