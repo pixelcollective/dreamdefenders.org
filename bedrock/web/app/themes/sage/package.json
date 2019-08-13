@@ -10,7 +10,7 @@
     "mix:hot": "webpack-dev-server --inline --hot --config=./../../../../node_modules/laravel-mix/setup/webpack.config.js",
     "test": "run-s -c lint",
     "translate": "run-s translate:pot translate:js",
-    "translate:pot": "wp i18n make-pot ./ ./resources/languages/supportpot --ignore-domain",
+    "translate:pot": "wp i18n make-pot ./ ./resources/languages/support.pot --ignore-domain",
     "translate:js": "wp i18n make-json ./resources/languages --no-purge --pretty-print",
     "wp-scripts:build": "wp-scripts build",
     "wp-scripts:check-engines": "wp-scripts check-engines",
@@ -41,6 +41,7 @@
     "webpack": "^4"
   },
   "dependencies": {
+    "@wordpress/dom-ready": "^2.5.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   }
