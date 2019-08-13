@@ -28,6 +28,7 @@
     "browser-sync-webpack-plugin": "2.2.2",
     "classnames": "^2.2.6",
     "cross-env": "^5.2.0",
+    "glhd-tailwindcss-transitions": "^0.3.0",
     "laravel-mix": "^4.0.15",
     "npm-run-all": "^4.1.5",
     "postcss-import": "^12.0.1",

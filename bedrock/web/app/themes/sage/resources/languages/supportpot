@@ -1,0 +1,102 @@
+# Copyright (C) 2019 Roots
+# This file is distributed under the MIT License.
+msgid ""
+msgstr ""
+"Project-Id-Version: Sage Starter Theme 10.0.0-dev\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/sage\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2019-08-13T07:28:41+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.2.0\n"
+
+#. Theme Name of the theme
+msgid "Sage Starter Theme"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "https://roots.io/sage/"
+msgstr ""
+
+#. Description of the theme
+msgid "Sage is a WordPress starter theme."
+msgstr ""
+
+#. Author of the theme
+msgid "Roots"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://roots.io/"
+msgstr ""
+
+#: functions.php:15
+msgid "Sage &rsaquo; Error"
+msgstr ""
+
+#: functions.php:25
+msgid "You must be using PHP 7.1.3 or greater."
+msgstr ""
+
+#: functions.php:25
+msgid "Invalid PHP version"
+msgstr ""
+
+#: functions.php:32
+msgid "You must be using WordPress 5.2 or greater."
+msgstr ""
+
+#: functions.php:32
+msgid "Invalid WordPress version"
+msgstr ""
+
+#: functions.php:40
+msgid "You must run <code>composer install</code> from the Sage directory."
+msgstr ""
+
+#: functions.php:41
+msgid "Autoloader not found."
+msgstr ""
+
+#: functions.php:56
+msgid "Error locating <code>%s</code> for inclusion."
+msgstr ""
+
+#: functions.php:57
+msgid "File not found"
+msgstr ""
+
+#: app/Composers/Title.php:53
+msgid "Latest Posts"
+msgstr ""
+
+#: app/Composers/Title.php:61
+msgid "Search Results for %s"
+msgstr ""
+
+#: app/Composers/Title.php:65
+msgid "Not Found"
+msgstr ""
+
+#: app/filters.php:9
+msgid "Continued"
+msgstr ""
+
+#: app/setup.php:51
+msgid "Primary Navigation"
+msgstr ""
+
+#: app/setup.php:91
+msgid "Primary"
+msgstr ""
+
+#: app/setup.php:96
+msgid "Footer"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Custom Template"
+msgstr ""
