@@ -2,8 +2,7 @@
 
 namespace App\Providers;
 
-use \App\Assets\Assets;
-use \Roots\Acorn\ServiceProvider;
+use Roots\Acorn\ServiceProvider;
 
 class ThemeServiceProvider extends ServiceProvider
 {
@@ -14,9 +13,7 @@ class ThemeServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('theme.assets', function () {
-            return (new Assets($this->app))->init();
-        });
+        //
     }
 
     /**
@@ -26,10 +23,6 @@ class ThemeServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app
-            ->make('theme.assets')
-            ->addPublicStyle('app')
-            ->addPublicScript('app')
-            ->addPublicScript('react');
+        //
     }
 }

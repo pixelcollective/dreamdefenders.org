@@ -1,3 +1,8 @@
-import { domReady } from '@wordpress/dom-ready'
+import { router } from 'js-dom-router';
 
-console.log('app running.')
+const home = async () => import(/* webpackChunkName: "scripts/routes/home" */ './routes/home');
+
+router
+  .on('about-us', about)
+  .on('home', async (event) => (await home()).default(event))
+  .ready();

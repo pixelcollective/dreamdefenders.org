@@ -40,6 +40,7 @@ bedrock/wp-cli.local.yml
 # IP & Data
 bedrock/scripts
 bedrock/web/app/updraft
+bedrock/backups/*
 
 ##
 # Acorn

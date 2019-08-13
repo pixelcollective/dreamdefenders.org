@@ -10,7 +10,17 @@ use function Roots\view;
  * Theme assets
  */
 add_action('wp_enqueue_scripts', function () {
-    wp_add_inline_script('sage/vendor', asset('manifest.js')->contents(), 'before');
+    wp_enqueue_script('sage/vendor', asset('scripts/vendor.js')->uri(), [], null, true);
+    wp_enqueue_script('sage/app', asset('scripts/app.js')->uri(), ['sage/vendor'], null, true);
+    wp_add_inline_script('sage/vendor', asset('scripts/manifest.js')->contents(), 'before');
+
+    $styles = ['styles/app.css'];
+
+    foreach ($styles as $stylesheet) {
+        if (asset($stylesheet)->exists()) {
+            wp_enqueue_style('sage/' . basename($stylesheet, '.css'), asset($stylesheet)->uri(), false, null);
+        }
+    }
 }, 100);
 
 /**

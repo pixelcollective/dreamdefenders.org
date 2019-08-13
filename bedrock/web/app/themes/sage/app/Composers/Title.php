@@ -2,14 +2,11 @@
 
 namespace App\Composers;
 
+use App\Models\Post;
 use Roots\Acorn\View\Composer;
-use TinyPixel\Models\Post;
 
 class Title extends Composer
 {
-
-    public $cacheExpiry = 3600;
-
     /**
      * List of views served by this composer.
      *
@@ -30,7 +27,10 @@ class Title extends Composer
      */
     public function with($data, $view)
     {
-        return ['title' => $this->title($view)];
+        return [
+            'title' => $this->title($view->getName()),
+            'posts' => $this->posts(),
+        ];
     }
 
     /**
@@ -68,11 +68,10 @@ class Title extends Composer
         return get_the_title();
     }
 
-    /**
-     * Returns posts
-     */
     public function posts()
     {
-        return Post::published();
+        $posts = Post::published()->get();
+
+        return $posts;
     }
 }
