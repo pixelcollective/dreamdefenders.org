@@ -1,13 +1,11 @@
 wordpress_sites:
-  example.com:
+  data.dreamdefenders.org:
     site_hosts:
-      - canonical: example.com
-        redirects:
-          - www.example.com
+      - canonical: data.dreamdefenders.org
     local_path: ../bedrock
-    repo: git@github.com:pixelcollective/example.com.git
+    repo: git@github.com:pixelcollective/dreamdefenders.org.git
     repo_subtree_path: bedrock
-    branch: master
+    branch: master-server
     multisite:
       enabled: false
     ssl:

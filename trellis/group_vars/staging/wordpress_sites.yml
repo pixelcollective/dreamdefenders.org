@@ -1,15 +1,15 @@
 wordpress_sites:
-  example.com:
+  data.dreamdefenders.org:
     site_hosts:
-      - canonical: staging.example.com
+      - canonical: data.dreamdefenders.tinypixel.dev
     local_path: ../bedrock
-    repo: git@github.com:pixelcollective/example.com.git
+    repo: git@github.com:pixelcollective/dreamdefenders.org
     repo_subtree_path: bedrock
-    branch: master
+    branch: staging-server
     multisite:
       enabled: false
     ssl:
-      enabled: false
+      enabled: true
       provider: letsencrypt
     cache:
-      enabled: false
+      enabled: true
