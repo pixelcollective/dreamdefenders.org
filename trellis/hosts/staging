@@ -1,3 +1,5 @@
+data.dreamdefenders.tinypixel.dev ansible_host=142.93.21.156
+
 [staging]
 data.dreamdefenders.tinypixel.dev
 
