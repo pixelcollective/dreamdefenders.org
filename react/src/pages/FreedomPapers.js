@@ -21,7 +21,7 @@ const freedomQuery = gql`
   {
     freedomPapers(where: {orderby: {
       field:MENU_ORDER,
-      order:DESC
+      order:ASC
     }}) {
       edges {
         node {
