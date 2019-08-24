@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-08-23T09:40:31+00:00\n"
+"POT-Creation-Date: 2019-08-24T07:04:35+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.2.0\n"
 
@@ -99,6 +99,10 @@ msgstr ""
 
 #. Template Name of the theme
 msgid "Custom Template"
+msgstr ""
+
+#: storage/framework/views/45a7aaf4a9175f6f34c2ab0702fcab7266e393a6.php:6
+msgid "Sorry, but the page you were trying to view does not exist."
 msgstr ""
 
 #: storage/framework/views/82c8a1f4d1d52f8c7c93699aca19ebfcf603e3de.php:16

@@ -40,11 +40,12 @@ class PostTypes extends PostTypesBase
                 ->addImage('image', [
                     'label' => 'Art',
                     'preview_size' => 'full',
-                    'wrapper' => self::$options['half']])
-
+                    'wrapper' => self::$options['half']
+                ])
                 ->addWysiwyg('content', [
                     'label' => 'Literature',
-                    'wrapper' => self::$options['half']])
+                    'wrapper' => self::$options['half']
+                ])
             ->endGroup()
 
             ->setLocation('post_type', '==', 'freedom-paper');
