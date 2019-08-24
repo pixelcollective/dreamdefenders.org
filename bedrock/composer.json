@@ -31,6 +31,10 @@
     {
       "type": "vcs",
       "url": "https://github.com/wp-graphql/wp-graphiql.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/wp-graphql/wp-graphql-acf.git"
     }
   ],
   "require": {
@@ -42,21 +46,17 @@
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.0.0",
     "roots/soil": ">=3",
-    "wp-graphql/wp-graphql": "^0.3.3",
+    "wp-graphql/wp-graphql": "^0.3.0",
+    "wp-graphql/wp-graphiql": "*",
+    "wp-graphql/wp-graphql-acf": "~0.2.0",
     "tiny-packagist/advanced-custom-fields-pro": "5.7.7",
     "wpackagist-plugin/gutenberg": "^6",
     "wpackagist-plugin/updraftplus": ">=1.0",
     "wpackagist-plugin/stream": "^3.2",
     "wpackagist-plugin/autodescription": ">=3.0.6",
     "wpackagist-plugin/cdn-enabler": ">=1",
-    "wpackagist-plugin/translatepress-multilingual": "1.5.1",
-    "tiny-packagist/tp-add-on-automatic-language-detection": "1.0.3",
-    "tiny-packagist/tp-add-on-extra-languages": "1.0.1",
-    "tiny-packagist/tp-add-on-navigation-based-on-language": "1.0.0",
-    "tiny-packagist/tp-add-on-seo-pack": "1.1.3",
-    "tiny-packagist/tp-add-on-translator-accounts": "1.0.1",
     "aaemnnosttv/wp-cli-login-server": "^1.2",
-    "illuminate/cache": "^5.8"
+    "wpackagist-plugin/simple-custom-post-order": "^2.4"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.4.2",
@@ -66,8 +66,7 @@
     "wpackagist-plugin/query-monitor": "^3.3",
     "paulgibbs/behat-wordpress-extension": "^3.3",
     "behat/behat": "^3.5",
-    "rarst/laps": "^3.3",
-    "wp-graphql/wp-graphiql": "^0.3.0"
+    "rarst/laps": "^3.3"
   },
   "extra": {
     "installer-paths": {

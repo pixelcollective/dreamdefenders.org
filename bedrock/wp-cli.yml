@@ -2,10 +2,10 @@
 path: web/wp
 
 @development:
-  ssh: vagrant@{project}/srv/www/{project}/current
+  ssh: vagrant@data.dreamdefenders.org/srv/www/data.dreamdefenders.org/current
 
 @staging:
-  ssh: web@staging.{project}/srv/www/{project}/current
+  ssh: web@data.dreamdefenders.tinypixel.dev/srv/www/data.dreamdefenders.org/current
 
 @production:
-  ssh: tinypixel@{project}/srv/www/{project}/current
+  ssh: tinypixel@data.dreamdefenders.org/srv/www/data.dreamdefenders.org/current

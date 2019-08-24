@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ee8aff413f7946c881d5644c278325d5",
+    "content-hash": "5ad22d09737c1431d53086b70b235b0b",
     "packages": [
         {
             "name": "aaemnnosttv/wp-cli-login-server",
@@ -40,16 +40,16 @@
         },
         {
             "name": "composer/installers",
-            "version": "v1.6.0",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b"
+                "reference": "141b272484481432cda342727a427dc1e206bfa0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/cfcca6b1b60bc4974324efb5783c13dca6932b5b",
-                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b",
+                "url": "https://api.github.com/repos/composer/installers/zipball/141b272484481432cda342727a427dc1e206bfa0",
+                "reference": "141b272484481432cda342727a427dc1e206bfa0",
                 "shasum": ""
             },
             "require": {
@@ -105,6 +105,7 @@
                 "RadPHP",
                 "SMF",
                 "Thelia",
+                "Whmcs",
                 "WolfCMS",
                 "agl",
                 "aimeos",
@@ -127,6 +128,7 @@
                 "installer",
                 "itop",
                 "joomla",
+                "known",
                 "kohana",
                 "laravel",
                 "lavalite",
@@ -156,228 +158,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2018-08-27T06:10:37+00:00"
-        },
-        {
-            "name": "doctrine/inflector",
-            "version": "v1.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/inflector.git",
-                "reference": "5527a48b7313d15261292c149e55e26eae771b0a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/5527a48b7313d15261292c149e55e26eae771b0a",
-                "reference": "5527a48b7313d15261292c149e55e26eae771b0a",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^6.2"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.3.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Doctrine\\Common\\Inflector\\": "lib/Doctrine/Common/Inflector"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com"
-                },
-                {
-                    "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com"
-                }
-            ],
-            "description": "Common String Manipulations with regard to casing and singular/plural rules.",
-            "homepage": "http://www.doctrine-project.org",
-            "keywords": [
-                "inflection",
-                "pluralize",
-                "singularize",
-                "string"
-            ],
-            "time": "2018-01-09T20:05:19+00:00"
-        },
-        {
-            "name": "illuminate/cache",
-            "version": "v5.8.29",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/illuminate/cache.git",
-                "reference": "e333321e9e4288ce5c9264a4c59e0d777cc39321"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/cache/zipball/e333321e9e4288ce5c9264a4c59e0d777cc39321",
-                "reference": "e333321e9e4288ce5c9264a4c59e0d777cc39321",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/contracts": "5.8.*",
-                "illuminate/support": "5.8.*",
-                "php": "^7.1.3"
-            },
-            "suggest": {
-                "illuminate/database": "Required to use the database cache driver (5.8.*).",
-                "illuminate/filesystem": "Required to use the file cache driver (5.8.*).",
-                "illuminate/redis": "Required to use the redis cache driver (5.8.*)."
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.8-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Illuminate\\Cache\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylor@laravel.com"
-                }
-            ],
-            "description": "The Illuminate Cache package.",
-            "homepage": "https://laravel.com",
-            "time": "2019-07-04T12:51:49+00:00"
-        },
-        {
-            "name": "illuminate/contracts",
-            "version": "v5.8.29",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/illuminate/contracts.git",
-                "reference": "f6a2633c280b3f0efcd5a6d2d4a975dfa26033e8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/contracts/zipball/f6a2633c280b3f0efcd5a6d2d4a975dfa26033e8",
-                "reference": "f6a2633c280b3f0efcd5a6d2d4a975dfa26033e8",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1.3",
-                "psr/container": "^1.0",
-                "psr/simple-cache": "^1.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.8-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Illuminate\\Contracts\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylor@laravel.com"
-                }
-            ],
-            "description": "The Illuminate Contracts package.",
-            "homepage": "https://laravel.com",
-            "time": "2019-06-24T11:16:37+00:00"
-        },
-        {
-            "name": "illuminate/support",
-            "version": "v5.8.29",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/illuminate/support.git",
-                "reference": "b60e70c9bd3c6d61cbb4343459755470fd5ad818"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/b60e70c9bd3c6d61cbb4343459755470fd5ad818",
-                "reference": "b60e70c9bd3c6d61cbb4343459755470fd5ad818",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/inflector": "^1.1",
-                "ext-json": "*",
-                "ext-mbstring": "*",
-                "illuminate/contracts": "5.8.*",
-                "nesbot/carbon": "^1.26.3 || ^2.0",
-                "php": "^7.1.3"
-            },
-            "conflict": {
-                "tightenco/collect": "<5.5.33"
-            },
-            "suggest": {
-                "illuminate/filesystem": "Required to use the composer class (5.8.*).",
-                "moontoast/math": "Required to use ordered UUIDs (^1.1).",
-                "ramsey/uuid": "Required to use Str::uuid() (^3.7).",
-                "symfony/process": "Required to use the composer class (^4.2).",
-                "symfony/var-dumper": "Required to use the dd function (^4.2).",
-                "vlucas/phpdotenv": "Required to use the env helper (^3.3)."
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.8-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Illuminate\\Support\\": ""
-                },
-                "files": [
-                    "helpers.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylor@laravel.com"
-                }
-            ],
-            "description": "The Illuminate Support package.",
-            "homepage": "https://laravel.com",
-            "time": "2019-07-05T17:41:14+00:00"
+            "time": "2019-08-12T15:00:31+00:00"
         },
         {
             "name": "ivome/graphql-relay-php",
@@ -419,73 +200,6 @@
                 "graphql"
             ],
             "time": "2016-10-29T23:29:29+00:00"
-        },
-        {
-            "name": "nesbot/carbon",
-            "version": "2.21.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "58bdbbfab17ccd2ec7347b99e997f18232def4dc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/58bdbbfab17ccd2ec7347b99e997f18232def4dc",
-                "reference": "58bdbbfab17ccd2ec7347b99e997f18232def4dc",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "php": "^7.1.8 || ^8.0",
-                "symfony/translation": "^3.4 || ^4.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.14 || ^3.0",
-                "kylekatarnls/multi-tester": "^1.1",
-                "phpmd/phpmd": "^2.6",
-                "phpstan/phpstan": "^0.11",
-                "phpunit/phpunit": "^7.5 || ^8.0",
-                "squizlabs/php_codesniffer": "^3.4"
-            },
-            "bin": [
-                "bin/carbon"
-            ],
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Carbon\\Laravel\\ServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Carbon\\": "src/Carbon/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Brian Nesbitt",
-                    "email": "brian@nesbot.com",
-                    "homepage": "http://nesbot.com"
-                },
-                {
-                    "name": "kylekatarnls",
-                    "homepage": "http://github.com/kylekatarnls"
-                }
-            ],
-            "description": "A simple API extension for DateTime.",
-            "homepage": "http://carbon.nesbot.com",
-            "keywords": [
-                "date",
-                "datetime",
-                "time"
-            ],
-            "time": "2019-07-18T18:47:28+00:00"
         },
         {
             "name": "oscarotero/env",
@@ -579,103 +293,6 @@
                 "type"
             ],
             "time": "2015-07-25T16:39:46+00:00"
-        },
-        {
-            "name": "psr/container",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-fig/container.git",
-                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
-                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Psr\\Container\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
-                }
-            ],
-            "description": "Common Container Interface (PHP FIG PSR-11)",
-            "homepage": "https://github.com/php-fig/container",
-            "keywords": [
-                "PSR-11",
-                "container",
-                "container-interface",
-                "container-interop",
-                "psr"
-            ],
-            "time": "2017-02-14T16:28:37+00:00"
-        },
-        {
-            "name": "psr/simple-cache",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-fig/simple-cache.git",
-                "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/simple-cache/zipball/408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
-                "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Psr\\SimpleCache\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
-                }
-            ],
-            "description": "Common interfaces for simple caching",
-            "keywords": [
-                "cache",
-                "caching",
-                "psr",
-                "psr-16",
-                "simple-cache"
-            ],
-            "time": "2017-10-23T01:57:42+00:00"
         },
         {
             "name": "roots/soil",
@@ -916,16 +533,16 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.11.0",
+            "version": "v1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "82ebae02209c21113908c229e9883c419720738a"
+                "reference": "550ebaac289296ce228a706d0867afc34687e3f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/82ebae02209c21113908c229e9883c419720738a",
-                "reference": "82ebae02209c21113908c229e9883c419720738a",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/550ebaac289296ce228a706d0867afc34687e3f4",
+                "reference": "550ebaac289296ce228a706d0867afc34687e3f4",
                 "shasum": ""
             },
             "require": {
@@ -937,7 +554,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.11-dev"
+                    "dev-master": "1.12-dev"
                 }
             },
             "autoload": {
@@ -954,12 +571,12 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                },
-                {
                     "name": "Gert de Pagter",
                     "email": "BackEndTea@gmail.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
@@ -970,199 +587,7 @@
                 "polyfill",
                 "portable"
             ],
-            "time": "2019-02-06T07:57:58+00:00"
-        },
-        {
-            "name": "symfony/polyfill-mbstring",
-            "version": "v1.11.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "fe5e94c604826c35a32fa832f35bd036b6799609"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/fe5e94c604826c35a32fa832f35bd036b6799609",
-                "reference": "fe5e94c604826c35a32fa832f35bd036b6799609",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "suggest": {
-                "ext-mbstring": "For best performance"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.11-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Mbstring\\": ""
-                },
-                "files": [
-                    "bootstrap.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony polyfill for the Mbstring extension",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "compatibility",
-                "mbstring",
-                "polyfill",
-                "portable",
-                "shim"
-            ],
-            "time": "2019-02-06T07:57:58+00:00"
-        },
-        {
-            "name": "symfony/translation",
-            "version": "v4.3.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/translation.git",
-                "reference": "4e3e39cc485304f807622bdc64938e4633396406"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/4e3e39cc485304f807622bdc64938e4633396406",
-                "reference": "4e3e39cc485304f807622bdc64938e4633396406",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1.3",
-                "symfony/polyfill-mbstring": "~1.0",
-                "symfony/translation-contracts": "^1.1.2"
-            },
-            "conflict": {
-                "symfony/config": "<3.4",
-                "symfony/dependency-injection": "<3.4",
-                "symfony/yaml": "<3.4"
-            },
-            "provide": {
-                "symfony/translation-implementation": "1.0"
-            },
-            "require-dev": {
-                "psr/log": "~1.0",
-                "symfony/config": "~3.4|~4.0",
-                "symfony/console": "~3.4|~4.0",
-                "symfony/dependency-injection": "~3.4|~4.0",
-                "symfony/finder": "~2.8|~3.0|~4.0",
-                "symfony/http-kernel": "~3.4|~4.0",
-                "symfony/intl": "~3.4|~4.0",
-                "symfony/service-contracts": "^1.1.2",
-                "symfony/var-dumper": "~3.4|~4.0",
-                "symfony/yaml": "~3.4|~4.0"
-            },
-            "suggest": {
-                "psr/log-implementation": "To use logging capability in translator",
-                "symfony/config": "",
-                "symfony/yaml": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.3-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Translation\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Translation Component",
-            "homepage": "https://symfony.com",
-            "time": "2019-07-18T10:34:59+00:00"
-        },
-        {
-            "name": "symfony/translation-contracts",
-            "version": "v1.1.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/translation-contracts.git",
-                "reference": "cb4b18ad7b92a26e83b65dde940fab78339e6f3c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/cb4b18ad7b92a26e83b65dde940fab78339e6f3c",
-                "reference": "cb4b18ad7b92a26e83b65dde940fab78339e6f3c",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1.3"
-            },
-            "suggest": {
-                "symfony/translation-implementation": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Contracts\\Translation\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Generic abstractions related to translation",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "abstractions",
-                "contracts",
-                "decoupling",
-                "interfaces",
-                "interoperability",
-                "standards"
-            ],
-            "time": "2019-06-13T11:15:36+00:00"
+            "time": "2019-08-06T08:03:45+00:00"
         },
         {
             "name": "tiny-packagist/advanced-custom-fields-pro",
@@ -1182,101 +607,6 @@
             },
             "description": "Customize WordPress with powerful, professional and intuitive fields.",
             "homepage": "https://www.advancedcustomfields.com"
-        },
-        {
-            "name": "tiny-packagist/tp-add-on-automatic-language-detection",
-            "version": "1.0.3",
-            "dist": {
-                "type": "zip",
-                "url": "https://packages.tinypixel.io/satispress/tp-add-on-automatic-language-detection/1.0.3",
-                "shasum": "2a2dcf55a4191da154c5788564873a71df818964"
-            },
-            "require": {
-                "composer/installers": "^1.0"
-            },
-            "type": "wordpress-plugin",
-            "authors": {
-                "name": "Cozmoslabs, Razvan Mocanu",
-                "homepage": "https://translatepress.com/"
-            },
-            "description": "Automatically redirects new visitors to their preferred language based on browser settings or IP address and remembers the last visited language.",
-            "homepage": "https://translatepress.com/"
-        },
-        {
-            "name": "tiny-packagist/tp-add-on-extra-languages",
-            "version": "1.0.1",
-            "dist": {
-                "type": "zip",
-                "url": "https://packages.tinypixel.io/satispress/tp-add-on-extra-languages/1.0.1",
-                "shasum": "69330433c157b195971e2b2cd58057e20d922d8f"
-            },
-            "require": {
-                "composer/installers": "^1.0"
-            },
-            "type": "wordpress-plugin",
-            "authors": {
-                "name": "Cozmoslabs, Razvan Mocanu",
-                "homepage": "https://translatepress.com/"
-            },
-            "description": "Extends the functionality of TranslatePress by allowing an unlimited number of translation languages.",
-            "homepage": "https://translatepress.com/"
-        },
-        {
-            "name": "tiny-packagist/tp-add-on-navigation-based-on-language",
-            "version": "1.0.0",
-            "dist": {
-                "type": "zip",
-                "url": "https://packages.tinypixel.io/satispress/tp-add-on-navigation-based-on-language/1.0.0",
-                "shasum": "d2008954a65a4795babe4626c9ba02e134c50ced"
-            },
-            "require": {
-                "composer/installers": "^1.0"
-            },
-            "type": "wordpress-plugin",
-            "authors": {
-                "name": "Cozmoslabs, Madalin Ungureanu",
-                "homepage": "https://translatepress.com/"
-            },
-            "description": "Extends the functionality of TranslatePress by allowing different navigation menu items based on language",
-            "homepage": "https://translatepress.com/"
-        },
-        {
-            "name": "tiny-packagist/tp-add-on-seo-pack",
-            "version": "1.1.3",
-            "dist": {
-                "type": "zip",
-                "url": "https://packages.tinypixel.io/satispress/tp-add-on-seo-pack/1.1.3",
-                "shasum": "75ab938d6f74f6351b9a40c688448bb9436894d0"
-            },
-            "require": {
-                "composer/installers": "^1.0"
-            },
-            "type": "wordpress-plugin",
-            "authors": {
-                "name": "Cozmoslabs, Razvan Mocanu",
-                "homepage": "https://translatepress.com/"
-            },
-            "description": "Extends the functionality of TranslatePress by allowing the translation of the page's meta information, including the url slug.",
-            "homepage": "https://translatepress.com/"
-        },
-        {
-            "name": "tiny-packagist/tp-add-on-translator-accounts",
-            "version": "1.0.1",
-            "dist": {
-                "type": "zip",
-                "url": "https://packages.tinypixel.io/satispress/tp-add-on-translator-accounts/1.0.1",
-                "shasum": "3acdd715676181382030a55811b7bf1f8e14b7c2"
-            },
-            "require": {
-                "composer/installers": "^1.0"
-            },
-            "type": "wordpress-plugin",
-            "authors": {
-                "name": "Cozmoslabs, Cristian Antohe",
-                "homepage": "https://translatepress.com/"
-            },
-            "description": "Extends the functionality of TranslatePress by creating Translator accounts.",
-            "homepage": "https://translatepress.com/"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -1376,17 +706,48 @@
             "time": "2018-09-02T14:59:54+00:00"
         },
         {
-            "name": "wp-graphql/wp-graphql",
-            "version": "v0.3.4",
+            "name": "wp-graphql/wp-graphiql",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/wp-graphql/wp-graphql.git",
-                "reference": "97d50018869dce906702ffe14df5442c1a93621e"
+                "url": "https://github.com/wp-graphql/wp-graphiql.git",
+                "reference": "7c0830215cb166e3015d7c8c9e20ce500d98dc49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-graphql/wp-graphql/zipball/97d50018869dce906702ffe14df5442c1a93621e",
-                "reference": "97d50018869dce906702ffe14df5442c1a93621e",
+                "url": "https://api.github.com/repos/wp-graphql/wp-graphiql/zipball/7c0830215cb166e3015d7c8c9e20ce500d98dc49",
+                "reference": "7c0830215cb166e3015d7c8c9e20ce500d98dc49",
+                "shasum": ""
+            },
+            "type": "wordpress-plugin",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Jason Bahl",
+                    "email": "jasonbahl@mac.com"
+                }
+            ],
+            "description": "GraphiQL IDE in the WP-Admin. Works with the WPGraphQL plugin. https://github.com/wp-graphql/wp-graphql",
+            "support": {
+                "source": "https://github.com/wp-graphql/wp-graphiql/tree/v1.0.0",
+                "issues": "https://github.com/wp-graphql/wp-graphiql/issues"
+            },
+            "time": "2019-08-13T21:38:34+00:00"
+        },
+        {
+            "name": "wp-graphql/wp-graphql",
+            "version": "v0.3.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-graphql/wp-graphql.git",
+                "reference": "f5061cbf82d0408a5bb5d6257e76d4484edbd104"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-graphql/wp-graphql/zipball/f5061cbf82d0408a5bb5d6257e76d4484edbd104",
+                "reference": "f5061cbf82d0408a5bb5d6257e76d4484edbd104",
                 "shasum": ""
             },
             "require": {
@@ -1394,7 +755,10 @@
                 "webonyx/graphql-php": "0.12.6"
             },
             "require-dev": {
-                "lucatume/wp-browser": "^2.2."
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+                "lucatume/wp-browser": "^2.2.",
+                "phpcompatibility/phpcompatibility-wp": "^2.0",
+                "wp-coding-standards/wpcs": "^2.1"
             },
             "type": "wordpress-plugin",
             "autoload": {
@@ -1428,7 +792,72 @@
                 }
             ],
             "description": "GraphQL API for WordPress",
-            "time": "2019-05-23T20:12:57+00:00"
+            "time": "2019-08-16T16:31:09+00:00"
+        },
+        {
+            "name": "wp-graphql/wp-graphql-acf",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wp-graphql/wp-graphql-acf.git",
+                "reference": "c572351b82c7c3d1502d4f27411da8d896107ba4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wp-graphql/wp-graphql-acf/zipball/c572351b82c7c3d1502d4f27411da8d896107ba4",
+                "reference": "c572351b82c7c3d1502d4f27411da8d896107ba4",
+                "shasum": ""
+            },
+            "require-dev": {
+                "codeception/c3": "2.*",
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+                "lucatume/wp-browser": "^2.2",
+                "phpunit/phpcov": "^4.0",
+                "satooshi/php-coveralls": "~1.0",
+                "squizlabs/php_codesniffer": "3.*",
+                "wp-coding-standards/wpcs": "^2.0"
+            },
+            "type": "wordpress-plugin",
+            "autoload": {
+                "psr-4": {
+                    "WPGraphQL\\ACF\\": "src/"
+                },
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "scripts": {
+                "install-wp-tests": [
+                    "bash bin/install-wp-tests.sh"
+                ],
+                "test": [
+                    "vendor/bin/codecept run"
+                ],
+                "functional-test": [
+                    "vendor/bin/codecept run functional"
+                ],
+                "acceptance-test": [
+                    "vendor/bin/codecept run acceptance"
+                ],
+                "wpunit-test": [
+                    "vendor/bin/codecept run wpunit"
+                ]
+            },
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "jasonbahl",
+                    "email": "jasonbahl@mac.com"
+                }
+            ],
+            "description": "Advanced Custom Fields bindings for wp-graphql",
+            "support": {
+                "source": "https://github.com/wp-graphql/wp-graphql-acf/tree/v0.2.0",
+                "issues": "https://github.com/wp-graphql/wp-graphql-acf/issues"
+            },
+            "time": "2019-07-24T18:13:05+00:00"
         },
         {
             "name": "wpackagist-plugin/autodescription",
@@ -1468,21 +897,39 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "6.1.1",
+            "version": "6.3.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/6.1.1"
+                "reference": "tags/6.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.6.1.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.6.3.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/gutenberg/"
+        },
+        {
+            "name": "wpackagist-plugin/simple-custom-post-order",
+            "version": "2.4.4",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/simple-custom-post-order/",
+                "reference": "tags/2.4.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/simple-custom-post-order.2.4.4.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/simple-custom-post-order/"
         },
         {
             "name": "wpackagist-plugin/stream",
@@ -1501,24 +948,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/stream/"
-        },
-        {
-            "name": "wpackagist-plugin/translatepress-multilingual",
-            "version": "1.5.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/translatepress-multilingual/",
-                "reference": "tags/1.5.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/translatepress-multilingual.1.5.1.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/translatepress-multilingual/"
         },
         {
             "name": "wpackagist-plugin/updraftplus",
@@ -1968,16 +1397,16 @@
         },
         {
             "name": "ocramius/proxy-manager",
-            "version": "2.2.2",
+            "version": "2.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Ocramius/ProxyManager.git",
-                "reference": "14b137b06b0f911944132df9d51e445a35920ab1"
+                "reference": "4d154742e31c35137d5374c998e8f86b54db2e2f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Ocramius/ProxyManager/zipball/14b137b06b0f911944132df9d51e445a35920ab1",
-                "reference": "14b137b06b0f911944132df9d51e445a35920ab1",
+                "url": "https://api.github.com/repos/Ocramius/ProxyManager/zipball/4d154742e31c35137d5374c998e8f86b54db2e2f",
+                "reference": "4d154742e31c35137d5374c998e8f86b54db2e2f",
                 "shasum": ""
             },
             "require": {
@@ -2034,7 +1463,7 @@
                 "proxy pattern",
                 "service proxies"
             ],
-            "time": "2018-09-27T13:45:01+00:00"
+            "time": "2019-08-10T08:37:15+00:00"
         },
         {
             "name": "paulgibbs/behat-wordpress-extension",
@@ -2152,6 +1581,55 @@
                 "dependency injection"
             ],
             "time": "2018-01-21T07:42:36+00:00"
+        },
+        {
+            "name": "psr/container",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/container.git",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "homepage": "https://github.com/php-fig/container",
+            "keywords": [
+                "PSR-11",
+                "container",
+                "container-interface",
+                "container-interop",
+                "psr"
+            ],
+            "time": "2017-02-14T16:28:37+00:00"
         },
         {
             "name": "rarst/laps",
@@ -3050,17 +2528,76 @@
             "time": "2019-06-23T08:51:25+00:00"
         },
         {
-            "name": "symfony/polyfill-php73",
-            "version": "v1.11.0",
+            "name": "symfony/polyfill-mbstring",
+            "version": "v1.12.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/polyfill-php73.git",
-                "reference": "d1fb4abcc0c47be136208ad9d68bf59f1ee17abd"
+                "url": "https://github.com/symfony/polyfill-mbstring.git",
+                "reference": "b42a2f66e8f1b15ccf25652c3424265923eb4f17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/d1fb4abcc0c47be136208ad9d68bf59f1ee17abd",
-                "reference": "d1fb4abcc0c47be136208ad9d68bf59f1ee17abd",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/b42a2f66e8f1b15ccf25652c3424265923eb4f17",
+                "reference": "b42a2f66e8f1b15ccf25652c3424265923eb4f17",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "ext-mbstring": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.12-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for the Mbstring extension",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "mbstring",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2019-08-06T08:03:45+00:00"
+        },
+        {
+            "name": "symfony/polyfill-php73",
+            "version": "v1.12.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php73.git",
+                "reference": "2ceb49eaccb9352bff54d22570276bb75ba4a188"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/2ceb49eaccb9352bff54d22570276bb75ba4a188",
+                "reference": "2ceb49eaccb9352bff54d22570276bb75ba4a188",
                 "shasum": ""
             },
             "require": {
@@ -3069,7 +2606,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.11-dev"
+                    "dev-master": "1.12-dev"
                 }
             },
             "autoload": {
@@ -3105,7 +2642,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2019-02-06T07:57:58+00:00"
+            "time": "2019-08-06T08:03:45+00:00"
         },
         {
             "name": "symfony/service-contracts",
@@ -3216,6 +2753,139 @@
             "time": "2019-05-27T08:16:38+00:00"
         },
         {
+            "name": "symfony/translation",
+            "version": "v4.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/translation.git",
+                "reference": "4e3e39cc485304f807622bdc64938e4633396406"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/4e3e39cc485304f807622bdc64938e4633396406",
+                "reference": "4e3e39cc485304f807622bdc64938e4633396406",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3",
+                "symfony/polyfill-mbstring": "~1.0",
+                "symfony/translation-contracts": "^1.1.2"
+            },
+            "conflict": {
+                "symfony/config": "<3.4",
+                "symfony/dependency-injection": "<3.4",
+                "symfony/yaml": "<3.4"
+            },
+            "provide": {
+                "symfony/translation-implementation": "1.0"
+            },
+            "require-dev": {
+                "psr/log": "~1.0",
+                "symfony/config": "~3.4|~4.0",
+                "symfony/console": "~3.4|~4.0",
+                "symfony/dependency-injection": "~3.4|~4.0",
+                "symfony/finder": "~2.8|~3.0|~4.0",
+                "symfony/http-kernel": "~3.4|~4.0",
+                "symfony/intl": "~3.4|~4.0",
+                "symfony/service-contracts": "^1.1.2",
+                "symfony/var-dumper": "~3.4|~4.0",
+                "symfony/yaml": "~3.4|~4.0"
+            },
+            "suggest": {
+                "psr/log-implementation": "To use logging capability in translator",
+                "symfony/config": "",
+                "symfony/yaml": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Translation\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Translation Component",
+            "homepage": "https://symfony.com",
+            "time": "2019-07-18T10:34:59+00:00"
+        },
+        {
+            "name": "symfony/translation-contracts",
+            "version": "v1.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/translation-contracts.git",
+                "reference": "cb4b18ad7b92a26e83b65dde940fab78339e6f3c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/cb4b18ad7b92a26e83b65dde940fab78339e6f3c",
+                "reference": "cb4b18ad7b92a26e83b65dde940fab78339e6f3c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3"
+            },
+            "suggest": {
+                "symfony/translation-implementation": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Contracts\\Translation\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Generic abstractions related to translation",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "abstractions",
+                "contracts",
+                "decoupling",
+                "interfaces",
+                "interoperability",
+                "standards"
+            ],
+            "time": "2019-06-13T11:15:36+00:00"
+        },
+        {
             "name": "symfony/yaml",
             "version": "v4.3.3",
             "source": {
@@ -3275,37 +2945,6 @@
             "time": "2019-07-24T14:47:54+00:00"
         },
         {
-            "name": "wp-graphql/wp-graphiql",
-            "version": "0.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-graphql/wp-graphiql.git",
-                "reference": "cf2547c4142f8bd78ddeeabdd56951aaedc61793"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-graphql/wp-graphiql/zipball/cf2547c4142f8bd78ddeeabdd56951aaedc61793",
-                "reference": "cf2547c4142f8bd78ddeeabdd56951aaedc61793",
-                "shasum": ""
-            },
-            "type": "wordpress-plugin",
-            "license": [
-                "GPL-3.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Jason Bahl",
-                    "email": "jasonbahl@mac.com"
-                }
-            ],
-            "description": "GraphiQL IDE in the WP-Admin. Works with the WPGraphQL plugin. https://github.com/wp-graphql/wp-graphql",
-            "support": {
-                "source": "https://github.com/wp-graphql/wp-graphiql/tree/v0.3.0",
-                "issues": "https://github.com/wp-graphql/wp-graphiql/issues"
-            },
-            "time": "2018-06-15T20:43:26+00:00"
-        },
-        {
             "name": "wpackagist-plugin/query-monitor",
             "version": "3.3.7",
             "source": {
@@ -3343,15 +2982,15 @@
         },
         {
             "name": "wpackagist-plugin/user-switching",
-            "version": "1.5.1",
+            "version": "1.5.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/user-switching/",
-                "reference": "tags/1.5.1"
+                "reference": "tags/1.5.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/user-switching.1.5.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/user-switching.1.5.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"

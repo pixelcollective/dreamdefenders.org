@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-08-14T20:08:29+00:00\n"
+"POT-Creation-Date: 2019-08-23T09:40:31+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.2.0\n"
 
@@ -99,4 +99,50 @@ msgstr ""
 
 #. Template Name of the theme
 msgid "Custom Template"
+msgstr ""
+
+#: storage/framework/views/82c8a1f4d1d52f8c7c93699aca19ebfcf603e3de.php:16
+msgid "Pages:"
+msgstr ""
+
+#: storage/framework/views/19663a2b67117a2267cf03698df84bab55ef67da.php:7
+msgid "By"
+msgstr ""
+
+#: storage/framework/views/5d00af4a9373c38842604b798f981918af1f555e.php:3
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: storage/framework/views/5d00af4a9373c38842604b798f981918af1f555e.php:4
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: storage/framework/views/5d00af4a9373c38842604b798f981918af1f555e.php:7
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#: storage/framework/views/210ab6663fa71b92f5e0ed5ff4516aa9f79bb2cb.php:6
+msgid "Sorry, no results were found."
+msgstr ""
+
+#: storage/framework/views/317d2744a6d1063af4283c866c1d06784811ff3e.php:5
+msgctxt "comments title"
+msgid "One response to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s responses to &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: storage/framework/views/317d2744a6d1063af4283c866c1d06784811ff3e.php:19
+msgid "&larr; Older comments"
+msgstr ""
+
+#: storage/framework/views/317d2744a6d1063af4283c866c1d06784811ff3e.php:26
+msgid "Newer comments &rarr;"
+msgstr ""
+
+#: storage/framework/views/317d2744a6d1063af4283c866c1d06784811ff3e.php:37
+msgid "Comments are closed."
 msgstr ""

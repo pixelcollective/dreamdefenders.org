@@ -41,16 +41,3 @@
     no_scripts: yes
     working_dir: "{{ deploy_helper.new_release_path }}"
 
-##
-# Clear Acorn cached data and views
-##
-- name: Clear acorn cache
-  command: wp acorn optimize:clear
-  args:
-    chdir: "{{ deploy_helper.new_release_path }}/web/app/themes/sage"
-
-##
-# Fix Acorn filesystem cache permissions
-##
-- name: Fix theme storage permissions
-  file: path="{{ deploy_helper.new_release_path }}/web/app/themes/sage/storage/framework" mode=0775 state=directory recurse=yes
