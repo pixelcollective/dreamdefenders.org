@@ -19,7 +19,10 @@ import FlipPage from 'react-flip-page'
  */
 const freedomQuery = gql`
   {
-    __typename freedomPapers {
+    freedomPapers(where: {orderby: {
+      field:MENU_ORDER,
+      order:DESC
+    }}) {
       edges {
         node {
           title
