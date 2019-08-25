@@ -52,7 +52,7 @@ class PostTypesBase
     public function init() : void
     {
         $this->collectTypesAndFields();
-
+        $this->collectTaxonomies();
         $this->hooks();
     }
 
@@ -67,6 +67,11 @@ class PostTypesBase
          * Register PostTypes with WP.
          */
         add_action('init', [$this, 'registerTypes']);
+
+        /**
+         * Register taxonomies with WP.
+         */
+        add_action('init', [$this, 'registerTaxonomies']);
 
         /**
          * Register Field Groups with ACF.
@@ -100,6 +105,16 @@ class PostTypesBase
     }
 
     /**
+     * Collect taxonomies
+     */
+    public function collectTaxonomies()
+    {
+        if ($taxonomies = self::$app['config']->get('taxonomies')) {
+            $this->taxonomies = Collection::make($taxonomies);
+        }
+    }
+
+    /**
      * Registers collected types.
      *
      * @return void
@@ -111,6 +126,22 @@ class PostTypesBase
                 $type['slug'],
                 $type['options'],
                 $type['overrides'],
+            );
+        });
+    }
+
+    /**
+     * Registers collected types.
+     *
+     * @return void
+     */
+    public function registerTaxonomies() : void
+    {
+        $this->taxonomies->each(function ($taxonomy) {
+            register_extended_taxonomy(
+                $taxonomy['slug'],
+                $taxonomy['posttype'],
+                $taxonomy['options'],
             );
         });
     }
