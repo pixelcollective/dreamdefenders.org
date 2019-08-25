@@ -40,11 +40,8 @@ class PostTypesBase
      */
     public function __construct(Application $app)
     {
-        self::$app = $app;
-
-        $this->builder = $app->make('builder');
-
-        $this->groups  = Collection::make();
+        self::$app    = $app;
+        $this->groups = Collection::make();
     }
 
     /**
@@ -54,9 +51,9 @@ class PostTypesBase
      */
     public function init() : void
     {
-        $this->hooks();
-
         $this->collectTypesAndFields();
+
+        $this->hooks();
     }
 
     /**
@@ -88,14 +85,17 @@ class PostTypesBase
          * Gather type definitions from application config.
          */
         if ($postTypes = self::$app['config']->get('posttypes')) {
-            $this->postTypes = Collection::make($postTypes);
-        }
+            $postTypes = Collection::make($postTypes);
 
-        /**
-         * Call userland for any field group definitions
-         */
-        if ($fields = $this->fields()) {
-            $this->groups->push($fields);
+            $postTypes->each(function ($postType) {
+                $callable = "{$postType['options']['graphql_single_name']}Fields";
+
+                $this->groups->push($this->{$callable}(
+                    $this->fieldBuilder($callable)
+                ));
+            });
+
+            $this->postTypes = $postTypes;
         }
     }
 
@@ -125,5 +125,13 @@ class PostTypesBase
         $this->groups->each(function ($group) {
             \acf_add_local_field_group($group->build());
         });
+    }
+
+    /**
+     * Returns a new FieldBuilder instance
+     */
+    protected function fieldBuilder($builderName)
+    {
+        return new self::$app['builder']($builderName);
     }
 }
