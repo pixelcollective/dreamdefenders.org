@@ -4,12 +4,10 @@ import React, { Fragment } from 'react'
 // styled
 import styled from 'styled-components'
 
-// @material
-import Grid from '@material-ui/core/Grid'
-
 // motion
 import { motion } from 'framer-motion'
 
+// theme
 import theme from './../theme/material'
 
 const container = {
@@ -32,9 +30,41 @@ const Shade = styled(motion.div)`
   height: calc(100vh - 120px);
   position: relative;
   transition: all 50s ease-in-out;
+  position: relative;
+  width: 98vw;
+  margin-left: auto;
+
   :hover {
     background: rgba(134, 211, 255, 1);
     transition: all 50s ease-in-out;
+  }
+
+  > div {
+    padding: 0rem 2rem;
+
+    /* width */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 10px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #fde135;
+      border-radius: 10px;
+      transition: all 0.2s ease-in-out;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #52c0ff;
+      transition: all 0.2s ease-in-out;
+    }
   }
 `
 
@@ -69,12 +99,14 @@ const Stanza = ({lines}) => {
           height: `100%`,
           overflowY: `scroll`,
           overflowX: `hidden`,
-          padding: `2rem`,
+          padding: `2rem 0rem 2rem 2rem`,
         }}>
         {lines.map((line, i) => (
           <Fragment>
             <Line variants={item}>
-              <span dangerouslySetInnerHTML={{__html: line}} />
+              <span dangerouslySetInnerHTML={{
+                __html: line,
+              }} />
             </Line>
           </Fragment>
         ))}

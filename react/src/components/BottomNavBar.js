@@ -1,21 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { default as BottomNav } from '@material-ui/core/BottomNavigation'
 import { default as NavAction } from '@material-ui/core/BottomNavigationAction'
 
 const BottomNavigation = props => {
-  const [value, setValue] = useState(0)
-
-  const onChange = (event, newValue) => setValue(newValue)
-
   return (
-    <BottomNav
-      value={value}
-      onChange={onChange}
-      showLabels>
+    <BottomNav value={props.activeComponent} showLabels>
       {props.items.map(action => (
         <NavAction
+          className={props.activeComponent == action.url && `Mui-selected`}
           label={action.label}
-          onClick={() => window.location = action.url} />
+          onClick={() => props.onComponentSwap(action.url)} />
       ))}
     </BottomNav>
   )

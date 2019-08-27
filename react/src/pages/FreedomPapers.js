@@ -62,7 +62,7 @@ const FreedomPapers = props => {
   `
 
   const HyperText = styled.div`
-    padding: 42px 32px 32px 32px;
+    padding: 42px 0px;
     width: 50vw;
     border-right: 2px solid rgba(0, 0, 0, 0.1);
   `
@@ -98,6 +98,8 @@ const FreedomPapers = props => {
     overflow-y: scroll;
     scroll: auto;
     height: 72vh;
+    padding-left: 0em;
+    padding-right: 2em;
 
     /* width */
     ::-webkit-scrollbar {
@@ -126,6 +128,8 @@ const FreedomPapers = props => {
     p {
       display: block;
       font-size: 1em;
+      padding-left: 2em;
+      padding-right: 2em;
     }
   `
 

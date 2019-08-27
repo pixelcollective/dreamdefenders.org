@@ -12,20 +12,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 import SocialNetworks from './../components/Social'
 
 /**
- * Mock data.
- * @todo application-level gql queries
- */
-const app = {
-  name: `Dream Defenders`,
-  bottomNavOptions: [
-    { label: `Item One`,   url: `#1` },
-    { label: `Item Two`,   url: `#2` },
-    { label: `Item Three`, url: `#3` },
-    { label: `Item Four`,  url: `#4` },
-  ],
-}
-
-/**
  * Primary branding area.
  */
 const Brand = ({onClick}) => {
@@ -55,7 +41,7 @@ const Brand = ({onClick}) => {
           textTransform: `uppercase`,
           fontWeight: 900,
         }}>
-        {app.name}
+        {`Dream Defenders`}
       </Typography>
     </motion.div>
   )
@@ -66,18 +52,19 @@ const Brand = ({onClick}) => {
  */
 const Home = () => (
   <Fragment>
-    <AnimatePresence>
-      <Grid container justify={`center`}>
-        <Brand />
-      </Grid>
-    </AnimatePresence>
     <Grid
       container
       xs={4}
       alignContent={`space-around`}
       justify={`space-around`}
-      style={{marginLeft: `auto`, marginRight: `auto`}}>
-      <SocialNetworks size={`4x`} />
+      style={{
+        marginLeft: `auto`,
+        marginRight: `auto`,
+      }}>
+      <AnimatePresence>
+        <Brand />
+        <SocialNetworks size={`4x`} />
+      </AnimatePresence>
     </Grid>
   </Fragment>
 )
