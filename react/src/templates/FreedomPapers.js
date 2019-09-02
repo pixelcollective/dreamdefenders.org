@@ -17,30 +17,25 @@ import FlipPage from 'react-flip-page'
 /**
  * Query graph.
  */
-const freedomQuery = gql`
-  {
-    freedomPapers(where: {orderby: {
-      field:MENU_ORDER,
-      order:ASC
-    }}) {
-      edges {
-        node {
-          title
-          freedomPapers {
-            freedomPaper {
-              content
-              image {
-                guid
-                sourceUrl
-                srcSet
-              }
+const freedomQuery = gql`{
+  freedomPapers(where: {orderby: { field:MENU_ORDER, order:ASC}}) {
+    edges {
+      node {
+        title
+        freedomPapers {
+          freedomPaper {
+            content
+            image {
+              guid
+              sourceUrl
+              srcSet
             }
           }
         }
       }
     }
   }
-`
+}`
 
 const FreedomPapers = props => {
   const { error, data } = useQuery(freedomQuery)
@@ -164,12 +159,9 @@ const FreedomPapers = props => {
                   {`${++i}/${data.freedomPapers.edges.length}`}
                 </PageNo>
               </Header>
-              <Text style={{
-                scrollBehavior: `smooth`,
-              }}
-              dangerouslySetInnerHTML={{
-                __html: content,
-              }} />
+              <Text
+                style={{scrollBehavior: `smooth`}}
+                dangerouslySetInnerHTML={{__html: content}} />
             </HyperText>
             <Image src={image.guid} />
           </Page>

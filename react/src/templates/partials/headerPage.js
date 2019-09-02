@@ -3,12 +3,6 @@ import React, { Fragment } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import styled from 'styled-components'
 
-const Color = styled.div`
-  z-index: -1;
-  margin-top: 0;
-  max-width: 100vw;
-`
-
 const Label = styled.div`
   background: black;
   color: white;
@@ -47,10 +41,10 @@ const Image = styled.img`
   object-fit: cover;
   position: fixed;
   z-index: -1;
-  top: -10vh;
+  top: 50%;
   left: 0;
   right: 0;
-  min-height: 100%;
+  min-height: 130vh;
   max-width: 100vw;
 `
 
@@ -79,16 +73,9 @@ const Header = props => (
         }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{
-          duration: 1,
-          delay: 0,
-        }}>
+        transition={{ duration: 1, delay: 0 }}>
         <motion.div
-          style={{
-            position: `fixed`,
-            minWidth: `100vw`,
-            minHeight: `100%`,
-          }}
+          style={{ minWidth: `100vw`, minHeight: `100%`}}
           initial={{ scale: 1 }}
           animate={{ scale: 1.4 }}
           transition={{ duration: 60, delay: 0 }}>
@@ -105,16 +92,10 @@ const Header = props => (
           initial={{
             zIndex: `10`,
             position: `relative`,
-            top: `5rem`,
+            top: `50rem`,
           }}
-          animate={{
-            opacity: 1,
-            top: 0,
-          }}
-          transition={{
-            duration: 0.4,
-            delay: 0.2,
-          }}>
+          animate={{ opacity: 1, top: `3rem` }}
+          transition={{ duration: 0.4, delay: 0.2 }}>
           <h1>{props.title}</h1>
         </motion.div>
       </Heading>

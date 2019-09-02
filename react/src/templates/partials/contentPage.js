@@ -4,8 +4,8 @@ import { AnimatePresence, motion } from 'framer-motion'
 import styled from 'styled-components'
 
 const Container = styled.div`
-  background: white;
   position: relative;
+  background: ${props => props.background};
 `
 
 const Content = styled.div`
@@ -16,6 +16,7 @@ const Content = styled.div`
   padding-bottom: 2rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  min-height: 100vh;
 
   h1,
   h2,
@@ -27,20 +28,13 @@ const Content = styled.div`
   }
 `
 
-const PageContent = ({ html }) => (
-  <Container>
+const PageContent = ({ html, background, color }) => (
+  <Container background={background ? background : `white`}>
     <AnimatePresence>
       <motion.div
-        initial={{
-          opacity: 0,
-        }}
-        animate={{
-          opacity: 1,
-        }}
-        transition={{
-          duration: 0.1,
-          delay: 0,
-        }}>
+        initial={{opacity: 0, color: color ? color : `inherit`,}}
+        animate={{opacity: 1}}
+        transition={{duration: 0.1, delay: 0}}>
         <Content dangerouslySetInnerHTML={{__html: html && html}} />
       </motion.div>
     </AnimatePresence>

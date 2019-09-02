@@ -24,6 +24,16 @@ class PostTypes extends PostTypesBase
             'ui'     => 1,
             'style'  => 'seamless',
         ],
+        'chapterGroup' => [
+            'label' => 'Chapter',
+            'ui'    => 1,
+            'style' => 'seamless',
+        ],
+        'campaignGroup' => [
+            'label' => 'Chapter',
+            'ui'    => 1,
+            'style' => 'seamless',
+        ]
     ];
 
     /**
@@ -74,5 +84,79 @@ class PostTypes extends PostTypesBase
             ->setLocation('post_type', '==', 'featured-media');
 
         return $featuredMedia;
+    }
+
+    /**
+     * Register field groups
+     *
+     * @return \StoutLogic\AcfBuilder\FieldsBuilder
+     */
+    public function chapterFields(\StoutLogic\AcfBuilder\FieldsBuilder $builder) : FieldsBuilder
+    {
+        $chapter = new $builder('Chapter');
+
+        $chapter
+
+            ->addImage('image', [
+                'label' => 'Image to identify chapter.',
+                'preview_size' => 'full',
+                'wrapper' => self::$options['half']
+            ])
+            ->addEmail('email', [
+                'label' => 'Chapter contact email',
+            ])
+            ->addWysiwyg('description', [
+                'label' => 'Describe this chapter',
+                'wrapper' => self::$options['half']
+            ])
+            ->addRelationship('posts', [
+                'label' => 'Posts',
+                'post_type' => 'post',
+            ])
+            ->addRelationship('campaign', [
+                'label' => 'Campaigns',
+                'instructions' => 'Select campaigns to associate with this chapter.',
+                'post_type' => 'campaign',
+            ])
+            ->addRelationship('featured-media', [
+                'label' => 'Featured Media',
+                'instructions' => 'Select images to associate with this chapter.',
+                'post_type' => 'featured-media'
+            ])
+
+            ->setLocation('post_type', '==', 'chapter');
+
+        return $chapter;
+    }
+
+    /**
+     * Register field groups
+     *
+     * @return \StoutLogic\AcfBuilder\FieldsBuilder
+     */
+    public function campaignFields(\StoutLogic\AcfBuilder\FieldsBuilder $builder) : FieldsBuilder
+    {
+        $campaign = new $builder('campaign');
+
+        $campaign
+
+            ->addImage('image', [
+                'label' => 'Image to identify campaign.',
+                'preview_size' => 'full',
+                'wrapper' => self::$options['half']
+            ])
+            ->addWysiwyg('description', [
+                'label' => 'Describe this campaign.',
+                'wrapper' => self::$options['half']
+            ])
+            ->addRelationship('chapter', [
+                'label' => 'Chapters',
+                'instructions' => 'Select chapters to associate with this campaign.',
+                'post_type' => 'chapter',
+            ])
+
+            ->setLocation('post_type', '==', 'campaign');
+
+        return $campaign;
     }
 }

@@ -1,5 +1,5 @@
 // react
-import React, { Component } from 'react'
+import React from 'react'
 
 // graphql
 import GraphQLProvider from './graph'
@@ -15,31 +15,37 @@ import {
 import CssBaseline       from '@material-ui/core/CssBaseline'
 import { ThemeProvider } from '@material-ui/styles'
 
-// providers
-import { IndexProvider }  from './state'
+// rebass
+import { ThemeProvider as Styled } from 'styled-components'
 
 // theme
 import theme from './theme/material'
+import rebassTheme from './theme/styled'
 
 // components
+import AppScrollbar   from './components/AppScrollbar'
 import TopNavBar      from './components/TopNavBar'
 import { Page, Home } from './templates/index'
 
 const App = props => (
-  <IndexProvider>
-    <ThemeProvider theme={theme}>
+  <ThemeProvider theme={theme}>
+    <Styled theme={rebassTheme}>
       <GraphQLProvider>
         <CssBaseline />
         <Router>
           <TopNavBar appName={`Dream Defenders`} />
-          <Switch>
-            <Route path="/:slug" component={Page} />
-            <Route exact path="/" component={Home} />
-          </Switch>
+          <AppScrollbar
+            trackColor={`white`}
+            thumbColor={theme.palette.primary[`400`]}>
+            <Switch>
+              <Route path="/:slug" component={Page} />
+              <Route exact path="/" component={Home} />
+            </Switch>
+          </AppScrollbar>
         </Router>
       </GraphQLProvider>
-    </ThemeProvider>
-  </IndexProvider>
+    </Styled>
+  </ThemeProvider>
 )
 
 export default App

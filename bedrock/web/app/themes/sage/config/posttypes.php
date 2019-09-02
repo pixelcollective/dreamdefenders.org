@@ -54,4 +54,59 @@ return [
             'slug'     => 'featured-media',
         ]
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Chapters
+    |--------------------------------------------------------------------------
+    |
+    | Dream Defenders chapters.
+    |
+    */
+
+    [
+        'slug' => 'chapter',
+
+        'options' => [
+            'supports' => ['title'],
+            'show_in_rest' => false,
+            'show_in_graphql' => true,
+            'graphql_single_name' => 'chapter',
+            'graphql_plural_name' => 'chapters',
+        ],
+
+        'overrides' => [
+            'singular' => 'Chapter',
+            'plural'   => 'Chapters',
+            'slug'     => 'chapter',
+        ]
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Campaigns
+    |--------------------------------------------------------------------------
+    |
+    | Dream Defenders Campaigns.
+    |
+    */
+
+    [
+        'slug' => 'campaign',
+
+        'options' => [
+            'supports' => ['title'],
+            'show_in_rest' => false,
+            'show_in_graphql' => true,
+            'graphql_single_name' => 'campaign',
+            'graphql_plural_name' => 'campaigns',
+        ],
+
+        'overrides' => [
+            'singular' => 'Campaign',
+            'plural'   => 'Campaigns',
+            'slug'     => 'Campaign',
+        ]
+    ],
+
 ];

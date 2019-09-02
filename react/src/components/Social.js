@@ -1,11 +1,13 @@
 // react
 import React, { Fragment } from 'react'
 
-// @material
-import Grid from '@material-ui/core/Grid'
-
 // styled-components
 import styled from 'styled-components'
+
+// rebass
+import {
+  Box,
+} from 'rebass'
 
 // framer-motion
 import { motion } from 'framer-motion'
@@ -14,7 +16,11 @@ import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 // icons
-import Icons from './../icons'
+import {
+  twitter,
+  facebook,
+  instagram
+} from './../icons'
 
 /**
  * Sunday colors.
@@ -29,39 +35,48 @@ const sundayColors = [
   `#FCE30C`,
 ]
 
+const Grid = props => (
+  <Box {...props} sx={{
+    display: 'grid',
+    gridGap: [1],
+    gridTemplateColumns: `repeat(auto-fit, minmax(128px, 1fr))`,
+  }}>
+    {props.children}
+  </Box>
+)
+
+
 /**
  * Bubblegum social network icons.
  */
 const NetworkPop = props => {
   return (
-    <motion.div
-      style={{
-        width: `auto`,
-        padding: `10px`,
-        fillColor: `white`,
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        display: `inline-block`,
-      }}
-      initial={{
-        scale: 1,
-        color: `#FFFFFF`,
-        borderRadius: `0`,
-        background: `none`,
-      }}
-      whileHover={{
-        scale: [1.6, 1.2],
-        cursor: `pointer`,
-        borderRadius: `10px`,
-        color: sundayColors[`${props.color}`],
-        background: sundayColors[`${props.bg}`],
-      }}
-      transition={{
-        type: `spring`,
-        duration: 0.4,
-      }}>
-      {props.children}
-    </motion.div>
+    <Box p={[4]} display={[`inline-block`]}>
+      <motion.div
+        style={{
+          fillColor: `white`,
+          padding: `${props.p}em`,
+        }}
+        initial={{
+          scale: 1,
+          color: `#FFFFFF`,
+          borderRadius: `0`,
+          background: `none`,
+        }}
+        whileHover={{
+          scale: [1.6, 1.2],
+          cursor: `pointer`,
+          borderRadius: `10px`,
+          color: sundayColors[`${props.color}`],
+          background: sundayColors[`${props.bg}`],
+        }}
+        transition={{
+          type: `spring`,
+          duration: 0.4,
+        }}>
+        {props.children}
+      </motion.div>
+    </Box>
   )
 }
 
@@ -70,6 +85,8 @@ const NetworkPop = props => {
  */
 const SocialNetworks = props => {
   const Icon = styled(FontAwesomeIcon)`
+    padding: ${props => props.p};
+
     svg {
       color: white;
       fill: white;
@@ -77,23 +94,23 @@ const SocialNetworks = props => {
   `
 
   return (
-    <Fragment>
-      <Grid item align={`center`} xs={4}>
-        <NetworkPop color={6} bg={5}>
-          <Icon icon={Icons.facebook} {...props} />
+    <Grid pt={[0]} mt={[0]}>
+      <Box mt={[0]}>
+        <NetworkPop p={[1]} color={6} bg={5}>
+          <Icon icon={facebook} {...props} />
         </NetworkPop>
-      </Grid>
-      <Grid item align={`center`} xs={4}>
-        <NetworkPop color={2} bg={3}>
-          <Icon icon={Icons.twitter} {...props} />
+      </Box>
+      <Box>
+        <NetworkPop p={[1]} color={2} bg={3}>
+          <Icon icon={twitter} {...props} />
         </NetworkPop>
-      </Grid>
-      <Grid item align={`center`} xs={4}>
-        <NetworkPop color={4} bg={1}>
-          <Icon icon={Icons.instagram} {...props} />
+      </Box>
+      <Box>
+        <NetworkPop p={[1]} color={4} bg={1}>
+          <Icon icon={instagram} {...props} />
         </NetworkPop>
-      </Grid>
-    </Fragment>
+      </Box>
+    </Grid>
   )
 }
 

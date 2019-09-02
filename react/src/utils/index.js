@@ -1,3 +1,6 @@
+/**
+ * Shuffle an array
+ */
 const shuffle = array => {
   let counter = array.length
 
@@ -17,22 +20,9 @@ const shuffle = array => {
   return array
 }
 
-const curriedCssVarSetter = ref => (postfix = '') => v => {
-  const tag = ref.current
-  if (!tag) return
+/**
+ * noop
+ */
+const noop = () => {}
 
-  Object.keys(v).forEach(key => {
-    tag.style.setProperty(
-      `--mouse-${key}${postfix ? `-${postfix}` : ''}`,
-      v[key]
-    )
-  })
-}
-
-const noop = () => { }
-
-export {
-  noop,
-  curriedCssVarSetter,
-  shuffle,
-}
+export { noop, shuffle }

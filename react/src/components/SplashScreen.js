@@ -44,20 +44,20 @@ const SplashScreen = props => {
     top: 0;
     left: 0;
     right: 0;
+    height: 100vh;
     width: 100vw;
-    min-height: 100vh;
     zIndex: -10;
     object-fit: cover;
     background-size: cover;
     min-width: 100vw;
     background-repeat: no-repeat;
     background-position: center center;
-    background-image: url(${props.backgroundLoaded && bgImage});
+    background-image: url(${bgImage});
     background-attachment: fixed;
   `
 
   const Scrim = styled(motion.div)`
-    background: rgba(253,230,83,1);
+    background: rgba(253, 230, 83, 1);
     min-height: 100vh;
     min-width: 100vw;
     position: relative;
@@ -67,7 +67,7 @@ const SplashScreen = props => {
   `
 
   const Content = styled(motion.div)`
-    ${props.isInitialLoad && `
+    ${props.init && `
       opacity: 0;
       transition: all 1s ease-in-out;
     `}
@@ -75,21 +75,22 @@ const SplashScreen = props => {
 
   return (
     <Fragment>
-      <BackgroundImageOnLoad src={bgImage} onLoadBg={props.onBackgroundLoad} />
-      {props.backgroundLoaded && (
-        props.isInitialLoad && <AnimatePresence>
-          <Background initial={{scale: 1}} animate={{scale: 1.2}} transition={{duration: 60}} />
-          <Scrim
-            animate={props.isInitialLoad && {background: `rgba(253, 230, 83, 0.4)`}}
-            transition={props.isInitialLoad && {duration: `1`, delay: `1`}}>
-            <Content
-              animate={props.isInitialLoad && {opacity: `1`}}
-              transition={props.isInitialLoad && {duration: `5`, delay: `2`}}>
-              {props.children}
-            </Content>
-          </Scrim>
-        props.isInitialLoad && </AnimatePresence>
-      )}
+      <BackgroundImageOnLoad src={bgImage} />
+      <AnimatePresence>
+        <Background
+          initial={{scale: 1}}
+          animate={{scale: 1.2}}
+          transition={{duration: 60}} />
+        <Scrim
+          animate={{background: `rgba(253, 230, 83, 0.4)`}}
+          transition={{duration: `1`, delay: `1`}}>
+          <Content
+            animate={{opacity: `1`}}
+            transition={{duration: `5`, delay: `2`}}>
+            {props.children}
+          </Content>
+        </Scrim>
+      </AnimatePresence>
     </Fragment>
   )
 }

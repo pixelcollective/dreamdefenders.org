@@ -1,135 +1,139 @@
 // react
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 
-// @material-ui
-import Typography from '@material-ui/core/Typography'
-import Grid       from '@material-ui/core/Grid'
+// apollo
+import { useQuery } from '@apollo/react-hooks'
+import gql from 'graphql-tag'
+
+// functional
+import { content } from './../graph/fragments'
+
+// styled
+import styled, { css } from 'styled-components'
+
+// rebass
+import { Box, Heading as H } from 'rebass/styled-components'
 
 // framer-motion
-import {
-  motion,
-  AnimatePresence,
-} from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
+
+// theme
+import theme from './../theme/material'
 
 // Components
-import Page from './page/Page'
+import Error from './../components/Error'
 import SocialNetworks from './../components/Social'
 import SplashScreen from '../components/SplashScreen'
 
-/**
- * Primary branding area.
- */
-const Brand = ({onClick}) => (
-  <motion.div
-    transition={{
-      yoyo: Infinity,
-      duration: 30,
-      type: `spring`,
-    }}
-    whileHover={{
-      scale: 1.1,
-      cursor: `pointer`,
-    }}
-    style={{
-      paddingTop: `5rem`,
-      paddingBottom: `5rem`,
-      width: `100%`,
+
+const Container = props => (
+  <Box
+    sx={{
+      maxWidth: 722,
+      mx: 'auto',
+      px: 1,
     }}>
-    <Typography
-      variant={`h1`}
-      component={`h1`}
-      onClick={onClick}
-      style={{
-        color: `white`,
-        textAlign: `center`,
-        letterSpacing: `0.1ch`,
-        textTransform: `uppercase`,
-        fontWeight: 900,
-      }}>
-      {`Dream Defenders`}
-    </Typography>
-  </motion.div>
+    {props.children}
+  </Box>
 )
+
+const Heading = styled(H)(css`
+  color: white;
+  text-transform: uppercase;
+  font-weight: 900;
+  line-height: 1em;
+  padding-top: 2em;
+`)
+
+const Content = styled.div`
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: strong;
+  }
+`
 
 /**
  * Main app.
  */
-class Home extends Component {
-  constructor() {
-    super()
-
-    this.state = {
-      backgroundLoaded: false,
-      init: true,
+const Home = () => {
+  let {init}   = useState(true)
+  const {data} = useQuery(gql`${content.page} {
+    pages(where: {name: "dream-defenders"}) {
+      edges {
+        node {
+          featuredImage {
+            altText
+            title
+            guid
+            srcSet
+          }
+          ...PageParts
+        }
+      }
     }
+  }`)
 
-    this.onBackgroundLoad = this.onBackgroundLoad.bind(this)
-    this.onComponentSwap = this.onComponentSwap.bind(this)
-  }
+  const page = data.pages && data.pages.edges[0].node ? data.pages.edges[0].node : null
 
-  onBackgroundLoad() {
-    this.setState({
-      backgroundLoaded: true,
-    })
-  }
-
-  onComponentSwap(component) {
-    this.setState({ component })
-  }
-
-  render() {
-    const {
-      component,
-      init,
-      backgroundLoaded,
-    } = this.state
-
-    return (
-      <SplashScreen
-        isInitialLoad={init}
-        backgroundLoaded={backgroundLoaded}
-        onBackgroundLoad={this.onBackgroundLoad}
-        onComponentSwap={this.onComponentSwap}
-        activeComponent={component}>
-        <Grid
-          container
-          xs={8}
-          alignContent={`space-around`}
-          justify={`space-around`}
-          style={{
-            padding: `30vh 0 30vh 0`,
-            height: `100vh`,
-            width: `100vw`,
-            marginLeft: `auto`,
-            marginRight: `auto`,
-          }}>
-          <AnimatePresence>
-            <Brand />
+  return data && data.pages && data.pages.edges <= 0 ? <Error /> : (
+    <SplashScreen init={init}>
+      <AnimatePresence>
+        <Container>
+          <Box
+            fontSize={[2, 6, 8]}
+            mb={[3]}
+            pt={[6]}>
+            <motion.div
+              style={{
+                radialGradient: `rgba(0, 0, 0, 50%), rgba(0, 0, 0, 0)`
+              }}
+              transition={{
+                yoyo: Infinity,
+                duration: 30,
+                type: `spring`,
+              }}
+              whileHover={{
+                scale: 1.1,
+                cursor: `pointer`,
+              }}>
+              <Heading
+                fontSize={[6, 8, 8]}
+                fontFamily={[`sans-serif`]}
+                color={[`white`]}>
+                {`Dream Defenders`}
+              </Heading>
+            </motion.div>
+          </Box>
+          <Box py={[4]}>
             <SocialNetworks size={`4x`} />
+          </Box>
+        </Container>
+      </AnimatePresence>
+      <Box
+        backgroundColor={[theme.palette.secondary[`900`]]}
+        py={[4]}>
+        <Container>
+          <AnimatePresence>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                duration: 0.1,
+                delay: 0,
+              }}>
+              <Content dangerouslySetInnerHTML={{
+                __html: page.content && page.content
+              }} />
+            </motion.div>
           </AnimatePresence>
-        </Grid>
-        <Grid
-          justify={`space-around`}
-          style={{
-            marginLeft: `auto`,
-            marginRight: `auto`,
-            backgroundRepeat: `repeat`,
-          }}>
-          <Grid
-            container
-            justify={`space-around`}
-            style={{
-              padding: `2rem`,
-              color: `white`,
-              fontSize: `1.5rem`,
-              background: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3) 30%, rgb(0, 0, 0, 1) 90%)`,
-            }}>
-            <Page match={{ params: { slug: `dream-defenders` } }} />
-          </Grid>
-        </Grid>
-      </SplashScreen>
-    )
-  }
+        </Container>
+      </Box>
+    </SplashScreen>
+  )
 }
 
 export default Home
