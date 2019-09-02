@@ -1,11 +1,16 @@
 // @material-ui
 import { createMuiTheme } from '@material-ui/core/styles'
 
+// theme object
 const material = createMuiTheme()
 
-// typography
+/**
+ * Typographic definitions
+ *
+ * @package Dream Defenders
+ * @subpackage Material UI
+ */
 const typography = {
-  // Fonts
   fontFamily: [
     `-apple-system`,
     `BlinkMacSystemFont`,
@@ -18,10 +23,9 @@ const typography = {
     `"Segoe UI Emoji"`,
     `"Segoe UI Symbol"`,
   ].join(`,`),
-  // Headings
   h1: {
     fontSize: `4rem`,
-    [`@media (min-width:600px)`]: {
+    [material.breakpoints.up(`sm`)]: {
       fontSize: `4rem`,
     },
     [material.breakpoints.up(`md`)]: {
@@ -30,7 +34,7 @@ const typography = {
   },
   h2: {
     fontSize: `3rem`,
-    [`@media (min-width:600px)`]: {
+    [material.breakpoints.up(`sm`)]: {
       fontSize: `3rem`,
     },
     [material.breakpoints.up(`md`)]: {
@@ -39,7 +43,7 @@ const typography = {
   },
   h3: {
     fontSize: `3rem`,
-    [`@media (min-width:600px)`]: {
+    [material.breakpoints.up(`sm`)]: {
       fontSize: `3rem`,
     },
     [material.breakpoints.up(`md`)]: {
@@ -48,7 +52,7 @@ const typography = {
   },
   h4: {
     fontSize: `2rem`,
-    [`@media (min-width:600px)`]: {
+    [material.breakpoints.up(`sm`)]: {
       fontSize: `2rem`,
     },
     [material.breakpoints.up(`md`)]: {
@@ -57,7 +61,7 @@ const typography = {
   },
   h5: {
     fontSize: `2rem`,
-    [`@media (min-width:600px)`]: {
+    [material.breakpoints.up(`sm`)]: {
       fontSize: `2rem`,
     },
     [material.breakpoints.up(`md`)]: {
@@ -81,14 +85,10 @@ const typography = {
       fontSize: `2rem`,
     },
   },
-  // Body
   body: {
     fontSize: `1.5rem`,
-    [`@media (min-width:600px)`]: {
-      fontSize: `1.5rem`,
-    },
-    [material.breakpoints.up(`md`)]: {
-      fontSize: `1.5rem`,
+    [material.breakpoints.up(`sm`)]: {
+      fontSize: `1.8rem`,
     },
   }
 }

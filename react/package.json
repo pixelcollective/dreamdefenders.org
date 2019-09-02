@@ -29,8 +29,10 @@
     "react-dom": "^16.9.0",
     "react-flip-page": "^1.5.7",
     "react-image-webp": "^0.3.1",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.0",
     "react-use-dimensions": "^1.2.1",
+    "rebass": "^4.0.5",
     "styled-components": "^4.3.2",
     "styled-reset": "^3.0.2",
     "webfontloader": "^1.6.28"

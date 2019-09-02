@@ -9,7 +9,7 @@ import { HttpLink } from 'apollo-link-http'
 import { onError } from 'apollo-link-error'
 
 const server  = `https://data.dreamdefenders.tinypixel.dev/graphql`,
-      cache   = new InMemoryCache({}),
+      cache   = new InMemoryCache(),
       storage = window.localStorage
 
 class GraphQLProvider extends Component {
@@ -36,7 +36,7 @@ class GraphQLProvider extends Component {
         }),
         withClientState({
           defaults: {
-            isConnected: true,
+            isConnected: false,
           },
           resolvers: {
             Mutation: {

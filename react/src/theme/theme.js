@@ -94,18 +94,18 @@ const typography = {
 }
 
 const ornamentation = {
-  stripes: `
-    background: repeating-linear-gradient(
+  stripes: {
+    background: `repeating-linear-gradient(
       45deg,
       ${colorway.nearlyBlack.rgba`1`},
       ${colorway.nearlyBlack.rgba`0`} 10px,
       ${colorway.nearlyBlack.rgba`1`} 10px,
       ${colorway.nearlyBlack.rgba`0`} 20px,
-    );
-  `,
+    )`,
+  }
 }
 
-export const theme = {
+export default {
   colorway,
   fonts,
   typography,

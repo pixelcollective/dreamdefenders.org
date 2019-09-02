@@ -13,14 +13,34 @@ import Divider from '@material-ui/core/Divider'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import ListItem from '@material-ui/core/ListItem'
-import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-import InboxIcon from '@material-ui/icons/MoveToInbox'
-import MailIcon from '@material-ui/icons/Mail'
+
+import { Link } from 'react-router-dom'
+
+// apollo
+import { useQuery } from '@apollo/react-hooks'
+import gql from 'graphql-tag'
+
 
 const TopNavBar = ({height, appName}) => {
   const theme = useTheme()
   const [open, setOpen] = React.useState(false)
+  const { error, data } = useQuery(gql`{
+    menus(where: {location: PRIMARY_NAVIGATION}) {
+      edges {
+        node {
+          menuItems {
+            edges {
+              node {
+                label
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }`)
 
   function handleDrawerOpen() {
     setOpen(true)
@@ -30,10 +50,9 @@ const TopNavBar = ({height, appName}) => {
     setOpen(false)
   }
 
-
-  return (
+  return data && data.menus ? (
   <div>
-    <AppBar position={`fixed`} elevation={0}>
+    <AppBar elevation={0}>
       <Toolbar>
         <IconButton
           edge="start"
@@ -42,9 +61,11 @@ const TopNavBar = ({height, appName}) => {
           onClick={handleDrawerOpen}>
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" noWrap>
-          {appName}
-        </Typography>
+          {data.menus.edges[0].node.menuItems.edges.map(({node: { url, id, label}}) => (
+            <Link button to={url} key={id}>
+              {label}
+            </Link>
+          ))}
       </Toolbar>
     </AppBar>
     <Drawer
@@ -74,7 +95,7 @@ const TopNavBar = ({height, appName}) => {
       </List>
     </Drawer>
   </div>
- )
+ ) : <div>Loading...</div>
 }
 
 export default TopNavBar
