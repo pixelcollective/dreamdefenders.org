@@ -9,9 +9,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-08-25T05:16:31+00:00\n"
+"POT-Creation-Date: 2019-09-02T22:06:44+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.2.0\n"
+"X-Generator: WP-CLI 2.3.0\n"
 
 #. Theme Name of the theme
 msgid "Sage Starter Theme"
@@ -31,6 +31,34 @@ msgstr ""
 
 #. Author URI of the theme
 msgid "https://roots.io/"
+msgstr ""
+
+#: app/Composers/Title.php:53
+msgid "Latest Posts"
+msgstr ""
+
+#: app/Composers/Title.php:61
+msgid "Search Results for %s"
+msgstr ""
+
+#: app/Composers/Title.php:65
+msgid "Not Found"
+msgstr ""
+
+#: app/filters.php:9
+msgid "Continued"
+msgstr ""
+
+#: app/setup.php:51
+msgid "Primary Navigation"
+msgstr ""
+
+#: app/setup.php:91
+msgid "Primary"
+msgstr ""
+
+#: app/setup.php:96
+msgid "Footer"
 msgstr ""
 
 #: functions.php:15
@@ -69,48 +97,8 @@ msgstr ""
 msgid "File not found"
 msgstr ""
 
-#: app/Composers/Title.php:53
-msgid "Latest Posts"
-msgstr ""
-
-#: app/Composers/Title.php:61
-msgid "Search Results for %s"
-msgstr ""
-
-#: app/Composers/Title.php:65
-msgid "Not Found"
-msgstr ""
-
-#: app/filters.php:9
-msgid "Continued"
-msgstr ""
-
-#: app/setup.php:51
-msgid "Primary Navigation"
-msgstr ""
-
-#: app/setup.php:91
-msgid "Primary"
-msgstr ""
-
-#: app/setup.php:96
-msgid "Footer"
-msgstr ""
-
 #. Template Name of the theme
 msgid "Custom Template"
-msgstr ""
-
-#: storage/framework/views/45a7aaf4a9175f6f34c2ab0702fcab7266e393a6.php:6
-msgid "Sorry, but the page you were trying to view does not exist."
-msgstr ""
-
-#: storage/framework/views/82c8a1f4d1d52f8c7c93699aca19ebfcf603e3de.php:16
-msgid "Pages:"
-msgstr ""
-
-#: storage/framework/views/19663a2b67117a2267cf03698df84bab55ef67da.php:7
-msgid "By"
 msgstr ""
 
 #: storage/framework/views/5d00af4a9373c38842604b798f981918af1f555e.php:3
@@ -126,6 +114,14 @@ msgstr ""
 #: storage/framework/views/5d00af4a9373c38842604b798f981918af1f555e.php:7
 msgctxt "submit button"
 msgid "Search"
+msgstr ""
+
+#: storage/framework/views/45a7aaf4a9175f6f34c2ab0702fcab7266e393a6.php:6
+msgid "Sorry, but the page you were trying to view does not exist."
+msgstr ""
+
+#: storage/framework/views/82c8a1f4d1d52f8c7c93699aca19ebfcf603e3de.php:16
+msgid "Pages:"
 msgstr ""
 
 #: storage/framework/views/210ab6663fa71b92f5e0ed5ff4516aa9f79bb2cb.php:6
@@ -149,4 +145,8 @@ msgstr ""
 
 #: storage/framework/views/317d2744a6d1063af4283c866c1d06784811ff3e.php:37
 msgid "Comments are closed."
+msgstr ""
+
+#: storage/framework/views/19663a2b67117a2267cf03698df84bab55ef67da.php:7
+msgid "By"
 msgstr ""

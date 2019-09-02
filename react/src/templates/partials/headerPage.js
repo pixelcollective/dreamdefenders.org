@@ -3,6 +3,8 @@ import React, { Fragment } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import styled from 'styled-components'
 
+import Container from './../../components/styled/container'
+
 const Label = styled.div`
   background: black;
   color: white;
@@ -13,6 +15,8 @@ const Frame = styled.div`
   min-height: 600px;
   z-index: -1;
   min-width: 100vw;
+  max-width: 100vw;
+  overflow: hidden;
   height: 600px;
 
   &:after {
@@ -50,7 +54,6 @@ const Image = styled.img`
 
 const Heading = styled.div`
   position: relative;
-  width: 900px;
   margin-left: auto;
   margin-right: auto;
   bottom: -60%;
@@ -87,18 +90,20 @@ const Header = props => (
       </motion.div>
     </AnimatePresence>
     <AnimatePresence>
-      <Heading>
-        <motion.div
-          initial={{
-            zIndex: `10`,
-            position: `relative`,
-            top: `50rem`,
-          }}
-          animate={{ opacity: 1, top: `3rem` }}
-          transition={{ duration: 0.4, delay: 0.2 }}>
-          <h1>{props.title}</h1>
-        </motion.div>
-      </Heading>
+        <Heading>
+          <motion.div
+            initial={{
+              zIndex: `10`,
+              position: `relative`,
+              top: `50rem`,
+            }}
+            animate={{ opacity: 1, top: `3rem` }}
+            transition={{ duration: 0.4, delay: 0.2 }}>
+            <Container>
+              <h1>{props.title}</h1>
+            </Container>
+          </motion.div>
+        </Heading>
     </AnimatePresence>
   </Frame>
 )

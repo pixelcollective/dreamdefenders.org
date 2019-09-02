@@ -114,12 +114,12 @@ class PostTypes extends PostTypesBase
                 'post_type' => 'post',
             ])
             ->addRelationship('campaign', [
-                'label' => 'Campaigns',
+                'label' => 'Associated campaigns',
                 'instructions' => 'Select campaigns to associate with this chapter.',
                 'post_type' => 'campaign',
             ])
             ->addRelationship('featured-media', [
-                'label' => 'Featured Media',
+                'label' => 'Associated featured media',
                 'instructions' => 'Select images to associate with this chapter.',
                 'post_type' => 'featured-media'
             ])
@@ -145,12 +145,18 @@ class PostTypes extends PostTypesBase
                 'preview_size' => 'full',
                 'wrapper' => self::$options['half']
             ])
+            ->addImage('brand-mark', [
+                'label' => 'Canonical image',
+                'instructions' => 'An iconic image to represent the campaign.',
+                'preview_size' => 'full',
+                'wrapper' => self::$options['half']
+            ])
             ->addWysiwyg('description', [
                 'label' => 'Describe this campaign.',
                 'wrapper' => self::$options['half']
             ])
             ->addRelationship('chapter', [
-                'label' => 'Chapters',
+                'label' => 'Associated chapters',
                 'instructions' => 'Select chapters to associate with this campaign.',
                 'post_type' => 'chapter',
             ])
@@ -158,5 +164,46 @@ class PostTypes extends PostTypesBase
             ->setLocation('post_type', '==', 'campaign');
 
         return $campaign;
+    }
+
+    /**
+     * Register field groups
+     *
+     * @return \StoutLogic\AcfBuilder\FieldsBuilder
+     */
+    public function issueFields(\StoutLogic\AcfBuilder\FieldsBuilder $builder) : FieldsBuilder
+    {
+        $issue = new $builder('issue');
+
+        $issue
+
+            ->addImage('image', [
+                'label' => 'Image to identify issue.',
+                'preview_size' => 'full',
+                'wrapper' => self::$options['half']
+            ])
+            ->addWysiwyg('description', [
+                'label' => 'Describe this issue.',
+                'wrapper' => self::$options['half']
+            ])
+            ->addRelationship('campaign', [
+                'label' => 'Associated campaigns',
+                'instructions' => 'Select campaigns to associate with this issue.',
+                'post_type' => 'campaign',
+            ])
+            ->addRelationship('media', [
+                'label' => 'Associated media',
+                'instructions' => 'Select featured media items to associate with this issue.',
+                'post_type' => 'featured-media',
+            ])
+            ->addRelationship('post', [
+                'label' => 'Associated posts',
+                'instructions' => 'Select posts to associate with this issue.',
+                'post_type' => 'post',
+            ])
+
+            ->setLocation('post_type', '==', 'issue');
+
+        return $issue;
     }
 }
