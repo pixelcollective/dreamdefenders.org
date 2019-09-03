@@ -81,6 +81,16 @@ class PostTypes extends PostTypesBase
                 'wrapper' => self::$options['ui']])
                 ->setInstructions('Select or upload an image for usage throughout the site in varying contexts.')
 
+            ->addRelationship('issue-to-media', [
+                'label' => 'Associated issue area',
+                'instructions' => 'Select issues to associate with this media item.',
+                'post_type' => 'issue',
+            ])
+            ->addRelationship('chapter-to-featured-media', [
+                'label' => 'Associated chapters',
+                'instructions' => 'Select chapters to associate with this media item.',
+                'post_type' => 'chapter'
+            ])
             ->setLocation('post_type', '==', 'featured-media');
 
         return $featuredMedia;
@@ -113,12 +123,12 @@ class PostTypes extends PostTypesBase
                 'label' => 'Posts',
                 'post_type' => 'post',
             ])
-            ->addRelationship('campaign', [
+            ->addRelationship('chapter-to-campaign', [
                 'label' => 'Associated campaigns',
                 'instructions' => 'Select campaigns to associate with this chapter.',
                 'post_type' => 'campaign',
             ])
-            ->addRelationship('featured-media', [
+            ->addRelationship('chapter-to-featured-media', [
                 'label' => 'Associated featured media',
                 'instructions' => 'Select images to associate with this chapter.',
                 'post_type' => 'featured-media'
@@ -155,10 +165,15 @@ class PostTypes extends PostTypesBase
                 'label' => 'Describe this campaign.',
                 'wrapper' => self::$options['half']
             ])
-            ->addRelationship('chapter', [
+            ->addRelationship('chapter-to-campaign', [
                 'label' => 'Associated chapters',
                 'instructions' => 'Select chapters to associate with this campaign.',
                 'post_type' => 'chapter',
+            ])
+            ->addRelationship('issue-to-campaign', [
+                'label' => 'Associated issues',
+                'instructions' => 'Select issues to associate with this issue.',
+                'post_type' => 'issue',
             ])
 
             ->setLocation('post_type', '==', 'campaign');
@@ -186,17 +201,17 @@ class PostTypes extends PostTypesBase
                 'label' => 'Describe this issue.',
                 'wrapper' => self::$options['half']
             ])
-            ->addRelationship('campaign', [
+            ->addRelationship('issue-to-campaign', [
                 'label' => 'Associated campaigns',
                 'instructions' => 'Select campaigns to associate with this issue.',
                 'post_type' => 'campaign',
             ])
-            ->addRelationship('media', [
+            ->addRelationship('issue-to-media', [
                 'label' => 'Associated media',
                 'instructions' => 'Select featured media items to associate with this issue.',
                 'post_type' => 'featured-media',
             ])
-            ->addRelationship('post', [
+            ->addRelationship('issue-to-post', [
                 'label' => 'Associated posts',
                 'instructions' => 'Select posts to associate with this issue.',
                 'post_type' => 'post',
