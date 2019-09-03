@@ -46,7 +46,7 @@ const Page = ({match}) => {
       <Header
         title={page.title && page.title}
         image={page.featuredImage && page.featuredImage} />
-      <PageContent html={page && page.content} />
+      <PageContent html={page && page.content} background={`white`} />
     </div>
   ) : <div>Loading...</div>
 }

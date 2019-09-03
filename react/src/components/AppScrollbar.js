@@ -14,7 +14,7 @@ export default class AppScrollbar extends Component {
       ...style,
       backgroundColor: transparentize(0.1, lighten(0.05, this.props.thumbColor)),
       width: `10px`,
-      right: `10px`,
+      right: `0px`,
       borderRadius: `5px`,
       margin: `0vh 0.4vw 1vh 0vw`,
     }} {...props} />

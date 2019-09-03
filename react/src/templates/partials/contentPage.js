@@ -7,7 +7,7 @@ import Container from './../../components/styled/container'
 const Content = styled.div`
   padding-top: 2rem;
   padding-bottom: 2rem;
-  min-height: 100vh;
+  min-height: 60vh;
 
   h1,
   h2,
@@ -20,18 +20,18 @@ const Content = styled.div`
 `
 
 const PageContent = ({ html, background, color }) => (
-  <Container background={background ? background : `white`}>
-    <AnimatePresence>
-      <motion.div
-        initial={{opacity: 0, color: color ? color : `inherit`,}}
-        animate={{opacity: 1}}
-        transition={{duration: 0.1, delay: 0}}>
-        <Container>
-          <Content dangerouslySetInnerHTML={{ __html: html && html }} />
-        </Container>
-      </motion.div>
-    </AnimatePresence>
-  </Container>
+  <div style={{ background: background ? background : `white`, opacity: 1, }}>
+  <AnimatePresence>
+    <motion.div
+      initial={{opacity: 0, color: color ? color : `inherit`,}}
+      animate={{ opacity: 1, color: color ? color : `inherit`}}
+      transition={{duration: 0.1, delay: 0}}>
+      <Container>
+        <Content dangerouslySetInnerHTML={{ __html: html && html }} />
+      </Container>
+    </motion.div>
+  </AnimatePresence>
+  </div>
 )
 
 export default PageContent

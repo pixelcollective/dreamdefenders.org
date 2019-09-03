@@ -31,6 +31,7 @@ import {
   Page,
   Home,
   Campaign,
+  Campaigns,
 } from './templates'
 
 const App = props => (
@@ -47,6 +48,7 @@ const App = props => (
               trackColor={`white`}
               thumbColor={theme.palette.primary[`400`]}>
               <Switch>
+                <Route exact path="/campaigns" component={Campaigns} />
                 <Route path="/campaigns/:slug" component={Campaign} />
                 <Route path="/:slug" component={Page} />
                 <Route exact path="/" component={Home} />

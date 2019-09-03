@@ -5,17 +5,11 @@ import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
 
-import {
-  Box,
-  Text,
-} from 'rebass'
-
-import theme from './../../theme/material'
+import { Box } from 'rebass'
 
 // display
 import Container from './../../components/styled/container'
 import Header from './../partials/headerPage'
-import Error from '../../components/Error'
 
 /**
  * Template: Campaign
@@ -30,27 +24,12 @@ const Campaign = ({ match }) => {
           image {
             guid
           }
-          chapter {
-            ... on Chapter {
-              title
-              chapter {
-                image {
-                  guid
-                }
-              }
-            }
-          }
         }
       }
     }
   }`)
-  console.log(data)
-  if (data && data.campaigns && data.campaigns.nodes <= 0) {
-    return <Error />
-  }
 
   const campaign = data && data.campaigns && data.campaigns.nodes[0]
-  const chapters = campaign && campaign.campaign.chapter
 
   return campaign ? (
     <Box maxWidth={[`100vw`]}>
@@ -63,24 +42,6 @@ const Campaign = ({ match }) => {
             __html: campaign.campaign.description &&
               campaign.campaign.description
           }} />
-        </Container>
-      </Box>
-      <Box
-        color={`white`}
-        backgroundColor={
-          theme.palette.secondary[`900`]
-        }
-        my={[0]}
-        width={`100vw`}
-        py={[4]}
-        display={`inline-block`}>
-        <Container>
-          <Box>
-            <h2>Chapters</h2>
-            {chapters.map((chapter, id) => (
-              <Text id={id}>{chapter.title}</Text>
-            ))}
-          </Box>
         </Container>
       </Box>
     </Box>

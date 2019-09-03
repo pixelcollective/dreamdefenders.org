@@ -6,6 +6,7 @@ import {
   Campaign,
   Campaigns,
 } from './campaigns'
+import MediaGrid from './partials/mediaGrid'
 
 export {
   FreedomPapers,
@@ -14,4 +15,5 @@ export {
   ThisYear,
   Campaign,
   Campaigns,
+  MediaGrid,
 }

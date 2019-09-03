@@ -4,16 +4,6 @@ import React, {Fragment} from 'react'
 import { useTheme } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
-import IconButton from '@material-ui/core/IconButton'
-import Typography from '@material-ui/core/Typography'
-import MenuIcon from '@material-ui/icons/Menu'
-import Drawer from '@material-ui/core/Drawer'
-import List from '@material-ui/core/List'
-import Divider from '@material-ui/core/Divider'
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
-import ChevronRightIcon from '@material-ui/icons/ChevronRight'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemText from '@material-ui/core/ListItemText'
 import Button from '@material-ui/core/Button'
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Slide from '@material-ui/core/Slide'
@@ -24,6 +14,9 @@ import { Link } from 'react-router-dom'
 // apollo
 import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
+
+// vector
+import logo from './../svg/blank_shield.svg'
 
 const HideOnScroll = props => {
   const { children, window } = props;
@@ -70,16 +63,14 @@ const TopNavBar = ({height, appName}, ...props) => {
       <HideOnScroll>
         <AppBar elevation={0}>
           <Toolbar>
-            <IconButton
-              edge="start"
-              color="inherit"
-              aria-label="open drawer"
-              onClick={handleDrawerOpen}>
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h6">
-              DD
-            </Typography>
+            <img
+              alt={`Dream Defenders`}
+              title={`Dream Defenders`}
+              src={logo}
+              style={{
+                maxHeight: `30px`,
+                marginRight: `10px`,
+              }}/>
             {data.menus.edges[0].node.menuItems.edges.map(({node: { url, id, label}}) => (
               <Button color="inherit">
                 <Link style={{color: `black`, textDecoration: `none`}} to={url} key={id}>
@@ -90,32 +81,6 @@ const TopNavBar = ({height, appName}, ...props) => {
           </Toolbar>
         </AppBar>
       </HideOnScroll>
-      <Drawer
-        variant="persistent"
-        anchor="left"
-        open={open}>
-        <div>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-          </IconButton>
-        </div>
-        <Divider />
-        <List>
-          {['Section 1', 'Section 2', 'Section 3', 'Section 4'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['Donate', 'Twitter', 'Instagram'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-      </Drawer>
     </Fragment>
   ) : <div>Loading...</div>
 }
