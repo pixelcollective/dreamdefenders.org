@@ -32,6 +32,7 @@ import {
   Home,
   Campaign,
   Campaigns,
+  FreedomPaper,
 } from './templates'
 
 const App = props => (
@@ -50,6 +51,7 @@ const App = props => (
               <Switch>
                 <Route exact path="/campaigns" component={Campaigns} />
                 <Route path="/campaigns/:slug" component={Campaign} />
+                <Route path="/freedom-papers/:slug" component={FreedomPaper} />
                 <Route path="/:slug" component={Page} />
                 <Route exact path="/" component={Home} />
               </Switch>
