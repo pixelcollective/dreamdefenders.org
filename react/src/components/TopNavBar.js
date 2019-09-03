@@ -1,7 +1,6 @@
 import React, {Fragment} from 'react'
 
 // @material
-import { useTheme } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Button from '@material-ui/core/Button'
@@ -31,32 +30,24 @@ const HideOnScroll = props => {
 
 
 const TopNavBar = ({height, appName}, ...props) => {
-  const theme = useTheme()
-  const [open, setOpen] = React.useState(false)
-  const { data } = useQuery(gql`{
-    menus(where: {location: PRIMARY_NAVIGATION}) {
-      edges {
-        node {
-          menuItems {
-            edges {
-              node {
-                label
-                url
+  const { data } = useQuery(gql`
+    {
+      menus(where: {location: PRIMARY_NAVIGATION}) {
+        edges {
+          node {
+            menuItems {
+              edges {
+                node {
+                  label
+                  url
+                }
               }
             }
           }
         }
       }
     }
-  }`)
-
-  function handleDrawerOpen() {
-    setOpen(true)
-  }
-
-  function handleDrawerClose() {
-    setOpen(false)
-  }
+  `)
 
   return data && data.menus ? (
     <Fragment>
@@ -77,7 +68,7 @@ const TopNavBar = ({height, appName}, ...props) => {
                   {label}
                 </Link>
               </Button>
-              ))}
+            ))}
           </Toolbar>
         </AppBar>
       </HideOnScroll>

@@ -33,9 +33,9 @@ const SplashScreen = props => {
     }
   `)
 
-  const imageCount = data.featuredMediaItems && data.featuredMediaItems.edges.length
+  const imageCount = data && data.featuredMediaItems && data.featuredMediaItems.edges.length
 
-  const bgImage = data.featuredMediaItems && data.featuredMediaItems.edges[
+  const bgImage = data && data.featuredMediaItems && data.featuredMediaItems.edges[
     Math.floor(Math.random() * imageCount)
   ].node.featuredMedia.image.guid
 
@@ -52,7 +52,7 @@ const SplashScreen = props => {
     min-width: 100vw;
     background-repeat: no-repeat;
     background-position: center center;
-    background-image: url(${bgImage});
+    background-image: url(${bgImage && bgImage});
     background-attachment: fixed;
   `
 
@@ -75,7 +75,7 @@ const SplashScreen = props => {
 
   return (
     <Fragment>
-      <BackgroundImageOnLoad src={bgImage} />
+      <BackgroundImageOnLoad src={bgImage && bgImage} />
       <AnimatePresence>
         <Background
           initial={{scale: 1}}

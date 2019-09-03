@@ -126,7 +126,7 @@ const Home = () => {
                 delay: 0,
               }}>
               <Content dangerouslySetInnerHTML={{
-                __html: page.content && page.content
+                __html: page && page.content && page.content
               }} />
             </motion.div>
           </AnimatePresence>

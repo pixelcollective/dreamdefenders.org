@@ -15,19 +15,21 @@ import Header from './../partials/headerPage'
  * Template: Campaign
  */
 const Campaign = ({ match }) => {
-  const { data } = useQuery(gql`{
-    campaigns(where: {name: "${match.params.slug}"}) {
-      nodes {
-        title
-        campaign {
-          description
-          image {
-            guid
+  const { data } = useQuery(gql`
+    {
+      campaigns(where: {name: "${match.params.slug}"}) {
+        nodes {
+          title
+          campaign {
+            description
+            image {
+              guid
+            }
           }
         }
       }
     }
-  }`)
+  `)
 
   const campaign = data && data.campaigns && data.campaigns.nodes[0]
 

@@ -1,10 +1,7 @@
-// react
+// @react
 import React from 'react'
 
-// graphql
-import GraphQLProvider from './graph'
-
-// router
+// @react-router
 import {
   Route,
   Switch,
@@ -12,21 +9,25 @@ import {
 } from 'react-router-dom'
 
 // @material-ui
-import CssBaseline       from '@material-ui/core/CssBaseline'
+import CssBaseline from '@material-ui/core/CssBaseline'
 import { ThemeProvider } from '@material-ui/styles'
 
+// @styled-components
+import { ThemeProvider as Styled } from 'styled-components'
+
+// @rebass
 import { Box } from 'rebass'
 
-// rebass
-import { ThemeProvider as Styled } from 'styled-components'
+// graphql
+import GraphQLProvider from './graph'
 
 // theme
 import theme from './theme/material'
 import rebassTheme from './theme/styled'
 
 // components
-import AppScrollbar   from './components/AppScrollbar'
-import TopNavBar      from './components/TopNavBar'
+import AppScrollbar from './components/AppScrollbar'
+import TopNavBar from './components/TopNavBar'
 import {
   Page,
   Home,
@@ -41,13 +42,9 @@ const App = props => (
       <GraphQLProvider>
         <CssBaseline />
         <Router>
-          <Box
-            maxWidth={[`100vw`]}
-            overflow={`hidden`}>
+          <Box maxWidth={[`100vw`]} overflow={`hidden`}>
             <TopNavBar appName={`Dream Defenders`} />
-            <AppScrollbar
-              trackColor={`white`}
-              thumbColor={theme.palette.primary[`400`]}>
+            <AppScrollbar trackColor={`white`} thumbColor={theme.palette.primary[`400`]}>
               <Switch>
                 <Route exact path="/campaigns" component={Campaigns} />
                 <Route path="/campaigns/:slug" component={Campaign} />
