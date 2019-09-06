@@ -6,7 +6,7 @@ const Grid = props => (
     sx={{
       display: 'grid',
       gridGap: 0,
-      gridTemplateColumns: 'repeat(auto-fit, minmax(500px, 1fr))',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
     }}>
     {props.children}
   </Box>

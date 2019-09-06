@@ -144,11 +144,17 @@ const FreedomPapers = props => {
       orientation={`horizontal`}
       width={`100%`}
       height={`100%`}>
-      {data && data.freedomPapers && data.freedomPapers.edges ?
-        data.freedomPapers.edges.map(({node:{
+      {data && data.freedomPapers && data.freedomPapers.edges ? data.freedomPapers.edges.map(({
+        node:{
           title,
-          freedomPapers:{freedomPaper:{image,content}}
-        }}, i) => (
+          freedomPapers: {
+            freedomPaper:{
+              image,
+              content,
+            }
+          }
+        }
+      }, i) => (
           <Page key={i}>
             <HyperText>
               <Header>

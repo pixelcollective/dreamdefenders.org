@@ -14,7 +14,7 @@ import Header from '../partials/headerPage'
 /**
  * Template: FredomPaper
  */
-const FredomPaper = ({ match }) => {
+const FreedomPaper = ({ match }) => {
   const { data } = useQuery(gql`
     {
       freedomPapers(where: {name: "${match.params.slug}"}) {
@@ -57,4 +57,4 @@ const FredomPaper = ({ match }) => {
   ) : <div>Loading...</div>
 }
 
-export default FredomPaper
+export { FreedomPaper }

@@ -34,6 +34,8 @@ import {
   Campaign,
   Campaigns,
   FreedomPaper,
+  FreedomPapers,
+  FreedomPapersPage,
 } from './templates'
 
 const App = props => (
@@ -46,9 +48,11 @@ const App = props => (
             <TopNavBar appName={`Dream Defenders`} />
             <AppScrollbar trackColor={`white`} thumbColor={theme.palette.primary[`400`]}>
               <Switch>
+                <Route exact path="/the-freedom-papers" component={FreedomPapersPage} />
+                <Route exact path="/freedom-papers" component={FreedomPapers} />
+                <Route path="/freedom-papers/:slug" component={FreedomPaper} />
                 <Route exact path="/campaigns" component={Campaigns} />
                 <Route path="/campaigns/:slug" component={Campaign} />
-                <Route path="/freedom-papers/:slug" component={FreedomPaper} />
                 <Route path="/:slug" component={Page} />
                 <Route exact path="/" component={Home} />
               </Switch>
