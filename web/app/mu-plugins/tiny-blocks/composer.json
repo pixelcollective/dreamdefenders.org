@@ -1,0 +1,40 @@
+{
+  "name": "tiny-pixel/blocks",
+  "type": "library",
+  "version": "0.9.0",
+  "description": "For consummate blockbuilders",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kelly Mears",
+      "homepage": "https://tinypixel.dev"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": ">=7.1",
+    "composer/installers": "v1.4",
+    "tightenco/collect": "^5.8",
+    "eftec/bladeone": "^3.24",
+    "php-di/php-di": "^6.0"
+  },
+  "autoload": {
+    "files": [
+      "vendor/tightenco/collect/src/Collect/Support/helpers.php",
+      "vendor/tightenco/collect/src/Collect/Support/alias.php"
+    ],
+    "psr-4": {
+      "TinyBlocks\\": [
+        "./",
+        "./src",
+        "./demo"
+      ]
+    }
+  },
+  "scripts": {
+    "lint": [
+      "phpcs --ignore=vendor,demo --extensions=php --standard=PSR12 ."
+    ]
+  }
+}

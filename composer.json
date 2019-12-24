@@ -1,0 +1,122 @@
+{
+  "name": "dreamdefenders/bedrock",
+  "type": "wordpress-theme",
+  "license": "MIT",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "git",
+      "url": "git@github.com:pixelcollective/dreamdefenders-org-theme"
+    },
+    {
+      "type": "git",
+      "url": "git@github.com:pixelcollective/mirror-advanced-custom-fields"
+    },
+    {
+      "type": "git",
+      "url": "git@github.com:pixelcollective/mirror-wp-rocket"
+    },
+    {
+      "type": "git",
+      "url": "git@github.com:pixelcollective/mirror-meta-tags-wp"
+    },
+    {
+      "type": "git",
+      "url": "git@github.com:wp-graphql/wp-graphiql"
+    },
+    {
+      "type": "git",
+      "url": "git@github.com:wp-graphql/wp-graphql-acf"
+    },
+    {
+      "type": "git",
+      "url": "git@github.com:humanmade/wp-redis-predis-client"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/tabrisrp/wp-background-processing"
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "composer/installers": "^1.4",
+    "oscarotero/env": "^1.2.0",
+    "roots/soil": ">=3",
+    "roots/wordpress": ">=5",
+    "roots/wp-config": "1.0.0",
+    "roots/wp-password-bcrypt": "1.0.0",
+    "roots/wp-stage-switcher": "^2.0",
+    "sentry/sdk": "^2.0",
+    "devgeniem/wp-cron-runner": "^1.0",
+    "humanmade/wp-redis-predis-client": "dev-master",
+    "primetime/wp-plugin-activation-manifest": "^1.0",
+    "rarst/laps": "^3.3",
+    "sybrew/the-seo-framework-extension-manager": "^2.0",
+    "tiny-pixel/advanced-custom-fields": "dev-master",
+    "wp-media/wp-rocket": "dev-master",
+    "tiny-pixel/admin-to-console": "^1.0",
+    "tiny-pixel/s3-uploads-adapter": "dev-master",
+    "tiny-pixel/wp-performant-media": ">=1.0.1",
+    "vlucas/phpdotenv": "^3.4.0",
+    "wp-graphql/wp-graphiql": "^1.0.0",
+    "wp-graphql/wp-graphql": "^0.5.0",
+    "wp-graphql/wp-graphql-acf": "^0.3.1",
+    "wpackagist-plugin/autodescription": ">=3.0.6",
+    "wpackagist-plugin/disable-comments": "^1.10",
+    "wpackagist-plugin/duplicate-post": ">=3.2.2",
+    "wpackagist-plugin/gutenberg": "^7.0",
+    "wpackagist-plugin/query-monitor": "^3.3",
+    "wpackagist-plugin/redirection": ">=3.3.1",
+    "wpackagist-plugin/rewrite-testing": ">=0.1",
+    "wpackagist-plugin/simple-local-avatars": ">=2.0.0",
+    "wpackagist-plugin/stream": "^3.2",
+    "wpackagist-plugin/user-switching": ">=1.5.0",
+    "wpackagist-plugin/wp-redis": "^0.7.1",
+    "wpackagist-plugin/wp-user-profiles": "^2.1"
+  },
+  "require-dev": {
+    "franzl/studio": "^0.13.0",
+    "roave/security-advisories": "dev-master",
+    "wpackagist-plugin/rewrite-testing": ">=0.1",
+    "wpackagist-plugin/user-switching": ">=1.5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "TinyPixel\\Config\\": "config/TinyPixel/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "installer-paths": {
+      "web/app/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin",
+        "roots/wp-stage-switcher",
+        "wpackagist-plugin/wp-redis",
+        "wp-graphql/wp-graphql",
+        "wp-graphql/wp-graphql-acf",
+        "wp-graphql/wp-graphiql",
+        "aaemnnosttv/wp-cli-login-server",
+        "tiny-pixel/advanced-custom-fields",
+        "tiny-pixel/s3-uploads-adapter"
+      ],
+      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
+      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+    },
+    "wordpress-install-dir": "web/wp"
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "php -r \"copy('.env.example', '.env');\""
+    ],
+    "test": ["phpcs"]
+  }
+}

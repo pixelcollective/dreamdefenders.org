@@ -1,0 +1,49 @@
+# Artifacts
+node_modules
+*.log
+
+# Cypress
+cypress/screenshots/*
+!cypress/screenshots/.gitkeep
+cypress/videos/*
+!cypress/videos/.gitkeep
+
+# Application
+web/app/upgrade
+web/app/uploads/*
+!web/app/uploads/.gitkeep
+
+# WordPress
+web/wp
+web/.htaccess
+
+# Dotenv
+.env
+.env.*
+!.env.example
+database
+
+# Composer
+/vendor
+
+# WP-CLI
+wp-cli.local.yml
+
+# Theme
+web/app/themes/theme
+
+# Plugins
+web/app/plugins/*
+!web/app/plugins/blocks
+!web/app/plugins/blocks/*
+!web/app/plugins/.gitkeep
+
+# MU-Plugins
+web/app/mu-plugins/*
+!web/app/mu-plugins/tiny-blocks
+!web/app/mu-plugins/tiny-blocks/*
+!web/app/mu-plugins/.gitkeep
+!web/app/mu-plugins/bedrock-autoloader.php
+!web/app/mu-plugins/disallow-indexing.php
+!web/app/mu-plugins/register-theme-directory.php
+!web/app/mu-plugins/plugin-manifest

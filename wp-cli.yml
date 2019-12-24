@@ -1,0 +1,11 @@
+# site/wp-cli.yml
+path: web/wp
+
+"@development":
+  ssh: vagrant@dreamdefenders.vagrant:/srv/www/dreamdefenders.org/current
+
+"@staging":
+  ssh: web@build.dreamdefenders.tinypixel.dev:/srv/www/dreamdefenders.org/current
+
+"@production":
+  ssh: web@dreamdefenders.org:/srv/www/dreamdefenders.org/current

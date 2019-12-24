@@ -1,0 +1,204 @@
+##
+# Tiny Pixel Deployment Workflows
+#
+# CircleCI
+#   @see https://circleci.com/docs/2.0/using-orbs/
+#
+# itinerisltd/tiller-circleci
+#   @see https://circleci.com/orbs/registry/orb/itinerisltd/tiller-circleci
+#
+# picturepipe/sentry-cli
+#   @see https://circleci.com/orbs/registry/orb/picturepipe/sentry-cli
+#
+# cypress-io/cypress
+#   @see https://circleci.com/orbs/registry/orb/cypress-io/cypress
+##
+version: 2.1
+
+orbs:
+  tiller-circleci: itinerisltd/tiller-circleci@0.5
+  sentry-cli: picturepipe/sentry-cli@1.1.1
+  cypress: cypress-io/cypress@1
+
+workflows:
+  deploy:
+    jobs:
+      # Hold build for approval
+      - hold:
+          type: approval
+          filters:
+            branches:
+              only:
+                - staging
+                - master
+
+      # Deploy staging
+      - tiller-circleci/deploy:
+          name: deploy-staging
+          known_hosts: 'github.com, 165.22.190.49'
+          trellis_repo: 'git@github.com:pixelcollective/managed-wordpress-deploy.dev.git'
+          site_env: staging
+          site_name: dreamdefenders.org
+          executor: tiller-circleci/ansible-27
+          requires:
+            - hold
+          filters:
+            branches:
+              only:
+                - staging
+
+      # Cypress pre-integration specs
+      - cypress/run:
+          executor: cypress/browsers-chrome69
+          name: integration-pre-deploy
+          browser: chrome
+          yarn: true
+          spec: cypress/integration/staging.spec.js
+          working_directory: tests
+          requires:
+            - hold
+          filters:
+            branches:
+              only:
+                - master
+
+      # Deploy production
+      - tiller-circleci/deploy:
+          name: deploy-production
+          known_hosts: 'github.com, 157.230.209.152'
+          trellis_repo: 'git@github.com:pixelcollective/managed-wordpress-deploy.dev.git'
+          site_env: production
+          site_name: dreamdefenders.org
+          executor: tiller-circleci/ansible-27
+          requires:
+            - integration-pre-deploy
+          filters:
+            branches:
+              only:
+                - master
+
+      # Sentry checkout
+      - sentry-cli/checkout-to-workspace:
+          name: sentry-checkout-staging
+          requires:
+            - deploy-staging
+          filters:
+            branches:
+              only:
+                - staging
+
+      - sentry-cli/checkout-to-workspace:
+          name: sentry-checkout-production
+          requires:
+            - deploy-production
+          filters:
+            branches:
+              only:
+                - master
+
+      # Sentry set version
+      - sentry-cli/set-version:
+          name: sentry-version-staging
+          requires:
+            - sentry-checkout-staging
+          filters:
+            branches:
+              only:
+                - staging
+
+      - sentry-cli/set-version:
+          name: sentry-version-production
+          requires:
+            - sentry-checkout-production
+          filters:
+            branches:
+              only:
+                - master
+
+      # Sentry create release
+      - sentry-cli/create-release:
+          name: sentry-create-release-staging
+          requires:
+            - sentry-version-staging
+          filters:
+            branches:
+              only:
+                - staging
+
+      - sentry-cli/create-release:
+          name: sentry-create-release-production
+          requires:
+            - sentry-version-production
+          filters:
+            branches:
+              only:
+                - master
+
+      # Sentry finalize release
+      - sentry-cli/finalize-release-set-commits:
+          name: sentry-finalize-release-staging
+          requires:
+            - sentry-create-release-staging
+          filters:
+            branches:
+              only:
+                - staging
+
+      - sentry-cli/finalize-release-set-commits:
+          name: sentry-finalize-release-production
+          requires:
+            - sentry-create-release-production
+          filters:
+            branches:
+              only:
+                - master
+
+      # Sentry create deployment
+      - sentry-cli/create-deployment:
+          name: sentry-deploy-staging
+          env: staging
+          requires:
+            - sentry-finalize-release-staging
+          filters:
+            branches:
+              only:
+                - staging
+
+      - sentry-cli/create-deployment:
+          name: sentry-deploy-production
+          env: production
+          requires:
+            - sentry-finalize-release-production
+          filters:
+            branches:
+              only:
+                - master
+
+      # Cypress post-deployment specs
+      - cypress/run:
+          name: integration-post-deploy-staging
+          executor: cypress/browsers-chrome69
+          browser: chrome
+          yarn: true
+          working_directory: tests
+          spec: cypress/integration/staging.spec.js
+          requires:
+            - sentry-deploy-staging
+          filters:
+            branches:
+              only:
+                - staging
+
+      - cypress/run:
+          name: integration-post-deploy-production
+          executor: cypress/browsers-chrome69
+          requires:
+            - sentry-deploy-production
+          browser: chrome
+          yarn: true
+          spec: cypress/integration/production.spec.js
+          working_directory: tests
+          filters:
+            branches:
+              only:
+                - master

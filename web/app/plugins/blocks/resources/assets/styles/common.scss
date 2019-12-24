@@ -1,0 +1,44 @@
+.wp-block {
+  &-tinypixel-twocolumn {
+    @apply flex;
+    @apply flex-col;
+    @apply justify-between;
+
+    &__column-a,
+    &__column-b {
+      @apply w-full;
+    }
+
+    &__column-a {
+      &__heading {
+        @apply font-sans;
+        @apply text-3xl;
+        @apply inline-block;
+        @apply uppercase;
+        @apply font-bold;
+        @apply break-all;
+      }
+
+      &__media {
+        @apply w-full;
+
+        img {
+          @apply max-w-full;
+        }
+      }
+    }
+  }
+}
+
+@screen md {
+  .wp-block {
+    &-tinypixel-twocolumn {
+      @apply flex-row;
+
+      &__column-a,
+      &__column-b {
+        @apply w-2/5;
+      }
+    }
+  }
+}
