@@ -44,7 +44,7 @@
     "sass-loader": "^8.0.0",
     "stylelint": "^11.1.1",
     "stylelint-config-standard": "^19.0.0",
-    "tailwindcss": "^1.1.3",
+    "tailwindcss": "^1.1.4",
     "tailwindcss-gradients": "^2.3.1",
     "tailwindcss-scrims": "^1.0.0",
     "tailwindcss-transitions": "^2.1.0",
