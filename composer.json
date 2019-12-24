@@ -1,6 +1,5 @@
 {
   "name": "dreamdefenders/bedrock",
-  "type": "wordpress-theme",
   "license": "MIT",
   "repositories": [
     {
@@ -108,8 +107,12 @@
         "tiny-pixel/advanced-custom-fields",
         "tiny-pixel/s3-uploads-adapter"
       ],
-      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
-      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+      "web/app/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "web/app/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
     },
     "wordpress-install-dir": "web/wp"
   },
@@ -117,6 +120,8 @@
     "post-root-package-install": [
       "php -r \"copy('.env.example', '.env');\""
     ],
-    "test": ["phpcs"]
+    "test": [
+      "phpcs"
+    ]
   }
 }

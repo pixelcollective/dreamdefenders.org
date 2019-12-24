@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Dream Defenders Bedrock
+ *
+ * @package Dreamdefenders
+ * @author  Tiny Pixel <hello@tinypixel.dev>
+ * @license MIT <https://github.com/pixelcollective/dreamdefenders.org/tree/master/LICENSE.md>
+ */
+
 use TinyPixel\Config\Bootloader;
 
 Env::init();
