@@ -49,7 +49,7 @@ workflows:
 
       # Cypress pre-integration specs
       - cypress/run:
-          executor: cypress/browsers-chrome69
+          executor: cypress/browsers-chrome76
           name: integration-pre-deploy
           browser: chrome
           yarn: true
@@ -176,7 +176,7 @@ workflows:
       # Cypress post-deployment specs
       - cypress/run:
           name: integration-post-deploy-staging
-          executor: cypress/browsers-chrome69
+          executor: cypress/browsers-chrome76
           browser: chrome
           yarn: true
           spec: cypress/integration/staging.spec.js
@@ -189,7 +189,7 @@ workflows:
 
       - cypress/run:
           name: integration-post-deploy-production
-          executor: cypress/browsers-chrome69
+          executor: cypress/browsers-chrome76
           requires:
             - sentry-deploy-production
           browser: chrome
