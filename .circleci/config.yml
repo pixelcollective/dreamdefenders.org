@@ -54,7 +54,6 @@ workflows:
           browser: chrome
           yarn: true
           spec: cypress/integration/staging.spec.js
-          working_directory: tests
           requires:
             - hold
           filters:
@@ -180,7 +179,6 @@ workflows:
           executor: cypress/browsers-chrome69
           browser: chrome
           yarn: true
-          working_directory: tests
           spec: cypress/integration/staging.spec.js
           requires:
             - sentry-deploy-staging
@@ -197,7 +195,6 @@ workflows:
           browser: chrome
           yarn: true
           spec: cypress/integration/production.spec.js
-          working_directory: tests
           filters:
             branches:
               only:
