@@ -4889,10 +4889,10 @@ known-css-properties@^0.16.0:
   resolved "https://registry.yarnpkg.com/known-css-properties/-/known-css-properties-0.16.0.tgz#3f0597214db11a460df77cd44bcb39e263b9da6c"
   integrity sha512-0g5vDDPvNnQk7WM/aE92dTDxXJoOE0biiIcUb3qkn/F6h/ZQZPlZIbE2XSXH2vFPfphkgCxuR2vH6HHnobEOaQ==
 
-laravel-mix-copy-watched@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/laravel-mix-copy-watched/-/laravel-mix-copy-watched-2.2.1.tgz#8de1a6fe4b7584e6e9ad86242cf789edc0950085"
-  integrity sha512-dn6wp4vOSFvOOKCbNUiueNwmn52ZCNcBdlUHhtp+PtKCNL+KVpOJHsJZecTkSLVDYrFCghbv5sTqRDDSHFFD+w==
+laravel-mix-copy-watched@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/laravel-mix-copy-watched/-/laravel-mix-copy-watched-2.2.2.tgz#f01f9b151943ccc03d7089e694e26ccf5506a9b4"
+  integrity sha512-4tsRi2YVwPHlKd4DuwatxlJi1VI7LkUYs2iPjkoHYauzecbMBH/Z9Mup3i0+/yEmNkJI9lMAfm7r4Rns7sF0XA==
   dependencies:
     chokidar "^3.3.0"
     fs-extra "^7.0.1"
