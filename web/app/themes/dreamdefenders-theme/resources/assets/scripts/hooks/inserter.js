@@ -9,7 +9,7 @@ import { addFilter } from '@wordpress/hooks'
  * @param string name of new category to place modified blocks in
  * @param array  categories which should not be overwritten
  */
-const filterCategories = (newCategory, exceptions = []) => {
+export default (newCategory, exceptions = []) => {
   addFilter('blocks.registerBlockType', 'sage/inserter', props => {
     props.category = exceptions.includes(props.category)
       ? props.category
@@ -18,5 +18,3 @@ const filterCategories = (newCategory, exceptions = []) => {
     return props;
   });
 }
-
-export { filterCategories }

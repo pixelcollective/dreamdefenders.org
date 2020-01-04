@@ -7,24 +7,35 @@
     <div id="app">
       @php(do_action('get_header'))
 
-      @hasSection('header')
-        @yield('header')
-      @endif
+      <div class="w-full bg-indigo-100">
+        <div class="object-cover bg-black bg-center bg-top md:bg-fixed" style="background-image: url(@asset('images/banner-background.png'));">
+          <div class="bg-black-600">
+            @include('partials.navigation')
+              @hasSection('header')
+                @yield('header')
+              @endif
 
-      @hasSection('content')
-        @yield('content')
-      @endif
+              <div class="bg-white">
+                @hasSection('content')
+                  @yield('content')
+                @endif
 
-      @hasSection('sidebar')
-        <aside class="sidebar">
-          @yield('sidebar')
-        </aside>
-      @endif
+                @hasSection('sidebar')
+                  <aside class="sidebar">
+                    @yield('sidebar')
+                  </aside>
+                @endif
+              </div>
+            </div>
 
-      @php(do_action('get_footer'))
-      @include('partials.footer')
-    </div>
+            @php(do_action('get_footer'))
+            @include('partials.footer')
+          </div>
+        </div>
+      </div>
 
-    @php(wp_footer())
+      @include('partials.navigation-overlay')
+
+      @php(wp_footer())
   </body>
 </html>

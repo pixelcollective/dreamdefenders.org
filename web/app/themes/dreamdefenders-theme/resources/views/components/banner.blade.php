@@ -1,8 +1,10 @@
 <div class="object-cover bg-black bg-center bg-top md:bg-fixed" style="background-image: url(@asset('images/banner-background.png'));">
-  <div class="flex justify-center w-full h-screen max-h-screen align-middle bg-black-600 ">
-    <div class="container flex items-center justify-center h-32 h-full px-2 mx-auto align-middle">
-      <div class="flex items-center w-full h-64 text-center text-white">
-        <img src="@asset('images/banner-messaging.png')" class="w-full" />
+  <div class="bg-black-600">
+    <div class="flex justify-center w-full h-screen max-h-screen align-middle">
+      <div class="container flex items-center justify-center h-32 h-full px-2 mx-auto align-middle">
+        <div class="flex items-center w-full h-64 text-center text-white">
+          <img src="@asset('images/banner-messaging.png')" class="w-full" />
+        </div>
       </div>
     </div>
   </div>

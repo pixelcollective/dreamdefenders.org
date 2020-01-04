@@ -47,14 +47,14 @@
   }
 
   h2 {
-    @apply text-4xl;
+    @apply text-5xl;
     @apply uppercase;
     @apply font-bold;
     @apply tracking-tight;
   }
 
   h3 {
-    @apply text-3xl;
+    @apply text-4xl;
     @apply uppercase;
     @apply font-bold;
     @apply tracking-tight;
@@ -63,7 +63,7 @@
   h4,
   h5,
   h6 {
-    @apply text-2xl;
+    @apply text-3xl;
     @apply uppercase;
     @apply font-bold;
     @apply tracking-tight;

@@ -1,20 +1,32 @@
 <?php
 
 /**
- * Dream Defenders Bedrock
+ * Application configuration
  *
- * @package Dreamdefenders
- * @author  Tiny Pixel <hello@tinypixel.dev>
- * @license MIT <https://github.com/pixelcollective/dreamdefenders.org/tree/master/LICENSE.md>
+ * @category Bedrock
+ * @package  TinyPixel
+ * @author   Tiny Pixel <hello@tinypixel.dev>
+ * @license  MIT <https://github.com/pixelcollective/.github/tree/master/LICENSE.md>
+ * @link     Tiny Pixel <https://tinypixel.dev>
  */
 
 use TinyPixel\Config\Bootloader;
 
 Env::init();
 
+/**
+ * Initialize bootloader.
+ */
 $bootloader = new Bootloader();
+
+/**
+ * Initialize environmental variables
+ */
 $bootloader->init(dirname(__DIR__));
 
+/**
+ * Specify required environmental variables.
+ */
 $bootloader->loadEnv([
     'DB_HOST',
     'DB_NAME',
@@ -30,7 +42,10 @@ $bootloader->loadEnv([
     'WP_SITEURL',
 ]);
 
-if (env('SENTRY_DSN') && env('WP_ENV') !== 'development') {
+/**
+ * Configure Sentry.
+ */
+if (env('SENTRY_DSN')) {
     Sentry\init([
         'dsn'         => env('SENTRY_DSN'),
         'release'     => env('SENTRY_RELEASE'),
@@ -46,12 +61,17 @@ if (env('SENTRY_DSN') && env('WP_ENV') !== 'development') {
     }
 }
 
+/**
+ * Define environments
+ */
 $bootloader->defineEnvironments([
-    'development' => 'http://dreamdefenders.vagrant',
-    'staging'     => 'https://staging.dreamdefenders.org',
-    'production'  => 'https://dreamdefenders.org',
+    'development' => 'https://dreamdefenders.vagrant',
+    'staging'     => 'https://build.dreamdefenders.tinypixel.dev',
 ]);
 
+/**
+ * Configure application paths.
+ */
 $bootloader->defineFS([
     'CONTENT_DIR' => 'app',
     'WP_ENV'      => env('WP_ENV'),
@@ -59,6 +79,9 @@ $bootloader->defineFS([
     'WP_SITEURL'  => env('WP_SITEURL'),
 ]);
 
+/**
+ * Configure DB.
+ */
 $bootloader->defineDB([
     'DB_NAME'      => env('DB_NAME'),
     'DB_USER'      => env('DB_USER'),
@@ -68,9 +91,11 @@ $bootloader->defineDB([
     'DB_COLLATION' => env('DB_COLLATION') ?: 'utf8_unicode_ci',
     'DB_PREFIX'    => env('DB_PREFIX')    ?: 'wp_',
 ]);
-
 $table_prefix = $bootloader::get('DB_PREFIX');
 
+/**
+ * Configure S3.
+ */
 $bootloader->defineS3([
     'S3_UPLOADS_BUCKET'     => env('S3_UPLOADS_BUCKET'),
     'S3_UPLOADS_KEY'        => env('S3_UPLOADS_KEY'),
@@ -79,6 +104,9 @@ $bootloader->defineS3([
     'S3_UPLOADS_REGION'     => env('S3_UPLOADS_REGION')   ?: 'nyc3',
 ]);
 
+/**
+ * Configure Redis.
+ */
 $bootloader->defineRedis([
     'REDIS_HOST'          => env('REDIS_HOST') ?: env('DB_NAME'),
     'REDIS_AUTH'          => env('REDIS_AUTH'),
@@ -93,6 +121,9 @@ $bootloader->configureRedis([
     'WP_CACHE_KEY_SALT'         => env('REDIS_CACHE_KEY_SALT')   ?: false,
 ]);
 
+/**
+ * Configure auth keys and salts.
+ */
 $bootloader->defineSalts([
     'AUTH_KEY'         => env('AUTH_KEY')         ?: null,
     'AUTH_SALT'        => env('AUTH_SALT')        ?: null,
@@ -104,6 +135,9 @@ $bootloader->defineSalts([
     'SECURE_AUTH_SALT' => env('SECURE_AUTH_SALT') ?: null,
 ]);
 
+/**
+ * Configure WordPress application.
+ */
 $bootloader->configureWordPressApp([
     'DISABLE_WP_CRON'            => true,
     'AUTOMATIC_UPDATER_DISABLED' => true,
@@ -114,7 +148,17 @@ $bootloader->configureWordPressApp([
     'DISPLAY_ERRORS'             => false,
 ]);
 
+/**
+ * Allow SSL behind a reverse proxy.
+ */
 $bootloader->exposeSSL();
+
+/**
+ * Override environmental variables
+ */
 $bootloader->overrideEnv($bootloader::get('WP_ENV'));
 
+/**
+ * Boot application.
+ */
 $bootloader->boot();

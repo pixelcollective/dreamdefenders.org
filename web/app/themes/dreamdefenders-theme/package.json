@@ -49,5 +49,10 @@
     "tailwindcss-scrims": "^1.0.0",
     "tailwindcss-transitions": "^2.1.0",
     "vue-template-compiler": "^2.6.10"
+  },
+  "dependencies": {
+    "@wordpress/dom-ready": "^2.5.1",
+    "animejs": "^3.1.0",
+    "lodash": "^4.17.15"
   }
 }

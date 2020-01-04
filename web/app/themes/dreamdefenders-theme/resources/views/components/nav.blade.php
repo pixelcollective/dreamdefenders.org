@@ -1,34 +1,30 @@
-<div class="flex flex-col items-center justify-around w-full pt-8 pb-16 lg:flex-row">
-  <div class="hidden w-full px-2 lg:w-1/3 xl:w-1/3 lg:block">
-    <div class="flex items-center justify-center w-48 h-24 mr-auto text-white bg-gray-900">
-      <div>
-        <em>Shield</em>
-      </div>
-    </div>
+<nav class="flex flex-wrap items-center justify-between w-full p-6 bg-grey-darkest pin-t">
+  <div class="flex items-center mr-6 text-white flex-no-shrink">
+    <a class="text-white no-underline hover:text-white hover:no-underline" href="#">
+      <span class="relative pl-2 text-2xl">@svg('logo')</span>
+    </a>
   </div>
 
-  <div class="flex items-center justify-center px-2 mx-auto lg:w-1/3 xl:w-1/3">
-    <div class="flex items-center justify-center w-32 h-32 mx-auto border-2 border-gray-600 border-solid rounded-full">
-      <div class="text-xl tracking-wider font-500"><strong>MENU</strong></div>
-    </div>
+  <div class="block lg:hidden">
+    <button id="nav-toggle" class="flex items-center px-3 py-2 text-white">
+      <svg class="w-3 h-3 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+    </button>
   </div>
 
-  <div class="w-full lg:w-1/3 xl:w-1/3">
-    <div class="flex flex-row items-center justify-center w-full h-24 mx-auto border-2 border-gray-600 border-solid">
-      <div class="flex flex-row items-center justify-center justify-between">
-        <div class="flex items-center justify-center w-12 h-12 mx-2 border border-gray-600 border-solid rounded-sm rounded-full">
-          I
-        </div>
-        <div class="flex items-center justify-center w-12 h-12 mx-2 border border-gray-600 border-solid rounded-sm rounded-full">
-          T
-        </div>
-        <div class="items-center w-32 h-auto p-3 px-4 mx-2 text-center text-white bg-gray-900 border border-solid rounded-sm">
-          Join
-        </div>
-        <div class="items-center w-32 h-auto p-3 px-4 mx-2 text-center border border-gray-600 border-solid rounded-sm">
-          Donate
-        </div>
-      </div>
-    </div>
+  <div class="flex-grow hidden w-full pt-6 lg:flex lg:items-center lg:w-auto lg:block lg:pt-0" id="nav-content">
+    <ul class="items-center justify-end flex-1 list-reset lg:flex">
+      <li class="mr-3">
+        <a class="inline-block px-4 py-2 text-white no-underline" href="#">Active</a>
+      </li>
+      <li class="mr-3">
+        <a class="inline-block px-4 py-2 no-underline text-grey-dark hover:text-grey-lighter hover:text-underline" href="#">link</a>
+      </li>
+      <li class="mr-3">
+        <a class="inline-block px-4 py-2 no-underline text-grey-dark hover:text-grey-lighter hover:text-underline" href="#">link</a>
+      </li>
+      <li class="mr-3">
+        <a class="inline-block px-4 py-2 no-underline text-grey-dark hover:text-grey-lighter hover:text-underline" href="#">link</a>
+      </li>
+    </ul>
   </div>
-</div>
+</nav>

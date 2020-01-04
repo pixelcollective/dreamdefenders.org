@@ -1,16 +1,9 @@
 # [Dream Defenders](https://dreamdefenders.org)
 
+[![CircleCI](https://circleci.com/gh/pixelcollective/dreamdefenders.org/tree/staging.svg?style=shield&circle-token=6c5040d1a04b505a47ebb1e98cca593a4568218a)](https://circleci.com/gh/pixelcollective/tinypixel.dev/tree/staging)
+[![Follow Tiny Pixel](https://img.shields.io/twitter/follow/tinydevteam.svg?style=flat-square&color=5A9FD8)](https://twitter.com/tinydevteam)
+
 Dream Defenders are building a powerful, deep, local, organization and movement for freedom and liberation in Florida.
-
-## Build Status
-
-**staging**
-
-[![CircleCI](https://circleci.com/gh/pixelcollective/tinypixel.dev/tree/staging.svg?style=shield&circle-token=6c5040d1a04b505a47ebb1e98cca593a4568218a)](https://circleci.com/gh/pixelcollective/tinypixel.dev/tree/staging)
-
-**master**
-
-[![CircleCI](https://circleci.com/gh/pixelcollective/tinypixel.dev/tree/master.svg?style=shield&circle-token=6c5040d1a04b505a47ebb1e98cca593a4568218a)](https://circleci.com/gh/pixelcollective/tinypixel.dev/tree/master)
 
 ## Maintainers
 

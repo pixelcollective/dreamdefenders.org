@@ -48,6 +48,7 @@
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.0.0",
     "roots/wp-stage-switcher": "^2.0",
+    "tiny-pixel/config": "^0.0.1",
     "sentry/sdk": "^2.0",
     "devgeniem/wp-cron-runner": "^1.0",
     "humanmade/wp-redis-predis-client": "dev-master",
@@ -59,7 +60,6 @@
     "tiny-pixel/admin-to-console": "^1.0",
     "tiny-pixel/s3-uploads-adapter": "dev-master",
     "tiny-pixel/wp-performant-media": ">=1.0.1",
-    "vlucas/phpdotenv": "^3.4.0",
     "wp-graphql/wp-graphiql": "^1.0.0",
     "wp-graphql/wp-graphql": "^0.5.0",
     "wp-graphql/wp-graphql-acf": "^0.3.1",
@@ -78,7 +78,9 @@
   },
   "require-dev": {
     "franzl/studio": "^0.13.0",
+    "phpunit/phpunit": "^8.5",
     "roave/security-advisories": "dev-master",
+    "squizlabs/php_codesniffer": "^3.5",
     "wpackagist-plugin/rewrite-testing": ">=0.1",
     "wpackagist-plugin/user-switching": ">=1.5.0"
   },

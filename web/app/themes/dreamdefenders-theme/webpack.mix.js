@@ -34,11 +34,13 @@ mix
     ],
   });
 
-mix
-  .js('resources/assets/scripts/app.js', 'scripts')
-  .js('resources/assets/scripts/customizer.js', 'scripts')
-  .blocks('resources/assets/scripts/editor.js', 'scripts')
-  .extract();
+mix.js('resources/assets/scripts/app.js', 'scripts')
+   .extract();
+
+mix.blocks('resources/assets/scripts/editor.js', 'scripts')
+   .extract();
+
+mix.js('resources/assets/scripts/customizer.js', 'scripts')
 
 mix
   .copyWatched('resources/assets/images', 'dist/images')
