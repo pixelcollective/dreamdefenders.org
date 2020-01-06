@@ -2467,8 +2467,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.3.2",
-                "reference": "5.3.2"
+                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.3.2"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -3540,7 +3539,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:wp-graphql/wp-graphql-acf",
-                "reference": "b15c1913aef9a44407156b4c2a136c247d00a655"
+                "reference": "5943cd6986b546a9e5d408b3c751954e9a11cf0d"
             },
             "require-dev": {
                 "lucatume/wp-browser": ">=2.2.1 <2.2.8"
@@ -3581,7 +3580,7 @@
                 }
             ],
             "description": "Advanced Custom Fields bindings for wp-graphql",
-            "time": "2019-11-12T20:59:42+00:00"
+            "time": "2019-12-13T18:26:57+00:00"
         },
         {
             "name": "wp-media/rocket-lazyload-common",
@@ -3806,7 +3805,7 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "4.6.1",
+            "version": "4.6.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
@@ -3814,7 +3813,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.zip?timestamp=1577731089"
+                "url": "https://downloads.wordpress.org/plugin/redirection.zip?timestamp=1578293412"
             },
             "require": {
                 "composer/installers": "~1.0"
