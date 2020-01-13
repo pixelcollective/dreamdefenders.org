@@ -1,6 +1,14 @@
 # Artifacts
 node_modules
+vendor
 *.log
+.env
+.env.*
+!.env.example
+database
+
+# Auth
+auth.json
 
 # Cypress
 cypress/screenshots/*
@@ -16,15 +24,6 @@ web/app/uploads/*
 # WordPress
 web/wp
 web/.htaccess
-
-# Dotenv
-.env
-.env.*
-!.env.example
-database
-
-# Composer
-/vendor
 
 # WP-CLI
 wp-cli.local.yml

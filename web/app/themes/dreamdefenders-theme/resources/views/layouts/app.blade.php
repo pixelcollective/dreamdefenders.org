@@ -4,10 +4,10 @@
 
   <body @php(body_class())>
     @php(wp_body_open())
-    <div id="app">
+    <div id="app" class="w-full overflow-x-hidden">
       @php(do_action('get_header'))
 
-      <div class="w-full bg-indigo-100">
+      <div class="w-full">
         <div class="object-cover bg-black bg-center bg-top md:bg-fixed" style="background-image: url(@asset('images/banner-background.png'));">
           <div class="bg-black-600">
             @include('partials.navigation')
