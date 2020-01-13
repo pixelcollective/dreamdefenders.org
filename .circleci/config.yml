@@ -58,9 +58,9 @@ workflows:
       - tiller-circleci/deploy:
           name: deploy-staging
           known_hosts: 'github.com, 165.22.190.49'
-          trellis_repo: 'git@github.com:pixelcollective/managed-wordpress-deploy.dev.git'
+          trellis_repo: 'git@github.com:pixelcollective/managed-wordpress-deploy.git'
           site_env: staging
-          site_name: tinypixel.dev
+          site_name: build.dreamdefenders.tinypixel.dev
           executor: tiller-circleci/ansible-27
           requires:
             - hold
@@ -73,9 +73,9 @@ workflows:
       - tiller-circleci/deploy:
           name: deploy-production
           known_hosts: 'github.com, 157.230.209.152'
-          trellis_repo: 'git@github.com:pixelcollective/managed-wordpress-deploy.dev.git'
+          trellis_repo: 'git@github.com:pixelcollective/managed-wordpress-deploy.git'
           site_env: production
-          site_name: tinypixel.dev
+          site_name: dreamdefenders.org
           executor: tiller-circleci/ansible-27
           requires:
             - integration-pre-deploy
