@@ -19,4 +19,6 @@
       </div>
     </section>
   @endwhile
+
+  @include('components.instagram')
 @endsection

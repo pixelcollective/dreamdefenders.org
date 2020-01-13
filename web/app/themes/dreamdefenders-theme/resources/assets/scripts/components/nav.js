@@ -15,7 +15,9 @@ const targets = {
   navDisable: document.querySelector(`.nav-disable`),
 }
 
-const navAvailable = () => targets.navToggle && targets.navOverlay
+const navAvailable = () => {
+  return targets.navToggle && targets.navOverlay
+}
 
 const toggleNav = () => {
   targets.navOverlay.classList.toggle(`hidden`)

@@ -2,12 +2,13 @@
   "name": "dreamdefenders/theme",
   "type": "wordpress-theme",
   "license": "MIT",
-  "description": "Theme built with Sage 10",
+  "description": "Theme commissioned by Dream Defenders and built with Sage 10",
   "homepage": "https://tinypixel.dev/dreamdefenders/",
   "authors": [
     {
       "name": "Kelly Mears",
-      "email": "developers@tinypixel.dev"
+      "email": "developers@tinypixel.dev",
+      "homepage": "https://tinypixel.dev"
     },
     {
       "name": "Ben Word",
@@ -30,13 +31,16 @@
       "homepage": "https://github.com/log1x"
     }
   ],
-  "keywords": [
-    "wordpress"
-  ],
   "support": {
     "issues": "https://github.com/roots/sage/issues",
     "forum": "https://discourse.roots.io/"
   },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "git@github.com:pixelcollective/acorn-instagram"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "App\\": "app/"
@@ -46,6 +50,7 @@
     "php": "^7.2",
     "log1x/sage-directives": "^1.1",
     "log1x/sage-svg": "^1.0",
+    "tiny-pixel/acorn-instagram": "dev-master",
     "roots/acorn": "dev-master"
   },
   "require-dev": {

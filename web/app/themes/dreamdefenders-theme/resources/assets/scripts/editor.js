@@ -3,8 +3,11 @@ import { __ } from '@wordpress/i18n';
 import domReady from '@wordpress/dom-ready';
 
 /** sage utilities */
+import {
+  registerBlockStyles,
+  unregisterBlockStyles,
+} from './hooks/styles'
 import { whitelistBlocks } from './hooks/whitelist';
-import { registerBlockStyles, unregisterBlockStyles } from './hooks/styles'
 
 /**
  * @wordpress/dom-ready event
@@ -61,9 +64,7 @@ domReady(() => {
    * Restrict blocks to the following list.
    */
   whitelistBlocks([
-    /**
-     * @wordpress
-     */
+    /** @wordpress */
     'core/audio',
     'core/button',
     'core/column',
@@ -89,9 +90,7 @@ domReady(() => {
     'core/table',
     'core/video',
 
-    /**
-     * @tinypixel
-     */
+    /** @tinypixel */
     'tinypixel/twocolumn',
   ]);
 });
