@@ -152,10 +152,10 @@
   dependencies:
     "@babel/types" "^7.7.0"
 
-"@babel/helper-plugin-utils@^7.0.0":
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/@babel/helper-plugin-utils/-/helper-plugin-utils-7.0.0.tgz#bbb3fbee98661c569034237cc03967ba99b4f250"
-  integrity sha512-CYAOUCARwExnEixLdB6sDm2dIJ/YgEAKDM1MOeMeZu9Ld/bDgVo8aiWrXwcY7OBh+1Ea2uUcVRcxKk0GJvW7QA==
+"@babel/helper-plugin-utils@^7.0.0", "@babel/helper-plugin-utils@^7.8.0":
+  version "7.8.0"
+  resolved "https://registry.yarnpkg.com/@babel/helper-plugin-utils/-/helper-plugin-utils-7.8.0.tgz#59ec882d43c21c544ccb51decaecb306b34a8231"
+  integrity sha512-+hAlRGdf8fHQAyNnDBqTHQhwdLURLdrCROoWaEQYiQhk2sV9Rhs+GoFZZfMJExTq9HG8o2NX3uN2G90bFtmFdA==
 
 "@babel/helper-regex@^7.0.0", "@babel/helper-regex@^7.4.4":
   version "7.5.5"
@@ -289,12 +289,12 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
-"@babel/plugin-syntax-dynamic-import@^7.2.0", "@babel/plugin-syntax-dynamic-import@^7.7":
-  version "7.7.4"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-dynamic-import/-/plugin-syntax-dynamic-import-7.7.4.tgz#29ca3b4415abfe4a5ec381e903862ad1a54c3aec"
-  integrity sha512-jHQW0vbRGvwQNgyVxwDh4yuXu4bH1f5/EICJLAhl1SblLs2CDhrsmCk+v5XLdE9wxtAFRyxx+P//Iw+a5L/tTg==
+"@babel/plugin-syntax-dynamic-import@^7.2.0", "@babel/plugin-syntax-dynamic-import@^7.8":
+  version "7.8.0"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-dynamic-import/-/plugin-syntax-dynamic-import-7.8.0.tgz#3a6c1cd36af923db602df83c5aa72e08bb14353a"
+  integrity sha512-Mx2RzpCHJaBfmFdA2abXDKRHVJdzJ6R0Wqwb6TxCgM7NRR5wcC4cyiAsRL7Ga+lwG8GG1cKvb+4ENjic8y15jA==
   dependencies:
-    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/helper-plugin-utils" "^7.8.0"
 
 "@babel/plugin-syntax-json-strings@^7.2.0":
   version "7.2.0"
@@ -968,6 +968,13 @@
     webpack "^4.8.3"
     webpack-sources "^1.3.0"
 
+"@wordpress/dom-ready@^2.5.1":
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/@wordpress/dom-ready/-/dom-ready-2.5.1.tgz#c2b7a61ea8d1a9dd5215c2a6d793ac373449286f"
+  integrity sha512-HPEPWdShm/xJjQJVOOWpehvt4wtK0W5D/X0wpLfWAQjPOsTMTKnlRsRL3vTjIlgTrVZan1rv+3ZJv7AwH/1U5g==
+  dependencies:
+    "@babel/runtime" "^7.4.4"
+
 "@wordpress/element@^2.10.0":
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/@wordpress/element/-/element-2.10.0.tgz#46c09ba2d1b80bc2e59e5b72efdc024080ab01e7"
@@ -1061,6 +1068,11 @@ alphanum-sort@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
+
+animejs@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/animejs/-/animejs-3.1.0.tgz#748a90fc1d4bef3efed64508af9a6a82babf5c47"
+  integrity sha512-BjnCroPPQPEAngT0M89pz9TBcOGgOFLnVoq3+jV2upl4rn60k57/AXvESTnuILsNgOEjGuhMEOMp7IlQzk40kA==
 
 ansi-colors@^3.0.0:
   version "3.2.4"
@@ -3148,10 +3160,10 @@ eslint-module-utils@^2.4.1:
     debug "^2.6.9"
     pkg-dir "^2.0.0"
 
-eslint-plugin-import@^2.19.1:
-  version "2.19.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.19.1.tgz#5654e10b7839d064dd0d46cd1b88ec2133a11448"
-  integrity sha512-x68131aKoCZlCae7rDXKSAQmbT5DQuManyXo2sK6fJJ0aK5CWAkv6A6HJZGgqC8IhjQxYPgo6/IY4Oz8AFsbBw==
+eslint-plugin-import@^2.20.0:
+  version "2.20.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.20.0.tgz#d749a7263fb6c29980def8e960d380a6aa6aecaa"
+  integrity sha512-NK42oA0mUc8Ngn4kONOPsPB1XhbUvNHqF+g307dPV28aknPoiNnKLFd9em4nkswwepdF5ouieqv5Th/63U7YJQ==
   dependencies:
     array-includes "^3.0.3"
     array.prototype.flat "^1.2.1"
@@ -7673,21 +7685,21 @@ safe-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-sass-loader@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-8.0.0.tgz#e7b07a3e357f965e6b03dd45b016b0a9746af797"
-  integrity sha512-+qeMu563PN7rPdit2+n5uuYVR0SSVwm0JsOUsaJXzgYcClWSlmX0iHDnmeOobPkf5kUglVot3QS6SyLyaQoJ4w==
+sass-loader@^8.0.2:
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-8.0.2.tgz#debecd8c3ce243c76454f2e8290482150380090d"
+  integrity sha512-7o4dbSK8/Ol2KflEmSco4jTjQoV988bM82P9CZdmo9hR3RLnvNc0ufMNdMrB0caq38JQ/FgF4/7RcbcfKzxoFQ==
   dependencies:
     clone-deep "^4.0.1"
     loader-utils "^1.2.3"
     neo-async "^2.6.1"
-    schema-utils "^2.1.0"
+    schema-utils "^2.6.1"
     semver "^6.3.0"
 
-sass@^1.24.1:
-  version "1.24.1"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.24.1.tgz#5b32ef0ee04403939d96a4963a42fd90e9408691"
-  integrity sha512-lMhl1V4Bj/lm+5c4sIt3fVzfmkyqqztpypr9dI8N0XsaeLs+gWow0der0e+I9WsRQK86SLXfEUgleERqPbR5Jw==
+sass@^1.24.4:
+  version "1.24.4"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.24.4.tgz#aa50575a9ed2b9e9645b5599156fd149bdad9eaa"
+  integrity sha512-SqizkIEEcVPzmK1tYdlNRl/RSXMEwGcifL9GD+S2p9rEPdj6ycRbk4PWZs0jwlajNSyBPo/SXRB81i22SG0jmw==
   dependencies:
     chokidar ">=2.0.0 <4.0.0"
 
@@ -7720,14 +7732,6 @@ schema-utils@^1.0.0:
     ajv "^6.1.0"
     ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
-
-schema-utils@^2.1.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-2.5.0.tgz#8f254f618d402cc80257486213c8970edfd7c22f"
-  integrity sha512-32ISrwW2scPXHUSusP8qMg5dLUawKkyV+/qIEV9JdXKx+rsM6mi8vZY8khg2M69Qom16rtroWXD3Ybtiws38gQ==
-  dependencies:
-    ajv "^6.10.2"
-    ajv-keywords "^3.4.1"
 
 schema-utils@^2.6.1:
   version "2.6.1"
@@ -9212,7 +9216,7 @@ vue-style-loader@^4.1.0:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-template-compiler@^2.6.11:
+vue-template-compiler@^2.6.10:
   version "2.6.11"
   resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.6.11.tgz#c04704ef8f498b153130018993e56309d4698080"
   integrity sha512-KIq15bvQDrcCjpGjrAhx4mUlyyHfdmTaoNfeoATHLAiWB+MU3cx4lOzMwrnUh9cCxy0Lt1T11hAFY6TQgroUAA==
