@@ -60,7 +60,7 @@ workflows:
           known_hosts: 'github.com, 165.22.190.49'
           trellis_repo: 'git@github.com:pixelcollective/managed-wordpress-deploy.git'
           site_env: staging
-          site_name: build.dreamdefenders.tinypixel.dev
+          site_name: dreamdefenders.org
           executor: tiller-circleci/ansible-27
           requires:
             - hold
