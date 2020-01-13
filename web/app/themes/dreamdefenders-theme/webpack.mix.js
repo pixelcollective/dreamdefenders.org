@@ -1,55 +1,52 @@
-const mix = require('laravel-mix');
-            require('laravel-mix-wp-blocks');
-            require('laravel-mix-purgecss');
-            require('laravel-mix-copy-watched');
+const mix  = require('laravel-mix')
+const tw   = require('tailwindcss')
+const { resolve, join } = require('path')
 
-const tailwindcss = require('tailwindcss');
-const tailwind = tailwindcss('../../../../tailwind.config.js');
+require('laravel-mix-wp-blocks')
+require('laravel-mix-purgecss')
+require('laravel-mix-copy-watched')
 
-mix.setPublicPath('./dist')
-   .browserSync('dreamdefenders.vagrant');
+mix.setPublicPath(`./dist`)
+   .browserSync(`dreamdefenders.vagrant`)
+   .webpackConfig({
+      resolve: {
+         alias: {
+            [`@hooks`]:      resolve(__dirname, `resources/assets/scripts/hooks`),
+            [`@util`]:       resolve(__dirname, `resources/assets/scripts/util`),
+            [`@components`]: resolve(__dirname, `resources/assets/scripts/components`),
+         },
+      },
+   })
+   .options({ processCssUrls: false })
 
-mix
-  .sass('resources/assets/styles/app.scss', 'styles')
-  .sass('resources/assets/styles/editor.scss', 'styles')
-  .options({
-    processCssUrls: false,
-    postCss: [tailwind],
-  }).purgeCss({
-    enabled: true,
-    globs: [
-      path.join(__dirname, 'resources/**/*.php'),
-      path.join(__dirname, 'resources/assets/**/*.js'),
-    ],
-    extensions: ['js', 'php'],
-    whitelistPatterns: [
-      /^wp-block-$/,
-      /container/,
-      /blockquote/,
-    ],
-    whitelistPatternsChildren: [
-      /^wp-block$/,
-      /container/,
-      /blockquote/,
-    ],
-  });
+mix.sass(`resources/assets/styles/app.scss`, `styles`)
+   .sass(`resources/assets/styles/editor.scss`, `styles`)
+   .purgeCss({
+      enabled: true,
+      globs: [
+         join(__dirname, `resources/**/*.php`),
+         join(__dirname, `resources/assets/**/*.js`),
+      ],
+      extensions: [`js`, `php`],
+      whitelistPatterns: [
+         /^wp-block-$/,
+         /container/,
+         /blockquote/,
+      ],
+      whitelistPatternsChildren: [
+         /^wp-block$/,
+         /container/,
+         /blockquote/,
+      ],
+   }).options({ postCss: [ tw(`./../../../../tailwind.config.js`) ] })
 
-mix.js('resources/assets/scripts/app.js', 'scripts')
-   .extract();
+mix.js(`./resources/assets/scripts/app.js`, `scripts`)
+   .js(`./resources/assets/scripts/customizer.js`, `scripts`)
+   .blocks(`./resources/assets/scripts/editor.js`, `scripts`)
+   .sourceMaps(false, `source-map`)
+   .extract()
+   .version()
 
-mix.blocks('resources/assets/scripts/editor.js', 'scripts')
-   .extract();
-
-mix.js('resources/assets/scripts/customizer.js', 'scripts')
-
-mix
-  .copyWatched('resources/assets/images', 'dist/images')
-  .copyWatched('resources/assets/svg', 'dist/svg')
-  .copyWatched('resources/assets/fonts', 'dist/fonts');
-
-mix.options({
-  processCssUrls: false,
-});
-
-mix.sourceMaps(false, 'source-map')
-   .version();
+mix.copyWatched(`resources/assets/images`, `dist/images`)
+   .copyWatched(`resources/assets/fonts`, `dist/fonts`)
+   .copyWatched(`resources/assets/svg`, `dist/svg`)
