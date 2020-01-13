@@ -3,22 +3,22 @@
   "private": true,
   "workspaces": [
     "web/app/plugins/blocks",
-    "web/app/themes/dreamdefenders-theme"
+    "web/app/themes/sage"
   ],
   "scripts": {
-    "build:theme": "yarn workspace theme build",
-    "build:blocks": "yarn workspace blocks build",
-    "build": "concurrently --kill-others-on-fail \"yarn build:theme\"  \"yarn build:blocks\"",
-    "production:theme": "yarn workspace theme build",
-    "production:blocks": "yarn workspace blocks build",
-    "production": "concurrently --kill-others-on-fail \"yarn production:theme\"  \"yarn production:blocks\"",
-    "start:theme": "yarn workspace theme start",
-    "start:blocks": "yarn workspace blocks build",
-    "start": "concurrently --kill-others-on-fail \"yarn start:theme\" \"yarn start:blocks\"",
     "cypress:open": "cypress open",
     "cypress:development": "cypress run --spec 'tests/cypress/integration/development.js' --browser chrome",
     "cypress:staging": "cypress run --spec 'tests/cypress/integration/staging.js' --browser chrome",
-    "cypress:production": "cypress run --spec 'tests/cypress/integration/production.js' --browser chrome"
+    "cypress:production": "cypress run --spec 'tests/cypress/integration/production.js' --browser chrome",
+    "start": "concurrently --kill-others-on-fail \"yarn start:theme\" \"yarn start:blocks\"",
+    "start:theme": "yarn workspace theme start",
+    "start:blocks": "yarn workspace blocks build",
+    "build": "concurrently --kill-others-on-fail \"yarn build:theme\"  \"yarn build:blocks\"",
+    "build:theme": "yarn workspace theme build",
+    "build:blocks": "yarn workspace blocks build",
+    "production": "concurrently --kill-others-on-fail \"yarn production:theme\"  \"yarn production:blocks\"",
+    "production:theme": "yarn workspace theme build",
+    "production:blocks": "yarn workspace blocks build"
   },
   "devDependencies": {
     "@percy/cypress": "^2.2.0",
