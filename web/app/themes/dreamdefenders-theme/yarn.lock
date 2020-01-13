@@ -968,6 +968,13 @@
     webpack "^4.8.3"
     webpack-sources "^1.3.0"
 
+"@wordpress/dom-ready@^2.5.1":
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/@wordpress/dom-ready/-/dom-ready-2.5.1.tgz#c2b7a61ea8d1a9dd5215c2a6d793ac373449286f"
+  integrity sha512-HPEPWdShm/xJjQJVOOWpehvt4wtK0W5D/X0wpLfWAQjPOsTMTKnlRsRL3vTjIlgTrVZan1rv+3ZJv7AwH/1U5g==
+  dependencies:
+    "@babel/runtime" "^7.4.4"
+
 "@wordpress/element@^2.10.0":
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/@wordpress/element/-/element-2.10.0.tgz#46c09ba2d1b80bc2e59e5b72efdc024080ab01e7"
@@ -1061,6 +1068,11 @@ alphanum-sort@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
+
+animejs@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/animejs/-/animejs-3.1.0.tgz#748a90fc1d4bef3efed64508af9a6a82babf5c47"
+  integrity sha512-BjnCroPPQPEAngT0M89pz9TBcOGgOFLnVoq3+jV2upl4rn60k57/AXvESTnuILsNgOEjGuhMEOMp7IlQzk40kA==
 
 ansi-colors@^3.0.0:
   version "3.2.4"
@@ -7684,10 +7696,10 @@ sass-loader@^8.0.0:
     schema-utils "^2.1.0"
     semver "^6.3.0"
 
-sass@^1.24.1:
-  version "1.24.1"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.24.1.tgz#5b32ef0ee04403939d96a4963a42fd90e9408691"
-  integrity sha512-lMhl1V4Bj/lm+5c4sIt3fVzfmkyqqztpypr9dI8N0XsaeLs+gWow0der0e+I9WsRQK86SLXfEUgleERqPbR5Jw==
+sass@^1.24.4:
+  version "1.24.4"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.24.4.tgz#aa50575a9ed2b9e9645b5599156fd149bdad9eaa"
+  integrity sha512-SqizkIEEcVPzmK1tYdlNRl/RSXMEwGcifL9GD+S2p9rEPdj6ycRbk4PWZs0jwlajNSyBPo/SXRB81i22SG0jmw==
   dependencies:
     chokidar ">=2.0.0 <4.0.0"
 
@@ -9212,7 +9224,7 @@ vue-style-loader@^4.1.0:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-template-compiler@^2.6.11:
+vue-template-compiler@^2.6.10:
   version "2.6.11"
   resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.6.11.tgz#c04704ef8f498b153130018993e56309d4698080"
   integrity sha512-KIq15bvQDrcCjpGjrAhx4mUlyyHfdmTaoNfeoATHLAiWB+MU3cx4lOzMwrnUh9cCxy0Lt1T11hAFY6TQgroUAA==
