@@ -24,7 +24,7 @@ domReady(() => {
   }
 
   /**
-   * ORGANIZE text background
+   * Organize section
    */
   targets.organize
     && targets.organize.forEach(target => {

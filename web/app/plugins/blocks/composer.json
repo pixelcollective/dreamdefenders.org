@@ -14,7 +14,6 @@
   "prefer-stable": true,
   "require": {
     "php": ">=7.1",
-    "tiny-pixel/blocks": "dev-master",
     "tightenco/collect": "^5.8",
     "eftec/bladeone": "^3.24",
     "php-di/php-di": "^6.0"

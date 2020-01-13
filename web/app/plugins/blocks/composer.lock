@@ -4,137 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "77b4d2b7e025be94cb16113a49778d3e",
+    "content-hash": "187cb1b7e00046619df2df3067988967",
     "packages": [
         {
-            "name": "composer/installers",
-            "version": "v1.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/installers.git",
-                "reference": "9ce17fb70e9a38dd8acff0636a29f5cf4d575c1b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/9ce17fb70e9a38dd8acff0636a29f5cf4d575c1b",
-                "reference": "9ce17fb70e9a38dd8acff0636a29f5cf4d575c1b",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0"
-            },
-            "replace": {
-                "roundcube/plugin-installer": "*",
-                "shama/baton": "*"
-            },
-            "require-dev": {
-                "composer/composer": "1.0.*@dev",
-                "phpunit/phpunit": "4.1.*"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "Composer\\Installers\\Plugin",
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Composer\\Installers\\": "src/Composer/Installers"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kyle Robinson Young",
-                    "email": "kyle@dontkry.com",
-                    "homepage": "https://github.com/shama"
-                }
-            ],
-            "description": "A multi-framework Composer library installer",
-            "homepage": "https://composer.github.io/installers/",
-            "keywords": [
-                "Craft",
-                "Dolibarr",
-                "Eliasis",
-                "Hurad",
-                "ImageCMS",
-                "Kanboard",
-                "Lan Management System",
-                "MODX Evo",
-                "Mautic",
-                "Maya",
-                "OXID",
-                "Plentymarkets",
-                "Porto",
-                "RadPHP",
-                "SMF",
-                "Thelia",
-                "WolfCMS",
-                "agl",
-                "aimeos",
-                "annotatecms",
-                "attogram",
-                "bitrix",
-                "cakephp",
-                "chef",
-                "cockpit",
-                "codeigniter",
-                "concrete5",
-                "croogo",
-                "dokuwiki",
-                "drupal",
-                "eZ Platform",
-                "elgg",
-                "expressionengine",
-                "fuelphp",
-                "grav",
-                "installer",
-                "itop",
-                "joomla",
-                "kohana",
-                "laravel",
-                "lavalite",
-                "lithium",
-                "magento",
-                "mako",
-                "mediawiki",
-                "modulework",
-                "moodle",
-                "osclass",
-                "phpbb",
-                "piwik",
-                "ppi",
-                "puppet",
-                "reindex",
-                "roundcube",
-                "shopware",
-                "silverstripe",
-                "sydes",
-                "symfony",
-                "typo3",
-                "wordpress",
-                "yawik",
-                "zend",
-                "zikula"
-            ],
-            "time": "2017-08-09T07:53:48+00:00"
-        },
-        {
             "name": "eftec/bladeone",
-            "version": "3.31",
+            "version": "3.33",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EFTEC/BladeOne.git",
-                "reference": "f8ca69282335c9d0ba3691f017f3b66b2f2b9741"
+                "reference": "9f58d25858850dd64164a7486c2fe45e2b652867"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EFTEC/BladeOne/zipball/f8ca69282335c9d0ba3691f017f3b66b2f2b9741",
-                "reference": "f8ca69282335c9d0ba3691f017f3b66b2f2b9741",
+                "url": "https://api.github.com/repos/EFTEC/BladeOne/zipball/9f58d25858850dd64164a7486c2fe45e2b652867",
+                "reference": "9f58d25858850dd64164a7486c2fe45e2b652867",
                 "shasum": ""
             },
             "require": {
@@ -142,7 +25,7 @@
                 "php": ">=5.6"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.11",
+                "friendsofphp/php-cs-fixer": "^2.16.1",
                 "phpunit/phpunit": "^5.7",
                 "squizlabs/php_codesniffer": "~3.3.2"
             },
@@ -152,7 +35,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.31-dev"
+                    "dev-master": "3.33-dev"
                 }
             },
             "autoload": {
@@ -179,7 +62,7 @@
                 "templating",
                 "view"
             ],
-            "time": "2019-08-09T13:28:53+00:00"
+            "time": "2019-12-21T12:33:13+00:00"
         },
         {
             "name": "jeremeamia/superclosure",
@@ -830,62 +713,12 @@
                 "laravel"
             ],
             "time": "2019-09-17T18:57:01+00:00"
-        },
-        {
-            "name": "tiny-pixel/blocks",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pixelcollective/tiny-blocks.git",
-                "reference": "19a82470366c7ae8e04bbf0ce68fe8efc2ecf3f6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pixelcollective/tiny-blocks/zipball/19a82470366c7ae8e04bbf0ce68fe8efc2ecf3f6",
-                "reference": "19a82470366c7ae8e04bbf0ce68fe8efc2ecf3f6",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "v1.4",
-                "eftec/bladeone": "^3.24",
-                "php": ">=7.1",
-                "php-di/php-di": "^6.0",
-                "tightenco/collect": "^5.8"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "vendor/tightenco/collect/src/Collect/Support/helpers.php",
-                    "vendor/tightenco/collect/src/Collect/Support/alias.php"
-                ],
-                "psr-4": {
-                    "TinyBlocks\\": [
-                        "./",
-                        "./src",
-                        "./demo"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kelly Mears",
-                    "homepage": "https://tinypixel.dev"
-                }
-            ],
-            "description": "For consummate blockbuilders",
-            "time": "2019-12-19T23:01:22+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "tiny-pixel/blocks": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

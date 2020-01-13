@@ -7,7 +7,6 @@
 
 namespace TinyPixel\Blocks;
 
-require __DIR__ . '/vendor/tiny-pixel/blocks/vendor/autoload.php';
 require __DIR__ . '/vendor/autoload.php';
 
 $tinyblocks = \TinyBlocks\App::getInstance(__DIR__ . '/config');
