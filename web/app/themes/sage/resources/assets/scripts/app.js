@@ -41,7 +41,7 @@ domReady(() => {
       img[gram="${gram.getAttribute(`data-grow`)}"]
     `)
 
-    gram.style.backgroundColor = `rgba(0, 0, 0, 1)`
+    gram.style.backgroundColor = `rgb(0, 0, 0)`
     img.scaleX = 1
     img.scaleY = 1
 
@@ -50,10 +50,17 @@ domReady(() => {
         targets: img,
         easing: config.easing,
         loop: false,
-        backgroundColor: [gram.style.backgroundColor, `rgba(1, 1, 1, 1)`],
         duration: 200,
         scaleX: [img.scaleX, 0.9],
         scaleY: [img.scaleY, 0.9],
+      })
+
+      anime({
+        targets: gram,
+        easing: config.easing,
+        loop: false,
+        backgroundColor: [gram.style.backgroundColor, `rgb(255, 255, 255)`],
+        duration: 400,
       })
     })
 
@@ -62,10 +69,17 @@ domReady(() => {
         targets: img,
         easing: config.easing,
         loop: false,
-        backgroundColor: [gram.style.backgroundColor, `rgba(0, 0, 0, 1)`],
         duration: 200,
         scaleX: [img.scaleX, 1],
         scaleY: [img.scaleY, 1],
+      })
+
+      anime({
+        targets: gram,
+        easing: config.easing,
+        loop: false,
+        backgroundColor: [gram.style.backgroundColor, `rgb(0, 0, 0)`],
+        duration: 400,
       })
     })
   })
