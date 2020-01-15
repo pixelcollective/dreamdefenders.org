@@ -20,7 +20,7 @@ class Instagram extends InstagramComposer
      *
      * @var int
      */
-    public $count = 9;
+    public $count = 12;
 
     /**
      * Instagram account name.
@@ -45,25 +45,29 @@ class Instagram extends InstagramComposer
      */
     public function with()
     {
-        $grams = $this->cachedRequest()->map(function ($gram) {
-            return (object) [
-                'id'      => $gram['shortcode'],
-                'type'    => $gram['type'],
-                'caption' => $gram['caption'],
-                'url'     => "https://www.instagram.com/p/{$gram['shortcode']}",
-                'image'   => $gram['imageUrl'],
-            ];
-        });
-
         return [
-            'grams' => $grams->chunk(3)->toArray(),
+            'grams' => $this->cachedRequest()->chunk(3)->toArray(),
         ];
     }
 
+    /**
+     * Cache requests to Instagram/Facebook to dissuade them from
+     * blacklisting our IP.
+     *
+     * @return \Illuminate\Support\Collection
+     */
     public function cachedRequest()
     {
         return Cache::remember('instagram', 3600, function () {
-            return $this->media();
+            return $this->media()->map(function ($gram) {
+                return (object) [
+                    'id'      => $gram['shortcode'],
+                    'type'    => $gram['type'],
+                    'caption' => $gram['caption'],
+                    'url'     => "https://www.instagram.com/p/{$gram['shortcode']}",
+                    'image'   => $gram['imageUrl'],
+                ];
+            });;
         });
     }
 }

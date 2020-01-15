@@ -1,5 +1,6 @@
 {
   "name": "dreamdefenders",
+  "license": "MIT",
   "private": true,
   "workspaces": [
     "web/app/plugins/blocks",

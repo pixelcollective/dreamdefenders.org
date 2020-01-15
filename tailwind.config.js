@@ -147,7 +147,9 @@ module.exports = {
       outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
       none: 'none',
     },
-    container: {},
+    container: {
+      center: true,
+    },
     cursor: {
       auto: 'auto',
       default: 'default',
@@ -374,10 +376,8 @@ module.exports = {
       '40': '40',
       '50': '50',
     },
-
     /**
      * Gradients
-     *
      * @see https://github.com/benface/tailwindcss-gradients
      */
     linearGradients: theme => ({
@@ -398,10 +398,8 @@ module.exports = {
         ],
       },
     }),
-
     /**
      * Transitions
-     *
      * @see https://github.com/benface/tailwindcss-transitions
      */
     transitionProperty: {
@@ -519,10 +517,7 @@ module.exports = {
     width: ['responsive'],
     wordBreak: ['responsive'],
     zIndex: ['responsive'],
-
-    /**
-     * Transitions plugin
-     */
+    /** Transitions */
     backgroundImage:          ['responsive'],
     linearGradients:          ['responsive'],
     radialGradients:          ['responsive'],
@@ -530,10 +525,7 @@ module.exports = {
     repeatingLinearGradients: ['responsive'],
     repeatingRadialGradients: ['responsive'],
     repeatingConicGradients:  ['responsive'],
-
-    /**
-     * Gradient plugin
-     */
+    /** Gradients */
     transitionProperty:       ['responsive'],
     transitionDuration:       ['responsive'],
     transitionTimingFunction: ['responsive'],
