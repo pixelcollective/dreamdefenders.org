@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ac798ea7301bdc9107c14ebad674d00c",
+    "content-hash": "fd3c00b950da55f7758a939341782061",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -749,6 +749,61 @@
             "time": "2020-01-07T13:47:03+00:00"
         },
         {
+            "name": "kellymears/sage-svg",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:kellymears/sage-svg",
+                "reference": "5c828bcd9fd8390684695e5919c73f2d9ac6cb6a"
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "^3.5"
+            },
+            "type": "package",
+            "extra": {
+                "acorn": {
+                    "providers": [
+                        "Log1x\\SageSvg\\SageSvgServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Log1x\\SageSvg\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "scripts": {
+                "lint": [
+                    "phpcs --ignore=vendor --extensions=php --standard=PSR12 ."
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brandon Nifong",
+                    "email": "brandon@tendency.me"
+                }
+            ],
+            "description": "A simple package for using inline SVGs in Sage 10 projects.",
+            "keywords": [
+                "sage",
+                "svg",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/log1x/sage-svg/issues"
+            },
+            "time": "2019-11-19T13:34:01+00:00"
+        },
+        {
             "name": "league/flysystem",
             "version": "1.0.63",
             "source": {
@@ -883,60 +938,6 @@
                 "wordpress"
             ],
             "time": "2019-12-02T15:02:22+00:00"
-        },
-        {
-            "name": "log1x/sage-svg",
-            "version": "v1.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Log1x/sage-svg.git",
-                "reference": "074f8e13f73b8a7026dfcda46c1c76b18f56e677"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Log1x/sage-svg/zipball/074f8e13f73b8a7026dfcda46c1c76b18f56e677",
-                "reference": "074f8e13f73b8a7026dfcda46c1c76b18f56e677",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.2"
-            },
-            "require-dev": {
-                "squizlabs/php_codesniffer": "^3.5"
-            },
-            "type": "package",
-            "extra": {
-                "acorn": {
-                    "providers": [
-                        "Log1x\\SageSvg\\SageSvgServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Log1x\\SageSvg\\": "src/"
-                },
-                "files": [
-                    "src/helpers.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Brandon Nifong",
-                    "email": "brandon@tendency.me"
-                }
-            ],
-            "description": "A simple package for using inline SVGs in Sage 10 projects.",
-            "keywords": [
-                "sage",
-                "svg",
-                "wordpress"
-            ],
-            "time": "2019-11-28T13:40:54+00:00"
         },
         {
             "name": "mashape/unirest-php",
@@ -2312,6 +2313,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "kellymears/sage-svg": 20,
         "tiny-pixel/acorn-instagram": 20,
         "roots/acorn": 20
     },
