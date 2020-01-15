@@ -19,7 +19,7 @@ class Instagram extends InstagramComposer
      *
      * @var int
      */
-    public $count = 12;
+    public $count = 9;
 
     /**
      * Instagram account name.
