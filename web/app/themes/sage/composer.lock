@@ -2149,12 +2149,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pixelcollective/acorn-instagram.git",
-                "reference": "b820f9b61fb56ec0cf4713cddf57bc9eb406c324"
+                "reference": "97653d133e1365d2feba613d64f1309408b3598a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pixelcollective/acorn-instagram/zipball/b820f9b61fb56ec0cf4713cddf57bc9eb406c324",
-                "reference": "b820f9b61fb56ec0cf4713cddf57bc9eb406c324",
+                "url": "https://api.github.com/repos/pixelcollective/acorn-instagram/zipball/97653d133e1365d2feba613d64f1309408b3598a",
+                "reference": "97653d133e1365d2feba613d64f1309408b3598a",
                 "shasum": ""
             },
             "require": {
@@ -2166,13 +2166,13 @@
             "extra": {
                 "acorn": {
                     "providers": [
-                        "TinyPixel\\AcornInstagram\\Providers\\InstagramServiceProvider"
+                        "TinyPixel\\Acorn\\Instagram\\Providers\\InstagramServiceProvider"
                     ]
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "TinyPixel\\AcornInstagram\\": "src/"
+                    "TinyPixel\\Acorn\\Instagram\\": "./src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2192,7 +2192,7 @@
                 "sage",
                 "wordpress"
             ],
-            "time": "2020-01-15T16:20:26+00:00"
+            "time": "2020-01-15T18:23:47+00:00"
         }
     ],
     "packages-dev": [
