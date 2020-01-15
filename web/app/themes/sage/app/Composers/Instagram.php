@@ -2,6 +2,7 @@
 
 namespace App\Composers;
 
+use Illuminate\Support\Facades\Cache;
 use TinyPixel\Acorn\Instagram\Composers\InstagramComposer;
 
 /**
@@ -44,7 +45,7 @@ class Instagram extends InstagramComposer
      */
     public function with()
     {
-        $grams = $this->media()->map(function ($gram) {
+        $grams = $this->cachedRequest()->map(function ($gram) {
             return (object) [
                 'id'      => $gram['shortcode'],
                 'type'    => $gram['type'],
@@ -55,7 +56,14 @@ class Instagram extends InstagramComposer
         });
 
         return [
-            'grams'   => $grams->chunk(3)->toArray(),
+            'grams' => $grams->chunk(3)->toArray(),
         ];
+    }
+
+    public function cachedRequest()
+    {
+        return Cache::remember('instagram', 3600, function () {
+            return $this->media();
+        });
     }
 }
