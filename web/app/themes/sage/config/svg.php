@@ -51,7 +51,7 @@ return [
     */
 
     'directives' => [
-        // 'fa'     => 'fa.solid',
-        // 'brands' => 'fa.brands',
+        'solid'  => 'fa.solid',
+        'brands' => 'fa.brands',
     ],
 ];

@@ -49,4 +49,6 @@ mix.js(`./resources/assets/scripts/app.js`, `scripts`)
 
 mix.copyWatched(`resources/assets/images`, `dist/images`)
    .copyWatched(`resources/assets/fonts`, `dist/fonts`)
+   .copyWatched(`resources/assets/svg/fa/brands`, `dist/svg/fa/brands`)
+   .copyWatched(`resources/assets/svg/fa/solid`, `dist/svg/fa/solid`)
    .copyWatched(`resources/assets/svg`, `dist/svg`)
