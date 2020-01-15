@@ -12,16 +12,12 @@
 
 use TinyPixel\Config\Bootloader;
 
-Env::init();
-
 /**
  * Initialize bootloader.
  */
-$bootloader = new Bootloader();
+Env::init();
 
-/**
- * Initialize environmental variables
- */
+$bootloader = new Bootloader();
 $bootloader->init(dirname(__DIR__));
 
 /**
@@ -45,28 +41,56 @@ $bootloader->loadEnv([
 /**
  * Configure Sentry.
  */
-if (env('SENTRY_DSN')) {
+if (env('SENTRY_DSN') && env('WP_ENV') !== 'development') {
+    $release = (object) [
+        'dsn' => env('SENTRY_DSN') ?: null,
+        'sha' => env('GIT_SHA')    ?: null,
+        'env' => env('WP_ENV')     ?: null,
+        'url' => env('WP_HOME')    ?: null,
+    ];
+
     Sentry\init([
-        'dsn'         => env('SENTRY_DSN'),
-        'release'     => env('SENTRY_RELEASE'),
-        'environment' => env('SENTRY_ENVIRONMENT'),
+        'dsn'         => $release->dsn,
+        'environment' => $release->env,
+        'release'     => $release->sha,
         'error_types' => E_ALL & ~E_NOTICE & ~E_DEPRECATED,
     ]);
 
-    if (env('SENTRY_TRELLIS_VERSION')) {
-        Sentry\configureScope(function (Sentry\State\Scope $scope): void {
-            $scope->setTag('property', env('WP_SITEURL'));
-            $scope->setTag('version', env('SENTRY_TRELLIS_VERSION'));
-        });
-    }
+    Sentry\configureScope(function (Sentry\State\Scope $scope) use ($release): void {
+        $scope->setTag('property', $release->url);
+        env('REDIS_HOST') && $scope->setTag('redis', env('REDIS_HOST'));
+        env('DB_HOST')    && $scope->setTag('db', env('DB_HOST'));
+        env('S3_BUCKET')  && $scope->setTag('s3', env('S3_UPLOADS_BUCKET'));
+
+        !empty($_SERVER['HTTP_CLIENT_IP'])       && $scope->setTag('http_client_ip', $_SERVER['HTTP_CLIENT_IP']);
+        !empty($_SERVER['HTTP_X_FORWARDED_FOR']) && $scope->setTag('http_x_forwarded_for', $_SERVER['HTTP_X_FORWARDED_FOR']);
+    });
+
+    $bootloader->defineSet([
+        'SENTRY_DSN'     => $release->dsn,
+        'SENTRY_RELEASE' => $release->sha,
+    ]);
 }
 
 /**
  * Define environments
  */
 $bootloader->defineEnvironments([
-    'development' => 'https://dreamdefenders.vagrant',
+    'development' => 'http://dreamdefenders.vagrant',
     'staging'     => 'https://build.dreamdefenders.tinypixel.dev',
+]);
+
+/**
+ * Configure WordPress application.
+ */
+$bootloader->configureWordPressApp([
+    'DISABLE_WP_CRON'            => true,
+    'AUTOMATIC_UPDATER_DISABLED' => true,
+    'DISALLOW_FILE_EDIT'         => true,
+    'DISALLOW_FILE_MODS'         => true,
+    'WP_DEBUG_DISPLAY'           => true,
+    'SCRIPT_DEBUG'               => true,
+    'DISPLAY_ERRORS'             => true,
 ]);
 
 /**
@@ -91,17 +115,18 @@ $bootloader->defineDB([
     'DB_COLLATION' => env('DB_COLLATION') ?: 'utf8_unicode_ci',
     'DB_PREFIX'    => env('DB_PREFIX')    ?: 'wp_',
 ]);
+
 $table_prefix = $bootloader::get('DB_PREFIX');
 
 /**
  * Configure S3.
  */
 $bootloader->defineS3([
-    'S3_UPLOADS_BUCKET'     => env('S3_UPLOADS_BUCKET'),
-    'S3_UPLOADS_KEY'        => env('S3_UPLOADS_KEY'),
-    'S3_UPLOADS_SECRET'     => env('S3_UPLOADS_SECRET'),
-    'S3_UPLOADS_ENDPOINT'   => env('S3_UPLOADS_ENDPOINT') ?: 'https://nyc3.digitaloceanspaces.com',
-    'S3_UPLOADS_REGION'     => env('S3_UPLOADS_REGION')   ?: 'nyc3',
+    'S3_UPLOADS_BUCKET'   => env('S3_UPLOADS_BUCKET'),
+    'S3_UPLOADS_KEY'      => env('S3_UPLOADS_KEY'),
+    'S3_UPLOADS_SECRET'   => env('S3_UPLOADS_SECRET'),
+    'S3_UPLOADS_ENDPOINT' => env('S3_UPLOADS_ENDPOINT') ?: 'https://nyc3.digitaloceanspaces.com',
+    'S3_UPLOADS_REGION'   => env('S3_UPLOADS_REGION')   ?: 'nyc3',
 ]);
 
 /**
@@ -136,27 +161,9 @@ $bootloader->defineSalts([
 ]);
 
 /**
- * Configure WordPress application.
- */
-$bootloader->configureWordPressApp([
-    'DISABLE_WP_CRON'            => true,
-    'AUTOMATIC_UPDATER_DISABLED' => true,
-    'DISALLOW_FILE_EDIT'         => true,
-    'DISALLOW_FILE_MODS'         => true,
-    'WP_DEBUG_DISPLAY'           => false,
-    'SCRIPT_DEBUG'               => false,
-    'DISPLAY_ERRORS'             => false,
-]);
-
-/**
  * Allow SSL behind a reverse proxy.
  */
 $bootloader->exposeSSL();
-
-/**
- * Override environmental variables
- */
-$bootloader->overrideEnv($bootloader::get('WP_ENV'));
 
 /**
  * Boot application.
