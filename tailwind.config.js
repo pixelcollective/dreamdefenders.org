@@ -98,8 +98,8 @@ module.exports = {
       '32': '8rem',
       '40': '10rem',
       '48': '12rem',
-      '56': '14rem',
       '64': '16rem',
+      '96': '24rem',
       '128': '32rem',
     },
     backgroundColor: theme => theme('colors'),
@@ -264,10 +264,12 @@ module.exports = {
       ...theme('spacing'),
       ...negative(theme('spacing')),
     }),
-    maxHeight: {
+    maxHeight: theme => ({
+      auto: 'auto',
+      ...theme('spacing'),
       full: '100%',
       screen: '100vh',
-    },
+    }),
     maxWidth: {
       xs: '20rem',
       sm: '24rem',

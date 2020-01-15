@@ -16,18 +16,12 @@ domReady(() => {
   nav(config)
 
   /**
-   * Selectors
+   * Organize component
    */
-  const targets = {
-    organize:   document.querySelectorAll(`.bg-organize`),
-    organizeContainer: document.querySelectorAll(`.bg-organize-container`),
-  }
+  const organize  = document.querySelectorAll(`.bg-organize`)
+  const container = document.querySelectorAll(`.bg-organize-container`)
 
-  /**
-   * Organize section
-   */
-  targets.organize
-    && targets.organize.forEach(target => {
+  organize && organize.forEach(target => {
       anime({
         targets:  target,
         opacity:  [0, 100],
@@ -36,4 +30,43 @@ domReady(() => {
         easing: config.easing,
       })
     })
+
+  /**
+   * Instagrams
+   */
+  const grams = document.querySelectorAll(`a[data-grow]`)
+
+  grams && grams.forEach(gram => {
+    const img = gram.querySelector(`
+      img[gram="${gram.getAttribute(`data-grow`)}"]
+    `)
+
+    gram.style.backgroundColor = `rgba(0, 0, 0, 1)`
+    img.scaleX = 1
+    img.scaleY = 1
+
+    gram.addEventListener(`mouseover`, () => {
+      anime({
+        targets: img,
+        easing: config.easing,
+        loop: false,
+        backgroundColor: [gram.style.backgroundColor, `rgba(1, 1, 1, 1)`],
+        duration: 200,
+        scaleX: [img.scaleX, 0.9],
+        scaleY: [img.scaleY, 0.9],
+      })
+    })
+
+    gram.addEventListener(`mouseleave`, () => {
+      anime({
+        targets: img,
+        easing: config.easing,
+        loop: false,
+        backgroundColor: [gram.style.backgroundColor, `rgba(0, 0, 0, 1)`],
+        duration: 200,
+        scaleX: [img.scaleX, 1],
+        scaleY: [img.scaleY, 1],
+      })
+    })
+  })
 })

@@ -2,13 +2,16 @@
 
 namespace App\Composers;
 
+use Illuminate\Support\Collection;
 use TinyPixel\AcornInstagram\Composers\InstagramComposer;
 
 /**
  * Instagram Composer
  *
- * @package TinyPixel\Acorn\Instagram\Composers
- * @author  Kelly Mears <kelly@tinypixel.dev>
+ * @package    Dream Defenders
+ * @subpackage Composers
+ * @author     Kelly Mears <kelly@tinypixel.dev>
+ * @license    MIT
  */
 class Instagram extends InstagramComposer
 {
@@ -44,8 +47,16 @@ class Instagram extends InstagramComposer
      */
     public function with()
     {
+        $grams = $this->media()->map(function ($gram) {
+            return (object) [
+                'id'    => $gram['shortcode'],
+                'url'   => "https://www.instagram.com/p/{$gram['shortcode']}",
+                'image' => $gram['imageUrl'],
+            ];
+        });
+
         return [
-            'media' => (object) $this->media()->toArray(),
+            'grams' => $grams->chunk(3)->toArray(),
         ];
     }
 }
