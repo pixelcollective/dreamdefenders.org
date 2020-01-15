@@ -264,7 +264,7 @@
         },
         {
             "name": "illuminate/cache",
-            "version": "v6.10.0",
+            "version": "v6.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/cache.git",
@@ -315,7 +315,7 @@
         },
         {
             "name": "illuminate/config",
-            "version": "v6.10.0",
+            "version": "v6.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/config.git",
@@ -359,7 +359,7 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v6.10.0",
+            "version": "v6.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
@@ -410,7 +410,7 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v6.10.0",
+            "version": "v6.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -454,7 +454,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v6.10.0",
+            "version": "v6.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -498,7 +498,7 @@
         },
         {
             "name": "illuminate/events",
-            "version": "v6.10.0",
+            "version": "v6.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
@@ -543,7 +543,7 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v6.10.0",
+            "version": "v6.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
@@ -595,7 +595,7 @@
         },
         {
             "name": "illuminate/log",
-            "version": "v6.10.0",
+            "version": "v6.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/log.git",
@@ -640,16 +640,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v6.10.0",
+            "version": "v6.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "564b8b6ae8ca7660143c6b807effb289d5fd2616"
+                "reference": "e1fbc940c2f26591e17cae2156cb7c9a8e062121"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/564b8b6ae8ca7660143c6b807effb289d5fd2616",
-                "reference": "564b8b6ae8ca7660143c6b807effb289d5fd2616",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/e1fbc940c2f26591e17cae2156cb7c9a8e062121",
+                "reference": "e1fbc940c2f26591e17cae2156cb7c9a8e062121",
                 "shasum": ""
             },
             "require": {
@@ -697,11 +697,11 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "https://laravel.com",
-            "time": "2020-01-07T13:47:03+00:00"
+            "time": "2020-01-13T16:18:12+00:00"
         },
         {
             "name": "illuminate/view",
-            "version": "v6.10.0",
+            "version": "v6.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/view.git",
@@ -2380,7 +2380,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:pixelcollective/acorn-instagram",
-                "reference": "7b16896addb21921ac784e7fff95b002c3bb5229"
+                "reference": "e2c4cd7bbdc633300337c6b681117ac3953f24e2"
             },
             "require": {
                 "guzzlehttp/guzzle": "^6.3",
@@ -2419,7 +2419,7 @@
             "support": {
                 "issues": "https://github.com/pixelcollective/acorn-instagram/issues"
             },
-            "time": "2019-08-08T22:18:31+00:00"
+            "time": "2020-01-13T10:44:42+00:00"
         }
     ],
     "packages-dev": [

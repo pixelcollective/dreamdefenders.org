@@ -37,26 +37,26 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.130.3",
+            "version": "3.132.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "916356edb5c30fa564d02de94bde51a9c0bb4469"
+                "reference": "276241cf558f883b639ecdefd0e9912f0df20b8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/916356edb5c30fa564d02de94bde51a9c0bb4469",
-                "reference": "916356edb5c30fa564d02de94bde51a9c0bb4469",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/276241cf558f883b639ecdefd0e9912f0df20b8e",
+                "reference": "276241cf558f883b639ecdefd0e9912f0df20b8e",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-pcre": "*",
                 "ext-simplexml": "*",
-                "guzzlehttp/guzzle": "^5.3.3|^6.2.1",
-                "guzzlehttp/promises": "~1.0",
+                "guzzlehttp/guzzle": "^5.3.3|^6.2.1|^7.0",
+                "guzzlehttp/promises": "^1.0",
                 "guzzlehttp/psr7": "^1.4.1",
-                "mtdowling/jmespath.php": "~2.2",
+                "mtdowling/jmespath.php": "^2.5",
                 "php": ">=5.5"
             },
             "require-dev": {
@@ -117,7 +117,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-01-02T19:13:50+00:00"
+            "time": "2020-01-14T19:16:27+00:00"
         },
         {
             "name": "clue/stream-filter",
@@ -1179,34 +1179,35 @@
         },
         {
             "name": "ocramius/package-versions",
-            "version": "1.4.2",
+            "version": "1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Ocramius/PackageVersions.git",
-                "reference": "44af6f3a2e2e04f2af46bcb302ad9600cba41c7d"
+                "reference": "1d32342b8c1eb27353c8887c366147b4c2da673c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Ocramius/PackageVersions/zipball/44af6f3a2e2e04f2af46bcb302ad9600cba41c7d",
-                "reference": "44af6f3a2e2e04f2af46bcb302ad9600cba41c7d",
+                "url": "https://api.github.com/repos/Ocramius/PackageVersions/zipball/1d32342b8c1eb27353c8887c366147b4c2da673c",
+                "reference": "1d32342b8c1eb27353c8887c366147b4c2da673c",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.0.0",
-                "php": "^7.1.0"
+                "php": "^7.3.0"
             },
             "require-dev": {
-                "composer/composer": "^1.6.3",
-                "doctrine/coding-standard": "^5.0.1",
+                "composer/composer": "^1.8.6",
+                "doctrine/coding-standard": "^6.0.0",
                 "ext-zip": "*",
-                "infection/infection": "^0.7.1",
-                "phpunit/phpunit": "^7.5.17"
+                "infection/infection": "^0.13.4",
+                "phpunit/phpunit": "^8.2.5",
+                "vimeo/psalm": "^3.4.9"
             },
             "type": "composer-plugin",
             "extra": {
                 "class": "PackageVersions\\Installer",
                 "branch-alias": {
-                    "dev-master": "2.0.x-dev"
+                    "dev-master": "1.6.x-dev"
                 }
             },
             "autoload": {
@@ -1225,7 +1226,7 @@
                 }
             ],
             "description": "Composer plugin that provides efficient querying for installed package versions (no runtime IO)",
-            "time": "2019-11-15T16:17:10+00:00"
+            "time": "2019-07-17T15:49:50+00:00"
         },
         {
             "name": "oscarotero/env",
@@ -2377,7 +2378,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.3.2"
+                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.3.2",
+                "reference": "5.3.2"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -3508,7 +3510,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:wp-graphql/wp-graphql-acf",
-                "reference": "5943cd6986b546a9e5d408b3c751954e9a11cf0d"
+                "reference": "b15c1913aef9a44407156b4c2a136c247d00a655"
             },
             "require-dev": {
                 "lucatume/wp-browser": ">=2.2.1 <2.2.8"
@@ -3549,20 +3551,20 @@
                 }
             ],
             "description": "Advanced Custom Fields bindings for wp-graphql",
-            "time": "2019-12-13T18:26:57+00:00"
+            "time": "2019-11-12T20:59:42+00:00"
         },
         {
             "name": "wp-media/rocket-lazyload-common",
-            "version": "v2.5.4",
+            "version": "v2.5.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-media/rocket-lazyload-common.git",
-                "reference": "e5ad49418784776e54d181791522c0fa6bf172a4"
+                "reference": "a8860c37679b7d424b4aa3c9c05c4360e2be5b6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-media/rocket-lazyload-common/zipball/e5ad49418784776e54d181791522c0fa6bf172a4",
-                "reference": "e5ad49418784776e54d181791522c0fa6bf172a4",
+                "url": "https://api.github.com/repos/wp-media/rocket-lazyload-common/zipball/a8860c37679b7d424b4aa3c9c05c4360e2be5b6f",
+                "reference": "a8860c37679b7d424b4aa3c9c05c4360e2be5b6f",
                 "shasum": ""
             },
             "require": {
@@ -3597,7 +3599,7 @@
                 }
             ],
             "description": "Common Code between WP Rocket and Lazyload by WP Rocket",
-            "time": "2019-10-28T15:10:39+00:00"
+            "time": "2020-01-07T06:38:00+00:00"
         },
         {
             "name": "wp-media/wp-rocket",

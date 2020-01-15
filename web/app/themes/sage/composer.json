@@ -2,39 +2,6 @@
   "name": "dreamdefenders/theme",
   "type": "wordpress-theme",
   "license": "MIT",
-  "description": "Theme commissioned by Dream Defenders and built with Sage 10",
-  "homepage": "https://tinypixel.dev/dreamdefenders/",
-  "authors": [
-    {
-      "name": "Kelly Mears",
-      "email": "developers@tinypixel.dev",
-      "homepage": "https://tinypixel.dev"
-    },
-    {
-      "name": "Ben Word",
-      "email": "ben@benword.com",
-      "homepage": "https://github.com/retlehs"
-    },
-    {
-      "name": "Scott Walkinshaw",
-      "email": "scott.walkinshaw@gmail.com",
-      "homepage": "https://github.com/swalkinshaw"
-    },
-    {
-      "name": "QWp6t",
-      "email": "hi@qwp6t.me",
-      "homepage": "https://github.com/qwp6t"
-    },
-    {
-      "name": "Brandon Nifong",
-      "email": "brandon@tendency.me",
-      "homepage": "https://github.com/log1x"
-    }
-  ],
-  "support": {
-    "issues": "https://github.com/roots/sage/issues",
-    "forum": "https://discourse.roots.io/"
-  },
   "repositories": [
     {
       "type": "git",
