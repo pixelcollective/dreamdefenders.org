@@ -55,7 +55,6 @@ class Instagram extends InstagramComposer
         });
 
         return [
-            'profile' => $this->account()->toArray(),
             'grams'   => $grams->chunk(3)->toArray(),
         ];
     }
