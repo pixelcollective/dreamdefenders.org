@@ -20,9 +20,11 @@ class App extends Composer
      */
     public function with()
     {
-        return ['site' => (object) [
-            'name' => $this->siteName(),
-        ]];
+        return [
+            'site' => (object) [
+                'name' => $this->siteName(),
+            ]
+        ];
     }
 
     /**

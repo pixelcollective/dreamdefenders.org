@@ -2,7 +2,6 @@
 
 namespace App\Composers;
 
-use Illuminate\Support\Collection;
 use TinyPixel\AcornInstagram\Composers\InstagramComposer;
 
 /**
@@ -46,10 +45,13 @@ class Instagram extends InstagramComposer
     public function with()
     {
         $grams = $this->media()->map(function ($gram) {
+            dump($gram);
             return (object) [
-                'id'    => $gram['shortcode'],
-                'url'   => "https://www.instagram.com/p/{$gram['shortcode']}",
-                'image' => $gram['imageUrl'],
+                'id'      => $gram['shortcode'],
+                'type'    => $gram['type'],
+                'caption' => $gram['caption'],
+                'url'     => "https://www.instagram.com/p/{$gram['shortcode']}",
+                'image'   => $gram['imageUrl'],
             ];
         });
 
