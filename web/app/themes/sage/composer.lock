@@ -2149,7 +2149,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:pixelcollective/acorn-instagram",
-                "reference": "3aef7a96c040b09afc8227809898dcb9b662b62e"
+                "reference": "b820f9b61fb56ec0cf4713cddf57bc9eb406c324"
             },
             "require": {
                 "guzzlehttp/guzzle": "^6.3",
@@ -2188,7 +2188,7 @@
             "support": {
                 "issues": "https://github.com/pixelcollective/acorn-instagram/issues"
             },
-            "time": "2020-01-15T16:14:00+00:00"
+            "time": "2020-01-15T16:20:26+00:00"
         }
     ],
     "packages-dev": [
