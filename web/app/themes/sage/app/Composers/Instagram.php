@@ -45,7 +45,6 @@ class Instagram extends InstagramComposer
     public function with()
     {
         $grams = $this->media()->map(function ($gram) {
-            dump($gram);
             return (object) [
                 'id'      => $gram['shortcode'],
                 'type'    => $gram['type'],
@@ -56,7 +55,8 @@ class Instagram extends InstagramComposer
         });
 
         return [
-            'grams' => $grams->chunk(3)->toArray(),
+            'profile' => $this->account()->toArray(),
+            'grams'   => $grams->chunk(3)->toArray(),
         ];
     }
 }

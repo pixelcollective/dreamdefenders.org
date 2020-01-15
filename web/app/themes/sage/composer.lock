@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8f0fbdc87485bcadc4da86c389aa3f7e",
+    "content-hash": "ac798ea7301bdc9107c14ebad674d00c",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -2148,8 +2148,14 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@github.com:pixelcollective/acorn-instagram",
+                "url": "https://github.com/pixelcollective/acorn-instagram.git",
                 "reference": "b820f9b61fb56ec0cf4713cddf57bc9eb406c324"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pixelcollective/acorn-instagram/zipball/b820f9b61fb56ec0cf4713cddf57bc9eb406c324",
+                "reference": "b820f9b61fb56ec0cf4713cddf57bc9eb406c324",
+                "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "^6.3",
@@ -2169,6 +2175,7 @@
                     "TinyPixel\\AcornInstagram\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2185,9 +2192,6 @@
                 "sage",
                 "wordpress"
             ],
-            "support": {
-                "issues": "https://github.com/pixelcollective/acorn-instagram/issues"
-            },
             "time": "2020-01-15T16:20:26+00:00"
         }
     ],
