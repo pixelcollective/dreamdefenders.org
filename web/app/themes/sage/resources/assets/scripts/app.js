@@ -13,15 +13,15 @@ domReady(() => {
   /**
    * Handle nav
    */
-  nav(config)
+  nav(config);
 
   /**
    * Organize component
    */
-  const organize  = document.querySelectorAll(`.bg-organize`)
-  const container = document.querySelectorAll(`.bg-organize-container`)
+  (() => {
+    const organize  = document.querySelectorAll(`.bg-organize`)
 
-  organize && organize.forEach(target => {
+    organize && organize.forEach(target => {
       anime({
         targets:  target,
         opacity:  [0, 100],
@@ -30,57 +30,59 @@ domReady(() => {
         easing: config.easing,
       })
     })
+  })();
 
   /**
    * Instagrams
    */
-  const grams = document.querySelectorAll(`a[data-grow]`)
+  (() => {
+    const grams = document.querySelectorAll(`a[data-grow]`)
 
-  grams && grams.forEach(gram => {
-    const img = gram.querySelector(`
-      img[gram="${gram.getAttribute(`data-grow`)}"]
-    `)
+    grams && grams.forEach(gram => {
+      const defaultOverlay = `rgba(0, 0, 0, 0.3)`
+      gram.querySelector(`div.overlay`).style.backgroundColor = defaultOverlay
 
-    gram.style.backgroundColor = `rgb(0, 0, 0)`
-    img.scaleX = 1
-    img.scaleY = 1
+      const hoverScale = (scale, overlayColor) => {
+        anime({
+          targets: gram.querySelector(`img`),
+          easing: config.easing,
+          loop: false,
+          duration: 200,
+          scaleX: scale,
+          scaleY: scale,
+        })
 
-    gram.addEventListener(`mouseover`, () => {
-      anime({
-        targets: img,
-        easing: config.easing,
-        loop: false,
-        duration: 200,
-        scaleX: [img.scaleX, 0.9],
-        scaleY: [img.scaleY, 0.9],
-      })
+        anime({
+          targets: gram.querySelector(`div.overlay`),
+          easing: config.easing,
+          loop: false,
+          duration: 200,
+          backgroundColor: overlayColor,
+        })
+      }
 
-      anime({
-        targets: gram,
-        easing: config.easing,
-        loop: false,
-        backgroundColor: [gram.style.backgroundColor, `rgb(255, 255, 255)`],
-        duration: 400,
-      })
+      const bgFade = color => {
+        anime({
+          targets: gram,
+          easing: config.easing,
+          loop: false,
+          backgroundColor: color,
+          duration: 300,
+        })
+      }
+
+      const hoverOn = () => {
+        hoverScale(0.9, `rgba(0, 0, 0, 0)`)
+        bgFade(`rgb(255, 255, 255)`)
+      }
+
+      const hoverOff = () => {
+        hoverScale(1, defaultOverlay)
+        bgFade(`rgb(0, 0, 0)`)
+      }
+
+      gram.addEventListener(`mouseenter`, hoverOn, false)
+      gram.addEventListener(`mouseleave`, hoverOff, false)
     })
-
-    gram.addEventListener(`mouseleave`, () => {
-      anime({
-        targets: img,
-        easing: config.easing,
-        loop: false,
-        duration: 200,
-        scaleX: [img.scaleX, 1],
-        scaleY: [img.scaleY, 1],
-      })
-
-      anime({
-        targets: gram,
-        easing: config.easing,
-        loop: false,
-        backgroundColor: [gram.style.backgroundColor, `rgb(0, 0, 0)`],
-        duration: 400,
-      })
-    })
-  })
+  })();
 })
