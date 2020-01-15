@@ -27,16 +27,14 @@ class Instagram extends InstagramComposer
      *
      * @var string
      **/
-    public $account = 'thedreamdefenders';
+    public $account = "thedreamdefenders";
 
     /**
      * List of views served by this composer.
      *
      * @var array
      */
-    protected static $views = [
-        'components.instagram',
-    ];
+    protected static $views = ['components.instagram'];
 
     /**
      * Data to be passed to view before rendering.
