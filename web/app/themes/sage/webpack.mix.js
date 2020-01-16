@@ -35,16 +35,8 @@ require('laravel-mix-copy-watched');
             join(__dirname, `resources/assets/**/*.js`),
          ],
          extensions: [`js`, `php`],
-         whitelistPatterns: [
-            /^wp-block-$/,
-            /container/,
-            /blockquote/,
-         ],
-         whitelistPatternsChildren: [
-            /^wp-block$/,
-            /container/,
-            /blockquote/,
-         ],
+         whitelistPatterns: [/^wp-block-$/, /container/, /blockquote/],
+         whitelistPatternsChildren: [/^wp-block$/, /container/, /blockquote/],
       }).options({ postCss: [ tw(`./../../../../tailwind.config.js`) ] })
 
    mix.js(`./resources/assets/scripts/app.js`, `scripts`)
