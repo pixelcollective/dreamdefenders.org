@@ -44,7 +44,7 @@ class Instagram extends InstagramComposer
      */
     public function __construct(Application $app)
     {
-        $this->instagram = $app->make('instagram.authenticated');
+        $this->app = $app;
     }
 
     /**
@@ -69,7 +69,9 @@ class Instagram extends InstagramComposer
      */
     public function cachedRequest()
     {
-        return Cache::remember('instagram', 3600, function () {
+        return Cache::remember('instagram', 43200, function () {
+            $this->instagram = $this->app->make('instagram.authenticated');
+
             return $this->media()->map(function ($gram) {
                 return (object) [
                     'id'      => $gram['shortcode'],
