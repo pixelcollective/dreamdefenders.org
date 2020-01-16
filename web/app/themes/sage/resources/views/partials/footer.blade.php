@@ -7,7 +7,7 @@
 
     <div class="flex-1">
       <div class="relative flex flex-col w-64 mx-auto" style="top: -1rem;">
-        <div class="flex items-center w-full border rounded-full bg-black-900 border-color-white">
+        <div class="flex items-center w-full">
           <div class="flex items-center justify-center w-full h-full mx-auto text-white">
             @svg('logo')
           </div>

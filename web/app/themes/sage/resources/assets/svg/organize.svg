@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1586 738">
   <defs>
-    <clipPath id="clip-path">
-      <rect id="Rectangle_1171" data-name="Rectangle 1171" width="1586" height="738" transform="translate(140.106 1822.257)" fill="#b4b4b4"/>
+    <clipPath>
+      <rect data-name="Rectangle 1171" width="1586" height="738" transform="translate(140.106 1822.257)" fill="#b4b4b4"/>
     </clipPath>
   </defs>
 
-  <g id="Group_5195" data-name="Group 5195" transform="translate(-140.106 -1822.257)" clip-path="url(#clip-path)">
-    <g id="Group_5194" data-name="Group 5194" transform="translate(0 43)">
+  <g data-name="Group 5195" transform="translate(-140.106 -1822.257)" clip-path="url(#clip-path)">
+    <g data-name="Group 5194" transform="translate(0 43)">
       <text id="Organize" stroke-width="3" fill="none" stroke="#000" transform="translate(369.711 1958.687)" font-size="319" font-family="RobotoCondensed-Bold, Roboto Condensed" font-weight="700" letter-spacing="-0.09em" opacity="0.499"><tspan x="-12.904" y="334">ORGANIZE</tspan></text>
       <text id="Organize-2" data-name="Organize" stroke-width="3" fill="none" stroke="#000" transform="translate(1520.711 1958.687)" font-size="319" font-family="RobotoCondensed-Bold, Roboto Condensed" font-weight="700" letter-spacing="-0.09em" opacity="0.499"><tspan x="-12.904" y="334">ORGANIZE</tspan></text>
       <text id="Organize-3" data-name="Organize" stroke-width="3" fill="none" stroke="#000" transform="translate(-770.289 1958.687)" font-size="319" font-family="RobotoCondensed-Bold, Roboto Condensed" font-weight="700" letter-spacing="-0.09em" opacity="0.499"><tspan x="-12.904" y="334">ORGANIZE</tspan></text>

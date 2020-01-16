@@ -4,10 +4,11 @@ import anime from 'animejs'
  * Instagrams module animations
  */
 export default config => {
-  const grams = document.querySelectorAll(`a[data-grow]`)
+  const grams = document.querySelectorAll(`a[data-instagram]`)
 
   grams && grams.forEach(gram => {
     const defaultOverlay = `rgba(0, 0, 0, 0.3)`
+
     gram.querySelector(`div.overlay`).style.backgroundColor = defaultOverlay
 
     const hoverScale = (scale, overlayColor) => {

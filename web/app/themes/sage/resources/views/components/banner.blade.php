@@ -3,7 +3,7 @@
     <div class="flex justify-center w-full h-screen max-h-screen align-middle">
       <div class="container flex items-center justify-center h-32 h-full px-2 mx-auto align-middle">
         <div class="flex items-center w-full h-64 text-center text-white">
-          <img src="@asset('images/banner-messaging.png')" class="w-full" />
+          <img title="We are young people fighting for the future we deserve; a future with no cages, violence or corporate greed" alt="Text: We are young people fighting for the future we deserve; a future with no cages, violence or corporate greed." src="@asset('images/banner-messaging.png')" class="w-full" />
         </div>
       </div>
     </div>
