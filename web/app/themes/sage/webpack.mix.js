@@ -53,7 +53,7 @@ require('laravel-mix-copy-watched');
    }).then(results => {
       console.log(`\n`)
       console.log(`Accessibility issues found for ${results.pageUrl}:`)
-      console.table(results.issues, [`code`, `selector`, `message`])
+      console.dir(results.issues, { colors: true })
       console.log(`\n`)
    })
 })() && (() => { console.mute() })() && (() => {
