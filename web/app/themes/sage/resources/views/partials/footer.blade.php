@@ -14,15 +14,17 @@
         </div>
 
         <div class="flex flex-row items-center w-full py-8 justify-evenly">
-          <div class="inline-block w-1/3 h-auto p-4 mr-2 text-center text-white rounded-full hover:cursor-pointer transition transition-color transition-bg transition-ease-in-out hover:bg-white hover:text-black">
+          <a href="#" class="inline-block w-1/3 h-auto p-4 mr-2 text-center text-white rounded-full hover:cursor-pointer transition transition-color transition-bg transition-ease-in-out hover:bg-white hover:text-black">
             @brands('twitter', 'fill-current')
-          </div>
-          <div class="inline-block w-1/3 h-auto p-4 mx-2 text-center text-white rounded-full hover:cursor-pointer transition transition-color transition-bg transition-ease-in-out hover:bg-white hover:text-black">
+          </a>
+
+          <a href="#" class="inline-block w-1/3 h-auto p-4 mx-2 text-center text-white rounded-full hover:cursor-pointer transition transition-color transition-bg transition-ease-in-out hover:bg-white hover:text-black">
             @brands('instagram', 'fill-current')
-          </div>
-          <div class="inline-block w-1/3 h-auto p-4 ml-2 text-center text-white rounded-full hover:cursor-pointer transition transition-color transition-bg transition-ease-in-out hover:bg-white hover:text-black">
+          </a>
+
+          <a href="#" class="inline-block w-1/3 h-auto p-4 ml-2 text-center text-white rounded-full hover:cursor-pointer transition transition-color transition-bg transition-ease-in-out hover:bg-white hover:text-black">
             @solid('envelope', 'fill-current')
-          </div>
+          </a>
         </div>
       </div>
     </div>

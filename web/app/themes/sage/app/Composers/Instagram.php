@@ -3,6 +3,7 @@
 namespace App\Composers;
 
 use Illuminate\Support\Facades\Cache;
+use Roots\Acorn\Application;
 use TinyPixel\Acorn\Instagram\Composers\InstagramComposer;
 
 /**
@@ -35,6 +36,16 @@ class Instagram extends InstagramComposer
      * @var array
      */
     protected static $views = ['components.instagram'];
+
+    /**
+     * Resolves Instagram service from the application container.
+     *
+     * @param \Roots\Acorn\Application $app
+     */
+    public function __construct(Application $app)
+    {
+        $this->instagram = $app->make('instagram.authenticated');
+    }
 
     /**
      * Data to be passed to view before rendering.
