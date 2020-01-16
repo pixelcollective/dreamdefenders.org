@@ -2371,12 +2371,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pixelcollective/acorn-instagram.git",
-                "reference": "271ca7a7f7e2a94d276e8b6d7185268fb3875caa"
+                "reference": "9366e18763cfef59569c20271b8f3eed955395c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pixelcollective/acorn-instagram/zipball/271ca7a7f7e2a94d276e8b6d7185268fb3875caa",
-                "reference": "271ca7a7f7e2a94d276e8b6d7185268fb3875caa",
+                "url": "https://api.github.com/repos/pixelcollective/acorn-instagram/zipball/9366e18763cfef59569c20271b8f3eed955395c0",
+                "reference": "9366e18763cfef59569c20271b8f3eed955395c0",
                 "shasum": ""
             },
             "require": {
@@ -2415,7 +2415,7 @@
                 "sage",
                 "wordpress"
             ],
-            "time": "2020-01-16T00:27:08+00:00"
+            "time": "2020-01-16T04:38:12+00:00"
         }
     ],
     "packages-dev": [
