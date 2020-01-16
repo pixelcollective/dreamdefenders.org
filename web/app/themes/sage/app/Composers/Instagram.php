@@ -2,8 +2,6 @@
 
 namespace App\Composers;
 
-use Roots\Acorn\Application;
-use Illuminate\Support\Facades\Cache;
 use TinyPixel\Acorn\Instagram\Composers\InstagramComposer;
 
 /**
@@ -38,17 +36,6 @@ class Instagram extends InstagramComposer
     protected static $views = ['components.instagram'];
 
     /**
-     * Constructor.
-     *
-     * @param App
-     */
-    public function __construct(\Illuminate\Support\Facades\Cache $cache, \Roots\Acorn\Application $app)
-    {
-        $this->cache = $cache;
-        $this->app = $app;
-    }
-
-    /**
      * Data to be passed to view before rendering.
      *
      * @param  array $data
@@ -70,18 +57,14 @@ class Instagram extends InstagramComposer
      */
     public function cachedRequest()
     {
-        return $this->cache::remember('instagram', 43200, function () {
-            $this->app->make('instagram.authenticated');
-
-            return $this->media()->map(function ($gram) {
-                return (object) [
-                    'id'      => $gram['shortcode'],
-                    'type'    => $gram['type'],
-                    'caption' => $gram['caption'],
-                    'url'     => "https://www.instagram.com/p/{$gram['shortcode']}",
-                    'image'   => $gram['imageUrl'],
-                ];
-            });;
+        return $this->media()->map(function ($gram) {
+            return (object) [
+                'id'      => $gram['shortcode'],
+                'type'    => $gram['type'],
+                'caption' => $gram['caption'],
+                'url'     => "https://www.instagram.com/p/{$gram['shortcode']}",
+                'image'   => $gram['imageUrl'],
+            ];
         });
     }
 }

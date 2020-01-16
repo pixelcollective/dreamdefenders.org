@@ -15,10 +15,11 @@
   },
   "require": {
     "php": "^7.2",
-    "log1x/sage-directives": "^1.1",
+    "franzl/studio": "^0.13.0",
     "kellymears/sage-svg": "dev-master",
-    "tiny-pixel/acorn-instagram": "dev-master",
-    "roots/acorn": "dev-master"
+    "log1x/sage-directives": "^1.1",
+    "roots/acorn": "dev-master",
+    "tiny-pixel/acorn-instagram": "dev-master"
   },
   "require-dev": {
     "filp/whoops": "^2.5",
