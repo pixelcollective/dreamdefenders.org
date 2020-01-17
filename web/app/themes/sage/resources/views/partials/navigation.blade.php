@@ -1,9 +1,7 @@
 
 <nav class="fixed z-50 flex flex-col items-center justify-between w-full overflow-hidden nav">
   <div class="w-full">
-    @alert(['label' => 'Work-in-progress'])
-      Product is under active development. @if(env('GIT_SHA')) Build ID: {!! env('GIT_SHA') !!} @endif
-    @endalert
+    @alert(['label' => 'Work-in-progress', 'build' => 'fksjfodsjfoishdfs']) Product is under active development. @endalert
   </div>
 
   <div class="container">
