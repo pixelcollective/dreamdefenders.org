@@ -6,6 +6,7 @@
 
 @section('content')
   @include('partials.front.two-paths')
+
   @include('partials.front.organize')
 
   @while(have_posts()) @php(the_post())

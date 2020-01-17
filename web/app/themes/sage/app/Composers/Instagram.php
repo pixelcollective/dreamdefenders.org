@@ -2,24 +2,25 @@
 
 namespace App\Composers;
 
-use TinyPixel\Acorn\Instagram\Composers\InstagramComposer;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Cache;
+use Roots\Acorn\Application;
+use Roots\Acorn\View\Composer;
 
 /**
  * Instagram Composer
  *
- * @package    Dream Defenders
- * @subpackage Composers
- * @author     Kelly Mears <kelly@tinypixel.dev>
- * @license    MIT
+ * @package TinyPixel\Acorn\Instagram\Composers
+ * @author  Kelly Mears <kelly@tinypixel.dev>
  */
-class Instagram extends InstagramComposer
+class Instagram extends Composer
 {
     /**
-     * Number of pictures to return
+     * Image count
      *
      * @var int
      */
-    public $count = 12;
+    public $count = 6;
 
     /**
      * Instagram account name.
@@ -33,7 +34,21 @@ class Instagram extends InstagramComposer
      *
      * @var array
      */
-    protected static $views = ['components.instagram'];
+    protected static $views = [
+        'components.instagram'
+    ];
+
+    /**
+     * Resolves Instagram service from the application container.
+     *
+     * @param \Roots\Acorn\Application $app
+     */
+    public function __construct(Application $app, Cache $cache)
+    {
+        $this->app       = $app;
+        $this->cache     = $cache;
+        $this->instagram = $app->make('instagram');
+    }
 
     /**
      * Data to be passed to view before rendering.
@@ -45,26 +60,39 @@ class Instagram extends InstagramComposer
     public function with()
     {
         return [
-            'grams' => $this->cachedRequest()->chunk(3)->toArray(),
+            'grams' => Collection::make($this->media())->map(function ($gram) {
+                return (object) [
+                    'id'      => $gram['shortcode'],
+                    'type'    => $gram['type'],
+                    'caption' => $gram['caption'],
+                    'url'     => "https://www.instagram.com/p/{$gram['shortCode']}",
+                    'image'   => $gram['imageHighResolutionUrl']
+                ];
+            })->chunk(2)->toArray(),
         ];
     }
 
     /**
-     * Cache requests to Instagram/Facebook to dissuade them from
-     * blacklisting our IP.
+     * Instagram account
+     *
+     * @return InstagramScraper\Model\Account
+     */
+    public function account()
+    {
+        return $this->cache::remember("instagram-account", 1, function () {
+            return $this->instagram->getAccount($this->account);
+        });
+    }
+
+    /**
+     * Instagram media
      *
      * @return \Illuminate\Support\Collection
      */
-    public function cachedRequest()
+    public function media()
     {
-        return $this->media()->map(function ($gram) {
-            return (object) [
-                'id'      => $gram['shortcode'],
-                'type'    => $gram['type'],
-                'caption' => $gram['caption'],
-                'url'     => "https://www.instagram.com/p/{$gram['shortcode']}",
-                'image'   => $gram['imageUrl'],
-            ];
+        return $this->cache::remember("instagram-media", 1, function () {
+            return $this->instagram->getMedias($this->account, $this->count);
         });
     }
 }
