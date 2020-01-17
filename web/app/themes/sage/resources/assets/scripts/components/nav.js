@@ -69,12 +69,12 @@ const navBarScrollInteractives = ({ nav }) => {
   const onUnpin = () => {
     animateHeadroom({
       backgroundColor: `rgba(0, 0, 0, 0.1)`,
-      translateY: `-87px`,
+      translateY: `-${nav.offsetHeight}px`,
     })
   }
 
   (new Headroom(nav, {
-    offset: 87,
+    offset: nav.offsetHeight,
     tolerance: 5,
     onTop,
     onPin,

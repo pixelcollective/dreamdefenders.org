@@ -7,7 +7,7 @@
     </div>
 
     <div class="relative z-0 w-full mx-auto">
-      <div class="container mx-auto">
+      <div class="container max-w-64 mx-auto">
         <div class="bg-white">
           <div class="relative w-full h-128 bg-gradient-b-yellow-white-blue">
             <div class="absolute top-0 bottom-0 left-0 right-0 overflow-hidden">

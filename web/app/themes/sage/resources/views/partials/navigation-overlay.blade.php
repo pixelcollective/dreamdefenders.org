@@ -2,4 +2,10 @@
   <button class="nav-disable" title="Close menu" aria-label="Close menu">
     @svg('logo')
   </button>
+
+  <nav class="flex flex-col my-8">
+    <a class="text-2xl text-white uppercase font-display" href="#">Page A</a>
+    <a class="text-2xl text-white uppercase font-display" href="#">Page B</a>
+    <a class="text-2xl text-white uppercase font-display" href="#">Page C</a>
+  </nav>
 </div>

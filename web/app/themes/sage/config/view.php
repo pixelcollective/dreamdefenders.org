@@ -117,6 +117,7 @@ return [
     */
 
     'components' => [
+        'alert'   => 'components.alert',
         'button'  => 'components.button',
     ],
 ];
