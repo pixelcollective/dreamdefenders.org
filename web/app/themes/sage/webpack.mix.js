@@ -52,14 +52,17 @@ require('laravel-mix-copy-watched');
       ignore: [`WCAG2AA.Principle3.Guideline3_1.3_1_1.H57.2`],
    }).then(results => {
       console.log(`\n`)
+
       console.log(`Accessibility issues found for ${results.pageUrl}:`)
+
       console.dir(results.issues, { colors: true })
+
       console.log(`\n`)
    })
-})() && (() => { console.mute() })() && (() => {
-   mix.copyWatched(`resources/assets/images`, `dist/images`)
-      .copyWatched(`resources/assets/fonts`, `dist/fonts`)
-      .copyWatched(`resources/assets/svg/fa/brands`, `dist/svg/fa/brands`)
-      .copyWatched(`resources/assets/svg/fa/solid`, `dist/svg/fa/solid`)
-      .copyWatched(`resources/assets/svg`, `dist/svg`)
+
+   mix.copyWatched(`resources/assets/images`, `./dist/images`)
+      .copyWatched(`resources/assets/fonts`, `./dist/fonts`)
+      .copyWatched(`resources/assets/svg/fa/brands`, `./dist/svg/fa/brands`)
+      .copyWatched(`resources/assets/svg/fa/solid`, `./dist/svg/fa/solid`)
+      .copyWatched(`resources/assets/svg`, `./dist/svg`)
 })()
