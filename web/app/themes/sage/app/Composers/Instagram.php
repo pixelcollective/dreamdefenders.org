@@ -79,7 +79,7 @@ class Instagram extends Composer
      */
     public function account()
     {
-        return $this->cache::remember("instagram-account", 1, function () {
+        return $this->cache::remember("instagram-account", 48000, function () {
             return $this->instagram->getAccount($this->account);
         });
     }
@@ -91,7 +91,7 @@ class Instagram extends Composer
      */
     public function media()
     {
-        return $this->cache::remember("instagram-media", 1, function () {
+        return $this->cache::remember("instagram-media", 48000, function () {
             return $this->instagram->getMedias($this->account, $this->count);
         });
     }
