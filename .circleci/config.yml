@@ -194,7 +194,6 @@ workflows:
           yarn: true
           record: true
           spec: cypress/integration/staging.spec.js
-          command: 'yarn percy:staging'
           requires:
             - sentry-deploy-staging
           filters:

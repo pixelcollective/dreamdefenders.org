@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4a0360f0322955ea373f07d69592ed85",
+    "content-hash": "b95ebf367f886dc9fb44c174f9d1c8b1",
     "packages": [
         {
             "name": "a5hleyrich/wp-background-processing",
@@ -2378,7 +2378,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.3.2"
+                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.3.2",
+                "reference": "5.3.2"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -3264,6 +3265,38 @@
             "time": "2019-12-31T22:30:54+00:00"
         },
         {
+            "name": "tiny-pixel/disallow-mail",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pixelcollective/disable-mail.git",
+                "reference": "44621ca1a8eba9c5cf7358161b1a5442dc896fa9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pixelcollective/disable-mail/zipball/44621ca1a8eba9c5cf7358161b1a5442dc896fa9",
+                "reference": "44621ca1a8eba9c5cf7358161b1a5442dc896fa9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "type": "wordpress-muplugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kelly Mears",
+                    "email": "developers@tinypixel.dev"
+                }
+            ],
+            "description": "Stop WordPress from sending mail",
+            "homepage": "https://github.com/pixel-collective/disallow-mail",
+            "time": "2020-01-19T03:09:47+00:00"
+        },
+        {
             "name": "tiny-pixel/s3-uploads-adapter",
             "version": "dev-master",
             "source": {
@@ -3509,7 +3542,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:wp-graphql/wp-graphql-acf",
-                "reference": "5943cd6986b546a9e5d408b3c751954e9a11cf0d"
+                "reference": "b15c1913aef9a44407156b4c2a136c247d00a655"
             },
             "require-dev": {
                 "lucatume/wp-browser": ">=2.2.1 <2.2.8"
@@ -3550,7 +3583,7 @@
                 }
             ],
             "description": "Advanced Custom Fields bindings for wp-graphql",
-            "time": "2019-12-13T18:26:57+00:00"
+            "time": "2019-11-12T20:59:42+00:00"
         },
         {
             "name": "wp-media/rocket-lazyload-common",
@@ -5923,8 +5956,8 @@
     "stability-flags": {
         "humanmade/wp-redis-predis-client": 20,
         "tiny-pixel/advanced-custom-fields": 20,
-        "wp-media/wp-rocket": 20,
         "tiny-pixel/s3-uploads-adapter": 20,
+        "wp-media/wp-rocket": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,

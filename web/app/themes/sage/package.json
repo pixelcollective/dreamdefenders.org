@@ -1,15 +1,17 @@
 {
   "name": "theme",
   "version": "1.0.0",
+  "license": "MIT",
   "browserslist": [
     "extends @wordpress/browserslist-config"
   ],
   "scripts": {
     "build": "cross-env NODE_ENV=development run-s mix",
-    "build:production": "cross-env NODE_ENV=production run-s clean mix",
+    "build:production": "cross-env NODE_ENV=production run-s clean mix:production",
     "start": "webpack-dashboard -- cross-env NODE_ENV=development run-s \"mix -- --watch\"",
     "hot": "cross-env NODE_ENV=development run-s build mix:hot",
-    "mix": "webpack --progress --hide-modules --config=../../../../node_modules/laravel-mix/setup/webpack.config.js",
+    "mix": "webpack --no-progress --hide-modules --config=../../../../node_modules/laravel-mix/setup/webpack.config.js",
+    "mix:production": "NODE_ENV=production webpack --no-progress --hide-modules --config=../../../../node_modules/laravel-mix/setup/webpack.config.js",
     "mix:hot": "webpack-dev-server --inline --hot --config=../../../../node_modules/laravel-mix/setup/webpack.config.js",
     "clean": "run-p clean:*",
     "clean:dist": "rimraf dist",
