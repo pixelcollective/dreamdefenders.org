@@ -1,20 +1,19 @@
-<article @php(post_class())>
-  <header class="pb-8">
-    <h1 class="entry-title">
-      {!! $title !!}
-    </h1>
-
-    @include('partials.entry-meta')
-  </header>
-
-  <div class="entry-content content">
-    @php(the_content())
+<div class="container py-48 mx-auto">
+  <div class="inline-block pb-8">
+    <a href="#" class="font-bold">
+      @solid('caret-left', 'fill-current inline w-2') <span class="pt-1 pl-2">Back to Blog</span>
+    </a>
   </div>
 
-  <footer>
-    {!! wp_link_pages([
-      'echo'   => 0,
-      'before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'),
-      'after'  => '</p></nav>']) !!}
-  </footer>
-</article>
+  <article @php(post_class())>
+    @if($content)
+      {!! $content !!}
+    @endif
+
+    @if($pageNav)
+      <footer>
+        {!! $pageNav !!}
+      </footer>
+    @endif
+  </article>
+</div>

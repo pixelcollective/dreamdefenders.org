@@ -10,8 +10,9 @@ use Roots\Acorn\View\Composer;
 /**
  * Instagram Composer
  *
- * @package TinyPixel\Acorn\Instagram\Composers
- * @author  Kelly Mears <kelly@tinypixel.dev>
+ * @package    DreamDefenders/App
+ * @subpackage Composers
+ * @author     Kelly Mears <kelly@tinypixel.dev>
  */
 class Instagram extends Composer
 {

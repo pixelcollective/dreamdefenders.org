@@ -25,7 +25,10 @@ class Post extends Composer
     public function override()
     {
         return [
-            'title' => $this->title(),
+            'title'     => $this->title(),
+            'permalink' => $this->permalink(),
+            'content'   => $this->content(),
+            'pageNav'   => $this->pageNav(),
         ];
     }
 
@@ -65,5 +68,39 @@ class Post extends Composer
         }
 
         return get_the_title();
+    }
+
+    /**
+     * Returns the post content.
+     *
+     * @return string
+     */
+    public function content()
+    {
+        return apply_filters('the_content', get_the_content());
+    }
+
+    /**
+     * Returns the page nav.
+     *
+     * @return string
+     */
+    public function pageNav()
+    {
+        return wp_link_pages([
+            'echo'   => false,
+            'before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'),
+            'after'  => '</p></nav>'
+        ]);
+    }
+
+    /**
+     * Returns the permalink.
+     *
+     * @return string
+     */
+    public function permalink()
+    {
+        return get_the_permalink();
     }
 }

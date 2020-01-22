@@ -1,4 +1,5 @@
 .wp-block {
+  &-tinypixel-post-container,
   &-tinypixel-twocolumn {
     @apply flex;
     @apply flex-col;
@@ -7,6 +8,7 @@
     &__column-a,
     &__column-b {
       @apply w-full;
+      @apply flex-col;
     }
 
     &__column-a {
@@ -32,9 +34,19 @@
 
 @screen md {
   .wp-block {
+    &-tinypixel-post-container,
     &-tinypixel-twocolumn {
       @apply flex-row;
+    }
 
+    &-tinypixel-post-container {
+      &__column-a,
+      &__column-b {
+        @apply w-1/2;
+      }
+    }
+
+    &-tiny-pixel-twocolumn {
       &__column-a,
       &__column-b {
         @apply w-2/5;

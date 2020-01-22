@@ -23,7 +23,8 @@ class App extends Composer
         return [
             'site' => (object) [
                 'name' => $this->siteName(),
-            ]
+                'postType' => $this->postType(),
+            ],
         ];
     }
 
@@ -35,5 +36,13 @@ class App extends Composer
     public function siteName()
     {
         return get_bloginfo('name', 'display');
+    }
+
+    /**
+     * Returns the post type
+     */
+    public function postType()
+    {
+        return get_post_type();
     }
 }

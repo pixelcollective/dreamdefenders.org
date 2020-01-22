@@ -23,4 +23,4 @@ registerBlockType(`tinypixel/twocolumn`, {
   },
   edit,
   save: () => <InnerBlocks.Content />
-});
+})

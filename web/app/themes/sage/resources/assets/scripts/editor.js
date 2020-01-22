@@ -92,5 +92,6 @@ domReady(() => {
 
     /** @tinypixel */
     'tinypixel/twocolumn',
+    'tinypixel/post-container',
   ]);
 });
