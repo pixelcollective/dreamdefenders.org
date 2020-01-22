@@ -1,4 +1,5 @@
 // @wordpress
+import { useEffect } from '@wordpress/element'
 import { __ } from '@wordpress/i18n'
 import { Button } from '@wordpress/components'
 import { format } from '@wordpress/date'
@@ -9,10 +10,9 @@ import {
   RichText,
 } from '@wordpress/block-editor'
 
-import { isEqual, isUndefined } from 'lodash'
 import usePost from '../../../hooks/usePost'
 
-const PostedOn = ({date }) => {
+const PostedOn = ({ date }) => {
   return date && (
     <div className={`font-sans uppercase text-lg`}>
       { format(`F j, Y`, date) }
@@ -20,17 +20,23 @@ const PostedOn = ({date }) => {
   )
 }
 
-const edit = ({attributes, className, isSelected, setAttributes}) => {
-  const { date } = usePost()
+const edit = ({ attributes, setAttributes, className, isSelected }) => {
+  const { post, setPost } = usePost()
 
-  date && attributes.date
-    && !isEqual(date, attributes.date)
-    && setAttributes({ date: format(`F j, Y`, date) })
+  useEffect(() => {
+    setPost({ title: attributes.heading })
+  }, [setPost])
 
   const onChange = {
-    heading: heading => setAttributes({ heading }),
-    media: media => setAttributes({ media }),
+    heading: heading => {
+      setAttributes({ heading })
+    },
+    media: media => {
+      setAttributes({ media })
+    },
   }
+
+  setAttributes({ date: format(`F j, Y`, post.date) })
 
   return (
     <div className={className}>
@@ -38,11 +44,11 @@ const edit = ({attributes, className, isSelected, setAttributes}) => {
         <RichText
           className={`font-sans text-3xl inline-block uppercase font-bold break-all`}
           placeholder={__(`Post Title...`, `tinypixel`)}
-          value={attributes.heading}
+          value={post.title}
           allowedFormats={[]}
           onChange={onChange.heading} />
 
-        <PostedOn date={date} />
+        <PostedOn date={post.date} />
 
         <MediaUploadCheck>
           <MediaUpload

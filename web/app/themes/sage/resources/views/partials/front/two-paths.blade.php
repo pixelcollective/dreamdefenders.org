@@ -16,16 +16,14 @@
   </div>
 
   <div class="relative flex flex-col justify-around h-64 lg:flex-row">
-    <div class="flex-1 hidden w-full overflow-hidden bg-white text-white lg:inline-block lg:w-1/5">
-
+    <div class="flex-1 hidden w-full overflow-hidden text-white bg-white lg:inline-block lg:w-1/5">
+      {{-- foo --}}
     </div>
 
-    <div class="flex-1 hidden overflow-hidden text-white lg:inline-block lg:w-1/5">
-
-    </div>
+    <div class="flex-1 hidden overflow-hidden text-white lg:inline-block lg:w-1/5"></div>
 
     <div class="absolute w-8 text-center text-white uppercase" style="top: 25%; left: 50%; right: 50%;">
-
+      {{-- baz --}}
     </div>
   </div>
 </div>
