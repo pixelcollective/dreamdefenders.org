@@ -61,7 +61,7 @@
     "tiny-pixel/s3-uploads-adapter": "dev-master",
     "tiny-pixel/wp-performant-media": ">=1.0.1",
     "wp-graphql/wp-graphiql": "^1.0.0",
-    "wp-graphql/wp-graphql": "^0.5.0",
+    "wp-graphql/wp-graphql": "^0.6.0",
     "wp-graphql/wp-graphql-acf": "^0.3.1",
     "wp-media/wp-rocket": "dev-master",
     "wpackagist-plugin/autodescription": ">=3.0.6",
