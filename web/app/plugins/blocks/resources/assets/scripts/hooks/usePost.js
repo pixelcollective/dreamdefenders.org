@@ -1,8 +1,3 @@
-import { useSelect } from '@wordpress/data'
+import { useSelect, dispatch } from '@wordpress/data'
 
-/**
- * usePostEditor
- */
-export default () => {
-  return useSelect(select => select(`core/editor`).getCurrentPost())
-}
+export default () => useSelect(select => select(`core/editor`).getCurrentPost())

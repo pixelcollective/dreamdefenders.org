@@ -1,34 +1,35 @@
 // @wordpress
 import { __ } from '@wordpress/i18n'
 import { Button } from '@wordpress/components'
+import { format } from '@wordpress/date'
 import {
   InnerBlocks,
   MediaUpload,
   MediaUploadCheck,
   RichText,
 } from '@wordpress/block-editor'
-import { format } from '@wordpress/date'
 
 import { isEqual, isUndefined } from 'lodash'
 import usePost from '../../../hooks/usePost'
 
-const PostedOn = date => date && (
-  <div className={`font-sans uppercase text-lg`}>
-    {date}
-  </div>
-)
+const PostedOn = ({date }) => {
+  return date && (
+    <div className={`font-sans uppercase text-lg`}>
+      { format(`F j, Y`, date) }
+    </div>
+  )
+}
 
 const edit = ({attributes, className, isSelected, setAttributes}) => {
-  const post = usePost()
-  const date = format(`F j, Y`, post.date)
+  const { date } = usePost()
 
-  ! isUndefined(date)
-    && ! isEqual(date, attributes.date)
-    && setAttributes({ date })
+  date && attributes.date
+    && !isEqual(date, attributes.date)
+    && setAttributes({ date: format(`F j, Y`, date) })
 
   const onChange = {
     heading: heading => setAttributes({ heading }),
-    media:   media   => setAttributes({ media }),
+    media: media => setAttributes({ media }),
   }
 
   return (
@@ -38,7 +39,7 @@ const edit = ({attributes, className, isSelected, setAttributes}) => {
           className={`font-sans text-3xl inline-block uppercase font-bold break-all`}
           placeholder={__(`Post Title...`, `tinypixel`)}
           value={attributes.heading}
-          formattingControls={[]}
+          allowedFormats={[]}
           onChange={onChange.heading} />
 
         <PostedOn date={date} />

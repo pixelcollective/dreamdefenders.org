@@ -19,7 +19,7 @@
 
       @isset($attr->media)
         @if($attr->media)
-          <div class="w-full pr-0 md:pr-6">
+          <div class="w-full pb-6 pr-0 md:pr-6 md:pb-0">
             <img src="{!! $attr->media->sizes['large']['url'] !!}" />
           </div>
         @endif
