@@ -1,5 +1,5 @@
 // @wordpress
-import { useEffect } from '@wordpress/element'
+import { useEffect, useCallback } from '@wordpress/element'
 import { __ } from '@wordpress/i18n'
 import { Button } from '@wordpress/components'
 import { format } from '@wordpress/date'
@@ -10,6 +10,7 @@ import {
   RichText,
 } from '@wordpress/block-editor'
 
+import { sample } from 'lodash'
 import usePost from '../../../hooks/usePost'
 
 const PostedOn = ({ date }) => {
@@ -20,23 +21,20 @@ const PostedOn = ({ date }) => {
   )
 }
 
-const edit = ({ attributes, setAttributes, className, isSelected }) => {
+const edit = ({ attributes, setAttributes, className, isSelected, ...props }) => {
   const { post, setPost } = usePost()
 
-  useEffect(() => {
-    setPost({ title: attributes.heading })
-  }, [setPost])
+  const { media } = attributes
+  const { title, date } = post
 
-  const onChange = {
-    heading: heading => {
-      setAttributes({ heading })
-    },
-    media: media => {
-      setAttributes({ media })
-    },
-  }
+  const onTitle = useCallback((title) => {
+    setAttributes({ title })
+    setPost({ title })
+  })
 
-  setAttributes({ date: format(`F j, Y`, post.date) })
+  const onMedia = useCallback((media) => {
+    setAttributes({ media })
+  })
 
   return (
     <div className={className}>
@@ -44,28 +42,28 @@ const edit = ({ attributes, setAttributes, className, isSelected }) => {
         <RichText
           className={`font-sans text-3xl inline-block uppercase font-bold break-all`}
           placeholder={__(`Post Title...`, `tinypixel`)}
-          value={post.title}
+          value={title}
           allowedFormats={[]}
-          onChange={onChange.heading} />
+          onChange={onTitle} />
 
-        <PostedOn date={post.date} />
+        <PostedOn date={date} />
 
         <MediaUploadCheck>
           <MediaUpload
-            onSelect={onChange.media}
+            onSelect={onMedia}
             multiple={false}
-            value={attributes.media && attributes.media.id}
-            render={({open}) => (
+            value={media && media.id}
+            render={({ open }) => (
               <div>
-                {attributes.media && (
-                  <img className={`pr-0 md:pr-4`} src={attributes.media.url} />
+                {media && (
+                  <img className={`pr-0 md:pr-4`} src={media.url} />
                 )}
 
                 {isSelected && (
                   <Button
                     className={`button`}
                     onClick={open}>
-                    {attributes.media ? `Replace` : `Add`} featured image
+                    {media ? `Replace` : `Add`} featured image
                   </Button>
                 )}
               </div>

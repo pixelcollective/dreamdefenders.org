@@ -4,8 +4,8 @@ import Headroom from 'headroom.js'
 import { disableScroll, enableScroll } from '@util'
 
 /**
-* Logo hover
-*/
+ * Logo hover
+ */
 const logoHover = ({ navLogo }) => {
   const hoverScale = (scale, { x, y }) => {
     anime({
@@ -54,7 +54,9 @@ const navBarScrollInteractives = ({ nav }) => {
 
   const onTop = () => {
     animateHeadroom({
-      backgroundColor: `rgba(0, 0, 0, 0)`,
+      backgroundColor: `rgba(${
+        sage.isFrontPage ? `0,0,0,0` : `255,255,255,1`
+      })`,
       translateY: `0px`,
     })
   }
@@ -92,6 +94,7 @@ const navOverlay = ({ navOverlay, navToggle, navDisable }, easing) => {
 
   const toggleNav = ({ classList }) => {
     classList.toggle(`hidden`)
+
     classList.toggle(`block`)
   }
 
@@ -130,6 +133,8 @@ const navOverlay = ({ navOverlay, navToggle, navDisable }, easing) => {
 }
 
 export default ({ easing }) => {
+  const { sage } = window
+
   const targets = {
     nav:        document.querySelector(`nav.nav`),
     navOverlay: document.querySelector(`.nav-overlay`),
@@ -137,6 +142,10 @@ export default ({ easing }) => {
     navDisable: document.querySelector(`.nav-disable`),
     navLogo:    document.querySelector(`.nav-logo`),
   }
+
+  targets.nav.style.backgroundColor = `rgba(${
+    sage.isFrontPage ? `0,0,0,0` : `255,255,255,1`
+  })`
 
   logoHover(targets)
 

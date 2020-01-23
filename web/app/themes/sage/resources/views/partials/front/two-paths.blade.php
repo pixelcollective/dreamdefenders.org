@@ -1,7 +1,7 @@
 <div class="bg-black">
   <div class="container mx-auto">
     <div class="flex flex-col justify-around lg:flex-row">
-      <div class="flex-1 hidden w-full overflow-hidden text-white lg:w-1/5">
+      <div class="flex-1 hidden w-full overflow-hidden text-black lg:w-1/5">
         @svg('waves-triple', 'fill-current max-w-4/5')
       </div>
 

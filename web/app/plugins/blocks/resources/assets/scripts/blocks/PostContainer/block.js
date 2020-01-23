@@ -10,19 +10,11 @@ registerBlockType(`tinypixel/post-container`, {
   title: __(`Post container`, `tiny-pixel`),
   category: `layout`,
   attributes: {
-    heading: {
-      type: `string`,
-    },
-    date: {
-      type: `string`,
-    },
-    media: {
-      type: `object`,
-    },
+    title: { type: `string` },
+    date:  { type: `string` },
+    media: { type: `object` },
   },
-  supports: {
-    align: true,
-  },
+  supports: { align: true },
   edit,
   save: () => <InnerBlocks.Content />
 })

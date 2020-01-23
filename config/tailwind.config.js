@@ -1,4 +1,6 @@
-const gradients = require('tailwindcss-gradients');
+const blendModes  = require('tailwindcss-blend-mode')
+const gradients   = require('tailwindcss-gradients')
+const transitions = require('tailwindcss-transitions')
 
 module.exports = {
   prefix: '',
@@ -531,10 +533,15 @@ module.exports = {
     transitionTimingFunction: [`responsive`],
     transitionDelay:          [`responsive`],
     willChange:               [`responsive`],
+    /** Blend modes */
+    mixBlendMode: ['responsive'],
+    backgroundBlendMode: ['responsive'],
+    isolation: ['responsive'],
   },
   corePlugins: {},
   plugins: [
     gradients(),
-    require('tailwindcss-transitions')(),
+    blendModes(),
+    transitions(),
   ],
 }

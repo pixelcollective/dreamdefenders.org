@@ -1,10 +1,10 @@
 <div class="container mx-auto wp-blocks-tinypixel-post-container">
   <div class="flex flex-col md:flex-row">
     <div class="flex-col w-full md:w-1/2">
-      @isset($attr->heading)
-        @if($attr->heading)
+      @isset($attr->title)
+        @if($attr->title)
           <h1 class="inline-block font-sans text-3xl font-bold uppercase break-all">
-            {!! $attr->heading !!}
+            {!! $attr->title !!}
           </h1>
         @endif
       @endisset

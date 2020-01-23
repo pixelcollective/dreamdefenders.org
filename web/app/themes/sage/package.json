@@ -49,6 +49,7 @@
     "stylelint": "^12.0.1",
     "stylelint-config-standard": "^19.0.0",
     "tailwindcss": "^1.1.4",
+    "tailwindcss-blend-mode": "^1.0.0",
     "tailwindcss-gradients": "^2.3.1",
     "tailwindcss-scrims": "^1.0.0",
     "tailwindcss-transitions": "^2.1.0",

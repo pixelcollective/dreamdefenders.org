@@ -4917,6 +4917,13 @@ flat-cache@^2.0.1:
     rimraf "2.6.3"
     write "1.0.3"
 
+flat@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/flat/-/flat-4.1.0.tgz#090bec8b05e39cba309747f1d588f04dbaf98db2"
+  integrity sha512-Px/TiLIznH7gEDlPXcUD4KnBusa6kR6ayRUVcnEAbreRIuhkqow/mun59BuRXwoYk7ZQOLW1ZM05ilIvK38hFw==
+  dependencies:
+    is-buffer "~2.0.3"
+
 flatted@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-2.0.1.tgz#69e57caa8f0eacbc281d2e2cb458d46fdb449e08"
@@ -5979,7 +5986,7 @@ is-buffer@^1.1.5, is-buffer@~1.1.1:
   resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
   integrity sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==
 
-is-buffer@^2.0.0, is-buffer@^2.0.2:
+is-buffer@^2.0.0, is-buffer@^2.0.2, is-buffer@~2.0.3:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-2.0.4.tgz#3e572f23c8411a5cfd9557c849e3665e0b290623"
   integrity sha512-Kq1rokWXOPXWuaMAqZiJW4XxsmD9zGx9q4aePabbn3qCRGedtH7Cm+zV8WETitMfu1wdh+Rvd6w5egwSngUX2A==
@@ -10358,6 +10365,14 @@ tailwind.macro@^0.5.10:
   integrity sha512-ZV2rbd5Q3W7j1HJYzK1I9Q6wkkRVe0J//EprN/XHLKs8bImXkYv1ZcpMM030iSdO/ZBc19YW3CfkRpA25gBg5A==
   dependencies:
     babel-plugin-tailwind-components "0.5.10"
+
+tailwindcss-blend-mode@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/tailwindcss-blend-mode/-/tailwindcss-blend-mode-1.0.0.tgz#5a87b9095f1546a8ed8cd12bff941719e21cdeab"
+  integrity sha512-O73Kp4xe89tzStNBc28cTBuEhX6rpxytTzk/51XilHFUbv66o9IAZH0pCQhClYjiMjEpMFgdhg/h1CJkm4qkkQ==
+  dependencies:
+    flat "^4.1.0"
+    lodash "^4.17.11"
 
 tailwindcss-gradients@^2.3.1:
   version "2.3.1"

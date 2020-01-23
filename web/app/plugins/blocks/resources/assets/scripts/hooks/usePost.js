@@ -1,16 +1,27 @@
 import { dispatch, useSelect } from '@wordpress/data'
 
+const postFallback = () => ({
+  title: `Loading..`,
+  date: null,
+  media: {
+    id: null,
+  },
+})
+
 /**
  * usePost hooks
  */
 export default () => {
-  const { getEditedPostAttribute } = useSelect(select => select(`core/editor`))
+  const { post = postFallback } = useSelect(select => {
+    return {
+      post: select(`core/editor`).getCurrentPost(),
+      title: select(`core/editor`).getCurrentPost().title
+    }
+  })
 
-  const post = useSelect(select => select(`core/editor`).getCurrentPost())
-  const setPost = post => dispatch(`core/editor`).editPost(post)
+  const setPost = post => {
+    return dispatch(`core/editor`).editPost({ ...post })
+  }
 
-  const title = getEditedPostAttribute(`title`)
-  const setTitle = title => dispatch(`core/editor`).editPost({title})
-
-  return { post, setPost, title, setTitle }
+  return { post, setPost }
 }
