@@ -67,13 +67,13 @@
 
   <div class="w-full mt-8">
     <div class="relative justify-center w-full mt-4 mb-0 text-center align-middle">
-      <div class="relative mt-4 justify-center mx-auto w-64 h-1 align-middle bg-white" style="height: 2px;"></div>
-      <h2 class="relative inline font-thin text-center text-white bg-black text-sm md:text-md px-4" style="top: -0.9rem">
+      <div class="relative justify-center w-64 h-1 mx-auto mt-4 align-middle bg-white" style="height: 2px;"></div>
+      <h2 class="relative inline px-4 text-sm font-thin text-center text-white bg-black md:text-md" style="top: -0.9rem">
         About Us
       </h2>
     </div>
 
-    <nav class="flex flex-col text-center justify-middle relative" style="top: -0.75rem">
+    <nav class="relative flex flex-col text-center justify-middle" style="top: -0.75rem">
       <a class="text-2xl text-white uppercase md:text-4xl font-display" href="#">Our Story</a>
       <a class="text-2xl text-white uppercase md:text-4xl font-display" href="#">Ideology</a>
       <a class="text-2xl text-white uppercase md:text-4xl font-display" href="#">Squadds</a>
@@ -82,13 +82,13 @@
 
   <div class="w-full mt-4">
     <div class="relative justify-center w-full mt-4 mb-0 text-center align-middle">
-      <div class="relative mt-4 justify-center mx-auto w-64 h-1 align-middle bg-white" style="height: 2px;"></div>
-      <h2 class="relative inline font-thin text-center text-white bg-black text-sm md:text-md px-4" style="top: -0.9rem">
+      <div class="relative justify-center w-64 h-1 mx-auto mt-4 align-middle bg-white" style="height: 2px;"></div>
+      <h2 class="relative inline px-4 text-sm font-thin text-center text-white bg-black md:text-md" style="top: -0.9rem">
         Our Vision
       </h2>
     </div>
 
-    <nav class="flex flex-col text-center justify-middle relative" style="top: -0.75rem">
+    <nav class="relative flex flex-col text-center justify-middle" style="top: -0.75rem">
       <a class="text-2xl text-white uppercase md:text-4xl font-display" href="#">Freedom Papers</a>
       <a class="text-2xl text-white uppercase md:text-4xl font-display" href="#">Blog</a>
     </nav>
@@ -96,28 +96,14 @@
 
   <div class="w-full mt-4">
     <div class="relative justify-center w-full mt-4 mb-0 text-center align-middle">
-      <div class="relative mt-4 justify-center mx-auto w-64 h-1 align-middle bg-white" style="height: 2px;"></div>
-      <h2 class="relative inline font-thin text-center text-white bg-black text-sm md:text-md px-4" style="top: -0.9rem">
+      <div class="relative justify-center w-64 h-1 mx-auto mt-4 align-middle bg-white" style="height: 2px;"></div>
+      <h2 class="relative inline px-4 text-sm font-thin text-center text-white bg-black md:text-md" style="top: -0.9rem">
         Our Work
       </h2>
     </div>
 
-    <nav class="flex flex-col text-center justify-middle relative" style="top: -0.75rem">
+    <nav class="relative flex flex-col text-center justify-middle" style="top: -0.75rem">
       <a class="text-2xl text-white uppercase md:text-4xl font-display" href="#">Projects</a>
-    </nav>
-  </div>
-
- <div class="w-full mt-4">
-    <div class="relative justify-center w-full mt-4 mb-0 text-center align-middle">
-      <div class="relative mt-4 justify-center mx-auto w-64 h-1 align-middle bg-white" style="height: 2px;"></div>
-      <h2 class="relative inline font-thin text-center text-white bg-black text-sm md:text-md px-4" style="top: -0.9rem">
-        Our Community
-      </h2>
-    </div>
-
-    <nav class="flex flex-col text-center justify-middle relative" style="top: -0.75rem">
-      <a class="text-2xl text-white uppercase md:text-4xl font-display" href="#">For Members</a>
-      <a class="text-2xl text-white uppercase md:text-4xl font-display" href="#">Shop</a>
     </nav>
   </div>
 </div>
