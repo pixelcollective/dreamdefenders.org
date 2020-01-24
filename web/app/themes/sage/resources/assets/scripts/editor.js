@@ -64,7 +64,6 @@ domReady(() => {
    * Restrict blocks to the following list.
    */
   whitelistBlocks([
-    /** @wordpress */
     'core/audio',
     'core/button',
     'core/column',
@@ -89,9 +88,7 @@ domReady(() => {
     'core/quote',
     'core/table',
     'core/video',
-
-    /** @tinypixel */
-    'tinypixel/twocolumn',
+    'tinypixel/two-column',
     'tinypixel/post-container',
   ]);
 });

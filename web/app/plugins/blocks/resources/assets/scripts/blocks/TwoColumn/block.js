@@ -6,7 +6,7 @@ import { InnerBlocks } from "@wordpress/block-editor";
 // components
 import { edit } from "./components/edit";
 
-registerBlockType(`tinypixel/twocolumn`, {
+registerBlockType(`tinypixel/two-column`, {
   title: __(`Two column`, `tiny-pixel`),
   category: `common`,
   icon: `hammer`,

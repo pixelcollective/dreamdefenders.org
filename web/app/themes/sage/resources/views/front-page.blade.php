@@ -14,11 +14,7 @@
       @include('partials.content-page')
     </div>
 
-    <section class="px-4 bg-black-100">
-      <div class="container py-16 mx-auto">
-        @include('forms.dream-together')
-      </div>
-    </section>
+    @include('forms.dream-together')
   @endwhile
 
   @include('components.instagram')

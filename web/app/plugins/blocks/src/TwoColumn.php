@@ -13,16 +13,16 @@ use \TinyBlocks\Base\Block;
 class TwoColumn extends Block
 {
     /** block name */
-    public $name = 'tinypixel/twocolumn';
+    public $name = 'tinypixel/two-column';
 
     /** view instance */
     public $view = 'blocks';
 
     /** template file */
-    public $template = 'twocolumn/block.blade.php';
+    public $template = 'two-column/block.blade.php';
 
     /** classnames */
-    public $className = 'wp-block-tinypixel-twocolumn';
+    public $className = 'wp-block-tinypixel-two-column';
 
     /**
      * Setup assets

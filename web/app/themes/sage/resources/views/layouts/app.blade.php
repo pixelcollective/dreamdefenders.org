@@ -4,7 +4,7 @@
 
   <body @php(body_class())>
     @php(wp_body_open())
-    <div id="app" class="w-full overflow-x-hidden">
+    <div id="app" class="w-full overflow-hidden">
       @php(do_action('get_header'))
 
       <div class="w-full">
@@ -37,5 +37,8 @@
       @include('partials.navigation-overlay')
 
       @php(wp_footer())
+
+      @stack('styles')
+      @stack('scripts')
   </body>
 </html>
