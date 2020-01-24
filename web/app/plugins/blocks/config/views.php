@@ -16,18 +16,6 @@ return [
     */
 
     'views' => [
-        'wordpress' => [
-            'dir'   => WP_CONTENT_DIR,
-            'cache' => $cachePath,
-            'debug' => 0,
-        ],
-
-        'plugins' => [
-            'dir' => WP_PLUGIN_DIR,
-            'cache' => $cachePath,
-            'debug' => 0,
-        ],
-
         'blocks' => [
             'dir' => WP_PLUGIN_DIR . '/blocks/resources/views',
             'cache' => $cachePath,

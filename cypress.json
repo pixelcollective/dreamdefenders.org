@@ -1,4 +1,6 @@
 {
   "projectId": "v2xfx4",
-  "chromeWebSecurity": false
+  "chromeWebSecurity": false,
+  "viewportWidth": 1024,
+  "viewportHeight": 660
 }

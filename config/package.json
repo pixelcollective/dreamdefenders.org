@@ -1,0 +1,10 @@
+{
+  "name": "tailwind",
+  "version": "1.0.0",
+  "main": "tailwind.js",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^1.1.4",
+    "tailwindcss-blend-mode": "^1.0.0"
+  }
+}

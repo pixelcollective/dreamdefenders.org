@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/6.2/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         forceCoversAnnotation="true"
+         beStrictAboutCoversAnnotation="true"
+         beStrictAboutOutputDuringTests="true"
+         beStrictAboutTodoAnnotatedTests="true"
+         verbose="true">
+
+    <logging>
+        <log type="coverage-html" target="tmp/report" lowUpperBound="35" highLowerBound="70"/>
+        <log type="coverage-clover" target="tmp/clover.xml"/>
+    </logging>
+    <testsuites>
+        <testsuite name="unit">
+            <directory suffix="Test.php">tests</directory>
+        </testsuite>
+    </testsuites>
+	<filter>
+		<whitelist>
+            <directory suffix=".php">config</directory>
+            <directory suffix=".php">web/app/themes/sage/app</directory>
+			<exclude>
+				<directory suffix=".php">vendor</directory>
+			</exclude>
+		</whitelist>
+	</filter>
+</phpunit>

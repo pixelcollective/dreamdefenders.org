@@ -12,6 +12,9 @@
 #
 # cypress-io/cypress
 #   @see https://circleci.com/orbs/registry/orb/cypress-io/cypress
+#
+# percy/agent
+#   @see https://docs.percy.io/docs/circleci#section-parallelized-tests-configuring-your-circle-ci-orb
 ##
 version: 2.1
 
@@ -19,6 +22,11 @@ orbs:
   tiller-circleci: itinerisltd/tiller-circleci@0.5
   sentry-cli: picturepipe/sentry-cli@1.1.1
   cypress: cypress-io/cypress@1
+
+executors:
+  php-73:
+    docker:
+      - image: circleci/php:7.3-stretch
 
 workflows:
   deploy:
@@ -32,11 +40,25 @@ workflows:
                 - staging
                 - master
 
+      # Cypress pre-integration specs
+      - cypress/run:
+          executor: cypress/browsers-chrome69
+          name: integration-pre-deploy
+          browser: chrome
+          yarn: true
+          spec: cypress/integration/staging.spec.js
+          requires:
+            - hold
+          filters:
+            branches:
+              only:
+                - master
+
       # Deploy staging
       - tiller-circleci/deploy:
           name: deploy-staging
           known_hosts: 'github.com, 165.22.190.49'
-          trellis_repo: 'git@github.com:pixelcollective/managed-wordpress-deploy.dev.git'
+          trellis_repo: 'git@github.com:pixelcollective/managed-wordpress-deploy.git'
           site_env: staging
           site_name: dreamdefenders.org
           executor: tiller-circleci/ansible-27
@@ -47,26 +69,11 @@ workflows:
               only:
                 - staging
 
-      # Cypress pre-integration specs
-      - cypress/run:
-          executor: cypress/browsers-chrome69
-          name: integration-pre-deploy
-          browser: chrome
-          yarn: true
-          spec: cypress/integration/staging.spec.js
-          working_directory: tests
-          requires:
-            - hold
-          filters:
-            branches:
-              only:
-                - master
-
       # Deploy production
       - tiller-circleci/deploy:
           name: deploy-production
           known_hosts: 'github.com, 157.230.209.152'
-          trellis_repo: 'git@github.com:pixelcollective/managed-wordpress-deploy.dev.git'
+          trellis_repo: 'git@github.com:pixelcollective/managed-wordpress-deploy.git'
           site_env: production
           site_name: dreamdefenders.org
           executor: tiller-circleci/ansible-27
@@ -77,7 +84,7 @@ workflows:
               only:
                 - master
 
-      # Sentry checkout
+      # Sentry checkout staging
       - sentry-cli/checkout-to-workspace:
           name: sentry-checkout-staging
           requires:
@@ -87,6 +94,7 @@ workflows:
               only:
                 - staging
 
+      # Sentry checkout production
       - sentry-cli/checkout-to-workspace:
           name: sentry-checkout-production
           requires:
@@ -96,7 +104,7 @@ workflows:
               only:
                 - master
 
-      # Sentry set version
+      # Sentry set version staging
       - sentry-cli/set-version:
           name: sentry-version-staging
           requires:
@@ -106,6 +114,7 @@ workflows:
               only:
                 - staging
 
+      # Sentry set version production
       - sentry-cli/set-version:
           name: sentry-version-production
           requires:
@@ -115,7 +124,7 @@ workflows:
               only:
                 - master
 
-      # Sentry create release
+      # Sentry create release staging
       - sentry-cli/create-release:
           name: sentry-create-release-staging
           requires:
@@ -125,6 +134,7 @@ workflows:
               only:
                 - staging
 
+      # Sentry create release production
       - sentry-cli/create-release:
           name: sentry-create-release-production
           requires:
@@ -134,7 +144,7 @@ workflows:
               only:
                 - master
 
-      # Sentry finalize release
+      # Sentry finalize release staging
       - sentry-cli/finalize-release-set-commits:
           name: sentry-finalize-release-staging
           requires:
@@ -144,6 +154,7 @@ workflows:
               only:
                 - staging
 
+      # Sentry finalize release production
       - sentry-cli/finalize-release-set-commits:
           name: sentry-finalize-release-production
           requires:
@@ -164,6 +175,7 @@ workflows:
               only:
                 - staging
 
+      # Sentry create deployment production
       - sentry-cli/create-deployment:
           name: sentry-deploy-production
           env: production
@@ -174,13 +186,13 @@ workflows:
               only:
                 - master
 
-      # Cypress post-deployment specs
+      # Cypress post-deployment specs staging
       - cypress/run:
           name: integration-post-deploy-staging
           executor: cypress/browsers-chrome69
           browser: chrome
           yarn: true
-          working_directory: tests
+          record: true
           spec: cypress/integration/staging.spec.js
           requires:
             - sentry-deploy-staging
@@ -189,6 +201,7 @@ workflows:
               only:
                 - staging
 
+      # Cypress post-deployment specs production
       - cypress/run:
           name: integration-post-deploy-production
           executor: cypress/browsers-chrome69
@@ -196,8 +209,8 @@ workflows:
             - sentry-deploy-production
           browser: chrome
           yarn: true
+          record: true
           spec: cypress/integration/production.spec.js
-          working_directory: tests
           filters:
             branches:
               only:

@@ -2,8 +2,6 @@ global:
   enable:
     - admin-to-console/admin-to-console.php
     - autodescription/autodescription.php
-    - backwpup/backwpup.php
-    - cocobasic-shortcode/cocobasic-shortcode.php
     - disable-comments/disable-comments.php
     - dropit/dropit.php
     - gutenberg/gutenberg.php
@@ -25,17 +23,15 @@ development:
 
 staging:
   enable:
-    - laps/laps.php
-    - query-monitor/query-monitor.php
     - rewrite-testing/rewrite-testing.php
     - user-switching/user-switching.php
+  disable:
     - wp-rocket/wp-rocket.php
 
 production:
   enable:
     - wp-rocket/wp-rocket.php
   disable:
-    - query-monitor/query-monitor.php
     - rewrite-testing/rewrite-testing.php
     - user-switching/user-switching.php
     - laps/laps.php

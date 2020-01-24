@@ -35,8 +35,8 @@ class TwoColumn extends Block
 
         $editorScript = $this->makeAsset()
             ->setName('tinypixel/twocolumn/js')
-            ->setUrl(plugins_url() . '/blocks/dist/scripts/editor.js')
-            ->setManifest(WP_PLUGIN_DIR . '/blocks/dist/scripts/editor.asset.php');
+            ->setUrl(plugins_url() . '/blocks/dist/scripts/two-column.js')
+            ->setManifest(WP_PLUGIN_DIR . '/blocks/dist/scripts/two-column.asset.php');
 
         $publicStyle = $this->makeAsset()
             ->setName('tinypixel/twocolumn/public/css')

@@ -1,16 +1,11 @@
 # [Dream Defenders](https://dreamdefenders.org)
 
+[![Roots](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/roots/roots-example-project.com/master/site/composer.json?token=R2l0SHViIFRva2VuIEdvZXMgSGVyZQ==&label=wordpress&logo=roots&logoColor=white&query=$.require["roots/wordpress"]&colorB=2b3072&colorA=525ddc)](//roots.io)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Maintainability](https://api.codeclimate.com/v1/badges/7bad12686a37bc03473f/maintainability)](https://codeclimate.com/repos/5e24fe34aedbeb017900124d/maintainability)
+[![Follow Tiny Pixel](https://img.shields.io/twitter/follow/tinydevteam.svg?style=flat-square&color=5A9FD8)](https://twitter.com/tinydevteam)
+
 Dream Defenders are building a powerful, deep, local, organization and movement for freedom and liberation in Florida.
-
-## Build Status
-
-**staging**
-
-[![CircleCI](https://circleci.com/gh/pixelcollective/tinypixel.dev/tree/staging.svg?style=shield&circle-token=6c5040d1a04b505a47ebb1e98cca593a4568218a)](https://circleci.com/gh/pixelcollective/tinypixel.dev/tree/staging)
-
-**master**
-
-[![CircleCI](https://circleci.com/gh/pixelcollective/tinypixel.dev/tree/master.svg?style=shield&circle-token=6c5040d1a04b505a47ebb1e98cca593a4568218a)](https://circleci.com/gh/pixelcollective/tinypixel.dev/tree/master)
 
 ## Maintainers
 
@@ -19,7 +14,7 @@ Dream Defenders are building a powerful, deep, local, organization and movement 
 
 ## Contributing
 
-Feel free to dive in! [Open an issue](https://github.com/RichardLitt/standard-readme/issues/new) or submit PRs.
+Feel free to dive in! [Open an issue](https://github.com/pixelcollective/dreamdefenders.org/issues/new) or submit PRs.
 
 ## Code of Conduct
 
