@@ -1,0 +1,60 @@
+project:
+  - ./*
+
+git:
+  - .github/*
+  - .github/**/*
+  - .git/*
+  - .git/**/*
+
+bedrock:
+  - ./config/**/*
+  - ./config/*
+
+testing:
+  - ./tests/*
+  - ./tests/**/*
+
+theme:
+  - ./**/themes/*
+  - ./**/themes/**/*
+
+plugin:
+  - ./**/plugins/*
+  - ./**/plugins/**/*
+  - ./**/mu-plugins/**/*
+  - ./**/mu-plugins/**/*
+
+dependency:
+  - composer.json
+  - package.json
+  - ./**/package.json
+  - ./**/yarn.lock
+
+documentation:
+  - ./*.md
+  - ./**/*.md
+  - ./**/LICENSE
+  - ./**/README
+
+php:
+  - ./**/*.php
+
+css:
+  - ./**/*.scss
+  - ./**/*.css
+
+js:
+  - ./**/*.js
+  - ./**/*.jsx
+
+webpack:
+  - ./**/*webpack*
+  - ./**/webpack*
+  - ./**/webpack/*
+  - ./**/webpack/**/*
+
+config:
+  - ./**/config/*
+  - ./**/config/**/*
+  - ./**/*.json
