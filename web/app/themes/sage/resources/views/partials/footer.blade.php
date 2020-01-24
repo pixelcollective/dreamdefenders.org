@@ -1,4 +1,4 @@
-<footer class="w-full bg-black">
+<footer class="w-full bg-gray">
   <div class="container flex flex-row mx-auto uppercase justify-evenly text-white-800">
     <nav class="flex flex-row justify-around flex-1 py-8 text-white">
       <a href="#">Squadds</a>
