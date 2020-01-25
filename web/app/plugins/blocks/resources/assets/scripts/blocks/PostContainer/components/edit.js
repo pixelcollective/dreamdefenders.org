@@ -1,5 +1,5 @@
 // @wordpress
-import { useEffect, useCallback } from '@wordpress/element'
+import { useCallback } from '@wordpress/element'
 import { __ } from '@wordpress/i18n'
 import { Button } from '@wordpress/components'
 import { format } from '@wordpress/date'
@@ -10,7 +10,6 @@ import {
   RichText,
 } from '@wordpress/block-editor'
 
-import { sample } from 'lodash'
 import usePost from '../../../hooks/usePost'
 
 const PostedOn = ({ date }) => {

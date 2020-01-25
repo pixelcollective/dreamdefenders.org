@@ -20,7 +20,7 @@
               </h3>
 
               <form class="flex flex-col w-4/5 mx-auto text-black space-between" action="#">
-                <input type="text" class="py-4 my-2 text-center text-black placeholder-gray-500" placeholder="Enter your email here.." />
+                <input type="text" class="py-4 my-2 text-center text-black placeholder-gray-500 focus:shadow-inset transition transition-duration-2000 transition-shadow" placeholder="Enter your email here.." />
 
                 <button type="submit" class="py-4 my-2 tracking-wide uppercase bg-white text-black-900 font-display">
                   Sign up
