@@ -4,37 +4,40 @@ import Headroom from 'headroom.js'
 import { disableScroll, enableScroll } from '@util'
 
 /**
+ * Animation: scale and translate
+ *
+ * @param obj { el, scale, { x, y } }
+ */
+const popOff = ({ target, scale, translate }) => {
+  anime({
+    targets: target,
+    scale: scale,
+    translateX: translate.x,
+    translateY: translate.y,
+    loop: false,
+    duration: 800,
+  })
+}
+
+/**
  * Logo hover
  */
-const logoHover = ({ navLogo }) => {
-  const hoverScale = (scale, { x, y }) => {
-    anime({
-      targets: navLogo,
-      loop: false,
-      duration: 800,
-      scaleX: scale,
-      scaleY: scale,
-      translateX: x,
-      translateY: y,
-    })
-  }
+const hoverPop = hoverPopTargets => {
+  hoverPopTargets.map(target => {
+    target.addEventListener(`mouseenter`, () => {
+      const scale = 1.1
+      const translate = { x: '0px', y: '-3px' }
 
-  const hoverOn = () => {
-    hoverScale(1.1, {
-      x: 0,
-      y: `-3px`,
-    })
-  }
+      popOff({target, scale, translate})
+    }, false)
 
-  const hoverOff = () => {
-    hoverScale(1, {
-      x: 0,
-      y: 0,
-    })
-  }
+    target.addEventListener(`mouseleave`, () => {
+      const scale = 1
+      const translate = { x: '0px', y: '0px' }
 
-  navLogo.addEventListener(`mouseenter`, hoverOn, false)
-  navLogo.addEventListener(`mouseleave`, hoverOff, false)
+      popOff({target, scale, translate})
+    }, false)
+  })
 }
 
 /**
@@ -141,15 +144,15 @@ export default ({ easing }) => {
     navToggle:  document.querySelector(`.nav-toggle`),
     navDisable: document.querySelector(`.nav-disable`),
     navLogo:    document.querySelector(`.nav-logo`),
+    navSocial:  document.querySelectorAll(`.nav-social-icon > svg`),
+    hoverScaleUp: document.querySelectorAll(`.hover-scale-up`),
   }
 
   targets.nav.style.backgroundColor = `rgba(${
     sage.isFrontPage ? `0,0,0,0` : `255,255,255,1`
   })`
 
-  logoHover(targets)
-
+  hoverPop([targets.navLogo, ...targets.navSocial, ...targets.hoverScaleUp])
   navBarScrollInteractives(targets)
-
   navOverlay(targets, easing)
 }

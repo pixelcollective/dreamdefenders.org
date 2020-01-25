@@ -13,27 +13,27 @@
         </div>
 
         <div class="items-center justify-between text-white align-middle blend-difference hidden md:flex">
-          <a class="p-3 text-white no-underline blend-difference hover:relative hover:top-1 hover:no-underline hover:bg-white rounded rounded-full hover:text-black transition-all transition" href="/" title="Dream Defenders">
+          <a class="nav-social-icon p-3 text-white no-underline blend-difference hover:relative hover:top-1 hover:no-underline hover:bg-white rounded rounded-full hover:text-black transition-all transition" href="/" title="Dream Defenders">
             @brands('facebook-f', 'w-full fill-current', ['width' => 28, 'height' => 28])
           </a>
 
-          <a class="p-3 text-white no-underline blend-difference hover:relative hover:top-1 hover:no-underline hover:bg-white rounded rounded-full hover:text-black transition-all transition" href="/" title="Dream Defenders">
+          <a class="nav-social-icon p-3 text-white no-underline blend-difference hover:relative hover:top-1 hover:no-underline hover:bg-white rounded rounded-full hover:text-black transition-all transition" href="/" title="Dream Defenders">
             @brands('twitter', 'w-full fill-current', ['width' => 28, 'height' => 28])
           </a>
 
-          <a class="p-3 text-white no-underline blend-difference hover:relative hover:top-1 hover:no-underline hover:bg-white rounded rounded-full hover:text-black transition-all transition" href="/" title="Dream Defenders">
+          <a class="nav-social-icon p-3 text-white no-underline blend-difference hover:relative hover:top-1 hover:no-underline hover:bg-white rounded rounded-full hover:text-black transition-all transition" href="/" title="Dream Defenders">
             @brands('instagram', 'w-full fill-current', ['width' => 28,'height' => 28])
           </a>
 
-          <a class="p-3 text-white no-underline blend-difference hover:relative hover:top-1 hover:no-underline hover:bg-white rounded rounded-full hover:text-black transition-all transition" href="/" title="Dream Defenders">
+          <a class="nav-social-icon p-3 text-white no-underline blend-difference hover:relative hover:top-1 hover:no-underline hover:bg-white rounded rounded-full hover:text-black transition-all transition" href="/" title="Dream Defenders">
             @solid('envelope', 'w-full fill-current', ['width' => 28,'height' => 28])
           </a>
 
-          <button class="px-6 py-2 mx-4 text-sm text-black uppercase bg-white border border-white rounded blend-difference" title="Join" aria-label="Join">
+          <button class="hover-scale-up px-6 py-2 mx-4 text-sm text-black uppercase bg-white border border-white rounded blend-difference" title="Join" aria-label="Join">
             Join
           </button>
 
-          <button class="px-6 py-2 ml-0 text-sm text-white uppercase border border-white rounded blend-difference" title="Donate" aria-label="Donate">
+          <button class="hover-scale-up px-6 py-2 ml-0 text-sm text-white uppercase border border-white rounded blend-difference" title="Donate" aria-label="Donate">
             Donate
           </button>
         </div>
@@ -58,9 +58,9 @@
     </div>
 
     <nav class="relative flex flex-col text-center justify-middle" style="top: -0.75rem">
-      <a class="text-2xl text-white uppercase md:text-4xl font-display" href="#">Our Story</a>
-      <a class="text-2xl text-white uppercase md:text-4xl font-display" href="#">Ideology</a>
-      <a class="text-2xl text-white uppercase md:text-4xl font-display" href="#">Squadds</a>
+      <a class="hover-scale-up text-2xl text-white uppercase md:text-4xl font-display" href="#">Our Story</a>
+      <a class="hover-scale-up text-2xl text-white uppercase md:text-4xl font-display" href="#">Ideology</a>
+      <a class="hover-scale-up text-2xl text-white uppercase md:text-4xl font-display" href="#">Squadds</a>
     </nav>
   </div>
 
@@ -73,8 +73,8 @@
     </div>
 
     <nav class="relative flex flex-col text-center justify-middle" style="top: -0.75rem">
-      <a class="text-2xl text-white uppercase md:text-4xl font-display" href="#">Freedom Papers</a>
-      <a class="text-2xl text-white uppercase md:text-4xl font-display" href="#">Blog</a>
+      <a class="hover-scale-up text-2xl text-white uppercase md:text-4xl font-display" href="#">Freedom Papers</a>
+      <a class="hover-scale-up text-2xl text-white uppercase md:text-4xl font-display" href="#">Blog</a>
     </nav>
   </div>
 
@@ -87,7 +87,7 @@
     </div>
 
     <nav class="relative flex flex-col text-center justify-middle" style="top: -0.75rem">
-      <a class="text-2xl text-white uppercase md:text-4xl font-display" href="#">Projects</a>
+      <a class="hover-scale-up text-2xl text-white uppercase md:text-4xl font-display" href="#">Projects</a>
     </nav>
   </div>
 </div>

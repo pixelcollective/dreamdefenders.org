@@ -15,27 +15,27 @@
       </div>
 
       <div class="items-center justify-between text-white align-middle blend-difference hidden md:flex">
-        <a class="p-3 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black transition-all transition" href="/" title="Dream Defenders">
+        <a class="nav-social-icon p-3 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black transition-all transition" href="/" title="Dream Defenders">
           @brands('facebook-f', 'w-full fill-current', ['width' => 28, 'height' => 28])
         </a>
 
-        <a class="p-3 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black transition-all transition" href="/" title="Dream Defenders">
+        <a class="nav-social-icon p-3 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black transition-all transition" href="/" title="Dream Defenders">
           @brands('twitter', 'w-full fill-current', ['width' => 28, 'height' => 28])
         </a>
 
-        <a class="p-3 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black transition-all transition" href="/" title="Dream Defenders">
-          @brands('instagram', 'w-full fill-current', ['width' => 28,'height' => 28])
+        <a class="nav-social-icon p-3 align-middle justify-center text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black transition-all transition" href="/" title="Dream Defenders" style="overflow-x: hidden;">
+          @brands('instagram', 'w-full fill-current pl-1', ['width' => 32, 'height' => 32])
         </a>
 
-        <a class="p-3 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black transition-all transition" href="/" title="Dream Defenders">
+        <a class="nav-social-icon p-3 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black transition-all transition" href="/" title="Dream Defenders">
           @solid('envelope', 'w-full fill-current', ['width' => 28,'height' => 28])
         </a>
 
-        <button class="px-6 py-2 mx-4 text-sm text-black uppercase bg-white border border-white rounded blend-difference" title="Join" aria-label="Join">
+        <button class="hover-scale-up px-6 py-2 mx-4 text-sm text-black uppercase bg-white border border-white rounded blend-difference" title="Join" aria-label="Join">
           Join
         </button>
 
-        <button class="px-6 py-2 ml-0 text-sm text-white uppercase border border-white rounded blend-difference" title="Donate" aria-label="Donate">
+        <button class="hover-scale-up px-6 py-2 ml-0 text-sm text-white uppercase border border-white rounded blend-difference" title="Donate" aria-label="Donate">
           Donate
         </button>
       </div>
