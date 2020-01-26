@@ -1013,6 +1013,18 @@
     "@types/node" ">=8.9.0"
     axios "^0.18.0"
 
+"@tinypixelco/hoverfx@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@tinypixelco/hoverfx/-/hoverfx-0.0.2.tgz#3ecabcabb8343333c1d0dd1d816e3c90e7073d05"
+  integrity sha512-zn6WYyMJeuj0vkA+gAVa5Vt8GE0x9HPJNHxzB0xB3mThaNpDJW3YoIn9T9PtQjg9GRwzfopqQgNOHaRyNuHFMg==
+  dependencies:
+    animejs "^3.1.0"
+
+"@tinypixelco/laravel-mix-wp-blocks@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@tinypixelco/laravel-mix-wp-blocks/-/laravel-mix-wp-blocks-1.0.0.tgz#fbca789ab0ca1202cdc3644f6edebf25a0bdbc7c"
+  integrity sha512-vmX7vBbEYY4wU9dYoQTUDhE6Xn8ZlY8OV1Rxk+kh6ckiSyy1jfQGT79YvIrIvysOgOf3mxs2WDOiS4/dKg+xJg==
+
 "@types/color-name@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"

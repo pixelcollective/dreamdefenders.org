@@ -1,6 +1,6 @@
 import domReady from '@wordpress/dom-ready'
+import hoverFx from '@tinypixelco/hoverfx'
 import {
-  hoverFx,
   instagram,
   nav,
   fadeObserver,
