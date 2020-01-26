@@ -55,15 +55,6 @@ const navBarScrollInteractives = ({ nav }) => {
     })
   }
 
-  const onTop = () => {
-    animateHeadroom({
-      backgroundColor: `rgba(${
-        sage.isFrontPage ? `0,0,0,0` : `255,255,255,1`
-      })`,
-      translateY: `0px`,
-    })
-  }
-
   const onPin = () => {
     animateHeadroom({
       backgroundColor: `rgba(0, 0, 0, 0.8)`,
@@ -81,7 +72,6 @@ const navBarScrollInteractives = ({ nav }) => {
   (new Headroom(nav, {
     offset: nav.offsetHeight,
     tolerance: 5,
-    onTop,
     onPin,
     onUnpin,
   })).init()
@@ -149,7 +139,7 @@ export default ({ easing }) => {
   }
 
   targets.nav.style.backgroundColor = `rgba(${
-    sage.isFrontPage ? `0,0,0,0` : `255,255,255,1`
+    sage.isFrontPage ? `0,0,0,0.8` : `255,255,255,1`
   })`
 
   hoverPop([targets.navLogo, ...targets.navSocial, ...targets.hoverScaleUp])

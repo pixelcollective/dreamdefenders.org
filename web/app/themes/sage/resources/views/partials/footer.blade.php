@@ -16,19 +16,19 @@
         </div>
 
         <div class="flex flex-row items-center w-full pt-8 justify-evenly">
-          <a href="#" class="inline-block w-1/3 h-auto p-2 mx-1 text-center text-white rounded-full hover:cursor-pointer transition transition-color transition-bg transition-ease-in-out hover:bg-white hover:text-black">
+          <a href="#" class="hover-scale-up inline-block w-1/3 h-auto p-2 mx-1 text-center text-white rounded-full hover:cursor-pointer transition transition-color transition-bg transition-ease-in-out hover:bg-white hover:text-black">
             @brands('facebook', 'fill-current')
           </a>
 
-          <a href="#" class="inline-block w-1/3 h-auto p-2 mx-1 text-center text-white rounded-full hover:cursor-pointer transition transition-color transition-bg transition-ease-in-out hover:bg-white hover:text-black">
+          <a href="#" class="hover-scale-up inline-block w-1/3 h-auto p-2 mx-1 text-center text-white rounded-full hover:cursor-pointer transition transition-color transition-bg transition-ease-in-out hover:bg-white hover:text-black">
             @brands('twitter', 'fill-current')
           </a>
 
-          <a href="#" class="inline-block w-1/3 h-auto p-2 mx-1 text-center text-white rounded-full hover:cursor-pointer transition transition-color transition-bg transition-ease-in-out hover:bg-white hover:text-black">
-            @brands('instagram', 'fill-current')
+          <a href="#" class="hover-scale-up inline-block w-1/3 h-auto p-2 mx-1 text-center text-white rounded-full hover:cursor-pointer transition transition-color transition-bg transition-ease-in-out hover:bg-white hover:text-black">
+            @brands('instagram', 'fill-current', ['style' => 'padding-left: 0.1rem;'])
           </a>
 
-          <a href="#" class="inline-block w-1/3 h-auto p-2 mx-1 text-center text-white rounded-full hover:cursor-pointer transition transition-color transition-bg transition-ease-in-out hover:bg-white hover:text-black">
+          <a href="#" class="hover-scale-up inline-block w-1/3 h-auto p-2 mx-1 text-center text-white rounded-full hover:cursor-pointer transition transition-color transition-bg transition-ease-in-out hover:bg-white hover:text-black">
             @solid('envelope', 'fill-current')
           </a>
         </div>
