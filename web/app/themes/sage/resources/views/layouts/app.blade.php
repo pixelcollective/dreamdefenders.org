@@ -32,8 +32,6 @@
       </div>
     </div>
 
-    @include('partials.navigation-overlay')
-
     @php(wp_footer())
 
     @stack('styles')

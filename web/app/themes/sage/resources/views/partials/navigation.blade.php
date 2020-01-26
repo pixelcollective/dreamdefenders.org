@@ -41,11 +41,54 @@
       </div>
 
       <div class="w-32 flex items-center justify-center align-middle">
-        <button class="text-white nav-toggle blend-difference" title="Open menu" aria-label="Open menu">
-          <svg class="w-full ml-4 mr-2 fill-current blend-difference" width="26" height="26">
-            <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"/>
-          </svg>
+        <button nav-toggle toggle-target="nav-overlay" class="focus:shadow-none focus:outline-none text-white mx-2 px-0 nav-toggle blend-difference" title="Open menu" aria-label="Open menu">
+          @solid('bars',  'menu-icon menu-icon-open w-full fill-current blend-difference', ['width' => '26', 'height' => '26'])
+          @solid('times', 'menu-icon menu-icon-close w-full fill-current blend-difference', ['width' => '0px', 'height' => '0px'])
         </button>
+      </div>
+    </div>
+
+    <div class="nav-overlay w-full overflow-hidden">
+      <div class="overlay-contents">
+        <div class="relative justify-center w-full mt-4 mb-0 text-center align-middle">
+          <div class="relative justify-center w-64 h-1 mx-auto mt-4 align-middle bg-white" style="height: 2px;"></div>
+          <span class="relative inline px-4 text-sm font-thin text-center text-white bg-black md:text-md" style="top: -0.9rem">
+            About Us
+          </span>
+        </div>
+
+        <nav class="relative flex flex-col text-center justify-middle flex-grow-0 w-64 mx-auto" style="top: -0.75rem">
+          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="flex-grow-0 text-2xl text-white uppercase md:text-4xl font-display" href="#">Our Story</a>
+          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="flex-grow-0 text-2xl text-white uppercase md:text-4xl font-display" href="#">Ideology</a>
+          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="flex-grow-0 text-2xl text-white uppercase md:text-4xl font-display" href="#">Squadds</a>
+        </nav>
+      </div>
+
+      <div class="w-full mt-4">
+        <div class="relative justify-center w-full mt-4 mb-0 text-center align-middle">
+          <div class="relative justify-center w-64 h-1 mx-auto mt-4 align-middle bg-white" style="height: 2px;"></div>
+          <span class="relative inline px-4 text-sm font-thin text-center text-white bg-black md:text-md" style="top: -0.9rem">
+            Our Vision
+          </span>
+        </div>
+
+        <nav class="relative flex flex-col text-center justify-middle w-64 mx-auto" style="top: -0.75rem">
+          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="text-2xl text-white uppercase md:text-4xl font-display" href="#">Freedom Papers</a>
+          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="text-2xl text-white uppercase md:text-4xl font-display" href="#">Blog</a>
+        </nav>
+      </div>
+
+      <div class="w-full mt-4">
+        <div class="relative justify-center w-full mt-4 mb-0 text-center align-middle">
+          <div class="relative justify-center w-64 h-1 mx-auto mt-4 align-middle bg-white" style="height: 2px;"></div>
+          <span class="relative inline px-4 text-sm font-thin text-center text-white bg-black md:text-md" style="top: -0.9rem">
+            Our Work
+          </span>
+        </div>
+
+        <nav class="relative flex flex-col text-center justify-middle w-64 mx-auto" style="top: -0.75rem">
+          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="text-2xl text-white uppercase md:text-4xl font-display" href="#">Projects</a>
+        </nav>
       </div>
     </div>
   </div>
