@@ -1,5 +1,6 @@
 import domReady from '@wordpress/dom-ready'
 import {
+  hoverFx,
   instagram,
   nav,
   fadeObserver,
@@ -11,27 +12,35 @@ domReady(() => {
     easing: `cubicBezier(.5, .05, .1, .3)`,
   }
 
+  const targets = {
+    faded: document.querySelectorAll(`[data-faded]`),
+    nav: document.querySelector(`nav.nav`),
+  }
+
+  /**
+   * Hover animations
+   */
+  hoverFx(document.querySelectorAll(`[hoverfx]`))
+
   /**
    * 👀 Observers
    */
   twoPathsObserver()
 
   fadeObserver({
-    targets: document.querySelectorAll(`[data-faded]`),
+    targets: targets.faded,
     duration: 1000,
     delay: 0,
     rootMargin: (() => {
       const offset = 50
 
-      const nav = document.querySelector(`nav.nav`)
-
-      const calculateOffset = () => nav
-        ? nav.scrollHeight + offset
+      const calculateOffset = () => targets.nav
+        ? targets.nav.scrollHeight + offset
         : offset
 
-      const navPinned = () => nav && (
-        nav.classList.contains(`headroom--pinned`)
-        || nav.classList.contains(`headroom--top`)
+      const navPinned = () => targets.nav && (
+        targets.nav.classList.contains(`headroom--pinned`)
+        || targets.nav.classList.contains(`headroom--top`)
       )
 
       const offsetPinned = `${calculateOffset()}px 0px ${calculateOffset()}px 0px`

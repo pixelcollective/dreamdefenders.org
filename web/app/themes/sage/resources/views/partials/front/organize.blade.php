@@ -22,7 +22,7 @@
               <form class="flex flex-col w-4/5 mx-auto text-black space-between" action="#">
                 <input type="text" class="py-4 my-2 text-center text-black placeholder-gray-500 focus:shadow-inset transition transition-duration-2000 transition-shadow" placeholder="Enter your email here.." />
 
-                <button type="submit" class="hover-scale-up py-4 my-2 tracking-wide uppercase bg-white text-black-900 font-display text-xl">
+                <button hoverfx on-s="1.1" off-s="1" on-bg-color="rgba(253,225,53,1)" off-bg-color="rgba(255,255,255,1)" type="submit" class="py-4 my-2 tracking-wide uppercase bg-white text-black-900 font-display text-xl">
                   Sign up
                 </button>
               </form>
