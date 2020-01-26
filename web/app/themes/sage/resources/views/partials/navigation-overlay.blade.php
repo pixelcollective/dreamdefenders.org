@@ -58,9 +58,9 @@
     </div>
 
     <nav class="relative flex flex-col text-center justify-middle" style="top: -0.75rem">
-      <a hoverfx fx-d="800" fx-on-s="1.1" fx-off-s="1" fx-on-t-y="-3px" fx-off-t-y="0px" class="hover-scale-up text-2xl text-white uppercase md:text-4xl font-display" href="#">Our Story</a>
-      <a hoverfx fx-d="800" fx-on-s="1.1" fx-off-s="1" fx-on-t-y="-3px" fx-off-t-y="0px" class="hover-scale-up text-2xl text-white uppercase md:text-4xl font-display" href="#">Ideology</a>
-      <a hoverfx fx-d="800" fx-on-s="1.1" fx-off-s="1" fx-on-t-y="-3px" fx-off-t-y="0px" class="hover-scale-up text-2xl text-white uppercase md:text-4xl font-display" href="#">Squadds</a>
+      <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="text-2xl text-white uppercase md:text-4xl font-display" href="#">Our Story</a>
+      <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="text-2xl text-white uppercase md:text-4xl font-display" href="#">Ideology</a>
+      <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="text-2xl text-white uppercase md:text-4xl font-display" href="#">Squadds</a>
     </nav>
   </div>
 
@@ -73,8 +73,8 @@
     </div>
 
     <nav class="relative flex flex-col text-center justify-middle" style="top: -0.75rem">
-      <a hoverfx fx-d="800" fx-on-s="1.1" fx-off-s="1" fx-on-t-y="-3px" fx-off-t-y="0px" class="hover-scale-up text-2xl text-white uppercase md:text-4xl font-display" href="#">Freedom Papers</a>
-      <a hoverfx fx-d="800" fx-on-s="1.1" fx-off-s="1" fx-on-t-y="-3px" fx-off-t-y="0px" class="hover-scale-up text-2xl text-white uppercase md:text-4xl font-display" href="#">Blog</a>
+      <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="text-2xl text-white uppercase md:text-4xl font-display" href="#">Freedom Papers</a>
+      <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="text-2xl text-white uppercase md:text-4xl font-display" href="#">Blog</a>
     </nav>
   </div>
 
@@ -87,7 +87,7 @@
     </div>
 
     <nav class="relative flex flex-col text-center justify-middle" style="top: -0.75rem">
-      <a hoverfx fx-d="800" fx-on-s="1.1" fx-off-s="1" fx-on-t-y="-3px" fx-off-t-y="0px" class="hover-scale-up text-2xl text-white uppercase md:text-4xl font-display" href="#">Projects</a>
+      <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="text-2xl text-white uppercase md:text-4xl font-display" href="#">Projects</a>
     </nav>
   </div>
 </div>

@@ -1,0 +1,17 @@
+{
+  "name": "@tinypixelco/hoverfx",
+  "version": "0.0.1",
+  "description": "Do stuff on hover.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pixelcollective/hoverfx"
+  },
+  "keywords": ["animejs", "hover"],
+  "author": "Kelly Mears <developers@tinypixel.dev> (https://kellymears.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pixelcollective/hoverfx/issues"
+  },
+  "homepage": "https://github.com/pixelcollective/hoverfx#readme"
+}

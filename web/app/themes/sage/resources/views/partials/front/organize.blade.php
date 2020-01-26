@@ -22,7 +22,7 @@
               <form class="flex flex-col w-4/5 mx-auto text-black space-between" action="#">
                 <input type="text" class="py-4 my-2 text-center text-black placeholder-gray-500 focus:shadow-inset transition transition-duration-2000 transition-shadow" placeholder="Enter your email here.." />
 
-                <button hoverfx fx-d="800" fx-on-s="1.1" fx-off-s="1" fx-on-bg="rgba(253,225,53,1)" fx-off-bg="rgba(255,255,255,1)" type="submit" class="py-4 my-2 tracking-wide uppercase bg-white text-black-900 font-display text-xl">
+                <button hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-bg-color="rgba(253,225,53,1)" fx-off-bg-color="rgba(255,255,255,1)" type="submit" class="py-4 my-2 tracking-wide uppercase bg-white text-black-900 font-display text-xl">
                   Sign up
                 </button>
               </form>
