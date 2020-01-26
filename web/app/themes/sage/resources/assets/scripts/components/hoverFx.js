@@ -1,48 +1,55 @@
 import anime from 'animejs'
 
 /**
+ * hoverFx
+ */
+export default els => els.forEach(target => {
+  target.addEventListener(`mouseenter`, () => fx(getAttr(target, `on`)), false)
+  target.addEventListener(`mouseleave`, () => fx(getAttr(target, `off`)), false)
+})
+
+/**
  * Animation
  */
 const fx = params => {
+  console.log(params)
   anime({
     targets: params.target,
     scale: params.scale,
-    translateX: params.translate.x,
-    translateY: params.translate.y,
+    translateX: params.translateX,
+    translateY: params.translateY,
     backgroundColor: params.backgroundColor,
     color: params.color,
-    loop: false,
-    duration: 800,
+    loop: params.loop,
+    duration: params.duration,
+    ease: params.easing,
+    elasticity: params.elasticity,
   })
 }
 
 /**
- * hoverFx
+ * Get single data attr
  */
-export default hoverTargets => {
-  hoverTargets.forEach(target => {
-    target.addEventListener(`mouseenter`, () => {
-      const color = target.getAttribute(`on-color`) ? target.getAttribute(`on-color`) : null
-      const backgroundColor = target.getAttribute(`on-bg-color`) ? target.getAttribute(`on-bg-color`) : null
-      const scale = target.getAttribute(`on-s`) ? target.getAttribute(`on-s`) : 1
-      const translate = {
-        x: target.getAttribute(`on-t-x`) ? target.getAttribute(`on-t-x`) : 0,
-        y: target.getAttribute(`on-t-y`) ? target.getAttribute(`on-t-y`) : 0,
-      }
-
-      fx({ target, scale, translate, backgroundColor, color })
-    }, false)
-
-    target.addEventListener(`mouseleave`, () => {
-      const color = target.getAttribute(`off-color`) ? target.getAttribute(`off-color`) : null
-      const backgroundColor = target.getAttribute(`off-bg-color`) ? target.getAttribute(`off-bg-color`) : null
-      const scale = target.getAttribute(`off-s`) ? target.getAttribute(`off-s`) : 1
-      const translate = {
-        x: target.getAttribute(`off-t-x`) ? target.getAttribute(`off-t-x`) : 0,
-        y: target.getAttribute(`off-t-y`) ? target.getAttribute(`off-t-y`) : 0,
-      }
-
-      fx({ target, scale, translate, backgroundColor, color })
-    }, false)
-  })
+const getFx = (target, state, attr, defaultVal) => {
+  return target.getAttribute(`fx-${attr}`)
+    ? target.getAttribute(`fx-${attr}`)
+    : target.getAttribute(`fx-${state}-${attr}`)
+      ? target.getAttribute(`fx-${state}-${attr}`)
+      : defaultVal
 }
+
+/**
+ * Collect data attr
+ */
+const getAttr = (target, state) => ({
+  target,
+  easing: getFx(target, state, `e`, `easeInOut`),
+  elasticity: getFx(target, state, `el`, 0),
+  scale: getFx(target, state, `s`, target.style.scale),
+  translateX: getFx(target, state, `t-x`, target.style.translateX),
+  translateY: getFx(target, state, `t-y`, target.style.translateY),
+  color: getFx(target, state, `c`, target.style.color),
+  duration: getFx(target, state, `d`, 0),
+  backgroundColor: getFx(target, state, `bg`, target.style.backgroundColor),
+  loop: getFx(target, state, `l`, false),
+})
