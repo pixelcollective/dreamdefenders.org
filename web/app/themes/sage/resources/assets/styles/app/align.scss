@@ -1,0 +1,25 @@
+.alignfull,
+.alignwide {
+  @apply my-12;
+}
+
+.alignwide {
+  margin-left: calc(-90vw/2 + 100%/2);
+  margin-right: calc(-90vw/2 + 100%/2);
+  max-width: 90vw;
+
+  img {
+    width: 90vw;
+  }
+}
+
+.alignfull {
+  margin-left: calc(-100vw/2 + 100%/2);
+  margin-right: calc(-100vw/2 + 100%/2);
+  max-width: 100vw !important;
+
+  img {
+    width: 100%;
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,9 @@
+ol {
+  @apply list-decimal;
+  @apply list-inside;
+}
+
+ul {
+  @apply list-disc;
+  @apply list-inside;
+}

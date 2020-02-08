@@ -25,6 +25,7 @@
   "devDependencies": {
     "@percy/cypress": "^2.2.0",
     "concurrently": "^5.0.2",
+    "cypress": "^3.8.1",
     "cypress-slack-reporter": "^0.5.0"
   }
 }

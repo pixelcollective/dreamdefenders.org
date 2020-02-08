@@ -1,0 +1,34 @@
+.wp-block-pullquote {
+  @apply border-none;
+
+  &.is-style-chonk {
+    blockquote {
+      @apply border-none;
+
+      p {
+        @apply text-5xl;
+        @apply text-gray-300;
+        @apply uppercase;
+        @apply font-bold;
+        @apply tracking-tight;
+        @apply text-left;
+        @apply break-normal;
+        @apply italic;
+
+        &::before {
+          @apply text-blue;
+
+          content: '“';
+          position: relative;
+        }
+
+        &::after {
+          @apply text-blue;
+
+          content: '”';
+          position: relative;
+        }
+      }
+    }
+  }
+}

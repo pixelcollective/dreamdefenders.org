@@ -58,6 +58,24 @@ domReady(() => {
         },
       ],
     },
+    {
+      block: 'core/pullquote',
+      styles: [
+        {
+          name: 'chonk',
+          label: __('Chonk', 'sage'),
+        },
+      ],
+    },
+    {
+      block: 'core/heading',
+      styles: [
+        {
+          name: 'epic',
+          label: __('Epic', 'sage'),
+        },
+      ],
+    },
   ]);
 
   /**
@@ -90,5 +108,6 @@ domReady(() => {
     'core/video',
     'tinypixel/two-column',
     'tinypixel/post-container',
+    'tinypixel/squadd',
   ]);
 });

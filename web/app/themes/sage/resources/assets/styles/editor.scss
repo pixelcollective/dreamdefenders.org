@@ -5,24 +5,24 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-.editor-styles-wrapper {
-  & * {
-    @import 'app/spacing';
-    @import 'app/typography';
+.block-editor-block-list__block {
+  @apply font-sans;
 
-    @apply font-sans;
-  }
+  /** app */
+  @import 'app/spacing';
+  @import 'app/typography';
+  @import 'app/align';
+  @import 'app/lists';
 
-  .wp-block,
-  .wp-block .editor-post-title__input {
-    max-width: 1024px;
-  }
+  /** blocks */
+  @import 'blocks/core-heading';
+  @import 'blocks/core-pullquote';
+}
 
-  .editor-post-title__input {
-    @apply font-display;
-    @apply text-4xl;
-    @apply uppercase;
-    @apply font-bold;
-    @apply tracking-tight;
-  }
+.editor-post-title__input {
+  @apply font-display;
+  @apply text-4xl;
+  @apply uppercase;
+  @apply font-bold;
+  @apply tracking-tight;
 }
