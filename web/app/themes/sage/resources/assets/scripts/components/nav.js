@@ -7,11 +7,10 @@ import { disableScroll, enableScroll } from '@util'
  * Site navigation
  */
 export default () => {
-  const { sage } = window
-
-  const nav     = document.querySelector(`nav.nav`)
-  const toggle  = document.querySelector(`[nav-toggle]`)
-  const overlay = document.querySelector(`.${toggle.getAttribute(`toggle-target`)}`)
+  const { sage } = window,
+        nav      = document.querySelector(`nav.nav`),
+        toggle   = document.querySelector(`[nav-toggle]`),
+        overlay  = document.querySelector(`.${toggle.getAttribute(`toggle-target`)}`)
 
   nav.style.backgroundColor = `rgba(${
     sage.isFrontPage ? `0,0,0,0.8` : `255,255,255,1`
@@ -54,6 +53,7 @@ const toggleAction = (sage, nav, toggle, overlay) => {
       : sage.isFrontPage ? [`rgba(0,0,0,0.8)`] : [`rgba(255,255,255,1)`],
     duration: 400,
     easing: `easeInOutSine`,
+    elasticity: 0,
   })
 }
 
@@ -86,6 +86,9 @@ const setIcon = state => {
     width: 0,
     opacity: [1, 0.5],
     rotate: '-180deg',
+    easing: `easeInOutSine`,
+    duration: 300,
+    elasticity: 0,
   })
 
   anime({
@@ -94,6 +97,9 @@ const setIcon = state => {
     width: '26',
     rotate: '-0deg',
     opacity: [0, 1],
+    easing: `easeInOutSine`,
+    duration: 300,
+    elasticity: 0,
   })
 }
 
@@ -101,7 +107,7 @@ const setIcon = state => {
  * Navbar scroll animation
  */
 const scroll = nav => {
-  const animateHeadroom = (params) => {
+  const animateHeadroom = params => {
     anime({
       targets: nav,
       duration: 400,

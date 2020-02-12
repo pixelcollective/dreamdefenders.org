@@ -106,6 +106,7 @@ domReady(() => {
     'core/quote',
     'core/table',
     'core/video',
+    'tinypixel/freedom-paper',
     'tinypixel/two-column',
     'tinypixel/post-container',
     'tinypixel/squadd',

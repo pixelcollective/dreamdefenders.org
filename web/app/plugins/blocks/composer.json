@@ -1,8 +1,7 @@
 {
-  "name": "tiny-pixel/dream-defenders-blocks",
-  "type": "library",
-  "version": "0.9.0",
-  "description": "For Dream Defenders",
+  "name": "tiny-pixel/dream-defenders-posttypes",
+  "type": "wp-plugin",
+  "version": "1.0.0",
   "license": "MIT",
   "authors": [
     {
@@ -14,9 +13,7 @@
   "prefer-stable": true,
   "require": {
     "php": ">=7.1",
-    "tightenco/collect": "^5.8",
-    "eftec/bladeone": "^3.24",
-    "php-di/php-di": "^6.0"
+    "tightenco/collect": "^5.8"
   },
   "autoload": {
     "files": [

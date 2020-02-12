@@ -13,7 +13,8 @@ const whitelist = [
 mx.setPublicPath('dist')
    .browserSync('dreamdefenders.vagrant')
 
-mx.block('resources/assets/scripts/blocks/TwoColumn/block.js', 'scripts/two-column.js')
+mx.block('resources/assets/scripts/blocks/FreedomPaper/block.js', 'scripts/freedom-paper.js')
+  .block('resources/assets/scripts/blocks/TwoColumn/block.js', 'scripts/two-column.js')
   .block('resources/assets/scripts/blocks/PostContainer/block.js', 'scripts/post-container.js')
   .block('resources/assets/scripts/blocks/Squadd/block.js', 'scripts/squadd.js')
 

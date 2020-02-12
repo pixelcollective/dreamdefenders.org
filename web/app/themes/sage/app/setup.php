@@ -208,3 +208,23 @@ add_action('widgets_init', function () {
         'id' => 'sidebar-footer'
     ] + $config);
 });
+
+/**
+ * Register PostTypes
+ */
+register_post_type('freedom-papers', [
+    'capability_type'   => 'post',
+    'has_archive'       => true,
+    'show_in_rest'      => true,
+    'labels' => [
+        'name'          => __('Freedom Papers', 'sage'),
+        'menu_name'     => __('Freedom Papers', 'sage'),
+        'singular_name' => __('Freedom Paper', 'sage'),
+    ],
+    'menu_icon'  => 'dashicons-pressthis',
+    'public'     => true,
+    'rewrite'    => ['slug' => 'freedom-papers'],
+    'supports'   => ['title', 'thumbnail', 'editor', 'meta'],
+    'template'    => [['tinypixel/freedom-paper']],
+    'template_lock' => 'insert',
+]);

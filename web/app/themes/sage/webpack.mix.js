@@ -1,13 +1,13 @@
-const { resolve, join } = require('path')
-
-const mx = require('laravel-mix'),
-      tw  = require('tailwind')
+const { resolve, join } = require('path'),
+   mx = require('laravel-mix'),
+   tw = require('tailwind')
 
 require('laravel-mix-wp-blocks')
 require('laravel-mix-purgecss')
 require('laravel-mix-copy-watched')
 
 const dev = `dreamdefenders.vagrant`;
+
 const whitelist = [
    /^wp-block-$/,
    /container/,
