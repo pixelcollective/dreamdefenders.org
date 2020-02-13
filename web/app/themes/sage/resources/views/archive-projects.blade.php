@@ -4,8 +4,8 @@
 @endsection
 
 @section('content')
-  <main class="container px-4 py-16 mx-auto">
-    @include('partials.header-page')
+  <main class="container px-4 py-32 mx-auto">
+    @include('partials.header-archive')
 
     @if (! have_posts())
       {!! get_search_form(false) !!}
@@ -13,12 +13,12 @@
 
     <div class="flex flex-row">
       @while(have_posts()) @php(the_post())
-        <div class="flex flex-col w-4/5 flex-2">
-          @include('partials.content')
-        </div>
-
-        <div class="flex flex-col flex-1 w-1/5">
-          @include('partials.sidebar')
+        <div class="flex flex-col flex-1">
+          <div class="bg-blue-300">
+            <a href="{!! get_the_permalink() !!}">
+              {!! get_the_title() !!}
+            </a>
+          </div>
         </div>
       @endwhile
     </div>

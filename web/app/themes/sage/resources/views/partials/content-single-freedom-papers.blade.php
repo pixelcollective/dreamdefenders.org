@@ -7,14 +7,6 @@
       </a>
     </div>
 
-    {{--
-      <h2 class="entry-title">
-        <a href="{{ get_permalink() }}">
-          {!! $title !!}
-        </a>
-      </h2>
-    --}}
-
     @if($content)
       {!! $content !!}
     @endif
