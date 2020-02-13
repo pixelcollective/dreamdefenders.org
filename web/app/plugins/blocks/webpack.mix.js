@@ -19,6 +19,7 @@ mx.block('resources/assets/scripts/blocks/Container/block.js', 'scripts/containe
   .block('resources/assets/scripts/blocks/PostContainer/block.js', 'scripts/post-container.js')
   .block('resources/assets/scripts/blocks/ProjectContainer/block.js', 'scripts/project-container.js')
   .block('resources/assets/scripts/blocks/Squadd/block.js', 'scripts/squadd.js')
+  .block('resources/assets/scripts/extensions/hide-title-block.js', 'scripts/hide-title-block.js')
 
 mx.sass('resources/assets/styles/public.scss', 'styles')
   .sass('resources/assets/styles/editor.scss', 'styles')

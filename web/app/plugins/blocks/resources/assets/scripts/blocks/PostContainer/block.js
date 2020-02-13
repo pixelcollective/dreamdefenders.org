@@ -2,8 +2,6 @@
 import { __ } from '@wordpress/i18n'
 import { registerBlockType } from '@wordpress/blocks'
 import { InnerBlocks } from '@wordpress/block-editor'
-import domReady from '@wordpress/dom-ready'
-import { injectGlobal } from 'emotion'
 
 /** components */
 import edit from './components/edit'
@@ -20,9 +18,3 @@ registerBlockType(`tinypixel/post-container`, {
   edit,
   save: () => <InnerBlocks.Content />
 })
-
-domReady(() => injectGlobal`
-  .editor-post-title {
-    display: none;
-  }
-`)
