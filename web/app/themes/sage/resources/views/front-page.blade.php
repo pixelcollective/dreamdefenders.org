@@ -9,13 +9,11 @@
 
   @include('partials.front.organize')
 
-  @while(have_posts()) @php(the_post())
-    <div class="container py-24 mx-auto">
-      @include('partials.content-page')
-    </div>
+  @include('partials.front.squadd-up')
 
-    @include('forms.dream-together')
-  @endwhile
+  @include('partials.front.freedom-papers-teaser')
+
+  @include('forms.dream-together')
 
   @include('components.instagram')
 @endsection
