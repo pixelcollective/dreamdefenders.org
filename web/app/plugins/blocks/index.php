@@ -24,7 +24,12 @@ $tinyblocks->addBlock(\TinyPixel\Blocks\Squadd::class);
 add_action('enqueue_block_editor_assets', function () {
     global $current_screen;
 
-    if ($current_screen->post_type == 'projects' || $current_screen->post_type == 'post') {
-        wp_enqueue_script('tinypixel/hide-title-block/js', plugins_url('dist/scripts/hide-title-block.js', __FILE__), ['wp-dom-ready']);
+    if ($current_screen->post_type == 'projects'
+        || $current_screen->post_type == 'post') {
+        wp_enqueue_script(
+            'tinypixel/hide-title-block/js',
+            plugins_url('dist/scripts/hide-title-block.js', __FILE__),
+            ['wp-dom-ready']
+        );
     }
 });
