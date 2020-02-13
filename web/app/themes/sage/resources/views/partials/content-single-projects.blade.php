@@ -18,6 +18,7 @@
     <h2 class="font-display text-4xl font-hairline font-bold leading-relaxed text-center">
       Explore our other projects
     </h2>
+
     <div class="flex flex-col md:flex-row flex-wrap">
       @each('components.simple-card', $projects, 'card')
     </div>

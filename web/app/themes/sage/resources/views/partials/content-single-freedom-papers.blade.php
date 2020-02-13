@@ -30,3 +30,15 @@
     </div>
   </article>
 </div>
+
+@if($papers->isNotEmpty())
+  <div class="px-4 py-16">
+    <h2 class="font-display text-4xl font-hairline font-bold leading-relaxed text-center">
+      Select a volume below
+    </h2>
+
+    <div class="flex flex-col md:flex-row flex-wrap">
+      @each('components.simple-card', $papers, 'card')
+    </div>
+  </div>
+@endif
