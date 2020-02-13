@@ -2,7 +2,6 @@
 import { useCallback } from '@wordpress/element'
 import { __ } from '@wordpress/i18n'
 import { Button } from '@wordpress/components'
-import { format } from '@wordpress/date'
 import {
   InnerBlocks,
   MediaUpload,
@@ -12,19 +11,15 @@ import {
 
 import usePost from '../../../hooks/usePost'
 
-const PostedOn = ({ date }) => {
-  return date && (
-    <div className={`font-sans uppercase text-lg`}>
-      { format(`F j, Y`, date) }
-    </div>
-  )
-}
-
-const edit = ({ attributes, setAttributes, className, isSelected, ...props }) => {
+const edit = ({
+  attributes,
+  setAttributes,
+  className,
+  isSelected,
+}) => {
   const { post, setPost } = usePost()
-
   const { media } = attributes
-  const { title, date } = post
+  const { title } = post
 
   const onTitle = useCallback((title) => {
     setAttributes({ title })
@@ -43,12 +38,10 @@ const edit = ({ attributes, setAttributes, className, isSelected, ...props }) =>
           <RichText
             tagName={`h1`}
             className={`font-display text-3xl inline-block uppercase font-bold break-all`}
-            placeholder={__(`Post Title...`, `tinypixel`)}
+            placeholder={__(`Project Title...`, `tinypixel`)}
             value={title}
             allowedFormats={[]}
             onChange={onTitle} />
-
-          <PostedOn date={date} />
 
           <MediaUploadCheck>
             <MediaUpload
@@ -72,15 +65,15 @@ const edit = ({ attributes, setAttributes, className, isSelected, ...props }) =>
               )} />
           </MediaUploadCheck>
         </div>
-      </div>
 
-      <div className={`flex w-full md:w-1/2 flex-col`}>
-        <InnerBlocks
-          templateLock={false}
-          template={[
-            ['core/heading', { placeholder: 'Enter heading..' }],
-            ['core/paragraph', { placeholder: 'Enter content...' }],
-          ]} />
+        <div className={`flex w-full md:w-1/2 flex-col`}>
+          <InnerBlocks
+            templateLock={false}
+            template={[
+              ['core/heading', { placeholder: 'Enter heading..' }],
+              ['core/paragraph', { placeholder: 'Enter content...' }],
+            ]} />
+        </div>
       </div>
     </div>
   )

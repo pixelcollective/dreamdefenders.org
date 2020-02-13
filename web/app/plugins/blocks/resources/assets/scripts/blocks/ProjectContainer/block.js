@@ -8,12 +8,11 @@ import { injectGlobal } from 'emotion'
 /** components */
 import edit from './components/edit'
 
-registerBlockType(`tinypixel/post-container`, {
-  title: __(`Post container`, `tiny-pixel`),
+registerBlockType(`tinypixel/project-container`, {
+  title: __(`Project container`, `tiny-pixel`),
   category: `layout`,
   attributes: {
     title: { type: `string` },
-    date:  { type: `string` },
     media: { type: `object` },
   },
   supports: { align: true },

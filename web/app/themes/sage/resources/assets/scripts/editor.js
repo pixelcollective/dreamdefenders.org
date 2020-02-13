@@ -82,6 +82,12 @@ domReady(() => {
    * Restrict blocks to the following list.
    */
   whitelistBlocks([
+    'tinypixel/container',
+    'tinypixel/post-container',
+    'tinypixel/project-container',
+    'tinypixel/freedom-paper',
+    'tinypixel/two-column',
+    'tinypixel/squadd',
     'core/audio',
     'core/button',
     'core/column',
@@ -106,9 +112,5 @@ domReady(() => {
     'core/quote',
     'core/table',
     'core/video',
-    'tinypixel/freedom-paper',
-    'tinypixel/two-column',
-    'tinypixel/post-container',
-    'tinypixel/squadd',
   ]);
 });
