@@ -1,10 +1,10 @@
-<div class="container mx-auto wp-blocks-tinypixel-post-container">
+<div class="container md:w-3/5 mx-auto wp-blocks-tinypixel-post-container">
   <div class="flex flex-col md:flex-row">
     <div class="flex-col w-full">
       @isset($attr->media)
         @if($attr->media)
-          <div class="w-full pb-6 md:pb-0">
-            <img class="w-full pb-8" src="{!! $attr->media->sizes['large']['url'] !!}" />
+          <div class="w-full min-w-full pb-6 md:pb-0">
+            <img class="w-full min-w-full mx-auto pb-8 text-center" src="{!! $attr->media->sizes['large']['url'] !!}" />
           </div>
 
           <h1 class="inline-block font-sans text-3xl font-bold uppercase break-all mx-auto text-center w-full">

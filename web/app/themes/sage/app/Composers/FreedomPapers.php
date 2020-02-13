@@ -3,13 +3,13 @@
 namespace App\Composers;
 
 use Illuminate\Support\Collection;
-use Roots\Acorn\View\Composer;
+use App\Composers\BaseComposer;
 use Roots\Acorn\View\Composers\Concerns\Arrayable;
 
 /**
  * Freedom Papers
  */
-class FreedomPapers extends Composer
+class FreedomPapers extends BaseComposer
 {
     use Arrayable;
 
@@ -20,6 +20,7 @@ class FreedomPapers extends Composer
      */
     protected static $views = [
         'partials.content-single-freedom-papers',
+        'partials.archive-freedom-papers',
     ];
 
     /**
@@ -41,12 +42,15 @@ class FreedomPapers extends Composer
     {
         return Collection::make((new \WP_Query([
             'post_type' => 'freedom-papers',
-            'post__not_in' => [get_the_id()],
-            'posts_per_page' => 32,
+            'post__not_in' => $this->excluding(),
+            'posts_per_page' => 8,
         ]))->get_posts())->map(function ($freedomPaper) {
             return (object) [
+                'id'    => $freedomPaper->ID,
                 'title' => $freedomPaper->post_title,
+                'excerpt' => $this->excerpt($freedomPaper),
                 'url'   => "/freedom-papers/{$freedomPaper->post_name}",
+                'image' => get_the_post_thumbnail_url($freedomPaper->ID),
             ];
         });
     }

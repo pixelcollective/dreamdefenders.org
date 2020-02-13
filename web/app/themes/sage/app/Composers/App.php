@@ -25,6 +25,7 @@ class App extends Composer
                 'name' => $this->siteName(),
                 'postType' => $this->postType(),
             ],
+            'accounts' => $this->accounts,
         ];
     }
 
@@ -44,5 +45,19 @@ class App extends Composer
     public function postType()
     {
         return get_post_type();
+    }
+
+    /**
+     * Social media accounts
+     *
+     * @return object
+     */
+    public function accounts(): object
+    {
+        return (object) [
+            'facebook'  => 'https://facebook.com/dreamdefenders',
+            'twitter'   => 'https://twitter.com/dreamdefenders',
+            'instagram' => 'https://instagram.com/thedreamdefenders',
+        ];
     }
 }

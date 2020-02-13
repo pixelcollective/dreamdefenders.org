@@ -67,12 +67,7 @@ const edit = ({
         </div>
 
         <div className={`flex w-full md:w-1/2 flex-col`}>
-          <InnerBlocks
-            templateLock={false}
-            template={[
-              ['core/heading', { placeholder: 'Enter heading..' }],
-              ['core/paragraph', { placeholder: 'Enter content...' }],
-            ]} />
+          <InnerBlocks templateLock={false} />
         </div>
       </div>
     </div>

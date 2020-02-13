@@ -19,7 +19,8 @@ $tinyblocks->addBlock(\TinyPixel\Blocks\ProjectContainer::class);
 $tinyblocks->addBlock(\TinyPixel\Blocks\Squadd::class);
 
 /**
- * Conditional scripts
+ * Hide the default post title block
+ * on posts that have their own version ('projects' & 'post' types)
  */
 add_action('enqueue_block_editor_assets', function () {
     global $current_screen;

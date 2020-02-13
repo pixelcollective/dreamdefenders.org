@@ -3,13 +3,13 @@
 namespace App\Composers;
 
 use Illuminate\Support\Collection;
-use Roots\Acorn\View\Composer;
+use App\Composers\BaseComposer;
 use Roots\Acorn\View\Composers\Concerns\Arrayable;
 
 /**
  * Projects
  */
-class Projects extends Composer
+class Projects extends BaseComposer
 {
     use Arrayable;
 
@@ -20,6 +20,7 @@ class Projects extends Composer
      */
     protected static $views = [
         'partials.content-single-projects',
+        'partials.archive-projects',
     ];
 
     /**
@@ -41,12 +42,15 @@ class Projects extends Composer
     {
         return Collection::make((new \WP_Query([
             'post_type' => 'projects',
-            'post__not_in' => [get_the_id()],
+            'post__not_in' => $this->excluding(),
             'posts_per_page' => 4,
         ]))->get_posts())->map(function ($project) {
             return (object) [
+                'id'    => $project->ID,
                 'title' => $project->post_title,
+                'excerpt' => $this->excerpt($project),
                 'url'   => "/projects/{$project->post_name}",
+                'image' => get_the_post_thumbnail_url($project->ID),
             ];
         });
     }

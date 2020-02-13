@@ -189,11 +189,13 @@ add_action('after_setup_theme', function () {
  * Standard Post Posttype
  */
 add_action('init', function () {
-   $post = get_post_type_object('post');
-   $post->template = [
+    $post = get_post_type_object('post');
+
+    $post->template = [
         ['tinypixel/post-container'],
         ['tinypixel/container'],
     ];
+
     $post->template_lock = 'INSERT';
 
     register_post_type('post', $post);
