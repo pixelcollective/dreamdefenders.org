@@ -1,8 +1,5 @@
 @extends('layouts.app')
 
-@section('header')
-@endsection
-
 @section('content')
   <main class="container px-4 py-16 mx-auto">
     @include('partials.header-page')
