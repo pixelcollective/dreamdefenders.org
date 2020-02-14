@@ -25,13 +25,13 @@ export default () => {
   }
 
   const observer = new IntersectionObserver(els => {
-    const cross = document.querySelector(`.exOut`)
+    const cross     = document.querySelector(`.exOut`)
     const badThings = document.querySelector(`.two-paths-left`)
-    const badText = document.querySelector(`.two-paths-left h2`)
+    const badText   = document.querySelector(`.two-paths-left h2`)
     const dividerOr = document.querySelector(`.divider-or`)
-    const riseBg = document.querySelector(`.two-paths-right .we-rise-bg-container`)
+    const riseBg    = document.querySelector(`.two-paths-right .we-rise-bg-container`)
     const riseImage = document.querySelector(`.two-paths-right .we-rise-bg-container .we-rise-bg`)
-    const riseText = document.querySelector(`.two-paths-right h2`)
+    const riseText  = document.querySelector(`.two-paths-right h2`)
 
     const minHeight = badThings && badThings.clientHeight;
 
@@ -42,7 +42,7 @@ export default () => {
         })
 
         badThings && animate(badThings, {
-          width: `0em`,
+          width: 0,
           opacity: 0,
           height: 0,
         })

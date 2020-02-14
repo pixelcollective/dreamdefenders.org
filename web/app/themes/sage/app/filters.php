@@ -9,6 +9,8 @@
 
 namespace App;
 
+use Illuminate\Support\Collection;
+
 /**
  * Add "… Continued" to the excerpt.
  *
