@@ -8,6 +8,8 @@ import {
 }  from '@components'
 
 domReady(() => {
+  const { sage } = window
+
   const config = {
     easing: `cubicBezier(.5, .05, .1, .3)`,
   }
@@ -25,7 +27,7 @@ domReady(() => {
   /**
    * 👀 Observers
    */
-  twoPathsObserver()
+  sage.isFrontPage && twoPathsObserver()
 
   fadeObserver({
     targets: targets.faded,
