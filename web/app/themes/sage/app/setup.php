@@ -22,6 +22,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('sage/app.js', asset('scripts/app.js')->uri(), ['sage/vendor.js', 'wp-dom-ready'], null, true);
     wp_localize_script('sage/app.js', 'sage', [
         'post'        => get_post(),
+        'isPage'      => (bool) is_page(),
         'isFrontPage' => (bool) is_front_page(),
         'isHome'      => (bool) is_home(),
     ]);
@@ -200,6 +201,7 @@ add_action('init', function () {
 
     register_post_type('post', $post);
 });
+
 
 /**
  * Freedom Papers PostType

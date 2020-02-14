@@ -1,11 +1,5 @@
 
-<nav class="nav fixed z-50 flex flex-col items-center justify-between w-full overflow-hidden transition">
-{{--   <div class="w-full">
-    @alert(['label' => 'Work-in-progress', 'build' => env(GIT_SHA)])
-      Product is under active development.
-    @endalert
-  </div> --}}
-
+<nav class="bg-transparent nav fixed z-50 flex flex-col items-center justify-between w-full overflow-hidden transition">
   <div class="container text-black">
     <div class="flex flex-row justify-between w-full">
       <div class="flex items-center justify-middle">

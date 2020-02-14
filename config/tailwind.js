@@ -217,6 +217,7 @@ module.exports = tailwind({
       '4xl': '2.25rem',
       '5xl': '3rem',
       '6xl': '4rem',
+      '7xl': '6rem',
     },
     fontWeight: {
       hairline:  100,

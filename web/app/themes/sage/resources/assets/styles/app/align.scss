@@ -1,5 +1,5 @@
-.alignfull,
-.alignwide {
+.alignfull:not(.override),
+.alignwide:not(.override) {
   @apply my-12;
 }
 

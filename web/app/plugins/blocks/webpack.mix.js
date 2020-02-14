@@ -14,6 +14,7 @@ mx.setPublicPath('dist')
    .browserSync('dreamdefenders.vagrant')
 
 mx.block('resources/assets/scripts/blocks/Container/block.js', 'scripts/container.js')
+  .block('resources/assets/scripts/blocks/Banner/block.js', 'scripts/banner.js')
   .block('resources/assets/scripts/blocks/FreedomPaper/block.js', 'scripts/freedom-paper.js')
   .block('resources/assets/scripts/blocks/TwoColumn/block.js', 'scripts/two-column.js')
   .block('resources/assets/scripts/blocks/PostContainer/block.js', 'scripts/post-container.js')

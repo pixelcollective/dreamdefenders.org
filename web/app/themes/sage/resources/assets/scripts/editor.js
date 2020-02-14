@@ -79,9 +79,10 @@ domReady(() => {
   ]);
 
   /**
-   * Restrict blocks to the following list.
+   * Setup block whitelist.
    */
   whitelistBlocks([
+    'tinypixel/banner',
     'tinypixel/container',
     'tinypixel/post-container',
     'tinypixel/project-container',

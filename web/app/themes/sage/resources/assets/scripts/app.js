@@ -38,7 +38,7 @@ domReady(() => {
         ? targets.nav.scrollHeight + offset
         : offset
 
-      const navPinned = () => targets.nav && (
+      const isNavPinned = () => targets.nav && (
         targets.nav.classList.contains(`headroom--pinned`)
         || targets.nav.classList.contains(`headroom--top`)
       )
@@ -46,7 +46,7 @@ domReady(() => {
       const offsetPinned = `${calculateOffset()}px 0px ${calculateOffset()}px 0px`
       const offsetUnpinned = `${offset}px 0px ${offset}px 0px`
 
-      return navPinned() ? offsetPinned : offsetUnpinned
+      return isNavPinned() ? offsetPinned : offsetUnpinned
     })(),
   }).init()
 

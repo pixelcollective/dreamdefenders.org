@@ -7,38 +7,51 @@ import { disableScroll, enableScroll } from '@util'
  * Site navigation
  */
 export default () => {
-  const { sage } = window,
-        nav      = document.querySelector(`nav.nav`),
-        toggle   = document.querySelector(`[nav-toggle]`),
-        overlay  = document.querySelector(`.${toggle.getAttribute(`toggle-target`)}`)
+  const { sage }  = window,
+        navEl     = document.querySelector(`nav.nav`),
+        toggleEl  = document.querySelector(`[nav-toggle]`),
+        overlayEl = document.querySelector(`.${toggleEl.getAttribute(`toggle-target`)}`)
 
-  nav.style.backgroundColor = `rgba(${
-    sage.isFrontPage ? `0,0,0,0.8` : `255,255,255,1`
+  navEl.style.backgroundColor = `rgba(${ sage.isPage
+    ? `0,0,0,0`
+    : `255,255,255,1`
   })`
 
-  overlay.style.height = 0
-  overlay.style.opacity = 0
+  overlayEl.style.height = 0;
+  overlayEl.style.opacity = 0;
 
-  toggle.addEventListener(`click`, () => {
-    toggleAction(sage, nav, toggle, overlay)
+  toggleEl.addEventListener(`click`, () => {
+    toggleAction(sage, navEl, toggleEl, overlayEl)
   })
 
-  scroll(nav)
+  scroll(navEl)
 }
+
+/**
+ * Set toggle state
+ */
+const setToggle = target =>
+  target.setAttribute(`nav-toggle`, isToggled(target) ? `off` : `on`)
+
+/**
+ * Return true if overlay is toggled
+ */
+const isToggled = target =>
+  target.getAttribute(`nav-toggle`) == `on`
 
 /**
  * Toggle overlay menu
  */
-const toggleAction = (sage, nav, toggle, overlay) => {
-  const toggled = ! isToggled(toggle)
+const toggleAction = (sage, navEl, toggleEl, overlayEl) => {
+  setToggle(toggleEl)
 
-  setToggle(toggle)
+  const toggled = isToggled(toggleEl)
 
   toggled ? disableScroll() : enableScroll()
   toggled ? setIcon('close') : setIcon('open')
 
   anime({
-    targets:  overlay,
+    targets:  overlayEl,
     height:   toggled ? [`0`, `100vh`] : [`100vh`, `0`],
     opacity:  toggled ? [0, 100] : [100, 0],
     duration: 300,
@@ -47,10 +60,12 @@ const toggleAction = (sage, nav, toggle, overlay) => {
   })
 
   anime({
-    targets:  nav,
-    backgroundColor: toggled
-      ? [`rgba(0,0,0,1)`]
-      : sage.isFrontPage ? [`rgba(0,0,0,0.8)`] : [`rgba(255,255,255,1)`],
+    targets:  navEl,
+    backgroundColor: [
+      toggled ? `rgba(0,0,0,1)`
+        : sage.isPage ? `rgba(0,0,0,0)`
+          : `rgba(255,255,255,1)`,
+    ],
     duration: 400,
     easing: `easeInOutSine`,
     elasticity: 0,
@@ -58,27 +73,11 @@ const toggleAction = (sage, nav, toggle, overlay) => {
 }
 
 /**
- * Set toggle state
- */
-const setToggle = target => {
-  const newState = isToggled(target) ? "off" : "on"
-
-  return target.setAttribute(`nav-toggle`, newState)
-}
-
-/**
- * Return true if overlay is toggled
- */
-const isToggled = target => {
-  return target.getAttribute(`nav-toggle`) == "on";
-}
-
-/**
  * Animate overlay toggle icon
  */
 const setIcon = state => {
-  const icons = document.querySelectorAll(`.menu-icon`)
-  const newIcon = document.querySelector(`.menu-icon-${state}`)
+  const icons   = document.querySelectorAll(`.menu-icon`),
+        newIcon = document.querySelector(`.menu-icon-${state}`)
 
   anime({
     targets: icons,
