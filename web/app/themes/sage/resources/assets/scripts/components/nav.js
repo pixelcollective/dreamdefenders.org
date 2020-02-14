@@ -12,14 +12,18 @@ export default () => {
         toggleEl  = document.querySelector(`[nav-toggle]`),
         overlayEl = document.querySelector(`.${toggleEl.getAttribute(`toggle-target`)}`)
 
-  navEl.style.backgroundColor = `rgba(${ sage.isPage
-    ? `0,0,0,0`
-    : `255,255,255,1`
-  })`
-
+  /** Collapse overlay nav */
   overlayEl.style.height = 0;
   overlayEl.style.opacity = 0;
 
+  /** Set initial topbar background  */
+  navEl.style.backgroundColor = (
+    sage.isPage || sage.isFrontPage
+      ? `rgba(0, 0, 0, 0)`
+      : `rgba(255, 255, 255, 1)`
+  )
+
+  /** Initialize listener for menu clicks */
   toggleEl.addEventListener(`click`, () => {
     toggleAction(sage, navEl, toggleEl, overlayEl)
   })
@@ -30,14 +34,18 @@ export default () => {
 /**
  * Set toggle state
  */
-const setToggle = target =>
+const setToggle = target => {
   target.setAttribute(`nav-toggle`, isToggled(target) ? `off` : `on`)
+
+  return target.getAttribute(`nav-toggle`)
+}
 
 /**
  * Return true if overlay is toggled
  */
-const isToggled = target =>
-  target.getAttribute(`nav-toggle`) == `on`
+const isToggled = target => {
+  return target.getAttribute(`nav-toggle`) == `on`
+}
 
 /**
  * Toggle overlay menu
@@ -63,8 +71,7 @@ const toggleAction = (sage, navEl, toggleEl, overlayEl) => {
     targets:  navEl,
     backgroundColor: [
       toggled ? `rgba(0,0,0,1)`
-        : sage.isPage ? `rgba(0,0,0,0)`
-          : `rgba(255,255,255,1)`,
+        : sage.isPage || sage.isFrontPage ? `rgba(0,0,0,0)` : `rgba(255,255,255,1)`,
     ],
     duration: 400,
     easing: `easeInOutSine`,

@@ -202,7 +202,6 @@ add_action('init', function () {
     register_post_type('post', $post);
 });
 
-
 /**
  * Freedom Papers PostType
  */

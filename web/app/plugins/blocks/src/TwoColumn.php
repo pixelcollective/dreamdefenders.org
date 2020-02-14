@@ -39,7 +39,7 @@ class TwoColumn extends Block
             ->setManifest(WP_PLUGIN_DIR . '/blocks/dist/scripts/two-column.asset.php');
 
         $publicStyle = $this->makeAsset()
-            ->setName('tinypixel/twocolumn/public/css')
+            ->setName('tinypixel/public/css')
             ->setUrl(plugins_url() . '/blocks/dist/styles/public.css');
 
         $this->addEditorStyle($editorStyle);

@@ -1,6 +1,9 @@
 /** @wordpress */
 import { __ } from '@wordpress/i18n'
-import { registerBlockType } from '@wordpress/blocks'
+import {
+  registerBlockType,
+  registerBlockStyle,
+} from '@wordpress/blocks'
 import { InnerBlocks } from '@wordpress/block-editor'
 
 /** @tinypixelco components */
@@ -27,14 +30,35 @@ registerBlockType(`tinypixel/banner`, {
       value: 'full',
       default: 'full',
     },
-    backgroundStyle: {
-      type: 'string',
-      default: 'cover',
+    background: {
+      type: 'object',
+      default: {
+        media: null,
+        attachment: `default`,
+        position: {
+          x: 50,
+          y: 50,
+        },
+        size: `cover`,
+        scale: 100,
+      }
     },
     containerSize: {
       type: 'object',
       default: {
         height: `500px`,
+      },
+    },
+    classes: {
+      type: 'string',
+      default: 'wp-block-tinypixel-banner',
+    },
+    overlay: {
+      type: 'object',
+      default: {
+        raw: '#000000',
+        opacity: 8,
+        rendered: 'rgba(0, 0, 0, 0.8)',
       },
     },
   },

@@ -12,6 +12,7 @@ const whitelist = [
    /^wp-block-$/,
    /container/,
    /blockquote/,
+   /^is-style-$/,
 ];
 
 mx.setPublicPath(`./dist`)

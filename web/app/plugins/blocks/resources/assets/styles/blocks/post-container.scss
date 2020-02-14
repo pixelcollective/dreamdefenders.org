@@ -1,0 +1,56 @@
+.wp-block {
+  &-tinypixel-post-container,
+  &-tinypixel-twocolumn {
+    @apply flex;
+    @apply flex-col;
+    @apply justify-between;
+
+    &__column-a,
+    &__column-b {
+      @apply w-full;
+      @apply flex-col;
+    }
+
+    &__column-a {
+      &__heading {
+        @apply font-sans;
+        @apply text-3xl;
+        @apply inline-block;
+        @apply uppercase;
+        @apply font-bold;
+        @apply break-all;
+      }
+
+      &__media {
+        @apply w-full;
+
+        img {
+          @apply max-w-full;
+        }
+      }
+    }
+  }
+}
+
+@screen md {
+  .wp-block {
+    &-tinypixel-post-container,
+    &-tinypixel-twocolumn {
+      @apply flex-row;
+    }
+
+    &-tinypixel-post-container {
+      &__column-a,
+      &__column-b {
+        @apply w-1/2;
+      }
+    }
+
+    &-tiny-pixel-twocolumn {
+      &__column-a,
+      &__column-b {
+        @apply w-2/5;
+      }
+    }
+  }
+}

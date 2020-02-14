@@ -2,68 +2,125 @@
 import { __ } from '@wordpress/i18n'
 import { MediaUpload } from '@wordpress/block-editor'
 import {
+  ColorPalette,
   RadioControl,
   FocalPointPicker,
   PanelBody,
+  RangeControl,
 } from '@wordpress/components'
+
+/** external */
+import { css } from '@emotion/core'
 
 /**
  * Background image panel
  */
 export default ({
-  media,
-  onMedia,
-  focal,
-  onFocal,
-  backgroundStyle,
-  onBackgroundStyle,
+  background,
+  themeColors,
+  overlay,
+  onBackgroundPosition,
+  onBackgroundMedia,
+  onBackgroundAttachment,
+  onBackgroundSize,
+  onBackgroundScale,
+  onOverlayColor,
+  onOverlayOpacity
 }) => (
   <>
-    <PanelBody title={__('Background media', 'tiny-pixel')}>
+    <PanelBody title={__("Background media", "tiny-pixel")}>
       <MediaUpload
-        label={__('Background media', 'tiny-pixel')}
-        value={media && media.url}
-        onSelect={onMedia}
+        label={__("Background media", "tiny-pixel")}
+        value={background.media && background.media.url}
+        onSelect={onBackgroundMedia}
         render={({ open }) => (
           <>
             <div className={`mb-2 w-full`}>
-              {! media ? 'Select' : 'Change'} background media
+              {! background.media ? "Select" : "Change"} background media
             </div>
 
             <button className="primary button button-primary" onClick={open}>
-              { ! media
-                ? __('Select media', 'tiny-pixel')
-                : __('Change media', 'tiny-pixel') }
+              {! background.media
+                ? __("Select media", "tiny-pixel")
+                : __("Change media", "tiny-pixel")}
             </button>
           </>
-        )} />
+        )}
+      />
     </PanelBody>
 
-    { media && (
+    {background.media && (
       <>
-        <PanelBody title={__('Background position', 'tiny-pixel')}>
+        <PanelBody title={__("Background position", "tiny-pixel")}>
           <FocalPointPicker
-            label={__('Select background focus', 'tiny-pixel')}
-            url={media.thumb ? media.thumb.src : media.url}
-            value={focal}
-            onChange={onFocal}
+            label={__("Select background focus", "tiny-pixel")}
+            url={
+              background.media.thumb
+                ? background.media.thumb.src
+                : background.media.url
+            }
+            value={background.position}
+            onChange={onBackgroundPosition}
             dimensions={{
-              width: media.width,
-              height: media.height,
-            }} />
+              width: background.media.width,
+              height: background.media.height
+            }}
+          />
         </PanelBody>
 
         <PanelBody title={__('Background style', 'tiny-pixel')}>
           <RadioControl
-            label="Background style"
+            label='Background size'
             options={[
               { label: 'Cover', value: 'cover' },
-              { label: 'Fixed', value: 'fixed' },
+              { label: 'Manual', value: 'manual' }
             ]}
-            selected={ backgroundStyle }
-            onChange={ onBackgroundStyle } />
+            selected={background.size}
+            onChange={onBackgroundSize} />
+
+          { background.size == `manual` && (
+            <RangeControl
+              label={__("Background scale", "tiny-pixel")}
+              value={background.scale}
+              onChange={onBackgroundScale}
+              min={1}
+              max={300}
+              afterIcon={`search`} />
+          )}
+
+          <RadioControl
+            label={__('Background attachment', 'tiny-pixel')}
+            options={[
+              { label: "Default", value: "default" },
+              { label: "Fixed", value: "fixed" },
+            ]}
+            selected={background.attachment}
+            onChange={onBackgroundAttachment} />
+        </PanelBody>
+
+        <PanelBody title={__("Overlay settings", "tiny-pixel")}>
+          <ColorPalette
+            label={__("Overlay color", "tiny-pixel")}
+            value={overlay.raw}
+            onChange={onOverlayColor}
+            colors={themeColors}
+          />
+
+          <RangeControl
+            label={__("Overlay transparency", "tiny-pixel")}
+            value={overlay.opacity}
+            onChange={onOverlayOpacity}
+            min={0}
+            max={10}
+            afterIcon={overlay.opacity > 0 ? `visibility` : `hidden`}
+            css={css`
+              .components-range-control__number {
+                display: none;
+              }
+            `}
+          />
         </PanelBody>
       </>
     )}
   </>
-)
+);

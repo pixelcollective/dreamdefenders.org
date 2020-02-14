@@ -5,9 +5,10 @@ const mx = require('laravel-mix'),
            require('laravel-mix-tweemotional')
 
 const whitelist = [
-  /^wp-block-$/,
+  /wp-block-.?/,
   /container/,
   /blockquote/,
+  /is-style-.?/,
 ]
 
 mx.setPublicPath('dist')
@@ -31,6 +32,7 @@ mx.sass('resources/assets/styles/public.scss', 'styles')
     enabled: true,
     globs: [
       path.join(__dirname, 'resources/**/*.php'),
+      path.join(__dirname, 'resources/assets/**/*.scss'),
       path.join(__dirname, 'resources/assets/**/*.js'),
     ],
     extensions: ['js', 'php'],
@@ -38,5 +40,6 @@ mx.sass('resources/assets/styles/public.scss', 'styles')
     whitelistPatternsChildren: whitelist,
   })
 
-mx.sourceMaps(false, 'source-map')
-   .version();
+mx.tweemotional()
+  .sourceMaps(false, 'source-map')
+  .version();
