@@ -11,7 +11,7 @@
   </div>
 
   <div class="flex flex-row overflow-hidden relative">
-    <div class="divider-or absolute inline-block bg-black text-white z-30 uppercase font-bold px-2 py-1" style="top: 40%; left: 48%;">
+    <div class="divider-or absolute inline-block bg-black text-white z-30 uppercase font-bold px-2 py-1" style="top: 40%; left: 48.6%;">
       Or
     </div>
 
