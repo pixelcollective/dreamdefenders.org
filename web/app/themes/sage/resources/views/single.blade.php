@@ -2,7 +2,7 @@
 
 @section('content')
   @while(have_posts()) @php(the_post())
-    @include("partials.content-single-{$postType}")
+    @includeFirst(["partials.content-single-{$postType}", "partials.content-single"])
   @endwhile
 
   @include('components.instagram')
