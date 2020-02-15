@@ -41,7 +41,7 @@ registerBlockType(`tinypixel/banner`, {
         },
         size: `cover`,
         scale: 100,
-      }
+      },
     },
     containerSize: {
       type: 'object',

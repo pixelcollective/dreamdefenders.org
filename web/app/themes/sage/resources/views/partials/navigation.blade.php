@@ -3,25 +3,25 @@
   <div class="container text-black">
     <div class="flex flex-row justify-between w-full">
       <div class="flex items-center justify-middle">
-        <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="w-32 my-4 ml-0 no-underline blend-difference nav-logo hover:no-underline" href="/" title="Dream Defenders">
+        <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="w-32 my-4 ml-0 no-underline blend-difference nav-logo hover:no-underline" href="{!! $app->site->url !!}" title="Dream Defenders">
           @svg('logo', 'w-full fill-current blend-difference', ['height' => 64])
         </a>
       </div>
 
       <div class="items-center justify-between text-white align-middle blend-difference hidden md:flex">
-        <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="/" title="Dream Defenders">
+        <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->facebook !!}" title="Dream Defenders">
           @brands('facebook-f', 'w-full fill-current', ['width' => 28, 'height' => 28])
         </a>
 
-        <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="/" title="Dream Defenders">
+        <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->twitter !!}" title="Dream Defenders">
           @brands('twitter', 'w-full fill-current', ['width' => 28, 'height' => 28])
         </a>
 
-        <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 align-middle justify-center text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="/" title="Dream Defenders" style="overflow-x: hidden;">
+        <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 align-middle justify-center text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->instagram !!}" title="Dream Defenders" style="overflow-x: hidden;">
           @brands('instagram', 'w-full fill-current pl-1', ['width' => 32, 'height' => 32])
         </a>
 
-        <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="/" title="Dream Defenders">
+        <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->email !!}" title="Dream Defenders">
           @solid('envelope', 'w-full fill-current', ['width' => 28,'height' => 28])
         </a>
 
@@ -51,10 +51,10 @@
           </span>
         </div>
 
-        <nav class="relative flex flex-col text-center justify-middle flex-grow-0 w-64 mx-auto" style="top: -0.75rem">
-          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="flex-grow-0 text-2xl text-white uppercase md:text-4xl font-display" href="#">Our Story</a>
-          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="flex-grow-0 text-2xl text-white uppercase md:text-4xl font-display" href="#">Ideology</a>
-          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="flex-grow-0 text-2xl text-white uppercase md:text-4xl font-display" href="/squadds">Squadds</a>
+        <nav class="relative flex flex-col text-center justify-middle flex-grow-0 w-96 mx-auto" style="top: -0.75rem">
+          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="flex-grow-0 text-2xl text-white uppercase md:text-4xl font-display font-bold" href="#">Our Story</a>
+          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="flex-grow-0 text-2xl text-white uppercase md:text-4xl font-display font-bold" href="#">Ideology</a>
+          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="flex-grow-0 text-2xl text-white uppercase md:text-4xl font-display font-bold" href="/squadds">Squadds</a>
         </nav>
       </div>
 
@@ -66,9 +66,9 @@
           </span>
         </div>
 
-        <nav class="relative flex flex-col text-center justify-middle w-64 mx-auto" style="top: -0.75rem">
-          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="text-2xl text-white uppercase md:text-4xl font-display" href="/freedom-papers">Freedom Papers</a>
-          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="text-2xl text-white uppercase md:text-4xl font-display" href="/blog">Blog</a>
+        <nav class="relative flex flex-col text-center justify-middle w-96 mx-auto" style="top: -0.75rem">
+          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="text-2xl text-white uppercase md:text-4xl font-display font-bold" href="/freedom-papers">Freedom Papers</a>
+          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="text-2xl text-white uppercase md:text-4xl font-display font-bold" href="/blog">Blog</a>
         </nav>
       </div>
 
@@ -80,8 +80,8 @@
           </span>
         </div>
 
-        <nav class="relative flex flex-col text-center justify-middle w-64 mx-auto" style="top: -0.75rem">
-          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="text-2xl text-white uppercase md:text-4xl font-display" href="/projects">Projects</a>
+        <nav class="relative flex flex-col text-center justify-middle w-96 mx-auto" style="top: -0.75rem">
+          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="text-2xl text-white uppercase md:text-4xl font-display font-bold" href="/projects">Projects</a>
         </nav>
       </div>
     </div>

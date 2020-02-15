@@ -2,10 +2,30 @@
 
 namespace App\Composers;
 
+use Illuminate\Support\Collection;
 use Roots\Acorn\View\Composer;
 
 class App extends Composer
 {
+    /**
+     * Bloginfo fields
+     */
+    protected static $info = [
+        'name',
+        'description',
+        'url',
+    ];
+
+    /**
+     * Accounts
+     */
+    protected static $accounts = [
+        'facebook'  => 'https://facebook.com/dreamdefenders',
+        'twitter'   => 'https://twitter.com/dreamdefenders',
+        'instagram' => 'https://instagram.com/thedreamdefenders',
+        'email'     => 'mailto:info@dreamdefenders.org',
+    ];
+
     /**
      * List of views served by this composer.
      *
@@ -20,44 +40,32 @@ class App extends Composer
      */
     public function with()
     {
-        return [
-            'site' => (object) [
-                'name' => $this->siteName(),
-                'postType' => $this->postType(),
-            ],
-            'accounts' => $this->accounts,
-        ];
+        return ['app' => (object) [
+            'site' => (object) $this->site(),
+            'accounts' => (object) $this->accounts(),
+        ]];
     }
 
     /**
-     * Returns the site name.
+     * Info
      *
-     * @return string
+     * @return array
      */
-    public function siteName()
+    public function site(): array
     {
-        return get_bloginfo('name', 'display');
-    }
-
-    /**
-     * Returns the post type
-     */
-    public function postType()
-    {
-        return get_post_type();
+        return Collection::make(self::$info)
+            ->flatMap(function ($field) {
+                return [$field => get_bloginfo($field)];
+            })->toArray();
     }
 
     /**
      * Social media accounts
      *
-     * @return object
+     * @return array
      */
-    public function accounts(): object
+    public function accounts(): array
     {
-        return (object) [
-            'facebook'  => 'https://facebook.com/dreamdefenders',
-            'twitter'   => 'https://twitter.com/dreamdefenders',
-            'instagram' => 'https://instagram.com/thedreamdefenders',
-        ];
+        return self::$accounts;
     }
 }

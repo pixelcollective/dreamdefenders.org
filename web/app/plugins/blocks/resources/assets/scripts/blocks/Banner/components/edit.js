@@ -189,19 +189,16 @@ const edit = ({
             bottomLeft: false
           }}
           size={containerSize}
-          onResizeStop={onContainerResize}
-        >
-          <div
-            css={css`
-              overflow: hidden;
-              top: 0;
-              left: 0;
-              right: 0;
-              bottom: 0;
-              z-index: -1;
-              position: absolute;
-            `}
-          >
+          onResizeStop={onContainerResize}>
+          <div css={css`
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            position: absolute;
+          `}>
             <div
               className={`h-full w-full relative top-0 left-0 right-0 bottom-0 w-full flex flex-wrap content-center`}
               style={{
