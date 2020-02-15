@@ -34,8 +34,8 @@
         @endif
 
         @isset($app->actions[0]->url)
-          <button hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="px-6 py-2 mx-2 text-sm text-black uppercase bg-white border border-white rounded blend-difference" title="{!! $app->actions[0]->text !!}" aria-label="{!! $app->actions[0]->text !!}">
-            <a href="{!! $app->actions[0]->url !!}" modal="overlay">
+          <button modal="overlay" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="px-6 py-2 mx-2 text-sm text-black uppercase bg-white border border-white rounded blend-difference" title="{!! $app->actions[0]->text !!}" aria-label="{!! $app->actions[0]->text !!}">
+            <a href="{!! $app->actions[0]->url !!}">
               {!! $app->actions[0]->text !!}
             </a>
           </button>
