@@ -16,4 +16,6 @@
   @include('forms.dream-together')
 
   @include('components.instagram')
+
+  @include('components.overlay')
 @endsection

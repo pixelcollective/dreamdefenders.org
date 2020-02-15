@@ -10,11 +10,19 @@ export default () => {
   const { sage }  = window,
         navEl     = document.querySelector(`nav.nav`),
         toggleEl  = document.querySelector(`[nav-toggle]`),
-        overlayEl = document.querySelector(`.${toggleEl.getAttribute(`toggle-target`)}`)
+        overlayEl = document.querySelector(`.${toggleEl.getAttribute(`toggle-target`)}`),
+        navItems = document.querySelectorAll(`.nav-item`)
 
   /** Collapse overlay nav */
   overlayEl.style.height = 0;
   overlayEl.style.opacity = 0;
+
+  navItems.forEach(el => {
+    el.style.opacity = 0;
+    el.style.transform = `translateY(50px)`;
+
+    return el;
+  })
 
   /** Set initial topbar background  */
   navEl.style.backgroundColor = (
@@ -65,13 +73,21 @@ const toggleAction = (sage, navEl, toggleEl, overlayEl) => {
     duration: 300,
     elasticity: 0,
     easing: `easeInOutSine`,
+    complete: () => {
+      anime({
+        targets: document.querySelectorAll('nav.nav .nav-item'),
+        easing: 'easeOutQuint',
+        translateY: toggled ? 0 : 50,
+        opacity: toggled ? 1 : 0,
+        delay: anime.stagger(30, { start: 20 }),
+      })
+    },
   })
 
   anime({
     targets:  navEl,
     backgroundColor: [
-      toggled ? `rgba(0,0,0,1)`
-        : sage.isPage || sage.isFrontPage ? `rgba(0,0,0,0)` : `rgba(255,255,255,1)`,
+      toggled ? `rgba(0,0,0,1)` : sage.isPage || sage.isFrontPage ? `rgba(0,0,0,0)` : `rgba(255,255,255,1)`,
     ],
     duration: 400,
     easing: `easeInOutSine`,

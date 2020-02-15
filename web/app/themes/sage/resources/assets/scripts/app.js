@@ -5,6 +5,7 @@ import {
   nav,
   fadeObserver,
   twoPathsObserver,
+  modal,
 }  from '@components'
 
 domReady(() => {
@@ -18,6 +19,11 @@ domReady(() => {
     faded: document.querySelectorAll(`[data-faded]`),
     nav: document.querySelector(`nav.nav`),
   }
+
+  /**
+   * Modal triggers
+   */
+  modal();
 
   /**
    * Hover animations
