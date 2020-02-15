@@ -12,6 +12,7 @@ class Post extends Composer
      * @var array
      */
     protected static $views = [
+        'single',
         'partials.page-header',
         'partials.content',
         'partials.content-*',
@@ -29,6 +30,7 @@ class Post extends Composer
             'permalink' => $this->permalink(),
             'content'   => $this->content(),
             'pageNav'   => $this->pageNav(),
+            'postType'  => $this->postType(),
         ];
     }
 
@@ -102,5 +104,15 @@ class Post extends Composer
     public function permalink()
     {
         return get_the_permalink();
+    }
+
+    /**
+     * Returns the post type.
+     *
+     * @return string
+     */
+    public function postType()
+    {
+        return get_post_type();
     }
 }

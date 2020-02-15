@@ -49,7 +49,7 @@ export default ({
       />
     </PanelBody>
 
-    {background.media && (
+    { background.media && (
       <>
         <PanelBody title={__("Background position", "tiny-pixel")}>
           <FocalPointPicker

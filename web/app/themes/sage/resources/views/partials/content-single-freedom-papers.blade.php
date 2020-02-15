@@ -1,10 +1,12 @@
-<div class="container px-2 py-48 mx-auto md:px-0">
+<div class="container px-2 py-32 mx-auto md:px-0">
   <article @php(post_class())>
-    <div class="inline-block pb-4 md:pb-8">
-      <a href="/freedom-papers" class="font-bold">
-        @solid('caret-left', 'fill-current inline w-2')
-        <span class="pt-1 pl-2">Back to Freedom Papers</span>
-      </a>
+    <div class="container md:w-3/5 mx-auto">
+      <div class="inline-block pb-4 md:pb-8">
+        <a href="/freedom-papers" class="font-bold">
+          @solid('caret-left', 'fill-current inline w-2')
+          <span class="pt-1 pl-2">Back to Freedom Papers</span>
+        </a>
+      </div>
     </div>
 
     @if($content)
@@ -30,15 +32,3 @@
     </div>
   </article>
 </div>
-
-@if($papers->isNotEmpty())
-  <div class="px-4 py-16">
-    <h2 class="font-display text-4xl font-hairline font-bold leading-relaxed text-center">
-      Select a volume below
-    </h2>
-
-    <div class="flex flex-col md:flex-row flex-wrap">
-      @each('components.simple-card', $papers, 'card')
-    </div>
-  </div>
-@endif

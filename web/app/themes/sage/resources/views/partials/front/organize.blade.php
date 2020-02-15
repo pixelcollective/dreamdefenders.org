@@ -1,8 +1,8 @@
 <div class="bg-white">
-  <div class="block py-16 bg-fixed bg-center bg-no-repeat bg-cover cover" style="background-image: url(@asset('images/background-dark-noisey.png');">
-    <div class="container mx-auto">
-      <h2 data-faded class="text-4xl italic font-bold text-center text-white">
-        We have nothing to lose but our chains:
+  <div class="block bg-fixed bg-center bg-no-repeat bg-cover cover pb-16" style="background-image: url(@asset('images/background-dark-noisey.png');">
+    <div class="container mx-auto flex flex-wrap content-center">
+      <h2 data-faded class="w-full text-4xl italic font-bold text-center text-white pt-12 pb-4">
+        We have nothing to lose but our chains.
       </h2>
     </div>
 
@@ -20,9 +20,9 @@
               </h3>
 
               <form class="flex flex-col w-4/5 mx-auto text-black space-between" action="#">
-                <input type="text" class="py-4 my-2 text-center text-black placeholder-gray-500 focus:shadow-inset transition transition-duration-2000 transition-shadow" placeholder="Enter your email here.." />
+                <input type="text" class="focus:no-outline focus:border-1 focus:border-blue py-4 my-2 text-center text-black placeholder-gray-500 focus:shadow-inset transition transition-duration-2000 transition-all" placeholder="Enter your email here.." />
 
-                <button hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-bg-color="rgba(253,225,53,1)" fx-off-bg-color="rgba(255,255,255,1)" type="submit" class="py-4 my-2 tracking-wide uppercase bg-white text-black-900 font-display text-xl">
+                <button hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-bg-color="rgba(253,225,53,1)" fx-off-bg-color="rgba(255,255,255,1)" type="submit" class="py-4 my-2 tracking-wider uppercase bg-white text-black-900 font-display font-bold text-2xl">
                   Sign up
                 </button>
               </form>

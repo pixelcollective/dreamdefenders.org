@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-  <main class="container px-4 py-32 mx-auto">
-    @include('partials.header-archive')
+  @includeFirst(["partials.header-archive-{$posttype}", "partials.header-archive"])
 
+  <main class="container px-4 pb-32 mx-auto">
     @if (! have_posts())
       {!! get_search_form(false) !!}
     @endif
 
-    @include("partials.archive-{$posttype}")
+    @includeFirst(["partials.archive-{$posttype}", "partials.archive"])
 
     <div class="flex flex-col">
       {!! get_the_posts_navigation() !!}

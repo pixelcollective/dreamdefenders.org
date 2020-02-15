@@ -68,7 +68,7 @@
 
         <nav class="relative flex flex-col text-center justify-middle w-96 mx-auto" style="top: -0.75rem">
           <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="text-2xl text-white uppercase md:text-4xl font-display font-bold" href="/freedom-papers">Freedom Papers</a>
-          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="text-2xl text-white uppercase md:text-4xl font-display font-bold" href="/blog">Blog</a>
+          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="text-2xl text-white uppercase md:text-4xl font-display font-bold" href="/publications">Blog</a>
         </nav>
       </div>
 

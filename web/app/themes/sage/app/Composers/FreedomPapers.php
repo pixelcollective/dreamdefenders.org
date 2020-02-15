@@ -54,4 +54,15 @@ class FreedomPapers extends BaseComposer
             ];
         });
     }
+
+    /**
+     * Get Freedom Papers content
+     */
+    public function content()
+    {
+        return Collection::make((new \WP_Query([
+            'post_type' => 'page',
+            'name' => 'freedom-papers-content',
+        ]))->get_posts())->first()->post_content;
+    }
 }

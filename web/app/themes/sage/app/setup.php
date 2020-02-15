@@ -160,6 +160,13 @@ add_action('after_setup_theme', function () {
     add_theme_support('disable-custom-font-sizes');
 
     /**
+     * Disable block editor color palettes
+     *
+     * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/#disabling-custom-colors-in-block-color-palettes
+     */
+    add_theme_support('disable-custom-colors');
+
+    /**
      * Enable theme color palette support
      *
      * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/#block-color-palettes
@@ -174,15 +181,18 @@ add_action('after_setup_theme', function () {
             'name'  => __('Accent', 'sage'),
             'slug'  => 'accent',
             'color' => 'rgba(91, 214, 255, 1)',
-        ]
+        ],
+        [
+            'name'  => __('Black', 'sage'),
+            'slug'  => 'black',
+            'color' => 'rgba(0, 0, 0, 1)',
+        ],
+        [
+            'name' => __('White', 'sage'),
+            'slug' => 'white',
+            'color' => 'rgba(255, 255, 255, 1)',
+        ],
     ]);
-
-    /**
-     * Disable block editor color palettes
-     *
-     * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/#disabling-custom-colors-in-block-color-palettes
-     */
-    add_theme_support('disable-custom-colors');
 }, 20);
 
 /**

@@ -1,4 +1,4 @@
-<div class="container px-2 pt-48 mx-auto md:px-0">
+<div class="container px-2 pt-32 mx-auto md:px-0">
   <div class="inline-block pb-4 md:pb-8">
     <a href="/projects" class="font-bold">
       @solid('caret-left', 'fill-current inline w-2')

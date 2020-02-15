@@ -28,5 +28,5 @@ add_filter('get_the_archive_title', function ($title) {
         $title = post_type_archive_title();
     }
 
-    return $title;
+    return $title == 'Archives' ? "Publications" : $title;
 });

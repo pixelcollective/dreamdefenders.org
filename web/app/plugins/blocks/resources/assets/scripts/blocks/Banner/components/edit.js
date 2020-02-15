@@ -1,10 +1,10 @@
 /** @wordpress */
 import { __ } from '@wordpress/i18n'
-import { select } from '@wordpress/data'
 import {
   useCallback,
   useEffect,
 } from '@wordpress/element'
+import { useSelect } from '@wordpress/data'
 import {
   Button,
   ResizableBox,
@@ -18,7 +18,7 @@ import {
 
 /** external */
 import classnames from 'classnames'
-import { isEqual, merge } from 'lodash'
+import { isEqual } from 'lodash'
 import chroma from 'chroma-js'
 import { css } from '@emotion/core'
 
@@ -27,8 +27,6 @@ import BackgroundPanel from './panels/BackgroundPanel'
 
 /** @tinypixelco hooks */
 import usePost from '../../../hooks/usePost'
-
-const themeColors = select('core/editor').getEditorSettings().colors
 
 /**
  * Edit: @tinypixelco/banner
@@ -40,6 +38,9 @@ const edit = ({
   isSelected,
 }) => {
   const { setPost } = usePost()
+  const themeColors = useSelect(select => {
+    return select('core/editor').getEditorSettings().colors
+  })
 
   const {
     background,
@@ -229,10 +230,7 @@ const edit = ({
                 render={({ open }) => (
                   <div className={classnames(["w-full", "text-center"])}>
                     <Button className={`button`} onClick={open}>
-                      {background.media
-                        ? __("Replace", "tiny-pixel")
-                        : __("Add", "tiny-pixel")}{" "}
-                      Banner image
+                      {background.media ? __("Replace", "tiny-pixel") : __("Add", "tiny-pixel")} Banner image
                     </Button>
                   </div>
                 )} />

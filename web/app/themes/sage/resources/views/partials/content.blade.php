@@ -1,6 +1,6 @@
-<article @php(post_class())>
-  <header class="pb-8">
-    <h2 class="text-2xl entry-title">
+<article @php(post_class('pb-8'))>
+  <header class="pb-4">
+    <h2 class="text-4xl entry-title">
       <a href="{{ get_permalink() }}">
         {!! $title !!}
       </a>
