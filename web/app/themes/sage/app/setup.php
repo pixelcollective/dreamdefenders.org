@@ -18,7 +18,6 @@ use function Roots\asset;
  */
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('sage/vendor.js', asset('scripts/vendor.js')->uri(), [], null, true);
-
     wp_enqueue_script('sage/app.js', asset('scripts/app.js')->uri(), ['sage/vendor.js', 'wp-dom-ready'], null, true);
     wp_localize_script('sage/app.js', 'sage', [
         'post'        => get_post(),

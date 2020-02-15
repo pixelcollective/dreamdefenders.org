@@ -3,6 +3,7 @@
 $cachePath = wp_upload_dir()['basedir'] . '/blocks';
 
 return [
+
     /*
     |--------------------------------------------------------------------------
     | View engine instances

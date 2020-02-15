@@ -170,8 +170,7 @@ const edit = ({
           onBackgroundSize={onBackgroundSize}
           onBackgroundScale={onBackgroundScale}
           onOverlayColor={onOverlayColor}
-          onOverlayOpacity={onOverlayOpacity}
-        />
+          onOverlayOpacity={onOverlayOpacity} />
       </InspectorControls>
 
       <div className={className}>
@@ -188,7 +187,7 @@ const edit = ({
             bottomRight: false,
             bottomLeft: false
           }}
-          size={containerSize}
+          size={containerSize ? containerSize : `500px`}
           onResizeStop={onContainerResize}>
           <div css={css`
             overflow: hidden;
@@ -206,28 +205,21 @@ const edit = ({
                 backgroundColor: ! background.media && `rgba(0, 0, 0, 0.2)`,
                 backgroundSize: background.size ? background.size : `cover`,
                 backgroundAttachment: background.attachment ? background.attachment : `initial`,
-                backgroundPosition: background.position
-                  ? `${background.position.x * 100}% ${background.position.y * 100}%`
-                  : `50% 50%`,
-                transform: `scale(${
-                  background.scale ? background.scale * 0.01 : 1
-                })`
+                backgroundPosition: background.position ? `${background.position.x * 100}% ${background.position.y * 100}%` : `50% 50%`,
+                transform: `scale(${background.scale ? background.scale * 0.01 : 1})`,
+                backgroundRepeat: `no-repeat`,
               }} />
           </div>
 
-          <div
-            className={editorClasses.overlay}
-            css={css`
-              background-color: ${overlay.rendered};
-            `}
-          >
+          <div className={editorClasses.overlay} css={css`
+            background-color: ${overlay.rendered};
+          `}>
             <RichText
               className={editorClasses.heading}
               placeholder={__(`Post Title...`, `tiny-pixel`)}
               value={title}
               allowedFormats={[]}
-              onChange={onTitle}
-            />
+              onChange={onTitle} />
 
             <MediaUploadCheck>
               <MediaUpload
@@ -243,8 +235,7 @@ const edit = ({
                       Banner image
                     </Button>
                   </div>
-                )}
-              />
+                )} />
             </MediaUploadCheck>
           </div>
         </ResizableBox>

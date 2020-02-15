@@ -31,8 +31,8 @@ class Banner extends Block
     {
         $editorScript = $this->makeAsset()
             ->setName('tinypixel/banner/js')
-            ->setUrl(plugins_url() . '/blocks/dist/scripts/banner.js')
-            ->setManifest(WP_PLUGIN_DIR . '/blocks/dist/scripts/banner.asset.php');
+            ->setUrl(plugins_url() . '/blocks/dist/scripts/banner/block.js')
+            ->setManifest(WP_PLUGIN_DIR . '/blocks/dist/scripts/banner/block.asset.php');
 
         $publicStyle = $this->makeAsset()
             ->setName('tinypixel/public/css')

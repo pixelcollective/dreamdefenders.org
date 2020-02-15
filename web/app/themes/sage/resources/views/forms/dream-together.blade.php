@@ -1,7 +1,7 @@
-<section class="bg-fixed bg-black-100 background-flowing">
+<section class="bg-fixed background-flowing">
   <div class="px-4 bg-white-800">
     <div class="container">
-      <div class="flex flex-col justify-between py-16 mx-auto md:flex-row">
+      <div class="flex flex-col justify-between py-16 px-4 mx-auto md:flex-row">
         <div class="w-full px-2 md:w-3/5 pr-8 mb-8">
           <h1 class="inline-block">
             Can We Dream Together?
@@ -21,7 +21,11 @@
         </div>
 
         <div class="w-full pr-2 md:w-2/5">
-          <div class="w-full h-64 min-h-full md:h-full shadow:md transition-all transition transition-duration-2000 hover:shadow-epic bg-black-900"></div>
+          <div class="flex flex-wrap content-center w-full h-64 min-h-full md:h-full shadow:md transition-all transition transition-duration-2000 hover:shadow-epic bg-black-900">
+            <span class="text-white w-full text-center font-display text-5xl">
+              FORM
+            </span>
+          </div>
         </div>
       </div>
     </div>

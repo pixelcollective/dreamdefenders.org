@@ -148,6 +148,7 @@ module.exports = tailwind({
     },
     container: {
       center: true,
+      maxWidth: `960px`,
     },
     cursor: {
       default:       'default',

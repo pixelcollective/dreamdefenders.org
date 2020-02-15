@@ -16,14 +16,8 @@ registerBlockType(`tinypixel/banner`, {
   title: __(`Banner`, `tiny-pixel`),
   category: `layout`,
   attributes: {
-    media: {
-      type: `object`,
-    },
     title: {
       type: `string`,
-    },
-    focal: {
-      type: `object`,
     },
     align: {
       type: 'string',
@@ -36,8 +30,8 @@ registerBlockType(`tinypixel/banner`, {
         media: null,
         attachment: `default`,
         position: {
-          x: 50,
-          y: 50,
+          x: 0.5,
+          y: 0.5,
         },
         size: `cover`,
         scale: 100,

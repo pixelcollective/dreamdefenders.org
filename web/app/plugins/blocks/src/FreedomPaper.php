@@ -31,8 +31,8 @@ class FreedomPaper extends Block
     {
         $editorScript = $this->makeAsset()
             ->setName('tinypixel/freedom-paper/js')
-            ->setUrl(plugins_url() . '/blocks/dist/scripts/freedom-paper.js')
-            ->setManifest(WP_PLUGIN_DIR . '/blocks/dist/scripts/freedom-paper.asset.php');
+            ->setUrl(plugins_url() . '/blocks/dist/scripts/freedom-paper/block.js')
+            ->setManifest(WP_PLUGIN_DIR . '/blocks/dist/scripts/freedom-paper/block.asset.php');
 
         $this->addEditorScript($editorScript);
     }

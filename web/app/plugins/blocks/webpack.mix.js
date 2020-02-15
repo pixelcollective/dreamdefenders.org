@@ -4,42 +4,65 @@ const mx = require('laravel-mix'),
            require('laravel-mix-purgecss')
            require('laravel-mix-tweemotional')
 
-const whitelist = [
-  /wp-block-.?/,
-  /container/,
-  /blockquote/,
-  /is-style-.?/,
-]
+/**
+ * Pathing utilities.
+ */
+const util = {
+  block: block => `resources/assets/scripts/blocks/${block}/block.js`,
+  ext:   ext   => `resources/assets/scripts/extensions/${ext}.js`,
+  style: style => `resources/assets/styles/${style}.scss`,
+  js:    file  => `scripts/${file}/block.js`,
+  css:   file  => `styles/${file}.css`,
+  vendor: [
+    `chroma-js`,
+    `emotion`,
+    `lodash`,
+  ],
+  postCssWhitelist: [
+    /wp-block-.?/,
+    /container/,
+    /blockquote/,
+    /is-style-.?/,
+  ],
+}
 
+/**
+ * Configure build.
+ */
 mx.setPublicPath('dist')
-   .browserSync('dreamdefenders.vagrant')
+  .browserSync('dreamdefenders.vagrant')
+  .sourceMaps(false, 'source-map')
+  .tweemotional()
 
-mx.block('resources/assets/scripts/blocks/Container/block.js', 'scripts/container.js')
-  .block('resources/assets/scripts/blocks/Banner/block.js', 'scripts/banner.js')
-  .block('resources/assets/scripts/blocks/FreedomPaper/block.js', 'scripts/freedom-paper.js')
-  .block('resources/assets/scripts/blocks/TwoColumn/block.js', 'scripts/two-column.js')
-  .block('resources/assets/scripts/blocks/PostContainer/block.js', 'scripts/post-container.js')
-  .block('resources/assets/scripts/blocks/ProjectContainer/block.js', 'scripts/project-container.js')
-  .block('resources/assets/scripts/blocks/Squadd/block.js', 'scripts/squadd.js')
-  .block('resources/assets/scripts/extensions/hide-title-block.js', 'scripts/hide-title-block.js')
+/**
+ * Build editor scripts.
+ */
+mx.block(util.block`Banner`, util.js`banner`)
+  .block(util.block`Container`, util.js`container`)
+  .block(util.block`FreedomPaper`, util.js`freedom-paper`)
+  .block(util.block`HorizontalCard`, util.js`horizontal-card`)
+  .block(util.block`TwoColumn`, util.js`two-column`)
+  .block(util.block`PostContainer`, util.js`post-container`)
+  .block(util.block`ProjectContainer`, util.js`project-container`)
+  .block(util.block`Squadd`, util.js`squadd`)
+  .block(util.ext`hide-title-block`, util.js`hide-title-block`)
 
-mx.sass('resources/assets/styles/public.scss', 'styles')
-  .sass('resources/assets/styles/editor.scss', 'styles')
-  .options({
-    processCssUrls: false,
-    postCss: [tw],
-  }).purgeCss({
+/**
+ * Build styles.
+ */
+mx.sass(util.style`public`, util.css`public`)
+  .sass(util.style`editor`, util.css`editor`)
+  .purgeCss({
     enabled: true,
     globs: [
       path.join(__dirname, 'resources/**/*.php'),
       path.join(__dirname, 'resources/assets/**/*.scss'),
       path.join(__dirname, 'resources/assets/**/*.js'),
     ],
-    extensions: ['js', 'php'],
-    whitelistPatterns: whitelist,
-    whitelistPatternsChildren: whitelist,
+    extensions: ['js', 'php', 'scss'],
+    whitelistPatterns: util.postCssWhitelist,
+    whitelistPatternsChildren: util.postCssWhitelist,
+  }).options({
+    processCssUrls: false,
+    postCss: [tw],
   })
-
-mx.tweemotional()
-  .sourceMaps(false, 'source-map')
-  .version();
