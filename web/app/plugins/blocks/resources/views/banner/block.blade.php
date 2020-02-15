@@ -1,5 +1,5 @@
-<div class="block-id-{!! $id = uniqid() !!} alignfull override">
-  <header class="wp-block-tinypixel-banner override w-full my-0 mt-0 mb-12 flex flex-col content-center">
+<div class="block-id-{!! $id = uniqid() !!} alignfull" style="padding-top: 0; margin-top: 0;">
+  <header class="wp-block-tinypixel-banner w-full my-0 mt-0 mb-12 flex flex-col content-center">
     <div class="relative top-0 left-0 right-0 bottom-0 overflow-hidden w-full">
       <div class="absolute h-full w-full flex flex-col flex-wrap content-center banner-bg-image-{!! $id !!}"></div>
 
