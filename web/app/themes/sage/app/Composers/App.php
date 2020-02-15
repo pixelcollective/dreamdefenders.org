@@ -3,6 +3,7 @@
 namespace App\Composers;
 
 use Illuminate\Support\Collection;
+use Log1x\Navi\Navi;
 use Roots\Acorn\View\Composer;
 
 class App extends Composer
@@ -14,16 +15,6 @@ class App extends Composer
         'name',
         'description',
         'url',
-    ];
-
-    /**
-     * Accounts
-     */
-    protected static $accounts = [
-        'facebook'  => 'https://facebook.com/dreamdefenders',
-        'twitter'   => 'https://twitter.com/dreamdefenders',
-        'instagram' => 'https://instagram.com/thedreamdefenders',
-        'email'     => 'mailto:info@dreamdefenders.org',
     ];
 
     /**
@@ -40,10 +31,36 @@ class App extends Composer
      */
     public function with()
     {
-        return ['app' => (object) [
-            'site' => (object) $this->site(),
-            'accounts' => (object) $this->accounts(),
-        ]];
+        $this->mods = (object) Collection::make(get_theme_mods())->toArray();
+
+        return [
+            'app' => (object) [
+                'site' => (object) $this->site(),
+                'accounts' => (object) [
+                    'facebook' => $this->mods->facebook ? "https://facebook.com/{$this->mods->facebook}" : null,
+                    'twitter' => $this->mods->twitter ? "https://twitter.com/{$this->mods->twitter}" : null,
+                    'instagram' => $this->mods->instagram ? "https://instagram.com/{$this->mods->instagram}" : null,
+                    'email' => $this->mods->email ? "mailto:{$this->mods->email}" : null,
+                ],
+                'actions' => [
+                    (object) [
+                        'text' => $this->mods->button_a_text ? $this->mods->button_a_text : null,
+                        'url'  => $this->mods->button_a_url  ? $this->mods->button_a_url  : null,
+                    ],
+                    (object) [
+                        'text' => $this->mods->button_b_text ? $this->mods->button_b_text : null,
+                        'url'  => $this->mods->button_b_url  ? $this->mods->button_b_url  : null,
+                    ],
+                ],
+            ],
+            'navigation' => (object) [
+                'about' => $this->navigation('about_us'),
+                'vision' => $this->navigation('our_vision'),
+                'work' => $this->navigation('our_vision'),
+                'footer_left' => $this->navigation('footer_left'),
+                'footer_right' => $this->navigation('footer_right'),
+            ],
+        ];
     }
 
     /**
@@ -60,12 +77,14 @@ class App extends Composer
     }
 
     /**
-     * Social media accounts
+     * Returns the primary navigation.
      *
      * @return array
      */
-    public function accounts(): array
+    public function navigation($nav)
     {
-        return self::$accounts;
+        $navigation = (new Navi())->build($nav);
+
+        return ! $navigation->isEmpty() ? $navigation->toArray() : null;
     }
 }

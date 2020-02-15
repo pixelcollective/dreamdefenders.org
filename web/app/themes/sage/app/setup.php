@@ -80,11 +80,11 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus([
-        'primary_navigation' => __('Primary Navigation', 'sage'),
-        'about_us'           => __('About Us', 'sage'),
-        'our_vision'         => __('Our Vision', 'sage'),
-        'our_work'           => __('Our Work', 'sage'),
-        'our_community'      => __('Our Community', 'sage'),
+        'about_us' => __('About Us (overlay)', 'sage'),
+        'our_vision' => __('Our Vision (overlay)', 'sage'),
+        'our_work' => __('Our Work (overlay)', 'sage'),
+        'footer_left' => __('Footer left', 'sage'),
+        'footer_right' => __('Footer right', 'sage'),
     ]);
 
     /**

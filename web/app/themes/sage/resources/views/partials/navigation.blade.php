@@ -9,29 +9,45 @@
       </div>
 
       <div class="items-center justify-between text-white align-middle blend-difference hidden md:flex">
-        <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->facebook !!}" title="Dream Defenders">
-          @brands('facebook-f', 'w-full fill-current', ['width' => 28, 'height' => 28])
-        </a>
+        @if($app->accounts->facebook)
+          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->facebook !!}" title="Dream Defenders">
+            @brands('facebook-f', 'w-full fill-current', ['width' => 28, 'height' => 28])
+          </a>
+        @endif
 
-        <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->twitter !!}" title="Dream Defenders">
-          @brands('twitter', 'w-full fill-current', ['width' => 28, 'height' => 28])
-        </a>
+        @if($app->accounts->twitter)
+          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->twitter !!}" title="Dream Defenders">
+            @brands('twitter', 'w-full fill-current', ['width' => 28, 'height' => 28])
+          </a>
+        @endif
 
-        <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 align-middle justify-center text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->instagram !!}" title="Dream Defenders" style="overflow-x: hidden;">
-          @brands('instagram', 'w-full fill-current pl-1', ['width' => 32, 'height' => 32])
-        </a>
+        @if($app->accounts->instagram)
+          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 align-middle justify-center text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->instagram !!}" title="Dream Defenders" style="overflow-x: hidden;">
+            @brands('instagram', 'w-full fill-current pl-1', ['width' => 32, 'height' => 32])
+          </a>
+        @endif
 
-        <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->email !!}" title="Dream Defenders">
-          @solid('envelope', 'w-full fill-current', ['width' => 28,'height' => 28])
-        </a>
+        @if($app->accounts->email)
+          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->email !!}" title="Dream Defenders">
+            @solid('envelope', 'w-full fill-current', ['width' => 28,'height' => 28])
+          </a>
+        @endif
 
-        <button hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="px-6 py-2 mx-4 text-sm text-black uppercase bg-white border border-white rounded blend-difference" title="Join" aria-label="Join">
-          Join
-        </button>
+        @isset($app->actions[0]->url)
+          <button hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="px-6 py-2 mx-4 text-sm text-black uppercase bg-white border border-white rounded blend-difference" title="{!! $app->actions[0]->text !!}" aria-label="{!! $app->actions[0]->text !!}">
+            <a href="{!! $app->actions[0]->url !!}">
+              {!! $app->actions[0]->text !!}
+            </a>
+          </button>
+        @endisset
 
-        <button hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="px-6 py-2 ml-0 text-sm text-white uppercase border border-white rounded blend-difference" title="Donate" aria-label="Donate">
-          Donate
-        </button>
+        @isset($app->actions[1]->url)
+          <button hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="px-6 py-2 mx-4 text-sm text-black uppercase bg-transparent text-white border border-white rounded blend-difference" title="{!! $app->actions[1]->text !!}" aria-label="{!! $app->actions[1]->text !!}">
+            <a href="{!! $app->actions[1]->url !!}">
+              {!! $app->actions[1]->text !!}
+            </a>
+          </button>
+        @endisset
       </div>
 
       <div class="w-32 flex items-center justify-center align-middle">
@@ -44,45 +60,50 @@
 
     <div class="nav-overlay w-full overflow-hidden">
       <div class="overlay-contents">
-        <div class="relative justify-center w-full mt-4 mb-0 text-center align-middle">
-          <div class="relative justify-center w-64 h-1 mx-auto mt-4 align-middle bg-white" style="height: 2px;"></div>
-          <span class="relative inline px-4 text-sm font-thin text-center text-white bg-black md:text-md" style="top: -0.9rem">
-            About Us
-          </span>
-        </div>
+        @if ($navigation->about)
+          <div class="relative justify-center w-full mt-4 mb-0 text-center align-middle">
+            <div class="relative justify-center w-64 h-1 mx-auto mt-4 align-middle bg-white" style="height: 2px;"></div>
+            <span class="relative inline px-4 text-sm font-thin text-center text-white bg-black md:text-md" style="top: -0.9rem">
+              About Us
+            </span>
+          </div>
 
-        <nav class="relative flex flex-col text-center justify-middle flex-grow-0 w-96 mx-auto" style="top: -0.75rem">
-          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="flex-grow-0 text-2xl text-white uppercase md:text-4xl font-display font-bold" href="#">Our Story</a>
-          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="flex-grow-0 text-2xl text-white uppercase md:text-4xl font-display font-bold" href="#">Ideology</a>
-          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="flex-grow-0 text-2xl text-white uppercase md:text-4xl font-display font-bold" href="/squadds">Squadds</a>
-        </nav>
-      </div>
+          <nav class="relative flex flex-col text-center justify-middle flex-grow-0 w-96 mx-auto" style="top: -0.75rem">
+            @foreach ($navigation->about as $item)
+              <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="flex-grow-0 text-2xl text-white uppercase md:text-4xl font-display font-bold" href="{!! $item->url !!}">{!! $item->label !!}</a>
+            @endforeach
+          </nav>
+        @endif
 
-      <div class="w-full mt-4">
-        <div class="relative justify-center w-full mt-4 mb-0 text-center align-middle">
-          <div class="relative justify-center w-64 h-1 mx-auto mt-4 align-middle bg-white" style="height: 2px;"></div>
-          <span class="relative inline px-4 text-sm font-thin text-center text-white bg-black md:text-md" style="top: -0.9rem">
-            Our Vision
-          </span>
-        </div>
+        @if ($navigation->vision)
+          <div class="relative justify-center w-full mt-4 mb-0 text-center align-middle">
+            <div class="relative justify-center w-64 h-1 mx-auto mt-4 align-middle bg-white" style="height: 2px;"></div>
+            <span class="relative inline px-4 text-sm font-thin text-center text-white bg-black md:text-md" style="top: -0.9rem">
+              Our Vision
+            </span>
+          </div>
 
-        <nav class="relative flex flex-col text-center justify-middle w-96 mx-auto" style="top: -0.75rem">
-          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="text-2xl text-white uppercase md:text-4xl font-display font-bold" href="/freedom-papers">Freedom Papers</a>
-          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="text-2xl text-white uppercase md:text-4xl font-display font-bold" href="/publications">Blog</a>
-        </nav>
-      </div>
+          <nav class="relative flex flex-col text-center justify-middle flex-grow-0 w-96 mx-auto" style="top: -0.75rem">
+            @foreach ($navigation->vision as $item)
+              <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="flex-grow-0 text-2xl text-white uppercase md:text-4xl font-display font-bold" href="{!! $item->url !!}">{!! $item->label !!}</a>
+            @endforeach
+          </nav>
+        @endif
 
-      <div class="w-full mt-4">
-        <div class="relative justify-center w-full mt-4 mb-0 text-center align-middle">
-          <div class="relative justify-center w-64 h-1 mx-auto mt-4 align-middle bg-white" style="height: 2px;"></div>
-          <span class="relative inline px-4 text-sm font-thin text-center text-white bg-black md:text-md" style="top: -0.9rem">
-            Our Work
-          </span>
-        </div>
+        @if ($navigation->work)
+          <div class="relative justify-center w-full mt-4 mb-0 text-center align-middle">
+            <div class="relative justify-center w-64 h-1 mx-auto mt-4 align-middle bg-white" style="height: 2px;"></div>
+            <span class="relative inline px-4 text-sm font-thin text-center text-white bg-black md:text-md" style="top: -0.9rem">
+              Our Work
+            </span>
+          </div>
 
-        <nav class="relative flex flex-col text-center justify-middle w-96 mx-auto" style="top: -0.75rem">
-          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="text-2xl text-white uppercase md:text-4xl font-display font-bold" href="/projects">Projects</a>
-        </nav>
+          <nav class="relative flex flex-col text-center justify-middle flex-grow-0 w-96 mx-auto" style="top: -0.75rem">
+            @foreach ($navigation->work as $item)
+              <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="flex-grow-0 text-2xl text-white uppercase md:text-4xl font-display font-bold" href="{!! $item->url !!}">{!! $item->label !!}</a>
+            @endforeach
+          </nav>
+        @endif
       </div>
     </div>
   </div>

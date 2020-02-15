@@ -80,10 +80,9 @@ class UI
         remove_menu_page('tools.php');
         remove_menu_page('gutenberg');
         remove_menu_page('plugins.php');
-        remove_menu_page('themes.php');
         remove_menu_page('wp_stream');
         remove_menu_page('wp-graphiql/wp-graphiql.php');
-
+        remove_menu_page('themes.php');
         remove_submenu_page('options-general.php', 'options-media.php');
         remove_submenu_page('options-general.php', 'options-privacy.php');
         remove_submenu_page('options-general.php', 'options-writing.php');
@@ -92,6 +91,7 @@ class UI
         remove_submenu_page('options-general.php', 'disable_comments_settings');
         remove_submenu_page('options-general.php', 'duplicatepost');
         remove_submenu_page('options-general.php', 'options-discussion.php');
+        add_menu_page('Theme settings', 'Theme settings', 'manage_options', '/customize.php', null, 'dashicons-admin-customizer');
     }
 
     /**
