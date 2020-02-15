@@ -9,10 +9,11 @@ require('laravel-mix-copy-watched')
 const dev = `dreamdefenders.vagrant`;
 
 const whitelist = [
-   /^wp-block-$/,
+   /wp-block-.?/,
    /container/,
    /blockquote/,
-   /^is-style-$/,
+   /is-style-.?/,
+   /align.?/,
 ];
 
 mx.setPublicPath(`./dist`)

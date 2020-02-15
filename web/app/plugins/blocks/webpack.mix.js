@@ -26,6 +26,7 @@ const config = {
       /container/,
       /blockquote/,
       /is-style-.?/,
+      /align-?/,
     ],
   },
 }
