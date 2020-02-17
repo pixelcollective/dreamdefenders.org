@@ -87,7 +87,7 @@ const edit = ({
               onChange={onChange.city} />
 
             <span className={'font-sans text-3xl inline-block uppercase font-bold break-all leading-none'}>
-              &nbsp;//&nbsp;
+              //
             </span>
 
             <RichText
@@ -116,17 +116,17 @@ const edit = ({
 
             <RichText
               className={'font-sans text-3xl block uppercase font-bold break-all'}
-              placeholder={__('Instagram URL', 'tinypixel')}
-              value={instagram && instagram.handle && `${instagram.handle}`}
-              allowedFormats={[]}
-              onChange={onChange.instagram} />
-
-            <RichText
-              className={'font-sans text-3xl block uppercase font-bold break-all'}
               placeholder={__('Twitter URL', 'tinypixel')}
               value={twitter && twitter.handle && `${twitter.handle}`}
               allowedFormats={[]}
               onChange={onChange.twitter} />
+
+            <RichText
+              className={'font-sans text-3xl block uppercase font-bold break-all'}
+              placeholder={__('Instagram URL', 'tinypixel')}
+              value={instagram && instagram.handle && `${instagram.handle}`}
+              allowedFormats={[]}
+              onChange={onChange.instagram} />
           </div>
         </div>
       </div>

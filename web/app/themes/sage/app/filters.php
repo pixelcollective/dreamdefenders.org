@@ -45,12 +45,11 @@ add_action('init', function () {
         'large'  => Collection::make(['1280','1280']),
         'xlarge' => Collection::make(['1600','1600']),
     ])->each(function ($dimensions, $label) {
-        add_image_size($label, ...$dimensions->toArray());
-
-        add_image_size("$label-wide",
-            $dimensions->pop(),
-            $dimensions->pop() * 0.5,
-            ['center', 'center'],
-        );
+        add_image_size($label, $dimensions);
     });
+});
+
+
+add_filter('wp_get_attachment_image_attributes', function ($sources, $size_array, $image_src, $image_meta, $attachment_id) {
+    dump([$sources, $size_array, $image_src, $image_meta, $attachment_id]);
 });

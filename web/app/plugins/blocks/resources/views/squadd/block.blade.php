@@ -2,11 +2,18 @@
   <div class="flex flex-col md:flex-row">
     <div class="flex-col w-full md:w-1/2">
       @isset($attr->media)
-        @if($attr->media)
-          <div class="w-full pb-6 pr-8 md:pr-6 lg:pr-8 md:pb-0 md:max-w-4/5">
-            <img src="{!! $attr->media->sizes['large']['url'] !!}" />
-          </div>
-        @endif
+        <div class="w-full pb-6 pr-8 md:pr-6 lg:pr-8 md:pb-0 md:max-w-4/5">
+          <picture>
+            <source
+              media="(min-width: {!! absint(wp_get_attachment_image_src($attr->media->id, 'medium')) !!}px)"
+              srcset="{!! wp_get_attachment_image_srcset($attr->media->id, 'full') !!}"
+              sizes="{!! wp_get_attachment_image_sizes($attr->media->id, 'full') !!}" />
+            <img
+              srcset="{!! esc_attr(wp_get_attachment_image_srcset($attr->media->id, 'medium')) !!}"
+              alt="{!! esc_attr(get_post_meta($attr->media->id, '_wp_attachment_image_alt', true)) !!}"
+              sizes="{!! esc_attr(wp_get_attachment_image_sizes($attr->media->id, 'medium')) !!}" />
+          </picture>
+        </div>
       @endisset
     </div>
 
