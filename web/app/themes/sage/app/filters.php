@@ -48,8 +48,3 @@ add_action('init', function () {
         add_image_size($label, $dimensions);
     });
 });
-
-
-add_filter('wp_get_attachment_image_attributes', function ($sources, $size_array, $image_src, $image_meta, $attachment_id) {
-    dump([$sources, $size_array, $image_src, $image_meta, $attachment_id]);
-});

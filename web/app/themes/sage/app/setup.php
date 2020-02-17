@@ -207,7 +207,6 @@ add_action('init', function () {
     ];
 
     $post->template_lock = 'INSERT';
-
     register_post_type('post', $post);
 });
 

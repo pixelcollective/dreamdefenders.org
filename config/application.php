@@ -49,14 +49,14 @@ if (env('SENTRY_DSN') && env('WP_ENV') !== 'development') {
         'url' => env('WP_HOME')    ?: null,
     ];
 
-    Sentry\init([
+    \Sentry\init([
         'dsn'         => $release->dsn,
         'environment' => $release->env,
         'release'     => $release->sha,
         'error_types' => E_ALL & ~E_NOTICE & ~E_DEPRECATED,
     ]);
 
-    Sentry\configureScope(function (Sentry\State\Scope $scope) use ($release): void {
+    \Sentry\configureScope(function (\Sentry\State\Scope $scope) use ($release): void {
         $scope->setTag('property', $release->url);
         env('REDIS_HOST') && $scope->setTag('redis', env('REDIS_HOST'));
         env('DB_HOST')    && $scope->setTag('db', env('DB_HOST'));
@@ -88,9 +88,9 @@ $bootloader->configureWordPressApp([
     'AUTOMATIC_UPDATER_DISABLED' => true,
     'DISALLOW_FILE_EDIT'         => true,
     'DISALLOW_FILE_MODS'         => true,
-    'WP_DEBUG_DISPLAY'           => true,
-    'SCRIPT_DEBUG'               => true,
-    'DISPLAY_ERRORS'             => true,
+    'WP_DEBUG_DISPLAY'           => env('WP_ENV') == 'development',
+    'SCRIPT_DEBUG'               => env('WP_ENV') == 'development',
+    'DISPLAY_ERRORS'             => env('WP_ENV') == 'development',
 ]);
 
 /**
