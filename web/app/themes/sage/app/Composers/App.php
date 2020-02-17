@@ -56,7 +56,7 @@ class App extends Composer
             'navigation' => (object) [
                 'about' => $this->navigation('about_us'),
                 'vision' => $this->navigation('our_vision'),
-                'work' => $this->navigation('our_vision'),
+                'work' => $this->navigation('our_work'),
                 'footer_left' => $this->navigation('footer_left'),
                 'footer_right' => $this->navigation('footer_right'),
             ],
