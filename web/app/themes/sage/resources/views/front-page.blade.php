@@ -6,16 +6,7 @@
 
 @section('content')
   @include('partials.front.two-paths')
-
   @include('partials.front.organize')
-
   @include('partials.front.squadd-up')
-
   @include('partials.front.freedom-papers-teaser')
-
-  @include('forms.dream-together')
-
-  @include('components.instagram')
-
-  @include('components.overlay')
 @endsection

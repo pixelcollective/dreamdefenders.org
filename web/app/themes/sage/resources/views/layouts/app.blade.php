@@ -28,6 +28,7 @@
       @php(do_action('get_footer'))
 
       @include('partials.footer')
+      @include('components.overlay')
     </div>
 
     @php(wp_footer())

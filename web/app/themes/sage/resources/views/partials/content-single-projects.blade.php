@@ -13,14 +13,16 @@
   </article>
 </div>
 
-@if($projects->isNotEmpty())
-  <div class="px-4 py-16">
-    <h2 class="font-display text-4xl font-hairline font-bold leading-relaxed text-center">
-      Explore our other projects
-    </h2>
+@isset($projects)
+  @if($projects->isNotEmpty())
+    <div class="px-4 py-16">
+      <h2 class="font-display text-4xl font-hairline font-bold leading-relaxed text-center">
+        Explore our other projects
+      </h2>
 
-    <div class="flex flex-col md:flex-row flex-wrap">
-      @each('components.simple-card', $projects, 'card')
+      <div class="flex flex-col md:flex-row flex-wrap">
+        @each('components.simple-card', $projects, 'card')
+      </div>
     </div>
-  </div>
-@endif
+  @endif
+@endisset
