@@ -10,14 +10,6 @@
   </div>
 
   <article @php(post_class())>
-    @if($content)
-      {!! $content !!}
-    @endif
-
-    @if($pageNav)
-      <footer>
-        {!! $pageNav !!}
-      </footer>
-    @endif
+    {!! apply_filters('the_content', get_the_content()) !!}
   </article>
 </div>

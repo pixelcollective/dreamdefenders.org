@@ -7,9 +7,7 @@
   </div>
 
   <article @php(post_class())>
-    @if($content)
-      {!! $content !!}
-    @endif
+    {!! apply_filters('the_content', get_the_content()) !!}
   </article>
 </div>
 
