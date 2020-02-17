@@ -81,10 +81,10 @@ const edit = ({
             <RichText
               tagName="h2"
               className={'font-sans text-3xl inline-block uppercase font-bold break-all leading-none'}
-              placeholder={__('Squadd Name', 'tinypixel')}
-              value={squaddName}
+              placeholder={__('City', 'tinypixel')}
+              value={city}
               allowedFormats={[]}
-              onChange={onChange.squaddName} />
+              onChange={onChange.city} />
 
             <span className={'font-sans text-3xl inline-block uppercase font-bold break-all leading-none'}>
               &nbsp;//&nbsp;
@@ -93,10 +93,10 @@ const edit = ({
             <RichText
               tagName="h2"
               className={'font-sans text-3xl inline-block uppercase font-bold break-all leading-none'}
-              placeholder={__('City', 'tinypixel')}
-              value={city}
+              placeholder={__('Squadd Name', 'tinypixel')}
+              value={squaddName}
               allowedFormats={[]}
-              onChange={onChange.city} />
+              onChange={onChange.squaddName} />
           </div>
 
           <div className={`w-full flex-col`}>
@@ -106,6 +106,13 @@ const edit = ({
               value={email}
               allowedFormats={[]}
               onChange={onChange.email} />
+
+            <RichText
+              className={'font-sans text-3xl block uppercase font-bold break-all'}
+              placeholder={__('Facebook Page', 'tinypixel')}
+              value={facebook && facebook.handle && `${facebook.handle}`}
+              allowedFormats={[]}
+              onChange={onChange.facebook} />
 
             <RichText
               className={'font-sans text-3xl block uppercase font-bold break-all'}
@@ -120,13 +127,6 @@ const edit = ({
               value={twitter && twitter.handle && `${twitter.handle}`}
               allowedFormats={[]}
               onChange={onChange.twitter} />
-
-            <RichText
-              className={'font-sans text-3xl block uppercase font-bold break-all'}
-              placeholder={__('Facebook Page', 'tinypixel')}
-              value={facebook && facebook.handle && `${facebook.handle}`}
-              allowedFormats={[]}
-              onChange={onChange.facebook} />
           </div>
         </div>
       </div>

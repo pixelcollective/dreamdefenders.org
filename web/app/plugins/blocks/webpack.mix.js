@@ -17,7 +17,7 @@ const config = {
   ],
   purgecss: {
     dirs: [
-      path.join(__dirname, 'resources/**/*.php'),
+      path.join(__dirname, 'resources/views/**/*.blade.php'),
       path.join(__dirname, 'resources/assets/**/*.scss'),
       path.join(__dirname, 'resources/assets/**/*.js'),
     ],
@@ -26,7 +26,7 @@ const config = {
       /container/,
       /blockquote/,
       /is-style-.?/,
-      /align-?/,
+      /align.?/,
     ],
   },
 }
