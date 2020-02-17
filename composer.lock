@@ -3809,7 +3809,7 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "4.6.2",
+            "version": "4.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
@@ -3817,7 +3817,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.zip?timestamp=1578293412"
+                "url": "https://downloads.wordpress.org/plugin/redirection.zip?timestamp=1581750837"
             },
             "require": {
                 "composer/installers": "~1.0"
