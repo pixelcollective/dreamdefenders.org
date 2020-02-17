@@ -143,17 +143,6 @@ const edit = ({
       "flex-wrap",
       "content-center"
     ]),
-    heading: classnames([
-      "w-full",
-      "text-center",
-      "font-display",
-      "text-7xl",
-      "inline-block",
-      "uppercase",
-      "font-bold",
-      "break-all",
-      "text-white"
-    ]),
   };
 
   console.log(overlay);
@@ -214,9 +203,20 @@ const edit = ({
 
           <div className={editorClasses.overlay} css={css`
             background-color: ${overlay.rendered};
+            font-size:
           `}>
             <RichText
-              className={editorClasses.heading}
+              className={classnames([
+                'w-full',
+                'text-center',
+                'font-display',
+                'text-7xl',
+                'inline-block',
+                'uppercase',
+                'font-bold',
+                'break-all',
+                'text-white'
+              ])}
               placeholder={__(`Post Title...`, `tiny-pixel`)}
               value={title}
               allowedFormats={[]}

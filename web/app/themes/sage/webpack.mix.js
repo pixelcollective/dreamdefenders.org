@@ -32,12 +32,14 @@ mx.setPublicPath(`./dist`)
 mx.sass('resources/assets/styles/app.scss', 'styles')
    .sass('resources/assets/styles/editor.scss', 'styles')
    .purgeCss({
-      enabled: mx.inProduction(),
+      enabled: true,
       globs: [
-         join(__dirname, 'resources/**/*.php'),
-         join(__dirname, 'resources/assets/**/*.js'),
+         './resources/**/*',
+         './resources/assets/**/*',
+         './resources/assets/**/*',
+         './../../plugins/blocks/resources/**/*',
       ],
-      extensions: ['js', 'php'],
+      extensions: ['js', 'php', 'scss'],
       whitelistPatterns: whitelist,
       whitelistPatternsChildren: whitelist,
    }).options({ postCss: [tw] })

@@ -6,11 +6,15 @@ export default () => {
   const modal = document.querySelector('.overlay-modal')
   const modalContents = document.querySelector('.overlay-content')
 
-  modal.style.opacity = 0;
-  modal.setAttribute(`modal-toggle`, `off`);
+  modal && (() => {
+    modal.style.opacity = 0;
+    modal.setAttribute(`modal-toggle`, `off`);
+  })();
 
-  modalContents.style.position = `relative`;
-  modalContents.style.transform = `translateY(-100vh)`;
+  modalContents && (() => {
+    modalContents.style.position = `relative`;
+    modalContents.style.transform = `translateY(-100vh)`;
+  })();
 
   /**
    * Set toggle state
@@ -50,6 +54,7 @@ export default () => {
   triggers.forEach(trigger => {
     trigger.addEventListener(`click`, e => {
       e.preventDefault();
+
       setToggle(modal)
     })
   })

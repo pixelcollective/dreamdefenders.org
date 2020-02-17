@@ -4,7 +4,7 @@ const gradients   = require('tailwindcss-gradients')
 const multiColumn = require('tailwindcss-multi-column')
 const transitions = require('tailwindcss-transitions')
 
-module.exports = tailwind({
+const tw = tailwind({
   prefix:    '',
   important: false,
   separator: ':',
@@ -573,3 +573,5 @@ module.exports = tailwind({
     transitions(),
   ],
 })
+
+module.exports = tw;

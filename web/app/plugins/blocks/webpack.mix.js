@@ -1,9 +1,17 @@
+/** Node */
+const { resolve, join } = require('path')
+
 /** Build dependencies */
 const mx = require('laravel-mix'),
       tw = require('tailwind')
            require('@tinypixelco/laravel-mix-wp-blocks')
            require('laravel-mix-purgecss')
            require('laravel-mix-tweemotional')
+
+/**
+ * Dev url
+ */
+const dev = `dreamdefenders.vagrant`;
 
 /**
  * Build config.
@@ -17,9 +25,9 @@ const config = {
   ],
   purgecss: {
     dirs: [
-      path.join(__dirname, 'resources/views/**/*.blade.php'),
-      path.join(__dirname, 'resources/assets/**/*.scss'),
-      path.join(__dirname, 'resources/assets/**/*.js'),
+      './resources/views/**/*.blade.php',
+      './resources/assets/**/*.scss',
+      './resources/assets/**/*.js',
     ],
     whitelist: [
       /wp-block-.?/,
@@ -27,49 +35,48 @@ const config = {
       /blockquote/,
       /is-style-.?/,
       /align.?/,
+      /text-.?/,
     ],
   },
 }
 
-/**
- * Build filepaths.
- */
-const { block, ext, style, js, css } = {
-  block: block => `resources/assets/scripts/blocks/${block}/block.js`,
-  ext: ext => `resources/assets/scripts/extensions/${ext}.js`,
-  style: style => `resources/assets/styles/${style}.scss`,
-  js: file => `scripts/${file}/block.js`,
-  css: file => `styles/${file}.css`,
-}
 
-/** Application scripts */
-mx.block(block`Banner`, js`banner`)
-  .block(block`Container`, js`container`)
-  .block(block`FreedomPaper`, js`freedom-paper`)
-  .block(block`HorizontalCard`, js`horizontal-card`)
-  .block(block`TwoColumn`, js`two-column`)
-  .block(block`PostContainer`, js`post-container`)
-  .block(block`ProjectContainer`, js`project-container`)
-  .block(block`Squadd`, js`squadd`)
-  .block(ext`hide-title-block`, js`hide-title-block`)
+mx.setPublicPath(`./dist`)
+  .browserSync(dev)
+  .webpackConfig({
+    resolve: {
+      alias: {
+        '@blocks': resolve(__dirname, 'resources/assets/scripts/blocks'),
+        '@extensions': resolve(__dirname, 'resources/assets/scripts/extensions'),
+        '@hooks': resolve(__dirname, 'resources/assets/scripts/hooks'),
+      },
+    },
+  })
+  .options({ processCssUrls: false })
 
-/** Application styles */
-mx.sass(style`public`, css`public`)
-  .sass(style`editor`, css`editor`)
 
-/** Application options */
-mx.setPublicPath('dist')
-  .browserSync(config.devUrl)
-  .sourceMaps(mx.inProduction(), 'source-map')
-  .tweemotional()
+mx.sass('resources/assets/styles/public.scss', 'styles')
+  .sass('resources/assets/styles/editor.scss', 'styles')
   .purgeCss({
     enabled: mx.inProduction(),
-    globs: config.purgecss.dirs,
+    globs: [
+      './resources/**/*',
+      './resources/assets/**/*',
+      './resources/assets/**/*',
+    ],
     extensions: ['js', 'php', 'scss'],
     whitelistPatterns: config.purgecss.whitelist,
     whitelistPatternsChildren: config.purgecss.whitelist,
-  })
-  .options({
-    processCssUrls: false,
-    postCss: [tw],
-  })
+  }).options({ postCss: [tw] })
+
+/** Application scripts */
+mx.blocks('resources/assets/scripts/blocks/Banner/block.js', 'scripts/banner')
+  .blocks('resources/assets/scripts/blocks/Container/block.js', 'scripts/container')
+  .blocks('resources/assets/scripts/blocks/FreedomPaper/block.js', 'scripts/freedom-paper')
+  .blocks('resources/assets/scripts/blocks/HorizontalCard/block.js', 'scripts/horizontal-card')
+  .blocks('resources/assets/scripts/blocks/TwoColumn/block.js', 'scripts/two-column')
+  .blocks('resources/assets/scripts/blocks/PostContainer/block.js', 'scripts/post-container')
+  .blocks('resources/assets/scripts/blocks/ProjectContainer/block.js', 'scripts/project-container')
+  .blocks('resources/assets/scripts/blocks/Squadd/block.js', 'scripts/squadd')
+  .blocks('resources/assets/scripts/extensions/hide-title-block.js', 'scripts/extensions')
+  .tweemotional()
