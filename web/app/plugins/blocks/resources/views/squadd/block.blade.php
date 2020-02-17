@@ -5,13 +5,13 @@
         <div class="w-full pb-6 pr-8 md:pr-6 lg:pr-8 md:pb-0 md:max-w-4/5">
           <picture>
             <source
-              media="(min-width: {!! absint(wp_get_attachment_image_src($attr->media->id, 'medium')) !!}px)"
+              media="(min-width: {!! absint(wp_get_attachment_image_src($attr->media->id, 'full')) !!}px)"
               srcset="{!! wp_get_attachment_image_srcset($attr->media->id, 'full') !!}"
               sizes="{!! wp_get_attachment_image_sizes($attr->media->id, 'full') !!}" />
             <img
-              srcset="{!! esc_attr(wp_get_attachment_image_srcset($attr->media->id, 'medium')) !!}"
+              srcset="{!! esc_attr(wp_get_attachment_image_srcset($attr->media->id, 'full')) !!}"
               alt="{!! esc_attr(get_post_meta($attr->media->id, '_wp_attachment_image_alt', true)) !!}"
-              sizes="{!! esc_attr(wp_get_attachment_image_sizes($attr->media->id, 'medium')) !!}" />
+              sizes="{!! esc_attr(wp_get_attachment_image_sizes($attr->media->id, 'full')) !!}" />
           </picture>
         </div>
       @endisset
