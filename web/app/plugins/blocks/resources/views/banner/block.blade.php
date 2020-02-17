@@ -5,7 +5,7 @@
 
       <div class="relative z-10 banner-bg-overlay-{!! $id !!} h-full w-full">
         @isset($attr->title)
-          <div class="p-4 w-full text-center content-center flex flex-wrap relative" style="height: {!! $attr->containerSize->height ? $attr->containerSize->height : 500 !!}px;">
+          <div class="p-4 w-full text-center content-center flex flex-wrap relative" style="height: {!! isset($attr->containerSize->height) ? $attr->containerSize->height : 500 !!}px;">
             <div class="w-full lg:flex-row flex-col flex flex-wrap justify-around">
               <h1 class="break-words text-center font-display text-7xl tracking-wider w-full inline-block uppercase font-bold text-white leading-none">
                 {!! $attr->title !!}
@@ -31,7 +31,7 @@
     }
 
     .banner-bg-overlay-{!! $id !!} {
-      background-color: {!! $attr->overlay->rendered && $attr->overlay->raw && $attr->overlay->opacity ? $attr->overlay->rendered : 'rgba(0, 0, 0, 0.8)' !!};
+      background-color: {!! isset($attr->overlay) && isset($attr->overlay->rendered) && $attr->overlay->raw && $attr->overlay->opacity ? $attr->overlay->rendered : 'rgba(0, 0, 0, 0.8)' !!};
     }
   </style>
 @endisset

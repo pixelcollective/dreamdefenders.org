@@ -45,6 +45,6 @@ add_action('init', function () {
         'large'  => Collection::make(['1280','1280']),
         'xlarge' => Collection::make(['1600','1600']),
     ])->each(function ($dimensions, $label) {
-        add_image_size($label, $dimensions);
+        add_image_size($label, ...$dimensions->toArray());
     });
 });
