@@ -1,15 +1,16 @@
-@isset($image)
-  <div class="{!! isset($classes) ? $classes : 'w-full pb-6 pr-0 lg:pr-8 md:pb-0 md:max-w-4/5' !!}">
-    <picture>
-      <source
-        media="(min-width: {{ absint(wp_get_attachment_image_src($image)) }}px)"
-        srcset="{{ wp_get_attachment_image_srcset($image) }}"
-        sizes="{{ wp_get_attachment_image_sizes($image) }}" />
-      <img
-        srcset="{{ esc_attr(wp_get_attachment_image_srcset($image)) }}"
-        alt="{{ esc_attr(get_post_meta($image, '_wp_attachment_image_alt', true)) }}"
-        sizes="{{ esc_attr(wp_get_attachment_image_sizes($image)) }}" />
-    </picture>
+@if(isset($image) && isset($image->url))
+  <div @if($classes) class="{!! $classes !!}"@endif>
+      <img class="w-full"
+        src="{{ $image->url }}"
+        @isset($image->sizes)
+          @if($image->sizes)
+            @if(! empty($image->sizes))
+              srcset="@foreach($image->sizes as $label => $size) {!! "{$size['url']} {$size['width']}w, "  !!} @endforeach"
+              sizes="(max-width: {!! end($image->sizes)['width'] !!}) @foreach($image->sizes as $label => $size) {!! $size['width'] !!}px, @endforeach"
+            @endif
+          @endif
+        @endisset
+        @isset($image->alt) alt="{{ $image->alt }}" /> @endisset
   </div>
 @endisset
 

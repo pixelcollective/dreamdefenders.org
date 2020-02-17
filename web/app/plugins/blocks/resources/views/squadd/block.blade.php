@@ -1,8 +1,8 @@
 <div class="container mx-auto wp-blocks-tinypixel-post-container">
   <div class="flex flex-col md:flex-row">
     <div class="flex-col w-full md:w-1/2">
-      @if(isset($attr->media) && isset($attr->media->id))
-        @include('components.image', ['image' => $attr->media->id])
+      @if(isset($attr->media))
+        @include('components.image', ['image' => $attr->media, 'classes' => 'w-full pb-6 pr-0 md:pr-8 md:pb-0 md:max-w-4/5'])
       @endisset
     </div>
 
