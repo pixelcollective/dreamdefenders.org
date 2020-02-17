@@ -30,3 +30,27 @@ add_filter('get_the_archive_title', function ($title) {
 
     return $title == 'Archives' ? "Publications" : $title;
 });
+
+add_action('init', function () {
+    Collection::make(
+        get_intermediate_image_sizes(),
+        wp_get_additional_image_sizes(),
+    )->each(function ($size) {
+        remove_image_size($size);
+    })->filter(function () {
+        return false;
+    })->mergeRecursive([
+        'small'  => Collection::make(['768', '768']),
+        'medium' => Collection::make(['1024','1024']),
+        'large'  => Collection::make(['1280','1280']),
+        'xlarge' => Collection::make(['1600','1600']),
+    ])->each(function ($dimensions, $label) {
+        add_image_size($label, ...$dimensions->toArray());
+
+        add_image_size("$label-wide",
+            $dimensions->pop(),
+            $dimensions->pop() * 0.5,
+            ['center', 'center'],
+        );
+    });
+});
