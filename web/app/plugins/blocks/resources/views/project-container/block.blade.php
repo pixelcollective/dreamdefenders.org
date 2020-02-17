@@ -9,12 +9,10 @@
         @endif
       @endisset
 
-      @isset($attr->media)
-        @if($attr->media)
-          <div class="w-full pb-6 pr-8 md:pr-6 lg:pr-8 md:pb-0 md:max-w-4/5">
-            <img src="{!! $attr->media->sizes['large']['url'] !!}" />
-          </div>
-        @endif
+      @if(isset($attr->media) && isset($attr->media->id))
+        <div class="w-full pb-6 pr-8 md:pr-6 lg:pr-8 md:pb-0 md:max-w-4/5">
+          @include('components.image', ['image' => $attr->media->id])
+        </div>
       @endisset
     </div>
 
