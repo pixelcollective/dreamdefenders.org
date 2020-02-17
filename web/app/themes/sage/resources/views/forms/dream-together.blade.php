@@ -1,5 +1,5 @@
 <section class="bg-fixed background-flowing">
-  <div class="px-4 bg-white-800">
+  <div class="px-4 pb-16 bg-white-800">
     <div class="container">
       <div class="flex flex-col justify-between py-16 px-4 mx-auto md:flex-row">
         <div class="w-full px-2 md:w-3/5 pr-8 mb-8">

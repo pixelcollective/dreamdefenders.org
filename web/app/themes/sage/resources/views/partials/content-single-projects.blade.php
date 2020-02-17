@@ -7,7 +7,7 @@
   </div>
 
   <article @php(post_class())>
-    {!! apply_filters('the_content', get_the_content()) !!}
+    @php(the_content())
   </article>
 </div>
 

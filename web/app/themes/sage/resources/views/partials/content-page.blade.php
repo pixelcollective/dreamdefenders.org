@@ -1,6 +1,7 @@
-<div class="px-4">
-  <div class="px-2">
-    @php(the_content())
-    {!! wp_link_pages(['echo' => 0, 'before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']) !!}
+<section class="container px-4 pb-48 mx-auto md:px-0">
+  <div class="px-4">
+    <article @php(post_class())>
+      @php(the_content())
+    </article>
   </div>
-</div>
+</section>
