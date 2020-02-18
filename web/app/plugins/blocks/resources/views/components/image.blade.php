@@ -1,6 +1,6 @@
 @if(isset($image) && isset($image->url))
   <div class="{!! isset($classes) ? $classes : 'w-full' !!}">
-    <picture class="w-full">
+    <picture class="w-full select-none">
       @if(isset($image->sizes) && is_array($image->sizes) && !empty($image->sizes))
         @foreach(array_reverse($image->sizes) as $src)
           <source
