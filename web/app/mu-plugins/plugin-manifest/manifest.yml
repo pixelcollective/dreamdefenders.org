@@ -25,8 +25,6 @@ staging:
   enable:
     - rewrite-testing/rewrite-testing.php
     - user-switching/user-switching.php
-  disable:
-    - wp-rocket/wp-rocket.php
 
 production:
   enable:

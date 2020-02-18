@@ -60,6 +60,7 @@
     "tiny-pixel/disallow-mail": "^1.0",
     "tiny-pixel/s3-uploads-adapter": "dev-master",
     "tiny-pixel/wp-performant-media": ">=1.0.1",
+    "wp-cli/wp-cli-bundle": "^2.4",
     "wp-graphql/wp-graphiql": "^1.0.0",
     "wp-graphql/wp-graphql": "^0.6.0",
     "wp-graphql/wp-graphql-acf": "^0.3.1",
