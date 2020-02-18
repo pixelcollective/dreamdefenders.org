@@ -1,5 +1,5 @@
 <div class="container mx-auto wp-blocks-tinypixel-post-container">
-  <div class="flex flex-col md:flex-row">
+  <div class="flex flex-col md:flex-row py-8">
     <div class="flex-col w-full md:w-1/2">
       @if(isset($attr->media) && is_object($attr->media))
         @include('components.image', [
