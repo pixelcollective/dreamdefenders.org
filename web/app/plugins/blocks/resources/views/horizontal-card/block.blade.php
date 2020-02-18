@@ -2,11 +2,11 @@
   <div class="px-2">
     <div class="flex flex-col md:flex-row">
       <div class="flex-col w-full md:w-1/2">
-        @if(isset($attr->media) && isset($attr->media->id))
+        @isset($attr->media)
           <div class="w-full pb-6 pr-0 md:pr-6 lg:pr-8 md:pb-0 md:max-w-4/5">
-            @include('components.image', ['image' => $attr->media->id])
+            @include('components.image', ['image' => $attr->media])
           </div>
-        @endif
+        @endisset
       </div>
 
       <div class="w-full md:w-1/2 content-center flex-wrap flex">

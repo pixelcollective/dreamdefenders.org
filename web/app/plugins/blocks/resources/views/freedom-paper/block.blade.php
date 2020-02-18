@@ -1,9 +1,9 @@
 <div class="container md:w-3/5 mx-auto wp-blocks-tinypixel-post-container">
   <div class="flex flex-col md:flex-row">
     <div class="flex-col w-full">
-      @if(isset($attr->media) && isset($attr->media->id))
+      @isset($attr->media)
         <div class="w-full min-w-full pb-6 md:pb-0">
-          @include('components.image', ['image' => $attr->media->id, 'classes' => 'w-full min-w-full mx-auto pb-8 text-center'])
+          @include('components.image', ['image' => $attr->media, 'classes' => 'w-full min-w-full mx-auto pb-8 text-center'])
         </div>
 
         <h1 class="inline-block font-sans text-3xl font-bold uppercase break-all mx-auto text-center w-full">
@@ -39,7 +39,7 @@
             </svg>
           </a>
         </h1>
-      @endif
+      @endisset
 
       @isset($content)
         @if($content)
