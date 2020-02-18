@@ -38,15 +38,13 @@
         </h1>
       @endif
 
-      @isset($attr->facebook)
-        @if($attr->facebook->handle)
-         <h1 class="block font-sans text-3xl font-bold uppercase break-all">
-            <a href="{!! $attr->facebook->url !!}">
-              {!! "@{$attr->facebook->handle}" !!}
-            </a>
-          </h1>
-        @endif
-      @endisset
+      @if(isset($attr->facebook) && is_object($attr->facebook) && $attr->facebook->url)
+        <h1 class="block font-sans text-3xl font-bold uppercase break-all">
+          <a href="{!! $attr->facebook->url !!}">
+            @if($attr->facebook->handle) {!! "@{$attr->facebook->handle}" !!} @else Facebook @endif
+          </a>
+        </h1>
+      @endif
     </div>
   </div>
 </div>

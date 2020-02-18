@@ -17,19 +17,15 @@
         @endif
       @endisset
 
-      @isset($attr->media)
+      @if(isset($attr->media) && is_object($attr->media))
         <div class="w-full pb-6 pr-8 md:pr-6 lg:pr-8 md:pb-0 md:max-w-4/5">
           @include('components.image', ['image' => $attr->media])
         </div>
-      @endisset
+      @endif
     </div>
 
     <div class="flex-col w-full md:w-1/2">
-      @isset($content)
-        @if($content)
-          {!! $content !!}
-        @endif
-      @endisset
+      @if(isset($content) && $content) {!! $content !!} @endif
     </div>
   </div>
 </div>
