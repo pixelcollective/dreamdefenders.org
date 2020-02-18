@@ -14,7 +14,7 @@
       @endisset
     </div>
 
-    <div class="flex-col w-full md:w-1/2">
+    <div class="flex-col w-full md:w-1/2 pt-8">
       @isset($content)
         @if($content)
           {!! $content !!}
