@@ -29,31 +29,27 @@
 
           @if(isset($attr->facebook) && is_object($attr->facebook) && $attr->facebook->url)
             <li class="block font-sans text-lg font-normal break-all mb-4">
-              <a href="{!! $attr->facebook->url !!}">
+              <a href="{!! $attr->facebook->url !!}" class="text-black-600 hover:text-black-900 transition transition-all">
                 @include('components.svg.facebook', ['classes' => 'inline', 'attr' => ['width' => '24px', 'height' => '24px']])
-                @if($attr->facebook->handle) {!! "@{$attr->facebook->handle}" !!} @else Facebook @endif
+                {!! $attr->facebook->handle ? "@{$attr->facebook->handle}" : "facebook" !!}
               </a>
             </li>
           @endif
 
           @if(isset($attr->twitter) && is_object($attr->twitter) && $attr->twitter->url)
             <li class="block font-sans text-lg font-normal break-all mb-4">
-              <a href="{!! $attr->twitter->url !!}">
+              <a href="{!! $attr->twitter->url !!}" class="text-black-600 hover:text-black-900 transition transition-all">
                 @include('components.svg.twitter', ['classes' => 'inline', 'attr' => ['width' => '24px', 'height' => '24px']])
-                @if($attr->twitter->handle) {!! "@{$attr->twitter->handle}" !!} @else Twitter @endif
+                {!! $attr->twitter->handle ? "@{$attr->twitter->handle}" : "twitter" !!}
               </a>
             </li>
           @endif
 
           @if(isset($attr->instagram) && is_object($attr->instagram) && $attr->instagram->url)
             <li class="block font-sans text-lg font-normal break-all mb-4">
-              <a href="{!! $attr->instagram->url !!}">
+              <a href="{!! $attr->instagram->url !!}" class="text-black-600 hover:text-black-900 transition transition-all">
                 @include('components.svg.instagram', ['classes' => 'inline', 'attr' => ['width' => '24px', 'height' => '24px']])
-                @if($attr->instagram->handle)
-                  {!! "@{$attr->instagram->handle}" !!}
-                @else
-                  Instagram
-                @endif
+                {!! $attr->instagram->handle ? "@{$attr->instagram->handle}" : "instagram" !!}
               </a>
             </li>
           @endif
