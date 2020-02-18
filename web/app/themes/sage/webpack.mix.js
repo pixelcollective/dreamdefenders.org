@@ -14,6 +14,9 @@ const whitelist = [
    /blockquote/,
    /is-style-.?/,
    /align.?/,
+   /has-.?/,
+   /wp-embed-.?/,
+   /wp-.?/,
 ];
 
 mx.setPublicPath(`./dist`)

@@ -1,0 +1,28 @@
+$theme-colors: (
+  "primary": rgba(253, 225, 53, 1),
+  "accent": rgba(91, 214, 255, 1),
+  "black": rgba(0, 0, 0, 1),
+  "white": rgba(255, 255, 255, 1),
+);
+
+$alignments: (
+  "center",
+  "left",
+  "right",
+);
+
+@each $alignment in $alignments {
+  .has-text-align-#{$alignment} {
+    text-align: #{$alignment};
+  }
+}
+
+@each $name, $color in $theme-colors {
+  .has-#{$name}-background-color {
+    background-color: #{$color};
+  }
+
+  .has-#{$name}-color {
+    color: #{$color};
+  }
+}
