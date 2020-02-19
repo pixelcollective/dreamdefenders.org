@@ -13,7 +13,7 @@ const devUrl = `http://dreamdefenders.vagrant`
 const { theme, blocks, gutenberg, purgeWatch } = require(`mix/application-paths`)
 
 module.exports = () => {
-  mx.setPublicPath(`./web/app`)
+  mx.setPublicPath(`./web/app/themes/sage/dist`)
     .setResourceRoot(`./web/app`)
     .browserSync(devUrl)
     .options({
@@ -26,7 +26,6 @@ module.exports = () => {
     .sass(blocks.style(`public.scss`), blocks.dist(`styles/public.css`))
     .sass(blocks.style(`editor.scss`), blocks.dist(`styles/editor.css`))
     .postCss(gutenberg.dist(`block-library/style.css`), theme.dist(`styles/gutenberg.css`))
-    .options({ postCss: [tw] })
     .purgeCss({
       enabled: true,
       extensions: ['js', 'php', 'scss', 'css'],
@@ -42,7 +41,6 @@ module.exports = () => {
 
   mx.js(theme.script(`app.js`), theme.dist(`scripts`))
     .js(theme.script(`customizer.js`), theme.dist(`scripts`))
-    .version()
 
   mx.blocks(theme.script(`editor.js`), theme.dist(`scripts`))
     .blocks(blocks.script(`blocks/Banner/block.js`), blocks.dist(`scripts/banner`))
@@ -55,12 +53,10 @@ module.exports = () => {
     .blocks(blocks.script(`blocks/Squadd/block.js`), blocks.dist(`scripts/squadd`))
     .blocks(blocks.script(`extensions/hide-title-block.js`), blocks.dist(`scripts/extensions`))
     .tweemotional()
-    .version()
 
   mx.copyWatched(theme.src(`images`), theme.dist(`images`))
     .copyWatched(theme.src(`fonts`), theme.dist(`fonts`))
     .copyWatched(theme.src(`svg`), theme.dist(`svg`))
-    .version()
 
   return mx;
 }
