@@ -31,12 +31,12 @@ class TwoColumn extends Block
     {
         $editorStyle = $this->makeAsset()
             ->setName('tinypixel/twocolumn/css')
-            ->setUrl(plugins_url() . '/blocks/dist/styles/editor.css');
+            ->setUrl(get_template_directory_uri() . '/dist/styles/editor.css');
 
         $editorScript = $this->makeAsset()
             ->setName('tinypixel/twocolumn/js')
-            ->setUrl(plugins_url() . '/blocks/dist/scripts/two-column/block.js')
-            ->setManifest(WP_PLUGIN_DIR . '/blocks/dist/scripts/two-column/block.asset.php');
+            ->setUrl(get_template_directory_uri() . '/dist/scripts/blocks/two-column/block.js')
+            ->setManifest(get_template_directory() . '/dist/scripts/blocks/two-column/block.asset.php');
 
         $this->addEditorStyle($editorStyle);
         $this->addEditorScript($editorScript);

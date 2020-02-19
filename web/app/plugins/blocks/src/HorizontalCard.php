@@ -31,8 +31,8 @@ class HorizontalCard extends Block
     {
         $editorScript = $this->makeAsset()
             ->setName('tinypixel/horizontal-card/js')
-            ->setUrl(plugins_url() . '/blocks/dist/scripts/horizontal-card/block.js')
-            ->setManifest(WP_PLUGIN_DIR . '/blocks/dist/scripts/horizontal-card/block.asset.php');
+            ->setUrl(get_template_directory_uri() . '/dist/scripts/blocks/horizontal-card/block.js')
+            ->setManifest(get_template_directory() . '/dist/scripts/blocks/horizontal-card/block.asset.php');
 
         $this->addEditorScript($editorScript);
     }

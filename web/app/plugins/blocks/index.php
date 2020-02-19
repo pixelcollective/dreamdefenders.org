@@ -51,7 +51,7 @@ add_action('enqueue_block_editor_assets', function () {
 
     wp_enqueue_script(
         'tinypixel/hide-title-block/js',
-        plugins_url('dist/scripts/extensions/hide-title-block.js', __FILE__),
+        get_template_directory_uri('dist/scripts/extensions/hide-title-block.js'),
         ['wp-dom-ready']
     );
 });

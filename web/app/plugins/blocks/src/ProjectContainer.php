@@ -31,8 +31,8 @@ class ProjectContainer extends Block
     {
         $editorScript = $this->makeAsset()
             ->setName('tinypixel/project-container/js')
-            ->setUrl(plugins_url() . '/blocks/dist/scripts/project-container/block.js')
-            ->setManifest(WP_PLUGIN_DIR . '/blocks/dist/scripts/project-container/block.asset.php');
+            ->setUrl(get_template_directory_uri() . '/dist/scripts/blocks/project-container/block.js')
+            ->setManifest(get_template_directory() . '/dist/scripts/blocks/project-container/block.asset.php');
 
         $this->addEditorScript($editorScript);
     }
