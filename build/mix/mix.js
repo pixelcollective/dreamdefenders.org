@@ -31,12 +31,8 @@ module.exports = () => {
       globs: purgeWatch,
       whitelistPatterns: whitelist,
       whitelistPatternsChildren: whitelist,
-    }).options({ postCss: [tw] })
-    .combine([
-      gutenberg.dist(`block-library/style.css`),
-      theme.dist(`styles/app.css`),
-      blocks.dist(`styles/public.css`),
-    ],theme.dist(`styles/compiled.css`))
+    })
+    .options({ postCss: [tw] })
 
   mx.js(theme.script(`app.js`), theme.dist(`scripts`))
     .js(theme.script(`customizer.js`), theme.dist(`scripts`))
@@ -57,7 +53,11 @@ module.exports = () => {
   mx.copyWatched(theme.src(`images`), theme.dist(`images`))
     .copyWatched(theme.src(`fonts`), theme.dist(`fonts`))
     .copyWatched(theme.src(`svg`), theme.dist(`svg`))
-    .version()
+    .combine([
+      gutenberg.dist(`block-library/style.css`),
+      theme.dist(`styles/app.css`),
+      blocks.dist(`styles/public.css`),
+    ], theme.dist(`styles/compiled.css`)).version()
 
   return mx;
 }
