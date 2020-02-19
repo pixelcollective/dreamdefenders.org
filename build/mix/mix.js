@@ -40,7 +40,9 @@ module.exports = () => {
 
   mx.js(theme.script(`app.js`), theme.dist(`scripts`))
     .js(theme.script(`customizer.js`), theme.dist(`scripts`))
-    .blocks(theme.script(`editor.js`), theme.dist(`scripts`))
+    .version()
+
+  mx.blocks(theme.script(`editor.js`), theme.dist(`scripts`))
     .blocks(blocks.script(`blocks/Banner/block.js`), blocks.dist(`scripts/banner`))
     .blocks(blocks.script(`blocks/Container/block.js`), blocks.dist(`scripts/container`))
     .blocks(blocks.script(`blocks/FreedomPaper/block.js`), blocks.dist(`scripts/freedom-paper`))
