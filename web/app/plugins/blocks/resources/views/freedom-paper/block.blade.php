@@ -7,13 +7,13 @@
         </div>
 
         <h1 class="inline-block font-sans text-3xl font-bold uppercase break-all mx-auto text-center w-full">
-          <a href="{!! $attr->media->sizes['large']['url'] !!}" class="mx-auto text-center w-48">
+          <a href="{!! $attr->media->sizes['large']['url'] !!}" class="mx-auto text-center md:px-24 mx-auto w-4/5 md:w-1/2">
             <svg id="Component_7_1" data-name="Component 7 – 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 545.547 57.255">
               <defs>
                 <style>
                   .cls-1 {
                     font-size: 36px;
-                    font-family: Roboto-Bold, Roboto;
+                    font-family: 'Roboto Condensed', Roboto;
                     font-weight: 700;
                   }
                 </style>

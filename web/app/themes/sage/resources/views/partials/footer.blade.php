@@ -1,4 +1,4 @@
-<footer class="w-full pb-3 bg-gray">
+<footer class="w-full pb-3 bg-gray relative z-10">
   <div class="container flex flex-row mx-auto uppercase justify-center px-4 text-white-800">
     @if ($navigation->footer_left)
       <nav class="flex-row w-full justify-center hidden pt-0 pb-8 md:py-8 text-white max-h-16 md:flex">
