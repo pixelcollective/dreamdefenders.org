@@ -1,0 +1,9 @@
+{
+  "name": "Dream Defenders",
+  "short_name": "DD",
+  "description": "Young, powerful people organizing towards a new vision for safety away from prisons.",
+  "lang": "en-US",
+  "start_url": "https://dreamdefenders.org",
+  "display": "standalone",
+  "theme_color": "#fde135"
+}
