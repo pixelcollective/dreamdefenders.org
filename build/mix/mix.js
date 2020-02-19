@@ -40,9 +40,7 @@ module.exports = () => {
 
   mx.js(theme.script(`app.js`), theme.dist(`scripts`))
     .js(theme.script(`customizer.js`), theme.dist(`scripts`))
-    .extract().version().sourceMaps(false, `source-map`)
-
-  mx.blocks(theme.script(`editor.js`), theme.dist(`scripts`))
+    .blocks(theme.script(`editor.js`), theme.dist(`scripts`))
     .blocks(blocks.script(`blocks/Banner/block.js`), blocks.dist(`scripts/banner`))
     .blocks(blocks.script(`blocks/Container/block.js`), blocks.dist(`scripts/container`))
     .blocks(blocks.script(`blocks/FreedomPaper/block.js`), blocks.dist(`scripts/freedom-paper`))
@@ -52,13 +50,12 @@ module.exports = () => {
     .blocks(blocks.script(`blocks/ProjectContainer/block.js`), blocks.dist(`scripts/project-container`))
     .blocks(blocks.script(`blocks/Squadd/block.js`), blocks.dist(`scripts/squadd`))
     .blocks(blocks.script(`extensions/hide-title-block.js`), blocks.dist(`scripts/extensions`))
-    .tweemotional()
-    .extract().version().sourceMaps(false, `source-map`)
+    .tweemotional().version()
 
   mx.copyWatched(theme.src(`images`), theme.dist(`images`))
     .copyWatched(theme.src(`fonts`), theme.dist(`fonts`))
     .copyWatched(theme.src(`svg`), theme.dist(`svg`))
-    .version().sourceMaps(false, `source-map`)
+    .version()
 
   return mx;
 }

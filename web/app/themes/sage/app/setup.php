@@ -20,7 +20,7 @@ add_action('wp_enqueue_scripts', function () {
     ! is_admin() && wp_deregister_script('jquery');
 
     wp_enqueue_script('sage/vendor.js', asset('scripts/vendor.js')->uri(), [], null, true);
-    wp_add_inline_script('sage/vendor.js', asset('scripts/manifest.js')->contents(), 'before');
+    wp_add_inline_script('sage/vendor.js', asset('../../manifest.json')->contents(), 'before');
 
     wp_enqueue_script('sage/app.js', asset('scripts/app.js')->uri(), ['sage/vendor.js', 'wp-dom-ready'], null, true);
     wp_localize_script('sage/app.js', 'sage', [
