@@ -33,7 +33,7 @@ module.exports = () => {
 
   /** Application styles */
   mx.sass(theme.src(`styles/app.scss`), theme.dist(`styles`))
-    .sass(theme.src(`styles/editor.scss`), theme.dist(`styles`))
+    .sass(theme.src(`styles/editor.scss`), theme.dist(`styles/editor-theme.css`))
     .sass(blocks.src(`styles/public.scss`), theme.dist(`styles`))
     .sass(blocks.src(`styles/editor.scss`), theme.dist(`styles/editor.css`))
     .purgeCss({
