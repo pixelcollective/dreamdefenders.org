@@ -3,6 +3,15 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/** @wordpress */
+@import './wordpress/colors';
+@import './wordpress/variables';
+@import './wordpress/mixins';
+@import './wordpress/breakpoints';
+@import './wordpress/animations';
+@import './wordpress/z-index';
+@import '@wordpress/block-library/src/style';
+
 /** app */
 @import 'app/fonts';
 @import 'app/colors';

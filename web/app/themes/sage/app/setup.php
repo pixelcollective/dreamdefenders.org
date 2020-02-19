@@ -22,7 +22,6 @@ add_action('wp_enqueue_scripts', function () {
 
     if (file_exists($manifestFile = __DIR__ . '/../dist/scripts/app.asset.php')) {
         $manifest = require $manifestFile;
-
         wp_enqueue_script('sage/app.js', asset('scripts/app.js')->uri(), $manifest['dependencies'], $manifest['version']);
 
         wp_localize_script('sage/app.js', 'sage', [
@@ -41,7 +40,7 @@ add_action('wp_enqueue_scripts', function () {
  * @return void
  */
 add_action('enqueue_block_editor_assets', function () {
-    if ($manifest = asset('scripts/manifest.asset.php')->get()) {
+    if ($manifest = asset('scripts/editor.asset.php')->get()) {
         wp_enqueue_script('sage/editor.js', asset('scripts/editor.js')->uri(), $manifest['dependencies'], $manifest['version']);
         wp_add_inline_script('sage/editor.js', asset('scripts/manifest.js')->contents(), 'before');
     }

@@ -1,5 +1,6 @@
 module.exports = [
   /wp-block-gallery/,
+  /blocks-gallery-.?/,
   /wp-block-.?/,
   /container/,
   /blockquote/,

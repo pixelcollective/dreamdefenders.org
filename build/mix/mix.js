@@ -13,7 +13,6 @@ const devUrl = `http://dreamdefenders.vagrant`
 const {
   theme,
   blocks,
-  gutenberg,
   purgeWatch,
 } = require(`mix/application-paths`)
 
@@ -37,14 +36,16 @@ module.exports = () => {
     .sass(theme.src(`styles/editor.scss`), theme.dist(`styles`))
     .sass(blocks.src(`styles/public.scss`), theme.dist(`styles`))
     .sass(blocks.src(`styles/editor.scss`), theme.dist(`styles/editor.css`))
-    .postCss(gutenberg.dist(`block-library/style.css`), theme.dist(`styles/gutenberg`))
     .purgeCss({
       enabled: true,
       extensions: ['js', 'php', 'scss', 'css'],
       globs: purgeWatch,
       whitelistPatterns: whitelist,
       whitelistPatternsChildren: whitelist,
-    });
+    }).combine([
+      theme.dist(`styles/app.css`),
+      theme.dist(`styles/public.css`),
+    ], theme.dist(`styles/compiled.css`))
 
   /** Application scripts */
   mx.js(theme.src(`scripts/app.js`), theme.dist(`scripts`))
@@ -67,5 +68,6 @@ module.exports = () => {
   /** Version files */
   mx.sourceMaps(false, 'source-map').inProduction() && mx.version()
 
-  return mx;
+  /** ✨ */
+  return mx
 }

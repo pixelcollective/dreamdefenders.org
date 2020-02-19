@@ -4,9 +4,6 @@ const theme  = file => `./web/app/themes/sage/${file}`,
 
 /** Export pathing util */
 module.exports = {
-  gutenberg: {
-    dist: file => `./web/app/plugins/gutenberg/build/${file}`,
-  },
   theme: {
     src:    file => theme(`resources/assets/${file}`),
     dist:   file => theme(`dist/${file}`),
