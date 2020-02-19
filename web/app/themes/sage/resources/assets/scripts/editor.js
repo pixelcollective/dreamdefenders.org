@@ -82,6 +82,7 @@ domReady(() => {
    * Setup block whitelist.
    */
   whitelistBlocks([
+    /** site-specific */
     'tinypixel/banner',
     'tinypixel/container',
     'tinypixel/freedom-paper',
@@ -90,6 +91,11 @@ domReady(() => {
     'tinypixel/project-container',
     'tinypixel/squadd',
     'tinypixel/two-column',
+
+    /** third-party */
+    'pdf-viewer-block/standard',
+
+    /** core */
     'core/audio',
     'core/button',
     'core/column',
