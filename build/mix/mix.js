@@ -22,9 +22,11 @@ module.exports = () => {
     })
 
   mx.sass(theme.style(`app.scss`), theme.dist(`styles/app.css`))
-    .sass(theme.style(`editor.scss`), theme.dist(`styles.editor.css`))
+    .sass(theme.style(`editor.scss`), theme.dist(`styles/editor.css`))
     .sass(blocks.style(`public.scss`), blocks.dist(`styles/public.css`))
     .sass(blocks.style(`editor.scss`), blocks.dist(`styles/editor.css`))
+    .postCss(gutenberg.dist(`block-library/style.css`), theme.dist(`styles/gutenberg.css`))
+    .options({ postCss: [tw] })
     .purgeCss({
       enabled: true,
       extensions: ['js', 'php', 'scss', 'css'],
@@ -32,7 +34,11 @@ module.exports = () => {
       whitelistPatterns: whitelist,
       whitelistPatternsChildren: whitelist,
     })
-    .options({ postCss: [tw] })
+    .combine([
+      theme.dist(`styles/gutenberg.css`),
+      theme.dist(`styles/app.css`),
+      blocks.dist(`styles/public.css`),
+    ], theme.dist(`styles/compiled.css`))
 
   mx.js(theme.script(`app.js`), theme.dist(`scripts`))
     .js(theme.script(`customizer.js`), theme.dist(`scripts`))
@@ -48,16 +54,13 @@ module.exports = () => {
     .blocks(blocks.script(`blocks/ProjectContainer/block.js`), blocks.dist(`scripts/project-container`))
     .blocks(blocks.script(`blocks/Squadd/block.js`), blocks.dist(`scripts/squadd`))
     .blocks(blocks.script(`extensions/hide-title-block.js`), blocks.dist(`scripts/extensions`))
-    .tweemotional().version()
+    .tweemotional()
+    .version()
 
   mx.copyWatched(theme.src(`images`), theme.dist(`images`))
     .copyWatched(theme.src(`fonts`), theme.dist(`fonts`))
     .copyWatched(theme.src(`svg`), theme.dist(`svg`))
-    .combine([
-      gutenberg.dist(`block-library/style.css`),
-      theme.dist(`styles/app.css`),
-      blocks.dist(`styles/public.css`),
-    ], theme.dist(`styles/compiled.css`)).version()
+    .version()
 
   return mx;
 }

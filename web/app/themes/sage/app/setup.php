@@ -18,6 +18,7 @@ use function Roots\asset;
  */
 add_action('wp_enqueue_scripts', function () {
     ! is_admin() && wp_deregister_script('jquery');
+    !is_admin()  && wp_dequeue_style('wp-block-library');
 
     wp_enqueue_script('sage/vendor.js', asset('scripts/vendor.js')->uri(), [], null, true);
     wp_add_inline_script('sage/vendor.js', asset('../../manifest.json')->contents(), 'before');
@@ -30,7 +31,6 @@ add_action('wp_enqueue_scripts', function () {
         'isHome'      => (bool) is_home(),
     ]);
 
-    !is_admin() && wp_dequeue_style('wp-block-library');
     wp_enqueue_style('sage/compiled.css', asset('styles/compiled.css')->uri(), false, null);
 }, 100);
 
