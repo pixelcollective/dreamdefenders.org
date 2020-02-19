@@ -3,7 +3,7 @@
   <div class="container md:w-3/5 mx-auto">
     <div class="inline-block pb-4 md:pb-8">
       <a href="/freedom-papers" class="font-bold">
-        @solid('caret-left', 'fill-current inline w-2')
+        @svg('caret-left', 'fill-current inline w-2')
         <span class="pt-1 pl-2">Back to Freedom Papers</span>
       </a>
     </div>

@@ -11,25 +11,25 @@
       <div class="items-center justify-between text-white align-middle blend-difference hidden md:flex">
         @if($app->accounts->facebook)
           <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 mx-2 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->facebook !!}" title="Dream Defenders">
-            @brands('facebook-f', 'w-full fill-current', ['width' => 28, 'height' => 28])
+            @svg('facebook-f', 'w-full fill-current', ['width' => 28, 'height' => 28])
           </a>
         @endif
 
         @if($app->accounts->twitter)
           <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 mx-2  text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->twitter !!}" title="Dream Defenders">
-            @brands('twitter', 'w-full fill-current', ['width' => 28, 'height' => 28])
+            @svg('twitter', 'w-full fill-current', ['width' => 28, 'height' => 28])
           </a>
         @endif
 
         @if($app->accounts->instagram)
           <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 mx-2 align-middle justify-center text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->instagram !!}" title="Dream Defenders" style="overflow-x: hidden;">
-            @brands('instagram', 'w-full fill-current pl-1', ['width' => 32, 'height' => 32])
+            @svg('instagram', 'w-full fill-current pl-1', ['width' => 32, 'height' => 32])
           </a>
         @endif
 
         @if($app->accounts->email)
           <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 mx-2 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->email !!}" title="Dream Defenders">
-            @solid('envelope', 'w-full fill-current', ['width' => 28,'height' => 28])
+            @svg('envelope', 'w-full fill-current', ['width' => 28,'height' => 28])
           </a>
         @endif
 
@@ -52,8 +52,8 @@
 
       <div class="w-32 flex items-center justify-end">
         <button nav-toggle toggle-target="nav-overlay" class="focus:shadow-none focus:outline-none text-white mx-2 px-0 nav-toggle blend-difference" title="Open menu" aria-label="Open menu">
-          @solid('bars',  'menu-icon menu-icon-open w-full fill-current blend-difference', ['width' => '26', 'height' => '26'])
-          @solid('times', 'menu-icon menu-icon-close w-full fill-current blend-difference', ['width' => '0px', 'height' => '0px'])
+          @svg('bars',  'menu-icon menu-icon-open w-full fill-current blend-difference', ['width' => '26', 'height' => '26'])
+          @svg('times', 'menu-icon menu-icon-close w-full fill-current blend-difference', ['width' => '0px', 'height' => '0px'])
         </button>
       </div>
     </div>

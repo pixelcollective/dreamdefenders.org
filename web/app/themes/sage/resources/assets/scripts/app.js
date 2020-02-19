@@ -6,7 +6,7 @@ import {
   fadeObserver,
   twoPathsObserver,
   modal,
-}  from '@components'
+}  from './components'
 
 domReady(() => {
   const { sage } = window

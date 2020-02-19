@@ -1,7 +1,7 @@
 import anime from 'animejs'
 import Headroom from 'headroom.js'
 
-import { disableScroll, enableScroll } from '@util'
+import { disableScroll, enableScroll } from './../util'
 
 /**
  * Site navigation

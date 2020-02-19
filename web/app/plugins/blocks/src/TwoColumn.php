@@ -38,12 +38,7 @@ class TwoColumn extends Block
             ->setUrl(plugins_url() . '/blocks/dist/scripts/two-column/block.js')
             ->setManifest(WP_PLUGIN_DIR . '/blocks/dist/scripts/two-column/block.asset.php');
 
-        $publicStyle = $this->makeAsset()
-            ->setName('tinypixel/public/css')
-            ->setUrl(plugins_url() . '/blocks/dist/styles/public.css');
-
         $this->addEditorStyle($editorStyle);
         $this->addEditorScript($editorScript);
-        $this->addPublicStyle($publicStyle);
     }
 }

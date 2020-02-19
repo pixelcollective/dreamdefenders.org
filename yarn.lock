@@ -3144,6 +3144,14 @@ code-point-at@^1.0.0:
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
 
+code-stringify@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/code-stringify/-/code-stringify-2.0.3.tgz#28e8a4302bfb4c6cb56622e1c239de22e7841d63"
+  integrity sha512-1MRdC7+58TZYRCDwBUKm829mlILvfvJiBRmPhO7gxbB+wFQ56IMPuqXRrL+/xYXBWMVdyvvfxbFy/g87Uoc1Lg==
+  dependencies:
+    core-util-is "^1.0.2"
+    err-object "^4.3.1"
+
 collapse-white-space@^1.0.2:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/collapse-white-space/-/collapse-white-space-1.0.5.tgz#c2495b699ab1ed380d29a1091e01063e75dbbe3a"
@@ -3470,7 +3478,7 @@ core-js@^3.1.4:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.0.tgz#2b854e451de1967d1e29896025cdc13a2518d9ea"
   integrity sha512-AHPTNKzyB+YwgDWoSOCaid9PUSEF6781vsfiK8qUz62zRR448/XgK2NtCbpiUGizbep8Lrpt0Du19PpGGZvw3Q==
 
-core-util-is@1.0.2, core-util-is@~1.0.0:
+core-util-is@1.0.2, core-util-is@^1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
   integrity sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
@@ -4381,6 +4389,11 @@ env-variable@0.0.x:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/env-variable/-/env-variable-0.0.5.tgz#913dd830bef11e96a039c038d4130604eba37f88"
   integrity sha512-zoB603vQReOFvTg5xMl9I1P2PnHsHQQKTEowsKKD7nseUfJq6UWzK+4YtlWUO1nhiQUxe6XMkk+JleSZD1NZFA==
+
+err-object@^4.3.1:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/err-object/-/err-object-4.5.0.tgz#6775c9947480ba079474a1367012db64cb6deed3"
+  integrity sha512-b8TWtwNev/MEqXoKO65Em21nOEzVS78cl/vF0IVKfaCoGKT0JuRAE8yQlbMHPDAdKp402eEtz7sDe5QtjrFcIw==
 
 errno@^0.1.3, errno@~0.1.7:
   version "0.1.7"
@@ -6661,6 +6674,11 @@ laravel-mix-copy-watched@^2.2.2:
     chokidar "^3.3.0"
     fs-extra "^7.0.1"
     globby "^8.0.1"
+
+laravel-mix-dump@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/laravel-mix-dump/-/laravel-mix-dump-1.0.1.tgz#579279592bc00b11b73f216b3749f4c0fb52f87b"
+  integrity sha512-FWpwroLOR+EqKUGgwUzAjBbNtwDlNPliys26hGjR0m9TkXH3j4TDIX778Xhkzfa+PNFnV90IaAr3iyiZYpIKcQ==
 
 laravel-mix-purgecss@^4.2.0:
   version "4.2.0"

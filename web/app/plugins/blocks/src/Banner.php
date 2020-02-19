@@ -34,11 +34,6 @@ class Banner extends Block
             ->setUrl(plugins_url() . '/blocks/dist/scripts/banner/block.js')
             ->setManifest(WP_PLUGIN_DIR . '/blocks/dist/scripts/banner/block.asset.php');
 
-        $publicStyle = $this->makeAsset()
-            ->setName('tinypixel/public/css')
-            ->setUrl(plugins_url() . '/blocks/dist/styles/public.css');
-
         $this->addEditorScript($editorScript);
-        $this->addPublicStyle($publicStyle);
     }
 }

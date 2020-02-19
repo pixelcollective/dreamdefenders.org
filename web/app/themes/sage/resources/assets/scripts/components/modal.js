@@ -1,4 +1,4 @@
-import { disableScroll, enableScroll } from '@util'
+import { disableScroll, enableScroll } from './../util'
 import anime from 'animejs'
 
 export default () => {

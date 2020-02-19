@@ -2,7 +2,7 @@
   <div class="bg-black-700 flex-col flex-wrap flex content-center justify-center h-full w-full overflow-hidden">
     <div class="text-right w-7/8 md:w-2/5 flex h-8 mx-auto inline-block overflow-hidden">
       <button modal="overlay" class="overflow-hidden focus:outline-none outline-none w-full inline-block justify-end text-right h-8 text-white-700 hover:text-white transition transition-all">
-        @solid('times', 'fill-current blend-difference text-right inline-block justify-end', ['height' => '24px'])
+        @svg('times', 'fill-current blend-difference text-right inline-block justify-end', ['height' => '24px'])
       </button>
     </div>
 

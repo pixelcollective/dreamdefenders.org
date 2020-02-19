@@ -17,7 +17,11 @@ use function Roots\asset;
  * @return void
  */
 add_action('wp_enqueue_scripts', function () {
+    ! is_admin() && wp_deregister_script('jquery');
+
     wp_enqueue_script('sage/vendor.js', asset('scripts/vendor.js')->uri(), [], null, true);
+    wp_add_inline_script('sage/vendor.js', asset('scripts/manifest.js')->contents(), 'before');
+
     wp_enqueue_script('sage/app.js', asset('scripts/app.js')->uri(), ['sage/vendor.js', 'wp-dom-ready'], null, true);
     wp_localize_script('sage/app.js', 'sage', [
         'post'        => get_post(),
@@ -26,9 +30,8 @@ add_action('wp_enqueue_scripts', function () {
         'isHome'      => (bool) is_home(),
     ]);
 
-    wp_add_inline_script('sage/vendor.js', asset('scripts/manifest.js')->contents(), 'before');
-
-    wp_enqueue_style('sage/app.css', asset('styles/app.css')->uri(), false, null);
+    !is_admin() && wp_dequeue_style('wp-block-library');
+    wp_enqueue_style('sage/compiled.css', asset('styles/compiled.css')->uri(), false, null);
 }, 100);
 
 /**
@@ -38,13 +41,7 @@ add_action('wp_enqueue_scripts', function () {
  */
 add_action('enqueue_block_editor_assets', function () {
     if ($manifest = asset('scripts/manifest.asset.php')->get()) {
-        wp_enqueue_script(
-            'sage/editor.js',
-            asset('scripts/editor.js')->uri(),
-            $manifest['dependencies'],
-            $manifest['version']
-        );
-
+        wp_enqueue_script('sage/editor.js', asset('scripts/editor.js')->uri(), $manifest['dependencies'], $manifest['version']);
         wp_add_inline_script('sage/editor.js', asset('scripts/manifest.js')->contents(), 'before');
     }
 
