@@ -17,19 +17,20 @@ use function Roots\asset;
  * @return void
  */
 add_action('wp_enqueue_scripts', function () {
-    ! is_admin() && wp_deregister_script('jquery');
-    !is_admin()  && wp_dequeue_style('wp-block-library');
+    ! is_admin() && wp_dequeue_style('wp-block-library');
+    ! is_admin_bar_showing() && wp_deregister_script('jquery');
 
-    wp_enqueue_script('sage/vendor.js', asset('scripts/vendor.js')->uri(), [], null, true);
-    wp_add_inline_script('sage/vendor.js', asset('manifest.js')->contents(), 'before');
+    if (file_exists($manifestFile = __DIR__ . '/../dist/scripts/app.asset.php')) {
+        $manifest = require $manifestFile;
 
-    wp_enqueue_script('sage/app.js', asset('scripts/app.js')->uri(), ['sage/vendor.js', 'wp-dom-ready'], null, true);
-    wp_localize_script('sage/app.js', 'sage', [
-        'post'        => get_post(),
-        'isPage'      => (bool) is_page(),
-        'isFrontPage' => (bool) is_front_page(),
-        'isHome'      => (bool) is_home(),
-    ]);
+        wp_enqueue_script('sage/app.js', asset('scripts/app.js')->uri(), $manifest['dependencies'], $manifest['version']);
+
+        wp_localize_script('sage/app.js', 'sage', [
+            'isPage' => is_page(),
+            'isFrontPage' => is_front_page(),
+            'isHome' => is_home(),
+        ]);
+    }
 
     wp_enqueue_style('sage/compiled.css', asset('styles/compiled.css')->uri(), false, null);
 }, 100);
