@@ -2,7 +2,7 @@
 
 @section('content')
   @while(have_posts()) @php(the_post())
-    <div class="container pb-24 mx-auto">
+    <div class="container pb-12 mx-auto">
       @include('partials.content-page')
     </div>
   @endwhile

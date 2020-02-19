@@ -10,25 +10,25 @@
 
       <div class="items-center justify-between text-white align-middle blend-difference hidden md:flex">
         @if($app->accounts->facebook)
-          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 mx-2 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->facebook !!}" title="Dream Defenders">
+          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="py-3 mx-1 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->facebook !!}" title="Dream Defenders">
             @svg('facebook-f', 'w-full fill-current', ['width' => 28, 'height' => 28])
           </a>
         @endif
 
         @if($app->accounts->twitter)
-          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 mx-2  text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->twitter !!}" title="Dream Defenders">
+          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="py-3 mx-1  text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->twitter !!}" title="Dream Defenders">
             @svg('twitter', 'w-full fill-current', ['width' => 28, 'height' => 28])
           </a>
         @endif
 
         @if($app->accounts->instagram)
-          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 mx-2 align-middle justify-center text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->instagram !!}" title="Dream Defenders" style="overflow-x: hidden;">
+          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="py-3 mx-1 align-middle justify-center text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->instagram !!}" title="Dream Defenders" style="overflow-x: hidden;">
             @svg('instagram', 'w-full fill-current pl-1', ['width' => 32, 'height' => 32])
           </a>
         @endif
 
         @if($app->accounts->email)
-          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 mx-2 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->email !!}" title="Dream Defenders">
+          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="mr-2 py-3 mx-1 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->email !!}" title="Dream Defenders">
             @svg('envelope', 'w-full fill-current', ['width' => 28,'height' => 28])
           </a>
         @endif
