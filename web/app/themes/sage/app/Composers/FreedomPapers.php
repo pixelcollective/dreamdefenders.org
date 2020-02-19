@@ -44,6 +44,7 @@ class FreedomPapers extends BaseComposer
             'post_type' => 'freedom-papers',
             'post__not_in' => $this->excluding(),
             'posts_per_page' => 8,
+            'orderby' => 'menu_order',
         ]))->get_posts())->map(function ($freedomPaper) {
             return (object) [
                 'id'    => $freedomPaper->ID,
@@ -52,7 +53,7 @@ class FreedomPapers extends BaseComposer
                 'url'   => "/freedom-papers/{$freedomPaper->post_name}",
                 'image' => get_the_post_thumbnail_url($freedomPaper->ID),
             ];
-        });
+        })->reverse();
     }
 
     /**

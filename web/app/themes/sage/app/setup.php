@@ -225,7 +225,7 @@ register_post_type('freedom-papers', [
     'menu_icon' => 'dashicons-pressthis',
     'public' => true,
     'rewrite' => ['slug' => 'freedom-papers'],
-    'supports' => ['title', 'thumbnail', 'editor', 'meta'],
+    'supports' => ['title', 'thumbnail', 'editor', 'meta', 'page-attributes'],
     'template' => [['tinypixel/freedom-paper']],
     'template_lock' => 'insert',
 ]);
@@ -245,7 +245,7 @@ register_post_type('projects', [
     'menu_icon' => 'dashicons-lightbulb',
     'public' => true,
     'rewrite' => ['slug' => 'projects'],
-    'supports' => ['title', 'thumbnail', 'editor', 'meta'],
+    'supports' => ['title', 'thumbnail', 'editor', 'meta', 'page-attributes'],
     'template' => [
         ['tinypixel/project-container'],
         ['tinypixel/container'],

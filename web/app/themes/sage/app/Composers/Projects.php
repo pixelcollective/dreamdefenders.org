@@ -42,6 +42,7 @@ class Projects extends BaseComposer
     {
         return Collection::make((new \WP_Query([
             'post_type' => 'projects',
+            'orderby' => 'menu_order',
             'post__not_in' => $this->excluding(),
             'posts_per_page' => 4,
         ]))->get_posts())->map(function ($project) {
@@ -52,6 +53,6 @@ class Projects extends BaseComposer
                 'url'   => "/projects/{$project->post_name}",
                 'image' => get_the_post_thumbnail_url($project->ID),
             ];
-        });
+        })->reverse();
     }
 }

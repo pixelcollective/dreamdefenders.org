@@ -37,10 +37,10 @@ class App extends Composer
             'app' => (object) [
                 'site' => (object) $this->site(),
                 'accounts' => (object) [
-                    'facebook' => $this->mods->facebook ? "https://facebook.com/{$this->mods->facebook}" : null,
-                    'twitter' => $this->mods->twitter ? "https://twitter.com/{$this->mods->twitter}" : null,
+                    'facebook'  => $this->mods->facebook ? "https://facebook.com/{$this->mods->facebook}" : null,
+                    'twitter'   => $this->mods->twitter ? "https://twitter.com/{$this->mods->twitter}" : null,
                     'instagram' => $this->mods->instagram ? "https://instagram.com/{$this->mods->instagram}" : null,
-                    'email' => $this->mods->email ? "mailto:{$this->mods->email}" : null,
+                    'email'     => $this->mods->email ? "mailto:{$this->mods->email}" : null,
                 ],
                 'actions' => [
                     (object) [
@@ -54,10 +54,10 @@ class App extends Composer
                 ],
             ],
             'navigation' => (object) [
-                'about' => $this->navigation('about_us'),
-                'vision' => $this->navigation('our_vision'),
-                'work' => $this->navigation('our_work'),
-                'footer_left' => $this->navigation('footer_left'),
+                'about'        => $this->navigation('about_us'),
+                'vision'       => $this->navigation('our_vision'),
+                'work'         => $this->navigation('our_work'),
+                'footer_left'  => $this->navigation('footer_left'),
                 'footer_right' => $this->navigation('footer_right'),
             ],
         ];
