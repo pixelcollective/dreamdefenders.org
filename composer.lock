@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "12c949e594714e0475963765dbc4dea5",
+    "content-hash": "df5836e8c25740831a9a296d5e1ea84f",
     "packages": [
         {
             "name": "a5hleyrich/wp-background-processing",
@@ -6796,6 +6796,24 @@
             "homepage": "https://wordpress.org/plugins/gutenberg/"
         },
         {
+            "name": "wpackagist-plugin/pdf-viewer-block",
+            "version": "0.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/pdf-viewer-block/",
+                "reference": "tags/0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/pdf-viewer-block.0.1.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/pdf-viewer-block/"
+        },
+        {
             "name": "wpackagist-plugin/query-monitor",
             "version": "3.5.2",
             "source": {
@@ -6866,6 +6884,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/simple-local-avatars/"
+        },
+        {
+            "name": "wpackagist-plugin/simple-page-ordering",
+            "version": "2.3.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/simple-page-ordering/",
+                "reference": "tags/2.3.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/simple-page-ordering.2.3.2.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/simple-page-ordering/"
         },
         {
             "name": "wpackagist-plugin/stream",
