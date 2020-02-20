@@ -37,6 +37,7 @@
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
-    "chroma-js": "^2.1.0"
+    "chroma-js": "^2.1.0",
+    "react-extras": "^1.0.1"
   }
 }

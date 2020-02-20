@@ -9,6 +9,7 @@
   ],
   "private": true,
   "scripts": {
+    "dev": "webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "all": "cross-env NODE_ENV=production webpack --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "cypress:open": "cypress open",
     "cypress:development": "cypress run --spec 'tests/cypress/integration/development.js' --browser chrome",

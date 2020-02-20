@@ -1,20 +1,16 @@
-const [ mx, tw, whitelist, wpDeps ] = [
+const { resolve } = require('path')
+require('laravel-mix-purgecss')
+require('laravel-mix-copy-watched')
+
+const [mx, tw, whitelist, wpDeps] = [
   require('laravel-mix'),
   require('tailwind'),
   require('mix/whitelist'),
   require('@wordpress/dependency-extraction-webpack-plugin')
 ]
 
-require('laravel-mix-purgecss')
-require('laravel-mix-tweemotional')
-require('laravel-mix-copy-watched')
-
 const devUrl = `http://dreamdefenders.vagrant`
-const {
-  theme,
-  blocks,
-  purgeWatch,
-} = require(`mix/application-paths`)
+const { theme, blocks, purgeWatch } = require(`mix/application-paths`)
 
 module.exports = () => {
   mx.setPublicPath(`./web/app/themes/sage/dist`)
@@ -22,14 +18,26 @@ module.exports = () => {
     .browserSync(devUrl)
     .webpackConfig({
       plugins: [
-        new wpDeps({
-          injectPolyfill: false,
-        }),
+        new wpDeps({ injectPolyfill: true }),
       ],
     })
-    .babelConfig({ presets: ['@wordpress/babel-preset-default'] })
-    .options({ postCss: [tw], processCssUrls: false })
-    .tweemotional()
+    .babelConfig({
+      presets: [
+        '@wordpress/babel-preset-default',
+        ['@emotion/babel-preset-css-prop', {
+          autoLabel: true,
+          labelFormat: `[local]`,
+        }]
+      ],
+      plugins: [['emotion', {
+        autoLabel: true,
+        labelFormat: `[local]`,
+      }]],
+    })
+    .options({
+      postCss: [tw],
+      processCssUrls: false
+    })
 
   /** Application styles */
   mx.sass(theme.src(`styles/app.scss`), theme.dist(`styles`))
@@ -45,7 +53,7 @@ module.exports = () => {
     }).combine([
       theme.dist(`styles/app.css`),
       theme.dist(`styles/public.css`),
-    ], theme.dist(`styles/compiled.css`))
+    ],theme.dist(`styles/compiled.css`))
 
   /** Application scripts */
   mx.js(theme.src(`scripts/app.js`), theme.dist(`scripts`))
@@ -67,7 +75,8 @@ module.exports = () => {
     .copyWatched(theme.src(`svg`), theme.dist(`svg`))
 
   /** Version files */
-  mx.sourceMaps(false, 'source-map').inProduction() && mx.version()
+  mx.sourceMaps(false, 'source-map')
+    .inProduction() && mx.version()
 
   /** ✨ */
   return mx

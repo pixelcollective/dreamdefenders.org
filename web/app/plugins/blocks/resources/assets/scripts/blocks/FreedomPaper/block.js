@@ -11,6 +11,7 @@ registerBlockType(`tinypixel/freedom-paper`, {
   category: `layout`,
   attributes: {
     media: { type: `object` },
+    mediaDownload: { type: `object` },
   },
   supports: { align: true },
   edit,

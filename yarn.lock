@@ -10049,6 +10049,13 @@ react-dom@^16.8.6, react-dom@^16.9.0:
     prop-types "^15.6.2"
     scheduler "^0.18.0"
 
+react-extras@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-extras/-/react-extras-1.0.1.tgz#d9690dab83361d7132df4da572d1d801c628362f"
+  integrity sha512-j7dKvWwrYjLLAjqXkFLk1BOjcGKOox9TFUqzU5VtiL4LTtUyCpbBNnglEY2uoh8JyqrMnVZcDp3JpRWTDQURog==
+  dependencies:
+    prop-types "^15.6.2"
+
 react-is@^16.7.0, react-is@^16.8.1, react-is@^16.9.0:
   version "16.12.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"

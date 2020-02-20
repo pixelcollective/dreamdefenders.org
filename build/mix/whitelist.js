@@ -5,6 +5,7 @@ module.exports = [
   /container/,
   /blockquote/,
   /is-style-.?/,
+
   /align.?/,
   /has-.?/,
   /wp-embed-.?/,
