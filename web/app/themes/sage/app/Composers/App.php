@@ -83,7 +83,12 @@ class App extends Composer
      */
     public function navigation($nav)
     {
-        $navItems = (new Navi())->build($nav);
-        return ! $navItems->isEmpty() && $navItems->toArray();
+        $navigation = (new Navi())->build($nav);
+
+        if ($navigation->isEmpty()) {
+            return;
+        }
+
+        return $navigation->toArray();
     }
 }
