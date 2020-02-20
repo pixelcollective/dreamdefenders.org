@@ -1,4 +1,3 @@
-import domReady from '@wordpress/dom-ready'
 import hoverFx from '@tinypixelco/hoverfx'
 import {
   instagram,
@@ -8,7 +7,7 @@ import {
   modal,
 }  from './components'
 
-domReady(() => {
+window.requestAnimationFrame(() => {
   const { sage } = window
 
   const config = {

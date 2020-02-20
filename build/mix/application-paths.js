@@ -1,31 +1,32 @@
 /** Helpers */
-const theme  = file => `./web/app/themes/sage/${file}`,
-      blocks = file => `./web/app/plugins/blocks/${file}`
+const sage    = file => `./web/app/themes/sage/${file}`,
+      plugins = file => `./web/app/plugins/${file}`
 
 /** Export pathing util */
 module.exports = {
-  theme: {
-    src:    file => theme(`resources/assets/${file}`),
-    dist:   file => theme(`dist/${file}`),
+  plugins,
+  sage: {
+    src:  file => sage(`resources/assets/${file}`),
+    dist: file => sage(`dist/${file}`),
   },
   blocks: {
-    src:    file => blocks(`resources/assets/${file}`),
-    dist:   file => blocks(`dist/${file}`),
+    src:  file => plugins(`blocks/resources/assets/${file}`),
+    dist: file => blocks(`dist/${file}`),
   },
   purgeWatch: [
-    theme(`resources/views/*.php`),
-    theme(`resources/views/**/*.php`),
-    theme(`resources/views/**/**/*`),
-    theme(`resources/assets/scripts/*.js`),
-    theme(`resources/assets/scripts/**/*.js`),
-    theme(`resources/assets/styles/*.scss`),
-    theme(`resources/assets/styles/**/*.scss`),
-    blocks(`resources/assets/scripts/*.js`),
-    blocks(`resources/assets/scripts/**/*.js`),
-    blocks(`resources/assets/scripts/blocks/**/*.js`),
-    blocks(`resources/assets/styles/*.scss`),
-    blocks(`resources/assets/styles/**/*.scss`),
-    blocks(`resources/views/*.php`),
-    blocks(`resources/views/**/*.php`),
+    sage(`resources/views/*.php`),
+    sage(`resources/views/**/*.php`),
+    sage(`resources/views/**/**/*`),
+    sage(`resources/assets/scripts/*.js`),
+    sage(`resources/assets/scripts/**/*.js`),
+    sage(`resources/assets/styles/*.scss`),
+    sage(`resources/assets/styles/**/*.scss`),
+    plugins(`blocks/resources/assets/scripts/*.js`),
+    plugins(`blocks/resources/assets/scripts/**/*.js`),
+    plugins(`blocks/resources/assets/scripts/blocks/**/*.js`),
+    plugins(`blocks/resources/assets/styles/*.scss`),
+    plugins(`blocks/resources/assets/styles/**/*.scss`),
+    plugins(`blocks/resources/views/*.php`),
+    plugins(`blocks/resources/views/**/*.php`),
   ],
 }

@@ -36,7 +36,7 @@ class TwoColumn extends Block
         $editorScript = $this->makeAsset()
             ->setName('tinypixel/twocolumn/js')
             ->setUrl(get_template_directory_uri() . '/dist/scripts/blocks/two-column/block.js')
-            ->setManifest(get_template_directory() . '/dist/scripts/blocks/two-column/block.asset.php');
+            ->setManifest(get_template_directory() . '/dist/scripts/blocks/manifest.asset.php');
 
         $this->addEditorStyle($editorStyle);
         $this->addEditorScript($editorScript);

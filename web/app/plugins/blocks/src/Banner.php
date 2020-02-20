@@ -32,7 +32,7 @@ class Banner extends Block
         $editorScript = $this->makeAsset()
             ->setName('tinypixel/banner/js')
             ->setUrl(get_template_directory_uri() . '/dist/scripts/blocks/banner/block.js')
-            ->setManifest(get_template_directory() . '/dist/scripts/blocks/banner/block.asset.php');
+            ->setManifest(get_template_directory() . '/dist/scripts/blocks/manifest.asset.php');
 
         $this->addEditorScript($editorScript);
     }

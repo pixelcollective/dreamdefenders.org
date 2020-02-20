@@ -9,6 +9,7 @@
 
 namespace App;
 
+use Illuminate\Support\Collection;
 use function Roots\asset;
 
 /**
@@ -17,20 +18,72 @@ use function Roots\asset;
  * @return void
  */
 add_action('wp_enqueue_scripts', function () {
-    ! is_admin() && wp_dequeue_style('wp-block-library');
-    ! is_admin_bar_showing() && wp_deregister_script('jquery');
+    /**
+     * Dequeue jQuery
+     */
+    ! is_admin()
+    && ! is_admin_bar_showing()
+    && ! has_block('pdf-viewer-block/standard', get_the_id())
+    && (function () {
+        wp_dequeue_script('jquery');
+        wp_deregister_script('jquery');
+        wp_register_script('jquery', null);
+    })();
 
-    if (file_exists($manifestFile = __DIR__ . '/../dist/scripts/app.asset.php')) {
-        $manifest = require $manifestFile;
-        wp_enqueue_script('sage/app.js', asset('scripts/app.js')->uri(), $manifest['dependencies'], $manifest['version']);
+    /**
+     * Dequeue wp-block-library CSS
+     */
+    ! is_admin() && (function () {
+        wp_dequeue_style('wp-block-library');
+        wp_deregister_style('wp-block-library');
+        wp_register_style('wp-block-library', null);
+    });
 
-        wp_localize_script('sage/app.js', 'sage', [
-            'isPage' => is_page(),
-            'isFrontPage' => is_front_page(),
-            'isHome' => is_home(),
-        ]);
-    }
+    /**
+     * Dequeue wp-performant-media JS
+     */
+    wp_dequeue_script('wp-performant-media.js');
+    wp_deregister_script('wp-performant-media.js');
+    wp_register_script('wp-performant-media.js', null);
 
+    /**
+     * Dequeue wp-performant-media CSS
+     */
+    wp_dequeue_style('wp-performant-media.css');
+    wp_deregister_style('wp-performant-media.css');
+    wp_register_style('wp-performant-media.css', null);
+
+    /**
+     * Dequeue pdf-viewer CSS
+     */
+    wp_dequeue_style('pdf-viewer-block-styles');
+    wp_deregister_style('pdf-viewer-block-styles');
+    wp_register_style('pdf-viewer-block-styles', null);
+
+    /**
+     * Dequeue pdf-viewer JS
+     */
+    ! has_block('pdf-viewer-block/standard', get_the_id()) && (function () {
+        wp_dequeue_script('pdf-viewer-block-scripts');
+        wp_deregister_script('pdf-viewer-block-scripts');
+        wp_register_script('pdf-viewer-block-scripts', null);
+    })();
+
+    /** Enqueue vendored JS */
+    wp_enqueue_script('sage/vendor.js', asset('scripts/vendor.js')->uri(), [], null, true);
+    wp_add_inline_script('sage/vendor.js', asset('scripts/manifest.js')->contents(), 'before');
+
+    /** Enqueue application JS */
+    wp_enqueue_script('sage/compiled.js', asset('scripts/compiled.js')->uri(), ['sage/vendor.js'], null, true);
+
+    /** Poor man's inertia.js */
+    wp_localize_script('sage/compiled.js', 'sage', [
+        'isPage'      => is_page(),
+        'isHome'      => is_home(),
+        'isFrontPage' => is_front_page(),
+    ]);
+
+    /** Enqueue application styles */
     wp_enqueue_style('sage/compiled.css', asset('styles/compiled.css')->uri(), false, null);
 }, 100);
 
@@ -40,7 +93,7 @@ add_action('wp_enqueue_scripts', function () {
  * @return void
  */
 add_action('enqueue_block_editor_assets', function () {
-    if ($manifest = asset('scripts/editor.asset.php')->get()) {
+    if ($manifest = asset('scripts/blocks/manifest.asset.php')->get()) {
         wp_enqueue_script('sage/editor-theme.js', asset('scripts/editor.js')->uri(), $manifest['dependencies'], $manifest['version']);
     }
 

@@ -11,7 +11,7 @@ export default () => {
         navEl     = document.querySelector(`nav.nav`),
         toggleEl  = document.querySelector(`[nav-toggle]`),
         overlayEl = document.querySelector(`.${toggleEl.getAttribute(`toggle-target`)}`),
-        navItems = document.querySelectorAll(`.nav-item`)
+        navItems  = document.querySelectorAll(`.nav-item`)
 
   /** Collapse overlay nav */
   overlayEl.style.height = 0;

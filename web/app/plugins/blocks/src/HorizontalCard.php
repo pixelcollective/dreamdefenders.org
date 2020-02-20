@@ -32,7 +32,7 @@ class HorizontalCard extends Block
         $editorScript = $this->makeAsset()
             ->setName('tinypixel/horizontal-card/js')
             ->setUrl(get_template_directory_uri() . '/dist/scripts/blocks/horizontal-card/block.js')
-            ->setManifest(get_template_directory() . '/dist/scripts/blocks/horizontal-card/block.asset.php');
+            ->setManifest(get_template_directory() . '/dist/scripts/blocks/manifest.asset.php');
 
         $this->addEditorScript($editorScript);
     }

@@ -106,3 +106,43 @@ blockquote {
     @apply font-bold;
   }
 }
+
+:root {
+  /**
+   * Font sizes
+   */
+  .has-small-font-size {
+    font-size: 13px;
+  }
+
+  .has-normal-font-size {
+    font-size: 16px;
+  }
+
+  .has-medium-font-size {
+    font-size: 20px;
+  }
+
+  .has-large-font-size {
+    font-size: 36px;
+  }
+
+  .has-huge-font-size {
+    font-size: 42px;
+  }
+
+  /**
+   * Text alignments
+   */
+  .has-text-align-center {
+    text-align: center;
+  }
+
+  .has-text-align-left {
+    text-align: left;
+  }
+
+  .has-text-align-right {
+    text-align: right;
+  }
+}

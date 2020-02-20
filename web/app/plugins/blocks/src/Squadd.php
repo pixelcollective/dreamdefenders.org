@@ -32,7 +32,7 @@ class Squadd extends Block
         $editorScript = $this->makeAsset()
             ->setName('tinypixel/squadd/js')
             ->setUrl(get_template_directory_uri() . '/dist/scripts/blocks/squadd/block.js')
-            ->setManifest(get_template_directory() . '/dist/scripts/blocks/squadd/block.asset.php');
+            ->setManifest(get_template_directory() . '/dist/scripts/blocks/manifest.asset.php');
 
         $this->addEditorScript($editorScript);
     }

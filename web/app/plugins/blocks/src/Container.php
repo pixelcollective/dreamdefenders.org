@@ -32,7 +32,7 @@ class Container extends Block
         $editorScript = $this->makeAsset()
             ->setName('tinypixel/container/js')
             ->setUrl(get_template_directory_uri() . '/dist/scripts/blocks/container/block.js')
-            ->setManifest(get_template_directory() . '/dist/scripts/blocks/container/block.asset.php');
+            ->setManifest(get_template_directory() . '/dist/scripts/blocks/manifest.asset.php');
 
         $this->addEditorScript($editorScript);
     }

@@ -1,15 +1,33 @@
-/** tailwind base */
+/**
+ * @tailwind base
+ */
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/** @wordpress */
+/**
+ * @wordpress base
+ */
 @import './wordpress/colors';
 @import './wordpress/variables';
 @import './wordpress/mixins';
 @import './wordpress/breakpoints';
 @import './wordpress/animations';
 @import './wordpress/z-index';
+
+/**
+ * Application
+ */
+@import './app/fonts';
+@import './app/colors';
+@import './app/typography';
+@import './app/spacing';
+@import './app/align';
+@import './app/lists';
+
+/**
+ * @wordpress/block-library styles
+ */
 @import '@wordpress/block-library/src/audio/style';
 @import '@wordpress/block-library/src/button/style';
 @import '@wordpress/block-library/src/buttons/style';
@@ -28,57 +46,10 @@
 @import '@wordpress/block-library/src/spacer/style';
 @import '@wordpress/block-library/src/video/style';
 
-:root {
-  // Font sizes.
-  .has-small-font-size {
-    font-size: 13px;
-  }
-
-  .has-regular-font-size, // Not used now, kept because of backward compatibility.
-  .has-normal-font-size {
-    font-size: 16px;
-  }
-
-  .has-medium-font-size {
-    font-size: 20px;
-  }
-
-  .has-large-font-size {
-    font-size: 36px;
-  }
-
-  .has-larger-font-size, // Not used now, kept because of backward compatibility.
-  .has-huge-font-size {
-    font-size: 42px;
-  }
-
-  // Text alignments.
-  .has-text-align-center {
-    text-align: center;
-  }
-
-  .has-text-align-left {
-    /*rtl:ignore*/
-    text-align: left;
-  }
-
-  .has-text-align-right {
-    /*rtl:ignore*/
-    text-align: right;
-  }
-}
-
-
-/** app */
-@import 'app/fonts';
-@import 'app/colors';
-@import 'app/typography';
-@import 'app/spacing';
-@import 'app/align';
-@import 'app/lists';
-
-/** blocks */
-@import 'blocks/core-embed';
-@import 'blocks/core-heading';
-@import 'blocks/core-group';
-@import 'blocks/core-pullquote';
+/**
+ * Blocks
+ */
+@import './blocks/core-embed';
+@import './blocks/core-heading';
+@import './blocks/core-group';
+@import './blocks/core-pullquote';

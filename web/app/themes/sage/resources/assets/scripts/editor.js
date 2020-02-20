@@ -3,11 +3,8 @@ import { __ } from '@wordpress/i18n';
 import domReady from '@wordpress/dom-ready';
 
 /** sage utilities */
-import {
-  registerBlockStyles,
-  unregisterBlockStyles,
-} from './hooks/styles'
 import { whitelistBlocks } from './hooks/whitelist';
+import { registerBlockStyles, unregisterBlockStyles } from './hooks/styles'
 
 /**
  * @wordpress/dom-ready event

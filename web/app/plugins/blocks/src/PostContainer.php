@@ -32,7 +32,7 @@ class PostContainer extends Block
         $editorScript = $this->makeAsset()
             ->setName('tinypixel/post-container/js')
             ->setUrl(get_template_directory_uri() . '/dist/scripts/blocks/post-container/block.js')
-            ->setManifest(get_template_directory() . '/dist/scripts/blocks/post-container/block.asset.php');
+            ->setManifest(get_template_directory() . '/dist/scripts/blocks/manifest.asset.php');
 
         $this->addEditorScript($editorScript);
     }
