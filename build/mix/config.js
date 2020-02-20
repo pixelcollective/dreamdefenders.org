@@ -6,19 +6,15 @@ const sage    = file => `./web/app/themes/sage/${file}`,
 module.exports = {
   plugins,
   sage: {
-    src: `./web/app/themes/sage`,
-    work: `./web/app/themes/sage/dist/build`,
-    public: `./web/app/themes/sage/dist`,
+    srcDir: `./web/app/themes/sage`,
+    workDir: `./web/app/themes/sage/dist/build`,
+    publicDir: `./web/app/themes/sage/dist`,
     src: file => `./web/app/themes/sage/resources/assets/${file}`,
     work: file => `./web/app/themes/sage/dist/build/${file}`,
     public: file => `./web/app/themes/sage/dist/${file}`,
   },
-  blocks: {
-    src:  file => plugins(`blocks/resources/assets/scripts/blocks/${file}`),
-    dist: file => blocks(`dist/${file}`),
-  },
-  addBlock: file => plugins(`blocks/resources/assets/scripts/blocks/${file}/block.js`),
-  vendored: [
+  block: file => plugins(`blocks/resources/assets/scripts/blocks/${file}/block.js`),
+  vendorScripts: [
     'lozad',
     'intersection-observer',
     'animejs',

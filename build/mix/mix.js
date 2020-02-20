@@ -9,7 +9,7 @@ require('laravel-mix-purgecss')
 require('laravel-mix-copy-watched')
 require('laravel-mix-tweemotional')
 
-const { vendored, sage, plugins, blocks, addBlock, purgeWatch, devUrl } = require(`mix/config.js`)
+const { vendored, sage, plugins, block, purgeWatch, devUrl } = require(`mix/config.js`)
 
 /**
  * joe-cool => joeCool
@@ -20,41 +20,40 @@ const camelCash = string => (
 
 module.exports = () => {
   /** Configure */
-  mx.setPublicPath(`./web/app/themes/sage/dist`)
+  mx.setPublicPath(sage.publicDir)
     .setResourceRoot(`./web/app`)
     .browserSync(devUrl)
-    .purgeCss({
-      enabled: true,
-      extensions: ['js', 'php', 'scss', 'css'],
-      globs: purgeWatch,
-      whitelistPatterns: whitelist,
-      whitelistPatternsChildren: whitelist,
+    .options({
+       hmrOptions: {
+         host: devUrl,
+         port: 8080,
+       },
+       postCss: [
+         require('tailwind'),
+         require('autoprefixer'),
+       ],
+       processCssUrls: false
+    }).purgeCss({
+       enabled: true,
+       extensions: ['js', 'php', 'scss', 'css'],
+       globs: purgeWatch,
+       whitelistPatterns: whitelist,
+       whitelistPatternsChildren: whitelist,
     }).webpackConfig({
-      plugins: [
-        new DependencyExtractionWebpackPlugin({
-          injectPolyfill: false,
-          outputFormat: `php`,
-        }),
-      ],
-      externals: {
-        'react': 'React',
-        'react-dom': 'ReactDOM',
-        ...wpDeps.map(pkg => ({
-          [`@wordpress/${pkg}`]: `wp.${camelCash(pkg)}`
-        })),
-      },
-    }).options({
-      hmrOptions: {
-        host: devUrl,
-        port: 8080,
-      },
-      postCss: [
-        require('tailwind'),
-        require('autoprefixer'),
-      ],
-      processCssUrls: false
-    })
-    .tweemotional()
+       plugins: [
+         new DependencyExtractionWebpackPlugin({
+           injectPolyfill: false,
+           outputFormat: `php`,
+         }),
+       ],
+       externals: {
+         'react': 'React',
+         'react-dom': 'ReactDOM',
+         ...wpDeps.map(pkg => ({
+           [`@wordpress/${pkg}`]: `wp.${camelCash(pkg)}`
+         })),
+       },
+    }).tweemotional()
 
   mx.sourceMaps(false, 'source-map')
     .inProduction() && mx.version()
@@ -64,14 +63,14 @@ module.exports = () => {
 
   /** Block editor scripts */
   mx.js(sage.src(`scripts/editor.js`), sage.work(`scripts`))
-    .js(addBlock(`Banner`), sage.work(`scripts/blocks/banner`))
-    .js(addBlock(`Container`), sage.work(`scripts/blocks/container`))
-    .js(addBlock(`FreedomPaper`), sage.work(`scripts/blocks/freedom-paper`))
-    .js(addBlock(`HorizontalCard`), sage.work(`scripts/blocks/horizontal-card`))
-    .js(addBlock(`TwoColumn`), sage.work(`scripts/blocks/two-column`))
-    .js(addBlock(`PostContainer`), sage.work(`scripts/blocks/post-container`))
-    .js(addBlock(`ProjectContainer`), sage.work(`scripts/blocks/project-container/block.js`))
-    .js(addBlock(`Squadd`), sage.work(`scripts/blocks/squadd/block.js`))
+    .js(block(`Banner`), sage.work(`scripts/blocks/banner`))
+    .js(block(`Container`), sage.work(`scripts/blocks/container`))
+    .js(block(`FreedomPaper`), sage.work(`scripts/blocks/freedom-paper`))
+    .js(block(`HorizontalCard`), sage.work(`scripts/blocks/horizontal-card`))
+    .js(block(`TwoColumn`), sage.work(`scripts/blocks/two-column`))
+    .js(block(`PostContainer`), sage.work(`scripts/blocks/post-container`))
+    .js(block(`ProjectContainer`), sage.work(`scripts/blocks/project-container/block.js`))
+    .js(block(`Squadd`), sage.work(`scripts/blocks/squadd/block.js`))
 
   /** Application styles */
   mx.sass(sage.src(`styles/app.scss`), sage.work(`styles`))
