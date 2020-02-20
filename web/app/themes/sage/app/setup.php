@@ -18,11 +18,8 @@ use function Roots\asset;
  * @return void
  */
 add_action('wp_enqueue_scripts', function () {
-    /**
-     * Dequeue jQuery
-     */
-    ! is_admin()
-    && ! is_admin_bar_showing()
+    /** Dequeue jQuery unless it is in demand */
+    ! is_admin() && ! is_admin_bar_showing()
     && ! has_block('pdf-viewer-block/standard', get_the_id())
     && (function () {
         wp_dequeue_script('jquery');
@@ -30,53 +27,37 @@ add_action('wp_enqueue_scripts', function () {
         wp_register_script('jquery', null);
     })();
 
-    /**
-     * Dequeue wp-block-library CSS
-     */
-    ! is_admin() && (function () {
-        wp_dequeue_style('wp-block-library');
-        wp_deregister_style('wp-block-library');
-        wp_register_style('wp-block-library', null);
-    });
+    /** Dequeue block-library CSS */
+    wp_dequeue_style('wp-block-library');
+    wp_deregister_style('wp-block-library');
+    wp_register_style('wp-block-library', null);
 
-    /**
-     * Dequeue wp-performant-media JS
-     */
+    /** Dequeue wp-performant-media JS  */
     wp_dequeue_script('wp-performant-media.js');
     wp_deregister_script('wp-performant-media.js');
     wp_register_script('wp-performant-media.js', null);
 
-    /**
-     * Dequeue wp-performant-media CSS
-     */
+    /** Dequeue wp-performant-media CSS  */
     wp_dequeue_style('wp-performant-media.css');
     wp_deregister_style('wp-performant-media.css');
     wp_register_style('wp-performant-media.css', null);
 
-    /**
-     * Dequeue pdf-viewer CSS
-     */
+    /** Dequeue PDF viewer CSS (bundled in app) */
     wp_dequeue_style('pdf-viewer-block-styles');
     wp_deregister_style('pdf-viewer-block-styles');
     wp_register_style('pdf-viewer-block-styles', null);
 
-    /**
-     * Dequeue pdf-viewer JS
-     */
+    /** Dequeue PDF viewer JS if unused */
     ! has_block('pdf-viewer-block/standard', get_the_id()) && (function () {
         wp_dequeue_script('pdf-viewer-block-scripts');
         wp_deregister_script('pdf-viewer-block-scripts');
         wp_register_script('pdf-viewer-block-scripts', null);
     })();
 
-    /** Enqueue vendored JS */
-    wp_enqueue_script('sage/vendor.js', asset('scripts/vendor.js')->uri(), [], null, true);
-    wp_add_inline_script('sage/vendor.js', asset('scripts/manifest.js')->contents(), 'before');
-
     /** Enqueue application JS */
-    wp_enqueue_script('sage/compiled.js', asset('scripts/compiled.js')->uri(), ['sage/vendor.js'], null, true);
+    wp_enqueue_script('sage/compiled.js', asset('scripts/compiled.js')->uri(), [], null, true);
 
-    /** Poor man's inertia.js */
+    /** Poor man's inertia.js 😂 */
     wp_localize_script('sage/compiled.js', 'sage', [
         'isPage'      => is_page(),
         'isHome'      => is_home(),

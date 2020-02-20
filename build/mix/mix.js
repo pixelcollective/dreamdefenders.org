@@ -4,10 +4,10 @@ const [mx, tw, whitelist] = [
   require('mix/whitelist'),
 ]
 
-require('@tinypixelco/laravel-mix-wp-blocks')
-require('laravel-mix-tweemotional')
 require('laravel-mix-purgecss')
 require('laravel-mix-copy-watched')
+require('laravel-mix-tweemotional')
+require('@tinypixelco/laravel-mix-wp-blocks')
 
 const devUrl = `http://dreamdefenders.vagrant`
 const { sage, plugins, blocks, purgeWatch } = require(`mix/application-paths`)
@@ -16,7 +16,13 @@ module.exports = () => {
   mx.setPublicPath(`./web/app/themes/sage/dist`)
     .setResourceRoot(`./web/app`)
     .browserSync(devUrl)
-    .sourceMaps(true, 'source-map')
+    .purgeCss({
+      enabled: true,
+      extensions: ['js', 'php', 'scss', 'css'],
+      globs: purgeWatch,
+      whitelistPatterns: whitelist,
+      whitelistPatternsChildren: whitelist,
+    }).sourceMaps(true, 'source-map')
     .inProduction() && mx.version()
 
   /** Sage client scripts */
@@ -36,19 +42,13 @@ module.exports = () => {
     .tweemotional()
 
   /** Application styles */
-  mx.sass(sage.src(`styles/app.scss`), `styles`)
-    .sass(sage.src(`styles/editor.scss`), `styles/editor-theme.css`)
-    .sass(blocks.src(`styles/public.scss`), `styles`)
-    .sass(blocks.src(`styles/editor.scss`), `styles/editor.css`)
+  mx.sass(sage.src(`styles/app.scss`), sage.dist(`styles`))
+    .sass(sage.src(`styles/editor.scss`), sage.dist(`styles/editor-theme.css`))
+    .sass(blocks.src(`styles/public.scss`), sage.dist(`styles`))
+    .sass(blocks.src(`styles/editor.scss`), sage.dist(`styles/editor.css`))
     .options({
       postCss: [tw],
       processCssUrls: false
-    }).purgeCss({
-      enabled: true,
-      extensions: ['js', 'php', 'scss', 'css'],
-      globs: purgeWatch,
-      whitelistPatterns: whitelist,
-      whitelistPatternsChildren: whitelist,
     })
 
   /** Copy assets */
