@@ -19,6 +19,7 @@ const camelCash = string => (
 );
 
 module.exports = () => {
+  /** Configure */
   mx.setPublicPath(`./web/app/themes/sage/dist`)
     .setResourceRoot(`./web/app`)
     .browserSync(devUrl)
@@ -76,11 +77,6 @@ module.exports = () => {
   mx.sass(sage.src(`styles/app.scss`), sage.work(`styles`))
     .sass(sage.src(`styles/editor.scss`), sage.work(`styles/editor-theme.css`))
 
-  /** Copy assets */
-  mx.copyWatched(sage.src(`images`), sage.public(`images`))
-    .copyWatched(sage.src(`fonts`), sage.public(`fonts`))
-    .copyWatched(sage.src(`svg`), sage.public(`svg`))
-
   /** Avoid WordPress-itis */
   mx.js(plugins(`wp-performant-media/src/wp-performant-media.js`), sage.work(`scripts`))
     .sass(plugins(`wp-performant-media/src/wp-performant-media.scss`), sage.work(`scripts`))
@@ -89,16 +85,22 @@ module.exports = () => {
       sage.work(`styles/app.css`),
       sage.work(`styles/public.css`),
       sage.work(`styles/wp-performant-media.css`),
-    ],sage.public(`/styles/compiled.css`))
+    ],sage.public(`styles/compiled.css`))
     .combine([
       sage.work(`scripts/wp-performant-media.js`),
       sage.work(`scripts/app.js`),
-    ],sage.public(`/scripts/compiled.js`))
+    ],sage.public(`scripts/compiled.js`))
 
+  /** Copy assets */
+  mx.copyWatched(sage.src(`images`), sage.public(`images`))
+    .copyWatched(sage.src(`fonts`), sage.public(`fonts`))
+    .copyWatched(sage.src(`svg`), sage.public(`svg`))
+
+  /** Extract vendor scripts */
   mx.extract(vendored).copy([
     sage.work(`scripts/vendor.js`),
     sage.work(`scripts/manifest.js`),
-  ],sage.public(`/scripts`))
+  ],sage.public(`scripts`))
 
   /** ✨*/
   return mx
