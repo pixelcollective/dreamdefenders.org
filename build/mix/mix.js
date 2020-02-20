@@ -9,7 +9,7 @@ require('laravel-mix-purgecss')
 require('laravel-mix-copy-watched')
 require('laravel-mix-tweemotional')
 
-const { sage, plugins, blocks, purgeWatch, devUrl } = require(`mix/config.js`)
+const { vendored, sage, plugins, blocks, addBlock, purgeWatch, devUrl } = require(`mix/config.js`)
 
 /**
  * joe-cool => joeCool
@@ -53,59 +53,52 @@ module.exports = () => {
       ],
       processCssUrls: false
     })
+    .tweemotional()
 
   mx.sourceMaps(false, 'source-map')
     .inProduction() && mx.version()
 
   /** Sage client scripts */
-  mx.js(sage.src(`scripts/app.js`), sage.dist(`build/scripts`))
+  mx.js(sage.src(`scripts/app.js`), sage.work(`scripts`))
 
   /** Block editor scripts */
-  mx.js(sage.src(`scripts/editor.js`), sage.dist(`build/scripts`))
-    .js(blocks.src(`scripts/blocks/Banner/block.js`), sage.dist(`build/scripts/blocks/banner`))
-    .js(blocks.src(`scripts/blocks/Container/block.js`), sage.dist(`build/scripts/blocks/container`))
-    .js(blocks.src(`scripts/blocks/FreedomPaper/block.js`), sage.dist(`build/scripts/blocks/freedom-paper`))
-    .js(blocks.src(`scripts/blocks/HorizontalCard/block.js`), sage.dist(`build/scripts/blocks/horizontal-card`))
-    .js(blocks.src(`scripts/blocks/TwoColumn/block.js`), sage.dist(`build/scripts/blocks/two-column`))
-    .js(blocks.src(`scripts/blocks/PostContainer/block.js`), sage.dist(`build/scripts/blocks/post-container`))
-    .js(blocks.src(`scripts/blocks/ProjectContainer/block.js`), sage.dist(`build/scripts/blocks/project-container/block.js`))
-    .js(blocks.src(`scripts/blocks/Squadd/block.js`), sage.dist(`build/scripts/blocks/squadd/block.js`))
-    .tweemotional()
+  mx.js(sage.src(`scripts/editor.js`), sage.work(`scripts`))
+    .js(addBlock(`Banner`), sage.work(`scripts/blocks/banner`))
+    .js(addBlock(`Container`), sage.work(`scripts/blocks/container`))
+    .js(addBlock(`FreedomPaper`), sage.work(`scripts/blocks/freedom-paper`))
+    .js(addBlock(`HorizontalCard`), sage.work(`scripts/blocks/horizontal-card`))
+    .js(addBlock(`TwoColumn`), sage.work(`scripts/blocks/two-column`))
+    .js(addBlock(`PostContainer`), sage.work(`scripts/blocks/post-container`))
+    .js(addBlock(`ProjectContainer`), sage.work(`scripts/blocks/project-container/block.js`))
+    .js(addBlock(`Squadd`), sage.work(`scripts/blocks/squadd/block.js`))
 
   /** Application styles */
-  mx.sass(sage.src(`styles/app.scss`), sage.dist(`build/styles`))
-    .sass(sage.src(`styles/editor.scss`), sage.dist(`build/styles/editor-theme.css`))
-    .sass(blocks.src(`styles/editor.scss`), sage.dist(`build/styles/editor.css`))
+  mx.sass(sage.src(`styles/app.scss`), sage.work(`styles`))
+    .sass(sage.src(`styles/editor.scss`), sage.work(`styles/editor-theme.css`))
 
   /** Copy assets */
-  mx.copyWatched(sage.src(`images`), sage.dist(`images`))
-    .copyWatched(sage.src(`fonts`), sage.dist(`fonts`))
-    .copyWatched(sage.src(`svg`), sage.dist(`svg`))
+  mx.copyWatched(sage.src(`images`), sage.public(`images`))
+    .copyWatched(sage.src(`fonts`), sage.public(`fonts`))
+    .copyWatched(sage.src(`svg`), sage.public(`svg`))
 
   /** Avoid WordPress-itis */
-  mx.js(plugins(`wp-performant-media/src/wp-performant-media.js`), sage.dist(`build/scripts`))
-    .sass(plugins(`wp-performant-media/src/wp-performant-media.scss`), sage.dist(`build/scripts`))
-    .css(plugins(`pdf-viewer-block/public/css/pdf-viewer-block.css`), sage.dist(`build/scripts`))
+  mx.js(plugins(`wp-performant-media/src/wp-performant-media.js`), sage.work(`scripts`))
+    .sass(plugins(`wp-performant-media/src/wp-performant-media.scss`), sage.work(`scripts`))
+    .css(plugins(`pdf-viewer-block/public/css/pdf-viewer-block.css`), sage.work(`scripts`))
     .combine([
-      `./web/app/themes/sage/dist/build/styles/app.css`,
-      `./web/app/themes/sage/dist/build/styles/public.css`,
-      `./web/app/themes/sage/dist/build/styles/wp-performant-media.css`,
-    ],`./web/app/themes/sage/dist/styles/compiled.css`)
+      sage.work(`styles/app.css`),
+      sage.work(`styles/public.css`),
+      sage.work(`styles/wp-performant-media.css`),
+    ],sage.public(`/styles/compiled.css`))
     .combine([
-      `./web/app/themes/sage/dist/build/scripts/wp-performant-media.js`,
-      `./web/app/themes/sage/dist/build/scripts/app.js`,
-    ],`./web/app/themes/sage/dist/scripts/compiled.js`)
+      sage.work(`scripts/wp-performant-media.js`),
+      sage.work(`scripts/app.js`),
+    ],sage.public(`/scripts/compiled.js`))
 
-  mx.extract([
-    'lozad',
-    'intersection-observer',
-    'animejs',
-    'headroom.js',
-    '@tinypixelco/hoverfx',
-  ]).copy([
-    `./web/app/themes/sage/dist/build/scripts/vendor.js`,
-    `./web/app/themes/sage/dist/build/scripts/manifest.js`,
-  ],`./web/app/themes/sage/dist/scripts/`)
+  mx.extract(vendored).copy([
+    sage.work(`scripts/vendor.js`),
+    sage.work(`scripts/manifest.js`),
+  ],sage.public(`/scripts`))
 
   /** ✨*/
   return mx
