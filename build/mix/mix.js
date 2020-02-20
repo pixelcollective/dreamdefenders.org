@@ -3,11 +3,11 @@ const [mx, whitelist] = [
   require('mix/whitelist'),
 ]
 
+const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin');
+
 require('laravel-mix-purgecss')
 require('laravel-mix-copy-watched')
 require('laravel-mix-tweemotional')
-require('@tinypixelco/laravel-mix-wp-blocks')
-const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin')
 
 const {
   sage,
@@ -17,71 +17,55 @@ const {
   devUrl,
 } = require(`mix/config.js`)
 
+const wordPressPackages = [
+  "a11y","annotation","api-fetch","autop","blob","block-directory",
+  "block-editor","block-library","blocks",
+  "components","compose","core-data","data-controls","deprecated",
+  "dom-ready","edit-post","edit-site","edit-widgets","editor","element",
+  "escape-html","format-library","hooks","html-entities","i18n","i18n","icons",
+  "is-shallow-equal","keyboard-shortcuts","keycodes","list-reusable-blocks","media-utils",
+  "notices","nux","plugins","polyfill","primitives","priority-queue","redux-routine","rich-text",
+  "server-side-render","shortcode","token-list","url","viewport","warning",
+  "wordcount"
+];
+
+/**
+ * joe-cool => joeCool
+ */
+const camelCash = string => (
+  string.replace(/-([a-z])/g, (match, letter) => letter.toUpperCase())
+);
+
 module.exports = () => {
   mx.setPublicPath(`./web/app/themes/sage/dist`)
     .setResourceRoot(`./web/app`)
     .browserSync(devUrl)
+    .purgeCss({
+      enabled: true,
+      extensions: ['js', 'php', 'scss', 'css'],
+      globs: purgeWatch,
+      whitelistPatterns: whitelist,
+      whitelistPatternsChildren: whitelist,
+    })
     .webpackConfig({
       plugins: [
-        new DependencyExtractionWebpackPlugin({ injectPolyfill: true }),
+        new DependencyExtractionWebpackPlugin({
+          injectPolyfill: false,
+          outputFormat: `php`,
+        }),
       ],
       externals: {
-        '@babel/runtime/regenerator': 'wp-polyfill',
-        'jquery': 'jQuery',
         'react': 'React',
         'react-dom': 'ReactDOM',
-        '@wordpress/a11y': 'wp.a11y',
-        '@wordpress/annotations': 'wp.annotations',
-        '@wordpress/api-fetch': 'wp.apiFetch',
-        '@wordpress/autop': 'wp.autop',
-        '@wordpress/blob': 'wp.blob',
-        '@wordpress/block-directory': 'wp.blockDirectory',
-        '@wordpress/block-editor': 'wp.blockEditor',
-        '@wordpress/block-library': 'wp.blockLibrary',
-        '@wordpress/block-serialization-default-parser': 'wp.blockSerializationDefaultParser',
-        '@wordpress/block-serialization-spec-parser': 'wp.blockSerializationSpecParser',
-        '@wordpress/blocks': 'wp.blocks',
-        '@wordpress/components': 'wp.components',
-        '@wordpress/compose': 'wp.compose',
-        '@wordpress/core-data': 'wp.coreData',
-        '@wordpress/data': 'wp.data',
-        '@wordpress/data-controls': 'wp.dataControls',
-        '@wordpress/date': 'wp.date',
-        '@wordpress/deprecated': 'wp.deprecated',
-        '@wordpress/dom': 'wp.dom',
-        '@wordpress/dom-ready': 'wp.domReady',
-        '@wordpress/edit-post': 'wp.editPost',
-        '@wordpress/edit-site': 'wp.editSite',
-        '@wordpress/edit-widgets': 'wp.editWidgets',
-        '@wordpress/editor': 'wp.editor',
-        '@wordpress/element': 'wp.element',
-        '@wordpress/escape-html': 'wp.escapeHtml',
-        '@wordpress/format-library': 'wp.formatLibrary',
-        '@wordpress/hooks': 'wp.hooks',
-        '@wordpress/html-entities': 'wp.htmlEntities',
-        '@wordpress/i18n': 'wp.i18n',
-        '@wordpress/icons': 'wp.icons',
-        '@wordpress/is-shallow-equal': 'wp.isShallowEqual',
-        '@wordpress/keyboard-shortcuts': 'wp.keyboardShortcuts',
-        '@wordpress/keycodes': 'wp.keycodes',
-        '@wordpress/list-reusable-blocks': 'wp.listReusableBlocks',
-        '@wordpress/media-utils': 'wp.mediaUtils',
-        '@wordpress/notices': 'wp.notices',
-        '@wordpress/nux': 'wp.nux',
-        '@wordpress/plugins': 'wp.plugins',
-        '@wordpress/primitives': 'wp.primitives',
-        '@wordpress/priority-queue': 'wp.priorityQueue',
-        '@wordpress/redux-routine': 'wp.reduxRoutine',
-        '@wordpress/rich-text': 'wp.richText',
-        '@wordpress/server-side-render': 'wp.serverSideRender',
-        '@wordpress/shortcode': 'wp.shortcode',
-        '@wordpress/token-list': 'wp.tokenList',
-        '@wordpress/url': 'wp.url',
-        '@wordpress/viewport': 'wp.viewport',
-        '@wordpress/warning': 'wp.warning',
-        '@wordpress/wordcount': 'wp.wordcount',
+        ...wordPressPackages.map(pkg => {
+          const wpImport = `@wordpress/${pkg}`
+          wpWindow = `wp.${camelCash(pkg)}`
+
+          return { [wpImport]: wpWindow }
+        }),
       },
-    }).options({
+    })
+    .options({
       hmrOptions: {
         host: devUrl,
         port: 8080,
@@ -91,14 +75,7 @@ module.exports = () => {
         require('autoprefixer'),
       ],
       processCssUrls: false
-    }).purgeCss({
-      enabled: true,
-      extensions: ['js', 'php', 'scss', 'css'],
-      globs: purgeWatch,
-      whitelistPatterns: whitelist,
-      whitelistPatternsChildren: whitelist,
-    }).sourceMaps(false, 'source-map')
-      .inProduction() && mx.version()
+    }).sourceMaps(false, 'source-map').inProduction() && mx.version()
 
   /** Sage client scripts */
   mx.js(sage.src(`scripts/app.js`), sage.dist(`build/scripts`))
@@ -139,7 +116,16 @@ module.exports = () => {
       `./web/app/themes/sage/dist/build/scripts/app.js`,
     ],`./web/app/themes/sage/dist/scripts/compiled.js`)
 
-  mx.extract(['lozad','intersection-observer','animejs','chroma-js','emotion'])
+  mx.extract([
+    'lozad',
+    'intersection-observer',
+    'animejs',
+    'headroom.js',
+    '@tinypixelco/hoverfx',
+  ]).copy([
+    `./web/app/themes/sage/dist/build/scripts/vendor.js`,
+    `./web/app/themes/sage/dist/build/scripts/manifest.js`,
+  ],`./web/app/themes/sage/dist/scripts/`)
 
   /** ✨*/
   return mx

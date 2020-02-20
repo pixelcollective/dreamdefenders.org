@@ -56,20 +56,19 @@ add_action('wp_enqueue_scripts', function () {
     })();
 
     /** Enqueue application vendor JS 🙏🏽 */
-    wp_enqueue_script('sage/vendor', asset('build/scripts/vendor.js')->uri(), ['jquery'], null, true);
+    wp_enqueue_script('sage/vendor', asset('scripts/vendor.js')->uri(), [], null, true);
 
     /** Enqueue application JS */
     wp_enqueue_script('sage/compiled', asset('scripts/compiled.js')->uri(), ['sage/vendor'], null, true);
-
-    /** Inlined vendor */
-    wp_add_inline_script('sage/vendor', asset('manifest.js')->contents(), 'before');
-
     /** Poor man's inertia.js 😂 */
-    wp_localize_script('sage/compiled.js', 'sage', [
+    wp_localize_script('sage/compiled', 'sage', [
         'isPage'      => is_page(),
         'isHome'      => is_home(),
         'isFrontPage' => is_front_page(),
     ]);
+
+    /** Inlined vendor */
+    wp_add_inline_script('sage/vendor', asset('scripts/manifest.js')->contents(), 'before');
 
     /** Enqueue application styles */
     wp_enqueue_style('sage/compiled.css', asset('styles/compiled.css')->uri(), false, null);
@@ -82,7 +81,6 @@ add_action('wp_enqueue_scripts', function () {
  */
 add_action('enqueue_block_editor_assets', function () {
     wp_enqueue_script('sage/editor-theme.js', asset('scripts/editor.js')->uri(), ['wp-polyfill', 'wp-dom', 'wp-edit-post'], time());
-
     wp_enqueue_style('sage/editor-theme.css', asset('styles/editor-theme.css')->uri(), false, null);
 }, 100);
 
