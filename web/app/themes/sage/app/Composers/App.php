@@ -36,6 +36,7 @@ class App extends Composer
         return [
             'app' => (object) [
                 'site' => (object) $this->site(),
+                'manifest' => get_bloginfo('url') . '/app/themes/sage/app-manifest.json',
                 'accounts' => (object) [
                     'facebook'  => $this->mods->facebook ? "https://facebook.com/{$this->mods->facebook}" : null,
                     'twitter'   => $this->mods->twitter ? "https://twitter.com/{$this->mods->twitter}" : null,
@@ -70,10 +71,9 @@ class App extends Composer
      */
     public function site(): array
     {
-        return Collection::make(self::$info)
-            ->flatMap(function ($field) {
-                return [$field => get_bloginfo($field)];
-            })->toArray();
+        return Collection::make(self::$info)->flatMap(function ($field) {
+            return [$field => get_bloginfo($field)];
+        })->toArray();
     }
 
     /**
@@ -83,8 +83,7 @@ class App extends Composer
      */
     public function navigation($nav)
     {
-        $navigation = (new Navi())->build($nav);
-
-        return ! $navigation->isEmpty() ? $navigation->toArray() : null;
+        $navItems = (new Navi())->build($nav);
+        return ! $navItems->isEmpty() && $navItems->toArray();
     }
 }

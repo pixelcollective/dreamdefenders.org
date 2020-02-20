@@ -1,18 +1,19 @@
-const [
-  mx,
-  whitelist,
-  wpDeps,
-  DependencyExtractionWebpackPlugin
-] = [
+const [ mx, whitelist, wpDeps, DependencyExtractionWebpackPlugin ] = [
   require('laravel-mix'),
   require('mix/whitelist'),
   require('mix/wp-pkg-index'),
   require('@wordpress/dependency-extraction-webpack-plugin'),
-]
+];
 
+/** laravel-mix plugins */
 require('laravel-mix-purgecss')
 require('laravel-mix-copy-watched')
 require('laravel-mix-tweemotional')
+
+/** application config and util */
+const camelCash = string => (
+  string.replace(/-([a-z])/g, (match, letter) => letter.toUpperCase())
+)
 
 const {
   block,
@@ -22,13 +23,6 @@ const {
   sage,
   vendorScripts,
 } = require(`mix/config.js`)
-
-/**
- * joe-cool => joeCool
- */
-const camelCash = string => (
-  string.replace(/-([a-z])/g, (match, letter) => letter.toUpperCase())
-)
 
 module.exports = () => {
   /** Configure */
@@ -45,7 +39,7 @@ module.exports = () => {
          require('autoprefixer'),
        ],
        processCssUrls: false
-    }).tweemotional()
+    })
     .purgeCss({
       enabled: true,
       extensions: ['js', 'php', 'scss', 'css'],
@@ -79,6 +73,7 @@ module.exports = () => {
     .js(block(`PostContainer`), sage.work(`scripts/blocks/post-container`))
     .js(block(`ProjectContainer`), sage.work(`scripts/blocks/project-container/block.js`))
     .js(block(`Squadd`), sage.work(`scripts/blocks/squadd/block.js`))
+    .tweemotional()
 
   /** Sage client scripts */
   mx.js(sage.src(`scripts/app.js`), sage.work(`scripts`))
