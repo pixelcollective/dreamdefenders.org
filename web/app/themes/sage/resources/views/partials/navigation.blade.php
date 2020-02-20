@@ -3,39 +3,39 @@
   <div class="container text-black">
     <div class="flex flex-row justify-between w-full">
       <div class="flex items-center justify-middle">
-        <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="w-32 my-4 ml-0 no-underline blend-difference nav-logo hover:no-underline" href="{!! $app->site->url !!}" title="Dream Defenders">
-          @svg('logo', 'w-full fill-current blend-difference', ['height' => 64])
+        <a aria-label="Dream Defenders"  hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="w-32 my-4 ml-0 no-underline blend-difference nav-logo hover:no-underline" href="{!! $app->site->url !!}">
+          @svg('logo', 'w-full fill-current blend-difference', ['height' => 64, 'alt' => 'Dream Defenders logo', 'title' => 'Dream Defenders'])
         </a>
       </div>
 
       <div class="items-center justify-between text-white align-middle blend-difference hidden md:flex">
         @if($app->accounts->facebook)
-          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 mx-1 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->facebook !!}" title="Dream Defenders">
+          <a id="home" aria-label="Return to the {!! get_bloginfo('site_name') !!} homepage" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 mx-1 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->facebook !!}" title="Dream Defenders">
             @svg('facebook-f', 'w-full fill-current', ['width' => 28, 'height' => 28])
           </a>
         @endif
 
         @if($app->accounts->twitter)
-          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 mx-1  text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->twitter !!}" title="Dream Defenders">
+          <a aria-label="Link to {!! get_bloginfo('site_name') !!} on Twitter" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 mx-1  text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->twitter !!}" title="Dream Defenders">
             @svg('twitter', 'w-full fill-current', ['width' => 28, 'height' => 28])
           </a>
         @endif
 
         @if($app->accounts->instagram)
-          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 mx-1 align-middle justify-center text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->instagram !!}" title="Dream Defenders" style="overflow-x: hidden;">
+          <a aria-label="Link to {!! get_bloginfo('site_name') !!} on Instagram" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 mx-1 align-middle justify-center text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->instagram !!}" title="Dream Defenders" style="overflow-x: hidden;">
             @svg('instagram', 'w-full fill-current pl-1', ['width' => 32, 'height' => 32])
           </a>
         @endif
 
         @if($app->accounts->email)
-          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="mr-4 p-3 mx-1 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->email !!}" title="Dream Defenders">
+          <a aria-label="Compose an email to {!! $app->accounts->email !!}" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="mr-4 p-3 mx-1 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->email !!}" title="Dream Defenders">
             @svg('envelope', 'w-full fill-current', ['width' => 28,'height' => 28])
           </a>
         @endif
 
         @isset($app->actions[0]->url)
           <button modal="overlay" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="px-6 py-2 mx-2 text-sm text-black uppercase bg-white border border-white rounded blend-difference" title="{!! $app->actions[0]->text !!}" aria-label="{!! $app->actions[0]->text !!}">
-            <a href="{!! $app->actions[0]->url !!}">
+            <a aria-label="{!! $app->actions[0]->text !!}" href="{!! $app->actions[0]->url !!}">
               {!! $app->actions[0]->text !!}
             </a>
           </button>
@@ -43,7 +43,7 @@
 
         @isset($app->actions[1]->url)
           <button hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="px-6 py-2 mx-2 text-sm text-black uppercase bg-transparent text-white border border-white rounded blend-difference" title="{!! $app->actions[1]->text !!}" aria-label="{!! $app->actions[1]->text !!}">
-            <a href="{!! $app->actions[1]->url !!}">
+            <a aria-label="{!! $app->actions[1]->text !!}" href="{!! $app->actions[1]->url !!}">
               {!! $app->actions[1]->text !!}
             </a>
           </button>
