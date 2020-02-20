@@ -7,4 +7,3 @@ export default () => (
     loaded: el => el.classList.add(`is-loaded`),
   }).observe()
 )()
-

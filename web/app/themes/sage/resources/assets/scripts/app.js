@@ -1,5 +1,4 @@
 import hoverFx from '@tinypixelco/hoverfx'
-import './components/performantMedia'
 import {
   instagram,
   nav,
@@ -7,6 +6,8 @@ import {
   twoPathsObserver,
   modal,
 }  from './components'
+
+import './components/performantMedia'
 
 window.requestAnimationFrame(() => {
   const { sage } = window

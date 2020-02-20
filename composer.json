@@ -60,7 +60,7 @@
     "tiny-pixel/disallow-mail": "^1.0",
     "tiny-pixel/s3-uploads-adapter": "dev-master",
     "tiny-pixel/wp-performant-media": ">=1.0.1",
-    "wp-cli/wp-cli-bundle": "^2.4",
+    "wp-cli/wp-cli-bundle": "=2.3",
     "wp-graphql/wp-graphiql": "^1.0.0",
     "wp-graphql/wp-graphql": "^0.6.0",
     "wp-graphql/wp-graphql-acf": "^0.3.1",
@@ -105,12 +105,12 @@
     "installer-paths": {
       "web/app/mu-plugins/{$name}/": [
         "type:wordpress-muplugin",
-        "roots/wp-stage-switcher",
+        "aaemnnosttv/wp-cli-login-server",
         "wpackagist-plugin/wp-redis",
+        "roots/wp-stage-switcher",
         "wp-graphql/wp-graphql",
         "wp-graphql/wp-graphql-acf",
         "wp-graphql/wp-graphiql",
-        "aaemnnosttv/wp-cli-login-server",
         "tiny-pixel/advanced-custom-fields",
         "tiny-pixel/s3-uploads-adapter"
       ],

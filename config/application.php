@@ -61,9 +61,6 @@ if (env('SENTRY_DSN') && env('WP_ENV') !== 'development') {
         env('REDIS_HOST') && $scope->setTag('redis', env('REDIS_HOST'));
         env('DB_HOST')    && $scope->setTag('db', env('DB_HOST'));
         env('S3_BUCKET')  && $scope->setTag('s3', env('S3_UPLOADS_BUCKET'));
-
-        !empty($_SERVER['HTTP_CLIENT_IP'])       && $scope->setTag('http_client_ip', $_SERVER['HTTP_CLIENT_IP']);
-        !empty($_SERVER['HTTP_X_FORWARDED_FOR']) && $scope->setTag('http_x_forwarded_for', $_SERVER['HTTP_X_FORWARDED_FOR']);
     });
 
     $bootloader->defineSet([

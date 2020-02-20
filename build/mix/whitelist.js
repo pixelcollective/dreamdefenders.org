@@ -10,4 +10,5 @@ module.exports = [
   /has-.?/,
   /wp-embed-.?/,
   /wp-.?/,
+  /lazyload.?/,
 ];

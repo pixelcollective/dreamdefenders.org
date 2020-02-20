@@ -48,6 +48,11 @@ add_action('wp_enqueue_scripts', function () {
     wp_deregister_style('pdf-viewer-block-styles');
     wp_register_style('pdf-viewer-block-styles', null);
 
+    /** Dequeue WP Rocket lazyload */
+    wp_dequeue_script('rocket-lazyload');
+    wp_deregister_script('rocket-lazyload');
+    wp_register_script('rocket-lazyload', null);
+
     /** Dequeue PDF viewer JS if unused */
     ! has_block('pdf-viewer-block/standard', get_the_id()) && (function () {
         wp_dequeue_script('pdf-viewer-block-scripts');

@@ -14,12 +14,9 @@ global:
 
 development:
   enable:
-    - laps/laps.php
     - query-monitor/query-monitor.php
     - rewrite-testing/rewrite-testing.php
     - user-switching/user-switching.php
-  disable:
-    - wp-rocket/wp-rocket.php
 
 staging:
   enable:
