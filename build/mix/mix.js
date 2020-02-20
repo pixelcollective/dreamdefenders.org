@@ -77,15 +77,15 @@ module.exports = () => {
     .sass(sage.src(`styles/editor.scss`), sage.dist(`build/styles/editor-theme.css`))
     .sass(blocks.src(`styles/editor.scss`), sage.dist(`build/styles/editor.css`))
 
-  /** Misc. assets */
-  mx.js(plugins(`wp-performant-media/src/wp-performant-media.js`), sage.dist(`build/scripts`))
-    .sass(plugins(`wp-performant-media/src/wp-performant-media.scss`), sage.dist(`build/scripts`))
-    .css(plugins(`pdf-viewer-block/public/css/pdf-viewer-block.css`), sage.dist(`build/scripts`))
-
-  /** Copy and combine assets */
+  /** Copy assets */
   mx.copyWatched(sage.src(`images`), sage.dist(`images`))
     .copyWatched(sage.src(`fonts`), sage.dist(`fonts`))
     .copyWatched(sage.src(`svg`), sage.dist(`svg`))
+
+  /** Avoid WordPress-itis */
+  mx.js(plugins(`wp-performant-media/src/wp-performant-media.js`), sage.dist(`build/scripts`))
+    .sass(plugins(`wp-performant-media/src/wp-performant-media.scss`), sage.dist(`build/scripts`))
+    .css(plugins(`pdf-viewer-block/public/css/pdf-viewer-block.css`), sage.dist(`build/scripts`))
     .combine([
       `./web/app/themes/sage/dist/build/styles/app.css`,
       `./web/app/themes/sage/dist/build/styles/public.css`,
