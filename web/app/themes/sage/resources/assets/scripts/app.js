@@ -1,4 +1,5 @@
 import hoverFx from '@tinypixelco/hoverfx'
+import './components/performantMedia'
 import {
   instagram,
   nav,
