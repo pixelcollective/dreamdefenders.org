@@ -1,33 +1,15 @@
-const [mx, whitelist] = [
+const [mx, whitelist, wpDeps, DependencyExtractionWebpackPlugin] = [
   require('laravel-mix'),
   require('mix/whitelist'),
+  require('./wp-pkg-index'),
+  require('@wordpress/dependency-extraction-webpack-plugin'),
 ]
-
-const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin');
 
 require('laravel-mix-purgecss')
 require('laravel-mix-copy-watched')
 require('laravel-mix-tweemotional')
 
-const {
-  sage,
-  plugins,
-  blocks,
-  purgeWatch,
-  devUrl,
-} = require(`mix/config.js`)
-
-const wordPressPackages = [
-  "a11y","annotation","api-fetch","autop","blob","block-directory",
-  "block-editor","block-library","blocks",
-  "components","compose","core-data","data-controls","deprecated",
-  "dom-ready","edit-post","edit-site","edit-widgets","editor","element",
-  "escape-html","format-library","hooks","html-entities","i18n","i18n","icons",
-  "is-shallow-equal","keyboard-shortcuts","keycodes","list-reusable-blocks","media-utils",
-  "notices","nux","plugins","polyfill","primitives","priority-queue","redux-routine","rich-text",
-  "server-side-render","shortcode","token-list","url","viewport","warning",
-  "wordcount"
-];
+const { sage, plugins, blocks, purgeWatch, devUrl } = require(`mix/config.js`)
 
 /**
  * joe-cool => joeCool
@@ -46,8 +28,7 @@ module.exports = () => {
       globs: purgeWatch,
       whitelistPatterns: whitelist,
       whitelistPatternsChildren: whitelist,
-    })
-    .webpackConfig({
+    }).webpackConfig({
       plugins: [
         new DependencyExtractionWebpackPlugin({
           injectPolyfill: false,
@@ -57,15 +38,11 @@ module.exports = () => {
       externals: {
         'react': 'React',
         'react-dom': 'ReactDOM',
-        ...wordPressPackages.map(pkg => {
-          const wpImport = `@wordpress/${pkg}`
-          wpWindow = `wp.${camelCash(pkg)}`
-
-          return { [wpImport]: wpWindow }
-        }),
+        ...wpDeps.map(pkg => ({
+          [`@wordpress/${pkg}`]: `wp.${camelCash(pkg)}`
+        })),
       },
-    })
-    .options({
+    }).options({
       hmrOptions: {
         host: devUrl,
         port: 8080,
@@ -75,7 +52,10 @@ module.exports = () => {
         require('autoprefixer'),
       ],
       processCssUrls: false
-    }).sourceMaps(false, 'source-map').inProduction() && mx.version()
+    })
+
+  mx.sourceMaps(false, 'source-map')
+    .inProduction() && mx.version()
 
   /** Sage client scripts */
   mx.js(sage.src(`scripts/app.js`), sage.dist(`build/scripts`))
