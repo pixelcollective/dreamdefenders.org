@@ -1,28 +1,21 @@
-const [ mx, whitelist, wpDeps, DependencyExtractionWebpackPlugin ] = [
-  require('laravel-mix'),
-  require('mix/whitelist'),
-  require('mix/wp-pkg-index'),
-  require('@wordpress/dependency-extraction-webpack-plugin'),
-];
+const [mx, wp, {
+  block,
+  devUrl,
+  plugins,
+  purgeWatch,
+  purgeWhitelist,
+  sage,
+  vendorScripts,
+}] = [
+    require('laravel-mix'),
+    require('mix/wordpress-utils.js'),
+    require('mix/config')
+  ];
 
 /** laravel-mix plugins */
 require('laravel-mix-purgecss')
 require('laravel-mix-copy-watched')
 require('laravel-mix-tweemotional')
-
-/** application config and util */
-const camelCash = string => (
-  string.replace(/-([a-z])/g, (match, letter) => letter.toUpperCase())
-)
-
-const {
-  block,
-  devUrl,
-  plugins,
-  purgeWatch,
-  sage,
-  vendorScripts,
-} = require(`mix/config.js`)
 
 module.exports = () => {
   /** Configure */
@@ -30,25 +23,25 @@ module.exports = () => {
     .setResourceRoot(`./web/app`)
     .browserSync(devUrl)
     .options({
-       hmrOptions: {
-         host: devUrl,
-         port: 8080,
-       },
-       postCss: [
-         require('tailwind'),
-         require('autoprefixer'),
-       ],
-       processCssUrls: false
+      hmrOptions: {
+        host: devUrl,
+        port: 8080,
+      },
+      postCss: [
+        require('tailwind'),
+        require('autoprefixer'),
+      ],
+      processCssUrls: false
     })
     .purgeCss({
       enabled: true,
       extensions: ['js', 'php', 'scss', 'css'],
       globs: purgeWatch,
-      whitelistPatterns: whitelist,
-      whitelistPatternsChildren: whitelist,
+      whitelistPatterns: purgeWhitelist,
+      whitelistPatternsChildren: purgeWhitelist,
     }).webpackConfig({
       plugins: [
-        new DependencyExtractionWebpackPlugin({
+        new wp.dependencyInjectionWebpackPlugin({
           injectPolyfill: false,
           outputFormat: `php`,
         }),
@@ -56,12 +49,11 @@ module.exports = () => {
       externals: {
         'react': 'React',
         'react-dom': 'ReactDOM',
-        ...wpDeps.map(pkg => ({
-          [`@wordpress/${pkg}`]: `wp.${camelCash(pkg)}`
-        })),
+        ...wp.aliases(),
       },
-    }).sourceMaps(false, 'source-map')
-      .inProduction() && mx.version()
+    })
+    .sourceMaps(false, 'source-map')
+    .inProduction() && mx.version()
 
   /** Block editor scripts */
   mx.js(sage.src(`scripts/editor.js`), sage.work(`scripts`))
@@ -78,8 +70,8 @@ module.exports = () => {
   /** Sage client scripts */
   mx.js(sage.src(`scripts/app.js`), sage.work(`scripts`))
     .extract(vendorScripts).copy([
-       sage.work(`scripts/vendor.js`),
-       sage.work(`scripts/manifest.js`),
+      sage.work(`scripts/vendor.js`),
+      sage.work(`scripts/manifest.js`),
     ], sage.public(`scripts`))
 
   /** Application styles */
@@ -89,11 +81,11 @@ module.exports = () => {
   /** Avoid WordPress-itis */
   mx.css(plugins(`pdf-viewer-block/public/css/pdf-viewer-block.css`), sage.work(`scripts`))
     .combine([
-       sage.work(`styles/app.css`),
-       sage.work(`styles/public.css`),
+      sage.work(`styles/app.css`),
+      sage.work(`styles/public.css`),
     ], sage.public(`styles/compiled.css`))
     .combine([
-       sage.work(`scripts/app.js`),
+      sage.work(`scripts/app.js`),
     ], sage.public(`scripts/compiled.js`))
 
   /** Copy assets */

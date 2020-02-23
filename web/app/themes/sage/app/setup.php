@@ -19,9 +19,9 @@ use function Roots\asset;
  */
 add_action('wp_enqueue_scripts', function () {
     /** Dequeue jQuery unless it's needed */
-    ! is_admin()
-        && ! is_admin_bar_showing()
-        && ! has_block('pdf-viewer-block/standard', get_the_id())
+    !is_admin()
+        && !is_admin_bar_showing()
+        && !has_block('pdf-viewer-block/standard', get_the_id())
         && (function () {
             wp_dequeue_script('jquery');
             wp_deregister_script('jquery');
@@ -54,7 +54,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_register_script('rocket-lazyload', null);
 
     /** Dequeue PDF viewer JS if unused */
-    ! has_block('pdf-viewer-block/standard', get_the_id()) && (function () {
+    !has_block('pdf-viewer-block/standard', get_the_id()) && (function () {
         wp_dequeue_script('pdf-viewer-block-scripts');
         wp_deregister_script('pdf-viewer-block-scripts');
         wp_register_script('pdf-viewer-block-scripts', null);
@@ -65,6 +65,7 @@ add_action('wp_enqueue_scripts', function () {
 
     /** Enqueue application JS */
     wp_enqueue_script('sage/compiled', asset('scripts/compiled.js')->uri(), ['sage/vendor'], null, true);
+
     /** Poor man's inertia.js 😂 */
     wp_localize_script('sage/compiled', 'sage', [
         'isPage'      => is_page(),

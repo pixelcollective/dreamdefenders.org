@@ -3,10 +3,10 @@ const { resolve, join } = require('path')
 
 /** Build dependencies */
 const mx = require('laravel-mix'),
-      tw = require('tailwind')
-           require('@tinypixelco/laravel-mix-wp-blocks')
-           require('laravel-mix-purgecss')
-           require('laravel-mix-tweemotional')
+  tw = require('tailwind')
+require('@tinypixelco/laravel-mix-wp-blocks')
+require('laravel-mix-purgecss')
+require('laravel-mix-tweemotional')
 
 /**
  * Dev url

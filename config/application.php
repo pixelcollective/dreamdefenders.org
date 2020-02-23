@@ -39,6 +39,21 @@ $bootloader->loadEnv([
 ]);
 
 /**
+ * Configure WordPress application.
+ */
+$bootloader->configureWordPressApp([
+    'DISABLE_WP_CRON'            => true,
+    'AUTOMATIC_UPDATER_DISABLED' => true,
+    'DISALLOW_FILE_EDIT'         => true,
+    'DISALLOW_FILE_MODS'         => true,
+    'WP_CACHE'                   => env('WP_ENV') !== 'development',
+    'WP_DEBUG'                   => env('WP_ENV') == 'development',
+    'WP_DEBUG_DISPLAY'           => env('WP_ENV') == 'development',
+    'SCRIPT_DEBUG'               => env('WP_ENV') == 'development',
+    'DISPLAY_ERRORS'             => env('WP_ENV') == 'development',
+]);
+
+/**
  * Configure Sentry.
  */
 if (env('SENTRY_DSN') && env('WP_ENV') !== 'development') {
@@ -75,19 +90,6 @@ if (env('SENTRY_DSN') && env('WP_ENV') !== 'development') {
 $bootloader->defineEnvironments([
     'development' => 'http://dreamdefenders.vagrant',
     'staging'     => 'https://build.dreamdefenders.tinypixel.dev',
-]);
-
-/**
- * Configure WordPress application.
- */
-$bootloader->configureWordPressApp([
-    'DISABLE_WP_CRON'            => true,
-    'AUTOMATIC_UPDATER_DISABLED' => true,
-    'DISALLOW_FILE_EDIT'         => true,
-    'DISALLOW_FILE_MODS'         => true,
-    'WP_DEBUG_DISPLAY'           => env('WP_ENV') == 'development',
-    'SCRIPT_DEBUG'               => env('WP_ENV') == 'development',
-    'DISPLAY_ERRORS'             => env('WP_ENV') == 'development',
 ]);
 
 /**
