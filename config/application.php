@@ -10,161 +10,185 @@
  * @link     Tiny Pixel <https://tinypixel.dev>
  */
 
-use TinyPixel\Config\Bootloader;
+require_once __DIR__ . '/Config.php';
+
+use TinyPixel\WPConfig\Config;
 
 /**
- * Initialize bootloader.
+ * Directory containing all of the site's files
+ *
+ * @var string
+ */
+$root_dir = dirname(__DIR__);
+
+/**
+ * Document Root
+ *
+ * @var string
+ */
+$webroot_dir = $root_dir . '/web';
+
+/**
+ * Expose global env() function from oscarotero/env
  */
 Env::init();
 
-$bootloader = new Bootloader();
-$bootloader->init(dirname(__DIR__));
+/**
+ * Use Dotenv to set required environment variables and load .env file in root
+ */
+$dotenv = Dotenv\Dotenv::createImmutable($root_dir);
+if (file_exists($root_dir . '/.env')) {
+    $dotenv->load();
+    $dotenv->required(['WP_HOME', 'WP_SITEURL']);
+
+    if (!env('DATABASE_URL')) {
+        $dotenv->required(['DB_NAME', 'DB_USER', 'DB_PASSWORD']);
+    }
+}
 
 /**
- * Specify required environmental variables.
+ * Base values
  */
-$bootloader->loadEnv([
-    'DB_HOST',
-    'DB_NAME',
-    'DB_PASSWORD',
-    'DB_USER',
-    'REDIS_HOST',
-    'REDIS_PASSWORD',
-    'S3_UPLOADS_BUCKET',
-    'S3_UPLOADS_KEY',
-    'S3_UPLOADS_SECRET',
-    'WP_ENV',
-    'WP_HOME',
-    'WP_SITEURL',
+Config::defineSet([
+    'WP_ENV' => Env::get('WP_ENV'),
+    'WP_HOME' => Env::get('WP_HOME'),
+    'WP_SITEURL' => Env::get('WP_SITEURL'),
 ]);
 
 /**
  * Configure WordPress application.
  */
-$bootloader->configureWordPressApp([
-    'DISABLE_WP_CRON'            => true,
+Config::defineSet([
+    'DISABLE_WP_CRON' => true,
+    'DISALLOW_FILE_EDIT' => true,
+    'DISALLOW_FILE_MODS' => true,
     'AUTOMATIC_UPDATER_DISABLED' => true,
-    'DISALLOW_FILE_EDIT'         => true,
-    'DISALLOW_FILE_MODS'         => true,
-    'WP_CACHE'                   => env('WP_ENV') !== 'development',
-    'WP_DEBUG'                   => env('WP_ENV') == 'development',
-    'WP_DEBUG_DISPLAY'           => env('WP_ENV') == 'development',
-    'SCRIPT_DEBUG'               => env('WP_ENV') == 'development',
-    'DISPLAY_ERRORS'             => env('WP_ENV') == 'development',
+    'WP_CACHE' => Config::get('WP_ENV') !== 'development' ? true : false,
 ]);
 
 /**
- * Configure Sentry.
+ * Configure debug
  */
-if (env('SENTRY_DSN') && env('WP_ENV') !== 'development') {
-    $release = (object) [
-        'dsn' => env('SENTRY_DSN') ?: null,
-        'sha' => env('GIT_SHA')    ?: null,
-        'env' => env('WP_ENV')     ?: null,
-        'url' => env('WP_HOME')    ?: null,
-    ];
+Config::defineSet([
+    'WP_DEBUG' => Config::get('WP_ENV') == 'development' ? true : false,
+    'WP_DEBUG_DISPLAY' => Config::get('WP_ENV') == 'development' ? true : false,
+    'SCRIPT_DEBUG' => Config::get('WP_ENV') == 'development' ? true : false,
+    'DISPLAY_ERRORS' => Config::get('WP_ENV') == 'development' ? true : false,
+]);
+ini_set('display_errors', Config::get('DISPLAY_ERRORS'));
 
-    \Sentry\init([
-        'dsn'         => $release->dsn,
-        'environment' => $release->env,
-        'release'     => $release->sha,
-        'error_types' => E_ALL & ~E_NOTICE & ~E_DEPRECATED,
-    ]);
 
-    \Sentry\configureScope(function (\Sentry\State\Scope $scope) use ($release): void {
-        $scope->setTag('property', $release->url);
-        env('REDIS_HOST') && $scope->setTag('redis', env('REDIS_HOST'));
-        env('DB_HOST')    && $scope->setTag('db', env('DB_HOST'));
-        env('S3_BUCKET')  && $scope->setTag('s3', env('S3_UPLOADS_BUCKET'));
-    });
-
-    $bootloader->defineSet([
-        'SENTRY_DSN'     => $release->dsn,
-        'SENTRY_RELEASE' => $release->sha,
-    ]);
-}
+/**
+ * Configure application paths.
+ */
+Config::defineSet([
+    'WP_CONTENT' => $root_dir . '/web/app/',
+    'WP_CONTENT_DIR' => $root_dir . '/web/app/',
+    'WP_CONTENT_URL' => Config::get('WP_HOME') . 'app/',
+]);
 
 /**
  * Define environments
  */
-$bootloader->defineEnvironments([
+Config::define('ENVIRONMENTS', [
     'development' => 'http://dreamdefenders.vagrant',
     'staging'     => 'https://build.dreamdefenders.tinypixel.dev',
 ]);
 
 /**
- * Configure application paths.
- */
-$bootloader->defineFS([
-    'CONTENT_DIR' => 'app',
-    'WP_ENV'      => env('WP_ENV'),
-    'WP_HOME'     => env('WP_HOME'),
-    'WP_SITEURL'  => env('WP_SITEURL'),
-]);
-
-/**
  * Configure DB.
  */
-$bootloader->defineDB([
-    'DB_NAME'      => env('DB_NAME'),
-    'DB_USER'      => env('DB_USER'),
-    'DB_PASSWORD'  => env('DB_PASSWORD'),
-    'DB_HOST'      => env('DB_HOST'),
-    'DB_CHARSET'   => env('DB_CHARSET')   ?: 'utf8',
-    'DB_COLLATION' => env('DB_COLLATION') ?: 'utf8_unicode_ci',
-    'DB_PREFIX'    => env('DB_PREFIX')    ?: 'wp_',
+Config::defineSet([
+    'DB_NAME'      => Env::get('DB_NAME'),
+    'DB_USER'      => Env::get('DB_USER'),
+    'DB_PASSWORD'  => Env::get('DB_PASSWORD'),
+    'DB_HOST'      => Env::get('DB_HOST'),
+    'DB_CHARSET'   => Env::get('DB_CHARSET')   ?: 'utf8',
+    'DB_COLLATION' => Env::get('DB_COLLATION') ?: 'utf8_unicode_ci',
+    'DB_PREFIX'    => Env::get('DB_PREFIX')    ?: 'wp_',
 ]);
-
-$table_prefix = $bootloader::get('DB_PREFIX');
+$table_prefix = Config::get('DB_PREFIX');
 
 /**
  * Configure S3.
  */
-$bootloader->defineS3([
-    'S3_UPLOADS_BUCKET'   => env('S3_UPLOADS_BUCKET'),
-    'S3_UPLOADS_KEY'      => env('S3_UPLOADS_KEY'),
-    'S3_UPLOADS_SECRET'   => env('S3_UPLOADS_SECRET'),
-    'S3_UPLOADS_ENDPOINT' => env('S3_UPLOADS_ENDPOINT') ?: 'https://nyc3.digitaloceanspaces.com',
-    'S3_UPLOADS_REGION'   => env('S3_UPLOADS_REGION')   ?: 'nyc3',
+Config::defineSet([
+    'S3_UPLOADS_BUCKET'   => Env::get('S3_UPLOADS_BUCKET') ?: 'production',
+    'S3_UPLOADS_KEY'      => Env::get('S3_UPLOADS_KEY'),
+    'S3_UPLOADS_SECRET'   => Env::get('S3_UPLOADS_SECRET'),
+    'S3_UPLOADS_ENDPOINT' => Env::get('S3_UPLOADS_ENDPOINT') ?: 'https://nyc3.digitaloceanspaces.com',
+    'S3_UPLOADS_REGION'   => Env::get('S3_UPLOADS_REGION') ?: 'nyc3',
 ]);
 
 /**
  * Configure Redis.
  */
-$bootloader->defineRedis([
-    'REDIS_HOST'          => env('REDIS_HOST') ?: env('DB_NAME'),
-    'REDIS_AUTH'          => env('REDIS_AUTH'),
-    'REDIS_PORT'          => env('REDIS_PORT') ?: 25061,
-    'PREDIS_CERT'         => "{$bootloader->bedrockDir}/config/cert/redis-ca-cert.crt",
+Config::defineSet([
+    'REDIS_HOST' => Env::get('REDIS_HOST') ?: Config::get('DB_NAME'),
+    'REDIS_AUTH' => Env::get('REDIS_AUTH'),
+    'REDIS_PORT' => Env::get('REDIS_PORT') ?: 25061,
+    'REDIS_OBJECT_CACHE' => Env::get('REDIS_OBJECT_CACHE') ?: true,
+    'PREDIS_CERT' => "{$root_dir}/config/cert/redis-ca-cert.crt",
     'PREDIS_VERIFY_PEERS' => true,
+    'WP_CACHE_KEY_SALT' => Env::get('REDIS_CACHE_KEY_SALT') ?: false,
+    'WP_REDIS_USE_CACHE_GROUPS' => Env::get('REDIS_USE_CACHE_GROUPS') ?: false,
 ]);
 
-$bootloader->configureRedis([
-    'REDIS_OBJECT_CACHE'        => env('REDIS_OBJECT_CACHE')     ?: true,
-    'WP_REDIS_USE_CACHE_GROUPS' => env('REDIS_USE_CACHE_GROUPS') ?: false,
-    'WP_CACHE_KEY_SALT'         => env('REDIS_CACHE_KEY_SALT')   ?: false,
-]);
+global $redis_server;
+$redis_server = [
+    'host' => Config::get('REDIS_HOST'),
+    'port' => Config::get('REDIS_PORT'),
+    'auth' => Config::get('REDIS_AUTH'),
+    'ssl' => [
+        'local_cert' => Config::get('PREDIS_CERT'),
+        'verify_peers' => Config::get('PREDIS_VERIFY_PEERS'),
+    ],
+];
 
 /**
  * Configure auth keys and salts.
  */
-$bootloader->defineSalts([
-    'AUTH_KEY'         => env('AUTH_KEY')         ?: null,
-    'AUTH_SALT'        => env('AUTH_SALT')        ?: null,
-    'LOGGED_IN_KEY'    => env('LOGGED_IN_KEY')    ?: null,
-    'LOGGED_IN_SALT'   => env('LOGGED_IN_SALT')   ?: null,
-    'NONCE_KEY'        => env('NONCE_KEY')        ?: null,
-    'NONCE_SALT'       => env('NONCE_SALT')       ?: null,
-    'SECURE_AUTH_KEY'  => env('SECURE_AUTH_KEY')  ?: null,
-    'SECURE_AUTH_SALT' => env('SECURE_AUTH_SALT') ?: null,
+Config::defineSet([
+    'AUTH_KEY' => Env::get('AUTH_KEY') ?: null,
+    'AUTH_SALT' => Env::get('AUTH_SALT') ?: null,
+    'LOGGED_IN_KEY' => Env::get('LOGGED_IN_KEY') ?: null,
+    'LOGGED_IN_SALT' => Env::get('LOGGED_IN_SALT') ?: null,
+    'NONCE_KEY' => Env::get('NONCE_KEY') ?: null,
+    'NONCE_SALT' => Env::get('NONCE_SALT') ?: null,
+    'SECURE_AUTH_KEY' => Env::get('SECURE_AUTH_KEY') ?: null,
+    'SECURE_AUTH_SALT' => Env::get('SECURE_AUTH_SALT') ?: null,
 ]);
 
 /**
  * Allow SSL behind a reverse proxy.
  */
-$bootloader->exposeSSL();
+Config::exposeSSL();
+
+/**
+ * Configure Sentry.
+ */
+if (Env::get('SENTRY_DSN') && Config::get('WP_ENV') !== 'development') {
+    Config::defineSet([
+        'SENTRY_DSN' => Env::get('SENTRY_DSN') ?: null,
+        'RELEASE' => Env::get('GIT_SHA') ?: null,
+    ]);
+
+    \Sentry\init([
+        'dsn' => Config::get('SENTRY_DSN'),
+        'release' => Config::get('RELEASE'),
+        'environment' => Config::get('WP_ENV'),
+        'error_types' => E_ALL & ~E_NOTICE & ~E_DEPRECATED,
+    ]);
+
+    \Sentry\configureScope(function (\Sentry\State\Scope $scope): void {
+        $scope->setTag('property', Config::get('WP_SITEURL'));
+        $scope->setTag('redis', Config::get('REDIS_HOST'));
+        $scope->setTag('db', Config::get('DB_HOST'));
+        $scope->setTag('s3', Config::get('S3_UPLOADS_BUCKET'));
+    });
+}
 
 /**
  * Boot application.
  */
-$bootloader->boot();
+Config::apply();

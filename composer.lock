@@ -4,49 +4,52 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9fd57903a0a0b75655dadf49bbc82311",
+    "content-hash": "e3669d2534865c79a5501a648a99d5ac",
     "packages": [
         {
-            "name": "a5hleyrich/wp-background-processing",
-            "version": "v1.3",
+            "name": "aaemnnosttv/wp-cli-login-server",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/tabrisrp/wp-background-processing",
-                "reference": "3fb239ecb5261f7eeff76d430d54028d297c176c"
-            },
-            "require": {
-                "php": ">=5.2"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "classes/"
-                ]
-            },
-            "license": [
-                "GPLv2+"
-            ],
-            "authors": [
-                {
-                    "name": "Ashley Rich",
-                    "email": "hello@ashleyrich.com"
-                }
-            ],
-            "description": "WP Background Processing can be used to fire off non-blocking asynchronous requests or as a background processing tool, allowing you to queue tasks.",
-            "time": "2018-10-23T18:30:25+00:00"
-        },
-        {
-            "name": "aws/aws-sdk-php",
-            "version": "3.133.19",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "e5a78b0704bba3024abac91a1009dde8f8ec1fa8"
+                "url": "https://github.com/aaemnnosttv/wp-cli-login-server.git",
+                "reference": "bd63ad4a179d27992f9b9dfc976809598e3985fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/e5a78b0704bba3024abac91a1009dde8f8ec1fa8",
-                "reference": "e5a78b0704bba3024abac91a1009dde8f8ec1fa8",
+                "url": "https://api.github.com/repos/aaemnnosttv/wp-cli-login-server/zipball/bd63ad4a179d27992f9b9dfc976809598e3985fd",
+                "reference": "bd63ad4a179d27992f9b9dfc976809598e3985fd",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "^1.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Evan Mattson",
+                    "email": "me@aaemnnost.tv",
+                    "homepage": "https://aaemnnost.tv"
+                }
+            ],
+            "description": "Companion plugin to the WP-CLI Login Command to handle magic passwordless sign-in requests.",
+            "time": "2017-04-16T20:08:30+00:00"
+        },
+        {
+            "name": "aws/aws-sdk-php",
+            "version": "3.133.20",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aws/aws-sdk-php.git",
+                "reference": "c5f84f9edafb6372dafdbc87cb588772761179ca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/c5f84f9edafb6372dafdbc87cb588772761179ca",
+                "reference": "c5f84f9edafb6372dafdbc87cb588772761179ca",
                 "shasum": ""
             },
             "require": {
@@ -117,7 +120,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-02-20T19:10:17+00:00"
+            "time": "2020-02-21T19:09:49+00:00"
         },
         {
             "name": "clue/stream-filter",
@@ -229,16 +232,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "1.9.3",
+            "version": "1.10.0-RC",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "1291a16ce3f48bfdeca39d64fca4875098af4d7b"
+                "reference": "ec39b4cbb5e012365d70cd95969ea11780d3c1fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/1291a16ce3f48bfdeca39d64fca4875098af4d7b",
-                "reference": "1291a16ce3f48bfdeca39d64fca4875098af4d7b",
+                "url": "https://api.github.com/repos/composer/composer/zipball/ec39b4cbb5e012365d70cd95969ea11780d3c1fc",
+                "reference": "ec39b4cbb5e012365d70cd95969ea11780d3c1fc",
                 "shasum": ""
             },
             "require": {
@@ -251,17 +254,17 @@
                 "psr/log": "^1.0",
                 "seld/jsonlint": "^1.4",
                 "seld/phar-utils": "^1.0",
-                "symfony/console": "^2.7 || ^3.0 || ^4.0",
-                "symfony/filesystem": "^2.7 || ^3.0 || ^4.0",
-                "symfony/finder": "^2.7 || ^3.0 || ^4.0",
-                "symfony/process": "^2.7 || ^3.0 || ^4.0"
+                "symfony/console": "^2.7 || ^3.0 || ^4.0 || ^5.0",
+                "symfony/filesystem": "^2.7 || ^3.0 || ^4.0 || ^5.0",
+                "symfony/finder": "^2.7 || ^3.0 || ^4.0 || ^5.0",
+                "symfony/process": "^2.7 || ^3.0 || ^4.0 || ^5.0"
             },
             "conflict": {
                 "symfony/console": "2.8.38"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.8.35 || ^5.7",
-                "phpunit/phpunit-mock-objects": "^2.3 || ^3.0"
+                "phpspec/prophecy": "^1.10",
+                "symfony/phpunit-bridge": "^3.4"
             },
             "suggest": {
                 "ext-openssl": "Enabling the openssl extension allows you to access https URLs for repositories and packages",
@@ -274,7 +277,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.9-dev"
+                    "dev-master": "1.10-dev"
                 }
             },
             "autoload": {
@@ -305,7 +308,7 @@
                 "dependency",
                 "package"
             ],
-            "time": "2020-02-04T11:58:49+00:00"
+            "time": "2020-02-14T14:11:30+00:00"
         },
         {
             "name": "composer/installers",
@@ -597,38 +600,6 @@
             "time": "2019-11-06T16:40:04+00:00"
         },
         {
-            "name": "container-interop/container-interop",
-            "version": "1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/container-interop/container-interop.git",
-                "reference": "79cbf1341c22ec75643d841642dd5d6acd83bdb8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/container-interop/container-interop/zipball/79cbf1341c22ec75643d841642dd5d6acd83bdb8",
-                "reference": "79cbf1341c22ec75643d841642dd5d6acd83bdb8",
-                "shasum": ""
-            },
-            "require": {
-                "psr/container": "^1.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Interop\\Container\\": "src/Interop/Container/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
-            "homepage": "https://github.com/container-interop/container-interop",
-            "abandoned": "psr/container",
-            "time": "2017-02-14T19:40:03+00:00"
-        },
-        {
             "name": "cweagans/composer-patches",
             "version": "1.6.7",
             "source": {
@@ -671,46 +642,6 @@
             ],
             "description": "Provides a way to patch Composer packages.",
             "time": "2019-08-29T20:11:49+00:00"
-        },
-        {
-            "name": "devgeniem/wp-cron-runner",
-            "version": "1.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/devgeniem/wp-cron-runner.git",
-                "reference": "52c04ba7cd50a0deae6f58ee86fe8b31cdf7e504"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/devgeniem/wp-cron-runner/zipball/52c04ba7cd50a0deae6f58ee86fe8b31cdf7e504",
-                "reference": "52c04ba7cd50a0deae6f58ee86fe8b31cdf7e504",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": ">=1.0.12",
-                "php": ">=5.4"
-            },
-            "type": "wordpress-muplugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Ville Siltala",
-                    "email": "ville.siltala@geniem.com",
-                    "homepage": "http://geniem.com/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "This mu-plugin lets you run WP cron for a site / network site via a single endpoint.",
-            "keywords": [
-                "cron",
-                "mu-plugin",
-                "wordpress",
-                "wp-cron"
-            ],
-            "time": "2018-12-03T11:08:59+00:00"
         },
         {
             "name": "gettext/gettext",
@@ -1201,47 +1132,6 @@
             "time": "2019-12-17T21:17:26+00:00"
         },
         {
-            "name": "jamesryanbell/cloudflare",
-            "version": "1.11.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jamesryanbell/cloudflare.git",
-                "reference": "75e93bb822619d8ddb8b1843588caa2fad739491"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jamesryanbell/cloudflare/zipball/75e93bb822619d8ddb8b1843588caa2fad739491",
-                "reference": "75e93bb822619d8ddb8b1843588caa2fad739491",
-                "shasum": ""
-            },
-            "require-dev": {
-                "phpunit/phpunit": "< 6",
-                "satooshi/php-coveralls": "dev-master"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Cloudflare\\": "src/CloudFlare"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "James Bell",
-                    "email": "james@james-bell.co.uk"
-                }
-            ],
-            "description": "CloudFlare API - PHP",
-            "keywords": [
-                "api",
-                "cloudflare"
-            ],
-            "time": "2017-08-04T19:01:02+00:00"
-        },
-        {
             "name": "jean85/pretty-package-versions",
             "version": "1.2",
             "source": {
@@ -1359,180 +1249,6 @@
             "time": "2019-09-25T14:49:45+00:00"
         },
         {
-            "name": "league/container",
-            "version": "2.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/thephpleague/container.git",
-                "reference": "43f35abd03a12977a60ffd7095efd6a7808488c0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/container/zipball/43f35abd03a12977a60ffd7095efd6a7808488c0",
-                "reference": "43f35abd03a12977a60ffd7095efd6a7808488c0",
-                "shasum": ""
-            },
-            "require": {
-                "container-interop/container-interop": "^1.2",
-                "php": "^5.4.0 || ^7.0"
-            },
-            "provide": {
-                "container-interop/container-interop-implementation": "^1.2",
-                "psr/container-implementation": "^1.0"
-            },
-            "replace": {
-                "orno/di": "~2.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.*"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev",
-                    "dev-1.x": "1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "League\\Container\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Phil Bennett",
-                    "email": "philipobenito@gmail.com",
-                    "homepage": "http://www.philipobenito.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A fast and intuitive dependency injection container.",
-            "homepage": "https://github.com/thephpleague/container",
-            "keywords": [
-                "container",
-                "dependency",
-                "di",
-                "injection",
-                "league",
-                "provider",
-                "service"
-            ],
-            "time": "2017-05-10T09:20:27+00:00"
-        },
-        {
-            "name": "matthiasmullie/minify",
-            "version": "1.3.63",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/matthiasmullie/minify.git",
-                "reference": "9ba1b459828adc13430f4dd6c49dae4950dc4117"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/matthiasmullie/minify/zipball/9ba1b459828adc13430f4dd6c49dae4950dc4117",
-                "reference": "9ba1b459828adc13430f4dd6c49dae4950dc4117",
-                "shasum": ""
-            },
-            "require": {
-                "ext-pcre": "*",
-                "matthiasmullie/path-converter": "~1.1",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "~2.0",
-                "matthiasmullie/scrapbook": "~1.0",
-                "phpunit/phpunit": "~4.8"
-            },
-            "suggest": {
-                "psr/cache-implementation": "Cache implementation to use with Minify::cache"
-            },
-            "bin": [
-                "bin/minifycss",
-                "bin/minifyjs"
-            ],
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "MatthiasMullie\\Minify\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Matthias Mullie",
-                    "email": "minify@mullie.eu",
-                    "homepage": "http://www.mullie.eu",
-                    "role": "Developer"
-                }
-            ],
-            "description": "CSS & JavaScript minifier, in PHP. Removes whitespace, strips comments, combines files (incl. @import statements and small assets in CSS files), and optimizes/shortens a few common programming patterns.",
-            "homepage": "http://www.minifier.org",
-            "keywords": [
-                "JS",
-                "css",
-                "javascript",
-                "minifier",
-                "minify"
-            ],
-            "time": "2020-01-21T20:21:08+00:00"
-        },
-        {
-            "name": "matthiasmullie/path-converter",
-            "version": "1.1.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/matthiasmullie/path-converter.git",
-                "reference": "e7d13b2c7e2f2268e1424aaed02085518afa02d9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/matthiasmullie/path-converter/zipball/e7d13b2c7e2f2268e1424aaed02085518afa02d9",
-                "reference": "e7d13b2c7e2f2268e1424aaed02085518afa02d9",
-                "shasum": ""
-            },
-            "require": {
-                "ext-pcre": "*",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.8"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "MatthiasMullie\\PathConverter\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Matthias Mullie",
-                    "email": "pathconverter@mullie.eu",
-                    "homepage": "http://www.mullie.eu",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Relative path converter",
-            "homepage": "http://github.com/matthiasmullie/path-converter",
-            "keywords": [
-                "converter",
-                "path",
-                "paths",
-                "relative"
-            ],
-            "time": "2019-02-05T23:41:09+00:00"
-        },
-        {
             "name": "mck89/peast",
             "version": "v1.10.1",
             "source": {
@@ -1576,84 +1292,6 @@
             ],
             "description": "Peast is PHP library that generates AST for JavaScript code",
             "time": "2019-12-22T16:46:42+00:00"
-        },
-        {
-            "name": "monolog/monolog",
-            "version": "1.25.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "fa82921994db851a8becaf3787a9e73c5976b6f1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/fa82921994db851a8becaf3787a9e73c5976b6f1",
-                "reference": "fa82921994db851a8becaf3787a9e73c5976b6f1",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0",
-                "psr/log": "~1.0"
-            },
-            "provide": {
-                "psr/log-implementation": "1.0.0"
-            },
-            "require-dev": {
-                "aws/aws-sdk-php": "^2.4.9 || ^3.0",
-                "doctrine/couchdb": "~1.0@dev",
-                "graylog2/gelf-php": "~1.0",
-                "jakub-onderka/php-parallel-lint": "0.9",
-                "php-amqplib/php-amqplib": "~2.4",
-                "php-console/php-console": "^3.1.3",
-                "phpunit/phpunit": "~4.5",
-                "phpunit/phpunit-mock-objects": "2.3.0",
-                "ruflin/elastica": ">=0.90 <3.0",
-                "sentry/sentry": "^0.13",
-                "swiftmailer/swiftmailer": "^5.3|^6.0"
-            },
-            "suggest": {
-                "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
-                "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
-                "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
-                "ext-mongo": "Allow sending log messages to a MongoDB server",
-                "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
-                "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
-                "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
-                "php-console/php-console": "Allow sending log messages to Google Chrome",
-                "rollbar/rollbar": "Allow sending log messages to Rollbar",
-                "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
-                "sentry/sentry": "Allow sending log messages to a Sentry server"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Monolog\\": "src/Monolog"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be",
-                    "homepage": "http://seld.be"
-                }
-            ],
-            "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
-            "homepage": "http://github.com/Seldaek/monolog",
-            "keywords": [
-                "log",
-                "logging",
-                "psr-3"
-            ],
-            "time": "2019-12-20T14:15:16+00:00"
         },
         {
             "name": "mtdowling/jmespath.php",
@@ -2417,56 +2055,6 @@
             "time": "2019-12-15T19:35:24+00:00"
         },
         {
-            "name": "pimple/pimple",
-            "version": "v3.2.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/silexphp/Pimple.git",
-                "reference": "9e403941ef9d65d20cba7d54e29fe906db42cf32"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/silexphp/Pimple/zipball/9e403941ef9d65d20cba7d54e29fe906db42cf32",
-                "reference": "9e403941ef9d65d20cba7d54e29fe906db42cf32",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0",
-                "psr/container": "^1.0"
-            },
-            "require-dev": {
-                "symfony/phpunit-bridge": "^3.2"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Pimple": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                }
-            ],
-            "description": "Pimple, a simple Dependency Injection Container",
-            "homepage": "http://pimple.sensiolabs.org",
-            "keywords": [
-                "container",
-                "dependency injection"
-            ],
-            "time": "2018-01-21T07:42:36+00:00"
-        },
-        {
             "name": "predis/predis",
             "version": "v1.1.1",
             "source": {
@@ -2882,70 +2470,6 @@
             "time": "2019-03-08T08:55:37+00:00"
         },
         {
-            "name": "rarst/laps",
-            "version": "3.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Rarst/laps.git",
-                "reference": "588b597f9974ab816fe29cf544f254a2d62e3ada"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Rarst/laps/zipball/588b597f9974ab816fe29cf544f254a2d62e3ada",
-                "reference": "588b597f9974ab816fe29cf544f254a2d62e3ada",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "^1.6",
-                "mustache/mustache": "^2.12",
-                "php": "^7.1.3",
-                "pimple/pimple": "^3.2.3",
-                "symfony/stopwatch": "^4.2.1"
-            },
-            "require-dev": {
-                "brain/monkey": "^2.2",
-                "pds/skeleton": "^1.0",
-                "twbs/bootstrap": "^3.4"
-            },
-            "type": "wordpress-plugin",
-            "extra": {
-                "light-ignore-plugin": {
-                    "mustache/mustache": [
-                        "test"
-                    ],
-                    "pimple/pimple": [
-                        "ext",
-                        "src/Pimple/Tests"
-                    ],
-                    "symfony/stopwatch": [
-                        "Tests"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Rarst\\Laps\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Andrey Savchenko",
-                    "homepage": "http://www.Rarst.net/"
-                }
-            ],
-            "description": "Light WordPress profiler.",
-            "homepage": "https://github.com/Rarst/laps",
-            "keywords": [
-                "performance",
-                "wordpress"
-            ],
-            "time": "2019-07-02T11:46:13+00:00"
-        },
-        {
             "name": "rmccue/requests",
             "version": "v1.7.0",
             "source": {
@@ -3049,7 +2573,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.3.2"
+                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.3.2",
+                "reference": "5.3.2"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -3657,25 +3182,25 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v4.4.4",
+            "version": "v5.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "3a50be43515590faf812fbd7708200aabc327ec3"
+                "reference": "4176e7cb846fe08f32518b7e0ed8462e2db8d9bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/3a50be43515590faf812fbd7708200aabc327ec3",
-                "reference": "3a50be43515590faf812fbd7708200aabc327ec3",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/4176e7cb846fe08f32518b7e0ed8462e2db8d9bb",
+                "reference": "4176e7cb846fe08f32518b7e0ed8462e2db8d9bb",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1.3"
+                "php": "^7.2.5"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.4-dev"
+                    "dev-master": "5.0-dev"
                 }
             },
             "autoload": {
@@ -3702,7 +3227,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2020-01-04T13:00:46+00:00"
+            "time": "2020-01-04T14:08:26+00:00"
         },
         {
             "name": "symfony/options-resolver",
@@ -4100,56 +3625,6 @@
             "time": "2019-11-18T17:27:11+00:00"
         },
         {
-            "name": "symfony/stopwatch",
-            "version": "v4.4.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/stopwatch.git",
-                "reference": "abc08d7c48987829bac301347faa10f7e8bbf4fb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/stopwatch/zipball/abc08d7c48987829bac301347faa10f7e8bbf4fb",
-                "reference": "abc08d7c48987829bac301347faa10f7e8bbf4fb",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1.3",
-                "symfony/service-contracts": "^1.0|^2"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.4-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Stopwatch\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Stopwatch Component",
-            "homepage": "https://symfony.com",
-            "time": "2020-01-04T13:00:46+00:00"
-        },
-        {
             "name": "symfony/yaml",
             "version": "v4.4.4",
             "source": {
@@ -4209,6 +3684,44 @@
             "time": "2020-01-21T11:12:16+00:00"
         },
         {
+            "name": "tiny-pixel-packagist/advanced-custom-fields-pro",
+            "version": "5.8.4",
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.tinypixel.dev/satispress/advanced-custom-fields-pro/5.8.4",
+                "shasum": "cac775d0a3f8ccc765368c005b3c7fdd7dcc5cc9"
+            },
+            "require": {
+                "composer/installers": "^1.0"
+            },
+            "type": "wordpress-plugin",
+            "authors": {
+                "name": "Elliot Condon",
+                "homepage": "https://www.advancedcustomfields.com"
+            },
+            "description": "Customize WordPress with powerful, professional and intuitive fields.",
+            "homepage": "https://www.advancedcustomfields.com"
+        },
+        {
+            "name": "tiny-pixel-packagist/wp-rocket",
+            "version": "3.4.4",
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.tinypixel.dev/satispress/wp-rocket/3.4.4",
+                "shasum": "2fe5d84b9c4433bc4eff1751a60cd234d06d6d1e"
+            },
+            "require": {
+                "composer/installers": "^1.0"
+            },
+            "type": "wordpress-plugin",
+            "authors": {
+                "name": "WP Media",
+                "homepage": "https://wp-media.me"
+            },
+            "description": "The best WordPress performance plugin.",
+            "homepage": "https://wp-rocket.me"
+        },
+        {
             "name": "tiny-pixel/admin-to-console",
             "version": "1.3.0",
             "source": {
@@ -4254,60 +3767,6 @@
                 "utilities"
             ],
             "time": "2019-09-09T19:33:42+00:00"
-        },
-        {
-            "name": "tiny-pixel/advanced-custom-fields",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:pixelcollective/mirror-advanced-custom-fields",
-                "reference": "30bc2960dccf60cc692f3260b76043d6ada684d7"
-            },
-            "type": "wordpress-plugin",
-            "authors": [
-                {
-                    "name": "Kelly Mears",
-                    "email": "developers@tinypixel.dev"
-                }
-            ],
-            "time": "2019-11-16T04:58:10+00:00"
-        },
-        {
-            "name": "tiny-pixel/config",
-            "version": "v0.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pixelcollective/config.git",
-                "reference": "4593fc8ce22e2a4f4d0a1309dbcc25e16511d0d6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pixelcollective/config/zipball/4593fc8ce22e2a4f4d0a1309dbcc25e16511d0d6",
-                "reference": "4593fc8ce22e2a4f4d0a1309dbcc25e16511d0d6",
-                "shasum": ""
-            },
-            "require": {
-                "oscarotero/env": "^1.2.0",
-                "roots/wp-config": "1.0.0",
-                "vlucas/phpdotenv": "^4.1.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^8.5",
-                "roave/security-advisories": "dev-master",
-                "squizlabs/php_codesniffer": "^3.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "TinyPixel\\Config\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Internal configuration helper for roots/bedrock projects",
-            "time": "2019-12-31T22:30:54+00:00"
         },
         {
             "name": "tiny-pixel/disallow-mail",
@@ -6486,16 +5945,16 @@
         },
         {
             "name": "wp-graphql/wp-graphql",
-            "version": "v0.6.2",
+            "version": "v0.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-graphql/wp-graphql.git",
-                "reference": "ab3f8135be9d6ff0ac9da535f84e7f6a35d44bfa"
+                "reference": "8223ecc20bf0f54bcddad68f0a8ad4542db4f618"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-graphql/wp-graphql/zipball/ab3f8135be9d6ff0ac9da535f84e7f6a35d44bfa",
-                "reference": "ab3f8135be9d6ff0ac9da535f84e7f6a35d44bfa",
+                "url": "https://api.github.com/repos/wp-graphql/wp-graphql/zipball/8223ecc20bf0f54bcddad68f0a8ad4542db4f618",
+                "reference": "8223ecc20bf0f54bcddad68f0a8ad4542db4f618",
                 "shasum": ""
             },
             "require": {
@@ -6540,7 +5999,7 @@
                 }
             ],
             "description": "GraphQL API for WordPress",
-            "time": "2020-02-20T19:08:02+00:00"
+            "time": "2020-02-21T22:13:25+00:00"
         },
         {
             "name": "wp-graphql/wp-graphql-acf",
@@ -6590,137 +6049,6 @@
             ],
             "description": "Advanced Custom Fields bindings for wp-graphql",
             "time": "2019-12-13T18:26:57+00:00"
-        },
-        {
-            "name": "wp-media/rocket-lazyload-common",
-            "version": "v2.5.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-media/rocket-lazyload-common.git",
-                "reference": "1ea0cf2ae5d302a0214e05176c1dda321b1d6690"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-media/rocket-lazyload-common/zipball/1ea0cf2ae5d302a0214e05176c1dda321b1d6690",
-                "reference": "1ea0cf2ae5d302a0214e05176c1dda321b1d6690",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.6"
-            },
-            "require-dev": {
-                "brain/monkey": "^2.0",
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
-                "doctrine/instantiator": "1.0.*",
-                "myclabs/deep-copy": "1.6.*",
-                "phpcompatibility/phpcompatibility-wp": "^2.0",
-                "phpdocumentor/reflection-docblock": "^3.3",
-                "phpunit/php-token-stream": "^1.4",
-                "phpunit/phpunit": "^5.7",
-                "symfony/yaml": "2.8.*",
-                "wp-coding-standards/wpcs": "^2.0.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "RocketLazyload\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "WP Media",
-                    "email": "contact@wp-media.me"
-                }
-            ],
-            "description": "Common Code between WP Rocket and Lazyload by WP Rocket",
-            "time": "2020-01-16T13:46:49+00:00"
-        },
-        {
-            "name": "wp-media/wp-rocket",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:pixelcollective/mirror-wp-rocket",
-                "reference": "4460ccd5e81a5d89ae230aa92564b9426edf2b38"
-            },
-            "require": {
-                "a5hleyrich/wp-background-processing": "1.3",
-                "composer/installers": "~1.0",
-                "jamesryanbell/cloudflare": "^1.11",
-                "league/container": "2.4.1",
-                "matthiasmullie/minify": "1.3.*",
-                "monolog/monolog": "^1.0",
-                "php": ">=5.6.0",
-                "wp-media/rocket-lazyload-common": "^2.2"
-            },
-            "require-dev": {
-                "brain/monkey": "^2.0",
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
-                "doctrine/instantiator": "1.0.*",
-                "mikey179/vfsstream": "^1.6",
-                "myclabs/deep-copy": "1.6.*",
-                "phpcompatibility/phpcompatibility-wp": "^2.0",
-                "phpdocumentor/reflection-docblock": "^3.3",
-                "phpunit/php-token-stream": "^1.4",
-                "phpunit/phpunit": "^5.7",
-                "symfony/yaml": "2.8.*",
-                "wp-coding-standards/wpcs": "^2.1.0"
-            },
-            "type": "wordpress-plugin",
-            "autoload": {
-                "classmap": [
-                    "inc/classes",
-                    "inc/vendors/classes"
-                ],
-                "exclude-from-classmap": [
-                    "inc/vendors/classes/class-rocket-mobile-detect.php",
-                    "inc/classes/class-wp-rocket-requirements-check.php"
-                ],
-                "files": [
-                    "inc/functions/api.php"
-                ]
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "WP_Rocket\\Tests\\Unit\\": "tests/Unit",
-                    "WP_Rocket\\Tests\\Integration\\": "tests/Integration"
-                }
-            },
-            "scripts": {
-                "test-unit": [
-                    "\"vendor/bin/phpunit\" --testsuite unit --colors=always"
-                ],
-                "test-integration": [
-                    "\"vendor/bin/phpunit\" --testsuite integration --colors=always --configuration tests/Integration/phpunit.xml.dist"
-                ]
-            },
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "WP Media",
-                    "email": "contact@wp-media.me",
-                    "homepage": "https://wp-media.me"
-                }
-            ],
-            "description": "Performance optimization plugin for WordPress",
-            "homepage": "https://wp-rocket.me",
-            "keywords": [
-                "cache",
-                "lazyload",
-                "minification",
-                "wordpress"
-            ],
-            "support": {
-                "issues": "https://github.com/wp-media/wp-rocket/issues",
-                "source": "https://github.com/wp-media/wp-rocket"
-            },
-            "time": "2019-11-13T21:19:21+00:00"
         },
         {
             "name": "wpackagist-plugin/autodescription",
@@ -8863,33 +8191,13 @@
                 "validate"
             ],
             "time": "2020-02-14T12:15:55+00:00"
-        },
-        {
-            "name": "wpackagist-plugin/wp-crontrol",
-            "version": "1.7.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wp-crontrol/",
-                "reference": "tags/1.7.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-crontrol.1.7.1.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wp-crontrol/"
         }
     ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "humanmade/wp-redis-predis-client": 20,
-        "tiny-pixel/advanced-custom-fields": 20,
         "tiny-pixel/s3-uploads-adapter": 20,
-        "wp-media/wp-rocket": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
