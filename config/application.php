@@ -83,8 +83,8 @@ ini_set('display_errors', Config::get('DISPLAY_ERRORS'));
  */
 Config::defineSet([
     'WP_CONTENT' => $root_dir . '/web/app/',
-    'WP_CONTENT_DIR' => $root_dir . '/web/app/',
-    'WP_CONTENT_URL' => Config::get('WP_HOME') . 'app/',
+    'WP_CONTENT_DIR' => $root_dir . '/web/app',
+    'WP_CONTENT_URL' => Config::get('WP_HOME') . 'app',
 ]);
 
 /**
