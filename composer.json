@@ -46,7 +46,7 @@
     "primetime/wp-plugin-activation-manifest": "^1.0",
     "sybrew/the-seo-framework-extension-manager": "^2.0",
     "wp-graphql/wp-graphiql": "^1.0.0",
-    "wp-graphql/wp-graphql": "^0.6.0",
+    "wp-graphql/wp-graphql": "^0.7.0",
     "wp-graphql/wp-graphql-acf": "^0.3.1",
     "wpackagist-plugin/autodescription": ">=3.0.6",
     "wpackagist-plugin/disable-comments": "^1.10",
