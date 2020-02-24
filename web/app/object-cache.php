@@ -6,6 +6,7 @@
  * @see @humanmade/wp-predis
  * @see @pantheon/wp-redis
  */
+
 if (WP_ENV !== 'development') {
     WP_Predis\add_filters();
 
