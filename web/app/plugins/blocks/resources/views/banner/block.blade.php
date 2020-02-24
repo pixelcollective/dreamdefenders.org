@@ -48,7 +48,13 @@
       @endif
     }
 
-    @php($overlaySet = isset($attr->overlay) && isset($attr->overlay->rendered) && $attr->overlay->raw && $attr->overlay->opacity)
+    @php
+      $overlaySet = isset($attr->overlay)
+        && isset($attr->overlay->rendered)
+        && $attr->overlay->raw
+        && $attr->overlay->opacity
+    @endphp
+
     .banner-bg-overlay-{!! $id !!} {
       background-color: {!! $overlaySet ? $attr->overlay->rendered : 'rgba(0, 0, 0, 0.8)' !!};
     }
