@@ -14,6 +14,7 @@
     "cypress:staging": "cypress run --spec 'tests/cypress/integration/staging.js' --browser chrome",
     "cypress:production": "cypress run --spec 'tests/cypress/integration/production.js' --browser chrome",
     "start": "webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "dev": "cross-env NODE_ENV=development webpack --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "all": "cross-env NODE_ENV=production webpack --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "devDependencies": {

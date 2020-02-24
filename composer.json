@@ -80,7 +80,6 @@
     "installer-paths": {
       "web/app/mu-plugins/{$name}/": [
         "type:wordpress-muplugin",
-        "aaemnnosttv/wp-cli-login-server",
         "wpackagist-plugin/wp-redis",
         "roots/wp-stage-switcher",
         "wp-graphql/wp-graphql",

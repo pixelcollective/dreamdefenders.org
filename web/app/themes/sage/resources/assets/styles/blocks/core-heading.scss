@@ -1,7 +1,11 @@
 .is-style-epic {
-  @apply text-5xl;
+  @apply text-4xl;
+
+  @screen md {
+    @apply text-5xl;
+  }
 
   @screen lg {
-    @apply text-7xl;
+    @apply text-6xl;
   }
 }

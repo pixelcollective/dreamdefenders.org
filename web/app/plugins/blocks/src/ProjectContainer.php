@@ -32,7 +32,7 @@ class ProjectContainer extends Block
         $editorScript = $this->makeAsset()
             ->setName('tinypixel/project-container/js')
             ->setUrl(get_template_directory_uri() . '/dist/scripts/blocks/project-container/block.js')
-            ->setManifest(get_template_directory() . '/dist/scripts/blocks/manifest.asset.php');
+            ->setManifest(get_template_directory() . '/dist/scripts/blocks/project-container/block.asset.php');
 
         $this->addEditorScript($editorScript);
     }

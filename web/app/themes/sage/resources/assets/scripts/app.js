@@ -6,7 +6,6 @@ import {
   twoPathsObserver,
   modal,
 }  from './components'
-
 import './components/performantMedia'
 
 window.requestAnimationFrame(() => {

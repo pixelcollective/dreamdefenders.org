@@ -28,44 +28,36 @@ module.exports = () => mx
     globs: purgeWatch,
     whitelistPatterns: purgeWhitelist,
     whitelistPatternsChildren: purgeWhitelist,
-  }).webpackConfig({
+  })
+  .webpackConfig({
     plugins: [
       new wp.dependencyInjectionWebpackPlugin({
         injectPolyfill: false,
         outputFormat: `php`,
       }),
     ],
-    externals: {
-      'react': 'React',
-      'react-dom': 'ReactDOM',
-      ...wp.aliases(),
-    },
   })
   .sourceMaps(false, 'source-map')
   .inProduction() && mx.version()
 
-  /** Block editor scripts */
-  mx.js(sage.src(`scripts/editor.js`), sage.work(`scripts`))
-    .js(block(`Banner`), sage.work(`scripts/blocks/banner`))
-    .js(block(`Container`), sage.work(`scripts/blocks/container`))
-    .js(block(`FreedomPaper`), sage.work(`scripts/blocks/freedom-paper`))
-    .js(block(`HorizontalCard`), sage.work(`scripts/blocks/horizontal-card`))
-    .js(block(`TwoColumn`), sage.work(`scripts/blocks/two-column`))
-    .js(block(`PostContainer`), sage.work(`scripts/blocks/post-container`))
-    .js(block(`ProjectContainer`), sage.work(`scripts/blocks/project-container/block.js`))
-    .js(block(`Squadd`), sage.work(`scripts/blocks/squadd/block.js`))
-    .tweemotional()
-
   /** Sage client scripts */
   mx.js(sage.src(`scripts/app.js`), sage.work(`scripts`))
-    .extract(vendorScripts).copy([
-      sage.work(`scripts/vendor.js`),
-      sage.work(`scripts/manifest.js`),
-    ], sage.public(`scripts`))
+
+  /** Block editor scripts */
+  mx.js(sage.src('scripts/editor.js'), sage.public('scripts/editor-theme.js'))
+    .js(block('Banner'), sage.public('scripts/blocks/banner'))
+    .js(block('Container'), sage.public('scripts/blocks/container'))
+    .js(block('FreedomPaper'), sage.public('scripts/blocks/freedom-paper'))
+    .js(block('HorizontalCard'), sage.public('scripts/blocks/horizontal-card'))
+    .js(block('TwoColumn'), sage.public('scripts/blocks/two-column'))
+    .js(block('PostContainer'), sage.public('scripts/blocks/post-container'))
+    .js(block('ProjectContainer'), sage.public('scripts/blocks/project-container/block.js'))
+    .js(block('Squadd'), sage.public('scripts/blocks/squadd/block.js'))
+    .tweemotional()
 
   /** Application styles */
   mx.sass(sage.src(`styles/app.scss`), sage.work(`styles`))
-    .sass(sage.src(`styles/editor.scss`), sage.work(`styles/editor-theme.css`))
+    .sass(sage.src(`styles/editor.scss`), sage.public(`styles/editor-theme.css`))
 
   /** Avoid WordPress-itis */
   mx.css(plugins(`pdf-viewer-block/public/css/pdf-viewer-block.css`), sage.work(`scripts`))

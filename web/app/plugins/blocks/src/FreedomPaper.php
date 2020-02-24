@@ -32,7 +32,7 @@ class FreedomPaper extends Block
         $editorScript = $this->makeAsset()
             ->setName('tinypixel/freedom-paper/js')
             ->setUrl(get_template_directory_uri() . '/dist/scripts/blocks/freedom-paper/block.js')
-            ->setManifest(get_template_directory() . '/dist/scripts/blocks/manifest.asset.php');
+            ->setManifest(get_template_directory() . '/dist/scripts/blocks/freedom-paper/block.asset.php');
 
         $this->addEditorScript($editorScript);
     }
