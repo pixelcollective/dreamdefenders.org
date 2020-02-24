@@ -133,23 +133,23 @@ Config::defineSet([
 global $redis_server;
 
 Config::defineSet([
-    'REDIS_HOST' => env('REDIS_HOST') ?: Config::get('DB_NAME'),
-    'REDIS_AUTH' => env('REDIS_AUTH'),
-    'REDIS_PORT' => env('REDIS_PORT') ?: 25061,
-    'REDIS_OBJECT_CACHE' => env('REDIS_OBJECT_CACHE') ?: true,
-    'PREDIS_CERT' => $bedrock . '/config/cert/redis-ca-cert.crt',
-    'PREDIS_VERIFY_PEERS' => true,
-    'WP_CACHE_KEY_SALT' => env('REDIS_CACHE_KEY_SALT') ?: false,
+    'REDIS_AUTH'          => env('REDIS_AUTH'),
+    'REDIS_HOST'          => env('REDIS_HOST') ?: env('DB_NAME'),
+    'REDIS_PORT'          => env('REDIS_PORT') ?: 25061,
+    'REDIS_OBJECT_CACHE'        => env('REDIS_OBJECT_CACHE')     ?: true,
+    'WP_CACHE_KEY_SALT'         => env('REDIS_CACHE_KEY_SALT')   ?: false,
     'WP_REDIS_USE_CACHE_GROUPS' => env('REDIS_USE_CACHE_GROUPS') ?: false,
+    'PREDIS_VERIFY_PEERS' => true,
+    'PREDIS_CERT' => $bedrock . '/config/cert/redis-ca-cert.crt',
 ]);
 
 $redis_server = [
-    'host' => defined('REDIS_HOST') ? REDIS_HOST : null,
-    'port ' => defined('REDIS_PORT') ? REDIS_PORT : null,
-    'auth' => defined('REDIS_AUTH') ? REDIS_AUTH : null,
+    'host' => Config::get('REDIS_HOST'),
+    'port' => Config::get('REDIS_PORT'),
+    'auth' => Config::get('REDIS_AUTH'),
     'ssl' => [
-        'local_cert' => defined('PREDIS_CERT') ? PREDIS_CERT : null,
-        'verify_peers' => defined('PREDIS_VERIFY_PEERS') ? PREDIS_VERIFY_PEERS : null,
+        'local_cert' => Config::get('PREDIS_CERT'),
+        'verify_peers' => Config::get('PREDIS_VERIFY_PEERS'),
     ],
 ];
 
