@@ -19,20 +19,17 @@ use TinyPixel\WPConfig\Config;
  *
  * @var string
  */
-
 $bedrock = dirname(__DIR__);
 $web  = $bedrock . '/web';
 
 /**
  * Expose global env() function from oscarotero/env
  */
-
 Env::init();
 
 /**
  * Use Dotenv to set required environment variables and load .env file in root
  */
-
 $dotenv = Dotenv\Dotenv::createImmutable($bedrock);
 if (file_exists($bedrock . '/.env')) {
     $dotenv->load();
@@ -46,7 +43,6 @@ if (file_exists($bedrock . '/.env')) {
 /**
  * WordPress
  */
-
 Config::defineSet([
     'WP_ENV' => env('WP_ENV'),
     'WP_HOME' => env('WP_HOME'),
@@ -56,7 +52,6 @@ Config::defineSet([
 /**
  * Configure WordPress application.
  */
-
 Config::defineSet([
     'DISABLE_WP_CRON' => true,
     'DISALLOW_FILE_EDIT' => true,
@@ -68,7 +63,6 @@ Config::defineSet([
 /**
  * Debug settings.
  */
-
 Config::defineSet([
     'DISPLAY_ERRORS' => Config::get('WP_ENV') == 'development' ? true : false,
     'SCRIPT_DEBUG' => Config::get('WP_ENV') == 'development' ? true : false,
@@ -81,7 +75,6 @@ ini_set('display_errors', Config::get('DISPLAY_ERRORS'));
 /**
  * Configure application paths.
  */
-
 Config::defineSet([
     'CONTENT_DIR' => '/app',
     'WP_CONTENT_DIR' => $web . '/app',
@@ -91,7 +84,6 @@ Config::defineSet([
 /**
  * Define environments
  */
-
 Config::define('ENVIRONMENTS', [
     'development' => 'http://dreamdefenders.vagrant',
     'staging'     => 'https://build.dreamdefenders.tinypixel.dev',
@@ -100,7 +92,6 @@ Config::define('ENVIRONMENTS', [
 /**
  * Configure DB.
  */
-
 Config::defineSet([
     'DB_NAME' => env('DB_NAME'),
     'DB_USER' => env('DB_USER'),
@@ -117,7 +108,6 @@ $table_prefix = Config::get('DB_PREFIX');
 /**
  * Configure S3.
  */
-
 Config::defineSet([
     'S3_UPLOADS_BUCKET'   => env('S3_UPLOADS_BUCKET'),
     'S3_UPLOADS_KEY'      => env('S3_UPLOADS_KEY'),
@@ -129,15 +119,14 @@ Config::defineSet([
 /**
  * Configure Redis.
  */
-
 global $redis_server;
 
 Config::defineSet([
-    'REDIS_AUTH'          => env('REDIS_AUTH'),
-    'REDIS_HOST'          => env('REDIS_HOST') ?: env('DB_NAME'),
-    'REDIS_PORT'          => env('REDIS_PORT') ?: 25061,
-    'REDIS_OBJECT_CACHE'        => env('REDIS_OBJECT_CACHE')     ?: true,
-    'WP_CACHE_KEY_SALT'         => env('REDIS_CACHE_KEY_SALT')   ?: false,
+    'REDIS_AUTH' => env('REDIS_AUTH'),
+    'REDIS_HOST' => env('REDIS_HOST') ?: env('DB_NAME'),
+    'REDIS_PORT' => env('REDIS_PORT') ?: 25061,
+    'REDIS_OBJECT_CACHE' => env('REDIS_OBJECT_CACHE') ?: true,
+    'WP_CACHE_KEY_SALT' => env('REDIS_CACHE_KEY_SALT') ?: false,
     'WP_REDIS_USE_CACHE_GROUPS' => env('REDIS_USE_CACHE_GROUPS') ?: false,
     'PREDIS_VERIFY_PEERS' => true,
     'PREDIS_CERT' => $bedrock . '/config/cert/redis-ca-cert.crt',
@@ -156,7 +145,6 @@ $redis_server = [
 /**
  * Configure auth keys and salts.
  */
-
 Config::defineSet([
     'AUTH_KEY' => env('AUTH_KEY') ?: null,
     'AUTH_SALT' => env('AUTH_SALT') ?: null,
@@ -171,13 +159,11 @@ Config::defineSet([
 /**
  * Allow SSL behind a reverse proxy.
  */
-
 Config::exposeSSL();
 
 /**
  * Configure Sentry.
  */
-
 if (env('SENTRY_DSN') && Config::get('WP_ENV') !== 'development') {
     Config::defineSet([
         'SENTRY_DSN' => env('SENTRY_DSN') ?: null,
@@ -204,7 +190,6 @@ Config::apply();
 /**
  * Bootstrap WordPress
  */
-
 if (!defined('ABSPATH')) {
     define('ABSPATH', $web . '/wp/');
 }
