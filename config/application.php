@@ -19,14 +19,8 @@ use TinyPixel\WPConfig\Config;
  *
  * @var string
  */
-$root_dir = dirname(__DIR__);
-
-/**
- * Document Root
- *
- * @var string
- */
-$webroot_dir = $root_dir . '/web';
+$bedrock = dirname(__DIR__);
+$web  = $bedrock . '/web';
 
 /**
  * Expose global env() function from oscarotero/env
@@ -36,8 +30,8 @@ Env::init();
 /**
  * Use Dotenv to set required environment variables and load .env file in root
  */
-$dotenv = Dotenv\Dotenv::createImmutable($root_dir);
-if (file_exists($root_dir . '/.env')) {
+$dotenv = Dotenv\Dotenv::createImmutable($bedrock);
+if (file_exists($bedrock . '/.env')) {
     $dotenv->load();
     $dotenv->required(['WP_HOME', 'WP_SITEURL']);
 
@@ -82,10 +76,11 @@ ini_set('display_errors', Config::get('DISPLAY_ERRORS'));
  * Configure application paths.
  */
 Config::defineSet([
-    'WP_CONTENT' => $root_dir . '/web/app/',
-    'WP_CONTENT_DIR' => $root_dir . '/web/app',
+    'CONTENT_DIR' => '/app',
+    'WP_CONTENT_DIR' => $web . '/app',
     'WP_CONTENT_URL' => Config::get('WP_HOME') . '/app',
 ]);
+
 
 /**
  * Define environments
@@ -128,7 +123,7 @@ Config::defineSet([
     'REDIS_AUTH' => Env::get('REDIS_AUTH'),
     'REDIS_PORT' => Env::get('REDIS_PORT') ?: 25061,
     'REDIS_OBJECT_CACHE' => Env::get('REDIS_OBJECT_CACHE') ?: true,
-    'PREDIS_CERT' => "{$root_dir}/config/cert/redis-ca-cert.crt",
+    'PREDIS_CERT' => $bedrock . '/config/cert/redis-ca-cert.crt',
     'PREDIS_VERIFY_PEERS' => true,
     'WP_CACHE_KEY_SALT' => Env::get('REDIS_CACHE_KEY_SALT') ?: false,
     'WP_REDIS_USE_CACHE_GROUPS' => Env::get('REDIS_USE_CACHE_GROUPS') ?: false,
