@@ -40,17 +40,26 @@ figcaption {
 * Heading styles
 */
 h1 {
-  @apply text-5xl;
+  @apply text-4xl;
   @apply uppercase;
   @apply font-bold;
   @apply tracking-tight;
+  @apply leading-none;
+
+  @screen lg {
+    @apply text-6xl;
+  }
 }
 
 h2 {
-  @apply text-5xl;
+  @apply text-3xl;
   @apply uppercase;
   @apply font-bold;
   @apply tracking-tight;
+
+  @screen lg {
+    @apply text-5xl;
+  }
 }
 
 h3 {

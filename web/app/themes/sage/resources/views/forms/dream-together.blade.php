@@ -3,7 +3,7 @@
     <div class="container">
       <div class="flex flex-col justify-between py-16 px-4 mx-auto md:flex-row">
         <div class="w-full px-2 md:w-3/5 pr-8 mb-8">
-          <h1 class="inline-block">
+          <h1 class="inline-block leading-none text-5xl md:text-6xl">
             Can We Dream Together?
           </h1>
 

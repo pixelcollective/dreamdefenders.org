@@ -1,59 +1,48 @@
-const [mx, wp, {
-  block,
-  devUrl,
-  plugins,
-  purgeWatch,
-  purgeWhitelist,
-  sage,
-  vendorScripts,
-}] = [
-    require('laravel-mix'),
-    require('mix/wordpress-utils.js'),
-    require('mix/config')
-  ];
+const mx = require('laravel-mix')
+const wp = require('mix/wordpress-utils')
+
+const { block, plugins, purgeWatch, purgeWhitelist, sage, vendorScripts } = require('mix/config');
 
 /** laravel-mix plugins */
 require('laravel-mix-purgecss')
 require('laravel-mix-copy-watched')
 require('laravel-mix-tweemotional')
 
-module.exports = () => {
-  /** Configure */
-  mx.setPublicPath(sage.publicDir)
-    .setResourceRoot(`./web/app`)
-    .browserSync(devUrl)
-    .options({
-      hmrOptions: {
-        host: devUrl,
-        port: 8080,
-      },
-      postCss: [
-        require('tailwind'),
-        require('autoprefixer'),
-      ],
-      processCssUrls: false
-    })
-    .purgeCss({
-      enabled: true,
-      extensions: ['js', 'php', 'scss', 'css'],
-      globs: purgeWatch,
-      whitelistPatterns: purgeWhitelist,
-      whitelistPatternsChildren: purgeWhitelist,
-    }).webpackConfig({
-      plugins: [
-        new wp.dependencyInjectionWebpackPlugin({
-          injectPolyfill: false,
-          outputFormat: `php`,
-        }),
-      ],
-      externals: {
-        'react': 'React',
-        'react-dom': 'ReactDOM',
-        ...wp.aliases(),
-      },
-    })
-    .sourceMaps(false, 'source-map')
-    .inProduction() && mx.version()
+module.exports = () => mx
+  .setPublicPath(sage.publicDir)
+  .setResourceRoot(`./web/app`)
+  .browserSync({
+    proxy: 'dreamdefenders.vagrant',
+    files: purgeWatch,
+  })
+  .options({
+    postCss: [
+      require('tailwind'),
+      require('autoprefixer'),
+    ],
+    processCssUrls: false
+  })
+  .purgeCss({
+    enabled: mx.inProduction,
+    extensions: ['js', 'php', 'scss', 'css'],
+    globs: purgeWatch,
+    whitelistPatterns: purgeWhitelist,
+    whitelistPatternsChildren: purgeWhitelist,
+  }).webpackConfig({
+    plugins: [
+      new wp.dependencyInjectionWebpackPlugin({
+        injectPolyfill: false,
+        outputFormat: `php`,
+      }),
+    ],
+    externals: {
+      'react': 'React',
+      'react-dom': 'ReactDOM',
+      ...wp.aliases(),
+    },
+  })
+  .sourceMaps(false, 'source-map')
+  .inProduction() && mx.version()
 
   /** Block editor scripts */
   mx.js(sage.src(`scripts/editor.js`), sage.work(`scripts`))
@@ -94,5 +83,4 @@ module.exports = () => {
     .copyWatched(sage.src(`svg`), sage.public(`svg`))
 
   /** ✨*/
-  return mx
-}
+  return mx;

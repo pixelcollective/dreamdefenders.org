@@ -5,9 +5,9 @@
 
       <div class="relative z-10 banner-bg-overlay-{!! $id !!} h-full w-full">
         @isset($attr->title)
-          <div class="p-4 w-full text-center content-center flex flex-wrap relative" style="height: {!! isset($attr->containerSize->height) ? $attr->containerSize->height : 500 !!}px;">
+          <div class="p-4 w-full text-center content-center flex flex-wrap relative" style="height: {!! isset($attr->containerSize->height) ? $attr->containerSize->height . 'px;' : '500px;' !!}">
             <div class="w-full lg:flex-row flex-col flex flex-wrap justify-around">
-              <h1 class="break-words text-center font-display text-7xl tracking-wider w-full inline-block uppercase font-bold text-white leading-none">
+              <h1 class="break-words text-center font-display text-5xl md:text-6xl lg:text-7xl tracking-wider w-full inline-block uppercase font-bold text-white leading-none">
                 {!! $attr->title !!}
               </h1>
             </div>
@@ -22,16 +22,28 @@
   <style>
     .banner-bg-image-{!! $id !!} {
       background-repeat: no-repeat;
-      background-image: url({!! $attr->background->media['sizes']['large']['url'] !!});
-      background-size: {!! isset($attr->background->size) && $attr->background->size == 'cover' ? 'cover' : 'cover' !!};
-      background-attachment: {!! isset($attr->background->attachment) && $attr->background->attachment == 'fixed' ? 'fixed' : '' !!};
-      background-position-x: {!! isset($attr->background->position['x']) ? $attr->background->position['x'] * 100 : '50' !!}%;
-      background-position-y: {!! isset($attr->background->position['y']) ? $attr->background->position['y'] * 100 : '50' !!}%;
-      @isset($attr->background->scale) transform: scale({!! $attr->background->scale * .01 !!}); @endisset
+      background-image: url({!! $attr->background->media['url'] !!});
+      background-position-x: {!! isset($attr->background->position['x']) && $attr->background->position['x'] ? $attr->background->position['x'] * 100 : '50' !!}%;
+      background-position-y: {!! isset($attr->background->position['y']) && $attr->background->position['y'] ? $attr->background->position['y'] * 100 : '50' !!}%;
+
+      @if(isset($attr->background->size) && $attr->background->size)
+        background-size: {!! $attr->background->size !!};
+      @endif
+
+      @if(isset($attr->background->attachment) && $attr->background->attachment == 'fixed')
+        @media only screen and (min-width: 720px) {
+          background-attachment: 'fixed';
+        }
+      @endif
+
+      @if(isset($attr->background->scale) && $attr->background->scale)
+        transform: scale({!! $attr->background->scale * .01 !!});
+      @endif
     }
 
+    @php($overlaySet = isset($attr->overlay) && isset($attr->overlay->rendered) && $attr->overlay->raw && $attr->overlay->opacity)
     .banner-bg-overlay-{!! $id !!} {
-      background-color: {!! isset($attr->overlay) && isset($attr->overlay->rendered) && $attr->overlay->raw && $attr->overlay->opacity ? $attr->overlay->rendered : 'rgba(0, 0, 0, 0.8)' !!};
+      background-color: {!! $overlaySet ? $attr->overlay->rendered : 'rgba(0, 0, 0, 0.8)' !!};
     }
   </style>
 @endisset

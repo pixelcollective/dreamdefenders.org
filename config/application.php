@@ -41,7 +41,7 @@ if (file_exists($bedrock . '/.env')) {
 }
 
 /**
- * Base values
+ * WordPress
  */
 Config::defineSet([
     'WP_ENV' => env('WP_ENV'),
@@ -61,13 +61,13 @@ Config::defineSet([
 ]);
 
 /**
- * Configure debug
+ * Debug settings.
  */
 Config::defineSet([
+    'DISPLAY_ERRORS' => Config::get('WP_ENV') == 'development' ? true : false,
+    'SCRIPT_DEBUG' => Config::get('WP_ENV') == 'development' ? true : false,
     'WP_DEBUG' => Config::get('WP_ENV') == 'development' ? true : false,
     'WP_DEBUG_DISPLAY' => Config::get('WP_ENV') == 'development' ? true : false,
-    'SCRIPT_DEBUG' => Config::get('WP_ENV') == 'development' ? true : false,
-    'DISPLAY_ERRORS' => Config::get('WP_ENV') == 'development' ? true : false,
 ]);
 
 ini_set('display_errors', Config::get('DISPLAY_ERRORS'));
@@ -93,14 +93,15 @@ Config::define('ENVIRONMENTS', [
  * Configure DB.
  */
 Config::defineSet([
-    'DB_NAME'      => env('DB_NAME'),
-    'DB_USER'      => env('DB_USER'),
-    'DB_PASSWORD'  => env('DB_PASSWORD'),
-    'DB_HOST'      => env('DB_HOST'),
-    'DB_CHARSET'   => env('DB_CHARSET')   ?: 'utf8',
+    'DB_NAME' => env('DB_NAME'),
+    'DB_USER' => env('DB_USER'),
+    'DB_PASSWORD' => env('DB_PASSWORD'),
+    'DB_HOST' => env('DB_HOST'),
+    'DB_CHARSET' => env('DB_CHARSET') ?: 'utf8',
     'DB_COLLATION' => env('DB_COLLATION') ?: 'utf8_unicode_ci',
-    'DB_PREFIX'    => env('DB_PREFIX')    ?: 'wp_',
+    'DB_PREFIX' => env('DB_PREFIX') ?: 'wp_',
 ]);
+
 $table_prefix = Config::get('DB_PREFIX');
 
 /**
@@ -127,17 +128,6 @@ Config::defineSet([
     'WP_CACHE_KEY_SALT' => env('REDIS_CACHE_KEY_SALT') ?: false,
     'WP_REDIS_USE_CACHE_GROUPS' => env('REDIS_USE_CACHE_GROUPS') ?: false,
 ]);
-
-global $redis_server;
-$redis_server = [
-    'host' => Config::get('REDIS_HOST'),
-    'port' => Config::get('REDIS_PORT'),
-    'auth' => Config::get('REDIS_AUTH'),
-    'ssl' => [
-        'local_cert' => Config::get('PREDIS_CERT'),
-        'verify_peers' => Config::get('PREDIS_VERIFY_PEERS'),
-    ],
-];
 
 /**
  * Configure auth keys and salts.

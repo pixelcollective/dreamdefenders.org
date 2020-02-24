@@ -1,13 +1,13 @@
 <footer class="w-full pb-3 bg-gray relative z-10">
   <div class="container flex flex-row mx-auto uppercase justify-center px-4 text-white-800">
     @if ($navigation->footer_left)
-      <nav class="flex-row w-full justify-center hidden pt-0 pb-8 md:py-8 text-white max-h-16 md:flex">
-        @foreach ($navigation->footer_left as $item)
-          <a class="px-6" hoverfx elasticity="0" fx-duration="800" fx-on-scale="1.2" fx-off-scale="1" href="{!! $item->url !!}">
-            {!! $item->label !!}
-          </a>
-        @endforeach
-      </nav>
+    <nav class="flex-row w-full justify-center hidden pt-0 pb-8 md:py-8 text-white max-h-16 md:flex">
+      @foreach ($navigation->footer_left as $item)
+      <a class="px-6" hoverfx elasticity="0" fx-duration="800" fx-on-scale="1.2" fx-off-scale="1" href="{!! $item->url !!}">
+        {!! $item->label !!}
+      </a>
+      @endforeach
+    </nav>
     @endif
 
     <div class="w-64 mx-auto">
@@ -22,7 +22,7 @@
       <div class="flex flex-row items-center w-full pt-0 pb-8 justify-center px-4">
         @if($app->accounts->facebook)
           <a aria-label="Link to {!! get_bloginfo('site_name') !!} on Facebook" href="{!! $app->accounts->facebook !!}" hoverfx elasticity="0" fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="inline-block w-1/3 h-auto p-2 mx-1 text-center text-white rounded-full hover:cursor-pointer transition transition-color transition-bg transition-ease-in-out hover:bg-white hover:text-black">
-            @svg('facebook', 'fill-current')
+            @svg('facebook-square', 'fill-current')
           </a>
         @endif
 
@@ -47,13 +47,13 @@
     </div>
 
     @if ($navigation->footer_right)
-      <nav class="flex-row w-full justify-center hidden pt-0 pb-8 md:py-8 text-white max-h-16 md:flex">
-        @foreach ($navigation->footer_right as $item)
-          <a class="px-6" hoverfx elasticity="0" fx-duration="800" fx-on-scale="1.2" fx-off-scale="1" href="{!! $item->url !!}">
-            {!! $item->label !!}
-          </a>
-        @endforeach
-      </nav>
+    <nav class="flex-row w-full justify-center hidden pt-0 pb-8 md:py-8 text-white max-h-16 md:flex">
+      @foreach ($navigation->footer_right as $item)
+      <a class="px-6" hoverfx elasticity="0" fx-duration="800" fx-on-scale="1.2" fx-off-scale="1" href="{!! $item->url !!}">
+        {!! $item->label !!}
+      </a>
+      @endforeach
+    </nav>
     @endif
   </div>
 </footer>

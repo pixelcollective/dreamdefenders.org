@@ -3,15 +3,15 @@
   <div class="container text-black">
     <div class="flex flex-row justify-between w-full">
       <div class="flex items-center justify-middle">
-        <a aria-label="Dream Defenders" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="w-32 my-4 ml-0 no-underline blend-difference nav-logo hover:no-underline" href="{!! $app->site->url !!}">
-          @svg('logo', 'w-full fill-current blend-difference', ['height' => 64, 'alt' => 'Dream Defenders logo', 'title' => 'The Dream Defenders'])
+        <a aria-label="Dream Defenders" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="w-32 my-4 ml-0 no-underline blend-difference nav-logo hover:no-underline fill-white" href="{!! $app->site->url !!}">
+          @svg('logo', 'w-full text-white fill-current blend-difference', ['height' => 64, 'alt' => 'Dream Defenders logo', 'title' => 'The Dream Defenders'])
         </a>
       </div>
 
       <div class="items-center justify-between text-white align-middle blend-difference hidden md:flex">
         @if($app->accounts->facebook)
           <a id="home" aria-label="Return to the {!! get_bloginfo('site_name') !!} homepage" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-3 mx-1 text-white no-underline blend-difference hover:relative hover:no-underline hover:bg-white rounded rounded-full hover:text-black" href="{!! $app->accounts->facebook !!}">
-            @svg('facebook-f', 'w-full fill-current', ['width' => 28, 'height' => 28])
+            @svg('facebook-square', 'w-full fill-current', ['width' => 28, 'height' => 28])
           </a>
         @endif
 

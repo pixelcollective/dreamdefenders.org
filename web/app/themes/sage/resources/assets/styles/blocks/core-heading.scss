@@ -1,3 +1,7 @@
 .is-style-epic {
-  font-size: 4rem !important;
+  @apply text-5xl;
+
+  @screen lg {
+    @apply text-7xl;
+  }
 }
