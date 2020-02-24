@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "63e224c3da45e7ec7813be82061232b8",
+    "content-hash": "fdcfa7ac394a28249b0cdbbbac307222",
     "packages": [
         {
             "name": "aaemnnosttv/wp-cli-login-server",
@@ -2573,8 +2573,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.3.2",
-                "reference": "5.3.2"
+                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.3.2"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -5945,16 +5944,16 @@
         },
         {
             "name": "wp-graphql/wp-graphql",
-            "version": "v0.6.3",
+            "version": "v0.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-graphql/wp-graphql.git",
-                "reference": "8223ecc20bf0f54bcddad68f0a8ad4542db4f618"
+                "reference": "50b773a48647af583baa9e7b2d185eb3c5ad148e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-graphql/wp-graphql/zipball/8223ecc20bf0f54bcddad68f0a8ad4542db4f618",
-                "reference": "8223ecc20bf0f54bcddad68f0a8ad4542db4f618",
+                "url": "https://api.github.com/repos/wp-graphql/wp-graphql/zipball/50b773a48647af583baa9e7b2d185eb3c5ad148e",
+                "reference": "50b773a48647af583baa9e7b2d185eb3c5ad148e",
                 "shasum": ""
             },
             "require": {
@@ -5999,7 +5998,7 @@
                 }
             ],
             "description": "GraphQL API for WordPress",
-            "time": "2020-02-21T22:13:25+00:00"
+            "time": "2020-02-22T21:59:56+00:00"
         },
         {
             "name": "wp-graphql/wp-graphql-acf",
