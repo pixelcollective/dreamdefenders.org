@@ -129,6 +129,18 @@ Config::defineSet([
     'WP_REDIS_USE_CACHE_GROUPS' => env('REDIS_USE_CACHE_GROUPS') ?: false,
 ]);
 
+global $redis_server;
+
+$redis_server = [
+    'host' => defined('REDIS_HOST') ? REDIS_HOST : null,
+    'port ' => defined('REDIS_PORT') ? REDIS_PORT : null,
+    'auth' => defined('REDIS_AUTH') ? REDIS_AUTH : null,
+    'ssl' => [
+        'local_cert' => defined('PREDIS_CERT') ? PREDIS_CERT : null,
+        'verify_peers' => defined('PREDIS_VERIFY_PEERS') ? PREDIS_VERIFY_PEERS : null,
+    ],
+];
+
 /**
  * Configure auth keys and salts.
  */
