@@ -164,7 +164,8 @@ Config::exposeSSL();
 /**
  * Configure Sentry.
  */
-if (env('SENTRY_DSN') && Config::get('WP_ENV') !== 'development') {
+if (env('SENTRY_DSN') &&
+    Config::get('WP_ENV') !== 'development') {
     Config::defineSet([
         'SENTRY_DSN' => env('SENTRY_DSN') ?: null,
         'RELEASE' => env('GIT_SHA') ?: null,

@@ -18,19 +18,17 @@
         &::before {
           @apply text-blue;
           @apply relative;
-          @apply text-7xl;
-          @apply block;
 
           content: '“';
+          transform: scale(1.5);
         }
 
         &::after {
           @apply text-blue;
           @apply relative;
-          @apply text-7xl;
-          @apply block;
 
           content: '”';
+          transform: scale(1.5);
         }
       }
     }
