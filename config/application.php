@@ -102,6 +102,10 @@ Config::defineSet([
     'DB_PREFIX' => env('DB_PREFIX') ?: 'wp_',
 ]);
 
+/**
+ * I think this in violation of WP's own
+ * coding standards
+ */
 $table_prefix = Config::get('DB_PREFIX');
 
 /**
@@ -184,7 +188,11 @@ if (env('SENTRY_DSN') && Config::get('WP_ENV') !== 'development') {
     });
 }
 
-/**
- * Boot application.
- */
 Config::apply();
+
+/**
+ * Bootstrap WordPress
+ */
+if (!defined('ABSPATH')) {
+    define('ABSPATH', $web . '/wp/');
+}

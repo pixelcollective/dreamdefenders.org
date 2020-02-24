@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Collection;
-
 class BedrockTinkerwellDriver extends TinkerwellDriver
 {
     public function canBootstrap($projectPath)
