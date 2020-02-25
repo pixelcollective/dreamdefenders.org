@@ -1,14 +1,16 @@
 const mx = require('laravel-mix')
 const { GenerateSW } = require('workbox-webpack-plugin');
-const wp = require('mix/wordpress-utils')
-
-const { block, plugins, purgeWatch, purgeWhitelist, sage, vendorScripts } = require('mix/config');
 
 /** laravel-mix plugins */
 require('laravel-mix-purgecss')
 require('laravel-mix-copy-watched')
 require('laravel-mix-tweemotional')
 
+/** conf */
+const wp = require('mix/wordpress-utils')
+const { block, plugins, purgeWatch, purgeWhitelist, sage, vendorScripts } = require('mix/config');
+
+/** app build */
 module.exports = () => mx
   .setPublicPath(sage.publicDir)
   .setResourceRoot`./web/app`
@@ -39,7 +41,9 @@ module.exports = () => mx
       new GenerateSW({
         clientsClaim: true,
         inlineWorkboxRuntime: true,
-        mode: mx.inProduction() ? 'production' : 'development',
+        mode: mx.inProduction()
+          ? 'production'
+          : 'development',
         include: [
           /app/,
         ],
