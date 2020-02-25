@@ -8,14 +8,6 @@ import {
 }  from './components'
 import './components/performantMedia'
 
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker
-    .register('/app/themes/sage/dist/sw.js')
-    .then(function () {
-      console.log("Service Worker Registered");
-    });
-}
-
 window.requestAnimationFrame(() => {
   const { sage } = window
 
