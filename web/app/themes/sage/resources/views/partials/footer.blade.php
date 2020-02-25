@@ -57,3 +57,11 @@
     @endif
   </div>
 </footer>
+
+@script
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("/app/themes/sage/dist/service-worker.js");
+    });
+  }
+@endscript

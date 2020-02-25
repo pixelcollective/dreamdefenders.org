@@ -50,13 +50,16 @@ module.exports = () => mx
         mode: mx.inProduction() ? 'production' : 'development',
         include: [/app/],
         runtimeCaching: [{
-          urlPattern: /app\/themes\/sage\/(.*)|\/app\/uploads\/(.*)|\//,
+          urlPattern: /.(?:png|jpg|jpeg|svg|html)$/,
           handler: 'CacheFirst',
           options: {
             cacheName: 'pages',
             cacheableResponse: { statuses: [200] },
           },
         }],
+        options: {
+          cacheName: "dd-all",
+        },
         navigateFallback: '/offline.html',
       }),
     ],
