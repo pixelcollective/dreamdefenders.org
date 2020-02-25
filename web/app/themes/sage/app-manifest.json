@@ -3,7 +3,20 @@
   "short_name": "DD",
   "description": "Young, powerful people organizing towards a new vision for safety away from prisons.",
   "lang": "en-US",
-  "start_url": "https://dreamdefenders.org",
+  "start_url": "https://build.dreamdefenders.org",
   "display": "standalone",
-  "theme_color": "#fde135"
+  "background_color": "#000000",
+  "theme_color": "#fde135",
+  "icons": [
+    {
+      "src": "/app/themes/sage/dist/images/icons-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/app/themes/sage/dist/images/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
 }

@@ -36,7 +36,10 @@ class App extends Composer
         return [
             'app' => (object) [
                 'site' => (object) $this->site(),
-                'manifest' => get_bloginfo('url') . '/app/themes/sage/app-manifest.json',
+                'manifest' => (object) [
+                    'json' => get_bloginfo('url') . '/app/themes/sage/app-manifest.json',
+                    'apple_touch_icon' => get_bloginfo('url') . '/app/themes/sage/dist/images/icons-192.png',
+                ],
                 'accounts' => (object) [
                     'facebook'  => $this->mods->facebook ? "https://facebook.com/{$this->mods->facebook}" : null,
                     'twitter'   => $this->mods->twitter ? "https://twitter.com/{$this->mods->twitter}" : null,

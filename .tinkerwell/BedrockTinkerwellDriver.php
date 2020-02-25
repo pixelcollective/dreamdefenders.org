@@ -1,5 +1,7 @@
 <?php
 
+use \Illuminate\Support\Collection;
+
 class BedrockTinkerwellDriver extends TinkerwellDriver
 {
     public function canBootstrap($projectPath)
@@ -22,6 +24,7 @@ class BedrockTinkerwellDriver extends TinkerwellDriver
             '__sage' => function ($service = null) {
                 return \Roots\app($service);
             },
+            'collection' => \Illuminate\Support\Collection::class,
         ];
     }
 }

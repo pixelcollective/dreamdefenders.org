@@ -6,7 +6,10 @@ vendor
 .env.*
 !.env.example
 database
-web/app/cache/wp-rocket/*
+web/app/cache
+!web/app/cache/.gitignore
+!web/app/cache/wp-rocket/.gitignore
+*.sql
 
 # Auth
 auth.json

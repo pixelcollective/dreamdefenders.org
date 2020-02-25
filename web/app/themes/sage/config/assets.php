@@ -35,8 +35,8 @@ return [
         'theme' => [
             'strategy' => 'relative',
             'path' => get_theme_file_path('/dist'),
-            'uri' => get_theme_file_uri('/dist'),
+            'uri' => get_theme_file_uri('vendor'),
             'manifest' => get_theme_file_path('/dist/mix-manifest.json'),
-        ]
-    ]
+        ],
+    ],
 ];

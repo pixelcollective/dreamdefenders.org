@@ -57,17 +57,17 @@ Config::defineSet([
     'DISALLOW_FILE_EDIT' => true,
     'DISALLOW_FILE_MODS' => true,
     'AUTOMATIC_UPDATER_DISABLED' => true,
-    'WP_CACHE' => Config::get('WP_ENV') !== 'development' ? true : false,
+    'WP_CACHE' => Config::get('WP_ENV') !== 'development',
 ]);
 
 /**
  * Debug settings.
  */
 Config::defineSet([
-    'DISPLAY_ERRORS' => Config::get('WP_ENV') == 'development' ? true : false,
-    'SCRIPT_DEBUG' => Config::get('WP_ENV') == 'development' ? true : false,
-    'WP_DEBUG' => Config::get('WP_ENV') == 'development' ? true : false,
-    'WP_DEBUG_DISPLAY' => Config::get('WP_ENV') == 'development' ? true : false,
+    'DISPLAY_ERRORS' => Config::get('WP_ENV') == 'development',
+    'SCRIPT_DEBUG' => Config::get('WP_ENV') == 'development',
+    'WP_DEBUG' => Config::get('WP_ENV') == 'development',
+    'WP_DEBUG_DISPLAY' => Config::get('WP_ENV') == 'development',
 ]);
 
 ini_set('display_errors', Config::get('DISPLAY_ERRORS'));
@@ -110,6 +110,7 @@ $table_prefix = Config::get('DB_PREFIX');
  */
 Config::defineSet([
     'S3_UPLOADS_BUCKET'   => env('S3_UPLOADS_BUCKET'),
+    'S3_UPLOADS_ENV'      => 'production',
     'S3_UPLOADS_KEY'      => env('S3_UPLOADS_KEY'),
     'S3_UPLOADS_SECRET'   => env('S3_UPLOADS_SECRET'),
     'S3_UPLOADS_ENDPOINT' => env('S3_UPLOADS_ENDPOINT') ?: 'https://nyc3.digitaloceanspaces.com',
