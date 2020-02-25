@@ -53,7 +53,8 @@
     "tailwindcss-gradients": "^2.3.1",
     "tailwindcss-scrims": "^1.0.0",
     "tailwindcss-transitions": "^2.1.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "workbox-webpack-plugin": "^5.0.0"
   },
   "dependencies": {
     "@tinypixelco/hoverfx": "^0.0.2",
@@ -66,6 +67,9 @@
     "headroom.js": "^0.10.4",
     "intersection-observer": "^0.7.0",
     "lodash": "^4.17.15",
-    "lozad": "^1.14.0"
+    "lozad": "^1.14.0",
+    "workbox-expiration": "^5.0.0",
+    "workbox-routing": "^5.0.0",
+    "workbox-strategies": "^5.0.0"
   }
 }

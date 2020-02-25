@@ -59,8 +59,11 @@ add_action('wp_enqueue_scripts', function () {
         wp_register_script('pdf-viewer-block-scripts', null);
     })();
 
+    /** Precache SW  */
+    wp_enqueue_script('sage/sw', asset('service-worker.js')->uri(), [], null, true);
+
     /** Enqueue application JS */
-    wp_enqueue_script('sage/compiled', asset('scripts/compiled.js')->uri(), [], null, true);
+    wp_enqueue_script('sage/compiled', asset('scripts/compiled.js')->uri(), ['sage/sw'], null, true);
 
     /** Poor man's inertia.js 😂 */
     wp_localize_script('sage/compiled', 'sage', [

@@ -57,13 +57,3 @@
     @endif
   </div>
 </footer>
-
-@script
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker
-      .register('/app/themes/sage/dist/scripts/sw.js')
-      .then(function () {
-        console.log("Service Worker Registered")
-      });
-  }
-@endscript

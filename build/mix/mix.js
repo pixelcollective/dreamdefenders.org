@@ -1,4 +1,5 @@
 const mx = require('laravel-mix')
+const { GenerateSW } = require('workbox-webpack-plugin');
 const wp = require('mix/wordpress-utils')
 
 const { block, plugins, purgeWatch, purgeWhitelist, sage, vendorScripts } = require('mix/config');
@@ -35,6 +36,15 @@ module.exports = () => mx
         injectPolyfill: false,
         outputFormat: `php`,
       }),
+      new GenerateSW({
+        inlineWorkboxRuntime: true,
+        mode: mx.inProduction() ? 'production' : 'development',
+        runtimeCaching: [{
+          handler: "StaleWhileRevalidate",
+          method: "GET",
+          urlPattern: new RegExp('^/.?$'),
+        }],
+      }),
     ],
   })
   .sourceMaps(false, 'source-map')
@@ -42,7 +52,6 @@ module.exports = () => mx
 
   /** Sage client scripts */
   mx.js(sage.src(`scripts/app.js`), sage.work(`scripts`))
-    .js(sage.src(`scripts/sw.js`), sage.public(`scripts`))
 
   /** Block editor scripts */
   mx.js(sage.src('scripts/editor.js'), sage.public('scripts/editor-theme.js'))
