@@ -11,7 +11,7 @@ require('laravel-mix-tweemotional')
 
 module.exports = () => mx
   .setPublicPath(sage.publicDir)
-  .setResourceRoot(`./web/app`)
+  .setResourceRoot`./web/app`
   .browserSync({
     proxy: 'dreamdefenders.vagrant',
     files: purgeWatch,
@@ -34,11 +34,15 @@ module.exports = () => mx
     plugins: [
       new wp.dependencyInjectionWebpackPlugin({
         injectPolyfill: false,
-        outputFormat: `php`,
+        outputFormat: 'php',
       }),
       new GenerateSW({
+        clientsClaim: true,
         inlineWorkboxRuntime: true,
         mode: mx.inProduction() ? 'production' : 'development',
+        include: [
+          /app/,
+        ],
         runtimeCaching: [{
           handler: "StaleWhileRevalidate",
           method: "GET",
@@ -51,38 +55,38 @@ module.exports = () => mx
   .inProduction() && mx.version()
 
   /** Sage client scripts */
-  mx.js(sage.src(`scripts/app.js`), sage.work(`scripts`))
+  mx.js(sage.src`scripts/app.js`, sage.work`scripts`)
 
   /** Block editor scripts */
-  mx.js(sage.src('scripts/editor.js'), sage.public('scripts/editor-theme.js'))
-    .js(block('Banner'), sage.public('scripts/blocks/banner'))
-    .js(block('Container'), sage.public('scripts/blocks/container'))
-    .js(block('FreedomPaper'), sage.public('scripts/blocks/freedom-paper'))
-    .js(block('HorizontalCard'), sage.public('scripts/blocks/horizontal-card'))
-    .js(block('TwoColumn'), sage.public('scripts/blocks/two-column'))
-    .js(block('PostContainer'), sage.public('scripts/blocks/post-container'))
-    .js(block('ProjectContainer'), sage.public('scripts/blocks/project-container/block.js'))
-    .js(block('Squadd'), sage.public('scripts/blocks/squadd/block.js'))
+  mx.js(sage.src`scripts/editor.js`, sage.public`scripts/editor-theme.js`)
+    .js(block`Banner`, sage.public`scripts/blocks/banner`)
+    .js(block`Container`, sage.public`scripts/blocks/container`)
+    .js(block`FreedomPaper`, sage.public`scripts/blocks/freedom-paper`)
+    .js(block`HorizontalCard`, sage.public`scripts/blocks/horizontal-card`)
+    .js(block`TwoColumn`, sage.public`scripts/blocks/two-column`)
+    .js(block`PostContainer`, sage.public`scripts/blocks/post-container`)
+    .js(block`ProjectContainer`, sage.public`scripts/blocks/project-container/block.js`)
+    .js(block`Squadd`, sage.public`scripts/blocks/squadd/block.js`)
     .tweemotional()
 
   /** Application styles */
-  mx.sass(sage.src(`styles/app.scss`), sage.work(`styles`))
-    .sass(sage.src(`styles/editor.scss`), sage.public(`styles/editor-theme.css`))
+  mx.sass(sage.src`styles/app.scss`, sage.work`styles`)
+    .sass(sage.src`styles/editor.scss`, sage.public`styles/editor-theme.css`)
 
   /** Avoid WordPress-itis */
-  mx.css(plugins(`pdf-viewer-block/public/css/pdf-viewer-block.css`), sage.work(`scripts`))
+  mx.css(plugins`pdf-viewer-block/public/css/pdf-viewer-block.css`, sage.work`scripts`)
     .combine([
-      sage.work(`styles/app.css`),
-      sage.work(`styles/public.css`),
-    ], sage.public(`styles/compiled.css`))
+      sage.work`styles/app.css`,
+      sage.work`styles/public.css`,
+    ], sage.public`styles/compiled.css`)
     .combine([
-      sage.work(`scripts/app.js`),
-    ], sage.public(`scripts/compiled.js`))
+      sage.work`scripts/app.js`,
+    ], sage.public`scripts/compiled.js`)
 
   /** Copy assets */
-  mx.copyWatched(sage.src(`images`), sage.public(`images`))
-    .copyWatched(sage.src(`fonts`), sage.public(`fonts`))
-    .copyWatched(sage.src(`svg`), sage.public(`svg`))
+  mx.copyWatched(sage.src`images`, sage.public`images`)
+    .copyWatched(sage.src`fonts`, sage.public`fonts`)
+    .copyWatched(sage.src`svg`, sage.public`svg`)
 
   /** ✨*/
   return mx;
