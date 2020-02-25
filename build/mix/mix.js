@@ -48,7 +48,6 @@ module.exports = () => mx
         clientsClaim: true,
         inlineWorkboxRuntime: true,
         mode: mx.inProduction() ? 'production' : 'development',
-        include: [/app/],
         runtimeCaching: [{
           urlPattern: /.(?:png|jpg|jpeg|svg|html)$/,
           handler: 'CacheFirst',
@@ -57,10 +56,6 @@ module.exports = () => mx
             cacheableResponse: { statuses: [200] },
           },
         }],
-        options: {
-          cacheName: "dd-all",
-        },
-        navigateFallback: '/offline.html',
       }),
     ],
   })
