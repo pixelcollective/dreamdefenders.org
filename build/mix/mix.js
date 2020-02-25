@@ -46,7 +46,7 @@ module.exports = () => mx
         runtimeCaching: [{
           handler: "StaleWhileRevalidate",
           method: "GET",
-          urlPattern: new RegExp('^/.?$'),
+          urlPattern: /app\/themes\/sage\/(.*)|\/app\/uploads\/(.*)/
         }],
       }),
     ],
