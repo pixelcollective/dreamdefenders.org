@@ -1,4 +1,4 @@
-import './components/caches';
+import caches from './components/caches';
 
 self.oninstall = event => {
   event.waitUntil(
@@ -8,7 +8,7 @@ self.oninstall = event => {
         '/themes/sage/dist/styles/compiled.css',
         '/themes/sage/dist/images/icons-192.png',
         '/themes/sage/dist/images/icons-512.png',
-      ]);
+      ])
     })
-  );
-};
+  )
+}
