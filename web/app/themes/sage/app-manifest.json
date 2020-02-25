@@ -3,7 +3,7 @@
   "short_name": "DD",
   "description": "A new vision for safety away from prisons.",
   "lang": "en-US",
-  "start_url": "https://build.dreamdefenders.tinypixel.dev",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#fde135",
