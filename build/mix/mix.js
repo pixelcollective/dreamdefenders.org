@@ -7,8 +7,14 @@ require('laravel-mix-copy-watched')
 require('laravel-mix-tweemotional')
 
 /** conf */
+const {
+  block,
+  plugins,
+  purgeWatch,
+  purgeWhitelist,
+  sage,
+} = require('mix/config');
 const wp = require('mix/wordpress-utils')
-const { block, plugins, purgeWatch, purgeWhitelist, sage, vendorScripts } = require('mix/config');
 
 /** app build */
 module.exports = () => mx
@@ -41,27 +47,28 @@ module.exports = () => mx
       new GenerateSW({
         clientsClaim: true,
         inlineWorkboxRuntime: true,
-        mode: mx.inProduction()
-          ? 'production'
-          : 'development',
-        include: [
-          /app/,
-        ],
+        mode: mx.inProduction() ? 'production' : 'development',
+        include: [/app/],
         runtimeCaching: [{
-          handler: "StaleWhileRevalidate",
-          method: "GET",
-          urlPattern: /app\/themes\/sage\/(.*)|\/app\/uploads\/(.*)/
+          urlPattern: /app\/themes\/sage\/(.*)|\/app\/uploads\/(.*)|\//,
+          handler: 'CacheFirst',
+          options: {
+            cacheName: 'pages',
+            cacheableResponse: { statuses: [200] },
+          },
         }],
+        navigateFallback: '/offline.html',
       }),
     ],
   })
   .sourceMaps(false, 'source-map')
-  .inProduction() && mx.version()
+  .inProduction()
+    && mx.version()
 
-  /** Sage client scripts */
+  /** Client scripts */
   mx.js(sage.src`scripts/app.js`, sage.work`scripts`)
 
-  /** Block editor scripts */
+  /** Editor scripts */
   mx.js(sage.src`scripts/editor.js`, sage.public`scripts/editor-theme.js`)
     .js(block`Banner`, sage.public`scripts/blocks/banner`)
     .js(block`Container`, sage.public`scripts/blocks/container`)
@@ -77,14 +84,14 @@ module.exports = () => mx
   mx.sass(sage.src`styles/app.scss`, sage.work`styles`)
     .sass(sage.src`styles/editor.scss`, sage.public`styles/editor-theme.css`)
 
-  /** Avoid WordPress-itis */
+  /** Cleanup WP */
   mx.css(plugins`pdf-viewer-block/public/css/pdf-viewer-block.css`, sage.work`scripts`)
     .combine([
-      sage.work`styles/app.css`,
-      sage.work`styles/public.css`,
+       sage.work`styles/app.css`,
+       sage.work`styles/public.css`,
     ], sage.public`styles/compiled.css`)
     .combine([
-      sage.work`scripts/app.js`,
+       sage.work`scripts/app.js`,
     ], sage.public`scripts/compiled.js`)
 
   /** Copy assets */
