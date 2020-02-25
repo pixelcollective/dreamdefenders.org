@@ -42,6 +42,7 @@ module.exports = () => mx
 
   /** Sage client scripts */
   mx.js(sage.src(`scripts/app.js`), sage.work(`scripts`))
+    .js(sage.src(`scripts/sw.js`), sage.public(`scripts`))
 
   /** Block editor scripts */
   mx.js(sage.src('scripts/editor.js'), sage.public('scripts/editor-theme.js'))
