@@ -40,16 +40,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.133.20",
+            "version": "3.133.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "c5f84f9edafb6372dafdbc87cb588772761179ca"
+                "reference": "3501468a7ef894703141d1c4d68caa3b914cbd96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/c5f84f9edafb6372dafdbc87cb588772761179ca",
-                "reference": "c5f84f9edafb6372dafdbc87cb588772761179ca",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/3501468a7ef894703141d1c4d68caa3b914cbd96",
+                "reference": "3501468a7ef894703141d1c4d68caa3b914cbd96",
                 "shasum": ""
             },
             "require": {
@@ -120,7 +120,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-02-21T19:09:49+00:00"
+            "time": "2020-02-24T19:15:07+00:00"
         },
         {
             "name": "clue/stream-filter",
@@ -2573,7 +2573,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.3.2"
+                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.3.2",
+                "reference": "5.3.2"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -3805,12 +3806,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pixelcollective/s3-uploads-adapter.git",
-                "reference": "32c597e35379a2f17dae9d28229416e5eff9920e"
+                "reference": "43c072254cfe51012bd30796aa9ac5f074d544da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pixelcollective/s3-uploads-adapter/zipball/32c597e35379a2f17dae9d28229416e5eff9920e",
-                "reference": "32c597e35379a2f17dae9d28229416e5eff9920e",
+                "url": "https://api.github.com/repos/pixelcollective/s3-uploads-adapter/zipball/43c072254cfe51012bd30796aa9ac5f074d544da",
+                "reference": "43c072254cfe51012bd30796aa9ac5f074d544da",
                 "shasum": ""
             },
             "require": {
@@ -3825,7 +3826,7 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "time": "2019-11-21T22:37:32+00:00"
+            "time": "2020-02-24T12:06:46+00:00"
         },
         {
             "name": "tiny-pixel/wp-performant-media",
@@ -6267,15 +6268,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-redis",
-            "version": "0.8.2",
+            "version": "0.8.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-redis/",
-                "reference": "tags/0.8.2"
+                "reference": "tags/0.8.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-redis.0.8.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-redis.0.8.3.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
