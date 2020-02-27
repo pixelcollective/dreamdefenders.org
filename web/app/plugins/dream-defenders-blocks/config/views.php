@@ -3,6 +3,7 @@
 $cachePath = wp_upload_dir()['basedir'] . '/blocks';
 
 return [
+
     /*
     |--------------------------------------------------------------------------
     | View engine instances
@@ -17,7 +18,7 @@ return [
 
     'views' => [
         'blocks' => [
-            'dir'   => WP_PLUGIN_DIR . '/dream-defenders-blocks/resources/views',
+            'dir' => WP_PLUGIN_DIR . '/dream-defenders-blocks/resources/views',
             'cache' => $cachePath,
             'debug' => 0,
         ],

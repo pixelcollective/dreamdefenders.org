@@ -1,4 +1,4 @@
-const dependencyInjectionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin');
+const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin');
 
 /**
  * @wordpress webpack helper
@@ -8,7 +8,7 @@ module.exports = {
    * Dependency injection webpack plugin
    * @see @wordpress/dependency-extraction-webpack-plugin
    */
-  dependencyInjectionWebpackPlugin,
+  DependencyExtractionWebpackPlugin,
 
   /**
    * Window aliases

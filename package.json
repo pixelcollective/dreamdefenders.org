@@ -1,10 +1,12 @@
 {
-  "name": "dreamdefenders",
+  "name": "@dream-defenders/bedrock",
+  "version": "1.0.0",
   "license": "MIT",
   "workspaces": [
+    "./",
     "build/tailwind",
     "build/mix",
-    "web/app/plugins/blocks",
+    "web/app/plugins/dream-defenders-blocks",
     "web/app/themes/sage"
   ],
   "private": true,
@@ -15,6 +17,10 @@
     "cypress:production": "cypress run --spec 'tests/cypress/integration/production.js' --browser chrome",
     "start": "webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "dev": "cross-env NODE_ENV=development webpack --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "build": "yarn run npm-run-all build:*",
+    "build:theme": "yarn workspace @dream-defenders/theme build",
+    "build:blocks": "yarn workspace @dream-defenders/blocks build",
+    "build:bedrock": "cross-env NODE_ENV=production webpack --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "all": "cross-env NODE_ENV=production webpack --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "devDependencies": {

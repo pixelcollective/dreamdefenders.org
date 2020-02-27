@@ -37,8 +37,8 @@ web/app/themes/theme
 
 # Plugins
 web/app/plugins/*
-!web/app/plugins/blocks
-!web/app/plugins/blocks/*
+!web/app/plugins/dream-defenders-blocks
+!web/app/plugins/dream-defenders-blocks/*
 !web/app/plugins/.gitkeep
 
 # MU-Plugins

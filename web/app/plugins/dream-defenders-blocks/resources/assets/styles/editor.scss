@@ -1,6 +1,5 @@
 /**
  * @tailwind base
- * disable unknownAtRules
  */
 @tailwind base;
 @tailwind utilities;
@@ -19,7 +18,7 @@
  * Block editor
  */
 .block-editor-block-list__block {
-  @import './app/fonts';
+  @import '@dream-defenders/theme/resources/assets/styles/app/fonts';
 
   h1,
   h2,
@@ -137,15 +136,15 @@
     }
   }
 
-  @import './app/typography';
-  @import './app/spacing';
-  @import './app/lists';
-  @import './app/performant-media';
+  @import '@dream-defenders/theme/resources/assets/styles/app/typography';
+  @import '@dream-defenders/theme/resources/assets/styles/app/spacing';
+  @import '@dream-defenders/theme/resources/assets/styles/app/lists';
+  @import '@dream-defenders/theme/resources/assets/styles/app/performant-media';
 
   /**
   * Blocks
   */
-  @import './blocks/core-heading';
-  @import './blocks/core-group';
-  @import './blocks/core-pullquote';
+  @import '@dream-defenders/theme/resources/assets/styles/blocks/core-heading';
+  @import '@dream-defenders/theme/resources/assets/styles/blocks/core-group';
+  @import '@dream-defenders/theme/resources/assets/styles/blocks/core-pullquote';
 }

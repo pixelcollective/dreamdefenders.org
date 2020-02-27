@@ -1,16 +1,14 @@
 /** @wordpress */
 import { __ } from '@wordpress/i18n';
 import domReady from '@wordpress/dom-ready';
-import { Icon } from '@wordpress/components';
-import { render } from '@wordpress/element';
 
 /** emotion */
 import { injectGlobal } from 'emotion'
-import css from '@emotion/css';
 
 /** sage utilities */
-import { whitelistBlocks } from './hooks/whitelist';
-import { registerBlockStyles, unregisterBlockStyles } from './hooks/styles'
+import { whitelistBlocks } from './whitelist';
+import { registerBlockStyles, unregisterBlockStyles } from './register-styles'
+import { inserterCategories } from './inserter-categories'
 
 /**
  * @wordpress/dom-ready event

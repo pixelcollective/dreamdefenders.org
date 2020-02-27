@@ -19,7 +19,7 @@ use function Roots\asset;
  */
 add_action('wp_enqueue_scripts', function () {
     /** Dequeue jQuery unless it's needed */
-    !is_admin() && !is_admin_bar_showing() && !has_block('pdf-viewer-block/standard', get_the_id()) && (
+    !is_admin() && !is_admin_bar_showing() && ! has_block('pdf-viewer-block/standard', get_the_id()) && (
         function () {
             wp_dequeue_script('jquery');
             wp_deregister_script('jquery');
@@ -53,34 +53,26 @@ add_action('wp_enqueue_scripts', function () {
     wp_register_script('rocket-lazyload', null);
 
     /** Dequeue PDF viewer JS if unused */
-    !has_block('pdf-viewer-block/standard', get_the_id()) && (function () {
+    ! has_block('pdf-viewer-block/standard', get_the_id()) && (function () {
         wp_dequeue_script('pdf-viewer-block-scripts');
         wp_deregister_script('pdf-viewer-block-scripts');
         wp_register_script('pdf-viewer-block-scripts', null);
     })();
 
     /** Enqueue application JS */
-    wp_enqueue_script('sage/compiled', asset('scripts/compiled.js')->uri(), [], null, true);
+    wp_enqueue_script('sage/vendor', asset('scripts/vendor.js')->uri(), [], null, true);
+    wp_enqueue_script('sage/app', asset('scripts/app.js')->uri(), ['sage/vendor'], null, true);
+    wp_add_inline_script('sage/vendor', asset('scripts/manifest.js')->contents(), 'before');
 
     /** Poor man's inertia.js 😂 */
-    wp_localize_script('sage/compiled', 'sage', [
+    wp_localize_script('sage/app', 'sage', [
         'isPage'      => is_page(),
         'isHome'      => is_home(),
         'isFrontPage' => is_front_page(),
     ]);
 
     /** Enqueue application styles */
-    wp_enqueue_style('sage/compiled.css', asset('styles/compiled.css')->uri(), false, null);
-}, 100);
-
-/**
- * Register the theme assets with the block editor.
- *
- * @return void
- */
-add_action('enqueue_block_editor_assets', function () {
-    wp_enqueue_script('sage/editor-theme.js', asset('scripts/editor-theme.js')->uri(), ['wp-dom', 'wp-edit-post'], time());
-    wp_enqueue_style('sage/editor-theme.css', asset('styles/editor-theme.css')->uri(), false, null);
+    wp_enqueue_style('sage/app', asset('styles/app.css')->uri(), false, null);
 }, 100);
 
 /**
