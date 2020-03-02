@@ -2,19 +2,22 @@
 import { __ } from '@wordpress/i18n';
 import domReady from '@wordpress/dom-ready';
 
-/** emotion */
-import { injectGlobal } from 'emotion'
+/** global styles */
+import applyGlobalStyles from './global-styles'
 
-/** sage utilities */
+/** util */
 import { whitelistBlocks } from './whitelist';
 import { registerBlockStyles, unregisterBlockStyles } from './register-styles'
-import { inserterCategories } from './inserter-categories'
+import { setupInserterCategories } from './inserter-categories'
 
 /**
- * @wordpress/dom-ready event
- *
- * @see https://www.npmjs.com/package/@wordpress/dom-ready
+ * Editor extensions
  */
+applyGlobalStyles()
+setupInserterCategories({
+  category: 'dream-defenders',
+})
+
 domReady(() => {
   /**
    * Unregister existing block styles.
@@ -93,6 +96,8 @@ domReady(() => {
     'tinypixel/squadd',
     'tinypixel/two-column',
     'tinypixel/gallery-cta',
+    'tinypixel/dream-defenders',
+    'tinypixel/form',
 
     /** third-party */
     'pdf-viewer-block/standard',
@@ -121,72 +126,3 @@ domReady(() => {
     'core/video',
   ]);
 });
-
-injectGlobal`
-  #adminmenumain {
-    width: 0 !important;
-    display: none !important;
-  }
-
-  #wpcontent,
-  #wpfooter {
-    margin-left: 0 !important;
-  }
-
-  .editor-post-title__block {
-    font-family: Roboto Condensed,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
-  }
-
-  .auto-fold .block-editor-editor-skeleton {
-    display: flex !important;
-    flex-direction: column !important;
-    height: auto !important;
-    max-height: 100% !important;
-    position: fixed !important;
-    top: 48px !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    left: 0 !important;
-  }
-
-  @media (min-width: 782px) {
-    .auto-fold .block-editor-editor-skeleton {
-      top: 32px !important;
-      left: 0 !important;
-    }
-  }
-
-  @media (min-width: 782px) {
-    .auto-fold .block-editor-editor-skeleton {
-      left: 0 !important;
-    }
-  }
-
-  @media (min-width: 961px) {
-    .auto-fold .block-editor-editor-skeleton {
-      left: 0 !important;
-    }
-  }
-
-  @media (max-width: 782px) {
-    .auto-fold .wp-responsive-open .block-editor-editor-skeleton {
-      left: 0 !important;
-    }
-  }
-
-  @media (max-width: 600) {
-    .auto-fold .wp-responsive-open .block-editor-editor-skeleton {
-      margin-left: -18px !important;
-    }
-  }
-
-  .folded .block-editor-editor-skeleton {
-    left: 0
-  }
-
-  @media (min-width: 782px) {
-    .folded .block-editor-editor-skeleton {
-      left: 0 !important;
-    }
-  }
-`

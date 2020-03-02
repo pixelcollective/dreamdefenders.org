@@ -6,15 +6,19 @@ import { InnerBlocks } from '@wordpress/block-editor'
 /** components */
 import edit from './components/edit'
 
-registerBlockType(`tinypixel/project-container`, {
-  title: __(`Project container`, `tiny-pixel`),
+registerBlockType(`tinypixel/gallery-cta`, {
+  title: __(`Gallery Call-to-action`, `tiny-pixel`),
   category: `dream-defenders`,
+  icon: `format-image`,
   attributes: {
-    title: { type: `string` },
-    media: { type: `object` },
+    heading: {
+      type: 'string',
+    },
+    text: {
+      type: 'string',
+    },
   },
   supports: { align: true },
   edit,
   save: () => <InnerBlocks.Content />
 })
-

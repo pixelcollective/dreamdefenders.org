@@ -8,7 +8,7 @@ import edit from './components/edit'
 
 registerBlockType(`tinypixel/freedom-paper`, {
   title: __(`Freedom Paper`, `tiny-pixel`),
-  category: `layout`,
+  category: `dream-defenders`,
   attributes: {
     media: { type: `object` },
     mediaDownload: { type: `object` },

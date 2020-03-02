@@ -8,7 +8,7 @@ import edit from './components/edit'
 
 registerBlockType(`tinypixel/container`, {
   title: __(`Container`, `tiny-pixel`),
-  category: `layout`,
+  category: `dream-defenders`,
   attributes: {},
   edit,
   save: () => <InnerBlocks.Content />

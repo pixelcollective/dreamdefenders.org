@@ -8,7 +8,7 @@ import edit from './components/edit'
 
 registerBlockType(`tinypixel/gallery-cta`, {
   title: __(`Gallery Call-to-action`, `tiny-pixel`),
-  category: `common`,
+  category: `dream-defenders`,
   icon: `format-image`,
   attributes: {
     heading: {

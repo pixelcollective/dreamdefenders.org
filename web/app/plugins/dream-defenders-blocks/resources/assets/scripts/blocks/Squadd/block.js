@@ -7,7 +7,7 @@ import { edit } from './components/edit';
 
 registerBlockType('tinypixel/squadd', {
   title: __('Squadd', 'tiny-pixel'),
-  category: 'common',
+  category: 'dream-defenders',
   icon: 'hammer',
   attributes: {
     squaddName:  {

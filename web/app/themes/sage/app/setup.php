@@ -19,13 +19,13 @@ use function Roots\asset;
  */
 add_action('wp_enqueue_scripts', function () {
     /** Dequeue jQuery unless it's needed */
-    !is_admin() && !is_admin_bar_showing() && ! has_block('pdf-viewer-block/standard', get_the_id()) && (
-        function () {
+    ! is_admin() && ! is_admin_bar_showing()
+    && ! has_block('pdf-viewer-block/standard', get_the_id())
+    && (function () {
             wp_dequeue_script('jquery');
             wp_deregister_script('jquery');
             wp_register_script('jquery', null);
-        }
-    )();
+        })();
 
     /** Dequeue block-library CSS */
     wp_dequeue_style('wp-block-library');
@@ -218,61 +218,3 @@ add_action('after_setup_theme', function () {
         ],
     ]);
 }, 20);
-
-/**
- * Standard Post Posttype
- */
-add_action('init', function () {
-    $post = get_post_type_object('post');
-
-    $post->template = [
-        ['tinypixel/post-container'],
-        ['tinypixel/container'],
-    ];
-
-    $post->template_lock = 'INSERT';
-    register_post_type('post', $post);
-});
-
-/**
- * Freedom Papers PostType
- */
-register_post_type('freedom-papers', [
-    'capability_type' => 'post',
-    'has_archive' => true,
-    'show_in_rest' => true,
-    'labels' => [
-        'name'          => __('Freedom Papers', 'sage'),
-        'menu_name'     => __('Freedom Papers', 'sage'),
-        'singular_name' => __('Freedom Paper', 'sage'),
-    ],
-    'menu_icon' => 'dashicons-pressthis',
-    'public' => true,
-    'rewrite' => ['slug' => 'freedom-papers'],
-    'supports' => ['title', 'thumbnail', 'editor', 'meta', 'page-attributes'],
-    'template' => [['tinypixel/freedom-paper']],
-    'template_lock' => 'insert',
-]);
-
-/**
- * Projects PostType
- */
-register_post_type('projects', [
-    'capability_type' => 'post',
-    'has_archive' => true,
-    'show_in_rest' => true,
-    'labels' => [
-        'name' => __('Projects', 'sage'),
-        'menu_name' => __('Projects', 'sage'),
-        'singular_name' => __('Project', 'sage'),
-    ],
-    'menu_icon' => 'dashicons-lightbulb',
-    'public' => true,
-    'rewrite' => ['slug' => 'projects'],
-    'supports' => ['title', 'thumbnail', 'editor', 'meta', 'page-attributes'],
-    'template' => [
-        ['tinypixel/project-container'],
-        ['tinypixel/container'],
-    ],
-    'template_lock' => 'insert',
-]);

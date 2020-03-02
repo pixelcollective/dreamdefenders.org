@@ -4,13 +4,16 @@ const mx = require('laravel-mix')
 require('laravel-mix-purgecss')
 require('laravel-mix-copy-watched')
 
+/** config */
+const purgeWatchList = require('@dream-defenders/mix/purge.config')({
+  production: mx.inProduction(),
+})['purgeWatch'];
+
 /** app build */
-module.exports = mx
+mx
   .browserSync({
     proxy: 'dreamdefenders.vagrant',
-    files: require('@dream-defenders/mix/purge.config')({
-      production: mx.inProduction(),
-    })['purgeWatch'],
+    files: purgeWatchList,
   })
   .options({
     clearConsole: false,
@@ -25,3 +28,6 @@ module.exports = mx
   })
   .sourceMaps(false, 'source-map')
   .inProduction() && mx.version()
+
+/** mix export */
+module.exports = mx

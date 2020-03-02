@@ -6,7 +6,10 @@ require('laravel-mix-copy-watched')
  * Concatenate scripts & styles
  */
 mx.setPublicPath('./web/app/themes/sage/dist')
-  .css('./web/app/plugins/pdf-viewer-block/public/css/pdf-viewer-block.css', 'web/app/themes/sage/dist/work/styles/pdf-viewer.css')
+  .css(
+    './web/app/plugins/pdf-viewer-block/public/css/pdf-viewer-block.css',
+    'web/app/themes/sage/dist/work/styles/pdf-viewer.css'
+  )
   .combine([
     'web/app/themes/sage/dist/work/styles/client-theme.css',
     'web/app/themes/sage/dist/work/styles/pdf-viewer.css'

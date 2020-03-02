@@ -30,6 +30,10 @@ class Archive extends Composer
     }
 
     /**
+     * Posts
+     */
+
+    /**
      * Post type
      */
     public function posttype()

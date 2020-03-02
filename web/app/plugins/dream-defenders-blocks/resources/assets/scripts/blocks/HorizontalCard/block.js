@@ -3,9 +3,6 @@ import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
 import { InnerBlocks } from '@wordpress/editor';
 
-/** dependencies */
-import { css } from '@emotion/core'
-
 /** components */
 import { edit } from './components/edit';
 
@@ -27,7 +24,7 @@ const BlockTypeIcon = ({ fill, width, height }) => (
  */
 registerBlockType('tinypixel/horizontal-card', {
   title: __('Horizontal Card', 'tiny-pixel'),
-  category: 'layout',
+  category: 'dream-defenders',
   icon: () => <BlockTypeIcon />,
   attributes: {
     media: {

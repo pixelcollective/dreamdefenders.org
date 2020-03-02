@@ -1,9 +1,6 @@
 /** @wordpress */
 import { __ } from '@wordpress/i18n'
-import {
-  registerBlockType,
-  registerBlockStyle,
-} from '@wordpress/blocks'
+import { registerBlockType } from '@wordpress/blocks'
 import { InnerBlocks } from '@wordpress/block-editor'
 
 /** @tinypixelco components */
@@ -14,7 +11,7 @@ import edit from './components/edit'
  */
 registerBlockType(`tinypixel/banner`, {
   title: __(`Banner`, `tiny-pixel`),
-  category: `layout`,
+  category: 'dream-defenders',
   attributes: {
     title: {
       type: `string`,

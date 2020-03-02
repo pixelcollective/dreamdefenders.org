@@ -9,13 +9,9 @@
         @endif
       @endisset
 
-      @isset($attr->date)
-        @if($attr->date)
-          <span class="inline-block w-full mb-4 font-sans uppercase text-md">
-            {!! $attr->date !!}
-          </span>
-        @endif
-      @endisset
+      <span class="inline-block w-full mb-4 font-sans uppercase text-md">
+        {!! get_the_date() !!}
+      </span>
 
       @if(isset($attr->media) && is_object($attr->media))
         <div class="w-full pb-6 pr-8 md:pr-6 lg:pr-8 md:pb-0 md:max-w-4/5">

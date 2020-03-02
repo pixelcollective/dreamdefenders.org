@@ -2,7 +2,7 @@
   <header class="pb-4">
     <h2 class="text-4xl entry-title">
       <a href="{{ get_permalink() }}">
-        {!! $title !!}
+        {!! get_the_title() !!}
       </a>
     </h2>
 

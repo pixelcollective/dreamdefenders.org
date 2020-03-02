@@ -8,7 +8,7 @@ import edit from './components/edit'
 
 registerBlockType(`tinypixel/post-container`, {
   title: __(`Post container`, `tiny-pixel`),
-  category: `layout`,
+  category: `dream-defenders`,
   attributes: {
     title: { type: `string` },
     date:  { type: `string` },

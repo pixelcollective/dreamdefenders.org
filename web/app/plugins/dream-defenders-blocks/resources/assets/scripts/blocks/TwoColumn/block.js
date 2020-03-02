@@ -8,7 +8,7 @@ import { edit } from "./components/edit";
 
 registerBlockType(`tinypixel/two-column`, {
   title: __(`Two column`, `tiny-pixel`),
-  category: `common`,
+  category: `dream-defenders`,
   icon: `hammer`,
   attributes: {
     heading: {

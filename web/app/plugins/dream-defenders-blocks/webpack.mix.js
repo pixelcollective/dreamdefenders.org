@@ -1,6 +1,3 @@
-/** node.js */
-const { resolve } = require('path')
-
 /** laravel-mix */
 const mx = require('@dream-defenders/mix')
 require('@tinypixelco/laravel-mix-wp-blocks')
@@ -21,5 +18,5 @@ mx.block('resources/assets/scripts/extensions/editor.js', 'scripts/extensions')
   .block('resources/assets/scripts/blocks/ProjectContainer/block.js', 'scripts/blocks/project-container')
   .block('resources/assets/scripts/blocks/Squadd/block.js', 'scripts/blocks/squadd')
   .block('resources/assets/scripts/blocks/GalleryCTA/block.js', 'scripts/blocks/gallery-cta')
-
+  .block('resources/assets/scripts/blocks/Form/block.js', 'scripts/blocks/form')
 mx.sass('resources/assets/styles/editor.scss', 'styles/editor.css')
