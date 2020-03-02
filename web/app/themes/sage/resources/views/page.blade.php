@@ -6,8 +6,4 @@
       @include('partials.content-page')
     </div>
   @endwhile
-
-  <section>
-    @include('forms.dream-together')
-  </section>
 @endsection
