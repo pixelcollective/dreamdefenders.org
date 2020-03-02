@@ -29,9 +29,6 @@ class Archive extends Composer
         return $this->toArray();
     }
 
-    /**
-     * Posts
-     */
 
     /**
      * Post type

@@ -1,11 +1,57 @@
 /** @wordpress */
 import { __ } from '@wordpress/i18n'
-import { InnerBlocks } from '@wordpress/block-editor'
+import { useEffect } from '@wordpress/element'
+import { InnerBlocks, RichText } from '@wordpress/block-editor'
 
-const edit = ({ className }) => (
-  <div className={className}>
-    <InnerBlocks templateLock={false} />
-  </div>
-)
+import css from '@emotion/css'
+
+const edit = ({ className, attributes, setAttributes, isSelected }) => {
+  useEffect(() => {
+    setAttributes({ align: 'full' })
+  })
+
+  return (
+    <div className={className}>
+      <section className="bg-fixed bg-cover bg-no-repeat background-flowing" style={{
+        backgroundImage: `url('/app/themes/sage/dist/images/background-flowing.jpg')`,
+        backgroundPosition: `40% 20%`,
+      }}>
+        <div className="px-4 pb-16 bg-white-800">
+          <div className="container">
+            <div className="flex flex-col justify-between py-16 px-4 mx-auto md:flex-row">
+              <div className="w-full px-2 md:w-3/5 pr-8 mb-8">
+                <RichText
+                  tagName={`div`}
+                  placeholder={`Insert heading here.`}
+                  className={`inline-block leading-none text-4xl md:text-5xl font-display uppercase text-black-900`}
+                  value={attributes.heading && attributes.heading}
+                  onChange={value => setAttributes({ heading: value })} />
+
+                <div className="col-count-1 sm:col-count-2 md:col-count-1 lg:col-count-2 xl:col-count-3 col-gap-md">
+                  <RichText
+                    tagName={`p`}
+                    placeholder={`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.`}
+                    value={attributes.text && attributes.text}
+                    onChange={value => setAttributes({ text: value })} />
+                </div>
+              </div>
+
+              <div className="w-full md:w-2/5">
+                <div className="content-center w-full shadow:md transition-all transition transition-duration-2000 hover:shadow-epic bg-black-900">
+                  <div className={`text-white w-full font-sans inline-block p-4 text-sm`}>
+                    <span className="text-white font-sans text-sm inline-block w-100 pb-0 mb-0">Copy/paste embed code here.</span>
+                    <InnerBlocks templateLock={true} template={[
+                      ['core/html']
+                    ]} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
 
 export default edit

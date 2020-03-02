@@ -19,6 +19,11 @@ export default () => injectGlobal`
     font-family: Roboto Condensed,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   }
 
+
+  .wp-block {
+    max-width: none !important;
+  }
+
   .auto-fold .block-editor-editor-skeleton {
     display: flex !important;
     flex-direction: column !important;

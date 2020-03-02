@@ -6,8 +6,8 @@ import { InnerBlocks } from '@wordpress/block-editor'
 /** components */
 import edit from './components/edit'
 
-registerBlockType(`tinypixel/gallery-cta`, {
-  title: __(`Gallery Call-to-action`, `tiny-pixel`),
+registerBlockType(`tinypixel/form`, {
+  title: __(`Form`, `tiny-pixel`),
   category: `dream-defenders`,
   icon: `format-image`,
   attributes: {
