@@ -135,10 +135,6 @@ add_filter( 'block_categories', function (
     $categories = Collection::make($categories);
     $postTypes  = Collection::make(['freedom-papers', 'projects', 'post']);
 
-    if ( ! $postTypes->contains($post->post_type)) {
-        return $categories;
-    }
-
     return $categories->mergeRecursive([[
         'slug'  => 'dream-defenders',
         'title' => __('Dream Defenders', 'tiny-pixel'),

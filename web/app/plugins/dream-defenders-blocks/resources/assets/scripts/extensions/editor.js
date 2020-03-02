@@ -2,10 +2,8 @@
 import { __ } from '@wordpress/i18n';
 import domReady from '@wordpress/dom-ready';
 
-/** global styles */
-import applyGlobalStyles from './global-styles'
-
 /** util */
+import applyGlobalStyles from './global-styles'
 import { whitelistBlocks } from './whitelist';
 import { registerBlockStyles, unregisterBlockStyles } from './register-styles'
 import { setupInserterCategories } from './inserter-categories'
@@ -103,10 +101,7 @@ domReady(() => {
     'pdf-viewer-block/standard',
 
     /** core */
-    'core/audio',
     'core/button',
-    'core/column',
-    'core/columns',
     'core/cover',
     'core/embed',
     'core/file',
@@ -118,9 +113,8 @@ domReady(() => {
     'core/list',
     'core/paragraph',
     'core/pullquote',
+    'core/reusable',
     'core/shortcode',
-    'core/search',
-    'core/text-columns',
     'core/quote',
     'core/table',
     'core/video',

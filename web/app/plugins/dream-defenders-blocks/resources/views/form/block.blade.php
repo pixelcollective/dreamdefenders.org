@@ -12,7 +12,7 @@
           @endif
 
           @if(isset($attr->text) && $attr->text)
-            <div class="col-count-1 sm:col-count-2 md:col-count-1 lg:col-count-2 xl:col-count-3 col-gap-md">
+            <div class="{!! (! isset($attr->textColumns) || $attr->textColumns == true) ? "col-count-1 sm:col-count-2 md:col-count-1 lg:col-count-2 xl:col-count-3 col-gap-md mb-8 md:mb-0" : null !!}">
               {!! $attr->text !!}
             </div>
           @endif
