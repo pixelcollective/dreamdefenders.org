@@ -6217,15 +6217,15 @@
         },
         {
             "name": "wpackagist-plugin/simple-page-ordering",
-            "version": "2.3.2",
+            "version": "2.3.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/simple-page-ordering/",
-                "reference": "tags/2.3.2"
+                "reference": "tags/2.3.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/simple-page-ordering.2.3.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/simple-page-ordering.2.3.3.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
