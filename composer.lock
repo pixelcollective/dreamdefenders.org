@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "aaemnnosttv/wp-cli-login-server",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aaemnnosttv/wp-cli-login-server.git",
-                "reference": "bd63ad4a179d27992f9b9dfc976809598e3985fd"
+                "reference": "8f200b810c432a3d46530ae4a10274ff2ffa648d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aaemnnosttv/wp-cli-login-server/zipball/bd63ad4a179d27992f9b9dfc976809598e3985fd",
-                "reference": "bd63ad4a179d27992f9b9dfc976809598e3985fd",
+                "url": "https://api.github.com/repos/aaemnnosttv/wp-cli-login-server/zipball/8f200b810c432a3d46530ae4a10274ff2ffa648d",
+                "reference": "8f200b810c432a3d46530ae4a10274ff2ffa648d",
                 "shasum": ""
             },
             "require": {
@@ -36,7 +36,7 @@
                 }
             ],
             "description": "Companion plugin to the WP-CLI Login Command to handle magic passwordless sign-in requests.",
-            "time": "2017-04-16T20:08:30+00:00"
+            "time": "2020-03-15T14:14:37+00:00"
         },
         {
             "name": "aws/aws-sdk-php",
