@@ -61,7 +61,7 @@
     "wpackagist-plugin/simple-page-ordering": "^2.3",
     "wpackagist-plugin/stream": "^3.2",
     "wpackagist-plugin/user-switching": ">=1.5.0",
-    "wpackagist-plugin/wp-redis": "^0.8.0",
+    "wpackagist-plugin/wp-redis": "^1.0.0",
     "wpackagist-plugin/wp-user-profiles": "^2.1"
   },
   "require-dev": {
