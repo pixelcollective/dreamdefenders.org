@@ -47,7 +47,7 @@
     "vlucas/phpdotenv": "^4.1.0",
     "wp-cli/wp-cli-bundle": "=2.4.0",
     "wp-graphql/wp-graphiql": "^1.0.0",
-    "wp-graphql/wp-graphql": "^0.7.0",
+    "wp-graphql/wp-graphql": "^0.8.0",
     "wp-graphql/wp-graphql-acf": "^0.3.1",
     "wpackagist-plugin/autodescription": ">=3.0.6",
     "wpackagist-plugin/disable-comments": "^1.10",
