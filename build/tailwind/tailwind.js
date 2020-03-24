@@ -17,7 +17,7 @@ module.exports = tw({
     colors: {
       transparent: 'transparent',
       black: {
-        default: 'rgba(0, 0, 0,   1)',
+        default: 'rgba(0, 0, 0, 1)',
         900: 'rgba(0, 0, 0, 0.9)',
         800: 'rgba(0, 0, 0, 0.8)',
         700: 'rgba(0, 0, 0, 0.7)',
@@ -29,7 +29,7 @@ module.exports = tw({
         100: 'rgba(0, 0, 0, 0.1)',
       },
       white: {
-        default: 'rgba(255, 255, 255,   1)',
+        default: 'rgba(255, 255, 255, 1)',
         900: 'rgba(255, 255, 255, 0.9)',
         800: 'rgba(255, 255, 255, 0.8)',
         700: 'rgba(255, 255, 255, 0.7)',
@@ -41,7 +41,7 @@ module.exports = tw({
         100: 'rgba(255, 255, 255, 0.1)',
       },
       gray: {
-        default: 'rgba(24, 24, 24,   1)',
+        default: 'rgba(24, 24, 24, 1)',
         100: 'rgba(24, 24, 24, 0.1)',
         200: 'rgba(24, 24, 24, 0.2)',
         300: 'rgba(24, 24, 24, 0.3)',
@@ -53,7 +53,7 @@ module.exports = tw({
         900: 'rgba(24, 24, 24, 0.9)',
       },
       yellow: {
-        default: 'rgba(253, 225, 53,   1)',
+        default: 'rgba(253, 225, 53, 1)',
         100: 'rgba(253, 225, 53, 0.1)',
         200: 'rgba(253, 225, 53, 0.2)',
         300: 'rgba(253, 225, 53, 0.3)',
@@ -65,7 +65,7 @@ module.exports = tw({
         900: 'rgba(253, 225, 53, 0.9)',
       },
       blue: {
-        default: 'rgba(91, 214, 255,   1)',
+        default: 'rgba(91, 214, 255, 1)',
         100: 'rgba(91, 214, 255, 0.1)',
         200: 'rgba(91, 214, 255, 0.2)',
         300: 'rgba(91, 214, 255, 0.3)',

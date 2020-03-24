@@ -1,37 +1,37 @@
 <?php
 
 /**
- * Application configuration
+ * Application configuration.
  *
  * @category Bedrock
- * @package  TinyPixel
+ *
  * @author   Tiny Pixel <hello@tinypixel.dev>
  * @license  MIT <https://github.com/pixelcollective/.github/tree/master/LICENSE.md>
- * @link     Tiny Pixel <https://tinypixel.dev>
+ *
+ * @see     Tiny Pixel <https://tinypixel.dev>
  */
-
-require_once __DIR__ . '/Config.php';
+require_once __DIR__.'/Config.php';
 
 use TinyPixel\WPConfig\Config;
 
 /**
- * Directory containing all of the site's files
+ * Directory containing all of the site's files.
  *
  * @var string
  */
 $bedrock = dirname(__DIR__);
-$web  = $bedrock . '/web';
+$web = $bedrock.'/web';
 
-/**
+/*
  * Expose global env() function from oscarotero/env
  */
 Env::init();
 
 /**
- * Use Dotenv to set required environment variables and load .env file in root
+ * Use Dotenv to set required environment variables and load .env file in root.
  */
 $dotenv = Dotenv\Dotenv::createImmutable($bedrock);
-if (file_exists($bedrock . '/.env')) {
+if (file_exists($bedrock.'/.env')) {
     $dotenv->load();
     $dotenv->required(['WP_HOME', 'WP_SITEURL']);
 
@@ -40,7 +40,7 @@ if (file_exists($bedrock . '/.env')) {
     }
 }
 
-/**
+/*
  * WordPress
  */
 Config::defineSet([
@@ -49,7 +49,7 @@ Config::defineSet([
     'WP_SITEURL' => env('WP_SITEURL'),
 ]);
 
-/**
+/*
  * Configure WordPress application.
  */
 Config::defineSet([
@@ -57,10 +57,9 @@ Config::defineSet([
     'DISALLOW_FILE_EDIT' => true,
     'DISALLOW_FILE_MODS' => true,
     'AUTOMATIC_UPDATER_DISABLED' => true,
-    'WP_CACHE' => Config::get('WP_ENV') !== 'development',
 ]);
 
-/**
+/*
  * Debug settings.
  */
 Config::defineSet([
@@ -72,24 +71,24 @@ Config::defineSet([
 
 ini_set('display_errors', Config::get('DISPLAY_ERRORS'));
 
-/**
+/*
  * Configure application paths.
  */
 Config::defineSet([
     'CONTENT_DIR' => '/app',
-    'WP_CONTENT_DIR' => $web . '/app',
-    'WP_CONTENT_URL' => Config::get('WP_HOME') . '/app',
+    'WP_CONTENT_DIR' => $web.'/app',
+    'WP_CONTENT_URL' => Config::get('WP_HOME').'/app',
 ]);
 
-/**
+/*
  * Define environments
  */
 Config::define('ENVIRONMENTS', [
     'development' => 'http://dreamdefenders.vagrant',
-    'staging'     => 'https://build.dreamdefenders.tinypixel.dev',
+    'staging' => 'https://build.dreamdefenders.tinypixel.dev',
 ]);
 
-/**
+/*
  * Configure DB.
  */
 Config::defineSet([
@@ -105,19 +104,19 @@ Config::defineSet([
 /** I think this in violation of WPCS */
 $table_prefix = Config::get('DB_PREFIX');
 
-/**
+/*
  * Configure S3.
  */
 Config::defineSet([
-    'S3_UPLOADS_BUCKET'   => env('S3_UPLOADS_BUCKET'),
-    'S3_UPLOADS_ENV'      => 'production',
-    'S3_UPLOADS_KEY'      => env('S3_UPLOADS_KEY'),
-    'S3_UPLOADS_SECRET'   => env('S3_UPLOADS_SECRET'),
+    'S3_UPLOADS_BUCKET' => env('S3_UPLOADS_BUCKET'),
+    'S3_UPLOADS_ENV' => 'production',
+    'S3_UPLOADS_KEY' => env('S3_UPLOADS_KEY'),
+    'S3_UPLOADS_SECRET' => env('S3_UPLOADS_SECRET'),
     'S3_UPLOADS_ENDPOINT' => env('S3_UPLOADS_ENDPOINT') ?: 'https://nyc3.digitaloceanspaces.com',
-    'S3_UPLOADS_REGION'   => env('S3_UPLOADS_REGION') ?: 'nyc3',
+    'S3_UPLOADS_REGION' => env('S3_UPLOADS_REGION') ?: 'nyc3',
 ]);
 
-/**
+/*
  * Configure Redis.
  */
 global $redis_server;
@@ -130,7 +129,7 @@ Config::defineSet([
     'WP_CACHE_KEY_SALT' => env('REDIS_CACHE_KEY_SALT') ?: false,
     'WP_REDIS_USE_CACHE_GROUPS' => env('REDIS_USE_CACHE_GROUPS') ?: false,
     'PREDIS_VERIFY_PEERS' => true,
-    'PREDIS_CERT' => $bedrock . '/config/cert/redis-ca-cert.crt',
+    'PREDIS_CERT' => $bedrock.'/config/cert/redis-ca-cert.crt',
 ]);
 
 $redis_server = [
@@ -143,7 +142,7 @@ $redis_server = [
     ],
 ];
 
-/**
+/*
  * Configure auth keys and salts.
  */
 Config::defineSet([
@@ -157,12 +156,12 @@ Config::defineSet([
     'SECURE_AUTH_SALT' => env('SECURE_AUTH_SALT') ?: null,
 ]);
 
-/**
+/*
  * Allow SSL behind a reverse proxy.
  */
 Config::exposeSSL();
 
-/**
+/*
  * Configure Sentry.
  */
 if (env('SENTRY_DSN') &&
@@ -189,9 +188,9 @@ if (env('SENTRY_DSN') &&
 
 Config::apply();
 
-/**
+/*
  * Bootstrap WordPress
  */
 if (!defined('ABSPATH')) {
-    define('ABSPATH', $web . '/wp/');
+    define('ABSPATH', $web.'/wp/');
 }

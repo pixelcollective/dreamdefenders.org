@@ -2,35 +2,25 @@
 
 /**
  * Plugin name: Dream Defenders Block Editor Scripts
- * Plugin description: Blocks for Dream Defenders
+ * Plugin description: Blocks for Dream Defenders.
  *
  * phpcs:disable PSR2.Namespaces.UseDeclaration.MultipleDeclarations
  */
 
 namespace TinyPixel\Blocks;
 
-require __DIR__ . '/vendor/autoload.php';
+require __DIR__.'/vendor/autoload.php';
 
 use TinyBlocks\App;
-use TinyPixel\Blocks\Banner;
-use TinyPixel\Blocks\Container;
-use TinyPixel\Blocks\Form;
-use TinyPixel\Blocks\FreedomPaper;
-use TinyPixel\Blocks\GalleryCTA;
-use TinyPixel\Blocks\HorizontalCard;
-use TinyPixel\Blocks\PostContainer;
-use TinyPixel\Blocks\ProjectContainer;
-use TinyPixel\Blocks\Squadd;
-use TinyPixel\Blocks\TwoColumn;
 use Illuminate\Support\Collection;
 
 /** Specify config. */
-$configPath = __DIR__ . '/config';
+$configPath = __DIR__.'/config';
 
 /** Initialize application. */
 $tinyblocks = App::getInstance($configPath);
 
-/** Add blocks. */
+/* Add blocks. */
 $tinyblocks->addBlock(Banner::class);
 $tinyblocks->addBlock(Container::class);
 $tinyblocks->addBlock(FreedomPaper::class);
@@ -41,8 +31,9 @@ $tinyblocks->addBlock(Squadd::class);
 $tinyblocks->addBlock(TwoColumn::class);
 $tinyblocks->addBlock(GalleryCTA::class);
 $tinyblocks->addBlock(Form::class);
+$tinyblocks->addBlock(OrganizeCTA::class);
 
-/**
+/*
  * Register project-specific assets.
  */
 add_action('enqueue_block_editor_assets', function () {
@@ -61,15 +52,15 @@ add_action('enqueue_block_editor_assets', function () {
     );
 }, 100);
 
-/**
+/*
  * Register post types
  */
-/**
+/*
  * Standard Post Posttype
  */
 add_action('init', function () {
     /**
-     * Post PostType
+     * Post PostType.
      */
     $post = get_post_type_object('post');
 
@@ -81,7 +72,7 @@ add_action('init', function () {
     $post->template_lock = 'INSERT';
     register_post_type('post', $post);
 
-    /**
+    /*
      * Freedom Papers PostType
      */
     register_post_type('freedom-papers', [
@@ -89,8 +80,8 @@ add_action('init', function () {
         'has_archive' => true,
         'show_in_rest' => true,
         'labels' => [
-            'name'          => __('Freedom Papers', 'sage'),
-            'menu_name'     => __('Freedom Papers', 'sage'),
+            'name' => __('Freedom Papers', 'sage'),
+            'menu_name' => __('Freedom Papers', 'sage'),
             'singular_name' => __('Freedom Paper', 'sage'),
         ],
         'menu_icon' => 'dashicons-pressthis',
@@ -101,7 +92,7 @@ add_action('init', function () {
         'template_lock' => 'insert',
     ]);
 
-    /**
+    /*
      * Projects PostType
      */
     register_post_type('projects', [
@@ -125,18 +116,18 @@ add_action('init', function () {
     ]);
 });
 
-/**
+/*
  * Filter inserter categories
  */
-add_filter( 'block_categories', function (
+add_filter('block_categories', function (
     array $categories,
     \WP_Post $post
 ) {
     $categories = Collection::make($categories);
-    $postTypes  = Collection::make(['freedom-papers', 'projects', 'post']);
+    $postTypes = Collection::make(['freedom-papers', 'projects', 'post']);
 
     return $categories->mergeRecursive([[
-        'slug'  => 'dream-defenders',
+        'slug' => 'dream-defenders',
         'title' => __('Dream Defenders', 'tiny-pixel'),
     ]])->toArray();
 }, 10, 2);

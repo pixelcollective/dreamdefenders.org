@@ -21,16 +21,6 @@ window.requestAnimationFrame(() => {
   }
 
   /**
-   * Modal triggers
-   */
-  modal();
-
-  /**
-   * Hover animations
-   */
-  hoverFx(document.querySelectorAll(`[hoverfx]`))
-
-  /**
    * 👀 Observers
    */
   sage.isFrontPage && twoPathsObserver()
@@ -63,4 +53,6 @@ window.requestAnimationFrame(() => {
    */
   nav(config);
   instagram(config);
+  modal();
+  hoverFx(document.querySelectorAll(`[hoverfx]`))
 })

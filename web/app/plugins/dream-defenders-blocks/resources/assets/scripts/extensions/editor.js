@@ -96,6 +96,7 @@ domReady(() => {
     'tinypixel/gallery-cta',
     'tinypixel/dream-defenders',
     'tinypixel/form',
+    'tinypixel/organize-cta',
 
     /** third-party */
     'pdf-viewer-block/standard',

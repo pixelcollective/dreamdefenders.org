@@ -10,18 +10,18 @@
 
     @include('partials.navigation')
     @hasSection('header')
-    @yield('header')
+      @yield('header')
     @endif
 
     <div class="bg-white">
       @hasSection('content')
-      @yield('content')
+        @yield('content')
       @endif
 
       @hasSection('sidebar')
-      <aside class="sidebar">
-        @yield('sidebar')
-      </aside>
+        <aside class="sidebar">
+          @yield('sidebar')
+        </aside>
       @endif
     </div>
 
