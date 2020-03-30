@@ -9,7 +9,7 @@ export default () => {
   }
 
   const animeOptions = {
-    easing: `easeInOutSine`,
+    easing: `easeInSine`,
     loop: false,
     delay: 2000,
     duration: 1600,
@@ -29,11 +29,8 @@ export default () => {
     const badThings = document.querySelector(`.two-paths-left`)
     const badText   = document.querySelector(`.two-paths-left h2`)
     const dividerOr = document.querySelector(`.divider-or`)
-    const riseBg    = document.querySelector(`.two-paths-right .we-rise-bg-container`)
-    const riseImage = document.querySelector(`.two-paths-right .we-rise-bg-container .we-rise-bg`)
+    const riseOverlay = document.querySelector(`.two-paths-right .we-rise-bg-container`)
     const riseText  = document.querySelector(`.two-paths-right h2`)
-
-    const minHeight = badThings && badThings.clientHeight;
 
     els.forEach(({ target, intersectionRatio }) => {
       intersectionRatio > 0 && (() => {
@@ -41,51 +38,35 @@ export default () => {
           width: `100%`,
         })
 
-        badThings && animate(badThings, {
-          width: 0,
-          opacity: 0,
-          height: 0,
-        })
-
-        badText && animate(badText, {
-          opacity: 0,
-          duration: 1000,
-        })
-
+        badThings && animate(badThings, { width: 0, opacity: 0 })
+        badText && animate(badText, { opacity: 0, duration: 1000 })
         dividerOr && animate(dividerOr, {
           opacity: 0,
           height: 0,
-          rotateX: `280deg`,
-          rotateZ: `180deg`,
           duration: 300,
         })
 
         target && (() => {
           animate(target, {
             width: `100vw`,
-            height: minHeight,
-          })
-        })()
-
-        /**
-         * Rise background
-         */
-        riseBg && (() => {
-          animate(riseBg, {
-            opacity: 1,
-            duration: 1000,
           })
         })()
 
         /**
          * Rise background image
          */
-        riseImage && (() => {
-          animate(riseImage, {
-            opacity: 1,
-            duration: 6000,
-            width: `100vw`,
-            height: minHeight,
+        riseOverlay && (() => {
+          animate(riseOverlay, {
+            opacity: [1, 0.1],
+            duration: 1400,
+            complete: () => {
+              const img = riseOverlay.querySelector(`img`)
+              animate(img, {
+                opacity: [0, 1],
+                delay: 2000,
+                duration: 1400,
+              })
+            },
           })
         })()
 
@@ -101,41 +82,7 @@ export default () => {
 
   const target = document.querySelector(`.two-paths-right`)
 
-  target && hasNotFired(target) && observer.observe(target)
-
-  const rise = document.querySelector(`.two-paths-right`)
-  const riseHighlight = document.querySelector(`.two-paths-right .rise-highlight`)
-  const riseText = document.querySelector(`.two-paths-right h2`)
-
-  rise.addEventListener(`mouseover`, () => {
-    anime({
-      targets: [riseText],
-      left: `1rem`,
-      easing: `easeInOutSine`,
-      duration: 800,
-    })
-
-    anime({
-      targets: [riseHighlight],
-      color: `rgba(253, 225, 53, 1)`,
-      duration: 800,
-      easing: `easeInOutSine`,
-    })
-  })
-
-  rise.addEventListener(`mouseout`, () => {
-    anime({
-      targets: [riseText],
-      left: `0rem`,
-      easing: `easeInOutSine`,
-      duration: 800,
-    })
-
-    anime({
-      targets: [riseHighlight],
-      color: `rgba(0, 0, 0, 1)`,
-      duration: 800,
-      easing: `easeInOutSine`,
-    })
-  })
+  target
+    && hasNotFired(target)
+    && (() => observer.observe(target))()
 }

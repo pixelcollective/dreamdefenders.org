@@ -13,7 +13,7 @@
       @yield('header')
     @endif
 
-    <div class="bg-white">
+    <div class="bg-white relative z-0">
       @hasSection('content')
         @yield('content')
       @endif
@@ -23,12 +23,12 @@
           @yield('sidebar')
         </aside>
       @endif
+
+      @php(do_action('get_footer'))
+
+      @include('partials.footer')
+      @include('components.overlay')
     </div>
-
-    @php(do_action('get_footer'))
-
-    @include('partials.footer')
-    @include('components.overlay')
   </div>
 
   @php(wp_footer())

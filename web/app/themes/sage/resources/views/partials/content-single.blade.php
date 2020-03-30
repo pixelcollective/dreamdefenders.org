@@ -7,6 +7,8 @@
   </div>
 
   <article @php(post_class())>
-    @php(the_content())
+    <div class="pb-16">
+      @php(the_content())
+    </div>
   </article>
 </div>

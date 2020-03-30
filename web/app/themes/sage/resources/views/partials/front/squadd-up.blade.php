@@ -1,5 +1,5 @@
-<div class="pt-16">
-  <div class="container mx-auto bg-black my-16 px-4 md:px-16 p-16 flex align-bottom flex-col">
+<div class="pt-0 lg:pt-16">
+  <div class="w-full lg:container mx-auto bg-black mt-0 lg:my-16 px-4 md:px-16 p-16 flex align-bottom flex-col">
     <div class="w-full content-bottom flex">
       <h2 class="text-5xl font-bold text-left text-white uppercase leading-none align-bottom block">
         <span class="leading-none">Squadd Up.</span>
@@ -38,11 +38,13 @@
       </div>
 
       <div class="inline-block w-full md:w-1/2 lg:w-1/3 p-2 h-48">
-        <div class="flex flex-wrap w-full h-full justify-center content-center border border-yellow p-2 hover:bg-yellow transition transition-all text-white hover:text-black hover:cursor-pointer">
-          <h2 data-faded class="text-3xl italic font-bold text-center leading-none mb-0">
-            Wanna start your own chapter?
-          </h2>
-        </div>
+        <a title="Donate" href="https://secure.actblue.com/donate/joindd">
+          <div class="flex flex-wrap flex-col w-full h-full justify-center content-center border border-yellow p-2 hover:bg-yellow transition transition-all text-white hover:text-black hover:cursor-pointer">
+            <h2 data-faded class="text-3xl italic font-bold text-center leading-none mb-0">
+              Wanna start your own chapter?
+            </h2>
+          </div>
+        </a>
       </div>
     </div>
   </div>

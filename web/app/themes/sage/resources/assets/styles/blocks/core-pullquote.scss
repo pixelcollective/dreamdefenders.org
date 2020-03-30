@@ -14,6 +14,7 @@
         @apply text-left;
         @apply break-normal;
         @apply italic;
+        @apply leading-none;
 
         &::before {
           @apply text-blue;

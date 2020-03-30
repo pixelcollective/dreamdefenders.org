@@ -1,11 +1,14 @@
 .is-style-epic {
   @apply text-4xl;
+  @apply leading-none;
 
   @screen md {
     @apply text-5xl;
+    @apply leading-none;
   }
 
   @screen lg {
     @apply text-6xl;
+    @apply leading-none;
   }
 }
