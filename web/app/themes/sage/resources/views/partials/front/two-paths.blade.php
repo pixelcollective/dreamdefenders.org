@@ -1,12 +1,20 @@
 <div class="hidden md:block bg-black">
-  <div class="container mx-auto">
-    <div class="flex flex-col justify-around lg:flex-row bg-black py-8">
-      <div class="w-3/5 mx-auto relative">
-        <h2 class="text-4xl font-bold text-center mx-auto block text-white relative">
-          There are two paths
-          <div class="exOut bg-white w-0 h-4 absolute" style="top: 40%;"></div>
-        </h2>
+  <div class="flex flex-col justify-around lg:flex-row bg-black pointer-events-none">
+    <div class="w-1/4">
+      <img class="object-fit object-contain" src="@asset('images/waves-left.png')" />
+    </div>
+
+    <div class="w-1/2 mx-auto relative flex flex-col flex-wrap justify-center align-middle">
+      <h2 class="mb-0 text-4xl font-bold text-center mx-auto block text-white relative leading-none inline-block m-0 p-0">
+        There are two paths
+      </h2>
+      <div class="absolute w-full h-4 mx-16 flex flex-col flex-wrap align-middle justify-center" style="top: 40%;">
+        <div class="exOut bg-yellow h-2"></div>
       </div>
+    </div>
+
+    <div class="w-1/4">
+      <img src="@asset('images/waves-right.png')" class="object-fit object-contain" />
     </div>
   </div>
 

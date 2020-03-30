@@ -5,12 +5,12 @@ namespace App\Composers;
 use Roots\Acorn\View\Composer;
 
 /**
- * Base Composer
+ * Base Composer.
  */
 class BaseComposer extends Composer
 {
     /**
-     * Exclude the current post if on a single template
+     * Exclude the current post if on a single template.
      */
     protected function excluding()
     {

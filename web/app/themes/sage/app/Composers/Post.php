@@ -2,9 +2,12 @@
 
 namespace App\Composers;
 
-use Roots\Acorn\View\Composer;
+use Illuminate\Support\Collection;
 
-class Post extends Composer
+/**
+ * Post.
+ */
+class Post extends BaseComposer
 {
     /**
      * List of views served by this composer.
@@ -24,10 +27,11 @@ class Post extends Composer
     public function with()
     {
         return [
-            'title'     => $this->title(),
+            'title' => $this->title(),
             'permalink' => $this->permalink(),
-            'pageNav'   => $this->pageNav(),
-            'postType'  => $this->postType(),
+            'pageNav' => $this->pageNav(),
+            'postType' => $this->postType(),
+            'additionalPosts' => $this->additionalPosts(),
         ];
     }
 
@@ -49,9 +53,9 @@ class Post extends Composer
     public function pageNav()
     {
         return wp_link_pages([
-            'echo'   => false,
-            'before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'),
-            'after'  => '</p></nav>'
+            'echo' => false,
+            'before' => '<nav class="page-nav"><p>'.__('Pages:', 'sage'),
+            'after' => '</p></nav>',
         ]);
     }
 
@@ -73,5 +77,28 @@ class Post extends Composer
     public function postType()
     {
         return get_post_type();
+    }
+
+    /*
+     * Additional posts
+     *
+     * @return Collection
+     */
+    public function additionalPosts()
+    {
+        return Collection::make((new \WP_Query([
+            'post_type' => 'post',
+            'post__not_in' => $this->excluding(),
+            'posts_per_page' => 8,
+            'orderby' => 'menu_order',
+        ]))->get_posts())->map(function ($post) {
+            return (object) [
+                'id' => $post->ID,
+                'title' => $post->post_title,
+                'excerpt' => $this->excerpt($post),
+                'url' => "/{$post->post_name}",
+                'image' => get_the_post_thumbnail_url($post->ID),
+            ];
+        })->reverse();
     }
 }

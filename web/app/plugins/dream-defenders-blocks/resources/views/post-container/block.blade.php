@@ -1,6 +1,6 @@
 <div class="container mx-auto wp-blocks-tinypixel-post-container">
   <div class="flex flex-col md:flex-row">
-    <div class="flex-col w-full md:w-1/2 p-2 md:p-4 lg:p-8">
+    <div class="flex-col w-full md:w-1/2 p-2">
       @isset($attr->title)
         @if($attr->title)
         <h1 class="inline-block font-sans text-5xl font-bold uppercase pr-8 md:pr-6 lg:pr-8 md:pb-8 md:max-w-4/5">

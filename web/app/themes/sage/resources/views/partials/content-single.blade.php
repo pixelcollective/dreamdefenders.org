@@ -11,4 +11,18 @@
       @php(the_content())
     </div>
   </article>
+
+  @isset($additionalPosts)
+    @if($additionalPosts->isNotEmpty())
+      <div class="container pb-32 mx-auto">
+        <h2 class="font-display text-4xl font-hairline font-bold leading-relaxed text-center">
+          Explore our other publications
+        </h2>
+
+        <div class="flex flex-col md:flex-row flex-wrap">
+          @each('components.simple-card', $additionalPosts, 'card')
+        </div>
+      </div>
+    @endif
+  @endisset
 </div>
