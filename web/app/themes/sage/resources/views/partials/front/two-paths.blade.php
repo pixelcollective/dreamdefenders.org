@@ -8,8 +8,8 @@
       <h2 class="mb-0 text-4xl font-bold text-center mx-auto block text-white relative leading-none inline-block m-0 p-0">
         There are two paths
       </h2>
-      <div class="absolute w-full h-4 mx-16 flex flex-col flex-wrap align-middle justify-center" style="top: 40%;">
-        <div class="exOut bg-yellow h-2"></div>
+      <div class="h-2 w-2/3 ml-1/6 mr-1/6 absolute">
+        <div class="exOut bg-yellow h-2 absolute mx-auto align-middle justify-center" style="top: 40%;"></div>
       </div>
     </div>
 

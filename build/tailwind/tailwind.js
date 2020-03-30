@@ -161,6 +161,7 @@ module.exports = tw({
     margin: (theme, { negative }) => ({
       auto: 'auto',
       ...theme('spacing'),
+      ...theme('width'),
       ...negative(theme('spacing')),
     }),
     maxHeight: theme => ({
