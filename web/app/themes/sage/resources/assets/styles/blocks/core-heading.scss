@@ -1,14 +1,125 @@
-.is-style-epic {
+/**
+* Heading styles
+*/
+h1 {
   @apply text-4xl;
-  @apply leading-none;
+  @apply uppercase;
+  @apply font-bold;
+  @apply tracking-tight;
+
+  @screen lg {
+    @apply text-5xl;
+  }
+}
+
+h1.is-style-epic {
+  @apply text-4xl;
 
   @screen md {
     @apply text-5xl;
-    @apply leading-none;
   }
 
   @screen lg {
     @apply text-6xl;
+  }
+}
+
+h2 {
+  @apply text-3xl;
+  @apply uppercase;
+  @apply font-bold;
+  @apply tracking-tight;
+
+  @screen lg {
+    @apply text-4xl;
+  }
+
+  &.is-style-epic {
+    @apply text-3xl;
+
+    @screen md {
+      @apply text-4xl;
+    }
+
+    @screen lg {
+      @apply text-5xl;
+    }
+  }
+}
+
+h3 {
+  @apply text-2xl;
+  @apply uppercase;
+  @apply font-bold;
+  @apply tracking-tight;
+  @apply leading-none;
+
+  &.is-style-epic {
+    @apply text-2xl;
+    @apply leading-none;
+
+    @screen md {
+      @apply text-3xl;
+      @apply leading-none;
+    }
+
+    @screen lg {
+      @apply text-4xl;
+      @apply leading-none;
+    }
+  }
+}
+
+h4 {
+  @apply text-xl;
+  @apply uppercase;
+  @apply font-bold;
+  @apply tracking-tight;
+  @apply leading-none;
+
+  &.is-style-epic {
+    @apply text-xl;
+    @apply leading-none;
+
+    @screen md {
+      @apply text-2xl;
+      @apply leading-none;
+    }
+
+    @screen lg {
+      @apply text-3xl;
+      @apply leading-none;
+    }
+  }
+}
+
+h5 {
+  @apply text-lg;
+  @apply uppercase;
+  @apply font-bold;
+  @apply tracking-tight;
+  @apply leading-none;
+}
+
+h5.is-style-epic {
+  @apply text-xl;
+  @apply leading-none;
+
+  @screen md {
+    @apply text-2xl;
     @apply leading-none;
   }
+
+  @screen lg {
+    @apply text-3xl;
+    @apply leading-none;
+  }
+}
+
+h6 {
+  @apply text-xl;
+  @apply uppercase;
+  @apply font-bold;
+  @apply tracking-tight;
+  @apply leading-none;
 }

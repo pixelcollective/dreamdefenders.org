@@ -7,6 +7,7 @@ module.exports = () => ([
   /container/,
   /blockquote/,
   /is-style-.?/,
+  /is-style-epic/,
   /align.?/,
   /has-.?/,
   /wp-embed-.?/,
