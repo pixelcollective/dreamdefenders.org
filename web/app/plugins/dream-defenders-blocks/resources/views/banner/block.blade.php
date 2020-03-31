@@ -9,7 +9,7 @@
           <div class="p-4 w-full text-center content-center flex flex-wrap relative"
             style="height: {!! isset($attr->containerSize->height) ? $attr->containerSize->height . 'px;' : '500px;' !!}">
             <div class="w-full lg:flex-row flex-col flex flex-wrap justify-around">
-              <h1 class="break-words text-center font-display text-5xl md:text-6xl lg:text-7xl tracking-wider w-full inline-block uppercase font-bold text-white leading-none">
+              <h1 class="is-style-epic break-words text-center font-display text-5xl md:text-6xl lg:text-7xl tracking-wider w-full inline-block uppercase font-bold text-white leading-none">
                 {!! $attr->title !!}
               </h1>
             </div>

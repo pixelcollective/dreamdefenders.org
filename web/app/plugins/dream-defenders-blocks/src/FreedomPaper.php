@@ -2,13 +2,10 @@
 
 namespace TinyPixel\Blocks;
 
-use \TinyBlocks\Base\Block;
+use TinyBlocks\Base\Block;
 
 /**
- * Freedom Paper
- *
- * @package    DreamDefenders
- * @subpackage Blocks
+ * Freedom Paper.
  */
 class FreedomPaper extends Block
 {
@@ -25,14 +22,14 @@ class FreedomPaper extends Block
     public $className = 'wp-block-tinypixel-freedom-paper';
 
     /**
-     * Setup assets
+     * Setup assets.
      */
     public function setupAssets(): void
     {
         $editorScript = $this->makeAsset()
             ->setName('tinypixel/freedom-paper/js')
             ->setUrl(plugins_url('dream-defenders-blocks/dist/scripts/blocks/freedom-paper/block.js'))
-            ->setManifest(WP_PLUGIN_DIR . '/dream-defenders-blocks/dist/scripts/blocks/freedom-paper/block.asset.php');
+            ->setManifest(WP_PLUGIN_DIR.'/dream-defenders-blocks/dist/scripts/blocks/freedom-paper/block.asset.php');
 
         $this->addEditorScript($editorScript);
     }

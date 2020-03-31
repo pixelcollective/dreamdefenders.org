@@ -9,79 +9,78 @@
 
 namespace App;
 
-use Illuminate\Support\Collection;
 use function Roots\asset;
 
-/**
+/*
  * Register the theme assets.
  *
  * @return void
  */
 add_action('wp_enqueue_scripts', function () {
-    /** Dequeue jQuery unless it's needed */
-    ! is_admin() && ! is_admin_bar_showing()
-    && ! has_block('pdf-viewer-block/standard', get_the_id())
+    /* Dequeue jQuery unless it's needed */
+    !is_admin() && !is_admin_bar_showing()
+    && !has_block('pdf-viewer-block/standard', get_the_id())
     && (function () {
-            wp_dequeue_script('jquery');
-            wp_deregister_script('jquery');
-            wp_register_script('jquery', null);
-        })();
+        wp_dequeue_script('jquery');
+        wp_deregister_script('jquery');
+        wp_register_script('jquery', null);
+    })();
 
-    /** Dequeue block-library CSS */
+    /* Dequeue block-library CSS */
     wp_dequeue_style('wp-block-library');
     wp_deregister_style('wp-block-library');
     wp_register_style('wp-block-library', null);
 
-    /** Dequeue wp-performant-media JS  */
+    /* Dequeue wp-performant-media JS  */
     wp_dequeue_script('wp-performant-media.js');
     wp_deregister_script('wp-performant-media.js');
     wp_register_script('wp-performant-media.js', null);
 
-    /** Dequeue wp-performant-media CSS  */
+    /* Dequeue wp-performant-media CSS  */
     wp_dequeue_style('wp-performant-media.css');
     wp_deregister_style('wp-performant-media.css');
     wp_register_style('wp-performant-media.css', null);
 
-    /** Dequeue PDF viewer CSS (bundled in app) */
+    /* Dequeue PDF viewer CSS (bundled in app) */
     wp_dequeue_style('pdf-viewer-block-styles');
     wp_deregister_style('pdf-viewer-block-styles');
     wp_register_style('pdf-viewer-block-styles', null);
 
-    /** Dequeue WP Rocket lazyload */
+    /* Dequeue WP Rocket lazyload */
     wp_dequeue_script('rocket-lazyload');
     wp_deregister_script('rocket-lazyload');
     wp_register_script('rocket-lazyload', null);
 
-    /** Dequeue PDF viewer JS if unused */
-    ! has_block('pdf-viewer-block/standard', get_the_id()) && (function () {
+    /* Dequeue PDF viewer JS if unused */
+    !has_block('pdf-viewer-block/standard', get_the_id()) && (function () {
         wp_dequeue_script('pdf-viewer-block-scripts');
         wp_deregister_script('pdf-viewer-block-scripts');
         wp_register_script('pdf-viewer-block-scripts', null);
     })();
 
-    /** Enqueue application JS */
+    /* Enqueue application JS */
     wp_enqueue_script('sage/vendor', asset('scripts/vendor.js')->uri(), [], null, true);
     wp_enqueue_script('sage/app', asset('scripts/app.js')->uri(), ['sage/vendor'], null, true);
     wp_add_inline_script('sage/vendor', asset('scripts/manifest.js')->contents(), 'before');
 
-    /** Poor man's inertia.js 😂 */
+    /* Poor man's inertia.js 😂 */
     wp_localize_script('sage/app', 'sage', [
-        'isPage'      => is_page(),
-        'isHome'      => is_home(),
+        'isPage' => is_page(),
+        'isHome' => is_home(),
         'isFrontPage' => is_front_page(),
     ]);
 
-    /** Enqueue application styles */
+    /* Enqueue application styles */
     wp_enqueue_style('sage/app', asset('styles/app.css')->uri(), false, null);
 }, 100);
 
-/**
+/*
  * Register the initial theme setup.
  *
  * @return void
  */
 add_action('after_setup_theme', function () {
-    /**
+    /*
      * Enable features from Soil when plugin is activated
      *
      * @link https://roots.io/plugins/soil/
@@ -91,14 +90,14 @@ add_action('after_setup_theme', function () {
     add_theme_support('soil-nice-search');
     add_theme_support('soil-relative-urls');
 
-    /**
+    /*
      * Enable plugins to manage the document title
      *
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag
      */
     add_theme_support('title-tag');
 
-    /**
+    /*
      * Register navigation menus
      *
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
@@ -111,49 +110,49 @@ add_action('after_setup_theme', function () {
         'footer_right' => __('Footer right', 'sage'),
     ]);
 
-    /**
+    /*
      * Enable post thumbnails
      *
      * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
      */
     add_theme_support('post-thumbnails');
 
-    /**
+    /*
      * Add theme support for Wide Alignment
      *
      * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#wide-alignment
      */
     add_theme_support('align-wide');
 
-    /**
+    /*
      * Enable responsive embeds
      *
      * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#responsive-embedded-content
      */
     add_theme_support('responsive-embeds');
 
-    /**
+    /*
      * Enable HTML5 markup support
      *
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#html5
      */
     add_theme_support('html5', ['caption', 'comment-form', 'comment-list', 'gallery', 'search-form']);
 
-    /**
+    /*
      * Enable selective refresh for widgets in customizer
      *
      * @link https://developer.wordpress.org/themes/advanced-topics/customizer-api/#theme-support-in-sidebars
      */
     add_theme_support('customize-selective-refresh-widgets');
 
-    /**
+    /*
      * Enable wide and full alignments.
      *
      * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/#wide-alignment
      */
     add_theme_support('align-wide');
 
-    /**
+    /*
      * Set font sizes for the editor
      *
      * @link https://github.com/WordPress/gutenberg/blob/master/docs/designers-developers/developers/themes/theme-support.md#block-font-sizes
@@ -176,39 +175,39 @@ add_action('after_setup_theme', function () {
         ],
     ]);
 
-    /**
+    /*
      * Disable custom block editor font sizes
      *
      * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/#disabling-custom-font-sizes
      */
     add_theme_support('disable-custom-font-sizes');
 
-    /**
+    /*
      * Disable block editor color palettes
      *
      * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/#disabling-custom-colors-in-block-color-palettes
      */
     add_theme_support('disable-custom-colors');
 
-    /**
+    /*
      * Enable theme color palette support
      *
      * @link https://developer.wordpress.org/block-editor/developers/themes/theme-support/#block-color-palettes
      */
     add_theme_support('editor-color-palette', [
         [
-            'name'  => __('Primary', 'sage'),
-            'slug'  => 'primary',
+            'name' => __('Primary', 'sage'),
+            'slug' => 'primary',
             'color' => 'rgba(253, 225, 53, 1)',
         ],
         [
-            'name'  => __('Accent', 'sage'),
-            'slug'  => 'accent',
+            'name' => __('Accent', 'sage'),
+            'slug' => 'accent',
             'color' => 'rgba(91, 214, 255, 1)',
         ],
         [
-            'name'  => __('Black', 'sage'),
-            'slug'  => 'black',
+            'name' => __('Black', 'sage'),
+            'slug' => 'black',
             'color' => 'rgba(0, 0, 0, 1)',
         ],
         [

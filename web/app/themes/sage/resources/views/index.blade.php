@@ -12,6 +12,6 @@
   </main>
 
   <div class="flex flex-col">
-    {!! get_the_posts_navigation() !!}
+    @include('components.pagination')
   </div>
 @endsection

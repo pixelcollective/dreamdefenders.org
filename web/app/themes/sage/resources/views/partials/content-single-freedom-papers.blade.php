@@ -11,7 +11,7 @@
       @php(the_content())
     </article>
 
-    <div class="hidden md:visible">
+    <div class="block">
       <div class="post-nav">
         @if($previous = get_previous_post())
           <div class="fixed top-0 left-0 p-4" style="top: 50%;">

@@ -17,6 +17,7 @@
     "php": "^7.2",
     "kellymears/sage-svg": "dev-master",
     "log1x/navi": "^1.0",
+    "log1x/pagi": "^1.0",
     "log1x/sage-directives": "^1.1",
     "roots/acorn": "dev-master",
     "tiny-pixel/acorn-instagram": "dev-master"

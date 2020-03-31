@@ -27,7 +27,7 @@ export default () => {
   /** Set initial topbar background  */
   navEl.style.backgroundColor = (
     sage.isPage || sage.isFrontPage
-      ? `rgba(0, 0, 0, 0)`
+      ? `rgba(0, 0, 0, 0.8)`
       : `rgba(255, 255, 255, 1)`
   )
 
@@ -43,7 +43,12 @@ export default () => {
  * Set toggle state
  */
 const setToggle = target => {
-  target.setAttribute(`nav-toggle`, isToggled(target) ? `off` : `on`)
+  target.setAttribute(
+    `nav-toggle`,
+    isToggled(target)
+      ? `off`
+      : `on`
+  )
 
   return target.getAttribute(`nav-toggle`)
 }
@@ -87,7 +92,11 @@ const toggleAction = (sage, navEl, toggleEl, overlayEl) => {
   anime({
     targets:  navEl,
     backgroundColor: [
-      toggled ? `rgba(0,0,0,1)` : sage.isPage || sage.isFrontPage ? `rgba(0,0,0,0)` : `rgba(255,255,255,1)`,
+      toggled
+        ? `rgba(0,0,0,1)`
+        : sage.isPage || sage.isFrontPage
+          ? `rgba(0,0,0,1)`
+          : `rgba(255,255,255,1)`,
     ],
     duration: 400,
     easing: `easeInOutSine`,

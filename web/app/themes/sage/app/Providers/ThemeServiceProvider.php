@@ -3,14 +3,11 @@
 namespace App\Providers;
 
 use Roots\Acorn\ServiceProvider;
-use App\Admin\UI;
 
 class ThemeServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
-     *
-     * @return void
      */
     public function register()
     {
@@ -21,8 +18,6 @@ class ThemeServiceProvider extends ServiceProvider
 
     /**
      * Bootstrap any application services.
-     *
-     * @return void
      */
     public function boot()
     {

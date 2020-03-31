@@ -2,13 +2,10 @@
 
 namespace TinyPixel\Blocks;
 
-use \TinyBlocks\Base\Block;
+use TinyBlocks\Base\Block;
 
 /**
- * Gallery CTA
- *
- * @package    DreamDefenders
- * @subpackage Blocks
+ * Gallery CTA.
  */
 class GalleryCTA extends Block
 {
@@ -25,14 +22,14 @@ class GalleryCTA extends Block
     public $className = 'wp-block-tinypixel-gallery-cta';
 
     /**
-     * Setup assets
+     * Setup assets.
      */
     public function setupAssets(): void
     {
         $editorScript = $this->makeAsset()
             ->setName('tinypixel/gallery-cta/js')
             ->setUrl(plugins_url('dream-defenders-blocks/dist/scripts/blocks/gallery-cta/block.js'))
-            ->setManifest(WP_PLUGIN_DIR . '/dream-defenders-blocks/dist/scripts/blocks/gallery-cta/block.asset.php');
+            ->setManifest(WP_PLUGIN_DIR.'/dream-defenders-blocks/dist/scripts/blocks/gallery-cta/block.asset.php');
 
         $this->addEditorScript($editorScript);
     }

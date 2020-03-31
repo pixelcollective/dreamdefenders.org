@@ -77,7 +77,7 @@ add_action('init', function () {
      */
     register_post_type('freedom-papers', [
         'capability_type' => 'post',
-        'has_archive' => true,
+        'has_archive' => false,
         'show_in_rest' => true,
         'labels' => [
             'name' => __('Freedom Papers', 'sage'),
@@ -97,7 +97,7 @@ add_action('init', function () {
      */
     register_post_type('projects', [
         'capability_type' => 'post',
-        'has_archive' => true,
+        'has_archive' => false,
         'show_in_rest' => true,
         'labels' => [
             'name' => __('Projects', 'sage'),

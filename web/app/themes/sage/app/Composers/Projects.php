@@ -3,56 +3,91 @@
 namespace App\Composers;
 
 use Illuminate\Support\Collection;
-use App\Composers\BaseComposer;
-use Roots\Acorn\View\Composers\Concerns\Arrayable;
+use Illuminate\Support\Arr;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 /**
- * Projects
+ * Projects.
  */
 class Projects extends BaseComposer
 {
-    use Arrayable;
+    /**
+     * Per page.
+     */
+    public static $perPage = -1;
 
     /**
      * List of views served by this composer.
      *
      * @var array
      */
-    protected static $views = [
-        'partials.content-single-projects',
-        'partials.archive-projects',
-    ];
+    protected static $views = ['page-projects', 'partials.content-single-projects'];
+
+    /**
+     * Class construct.
+     */
+    public function __construct()
+    {
+        $this->projects = $this->queryPosts();
+        $this->page = $this->getCurrentPage();
+    }
 
     /**
      * Data to be passed to view before rendering.
      *
      * @return array
      */
-    public function with()
+    public function with(): array
     {
-        return $this->toArray();
+        $offset = $this->page * self::$perPage;
+
+        $pageResults = $this->projects->slice(
+            $this->page ? $offset : 0,
+            $this->page ? $offset + self::$perPage : self::$perPage
+        );
+
+        $resultsPagination = (new LengthAwarePaginator(
+            $pageResults,
+            $this->projects->count(),
+            self::$perPage,
+            $this->page + 1
+        ))->withPath('/projects');
+
+        return [
+            'projects' => $pageResults,
+            'pagination' => $resultsPagination,
+        ];
     }
 
     /**
-     * Projects
+     * Get current page.
+     */
+    protected function getCurrentPage(): int
+    {
+        $raw = Arr::get($GLOBALS, 'wp_query')->query_vars;
+
+        return $raw['page'] > 0 ? $raw['page'] - 1 : 0;
+    }
+
+    /**
+     * Posts.
      *
      * @return \Illuminate\Support\Collection
      */
-    public function projects()
+    protected function queryPosts(): Collection
     {
         return Collection::make((new \WP_Query([
             'post_type' => 'projects',
             'orderby' => 'menu_order',
-            'post__not_in' => $this->excluding(),
-            'posts_per_page' => 4,
-        ]))->get_posts())->map(function ($project) {
+            'nopaging' => false,
+        ]))->get_posts())->map(function ($post) {
             return (object) [
-                'id'    => $project->ID,
-                'title' => $project->post_title,
-                'excerpt' => $this->excerpt($project),
-                'url'   => "/projects/{$project->post_name}",
-                'image' => get_the_post_thumbnail_url($project->ID),
+                'id' => $post->ID,
+                'title' => $post->post_title,
+                'excerpt' => $this->excerpt($post),
+                'url' => "/{$post->post_name}",
+                'image' => get_the_post_thumbnail_url($post->ID),
             ];
-        })->reverse();
+        });
     }
 }

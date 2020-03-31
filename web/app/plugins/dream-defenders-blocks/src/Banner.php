@@ -2,13 +2,10 @@
 
 namespace TinyPixel\Blocks;
 
-use \TinyBlocks\Base\Block;
+use TinyBlocks\Base\Block;
 
 /**
- * Banner
- *
- * @package    DreamDefenders
- * @subpackage Blocks
+ * Banner.
  */
 class Banner extends Block
 {
@@ -25,14 +22,14 @@ class Banner extends Block
     public $className = 'wp-block-tinypixel-banner';
 
     /**
-     * Setup assets
+     * Setup assets.
      */
     public function setupAssets(): void
     {
         $editorScript = $this->makeAsset()
             ->setName('tinypixel/banner/js')
             ->setUrl(plugins_url('dream-defenders-blocks/dist/scripts/blocks/banner/block.js'))
-            ->setManifest(WP_PLUGIN_DIR . '/dream-defenders-blocks/dist/scripts/blocks/banner/block.asset.php');
+            ->setManifest(WP_PLUGIN_DIR.'/dream-defenders-blocks/dist/scripts/blocks/banner/block.asset.php');
 
         $this->addEditorScript($editorScript);
     }

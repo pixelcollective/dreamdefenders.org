@@ -2,13 +2,10 @@
 
 namespace TinyPixel\Blocks;
 
-use \TinyBlocks\Base\Block;
+use TinyBlocks\Base\Block;
 
 /**
- * Generic Container
- *
- * @package    DreamDefenders
- * @subpackage Blocks
+ * Generic Container.
  */
 class Container extends Block
 {
@@ -25,14 +22,14 @@ class Container extends Block
     public $className = 'wp-block-tinypixel-container';
 
     /**
-     * Setup assets
+     * Setup assets.
      */
     public function setupAssets(): void
     {
         $editorScript = $this->makeAsset()
             ->setName('tinypixel/container/js')
             ->setUrl(plugins_url('dream-defenders-blocks/dist/scripts/blocks/container/block.js'))
-            ->setManifest(WP_PLUGIN_DIR . '/dream-defenders-blocks/dist/scripts/blocks/container/block.asset.php');
+            ->setManifest(WP_PLUGIN_DIR.'/dream-defenders-blocks/dist/scripts/blocks/container/block.asset.php');
 
         $this->addEditorScript($editorScript);
     }

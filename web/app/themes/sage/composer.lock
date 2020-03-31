@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5278105054523a46c7099ac2fb59db30",
+    "content-hash": "daa40ed887914e8562d45c1b2d59b48f",
     "packages": [
         {
             "name": "cache/cache",
@@ -814,6 +814,51 @@
             "time": "2020-01-29T18:11:19+00:00"
         },
         {
+            "name": "illuminate/pagination",
+            "version": "v6.18.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/pagination.git",
+                "reference": "7a27077dd60ba6f9c974253795de963a331163b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/pagination/zipball/7a27077dd60ba6f9c974253795de963a331163b6",
+                "reference": "7a27077dd60ba6f9c974253795de963a331163b6",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "illuminate/contracts": "^6.0",
+                "illuminate/support": "^6.0",
+                "php": "^7.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "6.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Pagination\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "The Illuminate Pagination package.",
+            "homepage": "https://laravel.com",
+            "time": "2020-01-07T13:47:03+00:00"
+        },
+        {
             "name": "illuminate/support",
             "version": "v6.16.0",
             "source": {
@@ -1114,6 +1159,63 @@
                 "wordpress"
             ],
             "time": "2020-02-04T16:12:56+00:00"
+        },
+        {
+            "name": "log1x/pagi",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Log1x/pagi.git",
+                "reference": "834b19ea193b1ad9f021b8f79d4e730b1db344ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Log1x/pagi/zipball/834b19ea193b1ad9f021b8f79d4e730b1db344ba",
+                "reference": "834b19ea193b1ad9f021b8f79d4e730b1db344ba",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/pagination": "^6.5",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "^3.5"
+            },
+            "type": "package",
+            "extra": {
+                "acorn": {
+                    "providers": [
+                        "Log1x\\Pagi\\PagiServiceProvider"
+                    ],
+                    "aliases": {
+                        "Pagi": "Log1x\\Pagi\\PagiFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Log1x\\Pagi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brandon Nifong",
+                    "email": "brandon@tendency.me"
+                }
+            ],
+            "description": "A better WordPress pagination.",
+            "keywords": [
+                "laravel",
+                "pagination",
+                "roots",
+                "sage",
+                "wordpress"
+            ],
+            "time": "2019-12-05T22:52:21+00:00"
         },
         {
             "name": "log1x/sage-directives",

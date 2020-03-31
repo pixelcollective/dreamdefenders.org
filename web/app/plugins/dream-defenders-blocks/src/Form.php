@@ -2,13 +2,10 @@
 
 namespace TinyPixel\Blocks;
 
-use \TinyBlocks\Base\Block;
+use TinyBlocks\Base\Block;
 
 /**
- * Form
- *
- * @package    DreamDefenders
- * @subpackage Blocks
+ * Form.
  */
 class Form extends Block
 {
@@ -25,14 +22,14 @@ class Form extends Block
     public $className = 'wp-block-tinypixel-form';
 
     /**
-     * Setup assets
+     * Setup assets.
      */
     public function setupAssets(): void
     {
         $editorScript = $this->makeAsset()
             ->setName('tinypixel/form/js')
             ->setUrl(plugins_url('dream-defenders-blocks/dist/scripts/blocks/form/block.js'))
-            ->setManifest(WP_PLUGIN_DIR . '/dream-defenders-blocks/dist/scripts/blocks/form/block.asset.php');
+            ->setManifest(WP_PLUGIN_DIR.'/dream-defenders-blocks/dist/scripts/blocks/form/block.asset.php');
 
         $this->addEditorScript($editorScript);
     }
