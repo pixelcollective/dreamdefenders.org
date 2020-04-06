@@ -10,8 +10,6 @@ import {
   RichText,
 } from '@wordpress/block-editor'
 
-import { If } from 'react-extras'
-
 import usePost from '../../../hooks/usePost'
 
 const PostedOn = ({ date }) => {
@@ -39,10 +37,10 @@ const edit = ({ attributes, setAttributes, className, isSelected }) => {
   return (
     <div className={className}>
       <div className={`flex flex-col md:flex-row`}>
-        <div className={`flex w-full md:w-1/2 flex-col`}>
+        <div className={`flex-col w-full md:w-1/2 p-2`}>
           <RichText
             tagName={`div`}
-            className={`font-display text-3xl inline-block uppercase font-bold break-all`}
+            className={`inline-block font-sans text-5xl font-bold uppercase pr-8 md:pr-6 lg:pr-8 md:pb-8 md:max-w-4/5 leading-none`}
             placeholder={__(`Post Title...`, `tinypixel`)}
             value={title}
             allowedFormats={[]}
@@ -58,7 +56,7 @@ const edit = ({ attributes, setAttributes, className, isSelected }) => {
               render={({ open }) => (
                 <div className="relative">
                   { (! media || ! media.url) && (
-                    <div className={`w-full bg-gray-100 rounded py-16 text-center`}>
+                    <div className={`w-full bg-gray-100 rounded py-16 text-center pb-6 pr-8 md:pr-6 lg:pr-8 md:pb-0 md:max-w-4/5`}>
                       <Button
                         isPrimary
                         onClick={open}
@@ -69,7 +67,9 @@ const edit = ({ attributes, setAttributes, className, isSelected }) => {
                   )}
 
                   { media && media.url && (
-                    <img className={`pr-0 md:pr-4`} src={media.url} />
+                    <div className={`w-full pb-6 pr-8 md:pr-6 lg:pr-8 md:pb-0 md:max-w-4/5`}>
+                      <img src={media.url} />
+                    </div>
                   )}
 
                   { media && media.url && isSelected && (
@@ -83,7 +83,7 @@ const edit = ({ attributes, setAttributes, className, isSelected }) => {
           </MediaUploadCheck>
         </div>
 
-        <div className={`flex w-full md:w-1/2 flex-col`}>
+        <div className={`flex-col w-full md:w-1/2`}>
           <InnerBlocks
             templateLock={false}
             template={[

@@ -8,7 +8,7 @@ mx.setPublicPath('./dist')
   .tweemotional()
 
 /** @dream-defenders/blocks scripts */
-mx.block('resources/assets/scripts/extensions/editor.js', 'scripts/extensions')
+mx.js('resources/assets/scripts/extensions/editor.js', 'scripts/extensions')
   .block('resources/assets/scripts/blocks/Banner/block.js', 'scripts/blocks/banner')
   .block('resources/assets/scripts/blocks/Container/block.js', 'scripts/blocks/container')
   .block('resources/assets/scripts/blocks/FreedomPaper/block.js', 'scripts/blocks/freedom-paper')
@@ -20,4 +20,3 @@ mx.block('resources/assets/scripts/extensions/editor.js', 'scripts/extensions')
   .block('resources/assets/scripts/blocks/GalleryCTA/block.js', 'scripts/blocks/gallery-cta')
   .block('resources/assets/scripts/blocks/Form/block.js', 'scripts/blocks/form')
   .block('resources/assets/scripts/blocks/OrganizeCTA/block.js', 'scripts/blocks/organize-cta')
-mx.sass('resources/assets/styles/editor.scss', 'styles/editor.css')

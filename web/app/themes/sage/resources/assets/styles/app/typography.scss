@@ -75,6 +75,27 @@ blockquote {
   }
 }
 
+p,
+li {
+  a {
+    @apply border-yellow;
+    @apply border-b-4;
+    @apply transform;
+    @apply transition-colors;
+    @apply duration-500;
+
+    &:hover {
+      @apply border-blue-700;
+      @apply transition-colors;
+      @apply duration-500;
+      @apply ease-in-out;
+      @apply bg-blue-500;
+      @apply transform;
+      @apply -translate-y-1;
+    }
+  }
+}
+
 :root {
   /**
    * Font sizes

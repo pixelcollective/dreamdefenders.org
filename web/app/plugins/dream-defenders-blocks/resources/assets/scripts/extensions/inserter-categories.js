@@ -1,7 +1,4 @@
-import { addFilter } from '@wordpress/hooks'
-import { updateCategory } from '@wordpress/blocks'
-
-import icon from './icon'
+import { addFilter } from "@wordpress/hooks";
 
 /**
  * Flatten all blocks into a single category.
@@ -11,18 +8,10 @@ import icon from './icon'
  * @param array  categories which should not be overwritten
  */
 const setupInserterCategories = ({ category }) => {
-  addFilter(
-    'blocks.registerBlockType',
-    'sage/inserter',
-    props => ({ ...props, category})
-  )
+  addFilter("blocks.registerBlockType", "sage/inserter", props => ({
+    ...props,
+    category
+  }));
+};
 
-  /**
-   * Dream Defenders category icon
-   */
-  updateCategory('dream-defenders', { icon });
-}
-
-export {
-  setupInserterCategories
-}
+export { setupInserterCategories };

@@ -36,16 +36,16 @@ $tinyblocks->addBlock(OrganizeCTA::class);
 /*
  * Register project-specific assets.
  */
-add_action('enqueue_block_editor_assets', function () {
+add_action('enqueue_block_assets', function () {
     wp_enqueue_script(
-        'dream-defenders-blocks/editor',
+        'dream-defenders/editor',
         plugins_url('/dream-defenders-blocks/dist/scripts/extensions/editor.js'),
-        ['wp-blocks', 'wp-dom-ready', 'wp-edit-post', 'wp-hooks', 'wp-i18n'],
+        ['react', 'wp-blocks', 'wp-dom-ready', 'wp-edit-post', 'wp-element', 'wp-hooks', 'wp-i18n'],
         time()
     );
 
     wp_enqueue_style(
-        'dream-defenders-blocks/editor',
+        'dream-defenders/editor',
         plugins_url('/dream-defenders-blocks/dist/styles/editor.css'),
         false,
         null
@@ -59,17 +59,14 @@ add_action('enqueue_block_editor_assets', function () {
  * Standard Post Posttype
  */
 add_action('init', function () {
-    /**
-     * Post PostType.
-     */
     $post = get_post_type_object('post');
 
     $post->template = [
         ['tinypixel/post-container'],
         ['tinypixel/container'],
     ];
-
     $post->template_lock = 'INSERT';
+
     register_post_type('post', $post);
 
     /*
@@ -87,7 +84,6 @@ add_action('init', function () {
         'menu_icon' => 'dashicons-pressthis',
         'public' => true,
         'rewrite' => ['slug' => 'freedom-papers'],
-        'supports' => ['title', 'thumbnail', 'editor', 'meta', 'page-attributes'],
         'template' => [['tinypixel/freedom-paper']],
         'template_lock' => 'insert',
     ]);
@@ -107,7 +103,6 @@ add_action('init', function () {
         'menu_icon' => 'dashicons-lightbulb',
         'public' => true,
         'rewrite' => ['slug' => 'projects'],
-        'supports' => ['title', 'thumbnail', 'editor', 'meta', 'page-attributes'],
         'template' => [
             ['tinypixel/project-container'],
             ['tinypixel/container'],
@@ -124,7 +119,6 @@ add_filter('block_categories', function (
     \WP_Post $post
 ) {
     $categories = Collection::make($categories);
-    $postTypes = Collection::make(['freedom-papers', 'projects', 'post']);
 
     return $categories->mergeRecursive([[
         'slug' => 'dream-defenders',
