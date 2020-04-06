@@ -10,7 +10,7 @@
         @endforeach
       @endif
 
-      <img class="w-full object-cover" src="{{ $image->url }}"
+      <img class="object-cover w-full" src="{{ $image->url }}"
         @if(isset($image->alt) && $image->alt)
           alt="{{ $image->alt }}"
         @endif

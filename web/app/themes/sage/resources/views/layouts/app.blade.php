@@ -5,7 +5,7 @@
 <body @php(body_class())>
   @php(wp_body_open())
 
-  <div id="app" class="w-full overflow-hidden block">
+  <div id="app" class="block w-full overflow-hidden">
     @php(do_action('get_header'))
 
     @include('partials.navigation')
@@ -13,7 +13,7 @@
       @yield('header')
     @endif
 
-    <div class="bg-white relative z-0">
+    <div class="relative z-0 bg-white">
       @hasSection('content')
         @yield('content')
       @endif

@@ -1,46 +1,46 @@
 <div class="pt-0 lg:pt-16">
-  <div class="w-full lg:container mx-auto bg-black mt-0 lg:my-16 px-4 md:px-16 p-16 flex align-bottom flex-col">
-    <div class="w-full content-bottom flex">
-      <h2 class="text-5xl font-bold text-left text-white uppercase leading-none align-bottom block">
+  <div class="flex flex-col w-full p-16 px-4 mx-auto mt-0 align-bottom bg-black lg:container lg:my-16 md:px-16">
+    <div class="flex w-full content-bottom">
+      <h2 class="block text-5xl font-bold leading-none text-left text-white uppercase align-bottom">
         <span class="leading-none">Squadd Up.</span>
       </h2>
     </div>
 
     <div class="flex flex-row flex-wrap flex-auto flex-grow">
-      <div class="overflow-hidden h-64 md:max-h-48 md:h-48 md:w-1/2 lg:w-1/3 w-full">
-        <div class="inline-block relative w-full h-full">
-          <img class="object-cover relative w-full h-full absolute top-0 left-0 right-0 bottom-0 p-2" src="@asset('images/squadd-1.png')" />
+      <div class="w-full h-64 overflow-hidden md:max-h-48 md:h-48 md:w-1/2 lg:w-1/3">
+        <div class="relative inline-block w-full h-full">
+          <img class="absolute relative top-0 bottom-0 left-0 right-0 object-cover w-full h-full p-2" src="@asset('images/squadd-1.png')" />
         </div>
       </div>
 
-      <div class="overflow-hidden h-64 md:max-h-48 md:h-48 md:w-1/2 lg:w-1/3 w-full">
-        <div class="inline-block relative w-full h-full">
-          <img class="object-cover relative w-full h-full absolute top-0 left-0 right-0 bottom-0 p-2" src="@asset('images/squadd-2.png')" />
+      <div class="w-full h-64 overflow-hidden md:max-h-48 md:h-48 md:w-1/2 lg:w-1/3">
+        <div class="relative inline-block w-full h-full">
+          <img class="absolute relative top-0 bottom-0 left-0 right-0 object-cover w-full h-full p-2" src="@asset('images/squadd-2.png')" />
         </div>
       </div>
 
-      <div class="overflow-hidden h-64 md:max-h-48 md:h-48 md:w-1/2 lg:w-1/3 w-full">
-        <div class="inline-block relative w-full h-full">
-          <img class="object-cover relative w-full h-full absolute top-0 left-0 right-0 bottom-0 p-2" src="@asset('images/squadd-3.png')" />
+      <div class="w-full h-64 overflow-hidden md:max-h-48 md:h-48 md:w-1/2 lg:w-1/3">
+        <div class="relative inline-block w-full h-full">
+          <img class="absolute relative top-0 bottom-0 left-0 right-0 object-cover w-full h-full p-2" src="@asset('images/squadd-3.png')" />
         </div>
       </div>
 
-      <div class="overflow-hidden h-64 md:max-h-48 md:h-48 md:w-1/2 lg:w-1/3 w-full">
-        <div class="inline-block relative w-full h-full">
-          <img class="object-cover relative w-full h-full absolute top-0 left-0 right-0 bottom-0 p-2" src="@asset('images/squadd-4.png')" />
+      <div class="w-full h-64 overflow-hidden md:max-h-48 md:h-48 md:w-1/2 lg:w-1/3">
+        <div class="relative inline-block w-full h-full">
+          <img class="absolute relative top-0 bottom-0 left-0 right-0 object-cover w-full h-full p-2" src="@asset('images/squadd-4.png')" />
         </div>
       </div>
 
-      <div class="overflow-hidden h-64 md:max-h-48 md:h-48 md:w-1/2 lg:w-1/3 w-full">
-        <div class="inline-block relative w-full h-full">
-          <img class="object-cover relative w-full h-full absolute top-0 left-0 right-0 bottom-0 p-2" src="@asset('images/squadd-5.png')" />
+      <div class="w-full h-64 overflow-hidden md:max-h-48 md:h-48 md:w-1/2 lg:w-1/3">
+        <div class="relative inline-block w-full h-full">
+          <img class="absolute relative top-0 bottom-0 left-0 right-0 object-cover w-full h-full p-2" src="@asset('images/squadd-5.png')" />
         </div>
       </div>
 
-      <div class="inline-block w-full md:w-1/2 lg:w-1/3 p-2 h-48">
+      <div class="inline-block w-full h-48 p-2 md:w-1/2 lg:w-1/3">
         <a title="Donate" href="https://secure.actblue.com/donate/joindd">
-          <div class="flex flex-wrap flex-col w-full h-full justify-center content-center border border-yellow p-2 hover:bg-yellow transition transition-all text-white hover:text-black hover:cursor-pointer">
-            <h2 data-faded class="text-3xl italic font-bold text-center leading-none mb-0">
+          <div class="flex flex-col flex-wrap content-center justify-center w-full h-full p-2 text-white border border-yellow hover:bg-yellow transition transition-all hover:text-black hover:cursor-pointer">
+            <h2 data-faded class="mb-0 text-3xl italic font-bold leading-none text-center">
               Wanna start your own chapter?
             </h2>
           </div>

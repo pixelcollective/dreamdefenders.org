@@ -15,7 +15,7 @@ export default ({ media, item, onMedia, isSelected }) => {
 
   /** Render */
   return (
-    <div className="overflow-hidden relative h-64 md:max-h-48 md:h-48 md:w-1/2 lg:w-1/3 w-full">
+    <div className="relative w-full h-64 overflow-hidden md:max-h-48 md:h-48 md:w-1/2 lg:w-1/3">
       <MediaUploadCheck>
         <MediaUpload
           multiple={false}

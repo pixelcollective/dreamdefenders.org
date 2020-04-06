@@ -1,4 +1,4 @@
-<div class="p-2 w-full md:w-1/4">
+<div class="w-full p-2 md:w-1/4">
   <div class="bg-gray-100 h-96
     shadow shadow-md hover:shadow-lg transition transition-all hover:bg-blue-800
     @if($card->image)
@@ -8,11 +8,11 @@
     @endif">
 
     @if($card->image)
-      <div class="bg-black-500 hover:bg-yellow-800 transition transition-all w-full h-full p-1 content-center flex flex-col">
+      <div class="flex flex-col content-center w-full h-full p-1 bg-black-500 hover:bg-yellow-800 transition transition-all">
     @endif
 
-      <a class="h-full w-full" href="{!! $card->url !!}">
-        <h3 class="px-2 break-all font-display text-white text-4xl text-bold h-full w-full">
+      <a class="w-full h-full" href="{!! $card->url !!}">
+        <h3 class="w-full h-full px-2 text-4xl text-white break-all font-display text-bold">
           {!! $card->title !!}
         </h3>
       </a>

@@ -3,7 +3,7 @@
 @section('content')
   @include("partials.header-search")
 
-  <div class="container mx-auto px-4">
+  <div class="container px-4 mx-auto">
     @if (! have_posts())
       @alert(['type' => 'warning'])
         {{ __('Sorry, no results were found.', 'sage') }}

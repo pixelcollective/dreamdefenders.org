@@ -24,14 +24,14 @@ const edit = ({ className, attributes, setAttributes, isSelected }) => {
       </InspectorControls>
 
       <div className={className}>
-        <section className="bg-fixed bg-cover bg-no-repeat background-flowing" style={{
+        <section className="bg-fixed bg-no-repeat bg-cover background-flowing" style={{
           backgroundImage: `url('/app/themes/sage/dist/images/background-flowing.jpg')`,
           backgroundPosition: `40% 20%`,
         }}>
           <div className="px-4 pb-16 bg-white-800">
             <div className="container">
-              <div className="flex flex-col justify-between py-16 px-4 mx-auto md:flex-row">
-                <div className="w-full px-2 md:w-3/5 pr-8 mb-8">
+              <div className="flex flex-col justify-between px-4 py-16 mx-auto md:flex-row">
+                <div className="w-full px-2 pr-8 mb-8 md:w-3/5">
                   <RichText
                     tagName={`div`}
                     placeholder={`Insert heading here.`}
@@ -52,7 +52,7 @@ const edit = ({ className, attributes, setAttributes, isSelected }) => {
                 <div className="w-full md:w-2/5">
                   <div className="content-center w-full shadow:md transition-all transition transition-duration-2000 hover:shadow-epic bg-black-900">
                     <div className={`text-white w-full font-sans inline-block p-4 text-sm`}>
-                      <span className="text-white font-sans text-sm inline-block w-100 pb-0 mb-0">Copy/paste embed code here.</span>
+                      <span className="inline-block pb-0 mb-0 font-sans text-sm text-white w-100">Copy/paste embed code here.</span>
                       <InnerBlocks templateLock={true} template={[
                         ['core/html']
                       ]} />

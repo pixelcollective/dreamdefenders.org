@@ -1,4 +1,4 @@
-<div class="container md:w-3/5 mx-auto wp-blocks-tinypixel-post-container">
+<div class="container mx-auto md:w-3/5 wp-blocks-tinypixel-post-container">
   <div class="flex flex-col md:flex-row">
     <div class="flex-col w-full">
       @if(isset($attr->media) && $attr->media->url)
@@ -10,7 +10,7 @@
         </div>
 
         @if(isset($attr->mediaDownload) && $attr->mediaDownload->url)
-          <div class="block font-bold uppercase mx-auto text-center w-full mx-auto pb-8 w-4/5 md:w-1/2">
+          <div class="block w-4/5 w-full pb-8 mx-auto font-bold text-center uppercase md:w-1/2">
             <a href="{!! $attr->mediaDownload->url !!}" class="mx-auto text-center">
               @include('components.svg.download-this-volume')
             </a>

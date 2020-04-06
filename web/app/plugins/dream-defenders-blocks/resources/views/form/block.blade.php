@@ -3,10 +3,10 @@
 <section class="block-{!! $blockId !!} bg-fixed bg-cover bg-no-repeat background-flowing alignfull mt-16 mb-0">
   <div class="px-4 pb-16 pb-24 bg-white-800">
     <div class="container">
-      <div class="flex flex-col justify-between py-16 px-4 mx-auto md:flex-row">
-        <div class="w-full px-2 md:w-3/5 pr-8 mb-8">
+      <div class="flex flex-col justify-between px-4 py-16 mx-auto md:flex-row">
+        <div class="w-full px-2 pr-8 mb-8 md:w-3/5">
           @if(isset($attr->heading) && $attr->heading)
-            <h1 class="inline-block leading-none text-5xl md:text-6xl">
+            <h1 class="inline-block text-5xl leading-none md:text-6xl">
               {!! $attr->heading !!}
             </h1>
           @endif
@@ -21,7 +21,7 @@
         <div class="w-full pr-2 md:w-2/5">
           @if(isset($content) && $content)
             <div class="flex flex-wrap content-center w-full h-64 min-h-full md:h-full shadow:md transition-all transition transition-duration-2000 hover:shadow-epic bg-black-900">
-              <div class="embed-container text-white flex flex-wrap content-center w-full text-center font-display text-5xl max-w-full object-fit">
+              <div class="flex flex-wrap content-center w-full max-w-full text-5xl text-center text-white embed-container font-display object-fit">
                 {!! $content !!}
               </div>
             </div>

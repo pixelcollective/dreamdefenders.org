@@ -1,5 +1,5 @@
 <div class="container mx-auto wp-blocks-tinypixel-post-container">
-  <div class="flex flex-col md:flex-row py-8">
+  <div class="flex flex-col py-8 md:flex-row">
     <div class="flex-col w-full md:w-1/2">
       @if(isset($attr->media) && is_object($attr->media))
         @include('components.image', [
@@ -19,7 +19,7 @@
 
         <ul class="px-0 mx-0">
           @if(isset($attr->email) && $attr->email)
-            <li class="block font-sans text-lg font-normal break-all mb-4">
+            <li class="block mb-4 font-sans text-lg font-normal break-all">
               <a href="mailto:{!! $attr->email !!}" class="text-black-600 hover:text-black-900 transition transition-all">
                 @include('components.svg.envelope', ['classes' => 'inline', 'attr' => ['width' => '24px', 'height' => '24px']])
                 {!! $attr->email !!}
@@ -28,7 +28,7 @@
           @endif
 
           @if(isset($attr->facebook) && is_object($attr->facebook) && $attr->facebook->url)
-            <li class="block font-sans text-lg font-normal break-all mb-4">
+            <li class="block mb-4 font-sans text-lg font-normal break-all">
               <a href="{!! $attr->facebook->url !!}" class="text-black-600 hover:text-black-900 transition transition-all">
                 @include('components.svg.facebook', ['classes' => 'inline', 'attr' => ['width' => '24px', 'height' => '24px']])
                 {!! $attr->facebook->handle ? "@{$attr->facebook->handle}" : "facebook" !!}
@@ -37,7 +37,7 @@
           @endif
 
           @if(isset($attr->twitter) && is_object($attr->twitter) && $attr->twitter->url)
-            <li class="block font-sans text-lg font-normal break-all mb-4">
+            <li class="block mb-4 font-sans text-lg font-normal break-all">
               <a href="{!! $attr->twitter->url !!}" class="text-black-600 hover:text-black-900 transition transition-all">
                 @include('components.svg.twitter', ['classes' => 'inline', 'attr' => ['width' => '24px', 'height' => '24px']])
                 {!! $attr->twitter->handle ? "@{$attr->twitter->handle}" : "twitter" !!}
@@ -46,7 +46,7 @@
           @endif
 
           @if(isset($attr->instagram) && is_object($attr->instagram) && $attr->instagram->url)
-            <li class="block font-sans text-lg font-normal break-all mb-4">
+            <li class="block mb-4 font-sans text-lg font-normal break-all">
               <a href="{!! $attr->instagram->url !!}" class="text-black-600 hover:text-black-900 transition transition-all">
                 @include('components.svg.instagram', ['classes' => 'inline', 'attr' => ['width' => '24px', 'height' => '24px']])
                 {!! $attr->instagram->handle ? "@{$attr->instagram->handle}" : "instagram" !!}
