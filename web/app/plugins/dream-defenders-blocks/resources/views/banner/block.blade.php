@@ -24,6 +24,7 @@
 @isset($attr->background->media['id'])
   <style>
     .block-id-{!! $blockId !!} .banner-bg-image {
+      background-size: cover;
       background-repeat: no-repeat;
       background-image: url({!! $attr->background->media['url'] !!});
       background-position-x: {!! isset($attr->background->position['x']) && $attr->background->position['x'] ? $attr->background->position['x'] * 100 : '50' !!}%;

@@ -1,98 +1,115 @@
 /** @wordpress */
-import { __ } from '@wordpress/i18n'
-import {
-  useCallback,
-  useEffect,
-} from '@wordpress/element'
-import { useSelect } from '@wordpress/data'
-import {
-  Button,
-  ResizableBox,
-} from '@wordpress/components'
+import { __ } from "@wordpress/i18n";
+import { useCallback, useEffect } from "@wordpress/element";
+import { useSelect } from "@wordpress/data";
+import { Button, ResizableBox } from "@wordpress/components";
 import {
   InspectorControls,
   MediaUpload,
   MediaUploadCheck,
-  RichText,
-} from '@wordpress/block-editor'
+  RichText
+} from "@wordpress/block-editor";
 
 /** external */
-import classnames from 'classnames'
-import { isEqual } from 'lodash'
-import chroma from 'chroma-js'
-import { css } from '@emotion/core'
+import classnames from "classnames";
+import { isEqual } from "lodash";
+import chroma from "chroma-js";
+import { css } from "@emotion/core";
 
 /** @tinypixelco components */
-import BackgroundPanel from './panels/BackgroundPanel'
+import BackgroundPanel from "./panels/BackgroundPanel";
 
 /** @tinypixelco hooks */
-import usePost from '../../../hooks/usePost'
+import usePost from "../../../hooks/usePost";
+
+const styles = {
+  container: css`
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    position: absolute;
+  `,
+  background: background => css`
+    ${styles.container}
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(${background.media ? background.media.url : null});
+    background-attachment: ${background.attachment
+      ? background.attachment
+      : `initial`};
+    background-position: ${background.position
+      ? `${background.position.x * 100}% ${background.position.y * 100}%`
+      : `50% 50%`};
+    transform: scale(${background.scale ? background.scale * 0.01 : 1});
+  `
+};
+
+const RESIZABLE_Y = {
+  bottom: true,
+  top: false,
+  left: false,
+  right: false,
+  topRight: false,
+  topLeft: false,
+  bottomRight: false,
+  bottomLeft: false
+};
 
 /**
  * Edit: @tinypixelco/banner
  */
-const edit = ({
-  attributes,
-  setAttributes,
-  className,
-  isSelected,
-}) => {
-  const { setPost } = usePost()
+const edit = ({ attributes, setAttributes, className, isSelected }) => {
+  const { setPost } = usePost();
   const themeColors = useSelect(select => {
-    return select('core/editor').getEditorSettings().colors
-  })
+    return select("core/editor").getEditorSettings().colors;
+  });
 
-  const {
-    background,
-    containerSize,
-    title,
-    classes,
-    overlay,
-  } = attributes
+  const { background, containerSize, title, classes, overlay } = attributes;
 
   useEffect(() => {
-    ! isEqual(classes, className)
-      && setAttributes({ classes: className })
-  }, [className])
+    !isEqual(classes, className) && setAttributes({ classes: className });
+  }, [className]);
 
   const onTitle = useCallback(title => {
-    setAttributes({ title })
-    setPost({ title })
-  })
+    setAttributes({ title });
+    setPost({ title });
+  });
 
   const onBackgroundMedia = media => {
     setAttributes({
       background: {
         ...background,
-        media,
-      },
+        media
+      }
     });
-  }
+  };
 
   const onBackgroundPosition = position => {
     setAttributes({
       background: {
         ...background,
-        position,
-      },
+        position
+      }
     });
-  }
+  };
 
   const onBackgroundScale = scale => {
     setAttributes({
       background: {
         ...background,
-        scale,
-      },
+        scale
+      }
     });
-  }
+  };
 
   const onBackgroundAttachment = attachment => {
     setAttributes({
       background: {
         ...background,
-        attachment,
-      },
+        attachment
+      }
     });
   };
 
@@ -100,52 +117,42 @@ const edit = ({
     setAttributes({
       background: {
         ...background,
-        size,
+        size
       }
     });
-  }
+  };
 
   const onContainerResize = (event, direction, elt, delta) => {
     setAttributes({
       containerSize: {
-        height: parseInt(containerSize.height + delta.height, 10),
-      },
+        height: parseInt(containerSize.height + delta.height, 10)
+      }
     });
-  }
+  };
 
   const onOverlayColor = color => {
     setAttributes({
       overlay: {
         raw: color,
         opacity: overlay.opacity,
-        rendered: chroma(color).alpha(overlay.opacity * 0.1).css('rgba'),
+        rendered: chroma(color)
+          .alpha(overlay.opacity * 0.1)
+          .css("rgba")
       }
     });
-  }
+  };
 
   const onOverlayOpacity = opacity => {
     setAttributes({
       overlay: {
         raw: overlay.raw,
         opacity,
-        rendered: chroma(overlay.raw).alpha(opacity * 0.1).css('rgba'),
+        rendered: chroma(overlay.raw)
+          .alpha(opacity * 0.1)
+          .css("rgba")
       }
     });
-  }
-
-  const editorClasses = {
-    overlay: classnames([
-      "p-4",
-      "w-full",
-      "h-full",
-      "w-full",
-      "flex",
-      "flex-wrap",
-      "content-center"
-    ]),
   };
-
-  console.log(overlay);
 
   return (
     <>
@@ -160,67 +167,44 @@ const edit = ({
           onBackgroundSize={onBackgroundSize}
           onBackgroundScale={onBackgroundScale}
           onOverlayColor={onOverlayColor}
-          onOverlayOpacity={onOverlayOpacity} />
+          onOverlayOpacity={onOverlayOpacity}
+        />
       </InspectorControls>
 
       <div className={className}>
         <ResizableBox
           className={`flex flex-col content-center relative`}
           showHandle={isSelected}
-          enable={{
-            bottom: true,
-            top: false,
-            left: false,
-            right: false,
-            topRight: false,
-            topLeft: false,
-            bottomRight: false,
-            bottomLeft: false
-          }}
+          enable={RESIZABLE_Y}
           size={containerSize ? containerSize : `500px`}
-          onResizeStop={onContainerResize}>
-          <div css={css`
-            overflow: hidden;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: -1;
-            position: absolute;
-          `}>
-            <div
-              className={`h-full w-full relative top-0 left-0 right-0 bottom-0 w-full flex flex-wrap content-center`}
-              style={{
-                backgroundImage: `url(${background.media ? background.media.url : null})`,
-                backgroundColor: ! background.media && `rgba(0, 0, 0, 0.2)`,
-                backgroundSize: background.size ? background.size : `cover`,
-                backgroundAttachment: background.attachment ? background.attachment : `initial`,
-                backgroundPosition: background.position ? `${background.position.x * 100}% ${background.position.y * 100}%` : `50% 50%`,
-                transform: `scale(${background.scale ? background.scale * 0.01 : 1})`,
-                backgroundRepeat: `no-repeat`,
-              }} />
-          </div>
-
-          <div className={editorClasses.overlay} css={css`
-            background-color: ${overlay.rendered};
-            font-size:
-          `}>
+          onResizeStop={onContainerResize}
+        >
+          <div
+            className={classes.container}
+            css={styles.background(background)}
+          />
+          <div
+            className={classnames([
+              "p-4",
+              "w-full",
+              "h-full",
+              "flex",
+              "flex-wrap",
+              "content-center",
+              "z-10",
+              "relative"
+            ])}
+            css={css`
+              background-color: ${overlay.rendered};
+            `}
+          >
             <RichText
-              className={classnames([
-                'w-full',
-                'text-center',
-                'font-display',
-                'text-7xl',
-                'inline-block',
-                'uppercase',
-                'font-bold',
-                'break-all',
-                'text-white'
-              ])}
+              className={`w-full text-center font-display text-6xl inline-block uppercase font-bold break-all text-white`}
               placeholder={__(`Post Title...`, `tiny-pixel`)}
               value={title}
               allowedFormats={[]}
-              onChange={onTitle} />
+              onChange={onTitle}
+            />
 
             <MediaUploadCheck>
               <MediaUpload
@@ -230,16 +214,18 @@ const edit = ({
                 render={({ open }) => (
                   <div className={classnames(["w-full", "text-center"])}>
                     <Button className={`button`} onClick={open}>
-                      {background.media ? __("Replace", "tiny-pixel") : __("Add", "tiny-pixel")} Banner image
+                      {background.media ? __("Replace", "tiny-pixel") : __("Add", "tiny-pixel")}
+                      Banner image
                     </Button>
                   </div>
-                )} />
+                )}
+              />
             </MediaUploadCheck>
           </div>
         </ResizableBox>
       </div>
     </>
   );
-}
+};
 
-export default edit
+export default edit;
