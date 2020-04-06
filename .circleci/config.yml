@@ -58,10 +58,11 @@ workflows:
       - tiller-circleci/deploy:
           name: deploy-staging
           known_hosts: 'github.com, 165.22.190.49'
-          trellis_repo: 'git@github.com:pixelcollective/managed-wordpress-deploy.git'
+          trellis_repo: 'git@github.com:pixelcollective/trellis.git'
           site_env: staging
           site_name: dreamdefenders.org
-          executor: tiller-circleci/ansible-27
+          executor: tiller-circleci/ansible-28
+          vault_password: VAULT_PASSWORD
           requires:
             - hold
           filters:
@@ -73,10 +74,11 @@ workflows:
       - tiller-circleci/deploy:
           name: deploy-production
           known_hosts: 'github.com, 157.230.209.152'
-          trellis_repo: 'git@github.com:pixelcollective/managed-wordpress-deploy.git'
+          trellis_repo: 'git@github.com:pixelcollective/trellis.git'
           site_env: production
           site_name: dreamdefenders.org
-          executor: tiller-circleci/ansible-27
+          executor: tiller-circleci/ansible-28
+          vault_password: VAULT_PASSWORD
           requires:
             - integration-pre-deploy
           filters:

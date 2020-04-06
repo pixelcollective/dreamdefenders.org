@@ -2,20 +2,17 @@
 
 namespace TinyPixel\WPConfig;
 
-use \Roots\WPConfig\Config as RootsConfig;
+use Roots\WPConfig\Config as RootsConfig;
 
 /**
- * Load application
- *
- * @package TinyPixel
+ * Load application.
  */
 class Config extends RootsConfig
 {
     /**
-     * Define set of config items
+     * Define set of config items.
      *
-     * @var    array definitions
-     * @return void
+     * @var array definitions
      */
     public static function defineSet($definitions): void
     {
@@ -29,8 +26,6 @@ class Config extends RootsConfig
      * or a load balancer.
      *
      * @see https://codex.wordpress.org/Function_Reference/is_ssl#Notes
-     *
-     * @return void
      */
     public static function exposeSSL(): void
     {
