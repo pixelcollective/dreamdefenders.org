@@ -49,7 +49,6 @@ mx.js(script`app`, 'work/scripts');
 
 /** @dream-defenders/theme styles */
 mx.sass(style`app.scss`, 'work/styles/client-theme.css')
-  .sass(style`editor.scss`, 'styles/editor.css')
 
 /** @dream-defenders/theme static assets */
 mx.copyWatched('resources/assets/images/**', 'dist/images')

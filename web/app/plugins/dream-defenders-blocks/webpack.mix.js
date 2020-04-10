@@ -5,6 +5,9 @@ require('laravel-mix-tweemotional')
 
 /** @dream-defenders/blocks webpack config */
 mx.setPublicPath('./dist')
+  .webpackConfig(require('@dream-defenders/mix/webpack.config')({
+    production: mx.inProduction(),
+  }))
   .tweemotional()
 
 /** @dream-defenders/blocks scripts */
@@ -20,3 +23,4 @@ mx.js('resources/assets/scripts/extensions/editor.js', 'scripts/extensions')
   .block('resources/assets/scripts/blocks/GalleryCTA/block.js', 'scripts/blocks/gallery-cta')
   .block('resources/assets/scripts/blocks/Form/block.js', 'scripts/blocks/form')
   .block('resources/assets/scripts/blocks/OrganizeCTA/block.js', 'scripts/blocks/organize-cta')
+  .sass('resources/assets/styles/editor.scss', 'styles/editor.css')

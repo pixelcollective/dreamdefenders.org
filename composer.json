@@ -52,7 +52,7 @@
     "wpackagist-plugin/autodescription": ">=3.0.6",
     "wpackagist-plugin/disable-comments": "^1.10",
     "wpackagist-plugin/duplicate-post": ">=3.2.2",
-    "wpackagist-plugin/gutenberg": "^7.0",
+    "wpackagist-plugin/gutenberg": "^7",
     "wpackagist-plugin/pdf-viewer-block": "^0.1.0",
     "wpackagist-plugin/query-monitor": "^3.3",
     "wpackagist-plugin/redirection": ">=3.3.1",
