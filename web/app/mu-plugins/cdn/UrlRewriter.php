@@ -7,7 +7,7 @@ class UrlRewriter
      */
     public function __construct()
     {
-        $this->cdnBaseUrl = 'https://build.dreamdefenders-c91a.kxcdn.com';
+        $this->cdnBaseUrl = 'https://builddreamdefenders-c91a.kxcdn.com';
         $this->baseUrl = get_home_url();
 
         return $this;
