@@ -43,6 +43,7 @@ web/app/plugins/*
 
 # MU-Plugins
 web/app/mu-plugins/*
+!web/app/mu-plugins/cdn
 !web/app/mu-plugins/tiny-blocks
 !web/app/mu-plugins/tiny-blocks/*
 !web/app/mu-plugins/.gitkeep
