@@ -36,7 +36,7 @@ $tinyblocks->addBlock(OrganizeCTA::class);
 /*
  * Register project-specific assets.
  */
-add_action('enqueue_block_assets', function () {
+add_action('admin_init', function () {
     wp_enqueue_script(
         'dream-defenders/editor',
         plugins_url('/dream-defenders-blocks/dist/scripts/extensions/editor.js'),
