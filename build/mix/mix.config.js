@@ -18,7 +18,8 @@ mx
   .options({
     clearConsole: false,
     postCss: [
-      require('@dream-defenders/tailwind')
+      require('autoprefixer'),
+      require('@dream-defenders/tailwind'),
     ],
     processCssUrls: false,
     syntax: 'postcss-scss',

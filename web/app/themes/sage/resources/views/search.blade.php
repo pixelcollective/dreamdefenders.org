@@ -1,14 +1,13 @@
 @extends('layouts.app')
 
-@section('content')
+@section('header')
   @include("partials.header-search")
+@endsection
 
-  <div class="container px-4 mx-auto">
+@section('content')
+  <main class='container px-4 pb-32 mx-auto'>
     @if (! have_posts())
-      @alert(['type' => 'warning'])
-        {{ __('Sorry, no results were found.', 'sage') }}
-      @endalert
-
+      <h2>{{ __('Sorry, no results were found.', 'sage') }}</h2>
       {!! get_search_form(false) !!}
     @endif
 
@@ -17,5 +16,5 @@
     @endwhile
 
     {!! get_the_posts_navigation() !!}
-  @endsection
-</div>
+  </main>
+@endsection

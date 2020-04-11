@@ -59,16 +59,6 @@ add_action('enqueue_block_assets', function () {
  * Standard Post Posttype
  */
 add_action('init', function () {
-    $post = get_post_type_object('post');
-
-    $post->template = [
-        ['tinypixel/post-container'],
-        ['tinypixel/container'],
-    ];
-    $post->template_lock = 'INSERT';
-
-    register_post_type('post', $post);
-
     /*
      * Freedom Papers PostType
      */
@@ -103,11 +93,6 @@ add_action('init', function () {
         'menu_icon' => 'dashicons-lightbulb',
         'public' => true,
         'rewrite' => ['slug' => 'projects'],
-        'template' => [
-            ['tinypixel/project-container'],
-            ['tinypixel/container'],
-        ],
-        'template_lock' => 'insert',
     ]);
 });
 

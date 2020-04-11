@@ -6302,7 +6302,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.zip?timestamp=1584192505"
+                "url": "https://downloads.wordpress.org/plugin/redirection.zip?timestamp=1585719408"
             },
             "require": {
                 "composer/installers": "~1.0"

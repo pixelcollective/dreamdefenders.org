@@ -1,8 +1,10 @@
 /**
  * @tailwind base
+ * disable unknownAtRules
  */
 @tailwind base;
 @tailwind utilities;
+@tailwind screens;
 
 .editor-post-title {
   &__block:not(.is-selected) {
@@ -17,8 +19,13 @@
 /**
  * Block editor
  */
-.block-editor-block-list__block {
-  @import '@dream-defenders/theme/resources/assets/styles/app/fonts';
+.editor-styles-wrapper {
+  @apply font-sans #{!important};
+}
+
+.editor-styles-wrapper {
+  @import "@dream-defenders/theme/resources/assets/styles/app/fonts";
+  @import "@dream-defenders/theme/resources/assets/styles/app/typography";
 
   h1,
   h2,
@@ -32,6 +39,7 @@
   blockquote,
   table {
     @apply mb-4 #{!important};
+    @apply font-sans #{!important};
   }
 
   /**
@@ -136,11 +144,12 @@
     }
   }
 
-  @import '@dream-defenders/theme/resources/assets/styles/app/typography';
-  @import '@dream-defenders/theme/resources/assets/styles/app/spacing';
-  @import '@dream-defenders/theme/resources/assets/styles/app/lists';
-  @import '@dream-defenders/theme/resources/assets/styles/app/performant-media';
-  @import '@dream-defenders/theme/resources/assets/styles/blocks/core-heading';
-  @import '@dream-defenders/theme/resources/assets/styles/blocks/core-group';
-  @import '@dream-defenders/theme/resources/assets/styles/blocks/core-pullquote';
+  @import "@dream-defenders/theme/resources/assets/styles/app/spacing";
+  @import "@dream-defenders/theme/resources/assets/styles/app/lists";
+  @import "@dream-defenders/theme/resources/assets/styles/app/performant-media";
+  @import "@dream-defenders/theme/resources/assets/styles/blocks/core-button";
+  @import "@dream-defenders/theme/resources/assets/styles/blocks/core-navigation";
+  @import "@dream-defenders/theme/resources/assets/styles/blocks/core-heading";
+  @import "@dream-defenders/theme/resources/assets/styles/blocks/core-group";
+  @import "@dream-defenders/theme/resources/assets/styles/blocks/core-pullquote";
 }

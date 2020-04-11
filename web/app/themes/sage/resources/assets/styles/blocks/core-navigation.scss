@@ -1,0 +1,26 @@
+nav.wp-block-navigation {
+  @apply my-4;
+  @apply py-4;
+
+  .wp-block-navigation__container {
+    @apply list-none;
+    @apply font-bold;
+    @apply flex;
+    @apply flex-col;
+    @apply flex-wrap;
+    @apply justify-start;
+
+    @screen md {
+      @apply flex-row;
+    }
+  }
+
+  .wp-block-navigation-link {
+    @apply text-center;
+    @apply font-display;
+    @apply text-base;
+    @apply uppercase;
+    @apply text-xl;
+    @apply pr-3;
+  }
+}
