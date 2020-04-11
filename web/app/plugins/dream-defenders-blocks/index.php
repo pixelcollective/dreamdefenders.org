@@ -32,6 +32,7 @@ $tinyblocks->addBlock(TwoColumn::class);
 $tinyblocks->addBlock(GalleryCTA::class);
 $tinyblocks->addBlock(Form::class);
 $tinyblocks->addBlock(OrganizeCTA::class);
+$tinyblocks->addBlock(EveryAction::class);
 
 /*
  * Register project-specific assets.
