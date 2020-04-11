@@ -73,7 +73,7 @@ export default ({
             label='Background size'
             options={[
               { label: 'Cover', value: 'cover' },
-              { label: 'Manual', value: 'manual' }
+              { label: 'Manual', value: 'manual' },
             ]}
             selected={background.size}
             onChange={onBackgroundSize} />

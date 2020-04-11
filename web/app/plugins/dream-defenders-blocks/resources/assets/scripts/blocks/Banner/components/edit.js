@@ -33,15 +33,17 @@ const styles = {
   `,
   background: background => css`
     ${styles.container}
-    background-size: cover;
+    background-size: ${background.cover} ? 'cover' : ''};
     background-repeat: no-repeat;
     background-image: url(${background.media ? background.media.url : null});
     background-attachment: ${background.attachment
       ? background.attachment
-      : `initial`};
+      : `initial`
+    };
     background-position: ${background.position
       ? `${background.position.x * 100}% ${background.position.y * 100}%`
-      : `50% 50%`};
+      : `50% 50%`
+    };
     transform: scale(${background.scale ? background.scale * 0.01 : 1});
   `
 };
@@ -69,7 +71,8 @@ const edit = ({ attributes, setAttributes, className, isSelected }) => {
   const { background, containerSize, title, classes, overlay } = attributes;
 
   useEffect(() => {
-    !isEqual(classes, className) && setAttributes({ classes: className });
+    !isEqual(classes, className)
+      && setAttributes({ classes: className });
   }, [className]);
 
   const onTitle = useCallback(title => {
@@ -173,7 +176,7 @@ const edit = ({ attributes, setAttributes, className, isSelected }) => {
 
       <div className={className}>
         <ResizableBox
-          className={`flex flex-col content-center relative`}
+          className={`flex flex-col overflow-hidden content-center relative`}
           showHandle={isSelected}
           enable={RESIZABLE_Y}
           size={containerSize ? containerSize : `500px`}
@@ -194,9 +197,7 @@ const edit = ({ attributes, setAttributes, className, isSelected }) => {
               "z-10",
               "relative"
             ])}
-            css={css`
-              background-color: ${overlay.rendered};
-            `}
+            css={css`background-color: ${overlay.rendered};`}
           >
             <RichText
               className={`w-full text-center font-display text-6xl inline-block uppercase font-bold break-all text-white`}

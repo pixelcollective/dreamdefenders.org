@@ -9,12 +9,12 @@ import edit from './components/edit'
 /**
  * @tinypixel/banner
  */
-registerBlockType(`tinypixel/banner`, {
-  title: __(`Banner`, `tiny-pixel`),
+registerBlockType('tinypixel/banner', {
+  title: __('Banner', 'tiny-pixel'),
   category: 'dream-defenders',
   attributes: {
     title: {
-      type: `string`,
+      type: 'string',
     },
     align: {
       type: 'string',
@@ -25,19 +25,19 @@ registerBlockType(`tinypixel/banner`, {
       type: 'object',
       default: {
         media: null,
-        attachment: `default`,
+        attachment: 'default',
         position: {
           x: 0.5,
           y: 0.5,
         },
-        size: `cover`,
+        size: 'cover',
         scale: 100,
       },
     },
     containerSize: {
       type: 'object',
       default: {
-        height: `500px`,
+        height: '500px',
       },
     },
     classes: {

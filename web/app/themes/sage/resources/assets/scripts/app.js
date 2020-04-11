@@ -12,12 +12,12 @@ window.requestAnimationFrame(() => {
   const { sage } = window
 
   const config = {
-    easing: `cubicBezier(.5, .05, .1, .3)`,
+    easing: 'cubicBezier(0.5, 0.05, 0.1, 0.3)',
   }
 
   const targets = {
-    faded: document.querySelectorAll(`[data-faded]`),
-    nav: document.querySelector(`nav.nav`),
+    faded: document.querySelectorAll('[data-faded]'),
+    nav: document.querySelector('nav.nav'),
   }
 
   /**
