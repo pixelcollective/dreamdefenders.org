@@ -1,8 +1,8 @@
-nav.wp-block-navigation {
+.wp-block-navigation {
   @apply my-4;
   @apply py-4;
 
-  .wp-block-navigation__container {
+  &__container {
     @apply list-none;
     @apply font-bold;
     @apply flex;
@@ -15,7 +15,7 @@ nav.wp-block-navigation {
     }
   }
 
-  .wp-block-navigation-link {
+  &-link {
     @apply text-center;
     @apply font-display;
     @apply text-base;

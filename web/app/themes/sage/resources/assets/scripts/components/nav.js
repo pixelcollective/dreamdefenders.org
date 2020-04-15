@@ -17,6 +17,7 @@ export default () => {
   overlayEl.style.height = 0;
   overlayEl.style.opacity = 0;
 
+  /** nav items */
   navItems.forEach(el => {
     el.style.opacity = 0;
     el.style.transform = `translateY(50px)`;

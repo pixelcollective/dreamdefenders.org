@@ -4,7 +4,6 @@ import {
   nav,
   fadeObserver,
   twoPathsObserver,
-  modal,
 }  from './components'
 import './components/performantMedia'
 

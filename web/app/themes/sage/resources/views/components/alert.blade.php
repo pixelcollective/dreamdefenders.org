@@ -3,7 +3,6 @@
     <span>
       @if($label)
         @svg('exclamation-circle', 'inline w-4 align-middle pb-1 relative')
-
         <span class="font-bold uppercase">
           {!! $label !!}:
         </span>

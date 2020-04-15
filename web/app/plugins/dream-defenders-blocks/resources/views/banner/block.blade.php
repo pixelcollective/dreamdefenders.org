@@ -3,7 +3,6 @@
   <header class="flex flex-col content-center w-full my-0 mt-0 mb-12 wp-block-tinypixel-banner">
     <div class="relative top-0 bottom-0 left-0 right-0 w-full overflow-hidden">
       <div class="absolute flex flex-col flex-wrap content-center w-full h-full banner-bg-image"></div>
-
       <div class="relative z-10 w-full h-full banner-bg-overlay">
         @isset($attr->title)
           <div class="relative flex flex-wrap content-center w-full p-4 text-center"
@@ -16,7 +15,6 @@
           </div>
         @endisset
       </div>
-
     </div>
   </header>
 </div>
