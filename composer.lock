@@ -6078,16 +6078,16 @@
         },
         {
             "name": "wp-graphql/wp-graphql",
-            "version": "v0.8.2",
+            "version": "v0.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-graphql/wp-graphql.git",
-                "reference": "e3fa87647f783fc065431d95af23fa986b434d76"
+                "reference": "c3f6b733fcb4f11f9789aeb93e6015f4d8e61348"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-graphql/wp-graphql/zipball/e3fa87647f783fc065431d95af23fa986b434d76",
-                "reference": "e3fa87647f783fc065431d95af23fa986b434d76",
+                "url": "https://api.github.com/repos/wp-graphql/wp-graphql/zipball/c3f6b733fcb4f11f9789aeb93e6015f4d8e61348",
+                "reference": "c3f6b733fcb4f11f9789aeb93e6015f4d8e61348",
                 "shasum": ""
             },
             "require": {
@@ -6133,7 +6133,7 @@
                 }
             ],
             "description": "GraphQL API for WordPress",
-            "time": "2020-04-13T22:20:32+00:00"
+            "time": "2020-04-14T22:02:55+00:00"
         },
         {
             "name": "wp-graphql/wp-graphql-acf",
