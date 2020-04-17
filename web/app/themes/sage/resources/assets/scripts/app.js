@@ -5,6 +5,7 @@ import {
   fadeObserver,
   twoPathsObserver,
 }  from './components'
+import './components/performantMedia'
 
 window.requestAnimationFrame(() => {
   const { sage } = window
@@ -51,6 +52,5 @@ window.requestAnimationFrame(() => {
    */
   nav(config);
   instagram(config);
-  modal();
   hoverFx(document.querySelectorAll(`[hoverfx]`))
 })
