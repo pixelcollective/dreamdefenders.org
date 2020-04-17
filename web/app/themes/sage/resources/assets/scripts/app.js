@@ -5,7 +5,6 @@ import {
   fadeObserver,
   twoPathsObserver,
 }  from './components'
-import './components/performantMedia'
 
 window.requestAnimationFrame(() => {
   const { sage } = window

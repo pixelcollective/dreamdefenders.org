@@ -1,21 +1,3 @@
-##
-# Tiny Pixel Deployment Workflows
-#
-# CircleCI
-#   @see https://circleci.com/docs/2.0/using-orbs/
-#
-# itinerisltd/tiller-circleci
-#   @see https://circleci.com/orbs/registry/orb/itinerisltd/tiller-circleci
-#
-# picturepipe/sentry-cli
-#   @see https://circleci.com/orbs/registry/orb/picturepipe/sentry-cli
-#
-# cypress-io/cypress
-#   @see https://circleci.com/orbs/registry/orb/cypress-io/cypress
-#
-# percy/agent
-#   @see https://docs.percy.io/docs/circleci#section-parallelized-tests-configuring-your-circle-ci-orb
-##
 version: 2.1
 
 orbs:
@@ -31,27 +13,12 @@ executors:
 workflows:
   deploy:
     jobs:
-      # Hold build for approval
       - hold:
           type: approval
           filters:
             branches:
               only:
                 - staging
-                - master
-
-      # Cypress pre-integration specs
-      - cypress/run:
-          executor: cypress/browsers-chrome69
-          name: integration-pre-deploy
-          browser: chrome
-          yarn: true
-          spec: cypress/integration/staging.spec.js
-          requires:
-            - hold
-          filters:
-            branches:
-              only:
                 - master
 
       # Deploy staging
@@ -80,7 +47,7 @@ workflows:
           executor: tiller-circleci/ansible-28
           vault_password: VAULT_PASSWORD
           requires:
-            - integration-pre-deploy
+            - hold
           filters:
             branches:
               only:
@@ -183,36 +150,6 @@ workflows:
           env: production
           requires:
             - sentry-finalize-release-production
-          filters:
-            branches:
-              only:
-                - master
-
-      # Cypress post-deployment specs staging
-      - cypress/run:
-          name: integration-post-deploy-staging
-          executor: cypress/browsers-chrome69
-          browser: chrome
-          yarn: true
-          record: true
-          spec: cypress/integration/staging.spec.js
-          requires:
-            - sentry-deploy-staging
-          filters:
-            branches:
-              only:
-                - staging
-
-      # Cypress post-deployment specs production
-      - cypress/run:
-          name: integration-post-deploy-production
-          executor: cypress/browsers-chrome69
-          requires:
-            - sentry-deploy-production
-          browser: chrome
-          yarn: true
-          record: true
-          spec: cypress/integration/production.spec.js
           filters:
             branches:
               only:
