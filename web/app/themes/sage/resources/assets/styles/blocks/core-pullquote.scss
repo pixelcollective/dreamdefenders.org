@@ -1,0 +1,44 @@
+.wp-block-quote {
+  @apply mb-6;
+  @apply mt-6;
+}
+
+.wp-block-pullquote {
+  @apply mb-6;
+  @apply mt-6;
+  @apply border-none;
+
+  &.is-style-chonk {
+    blockquote {
+      @apply border-none;
+
+      p {
+        @apply text-5xl;
+        @apply text-gray-300;
+        @apply uppercase;
+        @apply font-bold;
+        @apply tracking-tight;
+        @apply text-left;
+        @apply break-normal;
+        @apply italic;
+        @apply leading-none;
+
+        &::before {
+          @apply text-blue;
+          @apply relative;
+
+          content: '“';
+          transform: scale(1.5);
+        }
+
+        &::after {
+          @apply text-blue;
+          @apply relative;
+
+          content: '”';
+          transform: scale(1.5);
+        }
+      }
+    }
+  }
+}

@@ -1,8 +1,60 @@
-/** tailwind base */
+/**
+ * @tailwind base
+ */
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/** app */
-@import 'app/spacing';
-@import 'app/typography';
+/**
+ * @wordpress base
+ */
+@import './wordpress/colors';
+@import './wordpress/variables';
+@import './wordpress/mixins';
+@import './wordpress/breakpoints';
+@import './wordpress/animations';
+@import './wordpress/z-index';
+
+/**
+ * Application
+ */
+@import './app/fonts';
+@import './app/colors';
+@import './app/typography';
+@import './app/spacing';
+@import './app/align';
+@import './app/lists';
+@import './app/performant-media';
+
+/**
+ * @wordpress/block-library styles
+ */
+@import '@wordpress/block-library/src/audio/style';
+@import '@wordpress/block-library/src/button/style';
+@import '@wordpress/block-library/src/buttons/style';
+@import '@wordpress/block-library/src/categories/style';
+@import '@wordpress/block-library/src/columns/style';
+@import '@wordpress/block-library/src/cover/style';
+@import '@wordpress/block-library/src/embed/style';
+@import '@wordpress/block-library/src/file/style';
+@import '@wordpress/block-library/src/gallery/style';
+@import '@wordpress/block-library/src/image/style';
+@import '@wordpress/block-library/src/paragraph/style';
+@import '@wordpress/block-library/src/pullquote/style';
+@import '@wordpress/block-library/src/quote/style';
+@import '@wordpress/block-library/src/search/style';
+@import '@wordpress/block-library/src/separator/style';
+@import '@wordpress/block-library/src/spacer/style';
+@import '@wordpress/block-library/src/video/style';
+
+/**
+ * Blocks
+ */
+@import './blocks/core-button';
+@import './blocks/core-cover';
+@import './blocks/core-navigation';
+@import './blocks/core-search';
+@import './blocks/core-embed';
+@import './blocks/core-heading';
+@import './blocks/core-group';
+@import './blocks/core-pullquote';

@@ -1,63 +1,151 @@
 import anime from 'animejs'
 import Headroom from 'headroom.js'
 
-import { disableScroll, enableScroll } from '@util'
+import { disableScroll, enableScroll } from './../util'
 
 /**
- * Logo hover
+ * Site navigation
  */
-const logoHover = ({ navLogo }) => {
-  const hoverScale = (scale, { x, y }) => {
-    anime({
-      targets: navLogo,
-      loop: false,
-      duration: 800,
-      scaleX: scale,
-      scaleY: scale,
-      translateX: x,
-      translateY: y,
-    })
-  }
+export default () => {
+  const { sage }  = window,
+        navEl     = document.querySelector(`nav.nav`),
+        toggleEl  = document.querySelector(`[nav-toggle]`),
+        overlayEl = document.querySelector(`.${toggleEl.getAttribute(`toggle-target`)}`),
+        navItems  = document.querySelectorAll(`.nav-item`)
 
-  const hoverOn = () => {
-    hoverScale(1.1, {
-      x: 0,
-      y: `-3px`,
-    })
-  }
+  /** Collapse overlay nav */
+  overlayEl.style.height = 0;
+  overlayEl.style.opacity = 0;
 
-  const hoverOff = () => {
-    hoverScale(1, {
-      x: 0,
-      y: 0,
-    })
-  }
+  /** nav items */
+  navItems.forEach(el => {
+    el.style.opacity = 0;
+    el.style.transform = `translateY(50px)`;
 
-  navLogo.addEventListener(`mouseenter`, hoverOn, false)
-  navLogo.addEventListener(`mouseleave`, hoverOff, false)
+    return el;
+  })
+
+  /** Set initial topbar background  */
+  navEl.style.backgroundColor = (
+    sage.isPage || sage.isFrontPage
+      ? `rgba(0, 0, 0, 0.8)`
+      : `rgba(255, 255, 255, 1)`
+  )
+
+  /** Initialize listener for menu clicks */
+  toggleEl.addEventListener(`click`, () => {
+    toggleAction(sage, navEl, toggleEl, overlayEl)
+  })
+
+  scroll(navEl)
+}
+
+/**
+ * Set toggle state
+ */
+const setToggle = target => {
+  target.setAttribute(
+    `nav-toggle`,
+    isToggled(target)
+      ? `off`
+      : `on`
+  )
+
+  return target.getAttribute(`nav-toggle`)
+}
+
+/**
+ * Return true if overlay is toggled
+ */
+const isToggled = target => {
+  return target.getAttribute(`nav-toggle`) == `on`
+}
+
+/**
+ * Toggle overlay menu
+ */
+const toggleAction = (sage, navEl, toggleEl, overlayEl) => {
+  setToggle(toggleEl)
+
+  const toggled = isToggled(toggleEl)
+
+  toggled ? disableScroll() : enableScroll()
+  toggled ? setIcon('close') : setIcon('open')
+
+  anime({
+    targets:  overlayEl,
+    height:   toggled ? [`0`, `100vh`] : [`100vh`, `0`],
+    opacity:  toggled ? [0, 100] : [100, 0],
+    duration: 300,
+    elasticity: 0,
+    easing: `easeInOutSine`,
+    complete: () => {
+      anime({
+        targets: document.querySelectorAll('nav.nav .nav-item'),
+        easing: 'easeOutQuint',
+        translateY: toggled ? 0 : 50,
+        opacity: toggled ? 1 : 0,
+        delay: anime.stagger(30, { start: 20 }),
+      })
+    },
+  })
+
+  anime({
+    targets:  navEl,
+    backgroundColor: [
+      toggled
+        ? `rgba(0,0,0,1)`
+        : sage.isPage || sage.isFrontPage
+          ? `rgba(0,0,0,1)`
+          : `rgba(255,255,255,1)`,
+    ],
+    duration: 400,
+    easing: `easeInOutSine`,
+    elasticity: 0,
+  })
+}
+
+/**
+ * Animate overlay toggle icon
+ */
+const setIcon = state => {
+  const icons   = document.querySelectorAll(`.menu-icon`),
+        newIcon = document.querySelector(`.menu-icon-${state}`)
+
+  anime({
+    targets: icons,
+    height: 0,
+    width: 0,
+    opacity: [1, 0.5],
+    rotate: '-180deg',
+    easing: `easeInOutSine`,
+    duration: 300,
+    elasticity: 0,
+  })
+
+  anime({
+    targets: newIcon,
+    height: '26',
+    width: '26',
+    rotate: '-0deg',
+    opacity: [0, 1],
+    easing: `easeInOutSine`,
+    duration: 300,
+    elasticity: 0,
+  })
 }
 
 /**
  * Navbar scroll animation
  */
-const navBarScrollInteractives = ({ nav }) => {
-  const animateHeadroom = ({ backgroundColor, translateY }) => {
+const scroll = nav => {
+  const animateHeadroom = params => {
     anime({
       targets: nav,
-      backgroundColor,
-      translateY,
       duration: 400,
       easing: `easeInQuart`,
       transformOrigin: `top`,
-    })
-  }
-
-  const onTop = () => {
-    animateHeadroom({
-      backgroundColor: `rgba(${
-        sage.isFrontPage ? `0,0,0,0` : `255,255,255,1`
-      })`,
-      translateY: `0px`,
+      ...params,
     })
   }
 
@@ -78,78 +166,7 @@ const navBarScrollInteractives = ({ nav }) => {
   (new Headroom(nav, {
     offset: nav.offsetHeight,
     tolerance: 5,
-    onTop,
     onPin,
     onUnpin,
   })).init()
-}
-
-/**
- * Navigation overlay
- */
-const navOverlay = ({ navOverlay, navToggle, navDisable }, easing) => {
-  const overlayReady = () => {
-    return navToggle && navOverlay
-  }
-
-  const toggleNav = ({ classList }) => {
-    classList.toggle(`hidden`)
-
-    classList.toggle(`block`)
-  }
-
-  /**
-   * Navigation overaly
-   */
-  overlayReady() && (() => {
-    navToggle.addEventListener(`click`, () => {
-      disableScroll()
-
-      anime({
-        targets: navOverlay,
-        height: [`0vh`, `100vh`],
-        opacity: [0, 100],
-        duration: 200,
-        position: `relative`,
-        easing,
-        begin: toggleNav(navOverlay),
-      })
-    })
-
-    navDisable.addEventListener(`click`, () => {
-      enableScroll()
-
-      anime({
-        targets: navOverlay,
-        height: [`100vh`, `0vh`],
-        opacity: [100, 0],
-        duration: 300,
-        position: `fixed`,
-        easing,
-        complete: toggleNav(navOverlay),
-      })
-    })
-  })()
-}
-
-export default ({ easing }) => {
-  const { sage } = window
-
-  const targets = {
-    nav:        document.querySelector(`nav.nav`),
-    navOverlay: document.querySelector(`.nav-overlay`),
-    navToggle:  document.querySelector(`.nav-toggle`),
-    navDisable: document.querySelector(`.nav-disable`),
-    navLogo:    document.querySelector(`.nav-logo`),
-  }
-
-  targets.nav.style.backgroundColor = `rgba(${
-    sage.isFrontPage ? `0,0,0,0` : `255,255,255,1`
-  })`
-
-  logoHover(targets)
-
-  navBarScrollInteractives(targets)
-
-  navOverlay(targets, easing)
 }

@@ -17,7 +17,7 @@ return [
 
     'views' => [
         'blocks' => [
-            'dir'   => WP_PLUGIN_DIR . '/blocks/resources/views',
+            'dir'   => WP_PLUGIN_DIR . '/dream-defenders-blocks/resources/views',
             'cache' => $cachePath,
             'debug' => 0,
         ],

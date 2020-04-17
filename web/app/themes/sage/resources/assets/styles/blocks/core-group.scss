@@ -1,0 +1,9 @@
+.wp-block-group__inner-container {
+  @apply w-full;
+  @apply max-w-full;
+  @apply px-4;
+
+  @screen lg {
+    @apply px-8;
+  }
+}

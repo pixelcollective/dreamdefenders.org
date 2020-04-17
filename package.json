@@ -1,9 +1,12 @@
 {
-  "name": "dreamdefenders",
+  "name": "@dream-defenders/bedrock",
+  "version": "1.0.0",
   "license": "MIT",
   "workspaces": [
-    "config",
-    "web/app/plugins/blocks",
+    "./",
+    "build/tailwind",
+    "build/mix",
+    "web/app/plugins/dream-defenders-blocks",
     "web/app/themes/sage"
   ],
   "private": true,
@@ -12,19 +15,20 @@
     "cypress:development": "cypress run --spec 'tests/cypress/integration/development.js' --browser chrome",
     "cypress:staging": "cypress run --spec 'tests/cypress/integration/staging.js' --browser chrome",
     "cypress:production": "cypress run --spec 'tests/cypress/integration/production.js' --browser chrome",
-    "start": "concurrently --kill-others-on-fail -c bold.bgMagenta.white,bold.bgBlue.white -n blocks,sage \"yarn start:blocks\" \"yarn start:theme\"",
-    "start:theme": "yarn workspace theme start",
-    "start:blocks": "yarn workspace blocks build",
-    "build": "concurrently --kill-others-on-fail -c bold.bgMagenta.white,bold.bgBlue.white -n blocks,sage \"yarn build:blocks\" \"yarn build:theme\"",
-    "build:theme": "yarn workspace theme build",
-    "build:blocks": "yarn workspace blocks build",
-    "production": "concurrently --kill-others-on-fail -c bold.bgMagenta.white,bold.bgBlue.white -n sage,blocks \"yarn production:theme\" \"yarn production:blocks\"",
-    "production:theme": "yarn workspace theme build:production",
-    "production:blocks": "yarn workspace blocks build"
+    "start": "yarn run npm-run-all start:*",
+    "start:theme": "yarn workspace @dream-defenders/theme start",
+    "start:blocks": "yarn workspace @dream-defenders/blocks start",
+    "dev": "cross-env NODE_ENV=development webpack --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "build": "yarn run npm-run-all build:*",
+    "build:theme": "yarn workspace @dream-defenders/theme build",
+    "build:blocks": "yarn workspace @dream-defenders/blocks build",
+    "build:bedrock": "cross-env NODE_ENV=production webpack --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "all": "cross-env NODE_ENV=production webpack --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "devDependencies": {
     "@percy/cypress": "^2.2.0",
     "concurrently": "^5.0.2",
+    "cypress": "^3.8.1",
     "cypress-slack-reporter": "^0.5.0"
   }
 }

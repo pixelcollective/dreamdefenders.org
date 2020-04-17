@@ -16,14 +16,16 @@
   "require": {
     "php": "^7.2",
     "kellymears/sage-svg": "dev-master",
+    "log1x/navi": "^1.0",
+    "log1x/pagi": "^1.0",
     "log1x/sage-directives": "^1.1",
     "roots/acorn": "dev-master",
     "tiny-pixel/acorn-instagram": "dev-master"
   },
   "require-dev": {
     "filp/whoops": "^2.5",
-    "squizlabs/php_codesniffer": "^3.5",
-    "franzl/studio": "^0.13.0"
+    "franzl/studio": "^0.13.0",
+    "squizlabs/php_codesniffer": "^3.5"
   },
   "config": {
     "optimize-autoloader": true,

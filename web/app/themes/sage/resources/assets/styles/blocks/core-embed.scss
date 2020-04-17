@@ -1,0 +1,35 @@
+$aspect-ratios:
+  (21,9),(18,9),
+  (16,9),(9,16),
+  (4,3),(1,2),(1,1);
+
+.wp-embed-responsive .wp-block-embed {
+  @apply w-full;
+
+  &[class^="wp-embed-aspect"] .wp-block-embed__wrapper {
+    @apply relative;
+
+    iframe {
+      @apply absolute;
+      @apply top-0;
+      @apply right-0;
+      @apply bottom-0;
+      @apply left-0;
+      @apply w-full;
+      @apply h-full;
+    }
+
+    &::before {
+      @apply block;
+
+      content: "";
+      padding-top: 50%;
+    }
+  }
+
+  @each $w, $h in $aspect-ratios {
+    &.wp-embed-aspect-#{$w}-#{$h} > .wp-block-embed__wrapper::before {
+      padding-top: percentage($h/$w);
+    }
+  }
+}

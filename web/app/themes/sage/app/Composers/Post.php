@@ -2,9 +2,12 @@
 
 namespace App\Composers;
 
-use Roots\Acorn\View\Composer;
+use Illuminate\Support\Collection;
 
-class Post extends Composer
+/**
+ * Post.
+ */
+class Post extends BaseComposer
 {
     /**
      * List of views served by this composer.
@@ -12,9 +15,8 @@ class Post extends Composer
      * @var array
      */
     protected static $views = [
-        'partials.page-header',
-        'partials.content',
-        'partials.content-*',
+        'single',
+        'partials.content-single',
     ];
 
     /**
@@ -22,13 +24,14 @@ class Post extends Composer
      *
      * @return array
      */
-    public function override()
+    public function with()
     {
         return [
-            'title'     => $this->title(),
+            'title' => $this->title(),
             'permalink' => $this->permalink(),
-            'content'   => $this->content(),
-            'pageNav'   => $this->pageNav(),
+            'pageNav' => $this->pageNav(),
+            'postType' => $this->postType(),
+            'additionalPosts' => $this->additionalPosts(),
         ];
     }
 
@@ -39,45 +42,7 @@ class Post extends Composer
      */
     public function title()
     {
-        if ($this->view->name() !== 'partials.page-header') {
-            return get_the_title();
-        }
-
-        if (is_home()) {
-            if ($home = get_option('page_for_posts', true)) {
-                return get_the_title($home);
-            }
-
-            return __('Latest Posts', 'sage');
-        }
-
-        if (is_archive()) {
-            return get_the_archive_title();
-        }
-
-        if (is_search()) {
-            /* translators: %s is replaced with the search query */
-            return sprintf(
-                __('Search Results for %s', 'sage'),
-                get_search_query()
-            );
-        }
-
-        if (is_404()) {
-            return __('Not Found', 'sage');
-        }
-
         return get_the_title();
-    }
-
-    /**
-     * Returns the post content.
-     *
-     * @return string
-     */
-    public function content()
-    {
-        return apply_filters('the_content', get_the_content());
     }
 
     /**
@@ -88,9 +53,9 @@ class Post extends Composer
     public function pageNav()
     {
         return wp_link_pages([
-            'echo'   => false,
-            'before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'),
-            'after'  => '</p></nav>'
+            'echo' => false,
+            'before' => '<nav class="page-nav"><p>'.__('Pages:', 'sage'),
+            'after' => '</p></nav>',
         ]);
     }
 
@@ -102,5 +67,38 @@ class Post extends Composer
     public function permalink()
     {
         return get_the_permalink();
+    }
+
+    /**
+     * Returns the post type.
+     *
+     * @return string
+     */
+    public function postType()
+    {
+        return get_post_type();
+    }
+
+    /*
+     * Additional posts
+     *
+     * @return Collection
+     */
+    public function additionalPosts()
+    {
+        return Collection::make((new \WP_Query([
+            'post_type' => 'post',
+            'post__not_in' => $this->excluding(),
+            'posts_per_page' => 8,
+            'orderby' => 'menu_order',
+        ]))->get_posts())->map(function ($post) {
+            return (object) [
+                'id' => $post->ID,
+                'title' => $post->post_title,
+                'excerpt' => $this->excerpt($post),
+                'url' => "/{$post->post_name}",
+                'image' => get_the_post_thumbnail_url($post->ID),
+            ];
+        })->reverse();
     }
 }

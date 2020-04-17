@@ -1,107 +1,137 @@
-.container {
-  /**
-  * General spacing
-  */
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  ul,
-  ol,
-  blockquote,
-  table {
-    @apply mb-4;
+/**
+* General spacing
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+blockquote,
+table {
+  @apply mb-4;
+}
+
+/**
+* Font family
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-display;
+  @apply uppercase;
+  @apply leading-none;
+}
+
+p,
+ol,
+ul,
+table,
+figcaption {
+  @apply font-sans;
+}
+
+/**
+* Text
+*/
+p,
+ul,
+ol,
+table {
+  @apply text-base;
+  @apply text-gray-900;
+}
+
+/**
+* Blockquote
+*/
+blockquote {
+  @apply pl-2;
+  @apply border-l-4;
+  @apply border-blue;
+
+  p {
+    @apply text-black;
+    @apply tracking-wider;
+    @apply leading-none;
+    @apply text-2xl;
+    @apply italic;
+    @apply font-semibold;
+    @apply mb-0;
   }
 
-  /**
-  * Font family
-  */
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-display;
-  }
-
-  p,
-  ol,
-  ul,
-  table,
-  figcaption {
-    @apply font-sans;
-  }
-
-  /**
-  * Heading styles
-  */
-  h1 {
-    @apply text-5xl;
+  cite {
+    @apply text-xl;
+    @apply tracking-widest;
+    @apply not-italic;
     @apply uppercase;
     @apply font-bold;
-    @apply tracking-tight;
   }
+}
 
-  h2 {
-    @apply text-5xl;
-    @apply uppercase;
-    @apply font-bold;
-    @apply tracking-tight;
-  }
+p,
+li {
+  a {
+    @apply border-yellow;
+    @apply border-b-4;
+    @apply transform;
+    @apply transition-colors;
+    @apply duration-500;
 
-  h3 {
-    @apply text-4xl;
-    @apply uppercase;
-    @apply font-bold;
-    @apply tracking-tight;
-  }
-
-  h4,
-  h5,
-  h6 {
-    @apply text-3xl;
-    @apply uppercase;
-    @apply font-bold;
-    @apply tracking-tight;
-  }
-
-  /**
-  * Text
-  */
-  p,
-  ul,
-  ol,
-  table {
-    @apply text-base;
-    @apply text-gray-900;
-  }
-
-  /**
-  * Blockquote
-  */
-  blockquote {
-    @apply pl-2;
-    @apply border-l-4;
-    @apply border-blue-500;
-
-    p {
-      @apply tracking-tight;
-      @apply text-4xl;
-      @apply italic;
-      @apply font-bold;
-      @apply mb-0;
+    &:hover {
+      @apply border-blue-700;
+      @apply transition-colors;
+      @apply duration-500;
+      @apply ease-in-out;
+      @apply bg-blue-500;
+      @apply transform;
+      @apply -translate-y-1;
     }
+  }
+}
 
-    cite {
-      @apply text-xl;
-      @apply tracking-wide;
-      @apply not-italic;
-      @apply uppercase;
-      @apply font-bold;
-    }
+:root {
+  /**
+   * Font sizes
+   */
+  .has-small-font-size {
+    font-size: 13px;
+  }
+
+  .has-normal-font-size {
+    font-size: 16px;
+  }
+
+  .has-medium-font-size {
+    font-size: 20px;
+  }
+
+  .has-large-font-size {
+    font-size: 36px;
+  }
+
+  .has-huge-font-size {
+    font-size: 42px;
+  }
+
+  /**
+   * Text alignments
+   */
+  .has-text-align-center {
+    text-align: center;
+  }
+
+  .has-text-align-left {
+    text-align: left;
+  }
+
+  .has-text-align-right {
+    text-align: right;
   }
 }

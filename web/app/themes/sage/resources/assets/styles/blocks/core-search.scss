@@ -1,0 +1,104 @@
+.wp-block-search {
+  @apply p-8 #{!important};
+  @apply max-w-full #{!important};
+  @apply w-4/5 #{!important};
+  @apply m-4 #{!important};
+  @apply mt-6 #{!important};
+  @apply mx-auto #{!important};
+  @apply bg-gray-100 #{!important};
+  @apply rounded #{!important};
+  @apply shadow-md;
+  @apply transition;
+  @apply transform;
+  @apply translate-y-1;
+  @apply duration-500;
+
+  &::hover {
+    @apply shadow-xl;
+    @apply transition;
+    @apply transform;
+    @apply translate-y-0;
+    @apply duration-500;
+  }
+
+  .wp-block-search__label {
+    @apply inline-block #{!important};
+    @apply text-base #{!important};
+    @apply font-medium #{!important};
+    @apply leading-5 #{!important};
+    @apply text-gray-700 #{!important};
+    @apply mb-2 #{!important};
+  }
+
+  .wp-block-search__input {
+    @apply inline-block #{!important};
+    @apply text-lg #{!important};
+    @apply px-4 #{!important};
+    @apply w-full #{!important};
+    @apply rounded-none #{!important};
+    @apply border-gray-100 #{!important};
+    @apply transition #{!important};
+    @apply ease-in-out #{!important};
+    @apply duration-150 #{!important};
+
+    max-width: none !important;
+
+    @screen sm {
+      @apply w-5/6 #{!important};
+    }
+
+    @screen md {
+      @apply w-5/6 #{!important};
+    }
+
+    @screen lg {
+      @apply w-5/6 #{!important};
+      @apply rounded-l-md #{!important};    }
+  }
+
+  .wp-block-search__button {
+    @apply relative #{!important};
+    @apply inline-flex #{!important};
+    @apply flex-grow #{!important};
+    @apply items-center #{!important};
+    @apply py-2 #{!important};
+    @apply px-4 #{!important};
+    @apply text-lg #{!important};
+    @apply leading-5 #{!important};
+    @apply uppercase #{!important};
+    @apply justify-center #{!important};
+    @apply font-display #{!important};
+    @apply text-white #{!important};
+    @apply bg-gray-800 #{!important};
+    @apply transition #{!important};
+    @apply ease-in-out #{!important};
+    @apply duration-150 #{!important};
+    @apply ml-0 #{!important};
+    @apply text-center #{!important};
+    @apply mt-2 #{!important};
+
+    @screen lg {
+      @apply mt-0 #{!important};
+      @apply rounded-r-md #{!important};
+    }
+
+    &:active {
+      @apply bg-blue #{!important};
+      @apply text-gray-700 #{!important};
+      @apply duration-500;
+    }
+
+    &::hover {
+      @apply text-gray-500 #{!important};
+      @apply bg-yellow #{!important};
+      @apply bg-white #{!important};
+      @apply duration-500  #{!important};
+    }
+
+    &::focus {
+      @apply outline-none #{!important};
+      @apply bg-blue #{!important};
+      @apply duration-500 #{!important};
+    }
+  }
+}

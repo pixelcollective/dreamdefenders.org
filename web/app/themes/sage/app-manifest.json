@@ -1,0 +1,22 @@
+{
+  "name": "Dream Defenders",
+  "short_name": "DD",
+  "description": "A new vision for safety away from prisons.",
+  "lang": "en-US",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#fde135",
+  "icons": [
+    {
+      "src": "/app/themes/sage/dist/images/icons-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/app/themes/sage/dist/images/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

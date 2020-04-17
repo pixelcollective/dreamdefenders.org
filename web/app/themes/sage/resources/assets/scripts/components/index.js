@@ -1,8 +1,13 @@
-import nav from '@components/nav'
-import instagram from '@components/instagram'
-import organize from '@components/organize'
+import nav from './nav'
+import fadeObserver from './fadeObserver'
+import instagram from './instagram'
+import twoPathsObserver from './twoPathsObserver'
+import performantMedia from './performantMedia'
+
 export {
+  fadeObserver,
   instagram,
   nav,
-  organize,
+  twoPathsObserver,
+  performantMedia,
 }

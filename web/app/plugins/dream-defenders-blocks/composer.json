@@ -1,0 +1,36 @@
+{
+  "name": "tiny-pixel/dream-defenders-posttypes",
+  "type": "wp-plugin",
+  "version": "1.0.0",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kelly Mears",
+      "homepage": "https://tinypixel.dev"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": ">=7.1",
+    "tightenco/collect": "^5.8"
+  },
+  "autoload": {
+    "files": [
+      "vendor/tightenco/collect/src/Collect/Support/helpers.php",
+      "vendor/tightenco/collect/src/Collect/Support/alias.php"
+    ],
+    "psr-4": {
+      "TinyBlocks\\": "./",
+      "TinyPixel\\Blocks\\": [
+        "./",
+        "./src"
+      ]
+    }
+  },
+  "scripts": {
+    "lint": [
+      "phpcs --ignore=vendor,demo --extensions=php --standard=PSR12 ."
+    ]
+  }
+}

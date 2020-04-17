@@ -1,64 +1,56 @@
-const { resolve, join } = require('path')
+/** node */
+const { resolve } = require('path')
 
-const mix   = require('laravel-mix'),
-      tw    = require('tailwind'),
-      pa11y = require('pa11y')
+/** laravel-mix */
+const mx = require('@dream-defenders/mix')
 
-require('laravel-mix-wp-blocks')
-require('laravel-mix-purgecss')
-require('laravel-mix-copy-watched')
+/** helper utils */
+const style  = asset => resolve(__dirname, `resources/assets/styles/${asset}`);
+const script = asset => resolve(__dirname, `resources/assets/scripts/${asset}`);
 
-const dev = `dreamdefenders.vagrant`;
-const whitelist = [/^wp-block-$/, /container/, /blockquote/];
+/** @dream-defenders/theme conf */
+mx.setPublicPath('./dist')
+  .webpackConfig(require('@dream-defenders/mix/webpack.config')({
+    production: mx.inProduction(),
+  }))
+  .extract([
+    'lozad',
+    'intersection-observer',
+    'animejs',
+    'headroom.js',
+    '@tinypixelco/hoverfx',
+  ])
+  .purgeCss({
+    enabled: mx.inProduction(),
+    globs: [
+      'resources/views/*.blade.php',
+      'resources/views/**/*.blade.php',
+      'resources/assets/scripts/*.js',
+      'resources/assets/scripts/**/*.js',
+      'resources/assets/styles/*.css',
+      'resources/assets/styles/*.scss',
+      'resources/assets/styles/**/*.css',
+      'resources/assets/styles/**/*.scss',
+      '../../plugins/dream-defenders-blocks/resources/assets/scripts/*.js',
+      '../../plugins/dream-defenders-blocks/resources/assets/scripts/**/*.js',
+      '../../plugins/dream-defenders-blocks/resources/assets/scripts/blocks/*.js',
+      '../../plugins/dream-defenders-blocks/resources/assets/scripts/blocks/**/*.js',
+      '../../plugins/dream-defenders-blocks/resources/assets/styles/*.js',
+      '../../plugins/dream-defenders-blocks/resources/assets/styles/**/*.js',
+      '../../plugins/dream-defenders-blocks/resources/views/*.blade.php',
+      '../../plugins/dream-defenders-blocks/resources/views/**/*.blade.php',
+    ],
+    whitelistPatterns: require('@dream-defenders/mix/purge.config')(),
+    whitelistPatternsChildren: require('@dream-defenders/mix/purge.config')(),
+  })
 
-mix.setPublicPath(`./dist`)
-   .browserSync(dev)
-   .webpackConfig({
-      resolve: {
-         alias: {
-            [`@hooks`]:      resolve(__dirname, `resources/assets/scripts/hooks`),
-            [`@util`]:       resolve(__dirname, `resources/assets/scripts/util`),
-            [`@components`]: resolve(__dirname, `resources/assets/scripts/components`),
-         },
-      },
-   })
-   .options({ processCssUrls: false })
+/** @dream-defenders/theme scripts */
+mx.js(script`app`, 'work/scripts');
 
-mix.sass(`resources/assets/styles/app.scss`, `styles`)
-   .sass(`resources/assets/styles/editor.scss`, `styles`)
-   .purgeCss({
-      enabled: mix.inProduction(),
-      globs: [
-         join(__dirname, `resources/**/*.php`),
-         join(__dirname, `resources/assets/**/*.js`),
-      ],
-      extensions: [`js`, `php`],
-      whitelistPatterns: whitelist,
-      whitelistPatternsChildren: whitelist,
-   }).options({
-      postCss: [tw],
-   })
+/** @dream-defenders/theme styles */
+mx.sass(style`app.scss`, 'work/styles/client-theme.css')
 
-mix.js(`./resources/assets/scripts/app.js`, `scripts`)
-   .js(`./resources/assets/scripts/customizer.js`, `scripts`)
-   .sourceMaps(false, `source-map`)
-   .extract()
-   .version()
-
-mix.blocks(`./resources/assets/scripts/editor.js`, `scripts`)
-   .version()
-
-! mix.inProduction() && pa11y(`http://${dev}`, {
-   ignore: [`WCAG2AA.Principle3.Guideline3_1.3_1_1.H57.2`],
-}).then(results => {
-   console.log(`\n`)
-   console.log(`Accessibility issues found for ${results.pageUrl}:`)
-   console.dir(results.issues, { colors: true })
-   console.log(`\n`)
-})
-
-mix.copyWatched(`resources/assets/images`, `./dist/images`)
-   .copyWatched(`resources/assets/fonts`, `./dist/fonts`)
-   .copyWatched(`resources/assets/svg/**/*.svg`, `./dist/svg`, {
-      base: `resources/assets/svg`,
-   })
+/** @dream-defenders/theme static assets */
+mx.copyWatched('resources/assets/images/**', 'dist/images')
+  .copyWatched('resources/assets/fonts/**', 'dist/fonts')
+  .copyWatched('resources/assets/svg/**', 'dist/svg')

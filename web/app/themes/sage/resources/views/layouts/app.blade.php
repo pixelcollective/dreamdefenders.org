@@ -1,41 +1,39 @@
 <!doctype html>
 <html {!! get_language_attributes() !!}>
-  @include('partials.head')
+@include('partials.head')
 
-  <body @php(body_class())>
-    @php(wp_body_open())
-    <div id="app" class="w-full overflow-x-hidden">
-      @php(do_action('get_header'))
+<body @php(body_class())>
+  @php(wp_body_open())
 
-      <div class="w-full">
-        <div class="object-cover bg-black bg-center bg-top md:bg-fixed" style="background-image: url(@asset('images/banner-background.png'));">
-          <div class="bg-black-600">
-            @include('partials.navigation')
-              @hasSection('header')
-                @yield('header')
-              @endif
+  <div id="app" class="block w-full overflow-hidden">
+    @php(do_action('get_header'))
 
-              <div class="bg-white">
-                @hasSection('content')
-                  @yield('content')
-                @endif
+    @include('partials.navigation')
+    @hasSection('header')
+      @yield('header')
+    @endif
 
-                @hasSection('sidebar')
-                  <aside class="sidebar">
-                    @yield('sidebar')
-                  </aside>
-                @endif
-              </div>
-            </div>
+    <div class="relative z-0 bg-white">
+      @hasSection('content')
+        @yield('content')
+      @endif
 
-            @php(do_action('get_footer'))
-            @include('partials.footer')
-          </div>
-        </div>
-      </div>
+      @hasSection('sidebar')
+        <aside class="sidebar">
+          @yield('sidebar')
+        </aside>
+      @endif
 
-      @include('partials.navigation-overlay')
+      @php(do_action('get_footer'))
 
-      @php(wp_footer())
-  </body>
+      @include('partials.footer')
+      @include('components.overlay')
+    </div>
+  </div>
+
+  @php(wp_footer())
+  @stack('styles')
+  @stack('scripts')
+</body>
+
 </html>

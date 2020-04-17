@@ -6,6 +6,10 @@ vendor
 .env.*
 !.env.example
 database
+web/app/cache
+!web/app/cache/.gitignore
+!web/app/cache/wp-rocket/.gitignore
+*.sql
 
 # Auth
 auth.json
@@ -33,12 +37,13 @@ web/app/themes/theme
 
 # Plugins
 web/app/plugins/*
-!web/app/plugins/blocks
-!web/app/plugins/blocks/*
+!web/app/plugins/dream-defenders-blocks
+!web/app/plugins/dream-defenders-blocks/*
 !web/app/plugins/.gitkeep
 
 # MU-Plugins
 web/app/mu-plugins/*
+!web/app/mu-plugins/cdn
 !web/app/mu-plugins/tiny-blocks
 !web/app/mu-plugins/tiny-blocks/*
 !web/app/mu-plugins/.gitkeep

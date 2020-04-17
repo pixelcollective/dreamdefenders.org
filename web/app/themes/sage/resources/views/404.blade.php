@@ -1,13 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-  @include('partials.page-header')
+  <div class="py-64">
+    @if (! have_posts())
+      <h1 class="pb-16 text-5xl text-center text-black font-display">
+        404
+      </h1>
 
-  @if (! have_posts())
-    @alert(['type' => 'warning'])
-      {{ __('Sorry, but the page you were trying to view does not exist.', 'sage') }}
-    @endalert
-
-    {!! get_search_form(false) !!}
-  @endif
+      <div class="container mx-auto text-center">
+        {!! get_search_form(false) !!}
+      </div>
+    @endif
+  </div>
 @endsection
