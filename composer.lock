@@ -2576,8 +2576,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.4",
-                "reference": "5.4"
+                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.4"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -6138,14 +6137,17 @@
         },
         {
             "name": "wp-graphql/wp-graphql-acf",
-            "version": "v0.3.1",
+            "version": "v0.3.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:wp-graphql/wp-graphql-acf",
-                "reference": "5943cd6986b546a9e5d408b3c751954e9a11cf0d"
+                "reference": "7d7331682d3dafd1ddb4b31c4d81b23e99957084"
             },
             "require-dev": {
-                "lucatume/wp-browser": ">=2.2.1 <2.2.8"
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+                "lucatume/wp-browser": "^2.2.",
+                "phpcompatibility/phpcompatibility-wp": "^2.0",
+                "wp-coding-standards/wpcs": "^2.1"
             },
             "type": "wordpress-plugin",
             "autoload": {
@@ -6183,7 +6185,7 @@
                 }
             ],
             "description": "Advanced Custom Fields bindings for wp-graphql",
-            "time": "2019-12-13T18:26:57+00:00"
+            "time": "2020-04-17T03:01:28+00:00"
         },
         {
             "name": "wpackagist-plugin/autodescription",
