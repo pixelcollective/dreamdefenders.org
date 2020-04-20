@@ -60,7 +60,7 @@
     "@wordpress/edit-post": "^3.13.1",
     "animejs": "^3.1.0",
     "headroom.js": "^0.10.4",
-    "intersection-observer": "^0.7.0",
+    "intersection-observer": "^0.9.0",
     "lodash": "^4.17.15",
     "lozad": "^1.14.0",
     "workbox-expiration": "^5.0.0",
