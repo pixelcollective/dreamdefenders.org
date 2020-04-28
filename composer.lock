@@ -6137,11 +6137,11 @@
         },
         {
             "name": "wp-graphql/wp-graphql-acf",
-            "version": "v0.3.2",
+            "version": "v0.3.3",
             "source": {
                 "type": "git",
                 "url": "git@github.com:wp-graphql/wp-graphql-acf",
-                "reference": "7d7331682d3dafd1ddb4b31c4d81b23e99957084"
+                "reference": "ea3b2397c68eb58e7a026747eb9f4e9829b53f60"
             },
             "require-dev": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
@@ -6185,7 +6185,7 @@
                 }
             ],
             "description": "Advanced Custom Fields bindings for wp-graphql",
-            "time": "2020-04-17T03:01:28+00:00"
+            "time": "2020-04-27T14:27:41+00:00"
         },
         {
             "name": "wpackagist-plugin/autodescription",
