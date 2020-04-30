@@ -3628,16 +3628,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v5.0.7",
+            "version": "v5.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "f74a126acd701392eef2492a17228d42552c86b5"
+                "reference": "09de28632f16f81058a85fcf318397218272a07b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/f74a126acd701392eef2492a17228d42552c86b5",
-                "reference": "f74a126acd701392eef2492a17228d42552c86b5",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/09de28632f16f81058a85fcf318397218272a07b",
+                "reference": "09de28632f16f81058a85fcf318397218272a07b",
                 "shasum": ""
             },
             "require": {
@@ -3699,7 +3699,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2020-03-27T16:56:45+00:00"
+            "time": "2020-04-12T16:45:47+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -3762,16 +3762,16 @@
         },
         {
             "name": "tightenco/collect",
-            "version": "v7.6.1",
+            "version": "v7.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tightenco/collect.git",
-                "reference": "4b6a215656eb77bdaa31b0f61aa9e2a3eaf2f7a0"
+                "reference": "372230e88129364638d2d9809143fafbb993d7d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tightenco/collect/zipball/4b6a215656eb77bdaa31b0f61aa9e2a3eaf2f7a0",
-                "reference": "4b6a215656eb77bdaa31b0f61aa9e2a3eaf2f7a0",
+                "url": "https://api.github.com/repos/tightenco/collect/zipball/372230e88129364638d2d9809143fafbb993d7d4",
+                "reference": "372230e88129364638d2d9809143fafbb993d7d4",
                 "shasum": ""
             },
             "require": {
@@ -3808,7 +3808,7 @@
                 "collection",
                 "laravel"
             ],
-            "time": "2020-04-17T18:15:55+00:00"
+            "time": "2020-04-29T16:33:30+00:00"
         },
         {
             "name": "tiny-pixel-packagist/advanced-custom-fields-pro",
