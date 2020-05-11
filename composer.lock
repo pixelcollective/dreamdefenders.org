@@ -3345,16 +3345,16 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.15.0",
+            "version": "v1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "81ffd3a9c6d707be22e3012b827de1c9775fc5ac"
+                "reference": "a54881ec0ab3b2005c406aed0023c062879031e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/81ffd3a9c6d707be22e3012b827de1c9775fc5ac",
-                "reference": "81ffd3a9c6d707be22e3012b827de1c9775fc5ac",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/a54881ec0ab3b2005c406aed0023c062879031e7",
+                "reference": "a54881ec0ab3b2005c406aed0023c062879031e7",
                 "shasum": ""
             },
             "require": {
@@ -3366,7 +3366,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.16-dev"
                 }
             },
             "autoload": {
@@ -3400,7 +3400,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2020-03-09T19:04:49+00:00"
+            "time": "2020-05-08T16:50:20+00:00"
         },
         {
             "name": "symfony/polyfill-php73",
@@ -3762,16 +3762,16 @@
         },
         {
             "name": "tightenco/collect",
-            "version": "v7.9.2",
+            "version": "v7.10.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tightenco/collect.git",
-                "reference": "372230e88129364638d2d9809143fafbb993d7d4"
+                "reference": "ba504e959241f1f408867ffd03159b040f66e00b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tightenco/collect/zipball/372230e88129364638d2d9809143fafbb993d7d4",
-                "reference": "372230e88129364638d2d9809143fafbb993d7d4",
+                "url": "https://api.github.com/repos/tightenco/collect/zipball/ba504e959241f1f408867ffd03159b040f66e00b",
+                "reference": "ba504e959241f1f408867ffd03159b040f66e00b",
                 "shasum": ""
             },
             "require": {
@@ -3808,7 +3808,7 @@
                 "collection",
                 "laravel"
             ],
-            "time": "2020-04-29T16:33:30+00:00"
+            "time": "2020-05-08T22:25:37+00:00"
         },
         {
             "name": "tiny-pixel-packagist/advanced-custom-fields-pro",
@@ -7317,12 +7317,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "640c8c23f8b02baa49527f8e17b54aca5168b8cf"
+                "reference": "ec1a75b10126327b351fdea7c2b9bfb94e2f6f35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/640c8c23f8b02baa49527f8e17b54aca5168b8cf",
-                "reference": "640c8c23f8b02baa49527f8e17b54aca5168b8cf",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/ec1a75b10126327b351fdea7c2b9bfb94e2f6f35",
+                "reference": "ec1a75b10126327b351fdea7c2b9bfb94e2f6f35",
                 "shasum": ""
             },
             "conflict": {
@@ -7335,6 +7335,7 @@
                 "asymmetricrypt/asymmetricrypt": ">=0,<9.9.99",
                 "aws/aws-sdk-php": ">=3,<3.2.1",
                 "bagisto/bagisto": "<0.1.5",
+                "barrelstrength/sprout-base-email": "<3.9",
                 "bolt/bolt": "<3.6.10",
                 "brightlocal/phpwhois": "<=4.2.5",
                 "buddypress/buddypress": "<5.1.2",
@@ -7576,7 +7577,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2020-05-08T00:01:32+00:00"
+            "time": "2020-05-09T00:00:21+00:00"
         },
         {
             "name": "sebastian/code-unit",
