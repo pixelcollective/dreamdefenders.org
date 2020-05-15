@@ -1,10 +1,22 @@
 module.exports = {
-  development: {
-    ssl: false,
-    host: 'dreamdefenders.vagrant',
+  environments: {
+    development: {
+      ssl: false,
+      host: 'dreamdefenders.vagrant',
+      path: require('path').resolve(__dirname, 'web/app'),
+    },
+    staging: {
+      ssl: true,
+      host: 'staging.dreamdefenders.org',
+      user: 'web',
+      path: '/srv/www/dreamdefenders.org/current/web/app',
+    },
+    production: {
+      ssl: true,
+      host: 'dreamdefenders.org',
+      user: 'web',
+      path: '/srv/www/dreamdefenders.org/current/web/app',
+    },
   },
-  staging: {
-    ssl: true,
-    host: 'build.dreamdefenders.tinypixel.dev',
-  },
+  syncDirs: [],
 }
