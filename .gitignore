@@ -10,6 +10,7 @@ web/app/cache
 !web/app/cache/.gitignore
 !web/app/cache/wp-rocket/.gitignore
 *.sql
+sharp
 
 # Auth
 auth.json

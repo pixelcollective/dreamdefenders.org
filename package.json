@@ -27,8 +27,14 @@
   },
   "devDependencies": {
     "@percy/cypress": "^2.2.0",
+    "chalk": "^4.0.0",
     "concurrently": "^5.0.2",
     "cypress": "^4.5.0",
-    "cypress-slack-reporter": "^0.6.0"
+    "cypress-slack-reporter": "^0.6.0",
+    "fs-extra": "^9.0.0",
+    "globby": "^11.0.0",
+    "graphql-request": "^1.8.2",
+    "request": "^2.88.2",
+    "sharp": "^0.25.2"
   }
 }
