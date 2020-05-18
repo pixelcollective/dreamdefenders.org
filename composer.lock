@@ -2581,8 +2581,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.4.1",
-                "reference": "5.4.1"
+                "url": "https://api.github.com/repos/WordPress/WordPress/zipball/5.4.1"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -3018,16 +3017,16 @@
         },
         {
             "name": "sybrew/the-seo-framework-extension-manager",
-            "version": "2.3.0",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sybrew/The-SEO-Framework-Extension-Manager.git",
-                "reference": "bd0a8aa3c8a32ab663a250def2caf3d9049c1aa4"
+                "reference": "f7ef6ea81f7d6b0bd9da360049fa3579e6e93d6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sybrew/The-SEO-Framework-Extension-Manager/zipball/bd0a8aa3c8a32ab663a250def2caf3d9049c1aa4",
-                "reference": "bd0a8aa3c8a32ab663a250def2caf3d9049c1aa4",
+                "url": "https://api.github.com/repos/sybrew/The-SEO-Framework-Extension-Manager/zipball/f7ef6ea81f7d6b0bd9da360049fa3579e6e93d6d",
+                "reference": "f7ef6ea81f7d6b0bd9da360049fa3579e6e93d6d",
                 "shasum": ""
             },
             "require": {
@@ -3060,7 +3059,7 @@
                 "seo",
                 "wordpress"
             ],
-            "time": "2019-12-18T07:52:22+00:00"
+            "time": "2020-05-15T20:40:38+00:00"
         },
         {
             "name": "symfony/console",
@@ -6343,7 +6342,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/disable-comments.zip?timestamp=1563798431"
+                "url": "https://downloads.wordpress.org/plugin/disable-comments.zip?timestamp=1588316559"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -7409,12 +7408,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "9b0501ceb2d00bea5814316c5333d513d7622ed5"
+                "reference": "885e8b1e0bc2096989fd20938342e407e8045186"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/9b0501ceb2d00bea5814316c5333d513d7622ed5",
-                "reference": "9b0501ceb2d00bea5814316c5333d513d7622ed5",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/885e8b1e0bc2096989fd20938342e407e8045186",
+                "reference": "885e8b1e0bc2096989fd20938342e407e8045186",
                 "shasum": ""
             },
             "conflict": {
@@ -7427,7 +7426,8 @@
                 "asymmetricrypt/asymmetricrypt": ">=0,<9.9.99",
                 "aws/aws-sdk-php": ">=3,<3.2.1",
                 "bagisto/bagisto": "<0.1.5",
-                "barrelstrength/sprout-base-email": "<3.9",
+                "barrelstrength/sprout-base-email": "<1.2.7",
+                "barrelstrength/sprout-forms": "<3.9",
                 "bolt/bolt": "<3.6.10",
                 "brightlocal/phpwhois": "<=4.2.5",
                 "buddypress/buddypress": "<5.1.2",
@@ -7670,7 +7670,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2020-05-14T00:01:29+00:00"
+            "time": "2020-05-16T00:00:31+00:00"
         },
         {
             "name": "sebastian/code-unit",
