@@ -3017,16 +3017,16 @@
         },
         {
             "name": "sybrew/the-seo-framework-extension-manager",
-            "version": "2.3.0",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sybrew/The-SEO-Framework-Extension-Manager.git",
-                "reference": "bd0a8aa3c8a32ab663a250def2caf3d9049c1aa4"
+                "reference": "f7ef6ea81f7d6b0bd9da360049fa3579e6e93d6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sybrew/The-SEO-Framework-Extension-Manager/zipball/bd0a8aa3c8a32ab663a250def2caf3d9049c1aa4",
-                "reference": "bd0a8aa3c8a32ab663a250def2caf3d9049c1aa4",
+                "url": "https://api.github.com/repos/sybrew/The-SEO-Framework-Extension-Manager/zipball/f7ef6ea81f7d6b0bd9da360049fa3579e6e93d6d",
+                "reference": "f7ef6ea81f7d6b0bd9da360049fa3579e6e93d6d",
                 "shasum": ""
             },
             "require": {
@@ -3059,7 +3059,7 @@
                 "seo",
                 "wordpress"
             ],
-            "time": "2019-12-18T07:52:22+00:00"
+            "time": "2020-05-15T20:40:38+00:00"
         },
         {
             "name": "symfony/console",
