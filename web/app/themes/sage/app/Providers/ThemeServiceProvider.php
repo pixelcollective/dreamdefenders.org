@@ -11,9 +11,6 @@ class ThemeServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('admin', function ($app) {
-            return new \App\Admin\UI($app);
-        });
     }
 
     /**
@@ -21,6 +18,5 @@ class ThemeServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app->make('admin');
     }
 }

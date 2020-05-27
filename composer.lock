@@ -40,16 +40,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.138.1",
+            "version": "3.138.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "66df78e714c7ac87a9ea2bbb77cde586649d0141"
+                "reference": "aaee8d1639e0f92a9617c4842c4fb8e527281d2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/66df78e714c7ac87a9ea2bbb77cde586649d0141",
-                "reference": "66df78e714c7ac87a9ea2bbb77cde586649d0141",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/aaee8d1639e0f92a9617c4842c4fb8e527281d2a",
+                "reference": "aaee8d1639e0f92a9617c4842c4fb8e527281d2a",
                 "shasum": ""
             },
             "require": {
@@ -120,7 +120,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-05-14T18:17:11+00:00"
+            "time": "2020-05-27T18:13:35+00:00"
         },
         {
             "name": "clue/stream-filter",
@@ -827,16 +827,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.5.3",
+            "version": "6.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "aab4ebd862aa7d04f01a4b51849d657db56d882e"
+                "reference": "a4a1b6930528a8f7ee03518e6442ec7a44155d9d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/aab4ebd862aa7d04f01a4b51849d657db56d882e",
-                "reference": "aab4ebd862aa7d04f01a4b51849d657db56d882e",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/a4a1b6930528a8f7ee03518e6442ec7a44155d9d",
+                "reference": "a4a1b6930528a8f7ee03518e6442ec7a44155d9d",
                 "shasum": ""
             },
             "require": {
@@ -844,7 +844,7 @@
                 "guzzlehttp/promises": "^1.0",
                 "guzzlehttp/psr7": "^1.6.1",
                 "php": ">=5.5",
-                "symfony/polyfill-intl-idn": "^1.11"
+                "symfony/polyfill-intl-idn": "1.17.0"
             },
             "require-dev": {
                 "ext-curl": "*",
@@ -890,7 +890,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2020-04-18T10:38:46+00:00"
+            "time": "2020-05-25T19:35:05+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -1243,16 +1243,16 @@
         },
         {
             "name": "justinrainbow/json-schema",
-            "version": "5.2.9",
+            "version": "5.2.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/justinrainbow/json-schema.git",
-                "reference": "44c6787311242a979fa15c704327c20e7221a0e4"
+                "reference": "2ba9c8c862ecd5510ed16c6340aa9f6eadb4f31b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/44c6787311242a979fa15c704327c20e7221a0e4",
-                "reference": "44c6787311242a979fa15c704327c20e7221a0e4",
+                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/2ba9c8c862ecd5510ed16c6340aa9f6eadb4f31b",
+                "reference": "2ba9c8c862ecd5510ed16c6340aa9f6eadb4f31b",
                 "shasum": ""
             },
             "require": {
@@ -1305,7 +1305,7 @@
                 "json",
                 "schema"
             ],
-            "time": "2019-09-25T14:49:45+00:00"
+            "time": "2020-05-27T16:41:55+00:00"
         },
         {
             "name": "mck89/peast",
@@ -2933,16 +2933,16 @@
         },
         {
             "name": "sentry/sentry",
-            "version": "2.3.2",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getsentry/sentry-php.git",
-                "reference": "b3e71feb32f1787b66a3b4fdb8686972e9c7ba94"
+                "reference": "e44561875e0d724bac3d9cdb705bf58847acd425"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getsentry/sentry-php/zipball/b3e71feb32f1787b66a3b4fdb8686972e9c7ba94",
-                "reference": "b3e71feb32f1787b66a3b4fdb8686972e9c7ba94",
+                "url": "https://api.github.com/repos/getsentry/sentry-php/zipball/e44561875e0d724bac3d9cdb705bf58847acd425",
+                "reference": "e44561875e0d724bac3d9cdb705bf58847acd425",
                 "shasum": ""
             },
             "require": {
@@ -2957,7 +2957,9 @@
                 "php-http/discovery": "^1.6.1",
                 "php-http/httplug": "^1.1|^2.0",
                 "php-http/message": "^1.5",
+                "psr/http-factory": "^1.0",
                 "psr/http-message-implementation": "^1.0",
+                "psr/log": "^1.0",
                 "symfony/options-resolver": "^2.7|^3.0|^4.0|^5.0",
                 "symfony/polyfill-uuid": "^1.13.1"
             },
@@ -2966,12 +2968,12 @@
                 "raven/raven": "*"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.13",
+                "friendsofphp/php-cs-fixer": "^2.16",
                 "monolog/monolog": "^1.3|^2.0",
                 "php-http/mock-client": "^1.3",
                 "phpstan/extension-installer": "^1.0",
-                "phpstan/phpstan": "^0.11",
-                "phpstan/phpstan-phpunit": "^0.11",
+                "phpstan/phpstan": "^0.12",
+                "phpstan/phpstan-phpunit": "^0.12",
                 "phpunit/phpunit": "^7.5.18",
                 "symfony/phpunit-bridge": "^4.3|^5.0",
                 "vimeo/psalm": "^3.4"
@@ -2982,7 +2984,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
@@ -3014,20 +3016,20 @@
                 "logging",
                 "sentry"
             ],
-            "time": "2020-03-06T09:24:53+00:00"
+            "time": "2020-05-20T20:49:38+00:00"
         },
         {
             "name": "sybrew/the-seo-framework-extension-manager",
-            "version": "2.3.0",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sybrew/The-SEO-Framework-Extension-Manager.git",
-                "reference": "bd0a8aa3c8a32ab663a250def2caf3d9049c1aa4"
+                "reference": "f7ef6ea81f7d6b0bd9da360049fa3579e6e93d6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sybrew/The-SEO-Framework-Extension-Manager/zipball/bd0a8aa3c8a32ab663a250def2caf3d9049c1aa4",
-                "reference": "bd0a8aa3c8a32ab663a250def2caf3d9049c1aa4",
+                "url": "https://api.github.com/repos/sybrew/The-SEO-Framework-Extension-Manager/zipball/f7ef6ea81f7d6b0bd9da360049fa3579e6e93d6d",
+                "reference": "f7ef6ea81f7d6b0bd9da360049fa3579e6e93d6d",
                 "shasum": ""
             },
             "require": {
@@ -3060,7 +3062,7 @@
                 "seo",
                 "wordpress"
             ],
-            "time": "2019-12-18T07:52:22+00:00"
+            "time": "2020-05-15T20:40:38+00:00"
         },
         {
             "name": "symfony/console",
@@ -3885,7 +3887,7 @@
         },
         {
             "name": "tightenco/collect",
-            "version": "v7.10.3",
+            "version": "v7.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tightenco/collect.git",
@@ -4056,12 +4058,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pixelcollective/s3-uploads-adapter.git",
-                "reference": "2093d5aeb58a1dc24f0fa395419ec804288043d0"
+                "reference": "36c9094e7cc17d6f16138437bcf9e445072e5ce5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pixelcollective/s3-uploads-adapter/zipball/2093d5aeb58a1dc24f0fa395419ec804288043d0",
-                "reference": "2093d5aeb58a1dc24f0fa395419ec804288043d0",
+                "url": "https://api.github.com/repos/pixelcollective/s3-uploads-adapter/zipball/36c9094e7cc17d6f16138437bcf9e445072e5ce5",
+                "reference": "36c9094e7cc17d6f16138437bcf9e445072e5ce5",
                 "shasum": ""
             },
             "require": {
@@ -4076,7 +4078,7 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "time": "2020-05-14T09:23:41+00:00"
+            "time": "2020-05-16T06:27:18+00:00"
         },
         {
             "name": "tiny-pixel/wp-performant-media",
@@ -4110,16 +4112,16 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v4.1.5",
+            "version": "v4.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "539bb6927c101a5605d31d11a2d17185a2ce2bf1"
+                "reference": "0b32505d67c1abbfa829283c86bfc0642a661bf6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/539bb6927c101a5605d31d11a2d17185a2ce2bf1",
-                "reference": "539bb6927c101a5605d31d11a2d17185a2ce2bf1",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/0b32505d67c1abbfa829283c86bfc0642a661bf6",
+                "reference": "0b32505d67c1abbfa829283c86bfc0642a661bf6",
                 "shasum": ""
             },
             "require": {
@@ -4170,7 +4172,7 @@
                 "env",
                 "environment"
             ],
-            "time": "2020-05-02T14:08:57+00:00"
+            "time": "2020-05-23T09:43:32+00:00"
         },
         {
             "name": "webonyx/graphql-php",
@@ -6016,12 +6018,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "6d4b6136f42e6aa01343294776c7be59dd5973b4"
+                "reference": "eef7ce7703782f1687c9209fcc43aa44aa7de98a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/6d4b6136f42e6aa01343294776c7be59dd5973b4",
-                "reference": "6d4b6136f42e6aa01343294776c7be59dd5973b4",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/eef7ce7703782f1687c9209fcc43aa44aa7de98a",
+                "reference": "eef7ce7703782f1687c9209fcc43aa44aa7de98a",
                 "shasum": ""
             },
             "require": {
@@ -6070,7 +6072,7 @@
                 "cli",
                 "wordpress"
             ],
-            "time": "2020-04-18T05:07:54+00:00"
+            "time": "2020-05-26T08:59:05+00:00"
         },
         {
             "name": "wp-cli/wp-cli-bundle",
@@ -6371,15 +6373,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "8.1.0",
+            "version": "8.2.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/8.1.0"
+                "reference": "tags/8.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.8.1.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.8.2.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -6425,15 +6427,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "4.7.2",
+            "version": "4.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/4.7.2"
+                "reference": "tags/4.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.4.7.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/redirection.4.8.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -7006,16 +7008,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "8.0.1",
+            "version": "8.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "31e94ccc084025d6abee0585df533eb3a792b96a"
+                "reference": "ca6647ffddd2add025ab3f21644a441d7c146cdc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/31e94ccc084025d6abee0585df533eb3a792b96a",
-                "reference": "31e94ccc084025d6abee0585df533eb3a792b96a",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/ca6647ffddd2add025ab3f21644a441d7c146cdc",
+                "reference": "ca6647ffddd2add025ab3f21644a441d7c146cdc",
                 "shasum": ""
             },
             "require": {
@@ -7066,7 +7068,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2020-02-19T13:41:19+00:00"
+            "time": "2020-05-23T08:02:54+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -7317,16 +7319,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.1.4",
+            "version": "9.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "2d7080c622cf7884992e7c3cf87853877bae8ff4"
+                "reference": "1b570cd7edbe136055bf5f651857dc8af6b829d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2d7080c622cf7884992e7c3cf87853877bae8ff4",
-                "reference": "2d7080c622cf7884992e7c3cf87853877bae8ff4",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/1b570cd7edbe136055bf5f651857dc8af6b829d2",
+                "reference": "1b570cd7edbe136055bf5f651857dc8af6b829d2",
                 "shasum": ""
             },
             "require": {
@@ -7401,7 +7403,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2020-04-30T06:32:53+00:00"
+            "time": "2020-05-22T13:54:05+00:00"
         },
         {
             "name": "roave/security-advisories",
@@ -7409,12 +7411,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "9b0501ceb2d00bea5814316c5333d513d7622ed5"
+                "reference": "e38de1df609b39d97144514d28b0804ad4daaddb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/9b0501ceb2d00bea5814316c5333d513d7622ed5",
-                "reference": "9b0501ceb2d00bea5814316c5333d513d7622ed5",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/e38de1df609b39d97144514d28b0804ad4daaddb",
+                "reference": "e38de1df609b39d97144514d28b0804ad4daaddb",
                 "shasum": ""
             },
             "conflict": {
@@ -7427,7 +7429,8 @@
                 "asymmetricrypt/asymmetricrypt": ">=0,<9.9.99",
                 "aws/aws-sdk-php": ">=3,<3.2.1",
                 "bagisto/bagisto": "<0.1.5",
-                "barrelstrength/sprout-base-email": "<3.9",
+                "barrelstrength/sprout-base-email": "<1.2.7",
+                "barrelstrength/sprout-forms": "<3.9",
                 "bolt/bolt": "<3.6.10",
                 "brightlocal/phpwhois": "<=4.2.5",
                 "buddypress/buddypress": "<5.1.2",
@@ -7454,10 +7457,10 @@
                 "doctrine/mongodb-odm": ">=1,<1.0.2",
                 "doctrine/mongodb-odm-bundle": ">=2,<3.0.1",
                 "doctrine/orm": ">=2,<2.4.8|>=2.5,<2.5.1",
-                "dolibarr/dolibarr": "<=10.0.6",
+                "dolibarr/dolibarr": "<11.0.4",
                 "dompdf/dompdf": ">=0.6,<0.6.2",
-                "drupal/core": ">=7,<7.69|>=8,<8.7.12|>=8.8,<8.8.4",
-                "drupal/drupal": ">=7,<7.69|>=8,<8.7.12|>=8.8,<8.8.4",
+                "drupal/core": ">=7,<7.70|>=8,<8.7.14|>=8.8,<8.8.6",
+                "drupal/drupal": ">=7,<7.70|>=8,<8.7.14|>=8.8,<8.8.6",
                 "endroid/qr-code-bundle": "<3.4.2",
                 "enshrined/svg-sanitize": "<0.13.1",
                 "erusev/parsedown": "<1.7.2",
@@ -7670,7 +7673,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2020-05-14T00:01:29+00:00"
+            "time": "2020-05-22T06:49:22+00:00"
         },
         {
             "name": "sebastian/code-unit",

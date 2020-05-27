@@ -3,7 +3,7 @@
     <div class="flex-col w-full p-2 md:w-1/2 mb-16">
       @isset($attr->title)
         @if($attr->title)
-          <h1 class="inline-block pr-8 font-sans text-5xl font-semibold uppercase md:pr-6 lg:pr-8 md:pb-8 md:max-w-4/5">
+          <h1 class="inline-block font-sans text-5xl font-bold uppercase pr-8 md:pr-6 lg:pr-8 md:pb-8 md:max-w-4/5 leading-none">
             {!! $attr->title !!}
           </h1>
         @endif

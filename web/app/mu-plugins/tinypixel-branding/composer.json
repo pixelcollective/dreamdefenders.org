@@ -1,0 +1,14 @@
+{
+  "name": "tiny-pixel/branding",
+  "description": "Branding for Tiny Pixel WordPress sites.",
+  "keywords": ["wordpress", "plugin", "branding"],
+  "homepage": "https://github.com/roots/roots-branding",
+  "license": "MIT",
+  "type": "wordpress-muplugin",
+  "require": {
+    "php": ">=7.2"
+  },
+  "autoload": {
+    "psr-4": { "TinyPixel\\Branding\\": "src/" }
+  }
+}

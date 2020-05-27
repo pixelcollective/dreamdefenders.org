@@ -9,5 +9,5 @@
   @include('partials.front.organize')
   @include('partials.front.squadd-up')
   @include('partials.front.freedom-papers-teaser')
-  @include('components.instagram')
+  @include('partials.instagram')
 @endsection

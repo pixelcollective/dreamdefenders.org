@@ -9,31 +9,31 @@
     <div class="flex flex-row flex-wrap flex-auto flex-grow">
       <div class="w-full h-64 overflow-hidden md:max-h-48 md:h-48 md:w-1/2 lg:w-1/3">
         <div class="relative inline-block w-full h-full">
-          <img class="absolute relative top-0 bottom-0 left-0 right-0 object-cover w-full h-full p-2" src="@asset('images/squadd-1.png')" />
+          <img class="absolute relative top-0 bottom-0 left-0 right-0 object-cover w-full h-full p-2" src="@asset('images/squadd-1.png-full.webp')" />
         </div>
       </div>
 
       <div class="w-full h-64 overflow-hidden md:max-h-48 md:h-48 md:w-1/2 lg:w-1/3">
         <div class="relative inline-block w-full h-full">
-          <img class="absolute relative top-0 bottom-0 left-0 right-0 object-cover w-full h-full p-2" src="@asset('images/squadd-2.png')" />
+          <img class="absolute relative top-0 bottom-0 left-0 right-0 object-cover w-full h-full p-2" src="@asset('images/squadd-2.png-full.webp')" />
         </div>
       </div>
 
       <div class="w-full h-64 overflow-hidden md:max-h-48 md:h-48 md:w-1/2 lg:w-1/3">
         <div class="relative inline-block w-full h-full">
-          <img class="absolute relative top-0 bottom-0 left-0 right-0 object-cover w-full h-full p-2" src="@asset('images/squadd-3.png')" />
+          <img class="absolute relative top-0 bottom-0 left-0 right-0 object-cover w-full h-full p-2" src="@asset('images/squadd-3.png-full.webp')" />
         </div>
       </div>
 
       <div class="w-full h-64 overflow-hidden md:max-h-48 md:h-48 md:w-1/2 lg:w-1/3">
         <div class="relative inline-block w-full h-full">
-          <img class="absolute relative top-0 bottom-0 left-0 right-0 object-cover w-full h-full p-2" src="@asset('images/squadd-4.png')" />
+          <img class="absolute relative top-0 bottom-0 left-0 right-0 object-cover w-full h-full p-2" src="@asset('images/squadd-4.png-full.webp')" />
         </div>
       </div>
 
       <div class="w-full h-64 overflow-hidden md:max-h-48 md:h-48 md:w-1/2 lg:w-1/3">
         <div class="relative inline-block w-full h-full">
-          <img class="absolute relative top-0 bottom-0 left-0 right-0 object-cover w-full h-full p-2" src="@asset('images/squadd-5.png')" />
+          <img class="absolute relative top-0 bottom-0 left-0 right-0 object-cover w-full h-full p-2" src="@asset('images/squadd-5.png-full.webp')" />
         </div>
       </div>
 
