@@ -3884,7 +3884,7 @@
         },
         {
             "name": "tightenco/collect",
-            "version": "v7.11.0",
+            "version": "v7.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tightenco/collect.git",
@@ -6022,12 +6022,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "6d4b6136f42e6aa01343294776c7be59dd5973b4"
+                "reference": "eef7ce7703782f1687c9209fcc43aa44aa7de98a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/6d4b6136f42e6aa01343294776c7be59dd5973b4",
-                "reference": "6d4b6136f42e6aa01343294776c7be59dd5973b4",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/eef7ce7703782f1687c9209fcc43aa44aa7de98a",
+                "reference": "eef7ce7703782f1687c9209fcc43aa44aa7de98a",
                 "shasum": ""
             },
             "require": {
@@ -6076,7 +6076,7 @@
                 "cli",
                 "wordpress"
             ],
-            "time": "2020-04-18T05:07:54+00:00"
+            "time": "2020-05-26T08:59:05+00:00"
         },
         {
             "name": "wp-cli/wp-cli-bundle",
