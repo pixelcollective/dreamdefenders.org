@@ -10,12 +10,10 @@ import {select, dispatch} from '@wordpress/data';
  */
 const disableWelcome = registerPlugin('disable-welcome', {
   render: () => {
-    const hello = () => select('core/edit-post')
-      .isFeatureActive('welcomeGuide')
-    const goodbye = () => dispatch('core/edit-post')
-      .toggleFeature('welcomeGuide')
+    select('core/edit-post').isFeatureActive('welcomeGuide')
+      && dispatch('core/edit-post').toggleFeature('welcomeGuide')
 
-    return hello() && goodbye()
+    return null
   }
 })
 
