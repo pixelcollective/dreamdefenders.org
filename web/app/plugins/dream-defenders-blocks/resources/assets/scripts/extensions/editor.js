@@ -6,12 +6,14 @@ import domReady from '@wordpress/dom-ready'
 import { registerBlockStyles, unregisterBlockStyles } from './register-styles'
 import { setupInserterCategories } from './inserter-categories'
 import './disable-block-types'
-import './disable-nux-tour'
 
-/**
- * Editor extensions
- */
+/** hosted pkgs */
+import '@tinypixelco/disable-welcome-modal'
+
 domReady(() => {
+  /**
+   * Setup inserter categories.
+   */
   setupInserterCategories({
     category: 'dream-defenders'
   })
@@ -39,7 +41,7 @@ domReady(() => {
     {
       block: 'core/quote',
       styles: ['default', 'large']
-    }
+    },
   ])
 
   /**
@@ -76,6 +78,6 @@ domReady(() => {
           label: __('Epic', 'sage')
         },
       ],
-    }
+    },
   ])
 })
