@@ -1414,6 +1414,11 @@
   resolved "https://registry.yarnpkg.com/@tannin/postfix/-/postfix-1.1.0.tgz#6071f4204ae26c2e885cf3a3f1203a9f71e3f291"
   integrity sha512-oocsqY7g0cR+Gur5jRQLSrX2OtpMLMse1I10JQBm8CdGMrDkh1Mg2gjsiquMHRtBs4Qwu5wgEp5GgIYHk4SNPw==
 
+"@tinypixelco/disable-welcome-modal@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@tinypixelco/disable-welcome-modal/-/disable-welcome-modal-1.0.0.tgz#056b7978c7f94cdeafb09fe2b05b80dbdda01983"
+  integrity sha512-K7iMWIKKsXLJkjrDl23D+lFi9m55018l9rRQ81dZfBvqoJiBhsid+ZN2I/GVQY872qSfle6k7hyJi4pgTJsvgw==
+
 "@tinypixelco/hoverfx@^0.0.2":
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/@tinypixelco/hoverfx/-/hoverfx-0.0.2.tgz#3ecabcabb8343333c1d0dd1d816e3c90e7073d05"

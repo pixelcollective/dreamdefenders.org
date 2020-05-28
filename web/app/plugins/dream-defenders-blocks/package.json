@@ -37,6 +37,7 @@
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
+    "@tinypixelco/disable-welcome-modal": "^1.0.0",
     "@wordpress/nux": "^3.16.0",
     "chroma-js": "^2.1.0",
     "cypress": "^4.7.0",
