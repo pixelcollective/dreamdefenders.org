@@ -9,6 +9,7 @@
   },
   "require": {
     "php": "^7.2",
+    "illuminate/pagination": "^7.14",
     "log1x/navi": "^1.0",
     "log1x/sage-directives": "^1.1",
     "log1x/sage-svg": "^1.0",
