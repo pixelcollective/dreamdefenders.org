@@ -2,7 +2,7 @@
 
 @section('content')
   <header class="px-4 pt-32 mx-auto md:px-0">
-    <img src="@asset('images/freedom-papers.jpg')" />
+    <img src="@asset('images/freedom-papers.jpg-full.webp')" />
   </header>
 
   <main class='container px-4 pb-32 mx-auto'>
@@ -13,7 +13,7 @@
     @endposts
 
     <div class="container mx-auto">
-      <img src="@asset('images/select-a-volume.jpg')" class="w-3/5 pb-8 mx-auto sm:px-4 md:px-24 lg:px-32 md:max-w-3/5" alt="Select a Volume" title="Select a Volume" />
+      <img src="@asset('images/select-a-volume.jpg-full.webp')" class="w-3/5 pb-8 mx-auto sm:px-4 md:px-24 lg:px-32 md:max-w-3/5" alt="Select a Volume" title="Select a Volume" />
     </div>
 
     @isset($papers)

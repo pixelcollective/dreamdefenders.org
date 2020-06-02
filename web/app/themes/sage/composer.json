@@ -2,12 +2,6 @@
   "name": "dreamdefenders/theme",
   "type": "wordpress-theme",
   "license": "MIT",
-  "repositories": [
-    {
-      "type": "git",
-      "url": "git@github.com:kellymears/sage-svg"
-    }
-  ],
   "autoload": {
     "psr-4": {
       "App\\": "app/"
@@ -15,16 +9,14 @@
   },
   "require": {
     "php": "^7.2",
-    "kellymears/sage-svg": "dev-master",
     "log1x/navi": "^1.0",
-    "log1x/pagi": "^1.0",
     "log1x/sage-directives": "^1.1",
-    "roots/acorn": "dev-master",
+    "log1x/sage-svg": "^1.0",
+    "roots/acorn": "^1.0.1",
     "tiny-pixel/acorn-instagram": "dev-master"
   },
   "require-dev": {
     "filp/whoops": "^2.5",
-    "franzl/studio": "^0.13.0",
     "squizlabs/php_codesniffer": "^3.5"
   },
   "config": {

@@ -10,6 +10,7 @@ web/app/cache
 !web/app/cache/.gitignore
 !web/app/cache/wp-rocket/.gitignore
 *.sql
+tmp
 
 # Auth
 auth.json
@@ -43,7 +44,8 @@ web/app/plugins/*
 
 # MU-Plugins
 web/app/mu-plugins/*
-!web/app/mu-plugins/cdn
+!web/app/mu-plugins/bedrock-health
+!web/app/mu-plugins/tinypixel-branding
 !web/app/mu-plugins/tiny-blocks
 !web/app/mu-plugins/tiny-blocks/*
 !web/app/mu-plugins/.gitkeep

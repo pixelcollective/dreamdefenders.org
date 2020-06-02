@@ -56,7 +56,7 @@ const RESIZABLE_Y = {
   topRight: false,
   topLeft: false,
   bottomRight: false,
-  bottomLeft: false
+  bottomLeft: false,
 };
 
 /**

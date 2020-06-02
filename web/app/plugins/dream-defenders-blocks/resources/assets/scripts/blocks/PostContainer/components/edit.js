@@ -20,6 +20,9 @@ const PostedOn = ({ date }) => {
   )
 }
 
+/**
+ * Edit: Post container
+ */
 const edit = ({ attributes, setAttributes, className, isSelected }) => {
   const { post, setPost } = usePost()
   const { title, date } = post

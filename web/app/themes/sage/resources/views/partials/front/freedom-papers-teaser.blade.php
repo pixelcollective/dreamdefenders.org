@@ -1,7 +1,7 @@
 <div class="relative flex flex-row flex-wrap justify-center pt-8 pb-32 bg-gradient-b-white-yellow md:pt-16">
     <div class="flex flex-col flex-wrap content-center justify-around w-4/5 px-4 mx-auto overflow-hidden md:flex-row">
       <div class="w-full pb-8 overflow-hidden text-center md:w-1/2 md:text-left md:pb-16">
-        <img src="@asset('images/freedom-papers-art.png')" />
+        <img src="@asset('images/freedom-papers-art.png-full.webp')" />
       </div>
 
       <div class="flex flex-col content-center self-center w-full px-2 overflow-hidden text-left align-middle md:w-1/2 md:align-end md:text-right">
@@ -15,7 +15,7 @@
       </div>
     </div>
   <div class="flex flex-col flex-wrap content-center justify-center w-1/5">
-    <img src="@asset('images/world-we-are-fighting-for.png')" class="top-0 w-3/5 mx-auto select-none md:w-1/5 sm:w-2/5 freedom-papers-two-col__world-we-are-fighting-for" />
+    <img src="@asset('images/world-we-are-fighting-for.png-full.webp')" class="top-0 w-3/5 mx-auto select-none md:w-1/5 sm:w-2/5 freedom-papers-two-col__world-we-are-fighting-for" />
   </div>
 </div>
 

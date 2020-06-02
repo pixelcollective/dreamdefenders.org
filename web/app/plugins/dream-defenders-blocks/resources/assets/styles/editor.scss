@@ -144,6 +144,38 @@
     }
   }
 
+  [data-align="full"]:not(.override),
+  [data-align="wide"]:not(.override) {
+    @apply my-12;
+  }
+
+  [data-align="wide"] {
+    margin-left: calc(-90vw/2 + 100%/2) !important;
+    margin-right: calc(-90vw/2 + 100%/2) !important;
+    width: 90vw !important;
+    max-width: 90vw !important;
+
+    img {
+      width: 90vw !important;
+    }
+  }
+
+  [data-align="full"] {
+    margin-left: calc(-100vw/2 + 100%/2) !important;
+    margin-right: calc(-100vw/2 + 100%/2) !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+
+    img {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+  }
+
+
+  @import "@dream-defenders/theme/resources/assets/styles/app/align";
+  @import "@dream-defenders/theme/resources/assets/styles/app/colors";
+  @import "@dream-defenders/theme/resources/assets/styles/app/fonts";
   @import "@dream-defenders/theme/resources/assets/styles/app/spacing";
   @import "@dream-defenders/theme/resources/assets/styles/app/lists";
   @import "@dream-defenders/theme/resources/assets/styles/app/performant-media";

@@ -8,4 +8,4 @@ path: web/wp
   ssh: web@build.dreamdefenders.tinypixel.dev:/srv/www/dreamdefenders.org/current
 
 @production:
-  ssh: web@dreamdefenders.org:/srv/www/dreamdefenders.org/current
+  ssh: web@157.230.209.152:/srv/www/dreamdefenders.org/current
