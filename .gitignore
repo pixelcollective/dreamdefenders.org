@@ -10,6 +10,7 @@ web/app/cache
 !web/app/cache/.gitignore
 !web/app/cache/wp-rocket/.gitignore
 *.sql
+*.sql.gz
 tmp
 
 # Auth
@@ -53,3 +54,5 @@ web/app/mu-plugins/*
 !web/app/mu-plugins/disallow-indexing.php
 !web/app/mu-plugins/register-theme-directory.php
 !web/app/mu-plugins/plugin-manifest
+
+*.sql

@@ -1,0 +1,30 @@
+name: dreamdefenders
+recipe: wordpress
+
+env_file:
+  - .env
+
+proxy:
+  appserver_nginx:
+    - localhost
+    - dreamdefenders.lndo.site
+  sage:
+    - localhost:3000
+
+config:
+  php: '7.4'
+  via: nginx
+  webroot: web
+  database: mariadb
+  xdebug: true
+
+services:
+  sage:
+    type: node
+    services:
+      ports:
+        - 3000:3000
+
+tooling:
+  yarn:
+    service: sage

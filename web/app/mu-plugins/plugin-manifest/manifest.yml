@@ -3,14 +3,11 @@ global:
     - admin-to-console/admin-to-console.php
     - autodescription/autodescription.php
     - disable-comments/disable-comments.php
-    - dropit/dropit.php
     - gutenberg/gutenberg.php
     - redirection/redirection.php
-    - simple-local-avatars/simple-local-avatars.php
     - soil/soil.php
     - stream/stream.php
     - the-seo-framework-extension-manager/the-seo-framework-extension-manager.php
-    - wp-user-profiles/wp-user-profiles.php
 
 development:
   enable:
