@@ -6,6 +6,4 @@
       @include('partials.content-page')
     </div>
   @endwhile
-
-  @include('components.instagram')
 @endsection
