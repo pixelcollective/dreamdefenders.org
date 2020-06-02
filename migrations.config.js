@@ -3,7 +3,7 @@ module.exports = {
     development: {
       ssl: false,
       host: 'dreamdefenders.vagrant',
-      path: require('path').resolve(__dirname, 'web/app'),
+      path: '/srv/www/dreamdefenders.org/current/web/app'
     },
     staging: {
       ssl: true,
