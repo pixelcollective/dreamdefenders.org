@@ -15,7 +15,7 @@
     <div class="flex flex-col flex-wrap px-4 mx-auto mt-0 alignfull md:flex-row" style="max-width: 1600px; margin-top: 0;">
       @while(have_posts()) @php(the_post())
         <div class="w-full p-2 md:w-1/3">
-          <a href="{!! get_the_permalink(get_id()) !!}"
+          <a href="{!! get_the_permalink(get_the_ID()) !!}"
             hoverfx hoverfx fx-elasticity="0" fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px"
             class="relative z-0 block object-contain shadow shadow-md w-100 hover:shadow-2xl transition transition-all hover:z-10">
             <img

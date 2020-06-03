@@ -10,15 +10,15 @@
     @php(the_content())
   </article>
 
-  @isset($projects)
-    @if($projects->isNotEmpty())
-      <div class="container pt-16 pb-32 mx-auto">
+  @isset($additionalPosts)
+    @if($additionalPosts->isNotEmpty())
+      <div class="container pb-32 mx-auto">
         <h2 class="text-4xl font-hairline font-bold leading-relaxed text-center font-display">
           Explore our other projects
         </h2>
 
         <div class="flex flex-col flex-wrap md:flex-row">
-          @each('components.simple-card', $projects, 'card')
+          @each('components.simple-card', $additionalPosts, 'card')
         </div>
       </div>
     @endif

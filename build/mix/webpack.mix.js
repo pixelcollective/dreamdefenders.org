@@ -12,7 +12,7 @@ const purgeWatchList = require('@dream-defenders/mix/purge.config')({
 /** app build */
 mx
   .browserSync({
-    proxy: 'https://dreamdefenders.lndo.site',
+    proxy: 'http://dreamdefenders.vagrant',
     files: purgeWatchList,
   })
   .options({

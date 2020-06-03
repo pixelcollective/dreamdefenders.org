@@ -98,8 +98,7 @@
         @endif
 
         @isset($app->actions[0]->url)
-
-          <nav class="relative flex flex-col flex-grow-0 mx-auto text-center justify-middle w-96" style="top: -0.75rem">
+          <nav class="relative flex flex-col pt-8 px-16 flex-grow-0 mx-auto text-center justify-middle w-96" style="top: -0.75rem">
             <button modal="overlay" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="px-6 py-2 mx-2 text-sm text-black uppercase bg-white border border-white rounded blend-difference" title="{!! $app->actions[0]->text !!}" aria-label="{!! $app->actions[0]->text !!}">
               <a aria-label="{!! $app->actions[0]->text !!}" href="{!! $app->actions[0]->url !!}">
                 {!! $app->actions[0]->text !!}

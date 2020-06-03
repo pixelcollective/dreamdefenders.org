@@ -17,7 +17,7 @@ class Post extends Composer
      */
     protected static $views = [
         'single',
-        'partials.content-single',
+        'partials.content-*'
     ];
 
     /**
