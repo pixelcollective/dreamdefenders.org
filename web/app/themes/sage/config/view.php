@@ -66,21 +66,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | View Composers
-    |--------------------------------------------------------------------------
-    |
-    | View composers allow data to always be passed to certain views. This can
-    | be useful when passing data to components such as hero elements,
-    | navigation, banners, etc.
-    |
-    */
-
-    'composers' => [
-        // App\Composers\Alert::class,
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
     | View Directives
     |--------------------------------------------------------------------------
     |

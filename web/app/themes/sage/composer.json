@@ -8,13 +8,11 @@
     }
   },
   "require": {
-    "php": "^7.2",
-    "illuminate/pagination": "^7.14",
+    "php": "^7.3",
     "log1x/navi": "^1.0",
     "log1x/sage-directives": "^1.1",
     "log1x/sage-svg": "^1.0",
-    "roots/acorn": "^1.0.1",
-    "tiny-pixel/acorn-instagram": "dev-master"
+    "roots/acorn": "^1.0.1"
   },
   "require-dev": {
     "filp/whoops": "^2.5",

@@ -54,8 +54,8 @@ Config::defineSet([
  */
 Config::defineSet([
     'DISABLE_WP_CRON' => true,
-    'DISALLOW_FILE_EDIT' => true,
-    'DISALLOW_FILE_MODS' => true,
+    'DISALLOW_FILE_EDIT' => Config::get('WP_ENV') !== 'development',
+    'DISALLOW_FILE_MODS' => Config::get('WP_ENV') !== 'development',
     'AUTOMATIC_UPDATER_DISABLED' => true,
 ]);
 
@@ -68,7 +68,6 @@ Config::defineSet([
     'WP_DEBUG' => Config::get('WP_ENV') == 'development',
     'WP_DEBUG_DISPLAY' => Config::get('WP_ENV') == 'development',
 ]);
-
 ini_set('display_errors', Config::get('DISPLAY_ERRORS'));
 
 /*

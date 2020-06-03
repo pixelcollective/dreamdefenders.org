@@ -16,7 +16,7 @@
 
             <div class="relative z-0 items-center justify-center w-screen py-8 mx-auto text-white bg-black lg:w-3/5 organize-form">
               <h3 data-faded class="text-center text-white">
-                Join the Squadd
+               Donate to our work.
               </h3>
 
               <div class="flex flex-col w-4/5 mx-auto text-black space-between">
@@ -25,12 +25,14 @@
                   <span data-faded>We are organizers shaping our collective destinies.<br /></span>
                   <span data-faded>We are the next generation of revolutionaries.<br /></span>
                 </p>
+
                 <p class="text-lg leading-relaxed text-center text-white">
                   <span data-faded>Join our we.<br /></span>
                   <span data-faded>Join the squadd.<br /></span>
                 </p>
+
                 <a href="https://secure.actblue.com/donate/joindd" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-bg-color="rgba(253,225,53,1)" fx-off-bg-color="rgba(255,255,255,1)" type="submit" class="py-4 my-2 text-2xl font-bold tracking-wider text-center uppercase bg-white text-black-900 font-display">
-                  Join up
+                  Donate
                 </a>
               </div>
             </div>

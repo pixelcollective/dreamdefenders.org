@@ -1,6 +1,7 @@
 <?php
 
 return [
+
     /*
     |--------------------------------------------------------------------------
     | Default Assets Manifest
@@ -36,6 +37,6 @@ return [
             'path' => get_theme_file_path('/dist'),
             'uri' => get_theme_file_uri('/dist'),
             'manifest' => get_theme_file_path('/dist/mix-manifest.json'),
-        ],
-    ],
+        ]
+    ]
 ];

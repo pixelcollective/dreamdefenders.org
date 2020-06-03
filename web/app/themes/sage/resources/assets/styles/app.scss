@@ -8,12 +8,12 @@
 /**
  * @wordpress base
  */
-@import './wordpress/colors';
-@import './wordpress/variables';
-@import './wordpress/mixins';
-@import './wordpress/breakpoints';
-@import './wordpress/animations';
-@import './wordpress/z-index';
+@import "@wordpress/base-styles/_colors";
+@import "@wordpress/base-styles/_variables";
+@import "@wordpress/base-styles/_mixins";
+@import "@wordpress/base-styles/_breakpoints";
+@import "@wordpress/base-styles/_animations";
+@import "@wordpress/base-styles/_z-index";
 
 /**
  * Application

@@ -5,9 +5,6 @@ require('laravel-mix-tweemotional')
 
 /** @dream-defenders/blocks webpack config */
 mx.setPublicPath('./dist')
-  .webpackConfig(require('@dream-defenders/mix/webpack.config')({
-    production: mx.inProduction(),
-  }))
   .tweemotional()
 
 /** @dream-defenders/blocks scripts */

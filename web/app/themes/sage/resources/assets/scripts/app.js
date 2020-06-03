@@ -1,6 +1,5 @@
 import hoverFx from '@tinypixelco/hoverfx'
 import {
-  instagram,
   nav,
   fadeObserver,
   twoPathsObserver,
@@ -51,6 +50,5 @@ window.requestAnimationFrame(() => {
    * 🧩 Components
    */
   nav(config);
-  instagram(config);
   hoverFx(document.querySelectorAll(`[hoverfx]`))
 })

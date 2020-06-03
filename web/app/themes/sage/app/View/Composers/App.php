@@ -6,6 +6,9 @@ use Log1x\Navi\Navi;
 use Roots\Acorn\View\Composer;
 use Illuminate\Support\Collection;
 
+/**
+ * Application-wide data.
+ */
 class App extends Composer
 {
     /**

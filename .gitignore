@@ -12,6 +12,7 @@ web/app/cache
 *.sql
 *.sql.gz
 tmp
+*.sh
 
 # Auth
 auth.json

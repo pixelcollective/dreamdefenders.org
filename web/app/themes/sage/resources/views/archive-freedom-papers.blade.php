@@ -8,6 +8,6 @@
       {!! get_search_form(false) !!}
     @endif
 
-    @include("partials.archive")
+    @include("partials.archive-freedom-papers")
   </main>
 @endsection
