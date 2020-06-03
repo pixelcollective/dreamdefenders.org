@@ -54,8 +54,8 @@ Config::defineSet([
  */
 Config::defineSet([
     'DISABLE_WP_CRON' => true,
-    'DISALLOW_FILE_EDIT' => Config::get('WP_ENV') !== 'development',
-    'DISALLOW_FILE_MODS' => Config::get('WP_ENV') !== 'development',
+    'DISALLOW_FILE_EDIT' => true,
+    'DISALLOW_FILE_MODS' => true,
     'AUTOMATIC_UPDATER_DISABLED' => true,
 ]);
 
@@ -77,14 +77,6 @@ Config::defineSet([
     'CONTENT_DIR' => '/app',
     'WP_CONTENT_DIR' => $web.'/app',
     'WP_CONTENT_URL' => Config::get('WP_HOME').'/app',
-]);
-
-/*
- * Define environments
- */
-Config::define('ENVIRONMENTS', [
-    'development' => 'http://dreamdefenders.vagrant',
-    'staging' => 'https://build.dreamdefenders.tinypixel.dev',
 ]);
 
 /*
