@@ -20,9 +20,9 @@
             class="relative z-0 block object-contain shadow shadow-md w-100 hover:shadow-2xl transition transition-all hover:z-10">
             <img
               class="w-100"
-              src="{!! $paper->image !!}"
-              @isset($paper->title) title="{!! $paper->title !!}" @endisset
-              @isset($paper->excerpt) alt="{!! $paper->excerpt !!}" @endisset
+              src="{!! get_the_post_thumbnail_url(get_the_ID()) !!}"
+              @if(get_the_title()) title="{!! get_the_title() !!}" @endif
+              @if(get_the_excerpt()) alt="{!! get_the_excerpt() !!}" @endif
             />
           </a>
         </div>
