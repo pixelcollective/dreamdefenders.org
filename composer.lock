@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d0eca728247a5d7d1bf1bd53ce11bdc4",
+    "content-hash": "9992196b278046b93593e09d2c21e6fd",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -2890,6 +2890,24 @@
             "time": "2020-05-23T09:43:32+00:00"
         },
         {
+            "name": "wpackagist-plugin/add-from-server",
+            "version": "3.3.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/add-from-server/",
+                "reference": "tags/3.3.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/add-from-server.3.3.3.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/add-from-server/"
+        },
+        {
             "name": "wpackagist-plugin/autodescription",
             "version": "4.0.7",
             "source": {
@@ -4955,6 +4973,5 @@
     "platform": {
         "php": ">=7.1"
     },
-    "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "platform-dev": []
 }

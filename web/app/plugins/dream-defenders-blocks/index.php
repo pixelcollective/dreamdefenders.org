@@ -77,6 +77,7 @@ add_action('init', function () {
         'rewrite' => ['slug' => 'freedom-papers'],
         'template' => [['tinypixel/freedom-paper']],
         'template_lock' => 'insert',
+        'supports' => ['thumbnail', 'title', 'author', 'revisions', 'editor']
     ]);
 
     /*
@@ -94,6 +95,7 @@ add_action('init', function () {
         'menu_icon' => 'dashicons-lightbulb',
         'public' => true,
         'rewrite' => ['slug' => 'projects'],
+        'supports' => ['thumbnail', 'title', 'author', 'revisions', 'editor']
     ]);
 });
 

@@ -33,6 +33,7 @@
     "tiny-pixel/s3-uploads-adapter": "dev-master",
     "tiny-pixel/wp-performant-media": ">=1.0.1",
     "vlucas/phpdotenv": "^4.1.0",
+    "wpackagist-plugin/add-from-server": "^3.3",
     "wpackagist-plugin/autodescription": ">=3.0.6",
     "wpackagist-plugin/gutenberg": "^8",
     "wpackagist-plugin/pdf-viewer-block": "^0.1.0",
