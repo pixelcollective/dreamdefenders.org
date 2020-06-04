@@ -21,10 +21,10 @@
         'title' => 'The Dream Defenders',
       ])
     </a>
+
     @yield('toggle-open')
   </div>
 </header>
-
 
 <header class="fixed z-50 hidden w-full overflow-hidden transition transition-opacity duration-500 ease-in-out bg-black-800 nav md:flex">
   <div class="w-full blend-hard-screent">
@@ -100,50 +100,52 @@
         @endisset
       </div>
 
-      @if ($navigation->about)
-        <div class="relative justify-center w-full mt-4 mt-8 mb-0 text-center align-middle max-w-1/2">
-          <div class="relative justify-center h-1 mx-8 mt-4 align-middle bg-white " style="height: 2px;"></div>
-          <span class="relative inline px-4 text-sm font-thin text-center text-white bg-black nav-heading md:text-md" style="top: -0.9rem">
-            About Us
-          </span>
-        </div>
+      <div class="w-full h-full p-8 mx-auto md:w-1/2">
+        @if ($navigation->about)
+          <div class="relative justify-center w-full mt-4 mt-8 mb-0 text-center align-middle max-w-1/2">
+            <div class="relative justify-center h-1 mx-8 mt-4 align-middle bg-white " style="height: 2px;"></div>
+            <span class="relative inline px-4 text-sm font-thin text-center text-white bg-black nav-heading md:text-md" style="top: -0.9rem">
+              About Us
+            </span>
+          </div>
 
-        <nav class="relative flex flex-col flex-grow-0 mx-16 mx-auto text-center justify-middle" style="top: -0.75rem">
-          @foreach ($navigation->about as $item)
-            <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="flex-grow-0 text-3xl font-bold text-white uppercase md:text-4xl font-display nav-item" href="{!! $item->url !!}">{!! $item->label !!}</a>
-          @endforeach
-        </nav>
-      @endif
+          <nav class="relative flex flex-col flex-grow-0 mx-16 mx-auto text-center justify-middle" style="top: -0.75rem">
+            @foreach ($navigation->about as $item)
+              <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="flex-grow-0 text-3xl font-bold text-white uppercase md:text-4xl font-display nav-item" href="{!! $item->url !!}">{!! $item->label !!}</a>
+            @endforeach
+          </nav>
+        @endif
 
-      @if ($navigation->vision)
-        <div class="relative justify-center w-full mt-4 mb-0 text-center align-middle max-w-1/2">
-          <div class="relative justify-center h-1 mx-8 mt-4 align-middle bg-white " style="height: 2px;"></div>
-          <span class="relative inline px-4 text-sm font-thin text-center text-white bg-black nav-heading md:text-md" style="top: -0.9rem">
-            Our Vision
-          </span>
-        </div>
+        @if ($navigation->vision)
+          <div class="relative justify-center w-full mt-4 mb-0 text-center align-middle max-w-1/2">
+            <div class="relative justify-center h-1 mx-8 mt-4 align-middle bg-white " style="height: 2px;"></div>
+            <span class="relative inline px-4 text-sm font-thin text-center text-white bg-black nav-heading md:text-md" style="top: -0.9rem">
+              Our Vision
+            </span>
+          </div>
 
-        <nav class="relative flex flex-col flex-grow-0 mx-16 mx-auto text-center justify-middle" style="top: -0.75rem">
-          @foreach ($navigation->vision as $item)
-            <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="flex-grow-0 text-3xl font-bold text-white uppercase nav-item md:text-4xl font-display" href="{!! $item->url !!}">{!! $item->label !!}</a>
-          @endforeach
-        </nav>
-      @endif
+          <nav class="relative flex flex-col flex-grow-0 mx-16 mx-auto text-center justify-middle" style="top: -0.75rem">
+            @foreach ($navigation->vision as $item)
+              <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="flex-grow-0 text-3xl font-bold text-white uppercase nav-item md:text-4xl font-display" href="{!! $item->url !!}">{!! $item->label !!}</a>
+            @endforeach
+          </nav>
+        @endif
 
-      @if ($navigation->work)
-        <div class="relative justify-center w-full mt-4 mb-0 text-center align-middle max-w-1/2">
-          <div class="relative justify-center h-1 mx-8 mt-4 align-middle bg-white " style="height: 2px;"></div>
-          <span class="relative inline px-4 text-sm font-thin text-center text-white bg-black nav-heading md:text-md" style="top: -0.9rem">
-            Our Work
-          </span>
-        </div>
+        @if ($navigation->work)
+          <div class="relative justify-center w-full mt-4 mb-0 text-center align-middle max-w-1/2">
+            <div class="relative justify-center h-1 mx-8 mt-4 align-middle bg-white " style="height: 2px;"></div>
+            <span class="relative inline px-4 text-sm font-thin text-center text-white bg-black nav-heading md:text-md" style="top: -0.9rem">
+              Our Work
+            </span>
+          </div>
 
-        <nav class="relative flex flex-col flex-grow-0 mx-16 mx-auto text-center justify-middle" style="top: -0.75rem">
-          @foreach ($navigation->work as $item)
-            <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="flex-grow-0 text-3xl font-bold text-white uppercase md:text-4xl font-display nav-item" href="{!! $item->url !!}">{!! $item->label !!}</a>
-          @endforeach
-        </nav>
-      @endif
+          <nav class="relative flex flex-col flex-grow-0 mx-16 mx-auto text-center justify-middle" style="top: -0.75rem">
+            @foreach ($navigation->work as $item)
+              <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="flex-grow-0 text-3xl font-bold text-white uppercase md:text-4xl font-display nav-item" href="{!! $item->url !!}">{!! $item->label !!}</a>
+            @endforeach
+          </nav>
+        @endif
+      </div>
     </div>
 
     <nav class="flex flex-row items-center justify-center mx-auto mt-8 text-base">
@@ -167,7 +169,6 @@
 </div>
 
 {{--
-
 <nav class="fixed z-50 flex flex-col items-center justify-between w-full overflow-hidden transition bg-transparent nav">
   <div class="container text-black">
     <div class="flex flex-row justify-between w-full">
