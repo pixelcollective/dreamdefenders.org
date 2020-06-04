@@ -59,11 +59,6 @@
     "stylelint": "^12.0.1",
     "stylelint-config-standard": "^19.0.0",
     "tailwind.macro": "^0.5.10",
-    "tailwindcss": "^1.2.0",
-    "tailwindcss-blend-mode": "^1.0.0",
-    "tailwindcss-gradients": "^2.3.1",
-    "tailwindcss-scrims": "^1.0.0",
-    "tailwindcss-transitions": "^2.1.0",
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {

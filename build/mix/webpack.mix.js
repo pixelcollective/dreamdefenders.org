@@ -10,12 +10,12 @@ mix
   .browserSync({
     proxy: 'http://dreamdefenders.vagrant',
     files: [
-      'web/app/themes/sage/resources/views/*',
-      'web/app/themes/sage/resources/views/**/*',
-      'web/app/themes/sage/resources/assets/**/*',
-      'web/app/themes/sage/app/View/**/*',
-      'web/app/plugins/dream-defenders-blocks/resources/assets/**/*',
-      'web/app/plugins/dream-defenders-blocks/resources/views/**/*'
+      './../../web/app/themes/sage/resources/views/*',
+      './../../web/app/themes/sage/resources/views/**/*',
+      './../../web/app/themes/sage/resources/assets/**/*',
+      './../../web/app/themes/sage/app/View/**/*',
+      './../../web/app/plugins/dream-defenders-blocks/resources/assets/**/*',
+      './../../web/app/plugins/dream-defenders-blocks/resources/views/**/*'
     ],
   })
   .options({

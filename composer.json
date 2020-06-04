@@ -33,15 +33,9 @@
     "tiny-pixel/s3-uploads-adapter": "dev-master",
     "tiny-pixel/wp-performant-media": ">=1.0.1",
     "vlucas/phpdotenv": "^4.1.0",
-    "wpackagist-plugin/add-from-server": "^3.3",
     "wpackagist-plugin/autodescription": ">=3.0.6",
     "wpackagist-plugin/gutenberg": "^8",
-    "wpackagist-plugin/pdf-viewer-block": "^0.1.0",
-    "wpackagist-plugin/query-monitor": "^3.3",
-    "wpackagist-plugin/rewrite-testing": ">=0.1",
-    "wpackagist-plugin/simple-page-ordering": "^2.3",
     "wpackagist-plugin/stream": "^3.2",
-    "wpackagist-plugin/user-switching": ">=1.5.0",
     "wpackagist-plugin/wp-redis": "^1.0.0"
   },
   "require-dev": {
