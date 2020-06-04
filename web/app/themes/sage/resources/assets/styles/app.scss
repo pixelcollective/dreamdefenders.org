@@ -2,7 +2,7 @@
  * @tailwind base
  */
 @import 'tailwindcss/base';
-@import './app/postflight';
+@import './app/postflight'; // override certain tw browser resets
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 

@@ -10,17 +10,11 @@
     @php(the_content())
   </article>
 
-  @isset($additionalPosts)
-    @if($additionalPosts->isNotEmpty())
-      <div class="container pb-32 mx-auto">
-        <h2 class="text-4xl font-hairline font-bold leading-relaxed text-center font-display">
-          Explore our other projects
-        </h2>
+  <div class="container pb-32 mx-auto">
+    <h2 class="text-4xl font-hairline font-bold leading-relaxed text-center font-display">
+      Explore our other projects
+    </h2>
 
-        <div class="flex flex-col flex-wrap md:flex-row">
-          @each('components.simple-card', $additionalPosts, 'card')
-        </div>
-      </div>
-    @endif
-  @endisset
+    <x-view-more type="projects" limit="8" />
+  </div>
 </div>
