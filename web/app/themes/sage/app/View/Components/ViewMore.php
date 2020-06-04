@@ -17,8 +17,10 @@ class ViewMore extends Component
     /**
      * Class constructor.
      */
-    public function __construct(string $type = 'post', int $limit = 10)
-    {
+    public function __construct(
+        string $type = 'post',
+        int $limit = 10
+    ) {
         $this->query = new WP_Query([
             'post_type' => $type,
             'posts_per_page' => $limit
@@ -44,9 +46,10 @@ class ViewMore extends Component
 
         return $posts->map(function ($post) {
             return (object) [
-                'title' => $post->post_title,
-                'excerpt' => $post->post_excerpt,
+                'title' => get_the_title($post->ID),
+                'excerpt' => get_the_excerpt($post->ID),
                 'img' => get_the_post_thumbnail_url($post->ID),
+                'href' => get_the_permalink($post->ID),
             ];
         });
     }
