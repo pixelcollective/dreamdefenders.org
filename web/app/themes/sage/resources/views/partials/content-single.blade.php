@@ -13,15 +13,6 @@
   </article>
 </div>
 
-@isset($additionalPosts)
-  @if($additionalPosts->isNotEmpty())
-    <div class="container mx-auto">
-      <h2 class="text-4xl font-hairline font-bold leading-relaxed text-center font-display">
-        Explore our other publications
-      </h2>
-    </div>
-    <div class="flex flex-col flex-wrap md:flex-row pt-8 px-12 pb-24">
-      @each('components.simple-card', $additionalPosts, 'card')
-    </div>
-  @endif
-@endisset
+<x-view-more limit="8">
+  Explore our other publications
+</x-view-more>

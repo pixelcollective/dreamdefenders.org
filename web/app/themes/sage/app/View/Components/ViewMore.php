@@ -23,7 +23,8 @@ class ViewMore extends Component
     ) {
         $this->query = new WP_Query([
             'post_type' => $type,
-            'posts_per_page' => $limit
+            'posts_per_page' => $limit,
+            'post__not_in' => [get_the_id()],
         ]);
     }
 
@@ -46,6 +47,7 @@ class ViewMore extends Component
 
         return $posts->map(function ($post) {
             return (object) [
+                'id' => $post->ID,
                 'title' => get_the_title($post->ID),
                 'excerpt' => get_the_excerpt($post->ID),
                 'img' => get_the_post_thumbnail_url($post->ID),
