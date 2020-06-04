@@ -15,9 +15,13 @@
     "start:theme": "yarn workspace @dream-defenders/theme start",
     "start:blocks": "yarn workspace @dream-defenders/blocks start",
     "dev": "cross-env NODE_ENV=development webpack --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "build": "yarn run-s build:*",
-    "build:theme": "cross-env NODE_ENV=production yarn workspace @dream-defenders/theme build",
-    "build:blocks": "cross-env NODE_ENV=production yarn workspace @dream-defenders/blocks build",
-    "build:bedrock": "cross-env NODE_ENV=production webpack --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "build": "yarn run-s build:dev:*",
+    "build:dev:theme": "cross-env NODE_ENV=development yarn workspace @dream-defenders/theme build",
+    "build:dev:blocks": "cross-env NODE_ENV=development yarn workspace @dream-defenders/blocks build",
+    "build:dev:bedrock": "cross-env NODE_ENV=development webpack --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "build:production": "yarn run-s build:production:*",
+    "build:production:theme": "cross-env NODE_ENV=production yarn workspace @dream-defenders/theme build:production",
+    "build:production:blocks": "cross-env NODE_ENV=production yarn workspace @dream-defenders/blocks build:production",
+    "build:production:bedrock": "cross-env NODE_ENV=production webpack --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   }
 }

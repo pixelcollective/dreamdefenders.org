@@ -1,19 +1,22 @@
-const mx = require('laravel-mix')
+const mix = require('laravel-mix')
+const whitelist = require('./purge.config')
 
 /** laravel-mix plugins */
 require('laravel-mix-purgecss')
 require('laravel-mix-copy-watched')
 
-/** config */
-const purgeWatchList = require('@dream-defenders/mix/purge.config')({
-  production: mx.inProduction(),
-})['purgeWatch'];
-
 /** app build */
-mx
+mix
   .browserSync({
     proxy: 'http://dreamdefenders.vagrant',
-    files: purgeWatchList,
+    files: [
+      'web/app/themes/sage/resources/views/*',
+      'web/app/themes/sage/resources/views/**/*',
+      'web/app/themes/sage/resources/assets/**/*',
+      'web/app/themes/sage/app/View/**/*',
+      'web/app/plugins/dream-defenders-blocks/resources/assets/**/*',
+      'web/app/plugins/dream-defenders-blocks/resources/views/**/*'
+    ],
   })
   .options({
     clearConsole: false,
@@ -28,7 +31,8 @@ mx
     },
   })
   .sourceMaps(false, 'source-map')
-  .inProduction() && mx.version()
+
+mix.inProduction() && mix.version()
 
 /** mix export */
-module.exports = mx
+module.exports = mix

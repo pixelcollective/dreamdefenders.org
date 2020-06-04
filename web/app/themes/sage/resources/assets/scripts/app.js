@@ -15,7 +15,7 @@ window.requestAnimationFrame(() => {
 
   const targets = {
     faded: document.querySelectorAll('[data-faded]'),
-    nav: document.querySelector('nav.nav'),
+    nav: document.querySelector('.nav'),
   }
 
   /**

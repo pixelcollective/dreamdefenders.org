@@ -18,51 +18,48 @@ mx.inProduction()
     'animejs',
     'headroom.js',
     '@tinypixelco/hoverfx',
-  ])
-
-mx.purgeCss({
-  enabled: mx.inProduction(),
-  globs: [
-    'resources/views/*.blade.php',
-    'resources/views/**/*.blade.php',
-    'resources/assets/scripts/*.js',
-    'resources/assets/scripts/**/*.js',
-    'resources/assets/styles/*.css',
-    'resources/assets/styles/*.scss',
-    'resources/assets/styles/**/*.css',
-    'resources/assets/styles/**/*.scss',
-    '../../plugins/dream-defenders-blocks/resources/assets/scripts/*.js',
-    '../../plugins/dream-defenders-blocks/resources/assets/scripts/**/*.js',
-    '../../plugins/dream-defenders-blocks/resources/assets/scripts/blocks/*.js',
-    '../../plugins/dream-defenders-blocks/resources/assets/scripts/blocks/**/*.js',
-    '../../plugins/dream-defenders-blocks/resources/assets/styles/*.js',
-    '../../plugins/dream-defenders-blocks/resources/assets/styles/**/*.js',
-    '../../plugins/dream-defenders-blocks/resources/views/*.blade.php',
-    '../../plugins/dream-defenders-blocks/resources/views/**/*.blade.php',
-  ],
-  whitelist: [
-    'rtl',
-    'home',
-    'blog',
-    'archive',
-    'date',
-    'error404',
-    'logged-in',
-    'admin-bar',
-    'no-customize-support',
-    'custom-background',
-    'wp-custom-logo',
-    'alignnone',
-    'alignright',
-    'alignleft',
-    'wp-caption',
-    'wp-caption-text',
-    'screen-reader-text',
-    'comment-list',
-  ],
-  whitelistPatterns: require('@dream-defenders/mix/purge.config')(),
-  whitelistPatternsChildren: require('@dream-defenders/mix/purge.config')(),
-})
+  ]).purgeCss({
+    globs: [
+      'resources/views/*.blade.php',
+      'resources/views/**/*.blade.php',
+      'resources/assets/scripts/*.js',
+      'resources/assets/scripts/**/*.js',
+      'resources/assets/styles/*.css',
+      'resources/assets/styles/*.scss',
+      'resources/assets/styles/**/*.css',
+      'resources/assets/styles/**/*.scss',
+      '../../plugins/dream-defenders-blocks/resources/assets/scripts/*.js',
+      '../../plugins/dream-defenders-blocks/resources/assets/scripts/**/*.js',
+      '../../plugins/dream-defenders-blocks/resources/assets/scripts/blocks/*.js',
+      '../../plugins/dream-defenders-blocks/resources/assets/scripts/blocks/**/*.js',
+      '../../plugins/dream-defenders-blocks/resources/assets/styles/*.js',
+      '../../plugins/dream-defenders-blocks/resources/assets/styles/**/*.js',
+      '../../plugins/dream-defenders-blocks/resources/views/*.blade.php',
+      '../../plugins/dream-defenders-blocks/resources/views/**/*.blade.php',
+    ],
+    whitelist: [
+      'rtl',
+      'home',
+      'blog',
+      'archive',
+      'date',
+      'error404',
+      'logged-in',
+      'admin-bar',
+      'no-customize-support',
+      'custom-background',
+      'wp-custom-logo',
+      'alignnone',
+      'alignright',
+      'alignleft',
+      'wp-caption',
+      'wp-caption-text',
+      'screen-reader-text',
+      'comment-list',
+    ],
+    whitelistPatterns: require('@dream-defenders/mix/purge.config'),
+    whitelistPatternsChildren: require('@dream-defenders/mix/purge.config'),
+  })
 
 /** @dream-defenders/theme scripts */
 mx.js(script`app`, 'work/scripts');
@@ -71,6 +68,7 @@ mx.js(script`app`, 'work/scripts');
 mx.sass(style`app.scss`, 'work/styles/client-theme.css')
 
 /** @dream-defenders/theme static assets */
-mx.copyWatched('resources/assets/images/**', 'dist/images')
+mx.inProduction()
+  && mx.copyWatched('resources/assets/images/**', 'dist/images')
   .copyWatched('resources/assets/fonts/**', 'dist/fonts')
   .copyWatched('resources/assets/svg/**', 'dist/svg')

@@ -3,19 +3,8 @@ const sharp = require('sharp')
 const globby = require('globby')
 const {Observable, from} = require('rxjs')
 const {concatMap} = require('rxjs/operators')
-const pino = require('pino')
-const prettifier = require('pino-pretty')
 
-/**
- * Logger util
- */
-const logger = pino({
-  sync: false,
-  prettyPrint: {
-    levelFirst: true,
-  },
-  prettifier,
-})
+const logger = require('./logger')
 
 /**
  * Media sources
@@ -109,54 +98,13 @@ const process = async sources => {
          */
         try {
           await sharp(tmp(img))
-            [sharpHandler(img)](
-              options[`${sharpHandler(img)}`]
-            )
+            [sharpHandler(img)](options[`${sharpHandler(img)}`])
             .resize(options.resize)
             .toFile(img)
 
-          logger.info(`[${sharpHandler(img)}] medium ${img.replace(__dirname, '')}`)
-        } catch (e) {
-          logger.error(e)
-        }
-
-        /**
-         * Webp small
-         */
-        try {
-          await sharp(tmp(img))
-            .resize(50)
-            .toFormat('webp')
-            .toFile(appendName(img, '-small.webp'))
-
-          logger.info(`[webp] small ${img.replace(__dirname, '')}`)
-        } catch (e) {
-          logger.error(e)
-        }
-
-        /**
-         * Webp medium
-         */
-        try {
-          await sharp(tmp(img))
-            .resize(100)
-            .toFormat('webp')
-            .toFile(appendName(img, '-med.webp'))
-
-          logger.info(`[webp] medium ${img.replace(__dirname, '')}`)
-        } catch (e) {
-          logger.error(e)
-        }
-
-        /**
-         * Webp full
-         */
-        try {
-          await sharp(tmp(img))
-            .toFormat('webp')
-            .toFile(appendName(img, '-full.webp'))
-
-          logger.info(`[webp] full ${img.replace(__dirname, '')}`)
+          logger.info(
+            `[${sharpHandler(img)}] medium ${img.replace(__dirname, '')}`
+          )
         } catch (e) {
           logger.error(e)
         }

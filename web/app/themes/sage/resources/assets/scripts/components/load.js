@@ -39,7 +39,7 @@
     callback_loaded: null,
     callback_error: null,
     callback_finish: null,
-    use_native: false
+    use_native: false,
   };
 
   var getInstanceSettings = customSettings => {
