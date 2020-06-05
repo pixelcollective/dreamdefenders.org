@@ -1,14 +1,17 @@
 version: 2.1
 
 orbs:
-  tiller-circleci: itinerisltd/tiller-circleci@0.5
+  tiller-circleci: itinerisltd/tiller-circleci@0.8
   sentry-cli: picturepipe/sentry-cli@1.1.1
   cypress: cypress-io/cypress@1
 
 executors:
   php-73:
     docker:
-      - image: circleci/php:7.3-stretch
+      - image: circleci/php:7.4-stretch
+  default:
+    docker:
+      - image: 'itinerisltd/tiller-circleci:node-12'
 
 workflows:
   deploy:
