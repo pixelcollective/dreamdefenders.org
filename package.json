@@ -11,30 +11,17 @@
   ],
   "private": true,
   "scripts": {
-    "start": "yarn run npm-run-all start:*",
+    "start": "yarn run-s start:*",
     "start:theme": "yarn workspace @dream-defenders/theme start",
     "start:blocks": "yarn workspace @dream-defenders/blocks start",
     "dev": "cross-env NODE_ENV=development webpack --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "build": "yarn run npm-run-all build:*",
-    "build:theme": "yarn workspace @dream-defenders/theme build",
-    "build:blocks": "yarn workspace @dream-defenders/blocks build",
-    "build:bedrock": "cross-env NODE_ENV=production webpack --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "all": "cross-env NODE_ENV=production webpack --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
-  },
-  "devDependencies": {
-    "chalk": "^4.0.0",
-    "chroma-js": "^2.1.0",
-    "concurrently": "^5.0.2",
-    "cypress": "^4.5.0",
-    "cypress-slack-reporter": "^0.8.0",
-    "fs-extra": "^9.0.0",
-    "globby": "^11.0.0",
-    "graphql-request": "^1.8.2",
-    "pino": "^6.2.1",
-    "pino-pretty": "^4.0.0",
-    "pino-tiny": "^0.1.1",
-    "request": "^2.88.2",
-    "rxjs": "^6.5.5",
-    "sharp": "^0.25.2"
+    "build": "yarn run-s build:dev:*",
+    "build:dev:theme": "cross-env NODE_ENV=development yarn workspace @dream-defenders/theme build",
+    "build:dev:blocks": "cross-env NODE_ENV=development yarn workspace @dream-defenders/blocks build",
+    "build:dev:bedrock": "cross-env NODE_ENV=development webpack --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "build:production": "yarn run-s build:production:*",
+    "build:production:theme": "cross-env NODE_ENV=production yarn workspace @dream-defenders/theme build:production",
+    "build:production:blocks": "cross-env NODE_ENV=production yarn workspace @dream-defenders/blocks build:production",
+    "build:production:bedrock": "cross-env NODE_ENV=production webpack --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   }
 }

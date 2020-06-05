@@ -120,6 +120,14 @@ return [
     */
 
     'providers' => [
+        /**
+         * Package Service Providers
+         */
+        // ExamplePackage\Providers\ExamplePackageServiceProvider::class,
+
+        /**
+         * Application Service Providers
+         */
         App\Providers\ThemeServiceProvider::class,
     ],
 

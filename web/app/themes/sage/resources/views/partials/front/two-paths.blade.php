@@ -1,7 +1,7 @@
 <div class="hidden bg-black md:block">
   <div class="flex flex-col justify-around bg-black pointer-events-none lg:flex-row">
     <div class="w-1/4">
-      <img class="object-contain object-fit" src="@asset('images/waves-left.png-full.webp')" />
+      <img class="object-contain object-fit" src="@asset('images/waves-left.png')" />
     </div>
 
     <div class="relative flex flex-col flex-wrap justify-center w-1/2 mx-auto align-middle">
@@ -14,7 +14,7 @@
     </div>
 
     <div class="w-1/4">
-      <img src="@asset('images/waves-right.png-full.webp')" class="object-contain object-fit" />
+      <img src="@asset('images/waves-right.png')" class="object-contain object-fit" />
     </div>
   </div>
 

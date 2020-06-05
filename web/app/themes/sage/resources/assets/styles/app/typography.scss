@@ -29,6 +29,13 @@ h6 {
   @apply leading-none;
 }
 
+h1,
+h2 {
+  strong {
+    @apply font-bold;
+  }
+}
+
 p,
 ol,
 ul,
@@ -44,7 +51,7 @@ p,
 ul,
 ol,
 table {
-  @apply text-base;
+  @apply text-lg;
   @apply text-gray-900;
 }
 
@@ -90,8 +97,6 @@ li {
       @apply duration-500;
       @apply ease-in-out;
       @apply bg-blue-500;
-      @apply transform;
-      @apply -translate-y-1;
     }
   }
 }

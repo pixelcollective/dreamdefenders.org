@@ -4,7 +4,7 @@
       @if(isset($image->sizes) && is_array($image->sizes) && !empty($image->sizes))
         @foreach(array_reverse($image->sizes) as $src)
           <source
-            srcset="{!! $src['url'] !!}-full.webp"
+            srcset="{!! $src['url'] !!}"
             sizes="(min-width: {!! $src['width'] !!}px)"
           />
         @endforeach
@@ -20,7 +20,7 @@
         @endif
 
         @if(isset($image->sizes) && is_array($image->sizes) && !empty($image->sizes))
-          srcset="@foreach($image->sizes as $src) {!! "{$src['url']}-full.webp {$src['width']}w, "  !!} @endforeach"
+          srcset="@foreach($image->sizes as $src) {!! "{$src['url']} {$src['width']}w, "  !!} @endforeach"
           sizes="@foreach($image->sizes as $src) (min-width: {!! $src['width'] !!}px) {!! $src['width'] !!}px, @endforeach"
         @endif
       />

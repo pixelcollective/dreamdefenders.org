@@ -6,7 +6,8 @@
     "dev": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=../../../../node_modules/laravel-mix/setup/webpack.config.js",
     "start": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=../../../../node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=../../../../node_modules/laravel-mix/setup/webpack.config.js",
-    "build": "cross-env NODE_ENV=production webpack --no-progress --hide-modules  --config=../../../../node_modules/laravel-mix/setup/webpack.config.js"
+    "build": "cross-env NODE_ENV=development webpack --no-progress --hide-modules  --config=../../../../node_modules/laravel-mix/setup/webpack.config.js",
+    "build:production": "cross-env NODE_ENV=production webpack --no-progress --hide-modules  --config=../../../../node_modules/laravel-mix/setup/webpack.config.js"
   },
   "devDependencies": {
     "@babel/plugin-syntax-object-rest-spread": "^7.2.0",
@@ -40,10 +41,6 @@
     "@tinypixelco/disable-welcome-modal": "^1.0.0",
     "@wordpress/nux": "^3.16.0",
     "chroma-js": "^2.1.0",
-    "cypress": "^4.7.0",
-    "cypress-slack-reporter": "^0.8.0",
-    "pino": "^6.3.0",
-    "react-extras": "^1.0.1",
-    "sharp": "^0.25.3"
+    "react-extras": "^1.0.1"
   }
 }

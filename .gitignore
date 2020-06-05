@@ -12,6 +12,11 @@ web/app/cache
 *.sql
 *.sql.gz
 tmp
+**/*.sh
+db/*
+s3/*
+media-cleanup
+.media-cleanup.bak
 
 # Auth
 auth.json

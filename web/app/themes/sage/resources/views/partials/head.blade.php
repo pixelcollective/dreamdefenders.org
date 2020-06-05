@@ -5,12 +5,8 @@
   <meta name="application-name" content="{!! $app->site->name !!}">
   <meta name="apple-mobile-web-app-title" content="DD">
   <meta name="theme-color" content="#fde135">
-  <meta name="msapplication-navbutton-color" content="#fde135">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="msapplication-starturl" content="{!! $app->site->url !!}">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="manifest" href="{!! $app->manifest->json !!}">
-  <link rel="apple-touch-icon" href="{!! $app->manifest->apple_touch_icon !!}">
   @php(wp_head())
 </head>

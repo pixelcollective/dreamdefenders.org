@@ -6,7 +6,7 @@
     "extends @wordpress/browserslist-config"
   ],
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --no-progress --hide-modules --config=../../../../node_modules/laravel-mix/setup/webpack.config.js",
+    "build": "webpack --no-progress --hide-modules --config=../../../../node_modules/laravel-mix/setup/webpack.config.js",
     "build:production": "cross-env NODE_ENV=production run-s clean mix:production",
     "start": "cross-env NODE_ENV=development run-s \"mix -- --watch\"",
     "hot": "cross-env NODE_ENV=development run-s build mix:hot",
@@ -26,19 +26,30 @@
     "translate:js": "wp i18n make-json ./resources/languages --no-purge --pretty-print"
   },
   "devDependencies": {
+    "@babel/core": "^7.10.2",
     "@babel/plugin-syntax-dynamic-import": "^7.8",
     "@wordpress/babel-preset-default": "^4.8.0",
+    "@wordpress/base-styles": "^1.9.0",
+    "@wordpress/block-library": "^2.14.1",
     "@wordpress/browserslist-config": "^2.6.0",
+    "@wordpress/components": "^9.2.1",
+    "@wordpress/dom-ready": "^2.5.1",
+    "@wordpress/edit-post": "^3.13.1",
+    "@wordpress/postcss-themes": "^2.4.0",
     "babel-eslint": "^10.0.3",
     "browser-sync": "^2.26.7",
     "browser-sync-webpack-plugin": "^2.0.1",
     "cross-env": "^6.0.3",
     "eslint": "^6.8.0",
     "eslint-plugin-import": "^2.20.0",
-    "laravel-mix": "^5.0.1",
+    "laravel-mix": "^5.0.4",
     "laravel-mix-copy-watched": "^2.2.2",
     "laravel-mix-purgecss": "^4.2.0",
+    "lodash": "^4.17.15",
     "npm-run-all": "^4.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-with-direction": "^1.3.1",
     "rimraf": "^3.0",
     "sass": "^1.24.4",
     "sass-loader": "^8.0.2",
@@ -49,22 +60,13 @@
     "tailwindcss-gradients": "^2.3.1",
     "tailwindcss-scrims": "^1.0.0",
     "tailwindcss-transitions": "^2.1.0",
-    "vue-template-compiler": "^2.6.10",
-    "workbox-webpack-plugin": "^5.0.0"
+    "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
     "@tinypixelco/hoverfx": "^0.0.2",
-    "@wordpress/block-library": "^2.14.1",
-    "@wordpress/components": "^9.2.1",
-    "@wordpress/dom-ready": "^2.5.1",
-    "@wordpress/edit-post": "^3.13.1",
     "animejs": "^3.1.0",
     "headroom.js": "^0.10.4",
     "intersection-observer": "^0.7.0",
-    "lodash": "^4.17.15",
-    "lozad": "^1.14.0",
-    "workbox-expiration": "^5.0.0",
-    "workbox-routing": "^5.0.0",
-    "workbox-strategies": "^5.0.0"
+    "lozad": "^1.14.0"
   }
 }

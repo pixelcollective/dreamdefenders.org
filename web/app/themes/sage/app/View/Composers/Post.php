@@ -3,11 +3,12 @@
 namespace App\View\Composers;
 
 use Illuminate\Support\Collection;
+use Roots\Acorn\View\Composer;
 
 /**
  * Post.
  */
-class Post extends BaseComposer
+class Post extends Composer
 {
     /**
      * List of views served by this composer.
@@ -16,7 +17,7 @@ class Post extends BaseComposer
      */
     protected static $views = [
         'single',
-        'partials.content-single',
+        'partials.content-*'
     ];
 
     /**
@@ -88,14 +89,14 @@ class Post extends BaseComposer
     {
         return Collection::make((new \WP_Query([
             'post_type' => 'post',
-            'post__not_in' => $this->excluding(),
+            'post__not_in' => [get_the_ID()],
             'posts_per_page' => 8,
             'orderby' => 'menu_order',
         ]))->get_posts())->map(function ($post) {
             return (object) [
                 'id' => $post->ID,
                 'title' => $post->post_title,
-                'excerpt' => $this->excerpt($post),
+                'excerpt' => get_the_excerpt($post->ID),
                 'url' => "/{$post->post_name}",
                 'image' => get_the_post_thumbnail_url($post->ID),
             ];

@@ -65,7 +65,7 @@ add_action('init', function () {
      */
     register_post_type('freedom-papers', [
         'capability_type' => 'post',
-        'has_archive' => false,
+        'has_archive' => true,
         'show_in_rest' => true,
         'labels' => [
             'name' => __('Freedom Papers', 'sage'),
@@ -77,6 +77,7 @@ add_action('init', function () {
         'rewrite' => ['slug' => 'freedom-papers'],
         'template' => [['tinypixel/freedom-paper']],
         'template_lock' => 'insert',
+        'supports' => ['thumbnail', 'title', 'author', 'revisions', 'editor']
     ]);
 
     /*
@@ -84,7 +85,7 @@ add_action('init', function () {
      */
     register_post_type('projects', [
         'capability_type' => 'post',
-        'has_archive' => false,
+        'has_archive' => true,
         'show_in_rest' => true,
         'labels' => [
             'name' => __('Projects', 'sage'),
@@ -94,6 +95,7 @@ add_action('init', function () {
         'menu_icon' => 'dashicons-lightbulb',
         'public' => true,
         'rewrite' => ['slug' => 'projects'],
+        'supports' => ['thumbnail', 'title', 'author', 'revisions', 'editor']
     ]);
 });
 
@@ -101,8 +103,7 @@ add_action('init', function () {
  * Filter inserter categories
  */
 add_filter('block_categories', function (
-    array $categories,
-    \WP_Post $post
+    array $categories
 ) {
     $categories = Collection::make($categories);
 

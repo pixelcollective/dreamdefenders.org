@@ -21,9 +21,9 @@
         {!! get_the_excerpt() !!}
       </div>
 
-      @button(['url' => get_the_permalink()])
+      <a href="{!! get_the_permalink()!!}" role="link" class="px-4 py-2 text-gray-900 bg-transparent border border-gray-900 shadow hover:bg-gray-900 hover:text-white radius-sm hover:shadow-lg hover:border-transparent">
         See more
-      @endbutton
+      </a>
     </div>
   </div>
 </article>

@@ -68,7 +68,6 @@ Config::defineSet([
     'WP_DEBUG' => Config::get('WP_ENV') == 'development',
     'WP_DEBUG_DISPLAY' => Config::get('WP_ENV') == 'development',
 ]);
-
 ini_set('display_errors', Config::get('DISPLAY_ERRORS'));
 
 /*
@@ -78,14 +77,6 @@ Config::defineSet([
     'CONTENT_DIR' => '/app',
     'WP_CONTENT_DIR' => $web.'/app',
     'WP_CONTENT_URL' => Config::get('WP_HOME').'/app',
-]);
-
-/*
- * Define environments
- */
-Config::define('ENVIRONMENTS', [
-    'development' => 'http://dreamdefenders.vagrant',
-    'staging' => 'https://build.dreamdefenders.tinypixel.dev',
 ]);
 
 /*

@@ -10,8 +10,4 @@
   <main class="container px-4 pb-32 mx-auto">
     @include('partials.archive')
   </main>
-
-  <div class="flex flex-col">
-    @include('components.pagination')
-  </div>
 @endsection

@@ -4,169 +4,165 @@ import Headroom from 'headroom.js'
 import { disableScroll, enableScroll } from './../util'
 
 /**
- * Site navigation
- */
-export default () => {
-  const { sage }  = window,
-        navEl     = document.querySelector(`nav.nav`),
-        toggleEl  = document.querySelector(`[nav-toggle]`),
-        overlayEl = document.querySelector(`.${toggleEl.getAttribute(`toggle-target`)}`),
-        navItems  = document.querySelectorAll(`.nav-item`)
-
-  /** Collapse overlay nav */
-  overlayEl.style.height = 0;
-  overlayEl.style.opacity = 0;
-
-  /** nav items */
-  navItems.forEach(el => {
-    el.style.opacity = 0;
-    el.style.transform = `translateY(50px)`;
-
-    return el;
-  })
-
-  /** Set initial topbar background  */
-  navEl.style.backgroundColor = (
-    sage.isPage || sage.isFrontPage
-      ? `rgba(0, 0, 0, 0.8)`
-      : `rgba(255, 255, 255, 1)`
-  )
-
-  /** Initialize listener for menu clicks */
-  toggleEl.addEventListener(`click`, () => {
-    toggleAction(sage, navEl, toggleEl, overlayEl)
-  })
-
-  scroll(navEl)
-}
-
-/**
- * Set toggle state
- */
-const setToggle = target => {
-  target.setAttribute(
-    `nav-toggle`,
-    isToggled(target)
-      ? `off`
-      : `on`
-  )
-
-  return target.getAttribute(`nav-toggle`)
-}
-
-/**
- * Return true if overlay is toggled
- */
-const isToggled = target => {
-  return target.getAttribute(`nav-toggle`) == `on`
-}
-
-/**
- * Toggle overlay menu
- */
-const toggleAction = (sage, navEl, toggleEl, overlayEl) => {
-  setToggle(toggleEl)
-
-  const toggled = isToggled(toggleEl)
-
-  toggled ? disableScroll() : enableScroll()
-  toggled ? setIcon('close') : setIcon('open')
-
-  anime({
-    targets:  overlayEl,
-    height:   toggled ? [`0`, `100vh`] : [`100vh`, `0`],
-    opacity:  toggled ? [0, 100] : [100, 0],
-    duration: 300,
-    elasticity: 0,
-    easing: `easeInOutSine`,
-    complete: () => {
-      anime({
-        targets: document.querySelectorAll('nav.nav .nav-item'),
-        easing: 'easeOutQuint',
-        translateY: toggled ? 0 : 50,
-        opacity: toggled ? 1 : 0,
-        delay: anime.stagger(30, { start: 20 }),
-      })
-    },
-  })
-
-  anime({
-    targets:  navEl,
-    backgroundColor: [
-      toggled
-        ? `rgba(0,0,0,1)`
-        : sage.isPage || sage.isFrontPage
-          ? `rgba(0,0,0,1)`
-          : `rgba(255,255,255,1)`,
-    ],
-    duration: 400,
-    easing: `easeInOutSine`,
-    elasticity: 0,
-  })
-}
-
-/**
- * Animate overlay toggle icon
- */
-const setIcon = state => {
-  const icons   = document.querySelectorAll(`.menu-icon`),
-        newIcon = document.querySelector(`.menu-icon-${state}`)
-
-  anime({
-    targets: icons,
-    height: 0,
-    width: 0,
-    opacity: [1, 0.5],
-    rotate: '-180deg',
-    easing: `easeInOutSine`,
-    duration: 300,
-    elasticity: 0,
-  })
-
-  anime({
-    targets: newIcon,
-    height: '26',
-    width: '26',
-    rotate: '-0deg',
-    opacity: [0, 1],
-    easing: `easeInOutSine`,
-    duration: 300,
-    elasticity: 0,
-  })
-}
-
-/**
  * Navbar scroll animation
  */
-const scroll = nav => {
+const doHeadroom = nav => {
   const animateHeadroom = params => {
     anime({
       targets: nav,
       duration: 400,
-      easing: `easeInQuart`,
-      transformOrigin: `top`,
+      easing: 'easeInQuart',
+      transformOrigin: 'top',
       ...params,
     })
   }
 
   const onPin = () => {
     animateHeadroom({
-      backgroundColor: `rgba(0, 0, 0, 0.8)`,
-      translateY: `0px`,
+      backgroundColor: 'rgba(0, 0, 0, 0.8)',
+      translateY: '0px',
     })
   }
 
   const onUnpin = () => {
     animateHeadroom({
-      backgroundColor: `rgba(0, 0, 0, 0.1)`,
+      backgroundColor: 'rgba(0, 0, 0, 0.1)',
       translateY: `-${nav.offsetHeight}px`,
     })
   }
 
-  (new Headroom(nav, {
+  const headroom = new Headroom(nav, {
     offset: nav.offsetHeight,
     tolerance: 5,
     onPin,
     onUnpin,
-  })).init()
+  })
+
+  headroom.init()
+}
+
+/**
+ * Navigation
+ */
+export default () => {
+  const { sage }  = window
+  const navEl     = document.querySelector('.nav')
+  const underNav = document.querySelector('.lower-nav')
+  const overlay = document.querySelector('.nav-overlay')
+  const overlayNavEls = document.querySelectorAll('.nav-overlay .nav-item')
+
+  /** Headroom */
+  navEl && doHeadroom(navEl)
+
+  /** Bounce early if no overlay */
+  if (! overlay) return
+
+  /** Set initial state. */
+  overlay.style.height = 0
+  overlay.style.opacity = 0
+
+  /** Set initialk overlay nav item state */
+  overlayNavEls.forEach(el => {
+    el.style.opacity = 0;
+    el.style.transform = 'translateY(50px)';
+  })
+
+  /** Overlay toggles */
+  const toggles = [
+    ...document.querySelectorAll('[nav-toggle="open"]'),
+    ...document.querySelectorAll('[nav-toggle="close"]'),
+  ]
+
+  /** Handle all the toggles */
+  toggles && toggles.forEach(toggle => {
+    toggle.hasAttribute('nav-toggle') &&
+    toggle.addEventListener('click', () => {
+      toggle.getAttribute('nav-toggle') == 'open'
+        ? openOverlay({toggles})
+        : closeOverlay({toggles})
+    })
+  })
+
+  /**
+   * Open overlay
+   */
+  const openOverlay = ({toggles}) => {
+    disableScroll()
+
+    toggles.forEach(toggle => toggle.setAttribute('nav-toggle', 'close'))
+    anime({
+      targets: underNav,
+      opacity: 0,
+      duration: 300,
+      delay: anime.stagger(30, { start: 20 }),
+    })
+
+    anime({
+      targets: overlay,
+      height: ['0', '100vh'],
+      opacity: [0, 100],
+      duration: 300,
+      elasticity: 0,
+      easing: 'easeInOutSine',
+      complete: () => {
+        anime({
+          targets: overlayNavEls,
+          easing: 'easeOutQuint',
+          translateY: 0,
+          opacity: 1,
+          delay: anime.stagger(30, { start: 20 }),
+        })
+      },
+    })
+
+    anime({
+      targets: navEl,
+      backgroundColor: ['rgba(0,0,0,1)'],
+      duration: 400,
+      easing: 'easeInOutSine',
+      elasticity: 0,
+    })
+  }
+
+  /**
+   * Close overlay
+   */
+  const closeOverlay = ({toggles}) => {
+    enableScroll()
+
+    toggles.forEach(toggle => toggle.setAttribute('nav-toggle', 'open'))
+
+    anime({
+      targets: underNav,
+      opacity: 100,
+      duration: 300,
+      delay: anime.stagger(30, { start: 20 }),
+    })
+
+    anime({
+      targets: overlay,
+      height: ['100vh', '0'],
+      opacity: [100, 0],
+      duration: 300,
+      elasticity: 0,
+      easing: 'easeInOutSine',
+      complete: () => {
+        anime({
+          targets: overlayNavEls,
+          easing: 'easeOutQuint',
+          translateY: 50,
+          opacity: 0,
+          delay: anime.stagger(30, { start: 20 }),
+        })
+      },
+    })
+
+    anime({
+      targets: navEl,
+      backgroundColor: ['rgba(0,0,0,1)'],
+      duration: 400,
+      easing: 'easeInOutSine',
+      elasticity: 0,
+    })
+  }
 }

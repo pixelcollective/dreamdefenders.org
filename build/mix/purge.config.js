@@ -1,6 +1,6 @@
 /**
  * PurgeCSS whitelist */
-module.exports = () => ([
+module.exports = [
   /wp-block-gallery/,
   /blocks-gallery-.?/,
   /wp-block-.?/,
@@ -29,4 +29,4 @@ module.exports = () => ([
   /^tax-(.*)?$/,
   /^term-(.*)?$/,
   /^(.*)?-?paged(-.*)?$/,
-])
+]
