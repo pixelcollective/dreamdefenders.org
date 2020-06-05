@@ -75,7 +75,7 @@
 
         @isset($app->actions[1]->url)
           <button modal="overlay" hoverfx fx-duration="800"  class="px-6 py-2 mx-2 text-sm text-white uppercase bg-transparent border border-white rounded" title="{!! $app->actions[0]->text !!}" aria-label="{!! $app->actions[0]->text !!}">
-            <a aria-label="{!! $app->actions[0]->text !!}" href="{!! $app->actions[0]->url !!}">
+            <a aria-label="{!! $app->actions[1]->text !!}" href="{!! $app->actions[1]->url !!}">
               {!! $app->actions[0]->text !!}
             </a>
           </button>
