@@ -54,10 +54,10 @@
     "sass": "^1.24.4",
     "sass-loader": "^8.0.2",
     "stylelint": "^13.6.0",
-    "stylelint-config-standard": "^19.0.0",
+    "stylelint-config-standard": "^20.0.0",
     "tailwindcss": "^1.2.0",
     "tailwindcss-blend-mode": "^1.0.0",
-    "tailwindcss-gradients": "^2.3.1",
+    "tailwindcss-gradients": "^3.0.0",
     "tailwindcss-scrims": "^1.0.0",
     "tailwindcss-transitions": "^2.1.0",
     "vue-template-compiler": "^2.6.10"
@@ -65,7 +65,7 @@
   "dependencies": {
     "@tinypixelco/hoverfx": "^0.0.2",
     "animejs": "^3.1.0",
-    "headroom.js": "^0.10.4",
+    "headroom.js": "^0.11.0",
     "intersection-observer": "^0.7.0",
     "lozad": "^1.14.0"
   }
