@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  tiller-circleci: itinerisltd/tiller-circleci@0.5
+  tiller-circleci: itinerisltd/tiller-circleci@0.8
   sentry-cli: picturepipe/sentry-cli@1.1.1
   cypress: cypress-io/cypress@1
 
@@ -31,8 +31,6 @@ workflows:
           trellis_repo: 'git@github.com:pixelcollective/trellis.git'
           site_env: staging
           site_name: dreamdefenders.org
-          executor: tiller-circleci/ansible-28
-          vault_password: VAULT_PASSWORD
           requires:
             - hold
           filters:
@@ -47,8 +45,6 @@ workflows:
           trellis_repo: 'git@github.com:pixelcollective/trellis.git'
           site_env: production
           site_name: dreamdefenders.org
-          executor: tiller-circleci/ansible-28
-          vault_password: VAULT_PASSWORD
           requires:
             - hold
           filters:
