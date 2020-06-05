@@ -44,7 +44,7 @@
     "eslint-plugin-import": "^2.20.0",
     "laravel-mix": "^5.0.4",
     "laravel-mix-copy-watched": "^2.2.2",
-    "laravel-mix-purgecss": "^4.2.0",
+    "laravel-mix-purgecss": "^5.0.0",
     "lodash": "^4.17.15",
     "npm-run-all": "^4.1",
     "react": "^16.13.1",
