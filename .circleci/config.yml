@@ -9,9 +9,10 @@ executors:
   php-73:
     docker:
       - image: circleci/php:7.4-stretch
-  node:
+  node-12:
     docker:
       - image: 'itinerisltd/tiller-circleci:node-12'
+
 
 workflows:
   deploy:
@@ -31,6 +32,7 @@ workflows:
           trellis_repo: 'git@github.com:pixelcollective/trellis.git'
           site_env: staging
           site_name: dreamdefenders.org
+          executor: node-12
           requires:
             - hold
           filters:
@@ -45,6 +47,7 @@ workflows:
           trellis_repo: 'git@github.com:pixelcollective/trellis.git'
           site_env: production
           site_name: dreamdefenders.org
+          executor: node-12
           requires:
             - hold
           filters:
