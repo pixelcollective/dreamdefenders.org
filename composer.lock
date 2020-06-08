@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bfcee9e18ff1d602f7f53726a5f37760",
+    "content-hash": "7a44774e9e324c51af02394198d56baf",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.140.1",
+            "version": "3.140.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "52645498aea4dd2d090884322121270daf3e0f06"
+                "reference": "7e37960c1103ee211932be51b2282b41c948a5f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/52645498aea4dd2d090884322121270daf3e0f06",
-                "reference": "52645498aea4dd2d090884322121270daf3e0f06",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/7e37960c1103ee211932be51b2282b41c948a5f0",
+                "reference": "7e37960c1103ee211932be51b2282b41c948a5f0",
                 "shasum": ""
             },
             "require": {
@@ -88,7 +88,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-06-04T18:19:47+00:00"
+            "time": "2020-06-05T18:12:25+00:00"
         },
         {
             "name": "clue/stream-filter",
@@ -1269,16 +1269,16 @@
         },
         {
             "name": "phpoption/phpoption",
-            "version": "1.7.3",
+            "version": "1.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/php-option.git",
-                "reference": "4acfd6a4b33a509d8c88f50e5222f734b6aeebae"
+                "reference": "b2ada2ad5d8a32b89088b8adc31ecd2e3a13baf3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/4acfd6a4b33a509d8c88f50e5222f734b6aeebae",
-                "reference": "4acfd6a4b33a509d8c88f50e5222f734b6aeebae",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/b2ada2ad5d8a32b89088b8adc31ecd2e3a13baf3",
+                "reference": "b2ada2ad5d8a32b89088b8adc31ecd2e3a13baf3",
                 "shasum": ""
             },
             "require": {
@@ -1320,7 +1320,7 @@
                 "php",
                 "type"
             ],
-            "time": "2020-03-21T18:07:53+00:00"
+            "time": "2020-06-07T10:40:07+00:00"
         },
         {
             "name": "predis/predis",
@@ -1371,84 +1371,6 @@
                 "redis"
             ],
             "time": "2016-06-16T16:22:20+00:00"
-        },
-        {
-            "name": "primetime/wp-plugin-activation-manifest",
-            "version": "v1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PrimeTimeCode/wp-plugin-activation-manifest.git",
-                "reference": "caaa74914a28154ad355198e107a99ff65d1383a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/PrimeTimeCode/wp-plugin-activation-manifest/zipball/caaa74914a28154ad355198e107a99ff65d1383a",
-                "reference": "caaa74914a28154ad355198e107a99ff65d1383a",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.6 || ^7.0",
-                "primetime/wp-plugin-control": "~0.1.0",
-                "symfony/yaml": "^3.4 || ^4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "PrimeTime\\WordPress\\PluginManifest\\": [
-                        "src/"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Evan Mattson",
-                    "email": "me@aaemnnost.tv"
-                }
-            ],
-            "description": "Simple file-based plugin activation control for WordPress",
-            "time": "2018-10-10T10:55:29+00:00"
-        },
-        {
-            "name": "primetime/wp-plugin-control",
-            "version": "v0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PrimeTimeCode/wp-plugin-control.git",
-                "reference": "bbf195c68aca8cf6dd5460b28f916d591527b673"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/PrimeTimeCode/wp-plugin-control/zipball/bbf195c68aca8cf6dd5460b28f916d591527b673",
-                "reference": "bbf195c68aca8cf6dd5460b28f916d591527b673",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "PrimeTime\\WordPress\\PluginControl\\": [
-                        "src/"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Evan Mattson",
-                    "email": "me@aaemnnost.tv"
-                }
-            ],
-            "description": "Library for WordPress plugin control",
-            "time": "2015-05-08T15:48:22+00:00"
         },
         {
             "name": "psr/http-client",
@@ -2621,65 +2543,6 @@
             "time": "2020-05-30T20:35:19+00:00"
         },
         {
-            "name": "symfony/yaml",
-            "version": "v4.4.9",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/yaml.git",
-                "reference": "c2d2cc66e892322cfcc03f8f12f8340dbd7a3f8a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/c2d2cc66e892322cfcc03f8f12f8340dbd7a3f8a",
-                "reference": "c2d2cc66e892322cfcc03f8f12f8340dbd7a3f8a",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1.3",
-                "symfony/polyfill-ctype": "~1.8"
-            },
-            "conflict": {
-                "symfony/console": "<3.4"
-            },
-            "require-dev": {
-                "symfony/console": "^3.4|^4.0|^5.0"
-            },
-            "suggest": {
-                "symfony/console": "For validating YAML files using the lint command"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.4-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Yaml\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Yaml Component",
-            "homepage": "https://symfony.com",
-            "time": "2020-05-20T08:37:50+00:00"
-        },
-        {
             "name": "tightenco/collect",
             "version": "v7.12.0",
             "source": {
@@ -2730,44 +2593,6 @@
             "time": "2020-05-08T22:25:37+00:00"
         },
         {
-            "name": "tiny-pixel-packagist/advanced-custom-fields-pro",
-            "version": "5.8.4",
-            "dist": {
-                "type": "zip",
-                "url": "https://packages.tinypixel.dev/satispress/advanced-custom-fields-pro/5.8.4",
-                "shasum": "cac775d0a3f8ccc765368c005b3c7fdd7dcc5cc9"
-            },
-            "require": {
-                "composer/installers": "^1.0"
-            },
-            "type": "wordpress-plugin",
-            "authors": {
-                "name": "Elliot Condon",
-                "homepage": "https://www.advancedcustomfields.com"
-            },
-            "description": "Customize WordPress with powerful, professional and intuitive fields.",
-            "homepage": "https://www.advancedcustomfields.com"
-        },
-        {
-            "name": "tiny-pixel-packagist/wp-rocket",
-            "version": "3.4.4",
-            "dist": {
-                "type": "zip",
-                "url": "https://packages.tinypixel.dev/satispress/wp-rocket/3.4.4",
-                "shasum": "2fe5d84b9c4433bc4eff1751a60cd234d06d6d1e"
-            },
-            "require": {
-                "composer/installers": "^1.0"
-            },
-            "type": "wordpress-plugin",
-            "authors": {
-                "name": "WP Media",
-                "homepage": "https://wp-media.me"
-            },
-            "description": "The best WordPress performance plugin.",
-            "homepage": "https://wp-rocket.me"
-        },
-        {
             "name": "tiny-pixel/s3-uploads-adapter",
             "version": "dev-master",
             "source": {
@@ -2796,59 +2621,29 @@
             "time": "2020-05-16T06:27:18+00:00"
         },
         {
-            "name": "tiny-pixel/wp-performant-media",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pixelcollective/wp-performant-media.git",
-                "reference": "445148ae755a591863344e5f489bea694f1c878f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pixelcollective/wp-performant-media/zipball/445148ae755a591863344e5f489bea694f1c878f",
-                "reference": "445148ae755a591863344e5f489bea694f1c878f",
-                "shasum": ""
-            },
-            "type": "wordpress-plugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kelly Mears",
-                    "email": "developers@tinypixel.io",
-                    "homepage": "https://tinypixel.io"
-                }
-            ],
-            "description": "Simple lazy-loading images with subtle CSS transition and polyfill support.",
-            "homepage": "https://github.com/pixelcollective/wp-performant-media",
-            "time": "2018-11-12T07:12:25+00:00"
-        },
-        {
             "name": "vlucas/phpdotenv",
-            "version": "v4.1.6",
+            "version": "v4.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "0b32505d67c1abbfa829283c86bfc0642a661bf6"
+                "reference": "db63b2ea280fdcf13c4ca392121b0b2450b51193"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/0b32505d67c1abbfa829283c86bfc0642a661bf6",
-                "reference": "0b32505d67c1abbfa829283c86bfc0642a661bf6",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/db63b2ea280fdcf13c4ca392121b0b2450b51193",
+                "reference": "db63b2ea280fdcf13c4ca392121b0b2450b51193",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.5.9 || ^7.0 || ^8.0",
-                "phpoption/phpoption": "^1.7.2",
-                "symfony/polyfill-ctype": "^1.9"
+                "phpoption/phpoption": "^1.7.3",
+                "symfony/polyfill-ctype": "^1.16"
             },
             "require-dev": {
-                "bamarni/composer-bin-plugin": "^1.3",
+                "bamarni/composer-bin-plugin": "^1.4.1",
                 "ext-filter": "*",
                 "ext-pcre": "*",
-                "phpunit/phpunit": "^4.8.35 || ^5.0 || ^6.0 || ^7.0"
+                "phpunit/phpunit": "^4.8.35 || ^5.7.27 || ^6.5.6 || ^7.0"
             },
             "suggest": {
                 "ext-filter": "Required to use the boolean validator.",
@@ -2887,7 +2682,7 @@
                 "env",
                 "environment"
             ],
-            "time": "2020-05-23T09:43:32+00:00"
+            "time": "2020-06-07T18:25:35+00:00"
         },
         {
             "name": "wpackagist-plugin/autodescription",
@@ -2926,22 +2721,22 @@
             "homepage": "https://wordpress.org/plugins/gutenberg/"
         },
         {
-            "name": "wpackagist-plugin/stream",
-            "version": "3.4.3",
+            "name": "wpackagist-plugin/simple-page-ordering",
+            "version": "2.3.4",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/stream/",
-                "reference": "tags/3.4.3"
+                "url": "https://plugins.svn.wordpress.org/simple-page-ordering/",
+                "reference": "tags/2.3.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/stream.3.4.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/simple-page-ordering.2.3.4.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/stream/"
+            "homepage": "https://wordpress.org/plugins/simple-page-ordering/"
         },
         {
             "name": "wpackagist-plugin/wp-redis",
@@ -3595,28 +3390,28 @@
         },
         {
             "name": "phpunit/php-timer",
-            "version": "3.1.4",
+            "version": "5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-timer.git",
-                "reference": "dc9368fae6ef2ffa57eba80a7410bcef81df6258"
+                "reference": "b0d089de001ba60ffa3be36b23e1b8150d072238"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/dc9368fae6ef2ffa57eba80a7410bcef81df6258",
-                "reference": "dc9368fae6ef2ffa57eba80a7410bcef81df6258",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/b0d089de001ba60ffa3be36b23e1b8150d072238",
+                "reference": "b0d089de001ba60ffa3be36b23e1b8150d072238",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "^9.0"
+                "phpunit/phpunit": "^9.2"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1-dev"
+                    "dev-master": "5.0-dev"
                 }
             },
             "autoload": {
@@ -3640,7 +3435,7 @@
             "keywords": [
                 "timer"
             ],
-            "time": "2020-04-20T06:00:37+00:00"
+            "time": "2020-06-07T12:05:53+00:00"
         },
         {
             "name": "phpunit/php-token-stream",
@@ -3693,16 +3488,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.1.5",
+            "version": "9.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "1b570cd7edbe136055bf5f651857dc8af6b829d2"
+                "reference": "8fd0d8f80029682da89516a554f4d5f5a030345c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/1b570cd7edbe136055bf5f651857dc8af6b829d2",
-                "reference": "1b570cd7edbe136055bf5f651857dc8af6b829d2",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/8fd0d8f80029682da89516a554f4d5f5a030345c",
+                "reference": "8fd0d8f80029682da89516a554f4d5f5a030345c",
                 "shasum": ""
             },
             "require": {
@@ -3722,7 +3517,7 @@
                 "phpunit/php-file-iterator": "^3.0",
                 "phpunit/php-invoker": "^3.0",
                 "phpunit/php-text-template": "^2.0",
-                "phpunit/php-timer": "^3.1.4",
+                "phpunit/php-timer": "^5.0",
                 "sebastian/code-unit": "^1.0.2",
                 "sebastian/comparator": "^4.0",
                 "sebastian/diff": "^4.0",
@@ -3731,7 +3526,7 @@
                 "sebastian/global-state": "^4.0",
                 "sebastian/object-enumerator": "^4.0",
                 "sebastian/resource-operations": "^3.0",
-                "sebastian/type": "^2.0",
+                "sebastian/type": "^2.1",
                 "sebastian/version": "^3.0"
             },
             "require-dev": {
@@ -3748,7 +3543,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "9.1-dev"
+                    "dev-master": "9.2-dev"
                 }
             },
             "autoload": {
@@ -3777,7 +3572,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2020-05-22T13:54:05+00:00"
+            "time": "2020-06-07T14:14:21+00:00"
         },
         {
             "name": "roave/security-advisories",

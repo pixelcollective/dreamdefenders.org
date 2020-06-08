@@ -7,7 +7,7 @@
 
   <main class='container px-4 pb-32 mx-auto'>
     <div class="px-4 pb-12">
-      @php(the_content(877))
+      {!! $intro !!}
     </div>
 
     @include("partials.archive-freedom-papers")

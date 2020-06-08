@@ -1,6 +1,6 @@
 @section('toggle-open')
-  <button nav-toggle="open" toggle-target="nav-overlay" class="inline-flex items-center w-12 px-3 text-white transition transition-opacity duration-500 ease-in-out border-0 rounded focus:outline-none">
-    @svg('bars', 'menu-icon menu-icon-open w-full fill-current blend-exclusion transition transition-opacity duration-500 ease-in-out', ['width' => '1.5rem', 'height' => '1.5rem'])
+  <button nav-toggle="open" toggle-target="nav-overlay" class="w-full inline-flex items-center justify-end pr-0 justify-end text-white transition transition-opacity duration-500 ease-in-out border-0 rounded focus:outline-none">
+    @svg('bars', 'menu-icon menu-icon-open w-12 justify-end fill-current blend-exclusion transition transition-opacity duration-500 ease-in-out', ['width' => '1.5rem', 'height' => '1.5rem'])
   </button>
 @endsection
 
@@ -12,7 +12,7 @@
 
 <header class="fixed z-50 flex w-full overflow-hidden transition transition-opacity duration-500 ease-in-out bg-opacity-75 bg-black-700 blend-hard-light nav">
   <div class="flex flex-row items-center justify-between flex-grow p-2 blend-difference">
-    <a href="/" aria-label="Dream Defenders" class="items-center font-medium text-white title-font">
+    <a href="/" aria-label="Dream Defenders" class="w-full items-center font-medium text-white title-font">
       @svg('logo', 'w-24 text-white p-2 fill-current', [
         'stroke' => 'currentColor',
         'stroke-linecap' => 'round',
@@ -22,25 +22,25 @@
       ])
     </a>
 
-    <nav class="hidden items-center justify-center text-base lower-nav lg:inline-flex">
-      <a aria-label="Link to {!! get_bloginfo('site_name') !!} on Facebook" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-2 mx-1 text-white no-underline rounded rounded-full hover:relative hover:no-underline hover:bg-white hover:text-black" href="https://facebook.com/dreamdefenders">
-        @svg('facebook-square', 'w-full fill-current', ['width' => 28, 'height' => 28])
+    <nav class="hidden items-center justify-center text-base lower-nav md:flex flex-no-wrap w-full flex-row">
+      <a aria-label="Link to {!! get_bloginfo('site_name') !!} on Facebook" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="justify-center w-full p-2 mx-1 text-white no-underline align-middle rounded rounded-full hover:relative hover:no-underline hover:bg-white hover:text-black" href="https://facebook.com/dreamdefenders">
+        @svg('facebook-square', 'mx-auto text-center fill-current', ['width' => 28, 'height' => 28])
       </a>
 
-      <a aria-label="Link to {!! get_bloginfo('site_name') !!} on Twitter" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-2 mx-1 text-white no-underline rounded rounded-full hover:relative hover:no-underline hover:bg-white hover:text-black" href="https://twitter.com/dreamdefenders">
-        @svg('twitter', 'w-full fill-current', ['width' => 28, 'height' => 28])
+      <a aria-label="Link to {!! get_bloginfo('site_name') !!} on Twitter" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="justify-center w-full p-2 mx-1 text-white no-underline align-middle rounded rounded-full hover:relative hover:no-underline hover:bg-white hover:text-black" href="https://twitter.com/dreamdefenders">
+        @svg('twitter', 'mx-auto text-center fill-current', ['width' => 28, 'height' => 28])
       </a>
 
-      <a aria-label="Link to {!! get_bloginfo('site_name') !!} on Instagram" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="justify-center p-2 mx-1 text-white no-underline align-middle rounded rounded-full hover:relative hover:no-underline hover:bg-white hover:text-black" href="https://instagram.com/thedreamdefenders" style="overflow-x: hidden;">
-        @svg('instagram', 'w-full fill-current pl-1', ['width' => 32, 'height' => 32])
+      <a aria-label="Link to {!! get_bloginfo('site_name') !!} on Instagram" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="justify-center w-full p-2 mx-1 text-white no-underline align-middle rounded rounded-full hover:relative hover:no-underline hover:bg-white hover:text-black" href="https://instagram.com/thedreamdefenders" style="overflow-x: hidden;">
+        @svg('instagram', 'mx-auto text-center fill-current pl-1', ['width' => 32, 'height' => 32])
       </a>
 
-      <a aria-label="Compose an email to info@dreamdefenders.org" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-2 mx-1 mr-4 text-white no-underline rounded rounded-full hover:relative hover:no-underline hover:bg-white hover:text-black" href="mailto:info@dreamdefenders.org">
-        @svg('envelope', 'w-full fill-current', ['width' => 28,'height' => 28])
+      <a aria-label="Compose an email to info@dreamdefenders.org" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-2 mx-1 mr-4 text-white w-full no-underline rounded rounded-full hover:relative hover:no-underline hover:bg-white hover:text-black" href="mailto:info@dreamdefenders.org">
+        @svg('envelope', 'mx-auto text-center fill-current', ['width' => 28,'height' => 28])
       </a>
 
       @isset($app->actions[0]->url)
-        <button modal="overlay" hoverfx fx-duration="800"  class="px-6 py-2 mx-2 text-sm text-black uppercase bg-white border border-white rounded" title="{!! $app->actions[0]->text !!}" aria-label="{!! $app->actions[0]->text !!}">
+        <button modal="overlay" hoverfx fx-duration="800"  class="px-4 py-2 mx-2 text-sm text-black uppercase bg-white border border-white rounded" title="{!! $app->actions[0]->text !!}" aria-label="{!! $app->actions[0]->text !!}">
           <a aria-label="{!! $app->actions[0]->text !!}" href="{!! $app->actions[0]->url !!}">
             {!! $app->actions[0]->text !!}
           </a>

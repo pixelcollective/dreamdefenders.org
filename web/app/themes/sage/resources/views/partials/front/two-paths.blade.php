@@ -1,5 +1,5 @@
 <div class="hidden bg-black md:block">
-  <div class="flex flex-col justify-around bg-black pointer-events-none lg:flex-row">
+  <div class="flex flex-col justify-around bg-black pointer-events-none md:flex-row">
     <div class="w-1/4">
       <img class="object-contain object-fit" src="@asset('images/waves-left.png')" />
     </div>
@@ -8,7 +8,7 @@
       <h2 class="relative block inline-block p-0 m-0 mx-auto mb-0 text-4xl font-bold leading-none text-center text-white">
         There are two paths
       </h2>
-      <div class="absolute w-2/3 h-2 ml-1/6 mr-1/6">
+      <div class="absolute w-10/12 h-2 ml-1/12 mr-1/12">
         <div class="absolute justify-center h-2 mx-auto align-middle exOut bg-yellow" style="top: 40%;"></div>
       </div>
     </div>
