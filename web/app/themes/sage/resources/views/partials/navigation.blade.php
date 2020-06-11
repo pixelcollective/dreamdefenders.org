@@ -6,12 +6,15 @@
 
 @section('toggle-close')
   <button nav-toggle="close" toggle-target="nav-overlay" class="inline-flex items-center w-12 px-3 text-white transition transition-opacity duration-500 ease-in-out border-0 rounded focus:outline-none">
-    @svg('times', 'menu-icon menu-icon-close text-white w-full fill-current blend-exclusion transition duration-500 ease-in-out', ['width' => '1.5rem', 'height' => '1.5rem'])
+    @svg('times', 'menu-icon menu-icon-close text-white w-full fill-current blend-exclusion transition duration-500 ease-in-out', [
+      'width' => '1.5rem',
+      'height' => '1.5rem',
+    ])
   </button>
 @endsection
 
-<header class="fixed z-50 flex w-full overflow-hidden transition transition-opacity duration-500 ease-in-out bg-opacity-75 bg-black-700 blend-hard-light nav">
-  <div class="flex flex-row items-center justify-between flex-grow p-2 blend-difference">
+<header class="fixed z-50 flex w-full overflow-hidden transition transition-opacity duration-500 ease-in-out bg-opacity-75 bg-black-700 nav">
+  <div class="flex flex-row items-center justify-between w-full p-2 blend-difference">
     <a href="/" aria-label="Dream Defenders" class="w-full items-center font-medium text-white title-font">
       @svg('logo', 'w-24 text-white p-2 fill-current', [
         'stroke' => 'currentColor',
@@ -22,38 +25,36 @@
       ])
     </a>
 
-    <nav class="hidden items-center justify-center text-base lower-nav md:flex flex-no-wrap w-full flex-row">
-      <a aria-label="Link to {!! get_bloginfo('site_name') !!} on Facebook" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="justify-center w-full p-2 mx-1 text-white no-underline align-middle rounded rounded-full hover:relative hover:no-underline hover:bg-white hover:text-black" href="https://facebook.com/dreamdefenders">
-        @svg('facebook-square', 'mx-auto text-center fill-current', ['width' => 28, 'height' => 28])
+    <nav class="hidden items-center justify-between text-base lower-nav sm:flex flex-row">
+      <a aria-label="Link to {!! get_bloginfo('site_name') !!} on Facebook" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="justify-center w-full p-2 text-white no-underline align-middle rounded rounded-full hover:relative hover:no-underline hover:bg-white hover:text-black" href="https://facebook.com/dreamdefenders">
+        @svg('facebook-square', 'mx-auto text-center fill-current', ['width' => 32, 'height' => 32])
       </a>
 
-      <a aria-label="Link to {!! get_bloginfo('site_name') !!} on Twitter" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="justify-center w-full p-2 mx-1 text-white no-underline align-middle rounded rounded-full hover:relative hover:no-underline hover:bg-white hover:text-black" href="https://twitter.com/dreamdefenders">
-        @svg('twitter', 'mx-auto text-center fill-current', ['width' => 28, 'height' => 28])
+      <a aria-label="Link to {!! get_bloginfo('site_name') !!} on Twitter" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="justify-center w-full p-2  text-white no-underline align-middle rounded rounded-full hover:relative hover:no-underline hover:bg-white hover:text-black" href="https://twitter.com/dreamdefenders">
+        @svg('twitter', 'mx-auto text-center fill-current', ['width' => 32, 'height' => 32])
       </a>
 
-      <a aria-label="Link to {!! get_bloginfo('site_name') !!} on Instagram" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="justify-center w-full p-2 mx-1 text-white no-underline align-middle rounded rounded-full hover:relative hover:no-underline hover:bg-white hover:text-black" href="https://instagram.com/thedreamdefenders" style="overflow-x: hidden;">
+      <a aria-label="Link to {!! get_bloginfo('site_name') !!} on Instagram" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="justify-center w-full p-2  text-white no-underline align-middle rounded rounded-full hover:relative hover:no-underline hover:bg-white hover:text-black" href="https://instagram.com/thedreamdefenders" style="overflow-x: hidden;">
         @svg('instagram', 'mx-auto text-center fill-current pl-1', ['width' => 32, 'height' => 32])
       </a>
 
-      <a aria-label="Compose an email to info@dreamdefenders.org" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-2 mx-1 mr-4 text-white w-full no-underline rounded rounded-full hover:relative hover:no-underline hover:bg-white hover:text-black" href="mailto:info@dreamdefenders.org">
-        @svg('envelope', 'mx-auto text-center fill-current', ['width' => 28,'height' => 28])
+      <a aria-label="Compose an email to info@dreamdefenders.org" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="p-2 text-white w-full no-underline rounded rounded-full hover:relative hover:no-underline hover:bg-white hover:text-black" href="mailto:info@dreamdefenders.org">
+        @svg('envelope', 'mx-auto text-center fill-current', ['width' => 32,'height' => 32])
       </a>
 
-      @isset($app->actions[0]->url)
-        <button modal="overlay" hoverfx fx-duration="800"  class="px-4 py-2 mx-2 text-sm text-black uppercase bg-white border border-white rounded" title="{!! $app->actions[0]->text !!}" aria-label="{!! $app->actions[0]->text !!}">
-          <a aria-label="{!! $app->actions[0]->text !!}" href="{!! $app->actions[0]->url !!}">
+      <div class="flex flex-row justify-evenly align-middle items-center w-full mx-0">
+        @isset($app->actions[0]->url)
+          <a modal="overlay" hoverfx fx-duration="800"  class="flex mx-2 truncate justify-center w-full px-6 py-2 text-sm text-black uppercase bg-white border border-white rounded" href="{!! $app->actions[0]->url !!}" title="{!! $app->actions[0]->text !!}" aria-label="{!! $app->actions[0]->text !!}">
             {!! $app->actions[0]->text !!}
           </a>
-        </button>
-      @endisset
+        @endisset
 
-      @isset($app->actions[1]->url)
-        <button hoverfx fx-duration="800" class="px-6 py-2 mx-2 text-sm text-black text-white uppercase bg-transparent border border-white rounded" title="{!! $app->actions[1]->text !!}" aria-label="{!! $app->actions[1]->text !!}">
-          <a aria-label="{!! $app->actions[1]->text !!}" href="{!! $app->actions[1]->url !!}">
+        @isset($app->actions[1]->url)
+          <a hoverfx fx-duration="800" class="flex mx-2 truncate w-full flex justify-center px-6 py-2 w-full text-sm text-black text-white uppercase bg-transparent border border-white rounded" href="{!! $app->actions[1]->url !!}" title="{!! $app->actions[1]->text !!}" aria-label="{!! $app->actions[1]->text !!}">
             {!! $app->actions[1]->text !!}
           </a>
-        </button>
-      @endisset
+        @endisset
+      </div>
     </nav>
 
     @yield('toggle-open')
@@ -74,9 +75,9 @@
         @endisset
 
         @isset($app->actions[1]->url)
-          <button modal="overlay" hoverfx fx-duration="800"  class="px-6 py-2 mx-2 text-sm text-white uppercase bg-transparent border border-white rounded" title="{!! $app->actions[0]->text !!}" aria-label="{!! $app->actions[0]->text !!}">
+          <button modal="overlay" hoverfx fx-duration="800"  class="px-6 py-2 mx-2 text-sm text-white uppercase bg-transparent border border-white rounded" title="{!! $app->actions[1]->text !!}" aria-label="{!! $app->actions[1]->text !!}">
             <a aria-label="{!! $app->actions[1]->text !!}" href="{!! $app->actions[1]->url !!}">
-              {!! $app->actions[0]->text !!}
+              {!! $app->actions[1]->text !!}
             </a>
           </button>
         @endisset
@@ -85,7 +86,7 @@
       <div class="h-full p-2 md:p-8 mx-auto w-3/4 sm:3/4 md:w-1/2 lg:w-1/3">
         @if ($navigation->about)
           <div class="relative justify-center w-full mt-4 mt-8 mb-0 text-center align-middle">
-            <div class="relative justify-center h-1 mx-4 mt-4 align-middle bg-white " style="height: 2px;"></div>
+            <div class="relative justify-center h-1 mx-1 mt-4 align-middle bg-white " style="height: 2px;"></div>
             <span class="relative inline px-4 text-sm font-thin text-center text-white bg-black nav-heading md:text-md" style="top: -0.9rem">
               About Us
             </span>
@@ -100,7 +101,7 @@
 
         @if ($navigation->vision)
           <div class="relative justify-center w-full mt-4 mb-0 text-center align-middle">
-            <div class="relative justify-center h-1 mx-4 mt-4 align-middle bg-white " style="height: 2px;"></div>
+            <div class="relative justify-center h-1 mx-1 mt-4 align-middle bg-white " style="height: 2px;"></div>
             <span class="relative inline px-4 text-sm font-thin text-center text-white bg-black nav-heading md:text-md" style="top: -0.9rem">
               Our Vision
             </span>
@@ -115,7 +116,7 @@
 
         @if ($navigation->work)
           <div class="relative justify-center w-full mt-4 mb-0 text-center align-middle">
-            <div class="relative justify-center h-1 mx-4 mt-4 align-middle bg-white" style="height: 2px;"></div>
+            <div class="relative justify-center h-1 mx-1 mt-4 align-middle bg-white" style="height: 2px;"></div>
             <span class="relative inline px-4 text-sm font-thin text-center text-white bg-black nav-heading md:text-md" style="top: -0.9rem">
               Our Work
             </span>
