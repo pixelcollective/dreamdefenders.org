@@ -2710,15 +2710,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "8.2.1",
+            "version": "8.3.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/8.2.1"
+                "reference": "tags/8.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.8.2.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.8.3.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
