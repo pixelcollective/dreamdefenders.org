@@ -28,7 +28,7 @@
     "sentry/sdk": "^2.0",
     "tightenco/collect": "^7.2",
     "tiny-pixel/s3-uploads-adapter": "dev-master",
-    "vlucas/phpdotenv": "^4.1.0",
+    "vlucas/phpdotenv": "^5.0.0",
     "wpackagist-plugin/autodescription": ">=3.0.6",
     "wpackagist-plugin/gutenberg": "^8",
     "wpackagist-plugin/simple-page-ordering": "^2.3",
