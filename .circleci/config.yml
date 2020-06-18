@@ -32,7 +32,8 @@ workflows:
           trellis-repo: 'git@github.com:pixelcollective/trellis.git'
           site-env: staging
           site-name: dreamdefenders.org
-          executor: node-12
+          executor-tag: node-12
+          vault-password: VAULT_PASSWORD
           requires:
             - hold
           filters:
@@ -45,9 +46,11 @@ workflows:
           name: deploy-production
           known_hosts: 'github.com, 157.230.209.152'
           trellis_repo: 'git@github.com:pixelcollective/trellis.git'
-          site_env: production
-          site_name: dreamdefenders.org
-          executor: node-12
+          site-env: production
+          site-name: dreamdefenders.org
+          executor-tag: node-12
+          vault-password: VAULT_PASSWORD
+          executor-tag: node-12
           requires:
             - hold
           filters:
