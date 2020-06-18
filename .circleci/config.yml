@@ -28,10 +28,10 @@ workflows:
       # Deploy staging
       - tiller-circleci/deploy:
           name: deploy-staging
-          known_hosts: 'github.com, 165.22.190.49'
-          trellis_repo: 'git@github.com:pixelcollective/trellis.git'
-          site_env: staging
-          site_name: dreamdefenders.org
+          known-hosts: 'github.com, 165.22.190.49'
+          trellis-repo: 'git@github.com:pixelcollective/trellis.git'
+          site-env: staging
+          site-name: dreamdefenders.org
           executor: node-12
           requires:
             - hold
