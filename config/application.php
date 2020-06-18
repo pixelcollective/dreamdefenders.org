@@ -10,8 +10,10 @@
  *
  * @see     Tiny Pixel <https://tinypixel.dev>
  */
+
 require_once __DIR__.'/Config.php';
 
+use function Env\env;
 use TinyPixel\WPConfig\Config;
 
 /**
@@ -21,11 +23,6 @@ use TinyPixel\WPConfig\Config;
  */
 $bedrock = dirname(__DIR__);
 $web = $bedrock.'/web';
-
-/*
- * Expose global env() function from oscarotero/env
- */
-Env::init();
 
 /**
  * Use Dotenv to set required environment variables and load .env file in root.
