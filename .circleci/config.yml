@@ -50,7 +50,6 @@ workflows:
           site-name: dreamdefenders.org
           executor-tag: node-12
           vault-password: VAULT_PASSWORD
-          executor-tag: node-12
           requires:
             - hold
           filters:
