@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7a44774e9e324c51af02394198d56baf",
+    "content-hash": "ee3e25e8c2538266cd8885f1f3da7b61",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -2719,6 +2719,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/gutenberg/"
+        },
+        {
+            "name": "wpackagist-plugin/quicklink",
+            "version": "0.7.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/quicklink/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/quicklink.zip?timestamp=1570182813"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/quicklink/"
         },
         {
             "name": "wpackagist-plugin/simple-page-ordering",

@@ -28,6 +28,13 @@
 
       @include('partials.footer')
       @include('components.overlay')
+
+      <x-modal
+        title="We keep us safe."
+        description="COVID-19 is spreading quickly and infecting people all over our state.<br /><br />Meanwhile thousands of Floridians are out of work struggling to survive during this crisis. Florida needs each of us to join the fight to keep us safe and healthy. We are only as safe as our least safe neighbor."
+        buttonText="Get involved"
+        buttonHref="/covid-resources/"
+      />
     </div>
   </div>
 

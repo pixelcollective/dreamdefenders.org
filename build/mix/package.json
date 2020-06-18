@@ -43,9 +43,10 @@
     "postcss-import": "^12.0.1",
     "postcss-important": "^0.3.0",
     "postcss-mixins": "^6.2.3",
-    "postcss-nested": "^4.2.1",
     "postcss-safe-important": "^1.2.0",
     "postcss-scss": "^2.0.0",
+    "postcss-nesting": "^7.0.1",
+    "postcss-preset-env": "^6.7.0",
     "postcss-simple-vars": "^5.0.2",
     "postcss-wrap": "^0.0.4",
     "precss": "^4.0.0",
@@ -64,11 +65,10 @@
   "dependencies": {
     "@tinypixelco/hoverfx": "^0.0.2",
     "@wordpress/dom-ready": "^2.5.1",
+    "alpinejs": "^2.3.5",
     "animejs": "^3.1.0",
     "emotion": "^10.0.23",
-    "headroom.js": "^0.10.4",
-    "lodash": "^4.17.15",
-    "postcss-nesting": "^7.0.1",
-    "postcss-preset-env": "^6.7.0"
+    "headroom.js": "^0.11.0",
+    "lodash": "^4.17.15"
   }
 }
