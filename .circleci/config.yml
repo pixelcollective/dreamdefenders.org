@@ -44,8 +44,8 @@ workflows:
       # Deploy production
       - tiller-circleci/deploy:
           name: deploy-production
-          known_hosts: 'github.com, 157.230.209.152'
-          trellis_repo: 'git@github.com:pixelcollective/trellis.git'
+          known-hosts: 'github.com, 157.230.209.152'
+          trellis-repo: 'git@github.com:pixelcollective/trellis.git'
           site-env: production
           site-name: dreamdefenders.org
           executor-tag: node-12
