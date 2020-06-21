@@ -10,7 +10,7 @@ use Illuminate\View\View;
  */
 class Modal extends Component
 {
-    public string $name = 'dd-covid-modal';
+    public string $name = 'dd-modal';
 
     public int $timeoutDuration = 25200; // 3600 * 7 (in seconds)
 
@@ -20,12 +20,14 @@ class Modal extends Component
         string $buttonHref,
         string $buttonText,
         string $title,
-        string $description
+        string $description,
+        string $cookie
     ) {
         $this->buttonHref = $buttonHref;
         $this->buttonText = $buttonText;
         $this->title = $title;
         $this->description = $description;
+        $this->name = $cookie;
         $this->show = ! is_page('covid-resources') && $this->shouldShow();
     }
 

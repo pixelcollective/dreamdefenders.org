@@ -30,15 +30,19 @@
       @include('components.overlay')
 
       <x-modal
-        title="We keep us safe."
-        description="COVID-19 is spreading quickly and infecting people all over our state.<br /><br />Meanwhile thousands of Floridians are out of work struggling to survive during this crisis. Florida needs each of us to join the fight to keep us safe and healthy. We are only as safe as our least safe neighbor."
-        buttonText="Get involved"
-        buttonHref="/covid-resources/"
+        title="Defund Police and Rebuild our Communities"
+        description="
+          There’s a shift happening right now. The call to defund police is louder than we’ve ever heard it.
+          We can all answer that call and reshape what our communities look like. We made a toolkit to help you map what you can do in your cities."
+        buttonText="Download Toolkit"
+        buttonHref="https://drive.google.com/file/d/1UFNn-2ZZsCKlwzZmj5MIDa_LqSbcdc9w"
+        cookie="defund-police-modal"
       />
     </div>
   </div>
 
   @php(wp_footer())
+
   @stack('styles')
   @stack('scripts')
 </body>
