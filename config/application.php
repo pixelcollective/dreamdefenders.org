@@ -5,13 +5,14 @@
  *
  * @category Bedrock
  *
- * @author   Tiny Pixel <hello@tinypixel.dev>
- * @license  MIT <https://github.com/pixelcollective/.github/tree/master/LICENSE.md>
- *
- * @see     Tiny Pixel <https://tinypixel.dev>
+ * @author Tiny Pixel <hello@tinypixel.dev>
+ * @license MIT <https://github.com/pixelcollective/.github/tree/master/LICENSE.md>
+ * @see Tiny Pixel <https://tinypixel.dev>
  */
+
 require_once __DIR__.'/Config.php';
 
+use function Env\env;
 use TinyPixel\WPConfig\Config;
 
 /**
@@ -21,11 +22,6 @@ use TinyPixel\WPConfig\Config;
  */
 $bedrock = dirname(__DIR__);
 $web = $bedrock.'/web';
-
-/*
- * Expose global env() function from oscarotero/env
- */
-Env::init();
 
 /**
  * Use Dotenv to set required environment variables and load .env file in root.
@@ -68,6 +64,7 @@ Config::defineSet([
     'WP_DEBUG' => Config::get('WP_ENV') == 'development',
     'WP_DEBUG_DISPLAY' => Config::get('WP_ENV') == 'development',
 ]);
+
 ini_set('display_errors', Config::get('DISPLAY_ERRORS'));
 
 /*

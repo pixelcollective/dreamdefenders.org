@@ -28,10 +28,21 @@
 
       @include('partials.footer')
       @include('components.overlay')
+
+      <x-modal
+        title="Defund Police and Rebuild our Communities"
+        description="
+          There’s a shift happening right now. The call to defund police is louder than we’ve ever heard it.
+          We can all answer that call and reshape what our communities look like. We made a toolkit to help you map what you can do in your cities."
+        buttonText="Download Toolkit"
+        buttonHref="https://drive.google.com/file/d/1UFNn-2ZZsCKlwzZmj5MIDa_LqSbcdc9w"
+        cookie="defund-police-modal"
+      />
     </div>
   </div>
 
   @php(wp_footer())
+
   @stack('styles')
   @stack('scripts')
 </body>

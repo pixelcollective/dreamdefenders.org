@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  tiller-circleci: itinerisltd/tiller-circleci@0.8
+  tiller-circleci: itinerisltd/tiller-circleci@3.1.0
   sentry-cli: picturepipe/sentry-cli@1.1.1
   cypress: cypress-io/cypress@1
 
@@ -25,14 +25,14 @@ workflows:
                 - staging
                 - master
 
-      # Deploy staging
       - tiller-circleci/deploy:
           name: deploy-staging
-          known_hosts: 'github.com, 165.22.190.49'
-          trellis_repo: 'git@github.com:pixelcollective/trellis.git'
-          site_env: staging
-          site_name: dreamdefenders.org
-          executor: node-12
+          known-hosts: 'github.com, 165.22.190.49'
+          trellis-repo: 'git@github.com:pixelcollective/trellis.git'
+          site-env: staging
+          site-name: dreamdefenders.org
+          executor-tag: node-12
+          vault-password: VAULT_PASSWORD
           requires:
             - hold
           filters:
@@ -40,14 +40,14 @@ workflows:
               only:
                 - staging
 
-      # Deploy production
       - tiller-circleci/deploy:
           name: deploy-production
-          known_hosts: 'github.com, 157.230.209.152'
-          trellis_repo: 'git@github.com:pixelcollective/trellis.git'
-          site_env: production
-          site_name: dreamdefenders.org
-          executor: node-12
+          known-hosts: 'github.com, 157.230.209.152'
+          trellis-repo: 'git@github.com:pixelcollective/trellis.git'
+          site-env: production
+          site-name: dreamdefenders.org
+          executor-tag: node-12
+          vault-password: VAULT_PASSWORD
           requires:
             - hold
           filters:

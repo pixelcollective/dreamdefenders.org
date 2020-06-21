@@ -22,6 +22,7 @@ mix
     clearConsole: false,
     postCss: [
       require('autoprefixer'),
+      require('postcss-nesting'),
       require('@dream-defenders/tailwind'),
     ],
     processCssUrls: false,

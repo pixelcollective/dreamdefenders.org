@@ -1,3 +1,5 @@
+import 'alpinejs'
+
 import hoverFx from '@tinypixelco/hoverfx'
 import {
   nav,
