@@ -31,6 +31,7 @@ mx.setPublicPath('./dist')
     '../../plugins/dream-defenders-blocks/resources/views/*.blade.php',
     '../../plugins/dream-defenders-blocks/resources/views/**/*.blade.php',
   ]
+
   const purgeOptions = {
   whitelist: [
     'rtl',

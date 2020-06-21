@@ -25,7 +25,6 @@ workflows:
                 - staging
                 - master
 
-      # Deploy staging
       - tiller-circleci/deploy:
           name: deploy-staging
           known-hosts: 'github.com, 165.22.190.49'
@@ -41,7 +40,6 @@ workflows:
               only:
                 - staging
 
-      # Deploy production
       - tiller-circleci/deploy:
           name: deploy-production
           known-hosts: 'github.com, 157.230.209.152'

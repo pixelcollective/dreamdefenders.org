@@ -5,10 +5,9 @@
  *
  * @category Bedrock
  *
- * @author   Tiny Pixel <hello@tinypixel.dev>
- * @license  MIT <https://github.com/pixelcollective/.github/tree/master/LICENSE.md>
- *
- * @see     Tiny Pixel <https://tinypixel.dev>
+ * @author Tiny Pixel <hello@tinypixel.dev>
+ * @license MIT <https://github.com/pixelcollective/.github/tree/master/LICENSE.md>
+ * @see Tiny Pixel <https://tinypixel.dev>
  */
 
 require_once __DIR__.'/Config.php';
@@ -65,6 +64,7 @@ Config::defineSet([
     'WP_DEBUG' => Config::get('WP_ENV') == 'development',
     'WP_DEBUG_DISPLAY' => Config::get('WP_ENV') == 'development',
 ]);
+
 ini_set('display_errors', Config::get('DISPLAY_ERRORS'));
 
 /*
