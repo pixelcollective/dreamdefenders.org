@@ -3040,15 +3040,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "8.3.0",
+            "version": "8.4.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/8.3.0"
+                "reference": "tags/8.4.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.8.3.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.8.4.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
