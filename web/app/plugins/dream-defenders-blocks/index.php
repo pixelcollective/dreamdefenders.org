@@ -54,9 +54,6 @@ add_action('admin_init', function () {
 }, 100);
 
 /*
- * Register post types
- */
-/*
  * Standard Post Posttype
  */
 add_action('init', function () {

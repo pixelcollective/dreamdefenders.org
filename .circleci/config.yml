@@ -11,8 +11,7 @@ executors:
       - image: circleci/php:7.4-stretch
   node-12:
     docker:
-      - image: 'itinerisltd/tiller-circleci:node-12'
-
+      - image: itinerisltd/tiller-circleci:node-12
 
 workflows:
   deploy:
@@ -28,7 +27,7 @@ workflows:
       - tiller-circleci/deploy:
           name: deploy-staging
           known-hosts: 'github.com, 165.22.190.49'
-          trellis-repo: 'git@github.com:pixelcollective/trellis.git'
+          trellis-repo: git@github.com:pixelcollective/trellis.git
           site-env: staging
           site-name: dreamdefenders.org
           executor-tag: node-12
@@ -43,7 +42,7 @@ workflows:
       - tiller-circleci/deploy:
           name: deploy-production
           known-hosts: 'github.com, 157.230.209.152'
-          trellis-repo: 'git@github.com:pixelcollective/trellis.git'
+          trellis-repo: git@github.com:pixelcollective/trellis.git
           site-env: production
           site-name: dreamdefenders.org
           executor-tag: node-12
@@ -55,7 +54,6 @@ workflows:
               only:
                 - master
 
-      # Sentry checkout staging
       - sentry-cli/checkout-to-workspace:
           name: sentry-checkout-staging
           requires:

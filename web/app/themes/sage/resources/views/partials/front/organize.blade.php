@@ -31,7 +31,7 @@
                   <span data-faded>Join the squadd.<br /></span>
                 </p>
 
-                <a href="https://secure.actblue.com/donate/joindd" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-bg-color="rgba(253,225,53,1)" fx-off-bg-color="rgba(255,255,255,1)" type="submit" class="py-4 my-2 text-2xl font-bold tracking-wider text-center uppercase bg-white text-black-900 font-display">
+                <a href="https://secure.actblue.com/donate/givetodd" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-bg-color="rgba(253,225,53,1)" fx-off-bg-color="rgba(255,255,255,1)" type="submit" class="py-4 my-2 text-2xl font-bold tracking-wider text-center uppercase bg-white text-black-900 font-display">
                   Donate
                 </a>
               </div>
