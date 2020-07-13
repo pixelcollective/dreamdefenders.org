@@ -28,7 +28,7 @@
     "roots/soil": ">=3",
     "roots/wp-stage-switcher": "^2.0",
     "sentry/sdk": "^2.0",
-    "tightenco/collect": "^7.2",
+    "tightenco/collect": "^17.19",
     "tiny-pixel/s3-uploads-adapter": "dev-master",
     "wpackagist-plugin/autodescription": ">=3.0.6",
     "wpackagist-plugin/gutenberg": "^8",
