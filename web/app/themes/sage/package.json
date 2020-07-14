@@ -29,7 +29,7 @@
     "@babel/core": "^7.10.2",
     "@babel/plugin-syntax-dynamic-import": "^7.8",
     "@wordpress/babel-preset-default": "^4.8.0",
-    "@wordpress/base-styles": "^1.9.0",
+    "@wordpress/base-styles": "^2.0.1",
     "@wordpress/block-library": "^2.14.1",
     "@wordpress/browserslist-config": "^2.6.0",
     "@wordpress/components": "^9.2.1",
