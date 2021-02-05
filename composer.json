@@ -31,7 +31,7 @@
     "tightenco/collect": "^7.2",
     "tiny-pixel/s3-uploads-adapter": "dev-master",
     "wpackagist-plugin/autodescription": ">=3.0.6",
-    "wpackagist-plugin/gutenberg": "^8",
+    "wpackagist-plugin/gutenberg": "^9",
     "wpackagist-plugin/quicklink": "^0.7.1",
     "wpackagist-plugin/simple-page-ordering": "^2.3",
     "wpackagist-plugin/wp-redis": "^1.0.0"
