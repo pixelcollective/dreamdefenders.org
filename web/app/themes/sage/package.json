@@ -32,7 +32,7 @@
     "@wordpress/base-styles": "^1.9.0",
     "@wordpress/block-library": "^2.14.1",
     "@wordpress/browserslist-config": "^2.6.0",
-    "@wordpress/components": "^9.2.1",
+    "@wordpress/components": "^13.0.2",
     "@wordpress/dom-ready": "^2.5.1",
     "@wordpress/edit-post": "^3.13.1",
     "@wordpress/postcss-themes": "^2.4.0",
