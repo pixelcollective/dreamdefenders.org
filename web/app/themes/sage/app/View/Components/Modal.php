@@ -44,18 +44,13 @@ class Modal extends Component
 
     public function shouldShow(): bool
     {
-        if ($_COOKIE[$this->name] === 'true') {
+        if (
+            array_key_exists($this->name, $_COOKIE) 
+            && $_COOKIE[$this->name] === 'true'
+        ) {
             return false;
         }
 
-        $this->turnOff();
         return true;
-    }
-
-    public function turnOff(): void
-    {
-        $expiry = time() + $this->timeoutDuration;
-
-        setcookie($this->name, 'true', $expiry, COOKIEPATH, COOKIE_DOMAIN);
     }
 }

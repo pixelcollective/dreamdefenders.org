@@ -1,4 +1,4 @@
-<div class="text-black alert bg-yellow">
+<div class="text-black alert bg-yellow-default">
   <div class="container py-4">
     <span>
       @if($label)

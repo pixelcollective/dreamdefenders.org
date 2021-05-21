@@ -1,36 +1,41 @@
 /** @wordpress */
-import { __ } from '@wordpress/i18n'
-import { Button, Card, CardBody, CardFooter, CardMedia } from '@wordpress/components'
-import { InnerBlocks, MediaUpload, MediaUploadCheck } from '@wordpress/block-editor'
+import { __ } from "@wordpress/i18n";
+import {
+  Button,
+  Card,
+  CardBody,
+  CardFooter,
+  CardMedia,
+} from "@wordpress/components";
+import {
+  InnerBlocks,
+  MediaUpload,
+  MediaUploadCheck,
+} from "@wordpress/block-editor";
 
 /** modules */
-import { If } from 'react-extras'
+import { If } from "react-extras";
 
 /** components */
-import DownloadThisVolume from './download-this-volume'
+import DownloadThisVolume from "./download-this-volume";
 
 /** constants */
-const TYPES = [`pdf`]
-const MULTIPLE = false
+const TYPES = [`pdf`];
+const MULTIPLE = false;
 
 /**
  * Edit: Freedom Papers
  */
-const edit = ({
-  attributes,
-  setAttributes,
-  className,
-  isSelected,
-}) => {
-  const { media, mediaDownload } = attributes
+const edit = ({ attributes, setAttributes, className, isSelected }) => {
+  const { media, mediaDownload } = attributes;
 
-  const onMedia = media => {
-    setAttributes({ media })
-  }
+  const onMedia = (media) => {
+    setAttributes({ media });
+  };
 
-  const onMediaDownload = mediaDownload => {
-    setAttributes({ mediaDownload })
-  }
+  const onMediaDownload = (mediaDownload) => {
+    setAttributes({ mediaDownload });
+  };
 
   return (
     <div className={className}>
@@ -49,12 +54,13 @@ const edit = ({
               value={media && media.id}
               render={({ open: openMedia }) => (
                 <CardBody className={`font-sans`}>
-                  <If condition={! media}>
+                  <If condition={!media}>
                     <div className={`w-full bg-gray-100 py-16`}>
                       <Button
                         isPrimary
                         className={`block mx-auto text-center`}
-                        onClick={openMedia}>
+                        onClick={openMedia}
+                      >
                         Add image
                       </Button>
                     </div>
@@ -85,7 +91,7 @@ const edit = ({
                               {` `}
                             </If>
 
-                            <If condition={! mediaDownload}>
+                            <If condition={!mediaDownload}>
                               <Button isSecondary onClick={openDownload}>
                                 Add downloadable
                               </Button>
@@ -93,10 +99,12 @@ const edit = ({
                             </If>
                           </CardFooter>
                         </If>
-                      )} />
-                    </If>
+                      )}
+                    />
+                  </If>
                 </CardBody>
-              )} />
+              )}
+            />
           </MediaUploadCheck>
         </Card>
 
@@ -105,7 +113,7 @@ const edit = ({
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default edit
+export default edit;

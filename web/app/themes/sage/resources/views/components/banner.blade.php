@@ -1,5 +1,5 @@
 <div class="object-cover bg-black bg-center bg-top md:bg-fixed" style="background-image: url(@asset('images/banner-background.png'));">
-  <div class="bg-black-600">
+  <div class="bg-gray-800">
     <div class="flex justify-center w-full h-screen max-h-screen align-middle">
       <div class="container flex items-center justify-center h-32 h-full px-2 mx-auto align-middle">
         <div class="flex items-center w-full h-64 text-center text-white">

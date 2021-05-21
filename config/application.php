@@ -1,124 +1,95 @@
 <?php
-
 /**
- * Application configuration.
+ * Your base production configuration goes in this file. Environment-specific
+ * overrides go in their respective config/environments/{{WP_ENV}}.php file.
  *
- * @category Bedrock
- *
- * @author Tiny Pixel <hello@tinypixel.dev>
- * @license MIT <https://github.com/pixelcollective/.github/tree/master/LICENSE.md>
- * @see Tiny Pixel <https://tinypixel.dev>
+ * A good default policy is to deviate from the production config as little as
+ * possible. Try to define as much of your configuration in this file as you
+ * can.
  */
 
-require_once __DIR__.'/Config.php';
+global $redis_server;
 
+use Roots\WPConfig\Config;
 use function Env\env;
-use TinyPixel\WPConfig\Config;
 
 /**
- * Directory containing all of the site's files.
+ * Directory containing all of the site's files
  *
  * @var string
  */
-$bedrock = dirname(__DIR__);
-$web = $bedrock.'/web';
+$root_dir = dirname(__DIR__);
 
 /**
- * Use Dotenv to set required environment variables and load .env file in root.
+ * Document Root
+ *
+ * @var string
  */
-$dotenv = Dotenv\Dotenv::createImmutable($bedrock);
-if (file_exists($bedrock.'/.env')) {
+$webroot_dir = $root_dir . '/web';
+
+/**
+ * Use Dotenv to set required environment variables and load .env file in root
+ */
+$dotenv = Dotenv\Dotenv::createUnsafeImmutable($root_dir);
+if (file_exists($root_dir . '/.env')) {
     $dotenv->load();
     $dotenv->required(['WP_HOME', 'WP_SITEURL']);
-
     if (!env('DATABASE_URL')) {
         $dotenv->required(['DB_NAME', 'DB_USER', 'DB_PASSWORD']);
     }
 }
 
-/*
- * WordPress
+/**
+ * Set up our global environment constant and load its config first
+ * Default: production
  */
-Config::defineSet([
-    'WP_ENV' => env('WP_ENV'),
-    'WP_HOME' => env('WP_HOME'),
-    'WP_SITEURL' => env('WP_SITEURL'),
-]);
+define('WP_ENV', env('WP_ENV') ?: 'production');
 
-/*
- * Configure WordPress application.
+/**
+ * URLs
  */
-Config::defineSet([
-    'DISABLE_WP_CRON' => true,
-    'DISALLOW_FILE_EDIT' => true,
-    'DISALLOW_FILE_MODS' => true,
-    'AUTOMATIC_UPDATER_DISABLED' => true,
-]);
+Config::define('WP_HOME', env('WP_HOME'));
+Config::define('WP_SITEURL', env('WP_SITEURL'));
 
-/*
- * Debug settings.
+/**
+ * Custom Content Directory
  */
-Config::defineSet([
-    'DISPLAY_ERRORS' => Config::get('WP_ENV') == 'development',
-    'SCRIPT_DEBUG' => Config::get('WP_ENV') == 'development',
-    'WP_DEBUG' => Config::get('WP_ENV') == 'development',
-    'WP_DEBUG_DISPLAY' => Config::get('WP_ENV') == 'development',
-]);
+Config::define('CONTENT_DIR', '/app');
+Config::define('WP_CONTENT_DIR', $webroot_dir . Config::get('CONTENT_DIR'));
+Config::define('WP_CONTENT_URL', Config::get('WP_HOME') . Config::get('CONTENT_DIR'));
 
-ini_set('display_errors', Config::get('DISPLAY_ERRORS'));
-
-/*
- * Configure application paths.
+/**
+ * DB settings
  */
-Config::defineSet([
-    'CONTENT_DIR' => '/app',
-    'WP_CONTENT_DIR' => $web.'/app',
-    'WP_CONTENT_URL' => Config::get('WP_HOME').'/app',
-]);
+Config::define('DB_NAME', env('DB_NAME'));
+Config::define('DB_USER', env('DB_USER'));
+Config::define('DB_PASSWORD', env('DB_PASSWORD'));
+Config::define('DB_HOST', env('DB_HOST') ?: 'localhost');
+Config::define('DB_CHARSET', 'utf8mb4');
+Config::define('DB_COLLATE', '');
+$table_prefix = env('DB_PREFIX') ?: 'wp_';
 
-/*
- * Configure DB.
- */
-Config::defineSet([
-    'DB_NAME' => env('DB_NAME'),
-    'DB_USER' => env('DB_USER'),
-    'DB_PASSWORD' => env('DB_PASSWORD'),
-    'DB_HOST' => env('DB_HOST'),
-    'DB_CHARSET' => env('DB_CHARSET') ?: 'utf8',
-    'DB_COLLATION' => env('DB_COLLATION') ?: 'utf8_unicode_ci',
-    'DB_PREFIX' => env('DB_PREFIX') ?: 'wp_',
-]);
+if (env('DATABASE_URL')) {
+    $dsn = (object) parse_url(env('DATABASE_URL'));
 
-/** I think this in violation of WPCS */
-$table_prefix = Config::get('DB_PREFIX');
+    Config::define('DB_NAME', substr($dsn->path, 1));
+    Config::define('DB_USER', $dsn->user);
+    Config::define('DB_PASSWORD', isset($dsn->pass) ? $dsn->pass : null);
+    Config::define('DB_HOST', isset($dsn->port) ? "{$dsn->host}:{$dsn->port}" : $dsn->host);
+}
 
-/*
- * Configure S3.
- */
-Config::defineSet([
-    'S3_UPLOADS_BUCKET' => env('S3_UPLOADS_BUCKET'),
-    'S3_UPLOADS_ENV' => 'production',
-    'S3_UPLOADS_KEY' => env('S3_UPLOADS_KEY'),
-    'S3_UPLOADS_SECRET' => env('S3_UPLOADS_SECRET'),
-    'S3_UPLOADS_ENDPOINT' => env('S3_UPLOADS_ENDPOINT') ?: 'https://nyc3.digitaloceanspaces.com',
-    'S3_UPLOADS_REGION' => env('S3_UPLOADS_REGION') ?: 'nyc3',
-]);
 
 /*
  * Configure Redis.
  */
-global $redis_server;
-
-Config::defineSet([
-    'REDIS_AUTH' => env('REDIS_AUTH'),
-    'REDIS_HOST' => env('REDIS_HOST') ?: env('DB_NAME'),
-    'REDIS_PORT' => env('REDIS_PORT') ?: 25061,
-    'REDIS_OBJECT_CACHE' => env('REDIS_OBJECT_CACHE') ?: true,
-    'WP_CACHE_KEY_SALT' => env('REDIS_CACHE_KEY_SALT') ?: false,
-    'WP_REDIS_USE_CACHE_GROUPS' => env('REDIS_USE_CACHE_GROUPS') ?: false,
-    'PREDIS_VERIFY_PEERS' => true,
-    'PREDIS_CERT' => $bedrock.'/config/cert/redis-ca-cert.crt',
-]);
+Config::define('REDIS_AUTH', env('REDIS_AUTH'));
+Config::define('REDIS_HOST', env('REDIS_HOST') ?: env('DB_NAME'));
+Config::define('REDIS_PORT', env('REDIS_PORT') ?: 25061);
+Config::define('REDIS_OBJECT_CACHE', env('REDIS_OBJECT_CACHE') ?: true);
+Config::define('WP_CACHE_KEY_SALT', env('REDIS_CACHE_KEY_SALT') ?: false);
+Config::define('WP_REDIS_USE_CACHE_GROUPS', env('REDIS_USE_CACHE_GROUPS') ?: false);
+Config::define('PREDIS_VERIFY_PEERS', true);
+Config::define('PREDIS_CERT', $root_dir . '/config/cert/redis-ca-cert.crt');
 
 $redis_server = [
     'host' => Config::get('REDIS_HOST'),
@@ -131,47 +102,69 @@ $redis_server = [
 ];
 
 /*
- * Configure auth keys and salts.
+ * Configure S3.
  */
-Config::defineSet([
-    'AUTH_KEY' => env('AUTH_KEY') ?: null,
-    'AUTH_SALT' => env('AUTH_SALT') ?: null,
-    'LOGGED_IN_KEY' => env('LOGGED_IN_KEY') ?: null,
-    'LOGGED_IN_SALT' => env('LOGGED_IN_SALT') ?: null,
-    'NONCE_KEY' => env('NONCE_KEY') ?: null,
-    'NONCE_SALT' => env('NONCE_SALT') ?: null,
-    'SECURE_AUTH_KEY' => env('SECURE_AUTH_KEY') ?: null,
-    'SECURE_AUTH_SALT' => env('SECURE_AUTH_SALT') ?: null,
-]);
+Config::define('S3_UPLOADS_BUCKET', env('S3_UPLOADS_BUCKET'));
+Config::define('S3_UPLOADS_KEY', env('S3_UPLOADS_KEY'));
+Config::define('S3_UPLOADS_SECRET', env('S3_UPLOADS_SECRET'));
+Config::define('S3_UPLOADS_ENDPOINT', env('S3_UPLOADS_ENDPOINT') ?: 'https://nyc3.digitaloceanspaces.com');
+Config::define('S3_UPLOADS_REGION', env('S3_UPLOADS_REGION') ?: 'nyc3');
 
-/*
- * Allow SSL behind a reverse proxy.
+
+
+/**
+ * Authentication Unique Keys and Salts
  */
-Config::exposeSSL();
+Config::define('AUTH_KEY', env('AUTH_KEY'));
+Config::define('SECURE_AUTH_KEY', env('SECURE_AUTH_KEY'));
+Config::define('LOGGED_IN_KEY', env('LOGGED_IN_KEY'));
+Config::define('NONCE_KEY', env('NONCE_KEY'));
+Config::define('AUTH_SALT', env('AUTH_SALT'));
+Config::define('SECURE_AUTH_SALT', env('SECURE_AUTH_SALT'));
+Config::define('LOGGED_IN_SALT', env('LOGGED_IN_SALT'));
+Config::define('NONCE_SALT', env('NONCE_SALT'));
 
-/*
- * Configure Sentry.
+/**
+ * Custom Settings
  */
-if (env('SENTRY_DSN') &&
-    Config::get('WP_ENV') !== 'development') {
-    Config::defineSet([
-        'SENTRY_DSN' => env('SENTRY_DSN') ?: null,
-        'RELEASE' => env('GIT_SHA') ?: null,
-    ]);
+Config::define('AUTOMATIC_UPDATER_DISABLED', true);
+Config::define('DISABLE_WP_CRON', env('DISABLE_WP_CRON') ?: false);
+// Disable the plugin and theme file editor in the admin
+Config::define('DISALLOW_FILE_EDIT', true);
+// Disable plugin and theme updates and installation from the admin
+Config::define('DISALLOW_FILE_MODS', true);
+// Limit the number of post revisions that Wordpress stores (true (default WP): store every revision)
+Config::define('WP_POST_REVISIONS', env('WP_POST_REVISIONS') ?: true);
 
-    \Sentry\init([
-        'dsn' => Config::get('SENTRY_DSN'),
-        'release' => Config::get('RELEASE'),
-        'environment' => Config::get('WP_ENV'),
-        'error_types' => E_ALL & ~E_NOTICE & ~E_DEPRECATED,
-    ]);
+/**
+ * Debugging Settings
+ */
+Config::define('WP_DEBUG_DISPLAY', false);
+Config::define('WP_DEBUG_LOG', env('WP_DEBUG_LOG') ?? false);
+Config::define('SCRIPT_DEBUG', false);
+ini_set('display_errors', '0');
 
-    \Sentry\configureScope(function (\Sentry\State\Scope $scope): void {
-        $scope->setTag('property', Config::get('WP_SITEURL'));
-        $scope->setTag('redis', Config::get('REDIS_HOST'));
-        $scope->setTag('db', Config::get('DB_HOST'));
-        $scope->setTag('s3', Config::get('S3_UPLOADS_BUCKET'));
-    });
+/**
+ * Allow WordPress to detect HTTPS when used behind a reverse proxy or a load balancer
+ * See https://codex.wordpress.org/Function_Reference/is_ssl#Notes
+ */
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
+    $_SERVER['HTTPS'] = 'on';
+}
+
+$env_config = __DIR__ . '/environments/' . WP_ENV . '.php';
+
+if (file_exists($env_config)) {
+    require_once $env_config;
+}
+
+Config::apply();
+
+/**
+ * Bootstrap WordPress
+ */
+if (!defined('ABSPATH')) {
+    define('ABSPATH', $webroot_dir . '/wp/');
 }
 
 Config::apply();

@@ -1,5 +1,5 @@
 <div class="fixed absolute top-0 bottom-0 left-0 right-0 z-50 hidden h-screen overflow-hidden overlay-modal">
-  <div class="flex flex-col flex-wrap content-center justify-center w-full h-full overflow-hidden bg-black-700">
+  <div class="flex flex-col flex-wrap content-center justify-center w-full h-full overflow-hidden bg-black bg-opacity-75">
     <div class="flex inline-block h-8 mx-auto overflow-hidden text-right w-7/8 md:w-2/5">
       <button modal="overlay" class="justify-end inline-block w-full h-8 overflow-hidden text-right outline-none focus:outline-none text-white-700 hover:text-white transition transition-all">
         @svg('times', 'fill-current blend-difference text-right inline-block justify-end', ['height' => '24px'])

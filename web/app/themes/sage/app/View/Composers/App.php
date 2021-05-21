@@ -25,8 +25,6 @@ class App extends Composer
      */
     public function with()
     {
-        $this->mods = (object) Collection::make(get_theme_mods())->toArray();
-
         return [
             'app' => (object) [
                 'site' => (object) [
@@ -39,19 +37,19 @@ class App extends Composer
                     'apple_touch_icon' => get_bloginfo('url') . '/app/themes/sage/dist/images/icons-192.png',
                 ],
                 'accounts' => (object) [
-                    'facebook'  => $this->mods->facebook ? "https://facebook.com/{$this->mods->facebook}" : null,
-                    'twitter'   => $this->mods->twitter ? "https://twitter.com/{$this->mods->twitter}" : null,
-                    'instagram' => $this->mods->instagram ? "https://instagram.com/{$this->mods->instagram}" : null,
-                    'email'     => $this->mods->email ? "mailto:{$this->mods->email}" : null,
+                    'facebook'  => $this->modExists('facebook') ? "https://facebook.com/{$this->mods()->facebook}" : null,
+                    'twitter'   => $this->modExists('twitter') ? "https://twitter.com/{$this->mods()->twitter}" : null,
+                    'instagram' => $this->modExists('instagram') ? "https://instagram.com/{$this->mods()->instagram}" : null,
+                    'email'     => $this->modExists('email') ? "mailto:{$this->mods()->email}" : null,
                 ],
                 'actions' => [
                     (object) [
-                        'text' => $this->mods->button_a_text ? $this->mods->button_a_text : null,
-                        'url'  => $this->mods->button_a_url  ? $this->mods->button_a_url  : null,
+                        'text' => $this->modExists('button_a_text') ? $this->mods()->button_a_text : null,
+                        'url'  => $this->modExists('button_a_url')  ? $this->mods()->button_a_url  : null,
                     ],
                     (object) [
-                        'text' => $this->mods->button_b_text ? $this->mods->button_b_text : null,
-                        'url'  => $this->mods->button_b_url  ? $this->mods->button_b_url  : null,
+                        'text' => $this->modExists('button_b_text') ? $this->mods()->button_b_text : null,
+                        'url'  => $this->modExists('button_b_url')  ? $this->mods()->button_b_url  : null,
                     ],
                 ],
             ],
@@ -63,6 +61,14 @@ class App extends Composer
                 'footer_right' => $this->navigation('footer_right'),
             ],
         ];
+    }
+
+    private function modExists(string $mod): Bool {
+        return property_exists($this->mods(), $mod); 
+    }
+
+    public function mods() {
+        return (object) Collection::make(get_theme_mods())->toArray();
     }
 
     /**
