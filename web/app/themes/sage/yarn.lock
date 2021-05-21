@@ -2091,12 +2091,10 @@
     lodash "^4.17.19"
     memize "^1.1.0"
 
-"@wordpress/postcss-themes@^2.4.0":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@wordpress/postcss-themes/-/postcss-themes-2.6.0.tgz#9faba06849f4ba812569e663658eca8ba9bcc897"
-  integrity sha512-Q22s1KSVdtoK0Z0ND06V2QwTx/U4KvJhWFmoI8IzYW/LGlk8BkQJhHH157Y9vFliwpMlQpqfXW6/zOg2XtvHzQ==
-  dependencies:
-    postcss "^7.0.32"
+"@wordpress/postcss-themes@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@wordpress/postcss-themes/-/postcss-themes-4.0.1.tgz#0e69a9eceb2e3e8211ebcdfd3ba47e4aa7dfff67"
+  integrity sha512-+NM77kRzmb/BgEOPw7zBiY7JL8F6pBkXq6J+aRpyrUxNzdrkt2HRkXdUnaWY1xvMB/FKiTMYv0erNMDoYgWcyQ==
 
 "@wordpress/primitives@^1.12.3", "@wordpress/primitives@^1.6.0":
   version "1.12.3"
