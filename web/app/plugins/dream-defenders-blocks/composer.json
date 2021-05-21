@@ -12,8 +12,7 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "php": ">=7.1",
-    "tightenco/collect": "^5.8"
+    "tightenco/collect": "^8.34.0"
   },
   "autoload": {
     "files": [

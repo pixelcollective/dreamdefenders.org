@@ -44,13 +44,6 @@ add_action('admin_init', function () {
         ['react', 'wp-blocks', 'wp-dom-ready', 'wp-edit-post', 'wp-element', 'wp-hooks', 'wp-i18n'],
         time()
     );
-
-    wp_enqueue_style(
-        'dream-defenders/editor',
-        plugins_url('/dream-defenders-blocks/dist/styles/editor.css'),
-        false,
-        null
-    );
 }, 100);
 
 /*

@@ -39,7 +39,7 @@
 
       <div class="inline-block w-full h-48 p-2 md:w-1/2 lg:w-1/3">
         <a title="Donate" href="https://secure.everyaction.com/mlLSpZoMxU2Yfvm6CgXTRw2">
-          <div class="flex flex-col flex-wrap content-center justify-center w-full h-full p-2 text-white border border-yellow hover:bg-yellow transition transition-all hover:text-black hover:cursor-pointer">
+          <div class="flex flex-col flex-wrap content-center justify-center w-full h-full p-2 text-white border border-yellow hover:bg-yellow-default transition transition-all hover:text-black hover:cursor-pointer">
             <h2 data-faded class="mb-0 text-3xl italic font-bold leading-none text-center">
               Wanna start your own chapter?
             </h2>

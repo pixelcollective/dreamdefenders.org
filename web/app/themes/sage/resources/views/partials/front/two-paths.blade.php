@@ -9,7 +9,7 @@
         There are two paths
       </h2>
       <div class="absolute w-10/12 h-2 ml-1/12 mr-1/12">
-        <div class="absolute justify-center h-2 mx-auto align-middle exOut bg-yellow" style="top: 40%;"></div>
+        <div class="absolute justify-center h-2 mx-auto align-middle exOut bg-yellow-default" style="top: 40%;"></div>
       </div>
     </div>
 
