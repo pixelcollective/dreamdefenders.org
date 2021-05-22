@@ -8,7 +8,7 @@ executors:
   php-73:
     docker:
       - image: circleci/php:7.4-stretch
-  node-12:
+  node-14:
     docker:
       - image: itinerisltd/tiller-circleci:node-14
 
@@ -29,7 +29,7 @@ workflows:
           trellis-repo: 'git@github.com:pixelcollective/trellis.git'
           site-env: staging
           site-name: dreamdefenders.org
-          executor-tag: node-12
+          executor-tag: node-14
           vault-password: VAULT_PASSWORD
           requires:
             - hold
@@ -44,7 +44,7 @@ workflows:
           trellis-repo: 'git@github.com:pixelcollective/trellis.git'
           site-env: 'production'
           site-name: dreamdefenders.org
-          executor-tag: node-12
+          executor-tag: node-14
           vault-password: VAULT_PASSWORD
           requires:
             - hold
