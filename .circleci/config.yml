@@ -10,7 +10,7 @@ executors:
       - image: circleci/php:7.4-stretch
   node-12:
     docker:
-      - image: itinerisltd/tiller-circleci:node-12
+      - image: itinerisltd/tiller-circleci:node-14
 
 workflows:
   deploy:

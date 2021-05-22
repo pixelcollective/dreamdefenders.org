@@ -6,7 +6,7 @@
     "extends @wordpress/browserslist-config"
   ],
   "engines": {
-    "node": ">=12.14.0"
+    "node": ">=14"
   },
   "scripts": {
     "build": "mix",
