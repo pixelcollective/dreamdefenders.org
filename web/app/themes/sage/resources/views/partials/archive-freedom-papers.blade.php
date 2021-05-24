@@ -1,6 +1,6 @@
 <div>
   <div class="px-4 pb-12">
-    {!! $content !!}
+    {!! $content ?? '' !!}
   </div>
 
   <div class="container mx-auto">
