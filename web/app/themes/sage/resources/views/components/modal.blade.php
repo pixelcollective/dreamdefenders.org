@@ -5,7 +5,7 @@
 
   <div @click.away="{show = false}" :class="{'opacity-0 ease-in duration-200 hidden sm:hidden md:hidden lg:hidden opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95': show == false}" x-transition-initial="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" style="z-index: 1000;" class="relative px-4 pt-5 pb-4 overflow-hidden transition-all transform translate-y-0 bg-black rounded-lg shadow-xl opacity-100 pointer-events-auto z-100 sm:max-w-lg sm:w-full sm:p-6 sm:scale-100" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
     <div>
-      <div class="flex items-center justify-center w-12 h-12 mx-auto rounded-full bg-yellow">
+      <div class="flex items-center justify-center w-12 h-12 mx-auto rounded-full bg-yellow-default">
       <svg class="w-6 h-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
       </svg>
@@ -25,7 +25,7 @@
 
     <div class="mt-8 pointer-events-auto sm:mt-6">
       <span class="flex w-full rounded-none shadow-sm hover:rounded-md sm:col-start-2">
-        <a href="{!! $buttonHref ?? '#' !!}" type="button" class="inline-flex justify-center w-full px-4 py-2 text-base font-bold leading-6 text-white uppercase transition-all transition duration-150 ease-in-out bg-black border border-white rounded-none shadow-sm hover:cursor-pointer hover:bg-yellow hover:radius hover:text-black hover:rounded-md hover:border-transparent focus:outline-none focus:border-yellow-700 focus:shadow-outline-yellow sm:text-sm sm:leading-5">
+        <a href="{!! $buttonHref ?? '#' !!}" type="button" class="inline-flex justify-center w-full px-4 py-2 text-base font-bold leading-6 text-white uppercase transition-all transition duration-150 ease-in-out bg-black border border-white rounded-none shadow-sm hover:cursor-pointer hover:bg-yellow-defaulthover:radius hover:text-black hover:rounded-md hover:border-transparent focus:outline-none focus:border-yellow-700 focus:shadow-outline-yellow sm:text-sm sm:leading-5">
           {!! $buttonText ?? '' !!}
         </a>
       </span>

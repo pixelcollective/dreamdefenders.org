@@ -7,9 +7,9 @@
     </div>
 
     <div class="relative z-10 w-full mx-auto max-h-128 h-128">
-      <div class="w-screen h-full max-w-full mx-auto lg:container">
-        <div class="w-full h-full bg-white">
-          <div class="relative w-full h-full bg-fixed bg-gradient-b-yellow-white-blue">
+      <div class="w-screen h-full max-w-full mx-auto lg:container bg-gradient-to-b from-yellow-400 via-white to-blue-400">
+        <div class="w-full h-full bg-white bg-fixed bg-gradient-to-b from-yellow-400 via-white to-blue-400">
+          <div class="relative w-full h-full bg-fixed bg-gradient-to-b from-yellow-400 via-white to-blue-400">
             <div data-faded class="absolute top-0 bottom-0 left-0 right-0 block h-full overflow-hidden">
               @svg('organize', 'bg-organize pointer-events-none object-top w-full h-full object-cover')
             </div>

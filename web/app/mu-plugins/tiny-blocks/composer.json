@@ -13,9 +13,7 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "php": ">=7.1",
-    "composer/installers": "v1.4",
-    "tightenco/collect": "^5.8",
+    "tightenco/collect": "^8.34.0",
     "eftec/bladeone": "^3.24",
     "php-di/php-di": "^6.0"
   },

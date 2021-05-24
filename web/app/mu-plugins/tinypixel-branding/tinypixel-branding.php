@@ -6,6 +6,7 @@ Description: Branding for Tiny Pixel WordPress sites.
 Version: 1.0
 License: MIT
 */
+
 namespace TinyPixel\Branding;
 
 (new class {

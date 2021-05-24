@@ -1,79 +1,38 @@
-/** node */
-const { resolve } = require('path')
+let mix = require('laravel-mix')
+require('@tinypixelco/laravel-mix-wp-blocks')
 
-/** laravel-mix */
-const mx = require('@dream-defenders/mix')
+/*
+ |--------------------------------------------------------------------------
+ | Mix Asset Management
+ |--------------------------------------------------------------------------
+ |
+ | Mix provides a clean, fluent API for defining some Webpack build steps
+ | for your Sage application. By default, we are compiling the Sass file
+ | for your application, as well as bundling up your JS files.
+ |
+ */
 
-/** helper utils */
-const style  = asset => resolve(__dirname, `resources/assets/styles/${asset}`);
-const script = asset => resolve(__dirname, `resources/assets/scripts/${asset}`);
+mix.setPublicPath('./public').browserSync('sage.test')
 
-/** @dream-defenders/theme conf */
-mx.setPublicPath('./dist')
+mix
+  .sass('resources/styles/app.scss', 'styles')
+  .sass('resources/styles/editor.scss', 'styles')
+  .options({
+    processCssUrls: false,
+    postCss: [require('tailwindcss')],
+  })
 
-/** Disable purge for now */
-//.purgeCss({
-  const purgeFiles = [
-    'resources/views/*.blade.php',
-    'resources/views/**/*.blade.php',
-    'resources/assets/scripts/*.js',
-    'resources/assets/scripts/**/*.js',
-    'resources/assets/styles/*.css',
-    'resources/assets/styles/*.scss',
-    'resources/assets/styles/**/*.css',
-    'resources/assets/styles/**/*.scss',
-    '../../plugins/dream-defenders-blocks/resources/assets/scripts/*.js',
-    '../../plugins/dream-defenders-blocks/resources/assets/scripts/**/*.js',
-    '../../plugins/dream-defenders-blocks/resources/assets/scripts/blocks/*.js',
-    '../../plugins/dream-defenders-blocks/resources/assets/scripts/blocks/**/*.js',
-    '../../plugins/dream-defenders-blocks/resources/assets/styles/*.js',
-    '../../plugins/dream-defenders-blocks/resources/assets/styles/**/*.js',
-    '../../plugins/dream-defenders-blocks/resources/views/*.blade.php',
-    '../../plugins/dream-defenders-blocks/resources/views/**/*.blade.php',
-  ]
+mix
+  .js('resources/scripts/app.js', 'scripts')
+  .js('resources/scripts/customizer.js', 'scripts')
+  .blocks('resources/scripts/editor.js', 'scripts')
+  .extract()
 
-  const purgeOptions = {
-  whitelist: [
-    'rtl',
-    'home',
-    'blog',
-    'archive',
-    'date',
-    'error404',
-    'logged-in',
-    'admin-bar',
-    'no-customize-support',
-    'custom-background',
-    'wp-custom-logo',
-    'alignnone',
-    'alignright',
-    'alignleft',
-    'wp-caption',
-    'wp-caption-text',
-    'screen-reader-text',
-    'comment-list',
-  ],
-  whitelistPatterns: require('@dream-defenders/mix/purge.config'),
-  whitelistPatternsChildren: require('@dream-defenders/mix/purge.config'),
-}
+mix
+  .copyDirectory('resources/images', 'public/images')
+  .copyDirectory('resources/svg', 'public/svg')
+  .copyDirectory('resources/svg/fa/brands', 'public/svg')
+  .copyDirectory('resources/svg/fa/solid', 'public/svg')
+  .copyDirectory('resources/fonts', 'public/fonts')
 
-/** Extract */
-mx.inProduction() && mx.extract([
-    'lozad',
-    'intersection-observer',
-    'animejs',
-    'headroom.js',
-    '@tinypixelco/hoverfx',
-  ])
-
-/** @dream-defenders/theme scripts */
-mx.js(script`app`, 'work/scripts');
-
-/** @dream-defenders/theme styles */
-mx.sass(style`app.scss`, 'work/styles/client-theme.css')
-
-/** @dream-defenders/theme static assets */
-mx.inProduction()
-  && mx.copyWatched('resources/assets/images/**', 'dist/images')
-  .copyWatched('resources/assets/fonts/**', 'dist/fonts')
-  .copyWatched('resources/assets/svg/**', 'dist/svg')
+mix.sourceMaps().version()

@@ -1,17 +1,16 @@
 version: 2.1
 
 orbs:
-  tiller-circleci: itinerisltd/tiller-circleci@3.1.0
+  tiller-circleci: itinerisltd/tiller-circleci@3.2.0
   sentry-cli: picturepipe/sentry-cli@1.1.1
-  cypress: cypress-io/cypress@1
 
 executors:
   php-73:
     docker:
       - image: circleci/php:7.4-stretch
-  node-12:
+  node-14:
     docker:
-      - image: itinerisltd/tiller-circleci:node-12
+      - image: itinerisltd/tiller-circleci:node-14
 
 workflows:
   deploy:
@@ -27,10 +26,10 @@ workflows:
       - tiller-circleci/deploy:
           name: deploy-staging
           known-hosts: 'github.com, 165.22.190.49'
-          trellis-repo: git@github.com:pixelcollective/trellis.git
+          trellis-repo: 'git@github.com:pixelcollective/trellis.git'
           site-env: staging
           site-name: dreamdefenders.org
-          executor-tag: node-12
+          executor-tag: node-14
           vault-password: VAULT_PASSWORD
           requires:
             - hold
@@ -42,114 +41,13 @@ workflows:
       - tiller-circleci/deploy:
           name: deploy-production
           known-hosts: 'github.com, 157.230.209.152'
-          trellis-repo: git@github.com:pixelcollective/trellis.git
-          site-env: production
+          trellis-repo: 'git@github.com:pixelcollective/trellis.git'
+          site-env: 'production'
           site-name: dreamdefenders.org
-          executor-tag: node-12
+          executor-tag: node-14
           vault-password: VAULT_PASSWORD
           requires:
             - hold
-          filters:
-            branches:
-              only:
-                - master
-
-      - sentry-cli/checkout-to-workspace:
-          name: sentry-checkout-staging
-          requires:
-            - deploy-staging
-          filters:
-            branches:
-              only:
-                - staging
-
-      # Sentry checkout production
-      - sentry-cli/checkout-to-workspace:
-          name: sentry-checkout-production
-          requires:
-            - deploy-production
-          filters:
-            branches:
-              only:
-                - master
-
-      # Sentry set version staging
-      - sentry-cli/set-version:
-          name: sentry-version-staging
-          requires:
-            - sentry-checkout-staging
-          filters:
-            branches:
-              only:
-                - staging
-
-      # Sentry set version production
-      - sentry-cli/set-version:
-          name: sentry-version-production
-          requires:
-            - sentry-checkout-production
-          filters:
-            branches:
-              only:
-                - master
-
-      # Sentry create release staging
-      - sentry-cli/create-release:
-          name: sentry-create-release-staging
-          requires:
-            - sentry-version-staging
-          filters:
-            branches:
-              only:
-                - staging
-
-      # Sentry create release production
-      - sentry-cli/create-release:
-          name: sentry-create-release-production
-          requires:
-            - sentry-version-production
-          filters:
-            branches:
-              only:
-                - master
-
-      # Sentry finalize release staging
-      - sentry-cli/finalize-release-set-commits:
-          name: sentry-finalize-release-staging
-          requires:
-            - sentry-create-release-staging
-          filters:
-            branches:
-              only:
-                - staging
-
-      # Sentry finalize release production
-      - sentry-cli/finalize-release-set-commits:
-          name: sentry-finalize-release-production
-          requires:
-            - sentry-create-release-production
-          filters:
-            branches:
-              only:
-                - master
-
-      # Sentry create deployment
-      - sentry-cli/create-deployment:
-          name: sentry-deploy-staging
-          env: staging
-          requires:
-            - sentry-finalize-release-staging
-          filters:
-            branches:
-              only:
-                - staging
-
-      # Sentry create deployment production
-      - sentry-cli/create-deployment:
-          name: sentry-deploy-production
-          env: production
-          requires:
-            - sentry-finalize-release-production
           filters:
             branches:
               only:
