@@ -26,7 +26,7 @@
     "@tailwindcss/typography": "^0.4.1",
     "@tinypixelco/laravel-mix-wp-blocks": "^1.1.0",
     "@wordpress/babel-preset-default": "^6.1.0",
-    "@wordpress/base-styles": "^1.9.0",
+    "@wordpress/base-styles": "^3.5.2",
     "@wordpress/block-library": "^2.14.1",
     "@wordpress/browserslist-config": "^3.0.1",
     "@wordpress/components": "^9.2.1",

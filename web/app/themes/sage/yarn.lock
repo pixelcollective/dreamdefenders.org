@@ -1602,10 +1602,10 @@
     browserslist "^4.16.6"
     core-js "^3.6.4"
 
-"@wordpress/base-styles@^1.9.0":
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/@wordpress/base-styles/-/base-styles-1.11.0.tgz#653923af323def903d6c1d73d4fa3b739f55eb5a"
-  integrity sha512-CV7NsA0SzLGKFmhhTIhi6pWeijeSaBl16hwp+x7OcyQKy/MMbVx2gXsHf3KjGNY18FT1Uf2MlhcdIeBM22RpWQ==
+"@wordpress/base-styles@^3.5.2":
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/@wordpress/base-styles/-/base-styles-3.5.2.tgz#6193de8a61501825f1a76175e139373440e7eafd"
+  integrity sha512-29M9yiZte+1gInnHmAvfRr8HaPrkm8c+kDX2PkO1IJ5trWOUFcM8sCG/Cxm0N+c+6EpE5ToxME0Ex8CgZ52IKA==
 
 "@wordpress/blob@^2.13.2":
   version "2.13.2"
