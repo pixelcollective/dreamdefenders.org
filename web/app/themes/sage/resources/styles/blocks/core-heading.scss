@@ -1,6 +1,3 @@
-/**
-* Heading styles
-*/
 h1 {
   @apply text-4xl;
   @apply uppercase;
@@ -10,17 +7,17 @@ h1 {
   @screen lg {
     @apply text-5xl;
   }
-}
 
-h1.is-style-epic {
-  @apply text-4xl;
+  &.is-style-epic {
+    @apply text-4xl;
 
-  @screen md {
-    @apply text-5xl;
-  }
+    @screen md {
+      @apply text-5xl;
+    }
 
-  @screen lg {
-    @apply text-6xl;
+    @screen lg {
+      @apply text-6xl;
+    }
   }
 }
 

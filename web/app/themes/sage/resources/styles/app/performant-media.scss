@@ -3,6 +3,7 @@ img[data-lazy-src] {
 }
 
 img.lazyloaded[data-lazy-src] {
-  animation: focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
   opacity: 1;
 }
