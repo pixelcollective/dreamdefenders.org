@@ -29,7 +29,7 @@
     "roots/wp-stage-switcher": "^2.0",
     "tiny-pixel/s3-uploads-adapter": "dev-master",
     "wpackagist-plugin/autodescription": ">=3.0.6",
-    "wpackagist-plugin/gutenberg": "^8",
+    "wpackagist-plugin/gutenberg": "^10",
     "wpackagist-plugin/quicklink": "^0.8.0",
     "wpackagist-plugin/simple-page-ordering": "^2.3",
     "wpackagist-plugin/wp-redis": "^1.0.0"

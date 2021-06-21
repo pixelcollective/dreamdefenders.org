@@ -5,9 +5,9 @@ module.exports = {
   purge: {
     content: [
       './app/**/*.php',
-      './resources/**/*.php',
-      './resources/**/*.vue',
-      './resources/**/*.js',
+      './resources/**/*.{vue,js,(s)?css}',
+      './resources/**/*.blade.php',
+      './../../plugins/dream-defenders-blocks/resources/views/**/*.blade.php',
     ],
   },
   darkMode: false,
@@ -77,12 +77,9 @@ module.exports = {
       boxShadow: {
         default:
           '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
-        md:
-          '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-        lg:
-          '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-        xl:
-          '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+        md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+        xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
         '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
         epic: '0 50px 100px -24px rgba(0, 0, 0, 0.5)',
         inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
@@ -163,12 +160,12 @@ module.exports = {
         '-20': '-20',
         '-10': '-10',
         auto: 'auto',
-        '0': '0',
-        '10': '10',
-        '20': '20',
-        '30': '30',
-        '40': '40',
-        '50': '50',
+        0: '0',
+        10: '10',
+        20: '20',
+        30: '30',
+        40: '40',
+        50: '50',
       },
       gap: theme => theme('spacing'),
       transformOrigin: {
@@ -183,25 +180,25 @@ module.exports = {
         'top-left': 'top left',
       },
       scale: {
-        '0': '0',
-        '50': '.5',
-        '75': '.75',
-        '90': '.9',
-        '95': '.95',
-        '100': '1',
-        '105': '1.05',
-        '110': '1.1',
-        '125': '1.25',
-        '150': '1.5',
+        0: '0',
+        50: '.5',
+        75: '.75',
+        90: '.9',
+        95: '.95',
+        100: '1',
+        105: '1.05',
+        110: '1.1',
+        125: '1.25',
+        150: '1.5',
       },
       rotate: {
         '-180': '-180deg',
         '-90': '-90deg',
         '-45': '-45deg',
-        '0': '0',
-        '45': '45deg',
-        '90': '90deg',
-        '180': '180deg',
+        0: '0',
+        45: '45deg',
+        90: '90deg',
+        180: '180deg',
       },
       translate: (theme, {negative}) => ({
         ...theme('spacing'),
@@ -215,15 +212,11 @@ module.exports = {
         '-12': '-12deg',
         '-6': '-6deg',
         '-3': '-3deg',
-        '0': '0',
-        '3': '3deg',
-        '6': '6deg',
-        '12': '12deg',
+        0: '0',
+        3: '3deg',
+        6: '6deg',
+        12: '12deg',
       },
-      /**
-       * Gradients
-       * @see https://github.com/benface/tailwindcss-gradients
-       */
       linearGradients: theme => ({
         colors: {
           'white-yellow': [
@@ -242,11 +235,6 @@ module.exports = {
           ],
         },
       }),
-
-      /**
-       * Multi-column
-       * @see https://github.com/hacknug/tailwindcss-multi-column
-       */
       columnCount: [1, 2, 3],
       columnRuleStyle: [
         'none',
@@ -285,15 +273,15 @@ module.exports = {
       },
       transitionDuration: {
         default: '300ms',
-        '75': '75ms',
-        '100': '100ms',
-        '150': '150ms',
-        '200': '200ms',
-        '300': '300ms',
-        '500': '500ms',
-        '700': '700ms',
-        '1000': '1000ms',
-        '2000': '2000ms',
+        75: '75ms',
+        100: '100ms',
+        150: '150ms',
+        200: '200ms',
+        300: '300ms',
+        500: '500ms',
+        700: '700ms',
+        1000: '1000ms',
+        2000: '2000ms',
         slow: '2000ms',
       },
     },
