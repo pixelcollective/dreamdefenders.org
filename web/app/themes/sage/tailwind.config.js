@@ -7,7 +7,7 @@ module.exports = {
       './app/**/*.php',
       './resources/**/*.{vue,js,(s)?css}',
       './resources/**/*.blade.php',
-      '../../plugins/dream-defenders-blocks/src/*.php',
+      './../../plugins/dream-defenders-blocks/resources/views/**/*.blade.php',
     ],
   },
   darkMode: false,
