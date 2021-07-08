@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0dcbbd3ce242b29495bac725f0c1d47b",
+    "content-hash": "804d6b3f655bad15226ad6cad41d5546",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -1847,15 +1847,15 @@
         },
         {
             "name": "wpackagist-plugin/gutenberg",
-            "version": "10.9.1",
+            "version": "11.0.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/10.9.1"
+                "reference": "tags/11.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.10.9.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/gutenberg.11.0.0.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
