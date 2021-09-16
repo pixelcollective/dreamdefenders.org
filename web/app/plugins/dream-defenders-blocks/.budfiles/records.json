@@ -80,6 +80,7 @@
   },
   "modules": {
     "byIdentifier": {
+      "./node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].oneOf[1].use[0]!./resources/assets/scripts/blocks/Banner/block.js|8064322c1104c36cb7d363bebb8ba17e": 156,
       "./node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].oneOf[1].use[0]!./resources/assets/scripts/blocks/Banner/block.js|eac5f3deb56f970b1165d6b68884964b": 681,
       "./node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].oneOf[1].use[0]!./resources/assets/scripts/blocks/Container/block.js|6c3565e59a6d25845ce89f1848ba3646": 425,
       "./node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].oneOf[1].use[0]!./resources/assets/scripts/blocks/EveryAction/block.js|9395f02795bf9b99690f86b2fcb5d0a6": 227,
@@ -95,6 +96,7 @@
       "./node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].oneOf[1].use[0]!./resources/assets/scripts/extensions/editor.js|0cd2572400b3df473d097612e9f12af8": 923,
       "./node_modules/chroma-js/chroma.js": 792,
       "./node_modules/classnames/index.js": 184,
+      "./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js": 679,
       "./node_modules/prop-types/factoryWithThrowingShims.js": 703,
       "./node_modules/prop-types/index.js": 697,
       "./node_modules/prop-types/lib/ReactPropTypesSecret.js": 414,
@@ -108,6 +110,8 @@
       "./node_modules/react-extras/dist/image.js": 353,
       "./node_modules/react-extras/dist/index.js": 786,
       "./node_modules/react-extras/dist/root-class.js": 479,
+      "./node_modules/react-is/cjs/react-is.production.min.js": 921,
+      "./node_modules/react-is/index.js": 864,
       "external \"React\"": 804
     },
     "usedIds": [
@@ -115,6 +119,7 @@
       117,
       146,
       151,
+      156,
       184,
       227,
       277,
@@ -130,13 +135,15 @@
       571,
       575,
       587,
-      681,
+      679,
       694,
       697,
       703,
       786,
       792,
       804,
+      864,
+      921,
       923,
       928,
       972

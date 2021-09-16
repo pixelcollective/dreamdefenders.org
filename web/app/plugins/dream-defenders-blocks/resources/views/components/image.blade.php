@@ -11,11 +11,11 @@
       @endif
 
       <img class="object-cover w-full" src="{{ $image->url }}"
-        @if(isset($image->alt) && $image->alt)
+        @if(isset($image->alt))
           alt="{{ $image->alt }}"
         @endif
 
-        @if(isset($image->title) && $image->title))
+        @if(isset($image->title))
           title="{{ $image->title }}"
         @endif
 

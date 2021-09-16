@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "settings": {
+    "color": {
+      "link": true,
+      "color": {
+        "custom": false,
+        "customDuotone": false,
+        "customGradient": false
+      }
+    }
+  }
+}

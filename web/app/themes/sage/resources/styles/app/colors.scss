@@ -1,15 +1,11 @@
 $theme-colors: (
-  "primary": rgba(253, 225, 53, 1),
-  "accent": rgba(91, 214, 255, 1),
-  "black": rgba(0, 0, 0, 1),
-  "white": rgba(255, 255, 255, 1),
+  'primary': rgba(253, 225, 53, 1),
+  'accent': rgba(91, 214, 255, 1),
+  'black': rgba(0, 0, 0, 1),
+  'white': rgba(255, 255, 255, 1),
 );
 
-$alignments: (
-  "center",
-  "left",
-  "right",
-);
+$alignments: ('center', 'left', 'right');
 
 @each $alignment in $alignments {
   .has-text-align-#{$alignment} {

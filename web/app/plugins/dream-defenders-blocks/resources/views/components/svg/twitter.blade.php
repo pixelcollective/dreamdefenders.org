@@ -4,6 +4,7 @@
       {{ "{$p}={$v}" }}
     @endforeach
   @endif
+
   @if(isset($classes) && is_string($classes))
     class="{!! $classes !!}"
   @endif

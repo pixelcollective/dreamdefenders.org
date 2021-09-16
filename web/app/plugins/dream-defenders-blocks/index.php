@@ -102,3 +102,22 @@ add_filter('block_categories', function (
         'title' => __('Dream Defenders', 'tiny-pixel'),
     ]])->toArray();
 }, 10, 2);
+
+/* add_filter( 'block_editor_settings_all', function ( $settings, $ctx ) {
+    dd($settings);
+
+    if (!empty($ctx->post ) ) {
+        $editor_settings['maxUploadFileSize'] = 12345;
+    }
+    return $editor_settings;
+}, 10, 2 ); */
+
+
+remove_action(
+    'enqueue_block_editor_assets',
+    'wp_enqueue_editor_block_directory_assets'
+);
+
+remove_filter('render_block', 'wp_render_duotone_support');
+
+add_filter( 'should_load_remote_block_patterns', '__return_false' );

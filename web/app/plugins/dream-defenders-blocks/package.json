@@ -5,6 +5,7 @@
   "devDependencies": {
     "@emotion/babel-preset-css-prop": "^10.0.23",
     "@emotion/core": "^10.0.22",
+    "@emotion/react": "^11.4.1",
     "@emotion/styled": "^10.0.23",
     "@roots/bud": "^4.1.0",
     "@roots/bud-babel": "^4.1.0",

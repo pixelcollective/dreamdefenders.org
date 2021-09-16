@@ -4,7 +4,7 @@ const entrypoints = require("@roots/bud-entrypoints");
 const externals = require("@roots/bud-wordpress-externals");
 const manifests = require("@roots/bud-wordpress-manifests");
 
-module.exports = bud => {
+module.exports = (bud) => {
   bud
     .setPath("src", "resources/assets")
     .use([babel, entrypoints, externals, manifests, react])
@@ -26,7 +26,8 @@ module.exports = bud => {
       "scripts/blocks/organize-cta/block":
         "scripts/blocks/OrganizeCTA/block.js",
       "scripts/blocks/form/block": "scripts/blocks/Form/block.js",
-      "scripts/blocks/every-action/block": "scripts/blocks/EveryAction/block.js"
+      "scripts/blocks/every-action/block":
+        "scripts/blocks/EveryAction/block.js",
     })
     .persist();
 
