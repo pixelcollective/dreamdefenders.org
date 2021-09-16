@@ -23,7 +23,7 @@
     "translate:js": "wp i18n make-json ./resources/lang --pretty-print"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.4.0",
+    "@tailwindcss/typography": "^0.4.1",
     "@tinypixelco/laravel-mix-wp-blocks": "^1.1.0",
     "@wordpress/babel-preset-default": "^6.1.0",
     "@wordpress/base-styles": "^1.9.0",
@@ -38,7 +38,7 @@
     "browser-sync": "^2.26.14",
     "browser-sync-webpack-plugin": "^2.3.0",
     "cross-env": "^7.0.2",
-    "eslint": "^7.20.0",
+    "eslint": "^7.27.0",
     "eslint-plugin-import": "^2.22.1",
     "laravel-mix": "^6.0.11",
     "lodash": "^4.17.15",
@@ -48,7 +48,7 @@
     "react-dom": "^16.13.1",
     "react-with-direction": "^1.3.1",
     "rimraf": "^3.0",
-    "sass": "^1.32.7",
+    "sass": "^1.34.0",
     "sass-loader": "11.0.1",
     "stylelint": "^13.10.0",
     "stylelint-config-standard": "^20.0.0",

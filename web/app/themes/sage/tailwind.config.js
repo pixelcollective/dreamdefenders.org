@@ -5,10 +5,16 @@ module.exports = {
   purge: {
     content: [
       './app/**/*.php',
+<<<<<<< HEAD
       './resources/**/*.php',
       './resources/**/*.vue',
       './resources/**/*.js',
       './../../plugins/dream-defenders-blocks/resources/assets/**/*',
+=======
+      './resources/**/*.{vue,js,(s)?css}',
+      './resources/**/*.blade.php',
+      './../../plugins/dream-defenders-blocks/resources/views/**/*.blade.php',
+>>>>>>> e7bb4d2ff430d7b0d832a027e69c757288928c5e
     ],
   },
   darkMode: false,
@@ -218,10 +224,6 @@ module.exports = {
         6: '6deg',
         12: '12deg',
       },
-      /**
-       * Gradients
-       * @see https://github.com/benface/tailwindcss-gradients
-       */
       linearGradients: theme => ({
         colors: {
           'white-yellow': [
@@ -240,11 +242,6 @@ module.exports = {
           ],
         },
       }),
-
-      /**
-       * Multi-column
-       * @see https://github.com/hacknug/tailwindcss-multi-column
-       */
       columnCount: [1, 2, 3],
       columnRuleStyle: [
         'none',
