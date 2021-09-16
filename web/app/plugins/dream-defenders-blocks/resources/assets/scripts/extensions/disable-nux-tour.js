@@ -1,6 +1,6 @@
-import '@wordpress/nux'
-import {registerPlugin} from '@wordpress/plugins'
-import {select, dispatch} from '@wordpress/data';
+import "@wordpress/nux";
+import { registerPlugin } from "@wordpress/plugins";
+import { select, dispatch } from "@wordpress/data";
 
 /**
  * Plugin: disable welcome modal
@@ -8,13 +8,13 @@ import {select, dispatch} from '@wordpress/data';
  * @param {string} name
  * @param {object} settings
  */
-const disableWelcome = registerPlugin('disable-welcome', {
+const disableWelcome = registerPlugin("disable-welcome", {
   render: () => {
-    select('core/edit-post').isFeatureActive('welcomeGuide')
-      && dispatch('core/edit-post').toggleFeature('welcomeGuide')
+    select("core/edit-post").isFeatureActive("welcomeGuide") &&
+      dispatch("core/edit-post").toggleFeature("welcomeGuide");
 
-    return null
-  }
-})
+    return null;
+  },
+});
 
-export default disableWelcome
+export default disableWelcome;

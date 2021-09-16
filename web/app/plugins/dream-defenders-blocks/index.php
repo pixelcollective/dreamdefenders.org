@@ -119,5 +119,4 @@ remove_action(
 );
 
 remove_filter('render_block', 'wp_render_duotone_support');
-
 add_filter( 'should_load_remote_block_patterns', '__return_false' );

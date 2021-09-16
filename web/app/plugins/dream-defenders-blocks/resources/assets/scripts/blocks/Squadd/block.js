@@ -1,38 +1,38 @@
 /** @wordpress */
-import { __ } from '@wordpress/i18n';
-import { registerBlockType } from '@wordpress/blocks';
+import { __ } from "@wordpress/i18n";
+import { registerBlockType } from "@wordpress/blocks";
 
 /** components */
-import { edit } from './components/edit';
+import { edit } from "./components/edit";
 
-registerBlockType('tinypixel/squadd', {
-  title: __('Squadd', 'tiny-pixel'),
-  category: 'dream-defenders',
-  icon: 'hammer',
+registerBlockType("tinypixel/squadd", {
+  title: __("Squadd", "tiny-pixel"),
+  category: "dream-defenders",
+  icon: "hammer",
   attributes: {
-    squaddName:  {
-      type: 'string',
+    squaddName: {
+      type: "string",
     },
     media: {
-      type: 'object',
+      type: "object",
     },
     city: {
-      type: 'string',
+      type: "string",
     },
     email: {
-      type: 'string',
+      type: "string",
     },
     join: {
-      type: 'url',
+      type: "url",
     },
     twitter: {
-      type: 'object',
+      type: "object",
     },
     facebook: {
-      type: 'object',
+      type: "object",
     },
     instagram: {
-      type: 'object',
+      type: "object",
     },
   },
   supports: {

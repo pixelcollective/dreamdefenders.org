@@ -1,10 +1,10 @@
 /** @wordpress */
-import { __ } from '@wordpress/i18n'
-import { registerBlockType } from '@wordpress/blocks'
-import { InnerBlocks } from '@wordpress/block-editor'
+import { __ } from "@wordpress/i18n";
+import { registerBlockType } from "@wordpress/blocks";
+import { InnerBlocks } from "@wordpress/block-editor";
 
 /** components */
-import edit from './components/edit'
+import edit from "./components/edit";
 
 registerBlockType(`tinypixel/gallery-cta`, {
   title: __(`Gallery Call-to-action`, `tiny-pixel`),
@@ -12,16 +12,16 @@ registerBlockType(`tinypixel/gallery-cta`, {
   icon: `format-image`,
   attributes: {
     heading: {
-      type: 'string',
+      type: "string",
     },
     media: {
-      type: 'object',
+      type: "object",
     },
     cta: {
-      type: 'object',
+      type: "object",
     },
   },
   supports: { align: true },
   edit,
-  save: () => <InnerBlocks.Content />
-})
+  save: () => <InnerBlocks.Content />,
+});

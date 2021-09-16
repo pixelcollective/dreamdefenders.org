@@ -1,14 +1,14 @@
 /** @wordpress */
-import { __ } from '@wordpress/i18n'
-import { useEffect } from '@wordpress/element'
+import { __ } from "@wordpress/i18n";
+import { useEffect } from "@wordpress/element";
 
 /**
  * Edit: Gallery CTA
  */
 const edit = ({ attributes, setAttributes, className, isSelected }) => {
   useEffect(() => {
-    setAttributes({ align: 'full' })
-  }, [])
+    setAttributes({ align: "full" });
+  }, []);
 
   return (
     <div className={`${className} alignwide`}>
@@ -24,14 +24,29 @@ const edit = ({ attributes, setAttributes, className, isSelected }) => {
             <div className="container mx-auto max-w-64">
               <div className="bg-white">
                 <div className="relative w-full bg-fixed h-128 bg-gradient-b-yellow-white-blue">
-                  <div className="relative z-0 items-center justify-center w-4/5 py-8 mx-auto text-white bg-black md:relative lg:w-3/5 organize-form" style={{top: '50%'}}>
+                  <div
+                    className="relative z-0 items-center justify-center w-4/5 py-8 mx-auto text-white bg-black md:relative lg:w-3/5 organize-form"
+                    style={{ top: "50%" }}
+                  >
                     <h3 className="italic text-center text-white">
                       Join our mailing list
                     </h3>
 
-                    <form className="flex flex-col w-4/5 mx-auto text-black space-between" action="#">
-                      <input type="text" disabled className="py-4 my-2 text-center text-black placeholder-gray-500 focus:no-outline focus:border-1 focus:border-blue focus:shadow-inset transition transition-duration-2000 transition-all" placeholder="Enter your email here.." />
-                      <button disabled type="submit" className="py-4 my-2 text-2xl font-bold tracking-wider uppercase bg-white text-black-900 font-display">
+                    <form
+                      className="flex flex-col w-4/5 mx-auto text-black space-between"
+                      action="#"
+                    >
+                      <input
+                        type="text"
+                        disabled
+                        className="py-4 my-2 text-center text-black placeholder-gray-500 focus:no-outline focus:border-1 focus:border-blue focus:shadow-inset transition transition-duration-2000 transition-all"
+                        placeholder="Enter your email here.."
+                      />
+                      <button
+                        disabled
+                        type="submit"
+                        className="py-4 my-2 text-2xl font-bold tracking-wider uppercase bg-white text-black-900 font-display"
+                      >
                         Sign up
                       </button>
                     </form>
@@ -43,7 +58,7 @@ const edit = ({ attributes, setAttributes, className, isSelected }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default edit
+export default edit;

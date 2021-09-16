@@ -1,10 +1,10 @@
 /** @wordpress */
-import { __ } from '@wordpress/i18n'
-import { registerBlockType } from '@wordpress/blocks'
-import { InnerBlocks } from '@wordpress/block-editor'
+import { __ } from "@wordpress/i18n";
+import { registerBlockType } from "@wordpress/blocks";
+import { InnerBlocks } from "@wordpress/block-editor";
 
 /** components */
-import edit from './components/edit'
+import edit from "./components/edit";
 
 registerBlockType(`tinypixel/freedom-paper`, {
   title: __(`Freedom Paper`, `tiny-pixel`),
@@ -15,5 +15,5 @@ registerBlockType(`tinypixel/freedom-paper`, {
   },
   supports: { align: true },
   edit,
-  save: () => <InnerBlocks.Content />
-})
+  save: () => <InnerBlocks.Content />,
+});
