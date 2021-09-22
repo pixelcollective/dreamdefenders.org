@@ -13,7 +13,7 @@
   "prefer-stable": true,
   "require": {
     "tightenco/collect": "^8.34.0",
-    "tiny-pixel/blocks": "1.0.0"
+    "tiny-pixel/blocks": "dev-master"
   },
   "autoload": {
     "psr-4": {

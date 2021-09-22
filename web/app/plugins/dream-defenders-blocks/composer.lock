@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a6c8996360d31ccfa646292b8895dc4c",
+    "content-hash": "b97c7ac2453ce2feaac2ff27ca714bd1",
     "packages": [
         {
             "name": "composer/installers",
@@ -999,16 +999,16 @@
         },
         {
             "name": "tiny-pixel/blocks",
-            "version": "1.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pixelcollective/tiny-blocks.git",
-                "reference": "ec8f1fec2a437fca879324f296e204370341a001"
+                "reference": "cd8dfb429c0a5d3d5b05a15ec223ca02ed16cef5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pixelcollective/tiny-blocks/zipball/ec8f1fec2a437fca879324f296e204370341a001",
-                "reference": "ec8f1fec2a437fca879324f296e204370341a001",
+                "url": "https://api.github.com/repos/pixelcollective/tiny-blocks/zipball/cd8dfb429c0a5d3d5b05a15ec223ca02ed16cef5",
+                "reference": "cd8dfb429c0a5d3d5b05a15ec223ca02ed16cef5",
                 "shasum": ""
             },
             "require": {
@@ -1021,6 +1021,7 @@
             "require-dev": {
                 "roots/wordpress": "dev-master"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "wordpress-install-dir": "wordpress"
@@ -1048,7 +1049,7 @@
             "description": "For consummate blockbuilders",
             "support": {
                 "issues": "https://github.com/pixelcollective/tiny-blocks/issues",
-                "source": "https://github.com/pixelcollective/tiny-blocks/tree/v1.0.0"
+                "source": "https://github.com/pixelcollective/tiny-blocks/tree/v1.0.2"
             },
             "funding": [
                 {
@@ -1056,13 +1057,15 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-09-20T03:17:54+00:00"
+            "time": "2021-09-22T12:48:54+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "tiny-pixel/blocks": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
