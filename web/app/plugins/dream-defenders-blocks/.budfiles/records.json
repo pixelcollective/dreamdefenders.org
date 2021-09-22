@@ -88,6 +88,7 @@
       "./node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].oneOf[1].use[0]!./resources/assets/scripts/blocks/FreedomPaper/block.js|1efc1f119366fee9f581c442b43fa80f": 151,
       "./node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].oneOf[1].use[0]!./resources/assets/scripts/blocks/GalleryCTA/block.js|b735dd35045f60a0b23ac38976f76041": 575,
       "./node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].oneOf[1].use[0]!./resources/assets/scripts/blocks/HorizontalCard/block.js|3dcc317635ed977213f909b2924b6f50": 146,
+      "./node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].oneOf[1].use[0]!./resources/assets/scripts/blocks/HorizontalCard/block.js|bbb2a8e61d77ad56e65e4c171b4f87a8": 812,
       "./node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].oneOf[1].use[0]!./resources/assets/scripts/blocks/OrganizeCTA/block.js|d72bd1920156f75eb07933f1bfa901b2": 694,
       "./node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].oneOf[1].use[0]!./resources/assets/scripts/blocks/PostContainer/block.js|c9302a3fbdb9fcfe49f0f29afca88c6e": 587,
       "./node_modules/babel-loader/lib/index.js??ruleSet[1].rules[0].oneOf[1].use[0]!./resources/assets/scripts/blocks/ProjectContainer/block.js|b20ae64195499e5ad3d3bab7bc21f560": 277,
@@ -117,7 +118,6 @@
     "usedIds": [
       60,
       117,
-      146,
       151,
       156,
       184,
@@ -142,6 +142,7 @@
       786,
       792,
       804,
+      812,
       864,
       921,
       923,

@@ -1,36 +1,17 @@
 <?php
 
-namespace TinyPixel\Blocks;
+namespace DreamDefenders\Blocks;
 
-use TinyBlocks\Base\Block;
+use TinyPixel\Blocks\Block;
 
-/**
- * Gallery CTA.
- */
 class GalleryCTA extends Block
 {
-    /** block name */
-    public $name = 'tinypixel/gallery-cta';
-
-    /** view instance */
-    public $view = 'blocks';
-
-    /** template file */
-    public $template = 'gallery-cta/block.blade.php';
-
-    /** classnames */
-    public $className = 'wp-block-tinypixel-gallery-cta';
-
-    /**
-     * Setup assets.
-     */
-    public function setupAssets(): void
+    public function build(): void
     {
-        $editorScript = $this->makeAsset()
-            ->setName('tinypixel/gallery-cta/js')
-            ->setUrl(plugins_url('dream-defenders-blocks/dist/scripts/blocks/gallery-cta/block.js'))
-            ->setManifest(WP_PLUGIN_DIR.'/dream-defenders-blocks/dist/scripts/blocks/gallery-cta/block.asset.php');
-
-        $this->addEditorScript($editorScript);
+        $this->addEditorScript(
+            $this->makeAsset('editor/js')
+                ->setUrl('scripts/blocks/gallery-cta/block.js')
+                ->setManifest('scripts/blocks/gallery-cta/block.asset.php')
+        );
     }
 }

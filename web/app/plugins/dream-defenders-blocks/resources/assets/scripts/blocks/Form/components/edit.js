@@ -11,7 +11,7 @@ import {
 import TextColumnsPanel from "./panels/text-columns";
 
 const edit = ({ className, attributes, setAttributes, isSelected }) => {
-  const { heading, text, textColumns } = attributes;
+  const { textColumns } = attributes;
 
   useEffect(() => {
     setAttributes({ align: "full" });

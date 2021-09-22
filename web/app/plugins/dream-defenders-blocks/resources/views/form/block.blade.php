@@ -1,6 +1,4 @@
-@php($blockId = uniqid())
-
-<section class="block-{!! $blockId !!} bg-fixed bg-cover bg-no-repeat background-flowing alignfull mt-16 mb-0">
+<section class="block-{!! $id !!} bg-fixed bg-cover bg-no-repeat background-flowing alignfull mt-16 mb-0">
   <div class="px-4 pb-16 pb-24 bg-white-800">
     <div class="container">
       <div class="flex flex-col justify-between px-4 py-16 mx-auto md:flex-row">
@@ -19,7 +17,7 @@
         </div>
 
         <div class="w-full pr-2 md:w-2/5">
-          @if(isset($content) && $content)
+          @if(isset($content))
             <div class="flex flex-wrap content-center w-full h-64 min-h-full md:h-full shadow:md transition-all transition transition-duration-2000 hover:shadow-epic bg-black-900">
               <div class="flex flex-wrap content-center w-full max-w-full text-5xl text-center text-white embed-container font-display object-fit">
                 {!! $content !!}
@@ -33,7 +31,7 @@
 </section>
 
 <style>
-  .block-{!! $blockId !!} {
+  .block-{!! $id !!} {
     margin-bottom: 0em !important;
   }
 

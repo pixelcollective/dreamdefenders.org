@@ -1,36 +1,20 @@
 <?php
 
-namespace TinyPixel\Blocks;
+namespace DreamDefenders\Blocks;
 
-use TinyBlocks\Base\Block;
+use TinyPixel\Blocks\Block;
 
-/**
- * Generic Container.
- */
 class EveryAction extends Block
 {
-    /** block name */
-    public $name = 'tinypixel/every-action';
-
-    /** view instance */
-    public $view = 'blocks';
-
-    /** template file */
-    public $template = 'every-action/block.blade.php';
-
-    /** classnames */
-    public $className = 'wp-block-tinypixel-every-action';
-
     /**
-     * Setup assets.
+     * Modify the block.
      */
-    public function setupAssets(): void
+    public function build(): void
     {
-        $editorScript = $this->makeAsset()
-            ->setName('tinypixel/every-action/js')
-            ->setUrl(plugins_url('dream-defenders-blocks/dist/scripts/blocks/every-action/block.js'))
-            ->setManifest(WP_PLUGIN_DIR.'/dream-defenders-blocks/dist/scripts/blocks/every-action/block.asset.php');
-
-        $this->addEditorScript($editorScript);
+        $this->addEditorScript(
+            $this->makeAsset('editor/js')
+                ->setUrl('scripts/blocks/every-action/block.js')
+                ->setManifest('scripts/blocks/every-action/block.asset.php')
+            );
     }
 }

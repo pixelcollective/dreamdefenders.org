@@ -125,7 +125,7 @@ const edit = ({ attributes, setAttributes, className, isSelected }) => {
     });
   };
 
-  const onContainerResize = (event, direction, elt, delta) => {
+  const onContainerResize = (delta) => {
     setAttributes({
       containerSize: {
         height: parseInt(containerSize.height + delta.height, 10),

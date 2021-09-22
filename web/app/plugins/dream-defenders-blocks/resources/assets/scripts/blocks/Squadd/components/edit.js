@@ -46,6 +46,7 @@ const edit = ({ attributes, className, isSelected, setAttributes }) => {
         <div className={"flex flex-col w-full md:w-1/2"}>
           <MediaUploadCheck>
             <MediaUpload
+              title="Select or upload media"
               onSelect={onChange.media}
               multiple={false}
               value={media && media.id}
@@ -69,7 +70,7 @@ const edit = ({ attributes, className, isSelected, setAttributes }) => {
             <RichText
               tagName="h2"
               className={
-                "font-sans text-3xl inline-block uppercase font-bold break-all leading-none"
+                "font-sans text-2xl inline-block uppercase font-bold break-all leading-none"
               }
               placeholder={__("City", "tinypixel")}
               value={city}
@@ -79,7 +80,7 @@ const edit = ({ attributes, className, isSelected, setAttributes }) => {
 
             <span
               className={
-                "font-sans text-3xl inline-block uppercase font-bold break-all leading-none"
+                "font-sans text-2xl inline-block uppercase font-bold break-all leading-none"
               }
             >
               //
@@ -88,7 +89,7 @@ const edit = ({ attributes, className, isSelected, setAttributes }) => {
             <RichText
               tagName="h2"
               className={
-                "font-sans text-3xl inline-block uppercase font-bold break-all leading-none"
+                "font-sans text-2xl inline-block uppercase font-bold break-all leading-none"
               }
               placeholder={__("Squadd Name", "tinypixel")}
               value={squaddName}
@@ -100,7 +101,7 @@ const edit = ({ attributes, className, isSelected, setAttributes }) => {
           <div className={`w-full flex-col`}>
             <RichText
               className={
-                "font-sans text-3xl block uppercase font-bold break-all"
+                "font-sans text-xl block uppercase font-bold break-all"
               }
               placeholder={__("Email", "tinypixel")}
               value={email}
@@ -110,7 +111,7 @@ const edit = ({ attributes, className, isSelected, setAttributes }) => {
 
             <RichText
               className={
-                "font-sans text-3xl block uppercase font-bold break-all"
+                "font-sans text-xl block uppercase font-bold break-all"
               }
               placeholder={__("Facebook Page", "tinypixel")}
               value={facebook && facebook.handle && `${facebook.handle}`}
@@ -120,7 +121,7 @@ const edit = ({ attributes, className, isSelected, setAttributes }) => {
 
             <RichText
               className={
-                "font-sans text-3xl block uppercase font-bold break-all"
+                "font-sans text-xl block uppercase font-bold break-all"
               }
               placeholder={__("Twitter URL", "tinypixel")}
               value={twitter && twitter.handle && `${twitter.handle}`}
@@ -130,7 +131,7 @@ const edit = ({ attributes, className, isSelected, setAttributes }) => {
 
             <RichText
               className={
-                "font-sans text-3xl block uppercase font-bold break-all"
+                "font-sans text-xl block uppercase font-bold break-all"
               }
               placeholder={__("Instagram URL", "tinypixel")}
               value={instagram && instagram.handle && `${instagram.handle}`}

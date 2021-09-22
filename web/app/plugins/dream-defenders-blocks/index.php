@@ -7,35 +7,19 @@
  * phpcs:disable PSR2.Namespaces.UseDeclaration.MultipleDeclarations
  */
 
-namespace TinyPixel\Blocks;
+namespace DreamDefenders;
 
 require __DIR__.'/vendor/autoload.php';
 
-use TinyBlocks\App;
 use Illuminate\Support\Collection;
 
-/** Specify config. */
-$configPath = __DIR__.'/config';
-
-/** Initialize application. */
-$tinyblocks = App::getInstance($configPath);
-
-/* Add blocks. */
-$tinyblocks->addBlock(Banner::class);
-$tinyblocks->addBlock(Container::class);
-$tinyblocks->addBlock(FreedomPaper::class);
-$tinyblocks->addBlock(HorizontalCard::class);
-$tinyblocks->addBlock(PostContainer::class);
-$tinyblocks->addBlock(ProjectContainer::class);
-$tinyblocks->addBlock(Squadd::class);
-$tinyblocks->addBlock(TwoColumn::class);
-$tinyblocks->addBlock(GalleryCTA::class);
-$tinyblocks->addBlock(Form::class);
-$tinyblocks->addBlock(OrganizeCTA::class);
-$tinyblocks->addBlock(EveryAction::class);
+add_action('tinypixel/blocks/loaded', function ($app) {
+    $configPath = realpath(__DIR__ . '/config');
+    $app->main($configPath);
+});
 
 /*
- * Register project-specific assets.
+ * Register project-specifci assets.
  */
 add_action('admin_init', function () {
     wp_enqueue_script(
