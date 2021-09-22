@@ -144,7 +144,7 @@ Config::define('WP_POST_REVISIONS', env('WP_POST_REVISIONS') ?: true);
 Config::define('WP_DEBUG_DISPLAY', true);
 Config::define('WP_DEBUG_LOG', env('WP_DEBUG_LOG') ?? false);
 Config::define('SCRIPT_DEBUG', true);
-ini_set('display_errors', 1);
+ini_set('display_errors', env('WP_ENV') === 'development' ?? false);
 
 /**
  * Allow WordPress to detect HTTPS when used behind a reverse proxy or a load balancer
