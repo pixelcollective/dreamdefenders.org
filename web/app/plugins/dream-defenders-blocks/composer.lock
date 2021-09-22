@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "530de8175bcbde2689b50354978d05d1",
+    "content-hash": "a6c8996360d31ccfa646292b8895dc4c",
     "packages": [
         {
             "name": "composer/installers",
@@ -999,16 +999,16 @@
         },
         {
             "name": "tiny-pixel/blocks",
-            "version": "5.8.0.x-dev",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pixelcollective/tiny-blocks.git",
-                "reference": "5dad9750b7f8ac15818b770f99f5e11479dd5cd2"
+                "reference": "ec8f1fec2a437fca879324f296e204370341a001"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pixelcollective/tiny-blocks/zipball/5dad9750b7f8ac15818b770f99f5e11479dd5cd2",
-                "reference": "5dad9750b7f8ac15818b770f99f5e11479dd5cd2",
+                "url": "https://api.github.com/repos/pixelcollective/tiny-blocks/zipball/ec8f1fec2a437fca879324f296e204370341a001",
+                "reference": "ec8f1fec2a437fca879324f296e204370341a001",
                 "shasum": ""
             },
             "require": {
@@ -1048,7 +1048,7 @@
             "description": "For consummate blockbuilders",
             "support": {
                 "issues": "https://github.com/pixelcollective/tiny-blocks/issues",
-                "source": "https://github.com/pixelcollective/tiny-blocks/tree/5.8.0"
+                "source": "https://github.com/pixelcollective/tiny-blocks/tree/v1.0.0"
             },
             "funding": [
                 {
@@ -1056,15 +1056,13 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-09-20T03:15:17+00:00"
+            "time": "2021-09-20T03:17:54+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "tiny-pixel/blocks": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
