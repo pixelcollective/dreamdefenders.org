@@ -1,5 +1,5 @@
 {
-  "name": "tiny-pixel/dream-defenders-posttypes",
+  "name": "tiny-pixel/dream-defenders",
   "type": "wp-plugin",
   "version": "1.0.0",
   "license": "MIT",
@@ -12,17 +12,15 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "tightenco/collect": "^8.34.0"
+    "tightenco/collect": "^8.34.0",
+    "tiny-pixel/blocks": "dev-master"
   },
   "autoload": {
-    "files": [
-      "vendor/tightenco/collect/src/Collect/Support/helpers.php",
-      "vendor/tightenco/collect/src/Collect/Support/alias.php"
-    ],
     "psr-4": {
-      "TinyBlocks\\": "./",
+      "DreamDefenders\\Blocks\\": [
+        "./src"
+      ],
       "TinyPixel\\Blocks\\": [
-        "./",
         "./src"
       ]
     }

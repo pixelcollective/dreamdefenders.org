@@ -1,0 +1,8 @@
+{
+  "editor.js": "autoeditor.js",
+  "editor.json": "autoeditor.asset.json",
+  "public.js": "autopublic.js",
+  "public.json": "autopublic.asset.json",
+  "editor.css": "autoeditor.css",
+  "public.css": "autopublic.css"
+}

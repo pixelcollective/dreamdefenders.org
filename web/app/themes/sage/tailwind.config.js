@@ -5,9 +5,11 @@ module.exports = {
   purge: {
     content: [
       './app/**/*.php',
-      './resources/**/*.{vue,js,(s)?css}',
-      './resources/**/*.blade.php',
-      './../../plugins/dream-defenders-blocks/resources/views/**/*.blade.php',
+      './resources/**/*.php',
+      './resources/**/*.vue',
+      './resources/**/*.js',
+      './../../plugins/dream-defenders-blocks/resources/assets/**/*',
+      './../../plugins/dream-defenders-blocks/resources/views/**/*',
     ],
   },
   darkMode: false,

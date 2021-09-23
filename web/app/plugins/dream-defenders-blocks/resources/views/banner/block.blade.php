@@ -1,5 +1,4 @@
-@php($blockId = uniqid())
-<div class="block-id-{!! $blockId !!} alignfull" style="padding-top: 0; margin-top: 0;">
+<div class="block-id-{!! $id !!} alignfull" style="padding-top: 0; margin-top: 0;">
   <header class="flex flex-col content-center w-full my-0 mt-0 mb-12 wp-block-tinypixel-banner">
     <div class="relative top-0 bottom-0 left-0 right-0 w-full overflow-hidden">
       <div class="absolute flex flex-col flex-wrap content-center w-full h-full banner-bg-image"></div>
@@ -19,15 +18,15 @@
   </header>
 </div>
 
-@isset($attr->background->media['id'])
+@isset($attr->background->media->id)
   <style>
-    .block-id-{!! $blockId !!} .banner-bg-image {
+    .{!! $classname !!} .banner-bg-image {
       background-size: cover;
       background-repeat: no-repeat;
-      background-image: url({!! $attr->background->media['url'] !!});
-      background-position-x: {!! isset($attr->background->position['x']) && $attr->background->position['x'] ? $attr->background->position['x'] * 100 : '50' !!}%;
-      background-position-y: {!! isset($attr->background->position['y']) && $attr->background->position['y'] ? $attr->background->position['y'] * 100 : '50' !!}%;
-      @if(isset($attr->background->scale) && $attr->background->scale)
+      background-image: url({!! $attr->background->media->url !!});
+      background-position-x: {!! $attr->background->position->x * 100 ?? '50' !!}%;
+      background-position-y: {!! $attr->background->position->y * 100 ?? '50' !!}%;
+      @if(isset($attr->background->scale))
         transform: scale({!! $attr->background->scale * .01 !!});
       @endif
 
@@ -36,10 +35,8 @@
       @endif
     }
 
-    @php($overlaySet = isset($attr->overlay) && isset($attr->overlay->rendered))
-
-    .block-id-{!! $blockId !!} .banner-bg-overlay {
-      background-color: {!! $overlaySet ? $attr->overlay->rendered : 'rgba(0, 0, 0, 0.8)' !!};
+    .block-id-{!! $id !!} .banner-bg-overlay {
+      background-color: {!! isset($attr->overlay) && isset($attr->overlay->rendered) ? $attr->overlay->rendered : 'rgba(0, 0, 0, 0.8)' !!};
     }
   </style>
 @endisset

@@ -11,6 +11,7 @@
 global $redis_server;
 
 use Roots\WPConfig\Config;
+
 use function Env\env;
 
 /**
@@ -67,6 +68,7 @@ Config::define('DB_PASSWORD', env('DB_PASSWORD'));
 Config::define('DB_HOST', env('DB_HOST') ?: 'localhost');
 Config::define('DB_CHARSET', 'utf8mb4');
 Config::define('DB_COLLATE', '');
+
 $table_prefix = env('DB_PREFIX') ?: 'wp_';
 
 if (env('DATABASE_URL')) {
@@ -139,10 +141,10 @@ Config::define('WP_POST_REVISIONS', env('WP_POST_REVISIONS') ?: true);
 /**
  * Debugging Settings
  */
-Config::define('WP_DEBUG_DISPLAY', false);
-Config::define('WP_DEBUG_LOG', env('WP_DEBUG_LOG') ?? false);
-Config::define('SCRIPT_DEBUG', false);
-ini_set('display_errors', '0');
+Config::define('WP_DEBUG_DISPLAY', env('WP_DEBUG') ?? false);
+Config::define('WP_DEBUG_LOG', env('WP_DEBUG') ?? false);
+Config::define('SCRIPT_DEBUG', env('WP_DEBUG') ?? false);
+ini_set('display_errors', env('WP_ENV') ?? false);
 
 /**
  * Allow WordPress to detect HTTPS when used behind a reverse proxy or a load balancer

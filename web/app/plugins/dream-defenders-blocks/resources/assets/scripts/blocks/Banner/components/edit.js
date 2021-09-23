@@ -1,3 +1,5 @@
+/** @jsx jsx */
+
 /** @wordpress */
 import { __ } from "@wordpress/i18n";
 import { useCallback, useEffect } from "@wordpress/element";
@@ -7,14 +9,15 @@ import {
   InspectorControls,
   MediaUpload,
   MediaUploadCheck,
-  RichText
+  RichText,
 } from "@wordpress/block-editor";
 
 /** external */
 import classnames from "classnames";
 import { isEqual } from "lodash";
 import chroma from "chroma-js";
-import { css } from "@emotion/core";
+import css from "@emotion/css";
+import { jsx } from "@emotion/react";
 
 /** @tinypixelco components */
 import BackgroundPanel from "./panels/BackgroundPanel";
@@ -31,21 +34,19 @@ const styles = {
     z-index: 0;
     position: absolute;
   `,
-  background: background => css`
+  background: (background) => css`
     ${styles.container}
-    background-size: ${background.cover} ? 'cover' : ''};
+    background-size: ${background.cover ? "cover" : ""};
     background-repeat: no-repeat;
     background-image: url(${background.media ? background.media.url : null});
     background-attachment: ${background.attachment
       ? background.attachment
-      : `initial`
-    };
+      : `initial`};
     background-position: ${background.position
       ? `${background.position.x * 100}% ${background.position.y * 100}%`
-      : `50% 50%`
-    };
+      : `50% 50%`};
     transform: scale(${background.scale ? background.scale * 0.01 : 1});
-  `
+  `,
 };
 
 const RESIZABLE_Y = {
@@ -64,96 +65,95 @@ const RESIZABLE_Y = {
  */
 const edit = ({ attributes, setAttributes, className, isSelected }) => {
   const { setPost } = usePost();
-  const themeColors = useSelect(select => {
+  const themeColors = useSelect((select) => {
     return select("core/editor").getEditorSettings().colors;
   });
 
   const { background, containerSize, title, classes, overlay } = attributes;
 
   useEffect(() => {
-    !isEqual(classes, className)
-      && setAttributes({ classes: className });
+    !isEqual(classes, className) && setAttributes({ classes: className });
   }, [className]);
 
-  const onTitle = useCallback(title => {
+  const onTitle = useCallback((title) => {
     setAttributes({ title });
     setPost({ title });
   });
 
-  const onBackgroundMedia = media => {
+  const onBackgroundMedia = (media) => {
     setAttributes({
       background: {
         ...background,
-        media
-      }
+        media,
+      },
     });
   };
 
-  const onBackgroundPosition = position => {
+  const onBackgroundPosition = (position) => {
     setAttributes({
       background: {
         ...background,
-        position
-      }
+        position,
+      },
     });
   };
 
-  const onBackgroundScale = scale => {
+  const onBackgroundScale = (scale) => {
     setAttributes({
       background: {
         ...background,
-        scale
-      }
+        scale,
+      },
     });
   };
 
-  const onBackgroundAttachment = attachment => {
+  const onBackgroundAttachment = (attachment) => {
     setAttributes({
       background: {
         ...background,
-        attachment
-      }
+        attachment,
+      },
     });
   };
 
-  const onBackgroundSize = size => {
+  const onBackgroundSize = (size) => {
     setAttributes({
       background: {
         ...background,
-        size
-      }
+        size,
+      },
     });
   };
 
-  const onContainerResize = (event, direction, elt, delta) => {
+  const onContainerResize = (delta) => {
     setAttributes({
       containerSize: {
-        height: parseInt(containerSize.height + delta.height, 10)
-      }
+        height: parseInt(containerSize.height + delta.height, 10),
+      },
     });
   };
 
-  const onOverlayColor = color => {
+  const onOverlayColor = (color) => {
     setAttributes({
       overlay: {
         raw: color,
         opacity: overlay.opacity,
         rendered: chroma(color)
           .alpha(overlay.opacity * 0.1)
-          .css("rgba")
-      }
+          .css("rgba"),
+      },
     });
   };
 
-  const onOverlayOpacity = opacity => {
+  const onOverlayOpacity = (opacity) => {
     setAttributes({
       overlay: {
         raw: overlay.raw,
         opacity,
         rendered: chroma(overlay.raw)
           .alpha(opacity * 0.1)
-          .css("rgba")
-      }
+          .css("rgba"),
+      },
     });
   };
 
@@ -195,11 +195,14 @@ const edit = ({ attributes, setAttributes, className, isSelected }) => {
               "flex-wrap",
               "content-center",
               "z-10",
-              "relative"
+              "relative",
             ])}
-            css={css`background-color: ${overlay.rendered};`}
+            css={css`
+              background-color: ${overlay.rendered};
+            `}
           >
             <RichText
+              tagName="h1"
               className={`w-full text-center font-display text-6xl inline-block uppercase font-bold break-all text-white`}
               placeholder={__(`Post Title...`, `tiny-pixel`)}
               value={title}
@@ -215,7 +218,9 @@ const edit = ({ attributes, setAttributes, className, isSelected }) => {
                 render={({ open }) => (
                   <div className={classnames(["w-full", "text-center"])}>
                     <Button className={`button`} onClick={open}>
-                      {background.media ? __("Replace", "tiny-pixel") : __("Add", "tiny-pixel")}
+                      {background.media
+                        ? __("Replace", "tiny-pixel")
+                        : __("Add", "tiny-pixel")}{" "}
                       Banner image
                     </Button>
                   </div>

@@ -42,13 +42,13 @@
 
       <div class="flex flex-row justify-evenly align-middle items-center w-full mx-0">
         @isset($app->actions[0]->url)
-          <a modal="overlay" hoverfx fx-duration="800"  class="flex mx-2 truncate justify-center w-full px-6 py-2 text-sm text-black uppercase bg-white border border-white rounded" href="{!! $app->actions[0]->url !!}" title="{!! $app->actions[0]->text !!}" aria-label="{!! $app->actions[0]->text !!}">
+          <a modal="overlay" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px"  class="flex mx-2 truncate justify-center w-full px-6 py-2 text-sm text-black uppercase bg-white border border-white rounded" href="{!! $app->actions[0]->url !!}" title="{!! $app->actions[0]->text !!}" aria-label="{!! $app->actions[0]->text !!}">
             {!! $app->actions[0]->text !!}
           </a>
         @endisset
 
         @isset($app->actions[1]->url)
-          <a hoverfx fx-duration="800" class="flex mx-2 truncate w-full flex justify-center px-6 py-2 w-full text-sm text-black text-white uppercase bg-transparent border border-white rounded" href="{!! $app->actions[1]->url !!}" title="{!! $app->actions[1]->text !!}" aria-label="{!! $app->actions[1]->text !!}">
+          <a hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="flex mx-2 truncate w-full flex justify-center px-6 py-2 w-full text-sm text-black text-white uppercase bg-transparent border border-white rounded" href="{!! $app->actions[1]->url !!}" title="{!! $app->actions[1]->text !!}" aria-label="{!! $app->actions[1]->text !!}">
             {!! $app->actions[1]->text !!}
           </a>
         @endisset
@@ -64,7 +64,7 @@
     <div class="flex flex-col flex-wrap items-center justify-between px-8 py-16 md:px-24 md:py-24 lg:px-24 lg:pt-24 mx-auto">
       <div class="flex flex-row relative justify-center md:w-1/2 mt-4 mb-0 text-center align-middle">
         @isset($app->actions[0]->url)
-          <button modal="overlay" hoverfx fx-duration="800"  class="px-6 py-2 mx-2 text-sm text-black uppercase bg-white border border-white rounded" title="{!! $app->actions[0]->text !!}" aria-label="{!! $app->actions[0]->text !!}">
+          <button modal="overlay" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px"  class="relative z-50 px-6 py-2 mx-2 text-sm text-black uppercase bg-white border border-white rounded" title="{!! $app->actions[0]->text !!}" aria-label="{!! $app->actions[0]->text !!}">
             <a aria-label="{!! $app->actions[0]->text !!}" href="{!! $app->actions[0]->url !!}">
               {!! $app->actions[0]->text !!}
             </a>
@@ -72,7 +72,7 @@
         @endisset
 
         @isset($app->actions[1]->url)
-          <button modal="overlay" hoverfx fx-duration="800"  class="px-6 py-2 mx-2 text-sm text-white uppercase bg-transparent border border-white rounded" title="{!! $app->actions[1]->text !!}" aria-label="{!! $app->actions[1]->text !!}">
+          <button modal="overlay" hoverfx fx-duration="800" fx-on-scale="1.1" fx-off-scale="1" fx-on-translate-y="-3px" fx-off-translate-y="0px" class="relative z-50 px-6 py-2 mx-2 text-sm text-white uppercase bg-transparent border border-white rounded" title="{!! $app->actions[1]->text !!}" aria-label="{!! $app->actions[1]->text !!}">
             <a aria-label="{!! $app->actions[1]->text !!}" href="{!! $app->actions[1]->url !!}">
               {!! $app->actions[1]->text !!}
             </a>

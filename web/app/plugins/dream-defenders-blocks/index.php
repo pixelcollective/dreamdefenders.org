@@ -7,35 +7,19 @@
  * phpcs:disable PSR2.Namespaces.UseDeclaration.MultipleDeclarations
  */
 
-namespace TinyPixel\Blocks;
+namespace DreamDefenders;
 
 require __DIR__.'/vendor/autoload.php';
 
-use TinyBlocks\App;
 use Illuminate\Support\Collection;
 
-/** Specify config. */
-$configPath = __DIR__.'/config';
-
-/** Initialize application. */
-$tinyblocks = App::getInstance($configPath);
-
-/* Add blocks. */
-$tinyblocks->addBlock(Banner::class);
-$tinyblocks->addBlock(Container::class);
-$tinyblocks->addBlock(FreedomPaper::class);
-$tinyblocks->addBlock(HorizontalCard::class);
-$tinyblocks->addBlock(PostContainer::class);
-$tinyblocks->addBlock(ProjectContainer::class);
-$tinyblocks->addBlock(Squadd::class);
-$tinyblocks->addBlock(TwoColumn::class);
-$tinyblocks->addBlock(GalleryCTA::class);
-$tinyblocks->addBlock(Form::class);
-$tinyblocks->addBlock(OrganizeCTA::class);
-$tinyblocks->addBlock(EveryAction::class);
+add_action('tinypixel/blocks/loaded', function ($app) {
+    $configPath = realpath(__DIR__ . '/config');
+    $app->main($configPath);
+});
 
 /*
- * Register project-specific assets.
+ * Register project-specifci assets.
  */
 add_action('admin_init', function () {
     wp_enqueue_script(
@@ -102,3 +86,21 @@ add_filter('block_categories', function (
         'title' => __('Dream Defenders', 'tiny-pixel'),
     ]])->toArray();
 }, 10, 2);
+
+/* add_filter( 'block_editor_settings_all', function ( $settings, $ctx ) {
+    dd($settings);
+
+    if (!empty($ctx->post ) ) {
+        $editor_settings['maxUploadFileSize'] = 12345;
+    }
+    return $editor_settings;
+}, 10, 2 ); */
+
+
+remove_action(
+    'enqueue_block_editor_assets',
+    'wp_enqueue_editor_block_directory_assets'
+);
+
+remove_filter('render_block', 'wp_render_duotone_support');
+add_filter( 'should_load_remote_block_patterns', '__return_false' );

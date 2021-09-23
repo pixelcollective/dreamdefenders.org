@@ -12,7 +12,7 @@ registerBlockType(`tinypixel/two-column`, {
   icon: `hammer`,
   attributes: {
     heading: {
-      type: `string`
+      type: `string`,
     },
     media: {
       type: `object`,
@@ -22,5 +22,5 @@ registerBlockType(`tinypixel/two-column`, {
     align: true,
   },
   edit,
-  save: () => <InnerBlocks.Content />
-})
+  save: () => <InnerBlocks.Content />,
+});

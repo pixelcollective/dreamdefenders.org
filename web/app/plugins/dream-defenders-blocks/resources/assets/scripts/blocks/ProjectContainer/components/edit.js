@@ -1,35 +1,30 @@
 // @wordpress
-import { useCallback } from '@wordpress/element'
-import { __ } from '@wordpress/i18n'
-import { Button } from '@wordpress/components'
+import { useCallback } from "@wordpress/element";
+import { __ } from "@wordpress/i18n";
+import { Button } from "@wordpress/components";
 import {
   InnerBlocks,
   MediaUpload,
   MediaUploadCheck,
   RichText,
-} from '@wordpress/block-editor'
+} from "@wordpress/block-editor";
 
-import usePost from '../../../hooks/usePost'
+import usePost from "../../../hooks/usePost";
 
-const edit = ({
-  attributes,
-  setAttributes,
-  className,
-  isSelected,
-}) => {
-  const { post, setPost } = usePost()
-  const { media } = attributes
-  const { title } = post
+const edit = ({ attributes, setAttributes, className, isSelected }) => {
+  const { post, setPost } = usePost();
+  const { media } = attributes;
+  const { title } = post;
 
   const onTitle = useCallback((title) => {
-    setAttributes({ title })
+    setAttributes({ title });
 
-    setPost({ title })
-  })
+    setPost({ title });
+  });
 
   const onMedia = useCallback((media) => {
-    setAttributes({ media })
-  })
+    setAttributes({ media });
+  });
 
   return (
     <div className={className}>
@@ -41,7 +36,8 @@ const edit = ({
             placeholder={__(`Project Title...`, `tinypixel`)}
             value={title}
             allowedFormats={[]}
-            onChange={onTitle} />
+            onChange={onTitle}
+          />
 
           <MediaUploadCheck>
             <MediaUpload
@@ -50,19 +46,16 @@ const edit = ({
               value={media && media.id}
               render={({ open }) => (
                 <div>
-                  {media && (
-                    <img className={`pr-0 md:pr-4`} src={media.url} />
-                  )}
+                  {media && <img className={`pr-0 md:pr-4`} src={media.url} />}
 
                   {isSelected && (
-                    <Button
-                      className={`button`}
-                      onClick={open}>
+                    <Button className={`button`} onClick={open}>
                       {media ? `Replace` : `Add`} featured image
                     </Button>
                   )}
                 </div>
-              )} />
+              )}
+            />
           </MediaUploadCheck>
         </div>
 
@@ -71,7 +64,7 @@ const edit = ({
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default edit
+export default edit;

@@ -1,39 +1,17 @@
 <?php
 
-namespace TinyPixel\Blocks;
+namespace DreamDefenders\Blocks;
 
-use \TinyBlocks\Base\Block;
+use TinyPixel\Blocks\Block;
 
-/**
- * Squadd
- *
- * @package    DreamDefenders
- * @subpackage Blocks
- */
 class Squadd extends Block
 {
-    /** block name */
-    public $name = 'tinypixel/squadd';
-
-    /** view instance */
-    public $view = 'blocks';
-
-    /** template file */
-    public $template = 'squadd/block.blade.php';
-
-    /** classnames */
-    public $className = 'wp-block-tinypixel-squadd';
-
-    /**
-     * Setup assets
-     */
-    public function setupAssets(): void
+    public function build(): void
     {
-        $editorScript = $this->makeAsset()
-            ->setName('tinypixel/squadd/js')
-            ->setUrl(plugins_url('dream-defenders-blocks/dist/scripts/blocks/squadd/block.js'))
-            ->setManifest(WP_PLUGIN_DIR . '/dream-defenders-blocks/dist/scripts/blocks/squadd/block.asset.php');
-
-        $this->addEditorScript($editorScript);
+        $this->addEditorScript(
+            $this->makeAsset('editor/js')
+                ->setUrl('scripts/blocks/squadd/block.js')
+                ->setManifest('scripts/blocks/squadd/block.asset.php')
+        );
     }
 }

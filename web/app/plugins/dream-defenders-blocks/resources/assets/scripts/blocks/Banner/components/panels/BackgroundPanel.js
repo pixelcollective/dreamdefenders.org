@@ -1,16 +1,16 @@
 /** @wordpress */
-import { __ } from '@wordpress/i18n'
-import { MediaUpload } from '@wordpress/block-editor'
+import { __ } from "@wordpress/i18n";
+import { MediaUpload } from "@wordpress/block-editor";
 import {
   ColorPalette,
   RadioControl,
   FocalPointPicker,
   PanelBody,
   RangeControl,
-} from '@wordpress/components'
+} from "@wordpress/components";
 
 /** external */
-import { css } from '@emotion/core'
+import { css } from "@emotion/core";
 
 /**
  * Background image panel
@@ -25,7 +25,7 @@ export default ({
   onBackgroundSize,
   onBackgroundScale,
   onOverlayColor,
-  onOverlayOpacity
+  onOverlayOpacity,
 }) => (
   <>
     <PanelBody title={__("Background media", "tiny-pixel")}>
@@ -36,11 +36,11 @@ export default ({
         render={({ open }) => (
           <>
             <div className={`mb-2 w-full`}>
-              {! background.media ? "Select" : "Change"} background media
+              {!background.media ? "Select" : "Change"} background media
             </div>
 
             <button className="primary button button-primary" onClick={open}>
-              {! background.media
+              {!background.media
                 ? __("Select media", "tiny-pixel")
                 : __("Change media", "tiny-pixel")}
             </button>
@@ -49,7 +49,7 @@ export default ({
       />
     </PanelBody>
 
-    { background.media && (
+    {background.media && (
       <>
         <PanelBody title={__("Background position", "tiny-pixel")}>
           <FocalPointPicker
@@ -63,39 +63,42 @@ export default ({
             onChange={onBackgroundPosition}
             dimensions={{
               width: background.media.width,
-              height: background.media.height
+              height: background.media.height,
             }}
           />
         </PanelBody>
 
-        <PanelBody title={__('Background style', 'tiny-pixel')}>
+        <PanelBody title={__("Background style", "tiny-pixel")}>
           <RadioControl
-            label='Background size'
+            label="Background size"
             options={[
-              { label: 'Cover', value: 'cover' },
-              { label: 'Manual', value: 'manual' },
+              { label: "Cover", value: "cover" },
+              { label: "Manual", value: "manual" },
             ]}
             selected={background.size}
-            onChange={onBackgroundSize} />
+            onChange={onBackgroundSize}
+          />
 
-          { background.size == `manual` && (
+          {background.size == `manual` && (
             <RangeControl
               label={__("Background scale", "tiny-pixel")}
               value={background.scale}
               onChange={onBackgroundScale}
               min={1}
               max={300}
-              afterIcon={`search`} />
+              afterIcon={`search`}
+            />
           )}
 
           <RadioControl
-            label={__('Background attachment', 'tiny-pixel')}
+            label={__("Background attachment", "tiny-pixel")}
             options={[
               { label: "Default", value: "default" },
               { label: "Fixed", value: "fixed" },
             ]}
             selected={background.attachment}
-            onChange={onBackgroundAttachment} />
+            onChange={onBackgroundAttachment}
+          />
         </PanelBody>
 
         <PanelBody title={__("Overlay settings", "tiny-pixel")}>

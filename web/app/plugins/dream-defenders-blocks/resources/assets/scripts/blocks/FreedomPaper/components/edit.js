@@ -1,4 +1,4 @@
-/** @wordpress */
+import React from "react";
 import { __ } from "@wordpress/i18n";
 import {
   Button,
@@ -13,13 +13,10 @@ import {
   MediaUploadCheck,
 } from "@wordpress/block-editor";
 
-/** modules */
 import { If } from "react-extras";
 
-/** components */
 import DownloadThisVolume from "./download-this-volume";
 
-/** constants */
 const TYPES = [`pdf`];
 const MULTIPLE = false;
 
@@ -51,7 +48,7 @@ const edit = ({ attributes, setAttributes, className, isSelected }) => {
             <MediaUpload
               onSelect={onMedia}
               multiple={false}
-              value={media && media.id}
+              value={media?.id}
               render={({ open: openMedia }) => (
                 <CardBody className={`font-sans`}>
                   <If condition={!media}>
@@ -59,7 +56,7 @@ const edit = ({ attributes, setAttributes, className, isSelected }) => {
                       <Button
                         isPrimary
                         className={`block mx-auto text-center`}
-                        onClick={openMedia}
+                        onClick={open}
                       >
                         Add image
                       </Button>
@@ -75,27 +72,24 @@ const edit = ({ attributes, setAttributes, className, isSelected }) => {
                       onSelect={onMediaDownload}
                       allowedTypes={TYPES}
                       multiple={MULTIPLE}
-                      value={mediaDownload && mediaDownload.id}
+                      value={mediaDownload?.id}
                       render={({ open: openDownload }) => (
                         <If condition={media}>
                           <CardFooter>
                             <Button isPrimary onClick={openMedia}>
                               Replace image
                             </Button>
-                            {` `}
 
                             <If condition={mediaDownload}>
                               <Button isSecondary onClick={openDownload}>
                                 Replace downloadable
                               </Button>
-                              {` `}
                             </If>
 
                             <If condition={!mediaDownload}>
                               <Button isSecondary onClick={openDownload}>
                                 Add downloadable
                               </Button>
-                              {` `}
                             </If>
                           </CardFooter>
                         </If>

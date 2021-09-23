@@ -1,0 +1,10 @@
+{
+  "name": "tiny-pixel/statistics",
+  "type": "wordpress-plugin",
+  "license": "MIT",
+  "description": "Short description of acme-block",
+  "keywords": [
+    "wordpress",
+    "wordpress-block"
+  ]
+}
