@@ -1,0 +1,12 @@
+{
+  "attributes": {
+    "enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "open": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
