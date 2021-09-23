@@ -1,14 +1,9 @@
-/** @wordpress */
 import { __ } from "@wordpress/i18n";
 import domReady from "@wordpress/dom-ready";
 
-/** util */
 import { registerBlockStyles, unregisterBlockStyles } from "./register-styles";
 import { setupInserterCategories } from "./inserter-categories";
 import "./disable-block-types";
-
-/** hosted pkgs */
-import "@tinypixelco/disable-welcome-modal";
 
 domReady(() => {
   /**

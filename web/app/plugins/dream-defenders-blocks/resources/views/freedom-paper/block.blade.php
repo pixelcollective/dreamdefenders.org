@@ -9,7 +9,7 @@
                     ])
                 </div>
 
-                @if(isset(property_exists($attr->mediaDownload->url) && is_string($attr->mediaDownload->url))
+                @if(isset($attr->mediaDownload->url) && is_string($attr->mediaDownload->url))
                     <div class="block w-4/5 w-full pb-8 mx-auto font-bold text-center uppercase md:w-1/2">
                         <a href="{!! $attr->mediaDownload->url !!}" class="mx-auto text-center">
                             @include('components.svg.download-this-volume')

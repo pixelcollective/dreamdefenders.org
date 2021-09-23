@@ -1,9 +1,7 @@
-/** @wordpress */
 import { __ } from "@wordpress/i18n";
 import { registerBlockType } from "@wordpress/blocks";
 import { InnerBlocks } from "@wordpress/block-editor";
 
-/** components */
 import edit from "./components/edit";
 
 registerBlockType(`tinypixel/freedom-paper`, {
