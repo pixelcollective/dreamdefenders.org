@@ -35,5 +35,8 @@
     "@wordpress/nux": "^3.16.0",
     "chroma-js": "^2.1.0",
     "react-extras": "^1.0.1"
+  },
+  "scripts": {
+    "build": "echo 'hi'"
   }
 }

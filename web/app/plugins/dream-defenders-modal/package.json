@@ -1,7 +1,8 @@
 {
-  "name": "lighbox-block",
+  "name": "@dreamdefenders/modal",
   "description": "Short description of lighbox-block",
   "private": true,
+  "version": "0.0.1",
   "license": "MIT",
   "browserslist": [
     "extends @wordpress/browserslist-config"
