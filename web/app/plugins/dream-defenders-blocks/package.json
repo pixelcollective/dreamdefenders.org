@@ -11,6 +11,7 @@
     "@roots/bud-babel": "^4.2.0",
     "@roots/bud-cli": "^4.2.0",
     "@roots/bud-entrypoints": "^4.2.0",
+    "@roots/bud-postcss": "4.2.0",
     "@roots/bud-react": "^4.2.0",
     "@roots/bud-sass": "^4.2.0",
     "@roots/bud-wordpress-dependencies": "^4.2.0",
@@ -37,6 +38,6 @@
     "react-extras": "^1.0.1"
   },
   "scripts": {
-    "build": "echo 'hi'"
+    "build": "bud build --mode production"
   }
 }
