@@ -38,6 +38,6 @@
     "react-extras": "^1.0.1"
   },
   "scripts": {
-    "build": "bud build --mode production"
+    "build": "bud build"
   }
 }

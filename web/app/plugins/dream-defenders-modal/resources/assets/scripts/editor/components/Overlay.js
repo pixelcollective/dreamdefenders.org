@@ -6,7 +6,7 @@ export const Overlay = ({render: Render, isSelected}) => (
     <div
       className={`
         absolute inset-0 bg-white z-10 h-full w-100
-        transition transition-duration-200 pointer-events-none
+        transition transition-duration-200 overflow-hidden
         ${
           isSelected
             ? `bg-opacity-0 ring-1 ring-offset-2 ring-indigo-500`
