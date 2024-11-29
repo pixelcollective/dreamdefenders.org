@@ -1,0 +1,117 @@
+version: 2
+registries:
+  composer-repository-packages-tinypixel-dev:
+    type: composer-repository
+    url: https://packages.tinypixel.dev
+    username: qCu6l7xFmLTRfCkgDKfiQMaQi6qnLMxI
+    password: "${{secrets.COMPOSER_REPOSITORY_PACKAGES_TINYPIXEL_DEV_PASSWORD}}"
+
+updates:
+- package-ecosystem: composer
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "13:00"
+  open-pull-requests-limit: 10
+  target-branch: staging
+  ignore:
+  - dependency-name: wpackagist-plugin/gutenberg
+    versions:
+    - 10.0.0
+    - 10.0.1
+    - 10.0.2
+    - 10.1.0
+    - 10.1.1
+    - 10.2.0
+    - 10.2.1
+    - 10.3.1
+    - 10.3.2
+    - 10.4.0
+    - 10.4.1
+    - 9.8.2
+    - 9.8.3
+    - 9.9.0
+    - 9.9.1
+    - 9.9.2
+    - 9.9.3
+  - dependency-name: phpunit/phpunit
+    versions:
+    - 9.5.1
+    - 9.5.2
+    - 9.5.3
+  - dependency-name: roots/wordpress
+    versions:
+    - "5.6"
+    - 5.6.1
+    - 5.6.2
+    - "5.7"
+  - dependency-name: tightenco/collect
+    versions:
+    - 8.19.0
+  - dependency-name: squizlabs/php_codesniffer
+    versions:
+    - 3.5.8
+  - dependency-name: wpackagist-plugin/wp-redis
+    versions:
+    - 1.1.1
+  registries:
+  - composer-repository-packages-tinypixel-dev
+- package-ecosystem: npm
+  directory: "/web/app/themes/sage"
+  schedule:
+    interval: daily
+    time: "13:00"
+  open-pull-requests-limit: 10
+  target-branch: staging
+  ignore:
+  - dependency-name: "@wordpress/postcss-themes"
+    versions:
+    - 3.0.0
+    - 3.0.1
+    - 3.0.2
+    - 3.0.3
+  - dependency-name: eslint
+    versions:
+    - 7.18.0
+    - 7.19.0
+    - 7.20.0
+    - 7.21.0
+    - 7.22.0
+    - 7.23.0
+    - 7.24.0
+  - dependency-name: "@wordpress/components"
+    versions:
+    - 12.0.2
+    - 12.0.3
+    - 12.0.5
+    - 12.0.6
+    - 12.0.7
+    - 12.0.8
+    - 13.0.0
+    - 13.0.1
+  - dependency-name: tailwindcss
+    versions:
+    - 2.0.3
+    - 2.0.4
+    - 2.1.1
+  - dependency-name: "@wordpress/babel-preset-default"
+    versions:
+    - 5.0.0
+    - 5.0.1
+    - 5.1.0
+    - 5.2.0
+  - dependency-name: "@wordpress/browserslist-config"
+    versions:
+    - 3.0.0
+    - 3.0.2
+  - dependency-name: "@wordpress/base-styles"
+    versions:
+    - 3.3.1
+    - 3.3.2
+    - 3.3.3
+    - 3.4.0
+    - 3.4.1
+  - dependency-name: sass-loader
+    versions:
+    - 10.1.1
+    - 11.0.0
