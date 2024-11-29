@@ -28,7 +28,7 @@
     "@wordpress/babel-preset-default": "^6.1.0",
     "@wordpress/base-styles": "^1.9.0",
     "@wordpress/block-library": "^2.14.1",
-    "@wordpress/browserslist-config": "^3.0.1",
+    "@wordpress/browserslist-config": "^4.1.0",
     "@wordpress/components": "^9.2.1",
     "@wordpress/dependency-extraction-webpack-plugin": "^3.0.1",
     "@wordpress/dom-ready": "^2.5.1",
